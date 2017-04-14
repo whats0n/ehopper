@@ -1,0 +1,61 @@
+.order-list
+	+clr
+.order-item
+	padding: 13px 20px
+	border-bottom: 1px solid rgba(0, 0, 0, 0.1)
+	cursor: pointer
+	+nosel
+	+clr
+	transition: background 0.175s ease
+	+active
+		background: $azureActive
+	&[data-state="active"]
+		background: $azure
+		+active
+			background: $azureActive
+		+refund
+			background: #FFE5DA
+			
+	&[data-animation="ripple"]
+		.ripple-circle
+			background: rgba($blue, 0.1)
+	&__info,
+	&__row
+		float: left
+	&__info
+		width: 50%
+	&__row
+		width: 50%
+		+clr
+	&__col
+		float: left
+		padding: 0 0 0 20px
+		width: 50%
+		text-align: right
+		&:first-child
+			text-align: left
+	&__title,
+	&__quantity,
+	&__total
+		+rreg
+	&__title,
+	&__col
+		font-size: 16px
+		+lg
+			font-size: 14px
+		+md
+			font-size: 13px
+	&__meta
+		clear: both
+		padding-top: 5px
+	&__meta,
+	&__price
+		opacity: 0.5
+	&__meta,
+	&__price,
+	&__discount
+		font-size: 13px
+		+md
+			font-size: 12px
+	&__discount
+		color: $orange

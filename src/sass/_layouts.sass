@@ -1,0 +1,185 @@
+.main,
+.container,
+.sidebar,
+.inner,
+.application
+  position: relative
+  height: 100vh
+
+.main
+  overflow: auto
+.inner
+  min-width: 980px
+  +clr
+
+.content 
+  position: relative
+  z-index: 5
+
+.container
+  position: relative
+  &_right
+    float: right
+    width: 60%
+  &_overlay
+    position: absolute
+    z-index: 5
+    top: 0
+    right: 0
+    bottom: 0
+    width: 60%
+    box-shadow: -3px 0 4px 5px rgba(0, 0, 0, 0.2)
+    transform: translate3d(-110%,0,0)
+    transition: transform 0.3s ease-in-out
+    &.is-open
+      +gpu
+  &__body
+    height: calc(100% - 50px)
+
+.sidebar
+  position: relative
+  z-index: 10
+  display: flex
+  flex-direction: column
+  background: $alabaster
+  &_left
+    // z-index: 1
+    float: left
+    width: 40%
+    box-shadow: -3px 0 4px 5px rgba(0, 0, 0, 0.2)
+  &__body
+    position: relative
+    overflow: auto
+    flex: 1
+  &__toolbar
+    .toolbar
+      &__col
+        &:not(:last-child)
+          border-color: #89cb8c
+        &:first-child
+          +refund
+            width: 0
+            opacity: 0
+            visibility: hidden
+            pointer-events: none
+        .btn
+          background: $orange
+
+.items
+  &__top
+    height: 180px
+  &__body
+    height: calc(100% - 180px)
+
+.wrapper
+  margin: 10px 0
+
+.section
+  padding: 20px 0
+  &_inner
+    padding: 20px
+/////////////////
+section
+  padding: 20px
+  .clear-hmargins
+    margin-left: -20px
+    margin-right: -20px
+
+.form-narrow
+  margin-left: auto
+  margin-right: auto
+  max-width: 460px
+
+// header
+//   height: 50px
+
+//   color: #fff
+//   background: #2e99db
+
+//   font-size: 20px
+//   font-weight: 500
+//   line-height: 50px
+
+//   cursor: default
+//   +nosel
+  
+//   .icon-menu, .icon-back
+//     float: left
+//     width: 50px
+//     height: 50px
+//     margin-right: 5px
+//     border-radius: 0 !important
+//     line-height: 50px
+//   .icon
+//     &.pull-left, &.pull-right
+//       margin: 5px 10px
+//   h1
+//     overflow: hidden
+//     margin: 0 20px
+//     font-size: 20px
+//     white-space: nowrap
+//     text-overflow: ellipsis
+//   h2
+//     overflow: hidden
+//     margin: 0 20px
+//     opacity: 0.5
+//     font-size: 14px
+//     font-weight: 400
+//     white-space: nowrap
+//     text-overflow: ellipsis
+
+.header__icons
+  float: right
+  margin: 0
+  font-size: 0
+  .icon
+    vertical-align: top
+    margin: 5px 5px 0 0
+
+article
+  position: absolute
+  height: 100%
+  width: 100%
+  background: #f8f8f8
+  main
+    position: absolute
+    height: 100%
+    width: 100%
+    &.right
+      right: 0
+      width: 60%
+  aside
+    position: absolute
+    right: 0
+    height: 100%
+    &.left
+      right: auto
+      left: 0
+      width: 40%
+
+.layout
+  display: flex
+  flex-flow: row
+
+  &-rows
+    flex-flow: column
+
+  &-columns
+    flex-flow: row
+
+  &__column
+    flex: 1
+
+  &__column-grow
+    flex: 10
+
+  &__column-gap
+    width: 20px
+    flex: 0 0 20px
+
+  &__row
+    flex: content
+
+  &__row-grow
+    flex: 2
+    overflow-y: auto

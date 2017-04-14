@@ -1,0 +1,38 @@
+.card-serial
+	color: $darkGray
+	&__label
+		position: relative
+		display: block
+	input
+		position: absolute
+		top: 0
+		left: 0
+		opacity: 0
+		visibility: hidden
+		&:checked + .card-serial
+			&__content
+				background: $yellow
+		&:disabled + .card-serial
+			&__content
+				opacity: 0.5
+				background: $lightGray
+				cursor: default
+				pointer-events: none
+	&__content
+		display: block
+		overflow: hidden
+		padding: 20px 20px 20px
+		color: $darkGray
+		background: $lightGray
+		box-shadow: 0 0px 1px rgba(0, 0, 0, 0.2), 0 2px 4px rgba(0, 0, 0, 0.1)
+		cursor: pointer
+		+nosel
+		transition: box-shadow 0.15s ease-in-out, background 0.15s ease-in-out
+		+hover
+			box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3)
+		+active
+			box-shadow: none
+	&__title
+		display: block
+		font-size: 17px
+		+text-overflow

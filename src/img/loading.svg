@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 64 64">
+	<g fill="none" fill-rule="evenodd" stroke-width="3">
+		<circle cx="32" cy="32" r="19.5982" fill="rgba(0,0,0,.2)">
+			<animate attributeName="r" begin="0s" dur="2s" values="0;24" keyTimes="0;1" keySplines="0.1,0.2,0.3,1" calcMode="spline" repeatCount="indefinite"></animate>
+			<animate attributeName="fill-opacity" begin="0s" dur="2s" values=".2;1;.2;0" repeatCount="indefinite"></animate>
+		</circle>
+		<circle cx="32" cy="32" r="23.9972" fill="rgba(0,0,0,.2)">
+			<animate attributeName="r" begin="-1s" dur="2s" values="0;24" keyTimes="0;1" keySplines="0.1,0.2,0.3,1" calcMode="spline" repeatCount="indefinite"></animate>
+			<animate attributeName="fill-opacity" begin="-1s" dur="2s" values=".2;1;.2;0" repeatCount="indefinite"></animate>
+		</circle>
+	</g>
+</svg>

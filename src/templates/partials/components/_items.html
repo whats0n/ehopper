@@ -1,0 +1,30 @@
+{% macro smBox(props) %}
+<dl class="sm-box {{props.classList}}" data-animation="ripple" {% if props.background %}style="background-color: {{props.background}};"{% endif %} >
+	<dt class="sm-box__title">{{props.title}}</dt>
+	<dd class="sm-box__description">{{props.description}}</dd>
+</dl>
+{% endmacro %}
+
+{% macro item(props) %}
+<div class="item" 
+	{% if props.background %}style="background-color: {{props.background}};"{% endif %} 
+	{% if props.noRipple !== true %}data-animation="ripple"{% endif %} 
+	onclick="window.orderlist.addItem({title: 'some title', meta: 'some meta', price: '5.00', quantity: '10', total: '50.00', discount: '-5.00'})"
+	{{props.attrs | safe}} >
+
+	{% if props.image %}
+		<div class="item__img" style="background-image: url(static/img/products/{{props.image}});"></div>
+	{% endif %}
+
+	{% if props.code %}
+		<div class="item__code">{{props.code}}</div>
+	{% endif %}
+
+	<div class="item__title">{{props.title}}</div>
+
+	{% if props.price %}
+		<div class="item__price">{{props.price}}</div>
+	{% endif %}
+</div>
+{% endmacro %}
+

@@ -1,0 +1,26 @@
+---
+title: 'Sync...'
+styles: 
+	- 'pos'
+bodyClasses: 'body-darkgray'
+---
+{% extends "layouts/_layout.html" %}
+
+{% block content %}
+	<main class="main">
+		{{header.large()}}
+		<div class="content">
+			<div class="figure box">
+				<div class="figure__title">Your Company Name Inc.</div>
+				<div class="figure__sync">
+					<div class="sm-error" data-error="sm-error">
+						<div class="sm-error__message">Incorrect PIN</div>
+						<button class="sm-error__close" data-error-close="sm-error"><i class="icon icon-clear"></i></button>
+					</div>
+					<i class="icon icon-lock figure__lock"></i>
+					<div class="footnote figure__footer">Data syncronization&hellip;</div>
+				</div>
+			</div>
+		</div>
+	</main>
+{% endblock %}

@@ -1,0 +1,95 @@
+.horizontal-menu
+  +clr
+  &__container
+    display: table
+    table-layout: fixed
+    width: 100%
+    background: $white
+  &__list
+    display: table-row
+  &__item 
+    position: relative
+    display: table-cell
+    text-align: center
+    white-space: nowrap
+    +nosel
+    &:not(:last-child)
+      .horizontal-menu
+        &__link
+          border-right: 1px solid rgba($black, 0.1) 
+  &__link
+    display: block
+    color: $darkGray
+    font-size: 14px
+    line-height: 60px
+    text-decoration: none
+    transition: color 0.1s ease, background 0.1s ease, box-shadow 0.1s ease
+    +hover
+      background: $alabaster
+    +active
+      color: $white
+      background: $blue
+      box-shadow: inset 2px 2px 4px rgba($black, 0.2)
+    &.is-disabled
+      color: $silverGray
+      background: $alabaster
+      cursor: default
+      pointer-events: none
+      +hover 
+        color: $silverGray
+        background: $alabaster
+        cursor: default
+        pointer-events: none
+      &[data-animation="ripple"]
+        .ripple-circle
+          visibility: hidden
+    .icon
+      vertical-align: top
+      width: 16px
+      opacity: 0.5
+      line-height: 60px
+
+.hmenu
+  display: table
+  width: 100%
+  height: 60px
+  background: $white
+  font-size: 14px
+  line-height: 60px
+  &__item
+    display: table-cell
+    border-right: 1px solid rgba(0, 0, 0, 0.1) 
+    width: 1%
+    text-align: center
+    white-space: nowrap
+    cursor: pointer
+    +nosel
+    &:last-child
+      border-right: none
+    +hover
+      background: #f8f8f8
+    +active
+      color: $white
+      background: $blue
+      box-shadow: inset 2px 2px 4px rgba(0, 0, 0, 0.2)
+    a
+      display: block
+      color: inherit
+      line-height: 60px
+      text-decoration: none
+    .icon
+      vertical-align: top
+      width: 16px
+      opacity: .5
+      line-height: 60px
+
+  &__item-disabled
+    color: #aaa
+    background: #f8f8f8
+    cursor: default
+    pointer-events: none
+    +hover, a
+      color: #aaa
+      background: #f8f8f8
+      cursor: default
+      pointer-events: none

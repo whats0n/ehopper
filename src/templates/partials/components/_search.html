@@ -1,0 +1,16 @@
+{% import '../_mixins.html' as mixins %}
+
+<!-- begin search -->
+<div class="search" data-modal="search">
+	<form action="/">
+		<div class="search__field" data-modal="container">
+			<input type="text" class="search__input" placeholder="Quick Search">
+			<div class="search__controls">
+				<button class="btn-icon search__button"><i class="icon icon-search"></i></button>
+				{# <button class="btn-icon search__button" data-modal-close="search" type="button"><i class="icon icon-close"></i></button> #}
+			</div>
+		</div>
+	</form>
+	{# {{mixins.overlay({ classList: 'search__overlay' })}} #}
+</div>
+<!-- end search -->

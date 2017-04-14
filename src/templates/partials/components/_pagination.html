@@ -1,0 +1,16 @@
+{% macro default(props) %}
+<!-- begin pagination-default -->
+<div class="default-pagination {{props.classList}}">
+	{% set active = props.activeItem or 0 %}
+	<ul class="default-pagination__list">
+		{% for item in range(0,props.range) %}
+			{% if loop.index0 === active %}
+				<li class="default-pagination__item"><button class="default-pagination__btn is-active"></button></li>
+			{% else %}
+				<li class="default-pagination__item"><button class="default-pagination__btn"></button></li>
+			{% endif %}
+		{% endfor %}
+	</ul>
+</div>
+<!-- end pagination-default -->
+{% endmacro %}

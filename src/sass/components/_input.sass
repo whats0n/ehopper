@@ -1,0 +1,104 @@
+.input,
+.textarea
+  display: inline-block
+  vertical-align: top
+  border: none
+
+  color: #333
+  +reg
+  font-size: 16px
+  line-height: 50px
+  &::placeholder
+    opacity: 1
+
+  //mods
+  &_xs
+    font-size: 14px
+  &_sm
+    font-size: 14px
+  &_lg
+    font-size: 20px
+  &_xl
+    font-size: 30px
+  &_block
+    display: block
+    width: 100%
+
+  //colors
+  &_default,
+  &_silver
+    background: $lightGray
+  &_white
+    background: $white
+  &_transparent
+    background: none
+  &_highlight
+    &:focus
+      outline: solid #2e99db 2px
+      outline-offset: 0
+
+.input
+  height: 50px
+  &_xl
+    height: 80px
+    line-height: 80px
+  &_xs
+    height: 30px
+    line-height: 30px
+  &_sm
+    height: 40px
+    line-height: 40px
+  &_lg
+    height: 60px
+    line-height: 60px
+
+.textarea
+  padding: 15px 20px
+  height: 200px
+  max-height: 300px
+  resize: vertical
+  line-height: normal
+
+//delete --
+.input-xs
+  height: 30px
+  font-size: 14px
+  line-height: 30px
+
+.input-sm
+  height: 40px
+  font-size: 14px
+  line-height: 40px
+
+.input-lg
+  height: 60px
+  font-size: 20px
+  line-height: 60px
+
+.input-xl
+  height: 80px
+  font-size: 30px
+  line-height: 80px
+
+.input-text
+  display: inline-block
+
+.input-default
+  background: #eeeeee
+
+.input-white
+  background: #fff
+
+.input-silver
+  background: #eeeeee
+
+.input-transparent
+  background: transparent
+
+.input-focus-highlight
+  &:focus
+    outline: solid #2e99db 2px
+    outline-offset: 0
+
+textarea.input
+  line-height: normal

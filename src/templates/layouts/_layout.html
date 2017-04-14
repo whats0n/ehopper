@@ -1,0 +1,52 @@
+{% import "partials/_mixins.html" as mixins %}
+{% import "partials/components/_horizontal-menu.html" as horizontalMenu %}
+{% import "partials/components/_header.html" as header %}
+{% import "partials/components/_keyboard.html" as keyboard %}
+{% import "partials/components/_modal.html" as modal %}
+{% import "partials/components/_dropdown.html" as dropdown %}
+{% import "partials/components/_items.html" as items %}
+{% import "partials/components/_pagination.html" as pagination %}
+{% import "partials/components/_tabs.html" as tabs %}
+{% import "partials/components/_card.html" as card %}
+{% import "partials/components/_menu.html" as menu %}
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>{% if title %}{{ title | safe }}{% else %}Template{% endif %}</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="theme-color" content="#fff">
+    <meta name="format-detection" content="telephone=no">
+    {% for styleLink in styles %}
+      <link rel="stylesheet" media="all" href="static/css/{{styleLink}}.css">
+    {% endfor %}
+    <link rel="icon" href="https://ehopper.com/wp-content/uploads/2016/03/favicon-01.png" type="image/png">
+    {# {% include "../partials/_media-tags.html" %} #}
+
+    <!-- BEGIN scripts -->
+    {% for script in scripts %}
+      <script type="text/javascript" src="static/js/{{script}}.js"></script>
+    {% endfor %}
+    <!-- END scripts -->
+
+  </head>
+  <body class="{{bodyClasses}}">
+    
+    <!-- begin application -->
+    <div class="application" id="application">
+      <!-- BEGIN content -->
+      {% block content %}{% endblock %}
+      <!-- END content -->
+    </div>
+    <!-- end application -->
+
+    {% block navigation %}{% endblock %}
+    
+    <!-- BEGIN scripts -->
+    <script type="text/javascript" src="static/js/app.js"></script>
+    <!-- END scripts -->
+    {{mixins.snackbar()}}
+
+  </body>
+</html>

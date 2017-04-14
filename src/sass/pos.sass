@@ -1,0 +1,83 @@
+@import helpers/all
+@import generated/sprite-svg
+@import lib/slick
+@import common
+@import utilities
+@import grid
+@import icomoon
+@import typography
+@import layouts
+@import components/build
+@import items/build
+@import pages/build
+@import header
+
+article
+  &.pos
+    main
+      width: 40%
+      &.disabled
+        .header__icons, .toolbar-payments, .hmenu
+          display: none
+      &.refund-mode
+        .toolbar-payments__secondary
+          display: none
+        .toolbar-payments__primary
+          width: 100%
+          .btn
+            background: #FF6431
+            padding-left: 20px
+        .order__item-active
+          background: #ffe5dc
+    aside
+      width: 60%
+    .toolbar-payments__secondary
+      width: 40%
+      .btn
+        white-space: normal
+        text-align: left
+        padding-left: 20px
+      .icon
+        float: right
+        margin: 10px -10px
+    .toolbar-payments__primary
+      width: 60%
+      .btn
+        white-space: normal
+        text-align: left
+        padding-right: 20px
+    .toolbar-payments__primary-amount
+      float: right
+      font-size: 25px
+    .toolbar-payments .toolbar__item
+      border-color: #89cb8c
+  &.pos-payments .methods
+    padding: 50px
+
++xs
+  article.pos
+    main
+      width: 100%
+      position: relative
+      height: auto
+      .hmenu, .toolbar-payments, .order, .order__items
+        position: static
+    aside
+      width: 100%
+      position: relative
+      height: auto
+
+.split-payment .btn-split-action
+  min-width: 90px
+
+.card-payment-method .card__content
+  text-align: center
+  line-height: 80px
+  font-size: 48px
+
+article.settings
+  aside
+    width: 300px
+    background: #434c55
+  main
+    width: calc(100% - 300px)

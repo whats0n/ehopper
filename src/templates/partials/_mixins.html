@@ -1,0 +1,80 @@
+{% macro icon(i) %}
+<svg class="icon icon-{{i}}"><use xlink:href="img/sprite.svg#icon-{{i}}"></use></svg>
+{% endmacro %}
+
+{% macro button(props) %}
+	{% set tag = props.tagName or 'button' %}
+	<{{tag}} class="{{props.classList}}" {{props.attrs | safe}}>{{props.content | safe}}</{{tag}}>
+{% endmacro %}
+
+{% macro checkbox(props) %}
+<label class="checkbox {{props.classList}}">
+	<input type="checkbox">
+	<i class="icon icon-check"></i><span>{{props.content | safe}}</span>
+</label>
+{% endmacro %}
+
+{% macro overlay(props) %}
+{% set overlayColor = props.color or 'dark-gray' %}
+<!-- begin overlay -->
+<button type="button" class="overlay {{props.classList}}" data-color="{{overlayColor}}" data-overlay="overlay" {{props.attrs | safe}}></button>
+<!-- end overlay -->
+{% endmacro %}
+
+{% macro field(props) %}
+<div class="field {{props.classList}}">
+	<div class="field__inner field__display">
+
+		{% if props.label %}
+			<label class="field__label" for="{{props.id}}">{{props.label}}</label>
+		{% endif %}
+		{% if props.switch %}
+			<div class="field__switch">
+				<label class="field__switch-left" for="{{props.switch.id}}">{{props.switch.left}}</label>
+				<label class="field__switch-box switcher">
+					<input type="checkbox" id="{{props.switch.id}}">
+					<i class="switcher__icon"></i>
+				</label>
+				<label class="field__switch-right" for="{{props.switch.id}}">{{props.switch.right}}</label>
+			</div>
+		{% endif %}
+		{% if props.static !== true %}
+			<div class="field__box">
+				<input class="input field__input {{props.inputClassList}}" 
+					value="{{props.value}}" 
+					id="{{props.id}}" 
+					{% if props.placeholder %}placeholder="{{props.placeholder}}"{% endif %}
+					{{props.attrs | safe}}>
+			</div>
+			{% if props.units %}
+				<label class="field__units" for="{{props.id}}"><span>{{props.units}}</span></label>
+			{% endif %}
+		{% endif %}
+		{% if props.static %}
+			<div class="field__box">
+				{% if props.units %}
+					<label class="field__units" for="{{props.id}}"><span>{{props.units}}</span></label>
+				{% endif %}
+				<span class="field__static">{{props.value}}</span>
+			</div>
+		{% endif %}
+
+	</div>
+</div>
+{% endmacro %}
+
+{% macro textarea(props) %}
+<div class="field {{props.classList}}">
+	<div class="field__inner">
+		<textarea class="textarea textarea_block" placeholder="{{props.placeholder}}"></textarea>
+	</div>
+</div>
+{% endmacro %}
+
+{% macro snackbar(props) %}
+<!-- begin snackbar -->
+<div class="snackbar" data-snackbar-container="snackbar" data-state="default">
+	<div class="snackbar__message" data-snackbar-content="snackbar"></div>
+</div>
+<!-- end snackbar -->
+{% endmacro %}

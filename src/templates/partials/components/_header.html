@@ -1,0 +1,110 @@
+{% import "partials/components/_dropdown.html" as dropdown %}
+
+{% macro simple(props) %}
+<!-- begin header -->
+<header class="header {{props.headerClassList}}">
+	{% if props.back %}
+		<div class="header__back">
+			<a class="btn-icon btn-icon_square icon icon-back header__back-icon" href="#" {{props.backAttrs | safe}}></a>
+			<div class="header__title">Cancel</div>
+		</div>
+	{% endif %}
+
+	{% if props.help %}
+		<button class="btn-icon header__help" title="Help" data-modal-open="help">
+			<i class="icon icon-help"></i>
+		</button>
+	{% endif %}
+
+	{% if props.menu %}
+		<button class="btn-icon btn-icon_square icon icon-menu header__menu" title="Menu" data-menu-open="menu"></button>
+	{% endif %}
+
+	{% if props.title %}
+		<h2 class="title-xlg header__title {{props.titleClassList}}">{{props.title}}</h2>
+	{% endif %}
+
+	{% if props.delete %}
+		<button class="header__delete btn-icon icon icon-delete" 
+			type="button" 
+			title="Delete" 
+			data-order-delete="order" 
+			data-snackbar-open="snackbar" 
+			data-snackbar-message="All items removed from your shopping cart"
+			data-snackbar-state="default"></button>
+		<!-- data-order-delete = remove all items from orderlist -->
+		<!-- data-snackbar-open = open snackbar -->
+		<!-- data-snackbar-message = html that will be displayed in the snackbar-content -->
+		<!-- data-snackbar-state = state of the snackbar (can be 'default', 'success', 'error') -->
+	{% endif %}
+
+	{% if props.search %}
+		<div class="header__searchbox">
+			{% include './_search.html' %}
+		</div>
+	{% endif %}
+
+	{% if props.toolbar %}
+		<div class="header__toolbar">
+			<div class="toolbar">
+				<div class="toolbar__container">
+					<div class="toolbar__row">
+						<div class="toolbar__col">
+							{{dropdown.simple({
+								dropdownClassList: 'dropdown_header',
+								value: 'Quick Sale',
+								list: [ { text: 'Quick Sale', value: 'Quick Sale' }, { text: 'Dine In', value: 'Dine In' }, { text: 'Take Out', value: 'Take Out' }, { text: 'Drive Thru', value: 'Drive Thru' }, { text: 'Delivery', value: 'Delivery' } ],
+								listOnly: true,
+								activeItem: 0,
+								name: 'order-type'
+							})}}
+						</div>
+						<div class="toolbar__col">
+							{{dropdown.simple({
+								dropdownClassList: 'dropdown_header',
+								value: 'Walk In',
+								list: [ 
+									{ text: 'Walk In <i class="icon icon-walkin"></i>', value: 'Recent Customer' }, 
+									{ text: 'Customer <i class="icon icon-next"></i>', value: 'Customer' }, 
+									{ text: 'Recent Customer <i class="icon icon-next"></i>', value: 'Recent Customer' }, 
+									{ text: 'Another Customer <i class="icon icon-next"></i>', value: 'Another Customer' }
+								],
+								search: true,
+								btnAdd: 'New Customer',
+								activeItem: 0,
+								name: 'customer'
+							})}}
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	{% endif %}
+
+	{% if props.sync %}
+		<div class="header__sync">
+			<div class="header__indicator" data-state="active"></div>
+			<button class="btn-icon icon icon-sync"></button>
+		</div>
+	{% endif %}
+</header>
+<!-- end header -->
+{% endmacro %}
+
+{% macro large(props) %}
+<!-- begin header -->
+<header class="header header_large">
+	{% if props.help %}
+		<button class="btn-icon header__help" title="Help" data-modal-open="help">
+			<i class="icon icon-help"></i>
+		</button>
+	{% endif %}
+
+	{% if props.logo %}
+		<div class="header__logo">
+			<img src="static/img/logo-white.svg" alt="eHopper">
+		</div>
+	{% endif %}
+</header>
+<!-- end header -->
+{% endmacro %}

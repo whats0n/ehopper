@@ -1,0 +1,42 @@
+{% import "partials/components/_card.html" as card %}
+<div class="sm-grid tabs__info">
+	{% set sections = [
+		{
+			text: "Select serial number of product you're selling:",
+			itemType: 'serial',
+			items: [
+				{
+					title: '79049XXXA4S'
+				},
+				{
+					title: '30384XXX991'
+				},
+				{
+					title: 'ULTRALONG-003233XX991-003233XX991'
+				},
+				{
+					title: 'TST0012345'
+				}
+			]
+		}
+	] %}
+	<div class="sm-grid__body">
+		{% for section in sections %}
+			{% if section.text %}
+				<div class="sm-grid__row">
+					<p>{{section.text}}</p>
+				</div>
+			{% endif %}
+			<div class="sm-grid__row">
+				{% for item in section.items %}
+					<div class="sm-grid__col sm-grid__col_sm">
+						{{card[section.itemType](item)}}
+					</div>
+				{% endfor %}
+			</div>
+		{% endfor %}
+	</div>
+	<div class="sm-grid__footer">
+		<button class="btn btn_lg btn_primary btn_block sm-grid__btn" data-animation="ripple">Done</button>
+	</div>
+</div>

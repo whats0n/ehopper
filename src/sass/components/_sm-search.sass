@@ -1,0 +1,33 @@
+.sm-search
+	position: relative
+	padding-right: 50px
+	min-width: 210px
+	&__input
+		padding: 0 20px
+		width: 100%
+		height: 50px
+		color: $darkGray
+		background: $alabaster
+		box-shadow: inset 0 6px 4px -5px rgba($black, 0.2)
+		+rreg
+		font-size: 16px
+		line-height: normal
+		+lg
+			font-size: 14px
+		+md
+			font-size: 13px
+	&__btn
+		position: absolute
+		top: 0
+		right: 0
+		bottom: 0
+		width: 50px
+		background: $blue
+		line-height: 50px
+		transition: background 0.175s ease, box-shadow 0.175s ease
+		+active
+			background: $blueActive
+			box-shadow: inset 2px 2px 6px rgba($black, 0.2)
+		.icon
+			vertical-align: middle
+			color: $white

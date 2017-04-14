@@ -1,0 +1,26 @@
+.sm-box
+	position: relative
+	padding: 10px
+	border-radius: 2px
+	color: $darkGray
+	background: $lightGray
+	box-shadow: 0 0px 1px rgba($black, 0.2), 0 2px 4px rgba($black, 0.1)
+	text-align: left
+	cursor: pointer
+	+nosel
+	transition: box-shadow 0.17s ease-in-out, background 0.17s ease-in-out, color 0.17s ease-in-out
+	+hover
+		box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3)
+	+active
+		box-shadow: none
+	&.is-active
+		color: $white
+		background: $blue !important
+	&__title,
+	&__description
+		+text-overflow
+	&__title
+		font-size: 20px
+	&__description
+		opacity: 0.5
+		font-size: 13px

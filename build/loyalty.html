@@ -1,0 +1,111 @@
+<!doctype html>
+<html>
+
+  <head>
+    <meta charset="utf-8">
+    <title>Loyalty &bull; eHopper POS</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="theme-color" content="#fff">
+    <meta name="format-detection" content="telephone=no">
+    <link rel="stylesheet" media="all" href="static/css/pos.css">
+    <link rel="icon" href="https://ehopper.com/wp-content/uploads/2016/03/favicon-01.png" type="image/png">
+    <!-- BEGIN scripts -->
+    <script type="text/javascript" src="static/js/demo.js"></script>
+    <!-- END scripts -->
+  </head>
+
+  <body class="animated">
+    <!-- begin application -->
+    <div class="application" id="application">
+      <!-- BEGIN content -->
+      <main class="main">
+        <!-- begin header -->
+        <header class="header ">
+          <div class="header__back">
+            <a class="btn-icon btn-icon_square icon icon-back header__back-icon" href="#"></a>
+            <div class="header__title">Cancel</div>
+          </div> <button class="btn-icon header__help" title="Help" data-modal-open="help">
+			<i class="icon icon-help"></i>
+		</button>
+          <h2 class="title-xlg header__title header__title_vertical text-center text-uppercase">Loyalty program</h2>
+        </header>
+        <!-- end header -->
+        <div class="section section_inner">
+          <div class="form-wrapper">
+            <form class="form form_sm" method="get" action="pos.html">
+              <div class="fieldset fieldset_lg fieldset_bordered fieldset_keyboard">
+                <div class="field ">
+                  <div class="field__inner field__display"> <label class="field__label" for="item-quantity">Mobile Phone</label>
+                    <div class="field__box"> <input class="input field__input text-right input_xl" value="000-000-0000" id="item-quantity" placeholder="000-000-0000" required readonly> </div>
+                  </div>
+                </div>
+                <div class="fieldset__divider"></div>
+                <!-- begin keyboard -->
+                <div class="keyboard ">
+                  <div class="keyboard__container keyboard__lg">
+                    <div class="keyboard__main">
+                      <div class="keyboard__item"> <button type="button" data-animation="ripple" class="keyboard__button">1</button> </div>
+                      <div class="keyboard__item"> <button type="button" data-animation="ripple" class="keyboard__button">2</button> </div>
+                      <div class="keyboard__item"> <button type="button" data-animation="ripple" class="keyboard__button">3</button> </div>
+                      <div class="keyboard__item"> <button type="button" data-animation="ripple" class="keyboard__button">4</button> </div>
+                      <div class="keyboard__item"> <button type="button" data-animation="ripple" class="keyboard__button">5</button> </div>
+                      <div class="keyboard__item"> <button type="button" data-animation="ripple" class="keyboard__button">6</button> </div>
+                      <div class="keyboard__item"> <button type="button" data-animation="ripple" class="keyboard__button">7</button> </div>
+                      <div class="keyboard__item"> <button type="button" data-animation="ripple" class="keyboard__button">8</button> </div>
+                      <div class="keyboard__item"> <button type="button" data-animation="ripple" class="keyboard__button">9</button> </div>
+                      <div class="keyboard__item"> <button type="button" data-animation="ripple" class="keyboard__button"><i class="icon icon-text icon-clear"></i></button> </div>
+                      <div class="keyboard__item"> <button type="button" data-animation="ripple" class="keyboard__button">0</button> </div>
+                      <div class="keyboard__item"> <button type="button" data-animation="ripple" class="keyboard__button">&ndash;</button> </div>
+                    </div>
+                    <div class="keyboard__aside">
+                      <div class="keyboard__col"> <button type="button" data-animation="ripple" class="keyboard__button "><i class="icon icon-text icon-backspace"></i></button> </div>
+                      <div class="keyboard__col" data-colspan="3"> <button type="submit" data-animation="ripple" class="keyboard__button keyboard__submit">OK</button> </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- end keyboard -->
+              </div>
+              <p class="fieldset fieldset_standalone"> <label class="checkbox checkbox_green">
+	<input type="checkbox">
+	<i class="icon icon-check"></i><span>I agree with</span>
+</label> <a href="terms.html" onclick="return demoDialogOpen('terms')">Terms and Conditions</a> </p>
+            </form>
+          </div>
+        </div>
+      </main>
+      <div class="snackbar hide">
+        <div class="snackbar__actions"><button class="btn btn-link text-uppercase"></button></div>
+        <div class="snackbar__message"></div>
+      </div>
+      <!-- Dialog: Help Panel -->
+      <link rel="import" href="inc/help.html" onload="demoTemplate(this)">
+      <div class="dialog" id="terms">
+        <div class="dialog__content">
+          <header class="header">
+            <div class="header__icons"><i class="btn icon icon-close dialog__close"></i></div>
+            <h1>Terms and Conditions</h1>
+          </header>
+          <section>
+            <p>Terms and Conditions text should be placed here.</p> <button class="btn btn-default dialog__close">Close</button> </section>
+        </div>
+      </div>
+      <div class="dialog__mask"></div>
+      <script>
+        emitMessage('Marketing & Loyalty key is not configured!');
+
+      </script>
+      <!-- END content -->
+    </div>
+    <!-- end application -->
+    <!-- BEGIN scripts -->
+    <script type="text/javascript" src="static/js/app.js"></script>
+    <!-- END scripts -->
+    <!-- begin snackbar -->
+    <div class="snackbar" data-snackbar-container="snackbar" data-state="default">
+      <div class="snackbar__message" data-snackbar-content="snackbar"></div>
+    </div>
+    <!-- end snackbar -->
+  </body>
+
+</html>

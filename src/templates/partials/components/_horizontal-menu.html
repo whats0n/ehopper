@@ -1,0 +1,23 @@
+{% import '../_mixins.html' as mixins %}
+{% import '../components/_dropdown.html' as dropdown %}
+
+{% macro call(props) %}
+<!-- begin horizontal-menu -->
+<div class="horizontal-menu">
+	<div class="horizontal-menu__container">
+		<ul class="horizontal-menu__list">
+			{% for item in props.items %}
+				<li class="horizontal-menu__item">
+					{% if item.dropdown %}
+						<a class="horizontal-menu__link {{item.linkClassList}}" data-animation="ripple" href="{{item.href}}" {{item.attrs | safe}} data-dropdown-open="{{item.dropdown.name}}">{{item.text | safe}}</a>
+						{{dropdown.menu(item.dropdown)}}
+					{% else %}
+						<a class="horizontal-menu__link {{item.linkClassList}}" data-animation="ripple" href="{{item.href}}" {{item.attrs | safe}}>{{item.text | safe}}</a>
+					{% endif %}
+				</li>
+			{% endfor %}
+		</ul>
+	</div>
+</div>
+<!-- end horizontal-menu -->
+{% endmacro %}

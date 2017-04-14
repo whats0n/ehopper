@@ -1,0 +1,53 @@
+---
+title: 'Activate your POS &bull; eHopper'
+styles: 
+	- 'pos'
+bodyClasses: 'body-darkgray page-activate'
+---
+{% extends "layouts/_layout.html" %}
+
+{% block content %}
+	
+	<main class="main">
+		{{header.large({
+			help: true,
+			logo: true
+		})}}
+		<section class="section section_inner">
+			<div class="box">
+				<div class="intro muted">To activate this device as a POS terminal please enter your eHopper enterprise ID and license key:</div>
+				<form method="get" action="pin.html">
+					<div class="fieldset fieldset_first">
+						{{mixins.field({
+							label: 'Enterprise ID:',
+							value: '12300',
+							placeholder: 'required',
+							attrs: 'required',
+							type: 'number',
+							id: 'account_id',
+							inputClassList: 'input_lg'
+						})}}
+					</div>
+					<div class="fieldset">
+						{{mixins.field({
+							label: 'License Key:',
+							placeholder: 'required',
+							attrs: 'required autofocus',
+							id: 'license_key',
+							inputClassList: 'input_lg'
+						})}}
+					</div>
+					{{mixins.button({
+						classList: 'btn btn_lg btn_primary btn_block fieldset fieldset_last',
+						attrs: 'data-animation="ripple"',
+						content: 'Activate<i class="icon icon-next"></i>'
+					})}}
+				</form>
+				<div class="footnote box__footnote">Not yet registered? <a href="signup.html" class="shy">Create New Account</a></div>
+			</div>
+		</section>
+	</main>
+
+	{{modal.help()}}
+
+{% endblock %}

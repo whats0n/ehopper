@@ -1,0 +1,69 @@
+{% import "partials/components/_card.html" as card %}
+<div class="sm-grid tabs__info">
+	{% set sections = [
+		{
+			itemType: 'simple',
+			steps: true,
+			items: [
+				{
+					title: 'Product Model',
+					description: 'Long Sleeves'
+				},
+				{
+					title: 'Size',
+					description: '(select)'
+				},
+				{
+					title: 'Color',
+					attrs: 'disabled'
+				}
+			]
+		},
+		{
+			title: 'Size',
+			itemType: 'checkbox',
+			items: [
+				{
+					title: 'XS (Extra Small)'
+				},
+				{
+					title: 'S (Small)'
+				},
+				{
+					title: 'M (Medium)',
+					attrs: 'checked'
+				},
+				{
+					title: 'L (Large)'
+				},
+				{
+					sticker: '$23.00',
+					title: 'XL (Extra Large)'
+				}
+			]
+		}
+	] %}
+	<div class="sm-grid__body">
+		{% for section in sections %}
+			{% if section.title %}
+				<div class="sm-grid__row">
+					<h2 class="title-lg sm-grid__col sm-grid__title">{{section.title}}</h2>
+				</div>
+			{% endif %}
+			<div class="sm-grid__row {% if section.steps %}sm-grid__row_steps{% endif %}">
+				{% for item in section.items %}
+					<div class="sm-grid__col sm-grid__col_xs">
+						{% if section.steps %}
+							<i class="icon icon-next sm-grid__icon"></i>
+						{% endif %}
+						{{card[section.itemType](item)}}
+					</div>
+				{% endfor %}
+			</div>
+		{% endfor %}
+		
+	</div>
+	<div class="sm-grid__footer">
+		<button class="btn btn_lg btn_primary btn_block sm-grid__btn" data-animation="ripple">Done</button>
+	</div>
+</div>

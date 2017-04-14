@@ -1,0 +1,124 @@
+.tabs
+  position: relative
+  padding-top: 60px
+  height: 100%
+  color: $darkGray
+  background: $alabaster
+  &_lg
+    .tabs__btn
+      font-size: 16px
+  &__controls
+    position: absolute
+    top: 0
+    left: 0
+    right: 0
+    display: table
+    table-layout: fixed
+    width: 100%
+  &__list
+    display: table-row
+  &__item
+    display: table-cell
+    vertical-align: top
+    &:not(:last-child)
+      border-right: 2px solid rgba($black, 0.1)
+  &__btn
+    display: block
+    padding: 20px 10px
+    color: inherit
+    background: $lightGray
+    font-size: 14px
+    line-height: 20px
+    text-align: center
+    text-decoration: none
+    &.is-active
+      background: $alabaster
+  &__container
+    height: 100%
+    background: $alabaster
+  &__content
+    display: none
+    overflow: auto
+    padding: 20px
+    height: 100%
+    &.is-open
+      display: block
+  &__keyboard
+    padding-top: 20px
+    margin: 0 auto
+    max-width: 460px
+  &__info
+    height: 100%
+  &__notes
+    padding-top: 20px
+    margin: 0 auto
+    max-width: 460px
+    .fieldset
+      margin-bottom: 20px
+
+//delete
+
+// .tabs
+//   display: block
+//   border-top: 2px solid rgba(0, 0, 0, 0.1) 
+//   width: 100%
+//   background: #eeeeee
+
+//   &__item
+//     float: left
+//     overflow: hidden
+//     padding: 5px 10px
+//     border-right: 2px solid rgba(0, 0, 0, 0.1) 
+//     height: 50px
+
+//     font-size: 14px
+//     text-overflow: ellipsis
+//     white-space: nowrap
+
+//     cursor: pointer
+//     +nosel
+
+//     +active
+//       border-top: 2px solid white 
+
+//   &__item-right
+//     float: right
+//     border-left: solid rgba(0, 0, 0, 0.1) 2px
+//     border-right-width: 0
+
+//   &__item-active
+//     background: #f8f8f8
+
+//   &__item-link
+//     color: inherit
+
+// .tabs-lg
+//   .tabs
+//     &__item
+//       height: 60px
+//       font-size: 16px
+//     &__item-value
+//       font-size: 24px
+
+// .tabs-flex
+//   display: table
+//   table-layout: fixed
+//   .tabs
+//     &__item
+//       display: table-cell
+//       vertical-align: middle
+//       float: none
+//       &:last-child
+//         border-right-width: 0
+//     &__item-right
+//       float: none
+//       border-width: 0 2px 0 0
+
+// .tabbed
+//   +clr
+
+//   &__panel
+//     display: none
+
+//   &__panel-active
+//     display: block

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset=utf-8>
+    <title>Terminal &bull; eHopper POS</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1"> -->
+    <meta http-equiv=X-UA-Compatible content="IE=edge,chrome=1">
+    <link rel="stylesheet" type="text/css" href="static/css/pos.css">
+    <script src="static/js/demo.js"></script>
+    <link rel="icon" href="https://ehopper.com/wp-content/uploads/2016/03/favicon-01.png" type="image/png"> </head>
+
+  <body class="animated">
+    <article>
+      <header>
+        <div class="pull-left">
+          <a class="btn icon icon-back" href="pos.html"></a>
+          <h1>Cancel</h1>
+        </div>
+        <div class="header__icons"><button class="btn icon icon-help" title="Help" onclick="demoDialogOpen('help')"></button></div>
+        <h1 class="text-center">Terminal</h1>
+      </header>
+      <section>
+        <form class="form-narrow" method="get" action="payment-receipt.html">
+          <!-- MD Cards with Payment Methods -->
+          <div class="layout layout-fixed fieldset-standalone">
+            <div class="layout__column"> <a class="btn btn-lg btn-block btn-primary btn-rounded" href="terminal-cash.html"><i class="icon icon-cash"></i>Cash</a> </div>
+            <div class="layout__column-gap"></div>
+            <div class="layout__column"> <a class="btn btn-lg btn-block btn-default btn-rounded" href="terminal-card.html"><i class="icon icon-cc"></i>Credit Card</a> </div>
+          </div>
+          <div class="fieldset fieldset-lg fieldset-bordered fieldset-standalone" id="demoAmount"> <label class="fieldset__label" for="amount">Amount Due:</label> <input class="input input-lg fieldset__input text-right" id="amount" value="212.00" required="required" placeholder="0.00" onfocus="toggleClass(demoAmount,'fieldset-focus',true);toggleClass(demoTendered,'fieldset-focus',false);">            </div>
+          <div class="fieldset fieldset-lg fieldset-bordered fieldset-standalone" id="demoTendered"> <label class="fieldset__label" for="tendered">Amount Tendered:</label> <input class="input input-lg fieldset__input text-right" id="tendered" required="required" placeholder="0.00" onfocus="toggleClass(demoAmount,'fieldset-focus',false);toggleClass(demoTendered,'fieldset-focus',true);">            </div>
+          <div class="fieldset-bordered">
+            <div class="keyboard keyboard-4">
+              <div class="keyboard__row"> <span class="btn btn-xl btn-white btn-ripple keyboard__key">1</span> <span class="btn btn-xl btn-white btn-ripple keyboard__key">2</span> <span class="btn btn-xl btn-white btn-ripple keyboard__key">3</span> <span class="btn btn-xl btn-white btn-ripple keyboard__key icon-text icon-backspace"></span>                </div>
+              <div class="keyboard__row"> <span class="btn btn-xl btn-white btn-ripple keyboard__key">4</span> <span class="btn btn-xl btn-white btn-ripple keyboard__key">5</span> <span class="btn btn-xl btn-white btn-ripple keyboard__key">6</span> <span class="btn btn-xl btn-white btn-ripple keyboard__key icon-text icon-undo"></span>                </div>
+              <div class="keyboard__row keyboard__row-last"> <span class="btn btn-xl btn-white btn-ripple keyboard__key">7</span> <span class="btn btn-xl btn-white btn-ripple keyboard__key">8</span> <button class="btn btn-xl btn-primary btn-ripple keyboard__key keyboard__key-colspan-2 keyboard__key-last pull-right"
+                  type="submit">Pay</button> <span class="btn btn-xl btn-white btn-ripple keyboard__key">9</span> </div>
+              <div class="keyboard__row keyboard__row-last"> <span class="btn btn-xl btn-white btn-ripple keyboard__key keyboard__key-first">0</span> <span class="btn btn-xl btn-white btn-ripple keyboard__key">00</span> <span class="btn btn-xl btn-white btn-ripple keyboard__key icon-text icon-clear"></span>                </div>
+            </div>
+          </div>
+        </form>
+      </section>
+    </article>
+    <!-- Dialog: Help Panel -->
+    <link rel="import" href="inc/help.html" onload="demoTemplate(this)"> </body>
+
+</html>

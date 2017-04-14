@@ -1,0 +1,77 @@
+---
+title: 'Loyalty &bull; eHopper POS'
+styles: 
+	- 'pos'
+scripts:
+	- 'demo'
+bodyClasses: 'animated'
+---
+{% extends "layouts/_layout.html" %}
+
+{% block content %}
+	<main class="main">
+		{{header.simple({
+			cancel: 'pos.html',
+			title: 'Loyalty program',
+			titleClassList: 'header__title_vertical text-center text-uppercase',
+			help: true,
+			back: true
+		})}}
+
+		<div class="section section_inner">
+			<div class="form-wrapper">
+				<form class="form form_sm" method="get" action="pos.html">
+					{{keyboard.display({
+						field: {
+							label: 'Mobile Phone',
+							id: 'item-quantity',
+							value: '000-000-0000',
+							placeholder: '000-000-0000',
+							attrs: 'required readonly',
+							inputClassList: 'text-right input_xl'
+						},
+						keyboard: {
+							size: 'keyboard__lg'
+						}
+					})}}
+					<p class="fieldset fieldset_standalone">
+						{{mixins.checkbox({
+							classList: 'checkbox_green',
+							attrs: 'required',
+							content: 'I agree with'
+						})}}
+						<a href="terms.html" onclick="return demoDialogOpen('terms')">Terms and Conditions</a>
+					</p>
+				</form>
+			</div>
+		</div>
+	</main>
+
+
+	<div class="snackbar hide">
+		<div class="snackbar__actions"><button class="btn btn-link text-uppercase"></button></div>
+		<div class="snackbar__message"></div>
+	</div>
+
+
+	<!-- Dialog: Help Panel -->
+	<link rel="import" href="inc/help.html" onload="demoTemplate(this)">
+
+	<div class="dialog" id="terms">
+		<div class="dialog__content">
+			<header class="header">
+			<div class="header__icons"><i class="btn icon icon-close dialog__close"></i></div>
+				<h1>Terms and Conditions</h1>
+			</header>
+			<section>
+				<p>Terms and Conditions text should be placed here.</p>
+				<button class="btn btn-default dialog__close">Close</button>
+			</section>
+		</div>
+	</div>
+	<div class="dialog__mask"></div>
+
+	<script>
+		emitMessage('Marketing & Loyalty key is not configured!');
+	</script>
+{% endblock %}	

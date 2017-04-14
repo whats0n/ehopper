@@ -1,0 +1,43 @@
+[data-slider-pagination]
+	padding: 0 50px
+	min-height: 40px
+	text-align: center
+	[data-slider-arrow]
+		position: absolute
+		top: 0
+		border-radius: 3px
+		background: $lightGray
+		box-shadow: 0px 1px 2px rgba($black, 0.2)
+		transition: color 0.05s ease-in-out, box-shadow 0.17s ease-in-out, background 0.05s ease-in-out
+		+hover
+			box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2)
+		+active
+			color: $white
+			background: $blue
+			box-shadow: inset 1px 1px 2px rgba($black, 0.3)
+	[data-slider-arrow="prev"]
+		left: 0
+	[data-slider-arrow="next"]
+		right: 0
+	.slick-dots
+		padding: 11px 0
+		font-size: 0
+		li, button
+			display: inline-block
+			vertical-align: top
+		li
+			padding: 3px
+			&.slick-active
+				button
+					background: $blue
+		button
+			border-radius: 50%
+			width: 12px
+			height: 12px
+			background: $lightGray
+			font-size: 0
+			transition: box-shadow 0.17s ease-in-out, background 0.17s ease-in-out
+			+hover
+				box-shadow: 0px 1px 2px rgba($black, 0.2)
+			+active
+				box-shadow: inset 1px 1px 2px rgba($black, 0.3)

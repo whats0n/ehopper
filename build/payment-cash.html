@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset=utf-8>
+    <title>Cash Method &bull; eHopper POS</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1"> -->
+    <meta http-equiv=X-UA-Compatible content="IE=edge,chrome=1">
+    <link rel="stylesheet" type="text/css" href="static/css/pos.css">
+    <script src="static/js/demo.js"></script>
+    <link rel="icon" href="https://ehopper.com/wp-content/uploads/2016/03/favicon-01.png" type="image/png"> </head>
+
+  <body class="animated">
+    <article class="pos pos-payments">
+      <main class="pos-order disabled layout layout-rows">
+        <header>
+          <a class="btn icon icon-back" href="pos.html"></a>
+          <h1>Order</h1>
+        </header>
+        <link rel="import" href="inc/order.html" onload="demoTemplate(this)"> </main>
+      <aside class="pos-paymentmethods cutout-left">
+        <header class="cutout-left">
+          <div class="header__icons"><button class="btn icon icon-help" title="Help" onclick="demoDialogOpen('help')"></button></div>
+          <h1>Cash Payment</h1>
+        </header>
+        <section>
+          <form class="form-narrow" method="get" action="payment-receipt.html">
+            <!-- <div class="layout">
+						<p class="layout__column labeled-info">
+							<label>Total Due:</label>
+							<span class="big muted">$<span class="xl">102.00</span></span></p>
+						<p class="layout__column labeled-info text-right">
+							<label>Change Due:</label>
+							<span class="big text-danger">$<span class="xl">98.00</span></span>
+						</p>
+					</div> -->
+            <div class="labeled-info text-right padding2-right fieldset-standalone"> <label>Total Due:</label> <span class="big">$<span class="xl">102.00</span></span>
+            </div>
+            <div class="fieldset fieldset-lg fieldset-bordered fieldset-keyboard active"> <label class="fieldset__label" for="amount">Amount Tendered:</label> <input class="input input-xl fieldset__input text-right" id="amount" value="200.00" placeholder="0.00" required="required">
+              <div class="keyboard keyboard-4">
+                <div class="keyboard__row"> <span class="btn btn-lg btn-secondary btn-ripple keyboard__key">105</span> <span class="btn btn-lg btn-secondary btn-ripple keyboard__key">110</span> <span class="btn btn-lg btn-secondary btn-ripple keyboard__key">150</span> <span class="btn btn-lg btn-secondary btn-ripple keyboard__key keyboard__key-last">Exact</span>                  </div>
+                <div class="keyboard__row"> <span class="btn btn-xl btn-white btn-ripple keyboard__key">1</span> <span class="btn btn-xl btn-white btn-ripple keyboard__key">2</span> <span class="btn btn-xl btn-white btn-ripple keyboard__key">3</span> <span class="btn btn-xl btn-white btn-ripple keyboard__key icon-text icon-backspace"></span>                  </div>
+                <div class="keyboard__row"> <span class="btn btn-xl btn-white btn-ripple keyboard__key">4</span> <span class="btn btn-xl btn-white btn-ripple keyboard__key">5</span> <span class="btn btn-xl btn-white btn-ripple keyboard__key">6</span> <span class="btn btn-xl btn-white btn-ripple keyboard__key icon-text icon-undo"></span>                  </div>
+                <div class="keyboard__row keyboard__row-last"> <span class="btn btn-xl btn-white btn-ripple keyboard__key">7</span> <span class="btn btn-xl btn-white btn-ripple keyboard__key">8</span> <button class="btn btn-xl btn-primary btn-ripple keyboard__key keyboard__key-colspan-2 keyboard__key-last pull-right"
+                    type="submit">OK</button> <span class="btn btn-xl btn-white btn-ripple keyboard__key">9</span> </div>
+                <div class="keyboard__row keyboard__row-last"> <span class="btn btn-xl btn-white btn-ripple keyboard__key keyboard__key-first">0</span> <span class="btn btn-xl btn-white btn-ripple keyboard__key">00</span> <span class="btn btn-xl btn-white btn-ripple keyboard__key icon-text icon-clear"></span>                  </div>
+              </div>
+            </div>
+          </form>
+        </section>
+      </aside>
+    </article>
+    <div class="snackbar hide">
+      <div class="snackbar__actions"><button class="btn btn-link text-uppercase"></button></div>
+      <div class="snackbar__message"></div>
+    </div>
+    <!-- Dialog: Help Panel -->
+    <link rel="import" href="inc/help.html" onload="demoTemplate(this)"> </body>
+
+</html>

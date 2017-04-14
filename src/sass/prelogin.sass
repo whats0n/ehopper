@@ -1,0 +1,140 @@
+@import helpers/all
+@import icomoon
+@import utilities
+@import typography
+@import common
+@import components/build
+
+
+.prelogin
+  background: #eeeeee
+
+
+.header
+  overflow: hidden
+  height: 150px
+  color: $white
+  background: #2e99db
+  &__help
+    position: absolute
+    top: 0
+    right: 0
+    margin: 5px
+    color: $white
+  &__logo
+    line-height: 150px
+    text-align: center
+    img
+      vertical-align: middle
+      max-width: 200px
+  &__company
+    overflow: hidden
+    padding: 0 20px
+    margin: 90px auto 0
+    border: 3px 3px 0 0
+    width: 60%
+    max-width: 450px
+    height: 60px
+
+    background: rgba($white, 0.1)
+    
+    +bold
+    font-size: 20px
+    line-height: 60px
+    text-overflow: ellipsis
+    text-transform: uppercase
+    white-space: nowrap
+  &__title
+    padding: 0 20px
+  &__close
+    font-size: 16px
+
+.footer
+  margin-top: 30px
+  color: $silverGray
+  +bold
+  text-align: center
+
+.intro-block
+  background: #f8f8f8
+  padding: 20px
+
+// .icon-loading
+//   width: 150px
+//   height: 150px
+
+.page-signup
+  .intro
+    margin-top: 4em
+    margin-bottom: 2em
+  .terms
+    margin: 20px 0
+
+.page-sync main
+  background: white
+  text-align: center
+  border-bottom-right-radius: 3px
+  border-bottom-left-radius: 3px
+  padding: 80px 20px
+  box-sizing: border-box
+  .icon-loading
+    margin: 0
+  .footer
+    margin-top: 20px
+    margin-bottom: 20px
+
+.pin
+  background: $white
+  min-height: 80px
+  position: relative
+  margin-bottom: 1px
+
+.pin__display
+  min-height: 80px
+  line-height: 80px
+  text-align: center
+  font-size: 0
+
+.pin__display-item
+  display: inline-block
+  width: 24px
+  height: 24px
+  background: white
+  border: solid #2e99db 2px
+  border-radius: 24px
+  vertical-align: middle
+  margin: 0 10px
+
+.pin__display-item-active
+  background: #2e99db
+
+.pin__error
+  background: #FF6431
+  color: $white
+  position: absolute
+  top: 0
+  left: 0
+  width: 100%
+  height: 100%
+
+.pin__error-icon
+  float: right
+  margin: 20px
+
+.pin__error-text
+  padding: 20px
+  overflow: hidden
+  font-size: 16px
+
+.animated
+  .pin__display-item
+    transition: transform 300ms
+  .pin__display-item-active
+    transform: scaleX(-1)
+
+article.settings
+  aside
+    width: 300px
+    background: #434c55
+  main
+    width: calc(100% - 300px)

@@ -1,0 +1,114 @@
+.card
+  position: relative
+  display: block
+  vertical-align: top
+  overflow: hidden
+  border-radius: 2px
+
+  color: #333
+  background: #eeeeee
+  box-shadow: 0 0px 1px rgba(0, 0, 0, 0.2), 0 2px 4px rgba(0, 0, 0, 0.1)
+
+  text-align: left
+  text-decoration: none
+
+  cursor: default
+  user-select: none
+  &__content
+    padding: 20px 20px
+  &__footer
+    padding: 10px 20px
+    background: #fff
+  &__footer-online
+    overflow: hidden
+    text-overflow: ellipsis
+    white-space: nowrap
+  &__corner
+    position: absolute
+    top: 0
+    right: 0
+    overflow: hidden
+    padding: 5px 5px 5px 10px
+    max-width: 100%
+    background: rgba(255, 255, 255, 0.8)
+    text-overflow: ellipsis
+    white-space: nowrap
+
+.card-interactive
+  +hover
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3)
+  +active
+    box-shadow: none
+    transition-duration: 0ms
+
+.card-selected
+  background: khaki
+
+.categories2, .products2
+  display: block
+  font-size: 0
+  &__item
+    margin: 5px
+    width: calc(25% - 10px)
+    background: #eeeeee
+    white-space: nowrap
+    +nosel
+    cursor: pointer
+
+.product2
+  position: relative
+
+  padding: 0 0 30px
+  height: calc((100% - 30px)/ 3)
+  min-height: 95px
+
+  background-color: #eeeeee
+  background-repeat: no-repeat
+  background-size: cover
+  background-position: center
+  background-origin: content-box
+
+  &-title
+    position: absolute
+    bottom: 0
+    left: 0
+    overflow: hidden
+    padding: 5px 5px 5px 10px
+    width: 100%
+
+    background: #fff
+
+    font-size: 16px
+    line-height: 20px
+    text-overflow: ellipsis
+    white-space: nowrap
+
+  &-code
+    position: absolute
+    top: 50%
+    left: 0
+
+    overflow: hidden
+    margin-top: -25px
+    width: 100%
+
+    font-size: 30px
+    line-height: 100%
+    text-align: center
+    text-overflow: ellipsis
+    white-space: nowrap
+
+  &-price
+    position: absolute
+    top: 0
+    right: 0
+
+    overflow: hidden
+    padding: 2px 5px
+
+    background: rgba(255, 255, 255, 0.7)
+    
+    font-size: 16px
+    text-align: right
+    text-overflow: ellipsis
+    white-space: nowrap

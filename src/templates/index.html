@@ -1,0 +1,85 @@
+---
+title: 'eHopper POS'
+styles: 
+	- 'pos'
+scripts:
+	- 'demo'
+bodyClasses: 'animated'
+---
+{% extends "layouts/_layout.html" %}
+
+{% block content %}
+	<main class="main">
+		{{header.simple({
+			title: 'eHopper 2017 Prototype'
+		})}}
+		<section class="section section_inner">
+			<h2 class="title-xlg">Login Sequence</h2>
+			<div class="wrapper text-center">
+				{{mixins.button({
+					tagName: 'a',
+					classList: 'btn btn_lg btn_default',
+					attrs: 'data-animation="ripple" href="loading.html"',
+					content: '<i class="icon icon-lock"></i>Start Login Sequence'
+				})}}
+			</div>
+
+			{{horizontalMenu.call({
+				items: [
+					{
+						href: 'loading.html',
+						text: 'Loading...'
+					},
+					{
+						href: 'activate.html',
+						text: 'Activation'
+					},
+					{
+						href: 'pin.html',
+						text: 'PIN screen'
+					},
+					{
+						href: 'sync.html',
+						text: 'Sync...'
+					},
+					{
+						href: 'signup.html',
+						text: 'Signup'
+					},
+					{
+						href: 'signup-done.html',
+						text: 'Signup complete'
+					}
+				]
+			})}}
+
+			<hr>
+			<h2 class="title-xlg">POS Screen Demo</h2>
+			<p>Static HTML representation of eHopper POS screens. Some effects can be implemented with JavaScript, but no data integration is planned.</p>
+			<div class="wrapper text-center">
+				{{mixins.button({
+					tagName: 'a',
+					classList: 'btn btn_lg btn_green',
+					attrs: 'data-animation="ripple" href="pos.html"',
+					content: '<i class="icon icon-pos"></i>Launch POS'
+				})}}
+			</div>	
+
+			<hr>
+			<h2 class="title-xlg">GUI Components Showcase</h2>
+			<p>This page contain as many GUI components in all different states as possible.</p>
+			<form method="get" action="ui-kit.html">
+				<div class="wrapper text-center">
+					{{mixins.button({
+						classList: 'btn btn_default',
+						attrs: 'data-animation="ripple"',
+						content: '<i class="icon icon-bo"></i>Show UI Kit'
+					})}}
+				</div>	
+			</form>
+
+			<hr>
+			<link rel="import" href="inc/uc.html" onload="demoTemplate(this)">
+		</section>
+	</main>
+{% endblock %}

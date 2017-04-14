@@ -1,0 +1,54 @@
+.table
+  margin-bottom: 20px
+  border-collapse: collapse
+  border-spacing: 0
+  width: 100%
+  max-width: 100%
+  thead 
+    th
+      vertical-align: bottom
+      padding: 10px
+      border-bottom: 1px solid #aaa 
+      background: #eeeeee
+      text-align: left
+  tbody
+    td
+      padding: 10px
+      border-top: 1px solid #eeeeee 
+    tr
+      &:first-child
+        td, th
+          border-top: none
+
+  &__cell-first
+    padding-left: 20px !important
+
+  &__cell-last
+    padding-right: 20px !important
+
+  &__cell-minimize
+    width: 1%
+
+.table-lg
+  font-size: 16px
+  tbody 
+    td
+      padding: 20px 10px
+
+.table-striped 
+  tbody 
+    tr
+      &:nth-child(even)
+        td, th
+          background: #fff
+
+.table-hover 
+  tbody 
+    tr
+      +hover 
+        td
+          background: #ecf7fd
+          cursor: pointer
+      +active 
+        td
+          background: #c6e9ff

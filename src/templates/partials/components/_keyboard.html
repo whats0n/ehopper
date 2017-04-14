@@ -1,0 +1,131 @@
+{% import '../_mixins.html' as mixins %}
+
+{% macro default(props) %}
+{% set keyboardMain = [
+	{
+		content: '1'
+	},
+	{
+		content: '2'
+	},
+	{
+		content: '3'
+	},
+	{
+		content: '4'
+	},
+	{
+		content: '5'
+	},
+	{
+		content: '6'
+	},
+	{
+		content: '7'
+	},
+	{
+		content: '8'
+	},
+	{
+		content: '9'
+	},
+	{
+		content: '<i class="icon icon-text icon-clear"></i>'
+	},
+	{
+		content: '0'
+	},
+	{
+		content: '&ndash;'
+	}
+] %}
+{% set keyboardSide = [
+	{
+		content: '<i class="icon icon-text icon-backspace"></i>'
+	},
+	{
+		content: 'OK',
+		type: 'submit',
+		classList: 'keyboard__submit',
+		colspan: '3'
+	}
+] %}
+<!-- begin keyboard -->
+<div class="keyboard {{props.keyboardClassList}}">
+	{% if props.discount %}
+		<div class="keyboard__discount">
+			{% for key in props.discount %}
+			    <div class="keyboard__discount-item"><button type="button" data-animation="ripple" class="keyboard__discount-button">{{key.content | safe}}</button></div>
+			{% endfor %}
+		</div>
+	{% endif %}
+	<div class="keyboard__container {{props.size}}">
+		<div class="keyboard__main">
+			{% for key in props.keyboardMain or keyboardMain %}
+				
+				{# check if button has some special classNames #}
+				{% if key.classList %}
+					{% set classList = ' ' + key.classList %}
+				{% else %}
+				    {% set classList = '' %}
+				{% endif %}
+
+				<div class="keyboard__item">
+					<button type="button" data-animation="ripple" class="keyboard__button{{classList}}">{{key.content | safe}}</button>
+				</div>
+			{% endfor %}
+		</div>
+		<div class="keyboard__aside">
+			{% for key in props.keyboardSide or keyboardSide %}
+			    <div class="keyboard__col" {%- if key.colspan %} data-colspan="{{key.colspan}}" {%- endif -%} >
+			    	<button type="{{key.type or 'button'}}" data-animation="ripple" class="keyboard__button {{key.classList}}">{{key.content | safe}}</button>
+			    </div>
+			{% endfor %}
+		</div>
+	</div>
+</div>
+<!-- end keyboard -->
+{% endmacro %}
+
+{% macro simple(props) %}
+{% set keyboardMain = [
+	'1',
+	'2',
+	'3',
+	'4',
+	'5',
+	'6',
+	'7',
+	'8',
+	'9',
+	'<i class="icon icon-text icon-clear"></i>',
+	'0',
+	'<i class="icon icon-text icon-backspace"></i>'
+] %}
+<!-- begin simple-keyboard -->
+<div class="simple-keyboard">
+	<div class="simple-keyboard__container">
+		<div class="simple-keyboard__head">
+			<div class="simple-keyboard__item"><button type="button" class="simple-keyboard__button simple-keyboard__action" data-animation="ripple">Clock In</button></div>
+			<div class="simple-keyboard__item"><button type="button" class="simple-keyboard__button simple-keyboard__action" data-animation="ripple">Clock Out</button></div>
+			<div class="simple-keyboard__item"><button type="submit" class="simple-keyboard__button simple-keyboard__submit" data-animation="ripple">Login<i class="icon icon-next"></i></button></div>
+		</div>
+		<div class="simple-keyboard__body">
+			{% for key in keyboardMain %}
+				<div class="simple-keyboard__item"><button type="button" class="simple-keyboard__button" data-animation="ripple">{{key | safe}}</button></div>
+			{% endfor %}
+		</div>
+	</div>
+</div>
+<!-- end simple-keyboard -->
+{% endmacro %}
+
+{% macro display(props) %}
+<div class="fieldset fieldset_lg fieldset_bordered fieldset_keyboard">
+	{{mixins.field(props.field)}}
+	{% if props.dividerNone != true %}
+		<div class="fieldset__divider"></div>
+	{% endif %}
+	{{default(props.keyboard)}}
+</div>
+{% endmacro %}

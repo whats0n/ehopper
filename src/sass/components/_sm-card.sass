@@ -1,0 +1,61 @@
+.sm-card
+	color: $darkGray
+	&_lg
+		.sm-card
+			&__title
+				font-size: 17px
+			&__sticker
+				font-size: 17px
+	&__label
+		position: relative
+		display: block
+	input
+		position: absolute
+		top: 0
+		left: 0
+		opacity: 0
+		visibility: hidden
+		&:checked + .sm-card
+			&__content
+				background: $yellow
+				.sm-card__icon
+					opacity: 1
+		&:disabled + .sm-card
+			&__content
+				opacity: 0.5
+				background: $lightGray
+				cursor: default
+				pointer-events: none
+	&__content
+		display: block
+		overflow: hidden
+		padding: 40px 20px 20px
+		color: $darkGray
+		background: $lightGray
+		box-shadow: 0 0px 1px rgba(0, 0, 0, 0.2), 0 2px 4px rgba(0, 0, 0, 0.1)
+		cursor: pointer
+		+nosel
+		transition: box-shadow 0.15s ease-in-out, background 0.15s ease-in-out
+		+hover
+			box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3)
+		+active
+			box-shadow: none
+	&__sticker
+		position: absolute
+		top: 0
+		right: 0
+		white-space: nowrap
+		padding: 5px 5px 5px 10px
+		background: rgba($white, 0.8)
+		font-size: 14px
+		+text-overflow
+	&__title
+		display: block
+		font-size: 14px
+		+text-overflow
+	&__icon
+		position: absolute
+		top: 0
+		left: 10px
+		opacity: 0
+		transition: opacity 0.15s ease-in-out

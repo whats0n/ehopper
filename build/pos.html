@@ -1,0 +1,1058 @@
+<!doctype html>
+<html>
+
+  <head>
+    <meta charset="utf-8">
+    <title>eHopper POS</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="theme-color" content="#fff">
+    <meta name="format-detection" content="telephone=no">
+    <link rel="stylesheet" media="all" href="static/css/pos.css">
+    <link rel="icon" href="https://ehopper.com/wp-content/uploads/2016/03/favicon-01.png" type="image/png">
+    <!-- BEGIN scripts -->
+    <!-- END scripts -->
+  </head>
+
+  <body class="">
+    <!-- begin application -->
+    <div class="application" id="application">
+      <!-- BEGIN content -->
+      <main class="main refund-mode">
+        <div class="inner">
+          <aside class="sidebar sidebar_left">
+            <!-- begin header -->
+            <header class="header sidebar__header"> <button class="btn-icon btn-icon_square icon icon-menu header__menu" title="Menu" data-menu-open="menu"></button> <button class="header__delete btn-icon icon icon-delete" type="button" title="Delete" data-order-delete="order" data-snackbar-open="snackbar"
+                data-snackbar-message="All items removed from your shopping cart" data-snackbar-state="default"></button>
+              <!-- data-order-delete = remove all items from orderlist -->
+              <!-- data-snackbar-open = open snackbar -->
+              <!-- data-snackbar-message = html that will be displayed in the snackbar-content -->
+              <!-- data-snackbar-state = state of the snackbar (can be 'default', 'success', 'error') -->
+              <div class="header__toolbar">
+                <div class="toolbar">
+                  <div class="toolbar__container">
+                    <div class="toolbar__row">
+                      <div class="toolbar__col">
+                        <!-- begin dropdown -->
+                        <div class="dropdown dropdown_header" data-dropdown="order-type">
+                          <div class="dropdown__header" data-dropdown-open="order-type" data-animation="ripple"> <i class="dropdown__arrow icon icon-expand"></i>
+                            <div class="dropdown__value" data-dropdown-value="order-type">Quick Sale</div>
+                          </div>
+                          <div class="dropdown-menu " data-dropdown-menu="order-type">
+                            <ul class="dropdown-menu__list">
+                              <li class="dropdown-menu__item is-active" data-animation="ripple" data-dropdown-item="order-type" data-value="Quick Sale"> Quick Sale </li>
+                              <li class="dropdown-menu__item" data-animation="ripple" data-dropdown-item="order-type" data-value="Dine In"> Dine In </li>
+                              <li class="dropdown-menu__item" data-animation="ripple" data-dropdown-item="order-type" data-value="Take Out"> Take Out </li>
+                              <li class="dropdown-menu__item" data-animation="ripple" data-dropdown-item="order-type" data-value="Drive Thru"> Drive Thru </li>
+                              <li class="dropdown-menu__item" data-animation="ripple" data-dropdown-item="order-type" data-value="Delivery"> Delivery </li>
+                            </ul>
+                          </div>
+                          <!-- begin overlay --><button type="button" class="overlay " data-color="dark-gray" data-overlay="overlay" data-dropdown-overlay="order-type"></button>
+                          <!-- end overlay -->
+                        </div>
+                        <!-- end dropdown -->
+                      </div>
+                      <div class="toolbar__col">
+                        <!-- begin dropdown -->
+                        <div class="dropdown dropdown_header" data-dropdown="customer">
+                          <div class="dropdown__header" data-dropdown-open="customer" data-animation="ripple"> <i class="dropdown__arrow icon icon-expand"></i>
+                            <div class="dropdown__value" data-dropdown-value="customer">Walk In</div>
+                          </div>
+                          <div class="dropdown-menu " data-dropdown-menu="customer">
+                            <div class="dropdown-menu__search sm-search">
+                              <form action="/">
+                                <div class="sm-search__field"> <input type="text" class="sm-search__input" placeholder="Find Customer..."> <button class="sm-search__btn" data-animation="ripple"><i class="icon icon-search"></i></button> </div>
+                              </form>
+                            </div>
+                            <ul class="dropdown-menu__list">
+                              <li class="dropdown-menu__item is-active" data-animation="ripple" data-dropdown-item="customer" data-value="Recent Customer"> Walk In <i class="icon icon-walkin"></i> </li>
+                              <li class="dropdown-menu__item" data-animation="ripple" data-dropdown-item="customer" data-value="Customer"> Customer <i class="icon icon-next"></i> </li>
+                              <li class="dropdown-menu__item" data-animation="ripple" data-dropdown-item="customer" data-value="Recent Customer"> Recent Customer <i class="icon icon-next"></i> </li>
+                              <li class="dropdown-menu__item" data-animation="ripple" data-dropdown-item="customer" data-value="Another Customer"> Another Customer <i class="icon icon-next"></i> </li>
+                            </ul> <a class="btn btn_block btn_lg btn_primary" data-animation="ripple" href="#"><i class="icon icon-plus"></i>New Customer</a> </div>
+                          <!-- begin overlay --><button type="button" class="overlay " data-color="dark-gray" data-overlay="overlay" data-dropdown-overlay="customer"></button>
+                          <!-- end overlay -->
+                        </div>
+                        <!-- end dropdown -->
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </header>
+            <!-- end header -->
+            <div class="sidebar__body" data-order-scroll="order">
+              <div class="sidebar__content">
+                <ul class="order-list" data-order-visible="order" data-order-list="order">
+                  <li class="order-item" data-state="default" data-animation="ripple" data-fullinfo-open="fullinfo" data-order-added="order">
+                    <div class="order-item__info">
+                      <div class="order-item__title">Hot Dog XL</div>
+                    </div>
+                    <div class="order-item__row">
+                      <div class="order-item__col">
+                        <div class="order-item__quantity" data-fullinfo-target="quantity">1&times;</div>
+                        <div class="order-item__price" data-fullinfo-target="price">3.00</div>
+                      </div>
+                      <div class="order-item__col">
+                        <div class="order-item__total" data-fullinfo-target="price">3.00</div>
+                      </div>
+                    </div>
+                    <div class="order-item__meta" data-fullinfo-target="modifiers"><strong>Note</strong> Click to duplicate in cart</div>
+                  </li>
+                  <li class="order-item" data-state="default" data-animation="ripple" data-fullinfo-open="fullinfo" data-order-added="order">
+                    <div class="order-item__info">
+                      <div class="order-item__title">T-Shirt with Print 23</div>
+                    </div>
+                    <div class="order-item__row">
+                      <div class="order-item__col">
+                        <div class="order-item__quantity" data-fullinfo-target="quantity">2&times;</div>
+                        <div class="order-item__price" data-fullinfo-target="price">100.00</div>
+                      </div>
+                      <div class="order-item__col">
+                        <div class="order-item__total" data-fullinfo-target="price">200.00</div>
+                        <div class="order-item__discount" data-fullinfo-target="discount">-5.10</div>
+                      </div>
+                    </div>
+                    <div class="order-item__meta" data-fullinfo-target="modifiers">Long Sleeves, XL size, Black color</div>
+                  </li>
+                  <li class="order-item" data-state="default" data-animation="ripple" data-fullinfo-open="fullinfo" data-order-added="order">
+                    <div class="order-item__info">
+                      <div class="order-item__title">Hot Dog XL</div>
+                    </div>
+                    <div class="order-item__row">
+                      <div class="order-item__col">
+                        <div class="order-item__quantity" data-fullinfo-target="quantity">1&times;</div>
+                        <div class="order-item__price" data-fullinfo-target="price">3.00</div>
+                      </div>
+                      <div class="order-item__col">
+                        <div class="order-item__total" data-fullinfo-target="price">3.00</div>
+                      </div>
+                    </div>
+                    <div class="order-item__meta" data-fullinfo-target="modifiers"><strong>Note</strong> Click to duplicate in cart</div>
+                  </li>
+                  <li class="order-item" data-state="default" data-animation="ripple" data-fullinfo-open="fullinfo" data-order-added="order">
+                    <div class="order-item__info">
+                      <div class="order-item__title">Hot Dog XL</div>
+                    </div>
+                    <div class="order-item__row">
+                      <div class="order-item__col">
+                        <div class="order-item__quantity" data-fullinfo-target="quantity">1&times;</div>
+                        <div class="order-item__price" data-fullinfo-target="price">3.00</div>
+                      </div>
+                      <div class="order-item__col">
+                        <div class="order-item__total" data-fullinfo-target="price">3.00</div>
+                      </div>
+                    </div>
+                    <div class="order-item__meta" data-fullinfo-target="modifiers"><strong>Note</strong> Click to duplicate in cart</div>
+                  </li>
+                  <li class="order-item" data-state="default" data-animation="ripple" data-fullinfo-open="fullinfo" data-order-added="order">
+                    <div class="order-item__info">
+                      <div class="order-item__title">Hot Dog XL</div>
+                    </div>
+                    <div class="order-item__row">
+                      <div class="order-item__col">
+                        <div class="order-item__quantity" data-fullinfo-target="quantity">1&times;</div>
+                        <div class="order-item__price" data-fullinfo-target="price">3.00</div>
+                      </div>
+                      <div class="order-item__col">
+                        <div class="order-item__total" data-fullinfo-target="price">3.00</div>
+                      </div>
+                    </div>
+                    <div class="order-item__meta" data-fullinfo-target="modifiers"><strong>Note</strong> Click to duplicate in cart</div>
+                  </li>
+                  <li class="order-item" data-state="default" data-animation="ripple" data-fullinfo-open="fullinfo" data-order-added="order">
+                    <div class="order-item__info">
+                      <div class="order-item__title">Hot Dog XL</div>
+                    </div>
+                    <div class="order-item__row">
+                      <div class="order-item__col">
+                        <div class="order-item__quantity" data-fullinfo-target="quantity">1&times;</div>
+                        <div class="order-item__price" data-fullinfo-target="price">3.00</div>
+                      </div>
+                      <div class="order-item__col">
+                        <div class="order-item__total" data-fullinfo-target="price">3.00</div>
+                      </div>
+                    </div>
+                    <div class="order-item__meta" data-fullinfo-target="modifiers"><strong>Note</strong> Click to duplicate in cart</div>
+                  </li>
+                </ul>
+                <div class="order-empty" data-order-empty="order" hidden> <i class="order-empty__icon"></i>
+                  <h5>Order is empty</h5>
+                  <p>Add items from catalog</p>
+                </div>
+              </div>
+            </div>
+            <div class="sidebar__footer">
+              <div class="totals sidebar__totals" data-order-visible="order">
+                <div class="totals__container">
+                  <ul class="totals-list totals-list_main">
+                    <li class="totals-list__item">
+                      <div class="totals-list__label">Sub</div>
+                      <div class="totals-list__value">111</div>
+                    </li>
+                    <li class="totals-list__item">
+                      <div class="totals-list__label">Discount</div>
+                      <div class="totals-list__value">111</div>
+                    </li>
+                  </ul>
+                  <ul class="totals-list totals-list_scroll">
+                    <li class="totals-list__item">
+                      <div class="totals-list__label">Lorem ipsum.</div>
+                      <div class="totals-list__value">111</div>
+                    </li>
+                    <li class="totals-list__item">
+                      <div class="totals-list__label">Lorem ipsum.</div>
+                      <div class="totals-list__value">111</div>
+                    </li>
+                    <li class="totals-list__item">
+                      <div class="totals-list__label">Lorem ipsum.</div>
+                      <div class="totals-list__value">111</div>
+                    </li>
+                    <li class="totals-list__item">
+                      <div class="totals-list__label">Lorem ipsum.</div>
+                      <div class="totals-list__value">111</div>
+                    </li>
+                    <li class="totals-list__item">
+                      <div class="totals-list__label">Lorem ipsum.</div>
+                      <div class="totals-list__value">111</div>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <div class="toolbar sidebar__toolbar">
+                <div class="toolbar__container">
+                  <div class="toolbar__row">
+                    <div class="toolbar__col toolbar__col_sm"> <a class="btn btn_green btn_lg btn_block toolbar__button" data-animation="ripple" href="payments.html">Other Payments <i class="icon icon-more-v"></i></a> </div>
+                    <div class="toolbar__col toolbar__col_lg"> <a class="btn btn_green btn_lg btn_block toolbar__button" data-animation="ripple" href="payment-cash.html">Cash: <strong>$100.20</strong></a> </div>
+                  </div>
+                </div>
+              </div>
+              <!-- begin horizontal-menu -->
+              <div class="horizontal-menu">
+                <div class="horizontal-menu__container">
+                  <ul class="horizontal-menu__list">
+                    <li class="horizontal-menu__item"> <a class="horizontal-menu__link " data-animation="ripple" href="order-save.html">Save</a> </li>
+                    <li class="horizontal-menu__item"> <a class="horizontal-menu__link " data-animation="ripple" href="order-note.html">Notes</a> </li>
+                    <li class="horizontal-menu__item"> <a class="horizontal-menu__link " data-animation="ripple" href="terminal-cash.html">Terminal</a> </li>
+                    <li class="horizontal-menu__item"> <a class="horizontal-menu__link is-disabled" data-animation="ripple" href="#">Drawer</a> </li>
+                    <li class="horizontal-menu__item"> <a class="horizontal-menu__link " data-animation="ripple" href="#" data-dropdown-open="more">More <i class="icon icon-more-v"></i></a>
+                      <div class="dropdown-menu dropdown-menu_up dropdown-menu_no-scroll" data-dropdown-menu="more">
+                        <ul class="dropdown-menu__list">
+                          <li class="dropdown-menu__item" data-animation="ripple"> <a href="#">Tax exempt</a> </li>
+                          <li class="dropdown-menu__item" data-animation="ripple"> <a href="#">Revert tax</a> </li>
+                          <li class="dropdown-menu__item" data-animation="ripple"> <a href="#">Drawer</a> </li>
+                          <li class="dropdown-menu__item" data-animation="ripple"> <a href="#">Reprint</a> </li>
+                          <li class="dropdown-menu__item" data-animation="ripple"> <a href="#">Refund</a> </li>
+                        </ul>
+                      </div>
+                      <!-- begin overlay --><button type="button" class="overlay " data-color="dark-gray" data-overlay="overlay" data-dropdown-overlay="more"></button>
+                      <!-- end overlay -->
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <!-- end horizontal-menu -->
+            </div>
+          </aside>
+          <div class="container container_right">
+            <!-- begin header -->
+            <header class="header container__header">
+              <div class="header__searchbox">
+                <!-- begin search -->
+                <div class="search" data-modal="search">
+                  <form action="/">
+                    <div class="search__field" data-modal="container"> <input type="text" class="search__input" placeholder="Quick Search">
+                      <div class="search__controls"> <button class="btn-icon search__button"><i class="icon icon-search"></i></button> </div>
+                    </div>
+                  </form>
+                </div>
+                <!-- end search -->
+              </div>
+              <div class="header__sync">
+                <div class="header__indicator" data-state="active"></div> <button class="btn-icon icon icon-sync"></button> </div>
+            </header>
+            <!-- end header -->
+            <div class="items container__body">
+              <div class="items__top">
+                <div class="categories" data-slider-wrapper="default">
+                  <div class="categories__slider slider" data-slider="default">
+                    <div class="categories__container">
+                      <div class="categories__item">
+                        <dl class="sm-box " data-animation="ripple"> <dt class="sm-box__title">DEF</dt>
+                          <dd class="sm-box__description">Default Category</dd>
+                        </dl>
+                      </div>
+                      <div class="categories__item">
+                        <dl class="sm-box is-active" data-animation="ripple"> <dt class="sm-box__title">CUR</dt>
+                          <dd class="sm-box__description">Currently Selected Category</dd>
+                        </dl>
+                      </div>
+                      <div class="categories__item">
+                        <dl class="sm-box " data-animation="ripple" style="background-color: khaki;"> <dt class="sm-box__title">KH</dt>
+                          <dd class="sm-box__description">Colored Category</dd>
+                        </dl>
+                      </div>
+                      <div class="categories__item">
+                        <dl class="sm-box " data-animation="ripple"> <dt class="sm-box__title">4</dt>
+                          <dd class="sm-box__description">Category #4</dd>
+                        </dl>
+                      </div>
+                      <div class="categories__item">
+                        <dl class="sm-box " data-animation="ripple"> <dt class="sm-box__title">5</dt>
+                          <dd class="sm-box__description">Category #5</dd>
+                        </dl>
+                      </div>
+                    </div>
+                    <div class="categories__container">
+                      <div class="categories__item">
+                        <dl class="sm-box " data-animation="ripple"> <dt class="sm-box__title">DEF</dt>
+                          <dd class="sm-box__description">Default Category</dd>
+                        </dl>
+                      </div>
+                      <div class="categories__item">
+                        <dl class="sm-box is-active" data-animation="ripple"> <dt class="sm-box__title">CUR</dt>
+                          <dd class="sm-box__description">Currently Selected Category</dd>
+                        </dl>
+                      </div>
+                      <div class="categories__item">
+                        <dl class="sm-box " data-animation="ripple" style="background-color: khaki;"> <dt class="sm-box__title">KH</dt>
+                          <dd class="sm-box__description">Colored Category</dd>
+                        </dl>
+                      </div>
+                      <div class="categories__item">
+                        <dl class="sm-box " data-animation="ripple"> <dt class="sm-box__title">4</dt>
+                          <dd class="sm-box__description">Category #4</dd>
+                        </dl>
+                      </div>
+                      <div class="categories__item">
+                        <dl class="sm-box " data-animation="ripple"> <dt class="sm-box__title">5</dt>
+                          <dd class="sm-box__description">Category #5</dd>
+                        </dl>
+                      </div>
+                    </div>
+                    <div class="categories__container">
+                      <div class="categories__item">
+                        <dl class="sm-box " data-animation="ripple"> <dt class="sm-box__title">DEF</dt>
+                          <dd class="sm-box__description">Default Category</dd>
+                        </dl>
+                      </div>
+                      <div class="categories__item">
+                        <dl class="sm-box is-active" data-animation="ripple"> <dt class="sm-box__title">CUR</dt>
+                          <dd class="sm-box__description">Currently Selected Category</dd>
+                        </dl>
+                      </div>
+                      <div class="categories__item">
+                        <dl class="sm-box " data-animation="ripple" style="background-color: khaki;"> <dt class="sm-box__title">KH</dt>
+                          <dd class="sm-box__description">Colored Category</dd>
+                        </dl>
+                      </div>
+                      <div class="categories__item">
+                        <dl class="sm-box " data-animation="ripple"> <dt class="sm-box__title">4</dt>
+                          <dd class="sm-box__description">Category #4</dd>
+                        </dl>
+                      </div>
+                      <div class="categories__item">
+                        <dl class="sm-box " data-animation="ripple"> <dt class="sm-box__title">5</dt>
+                          <dd class="sm-box__description">Category #5</dd>
+                        </dl>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="categories__pagination" data-slider-pagination="default"></div>
+                </div>
+              </div>
+              <div class="items__body">
+                <div class="products" data-slider-wrapper="default">
+                  <div class="products__slider slider" data-slider="default">
+                    <div class="products__container">
+                      <div class="products__item">
+                        <div class="item" data-animation="ripple" onclick="window.orderlist.addItem({title: 'some title', meta: 'some meta', price: '5.00', quantity: '10', total: '50.00', discount: '-5.00'})" data-order-item="order">
+                          <div class="item__code">HDXL</div>
+                          <div class="item__title">Hot Dog XL</div>
+                          <div class="item__price">4.00</div>
+                        </div>
+                      </div>
+                      <div class="products__item">
+                        <div class="item" style="background-color: khaki;" data-animation="ripple" onclick="window.orderlist.addItem({title: 'some title', meta: 'some meta', price: '5.00', quantity: '10', total: '50.00', discount: '-5.00'})" data-order-item="order">
+                          <div class="item__title">Colored Item</div>
+                          <div class="item__price">4,853.00</div>
+                        </div>
+                      </div>
+                      <div class="products__item">
+                        <div class="item" data-animation="ripple" onclick="window.orderlist.addItem({title: 'some title', meta: 'some meta', price: '5.00', quantity: '10', total: '50.00', discount: '-5.00'})" data-order-item="order">
+                          <div class="item__img" style="background-image: url(static/img/products/sushi.jpg);"></div>
+                          <div class="item__title">Sail Sushi</div>
+                          <div class="item__price">1.50</div>
+                        </div>
+                      </div>
+                      <div class="products__item">
+                        <div class="item" data-animation="ripple" onclick="window.orderlist.addItem({title: 'some title', meta: 'some meta', price: '5.00', quantity: '10', total: '50.00', discount: '-5.00'})" data-order-item="order">
+                          <div class="item__img" style="background-image: url(static/img/products/jack-daniels.jpg);"></div>
+                          <div class="item__title">Jack Daniels</div>
+                          <div class="item__price">37.99</div>
+                        </div>
+                      </div>
+                      <div class="products__item">
+                        <div class="item" data-animation="ripple" onclick="window.orderlist.addItem({title: 'some title', meta: 'some meta', price: '5.00', quantity: '10', total: '50.00', discount: '-5.00'})" data-order-item="order">
+                          <div class="item__img" style="background-image: url(static/img/products/whiskey.jpg);"></div>
+                          <div class="item__title">Tennessee Honey Whiskey</div>
+                          <div class="item__price">25.95</div>
+                        </div>
+                      </div>
+                      <div class="products__item">
+                        <div class="item" data-animation="ripple" onclick="window.orderlist.addItem({title: 'some title', meta: 'some meta', price: '5.00', quantity: '10', total: '50.00', discount: '-5.00'})" data-order-item="order">
+                          <div class="item__img" style="background-image: url(static/img/products/pizza.jpg);"></div>
+                          <div class="item__title">Pizza Salami</div>
+                          <div class="item__price">15.00</div>
+                        </div>
+                      </div>
+                      <div class="products__item">
+                        <div class="item" data-animation="ripple" onclick="window.orderlist.addItem({title: 'some title', meta: 'some meta', price: '5.00', quantity: '10', total: '50.00', discount: '-5.00'})" data-order-item="order">
+                          <div class="item__img" style="background-image: url(static/img/products/shrimps.jpg);"></div>
+                          <div class="item__title">Shrimps Toriaki</div>
+                          <div class="item__price">6.99</div>
+                        </div>
+                      </div>
+                      <div class="products__item">
+                        <div class="item" style="background-color: #f9887c;" data-animation="ripple" onclick="window.orderlist.addItem({title: 'some title', meta: 'some meta', price: '5.00', quantity: '10', total: '50.00', discount: '-5.00'})" data-order-item="order">
+                          <div class="item__code">RED</div>
+                          <div class="item__title">Another colored</div>
+                          <div class="item__price">6.99</div>
+                        </div>
+                      </div>
+                      <div class="products__item">
+                        <div class="item" data-animation="ripple" onclick="window.orderlist.addItem({title: 'some title', meta: 'some meta', price: '5.00', quantity: '10', total: '50.00', discount: '-5.00'})" data-order-item="order">
+                          <div class="item__img" style="background-image: url(static/img/products/roll.jpg);"></div>
+                          <div class="item__title">Asparagus Roll</div>
+                        </div>
+                      </div>
+                      <div class="products__item">
+                        <div class="item" onclick="window.orderlist.addItem({title: 'some title', meta: 'some meta', price: '5.00', quantity: '10', total: '50.00', discount: '-5.00'})" data-order-item="order">
+                          <div class="item__code">NO</div>
+                          <div class="item__title">No Ripple, No Price</div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="products__container">
+                      <div class="products__item">
+                        <div class="item" data-animation="ripple" onclick="window.orderlist.addItem({title: 'some title', meta: 'some meta', price: '5.00', quantity: '10', total: '50.00', discount: '-5.00'})" data-order-item="order">
+                          <div class="item__code">HDXL</div>
+                          <div class="item__title">Hot Dog XL</div>
+                          <div class="item__price">4.00</div>
+                        </div>
+                      </div>
+                      <div class="products__item">
+                        <div class="item" style="background-color: khaki;" data-animation="ripple" onclick="window.orderlist.addItem({title: 'some title', meta: 'some meta', price: '5.00', quantity: '10', total: '50.00', discount: '-5.00'})" data-order-item="order">
+                          <div class="item__title">Colored Item</div>
+                          <div class="item__price">4,853.00</div>
+                        </div>
+                      </div>
+                      <div class="products__item">
+                        <div class="item" data-animation="ripple" onclick="window.orderlist.addItem({title: 'some title', meta: 'some meta', price: '5.00', quantity: '10', total: '50.00', discount: '-5.00'})" data-order-item="order">
+                          <div class="item__img" style="background-image: url(static/img/products/sushi.jpg);"></div>
+                          <div class="item__title">Sail Sushi</div>
+                          <div class="item__price">1.50</div>
+                        </div>
+                      </div>
+                      <div class="products__item">
+                        <div class="item" data-animation="ripple" onclick="window.orderlist.addItem({title: 'some title', meta: 'some meta', price: '5.00', quantity: '10', total: '50.00', discount: '-5.00'})" data-order-item="order">
+                          <div class="item__img" style="background-image: url(static/img/products/jack-daniels.jpg);"></div>
+                          <div class="item__title">Jack Daniels</div>
+                          <div class="item__price">37.99</div>
+                        </div>
+                      </div>
+                      <div class="products__item">
+                        <div class="item" data-animation="ripple" onclick="window.orderlist.addItem({title: 'some title', meta: 'some meta', price: '5.00', quantity: '10', total: '50.00', discount: '-5.00'})" data-order-item="order">
+                          <div class="item__img" style="background-image: url(static/img/products/whiskey.jpg);"></div>
+                          <div class="item__title">Tennessee Honey Whiskey</div>
+                          <div class="item__price">25.95</div>
+                        </div>
+                      </div>
+                      <div class="products__item">
+                        <div class="item" data-animation="ripple" onclick="window.orderlist.addItem({title: 'some title', meta: 'some meta', price: '5.00', quantity: '10', total: '50.00', discount: '-5.00'})" data-order-item="order">
+                          <div class="item__img" style="background-image: url(static/img/products/pizza.jpg);"></div>
+                          <div class="item__title">Pizza Salami</div>
+                          <div class="item__price">15.00</div>
+                        </div>
+                      </div>
+                      <div class="products__item">
+                        <div class="item" data-animation="ripple" onclick="window.orderlist.addItem({title: 'some title', meta: 'some meta', price: '5.00', quantity: '10', total: '50.00', discount: '-5.00'})" data-order-item="order">
+                          <div class="item__img" style="background-image: url(static/img/products/shrimps.jpg);"></div>
+                          <div class="item__title">Shrimps Toriaki</div>
+                          <div class="item__price">6.99</div>
+                        </div>
+                      </div>
+                      <div class="products__item">
+                        <div class="item" style="background-color: #f9887c;" data-animation="ripple" onclick="window.orderlist.addItem({title: 'some title', meta: 'some meta', price: '5.00', quantity: '10', total: '50.00', discount: '-5.00'})" data-order-item="order">
+                          <div class="item__code">RED</div>
+                          <div class="item__title">Another colored</div>
+                          <div class="item__price">6.99</div>
+                        </div>
+                      </div>
+                      <div class="products__item">
+                        <div class="item" data-animation="ripple" onclick="window.orderlist.addItem({title: 'some title', meta: 'some meta', price: '5.00', quantity: '10', total: '50.00', discount: '-5.00'})" data-order-item="order">
+                          <div class="item__img" style="background-image: url(static/img/products/roll.jpg);"></div>
+                          <div class="item__title">Asparagus Roll</div>
+                        </div>
+                      </div>
+                      <div class="products__item">
+                        <div class="item" onclick="window.orderlist.addItem({title: 'some title', meta: 'some meta', price: '5.00', quantity: '10', total: '50.00', discount: '-5.00'})" data-order-item="order">
+                          <div class="item__code">NO</div>
+                          <div class="item__title">No Ripple, No Price</div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="products__container">
+                      <div class="products__item">
+                        <div class="item" data-animation="ripple" onclick="window.orderlist.addItem({title: 'some title', meta: 'some meta', price: '5.00', quantity: '10', total: '50.00', discount: '-5.00'})" data-order-item="order">
+                          <div class="item__code">HDXL</div>
+                          <div class="item__title">Hot Dog XL</div>
+                          <div class="item__price">4.00</div>
+                        </div>
+                      </div>
+                      <div class="products__item">
+                        <div class="item" style="background-color: khaki;" data-animation="ripple" onclick="window.orderlist.addItem({title: 'some title', meta: 'some meta', price: '5.00', quantity: '10', total: '50.00', discount: '-5.00'})" data-order-item="order">
+                          <div class="item__title">Colored Item</div>
+                          <div class="item__price">4,853.00</div>
+                        </div>
+                      </div>
+                      <div class="products__item">
+                        <div class="item" data-animation="ripple" onclick="window.orderlist.addItem({title: 'some title', meta: 'some meta', price: '5.00', quantity: '10', total: '50.00', discount: '-5.00'})" data-order-item="order">
+                          <div class="item__img" style="background-image: url(static/img/products/sushi.jpg);"></div>
+                          <div class="item__title">Sail Sushi</div>
+                          <div class="item__price">1.50</div>
+                        </div>
+                      </div>
+                      <div class="products__item">
+                        <div class="item" data-animation="ripple" onclick="window.orderlist.addItem({title: 'some title', meta: 'some meta', price: '5.00', quantity: '10', total: '50.00', discount: '-5.00'})" data-order-item="order">
+                          <div class="item__img" style="background-image: url(static/img/products/jack-daniels.jpg);"></div>
+                          <div class="item__title">Jack Daniels</div>
+                          <div class="item__price">37.99</div>
+                        </div>
+                      </div>
+                      <div class="products__item">
+                        <div class="item" data-animation="ripple" onclick="window.orderlist.addItem({title: 'some title', meta: 'some meta', price: '5.00', quantity: '10', total: '50.00', discount: '-5.00'})" data-order-item="order">
+                          <div class="item__img" style="background-image: url(static/img/products/whiskey.jpg);"></div>
+                          <div class="item__title">Tennessee Honey Whiskey</div>
+                          <div class="item__price">25.95</div>
+                        </div>
+                      </div>
+                      <div class="products__item">
+                        <div class="item" data-animation="ripple" onclick="window.orderlist.addItem({title: 'some title', meta: 'some meta', price: '5.00', quantity: '10', total: '50.00', discount: '-5.00'})" data-order-item="order">
+                          <div class="item__img" style="background-image: url(static/img/products/pizza.jpg);"></div>
+                          <div class="item__title">Pizza Salami</div>
+                          <div class="item__price">15.00</div>
+                        </div>
+                      </div>
+                      <div class="products__item">
+                        <div class="item" data-animation="ripple" onclick="window.orderlist.addItem({title: 'some title', meta: 'some meta', price: '5.00', quantity: '10', total: '50.00', discount: '-5.00'})" data-order-item="order">
+                          <div class="item__img" style="background-image: url(static/img/products/shrimps.jpg);"></div>
+                          <div class="item__title">Shrimps Toriaki</div>
+                          <div class="item__price">6.99</div>
+                        </div>
+                      </div>
+                      <div class="products__item">
+                        <div class="item" style="background-color: #f9887c;" data-animation="ripple" onclick="window.orderlist.addItem({title: 'some title', meta: 'some meta', price: '5.00', quantity: '10', total: '50.00', discount: '-5.00'})" data-order-item="order">
+                          <div class="item__code">RED</div>
+                          <div class="item__title">Another colored</div>
+                          <div class="item__price">6.99</div>
+                        </div>
+                      </div>
+                      <div class="products__item">
+                        <div class="item" data-animation="ripple" onclick="window.orderlist.addItem({title: 'some title', meta: 'some meta', price: '5.00', quantity: '10', total: '50.00', discount: '-5.00'})" data-order-item="order">
+                          <div class="item__img" style="background-image: url(static/img/products/roll.jpg);"></div>
+                          <div class="item__title">Asparagus Roll</div>
+                        </div>
+                      </div>
+                      <div class="products__item">
+                        <div class="item" onclick="window.orderlist.addItem({title: 'some title', meta: 'some meta', price: '5.00', quantity: '10', total: '50.00', discount: '-5.00'})" data-order-item="order">
+                          <div class="item__code">NO</div>
+                          <div class="item__title">No Ripple, No Price</div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="products__pagination" data-slider-pagination="default"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="container container_overlay" data-fullinfo-container="fullinfo">
+            <!-- begin header -->
+            <header class="header container__header">
+              <div class="header__back">
+                <a class="btn-icon btn-icon_square icon icon-back header__back-icon" href="#" data-fullinfo-close="fullinfo"></a>
+                <div class="header__title">Cancel</div>
+              </div>
+            </header>
+            <!-- end header -->
+            <div class="container__body">
+              <!-- begin tabs -->
+              <div class="tabs tabs_lg container__content" data-tab="item-info">
+                <!-- begin tabs controls -->
+                <div class="tabs__controls">
+                  <ul class="tabs__list">
+                    <li class="tabs__item"><a href="#" class="tabs__btn is-active" data-tab-open="quantity" data-animation="ripple">Quantity</a></li>
+                    <li class="tabs__item"><a href="#" class="tabs__btn" data-tab-open="price" data-animation="ripple">Price</a></li>
+                    <li class="tabs__item"><a href="#" class="tabs__btn" data-tab-open="discount" data-animation="ripple">Discount</a></li>
+                    <li class="tabs__item"><a href="#" class="tabs__btn" data-tab-open="modifiers" data-animation="ripple">Modifiers</a></li>
+                    <li class="tabs__item"><a href="#" class="tabs__btn" data-tab-open="matrix" data-animation="ripple">Matrix</a></li>
+                    <li class="tabs__item"><a href="#" class="tabs__btn" data-tab-open="serials" data-animation="ripple">Serials</a></li>
+                    <li class="tabs__item"><a href="#" class="tabs__btn" data-tab-open="notes" data-animation="ripple">Notes</a></li>
+                  </ul>
+                </div>
+                <!-- end tabs controls -->
+                <!-- begin tabs container -->
+                <div class="tabs__container">
+                  <div class="tabs__content is-open" data-tab-container="quantity">
+                    <div class="tabs__keyboard">
+                      <form action="/">
+                        <div class="fieldset fieldset_lg fieldset_bordered fieldset_keyboard">
+                          <div class="field ">
+                            <div class="field__inner field__display"> <label class="field__label" for="item-quantity">Quantity:</label>
+                              <div class="field__box"> <input class="input field__input text-right input_xl" value="0" id="item-quantity" placeholder="0" required readonly> </div> <label class="field__units" for="item-quantity"><span>kg</span></label> </div>
+                          </div>
+                          <div class="fieldset__divider"></div>
+                          <!-- begin keyboard -->
+                          <div class="keyboard ">
+                            <div class="keyboard__container keyboard__lg">
+                              <div class="keyboard__main">
+                                <div class="keyboard__item"> <button type="button" data-animation="ripple" class="keyboard__button">1</button> </div>
+                                <div class="keyboard__item"> <button type="button" data-animation="ripple" class="keyboard__button">2</button> </div>
+                                <div class="keyboard__item"> <button type="button" data-animation="ripple" class="keyboard__button">3</button> </div>
+                                <div class="keyboard__item"> <button type="button" data-animation="ripple" class="keyboard__button">4</button> </div>
+                                <div class="keyboard__item"> <button type="button" data-animation="ripple" class="keyboard__button">5</button> </div>
+                                <div class="keyboard__item"> <button type="button" data-animation="ripple" class="keyboard__button">6</button> </div>
+                                <div class="keyboard__item"> <button type="button" data-animation="ripple" class="keyboard__button">7</button> </div>
+                                <div class="keyboard__item"> <button type="button" data-animation="ripple" class="keyboard__button">8</button> </div>
+                                <div class="keyboard__item"> <button type="button" data-animation="ripple" class="keyboard__button">9</button> </div>
+                                <div class="keyboard__item"> <button type="button" data-animation="ripple" class="keyboard__button">0</button> </div>
+                                <div class="keyboard__item"> <button type="button" data-animation="ripple" class="keyboard__button">00</button> </div>
+                                <div class="keyboard__item"> <button type="button" data-animation="ripple" class="keyboard__button"><i class="icon icon-text icon-clear"></i></button> </div>
+                              </div>
+                              <div class="keyboard__aside">
+                                <div class="keyboard__col"> <button type="button" data-animation="ripple" class="keyboard__button "><i class="icon icon-text icon-backspace"></i></button> </div>
+                                <div class="keyboard__col"> <button type="button" data-animation="ripple" class="keyboard__button "><i class="icon icon-text icon-undo"></i></button> </div>
+                                <div class="keyboard__col" data-colspan="2"> <button type="submit" data-animation="ripple" class="keyboard__button keyboard__submit">Done</button> </div>
+                              </div>
+                            </div>
+                          </div>
+                          <!-- end keyboard -->
+                        </div>
+                      </form>
+                    </div>
+                  </div>
+                  <div class="tabs__content" data-tab-container="price">
+                    <div class="tabs__keyboard">
+                      <form action="/">
+                        <div class="fieldset fieldset_lg fieldset_bordered fieldset_keyboard">
+                          <div class="field field_static">
+                            <div class="field__inner field__display"> <label class="field__label" for="item-custom-price">Custom Price:</label>
+                              <div class="field__box"> <label class="field__units" for="item-custom-price"><span>$</span></label> <span class="field__static">49.95</span> </div>
+                            </div>
+                          </div>
+                          <div class="fieldset__divider"></div>
+                          <!-- begin keyboard -->
+                          <div class="keyboard ">
+                            <div class="keyboard__container keyboard__lg">
+                              <div class="keyboard__main">
+                                <div class="keyboard__item"> <button type="button" data-animation="ripple" class="keyboard__button">1</button> </div>
+                                <div class="keyboard__item"> <button type="button" data-animation="ripple" class="keyboard__button">2</button> </div>
+                                <div class="keyboard__item"> <button type="button" data-animation="ripple" class="keyboard__button">3</button> </div>
+                                <div class="keyboard__item"> <button type="button" data-animation="ripple" class="keyboard__button">4</button> </div>
+                                <div class="keyboard__item"> <button type="button" data-animation="ripple" class="keyboard__button">5</button> </div>
+                                <div class="keyboard__item"> <button type="button" data-animation="ripple" class="keyboard__button">6</button> </div>
+                                <div class="keyboard__item"> <button type="button" data-animation="ripple" class="keyboard__button">7</button> </div>
+                                <div class="keyboard__item"> <button type="button" data-animation="ripple" class="keyboard__button">8</button> </div>
+                                <div class="keyboard__item"> <button type="button" data-animation="ripple" class="keyboard__button">9</button> </div>
+                                <div class="keyboard__item"> <button type="button" data-animation="ripple" class="keyboard__button">0</button> </div>
+                                <div class="keyboard__item"> <button type="button" data-animation="ripple" class="keyboard__button">00</button> </div>
+                                <div class="keyboard__item"> <button type="button" data-animation="ripple" class="keyboard__button"><i class="icon icon-text icon-clear"></i></button> </div>
+                              </div>
+                              <div class="keyboard__aside">
+                                <div class="keyboard__col"> <button type="button" data-animation="ripple" class="keyboard__button "><i class="icon icon-text icon-backspace"></i></button> </div>
+                                <div class="keyboard__col"> <button type="button" data-animation="ripple" class="keyboard__button "><i class="icon icon-text icon-undo"></i></button> </div>
+                                <div class="keyboard__col" data-colspan="2"> <button type="submit" data-animation="ripple" class="keyboard__button keyboard__submit">Done</button> </div>
+                              </div>
+                            </div>
+                          </div>
+                          <!-- end keyboard -->
+                        </div>
+                      </form>
+                    </div>
+                  </div>
+                  <div class="tabs__content" data-tab-container="discount">
+                    <div class="tabs__keyboard">
+                      <form action="/">
+                        <div class="fieldset fieldset_lg fieldset_bordered fieldset_keyboard">
+                          <div class="field ">
+                            <div class="field__inner field__display">
+                              <div class="field__switch"> <label class="field__switch-left" for="discount-switcher">$</label> <label class="field__switch-box switcher">
+					<input type="checkbox" id="discount-switcher">
+					<i class="switcher__icon"></i>
+				</label> <label class="field__switch-right" for="discount-switcher">%</label> </div>
+                              <div class="field__box"> <input class="input field__input text-right input_xl" value="15" id="item-discount" placeholder="0" required readonly> </div> <label class="field__units" for="item-discount"><span>%</span></label> </div>
+                          </div>
+                          <!-- begin keyboard -->
+                          <div class="keyboard ">
+                            <div class="keyboard__discount">
+                              <div class="keyboard__discount-item"><button type="button" data-animation="ripple" class="keyboard__discount-button">5%</button></div>
+                              <div class="keyboard__discount-item"><button type="button" data-animation="ripple" class="keyboard__discount-button">10%</button></div>
+                              <div class="keyboard__discount-item"><button type="button" data-animation="ripple" class="keyboard__discount-button">15%</button></div>
+                              <div class="keyboard__discount-item"><button type="button" data-animation="ripple" class="keyboard__discount-button">20%</button></div>
+                            </div>
+                            <div class="keyboard__container keyboard__lg">
+                              <div class="keyboard__main">
+                                <div class="keyboard__item"> <button type="button" data-animation="ripple" class="keyboard__button">1</button> </div>
+                                <div class="keyboard__item"> <button type="button" data-animation="ripple" class="keyboard__button">2</button> </div>
+                                <div class="keyboard__item"> <button type="button" data-animation="ripple" class="keyboard__button">3</button> </div>
+                                <div class="keyboard__item"> <button type="button" data-animation="ripple" class="keyboard__button">4</button> </div>
+                                <div class="keyboard__item"> <button type="button" data-animation="ripple" class="keyboard__button">5</button> </div>
+                                <div class="keyboard__item"> <button type="button" data-animation="ripple" class="keyboard__button">6</button> </div>
+                                <div class="keyboard__item"> <button type="button" data-animation="ripple" class="keyboard__button">7</button> </div>
+                                <div class="keyboard__item"> <button type="button" data-animation="ripple" class="keyboard__button">8</button> </div>
+                                <div class="keyboard__item"> <button type="button" data-animation="ripple" class="keyboard__button">9</button> </div>
+                                <div class="keyboard__item"> <button type="button" data-animation="ripple" class="keyboard__button">0</button> </div>
+                                <div class="keyboard__item"> <button type="button" data-animation="ripple" class="keyboard__button">00</button> </div>
+                                <div class="keyboard__item"> <button type="button" data-animation="ripple" class="keyboard__button"><i class="icon icon-text icon-clear"></i></button> </div>
+                              </div>
+                              <div class="keyboard__aside">
+                                <div class="keyboard__col"> <button type="button" data-animation="ripple" class="keyboard__button "><i class="icon icon-text icon-backspace"></i></button> </div>
+                                <div class="keyboard__col"> <button type="button" data-animation="ripple" class="keyboard__button "><i class="icon icon-text icon-undo"></i></button> </div>
+                                <div class="keyboard__col" data-colspan="2"> <button type="submit" data-animation="ripple" class="keyboard__button keyboard__submit">Done</button> </div>
+                              </div>
+                            </div>
+                          </div>
+                          <!-- end keyboard -->
+                        </div>
+                      </form>
+                    </div>
+                  </div>
+                  <div class="tabs__content" data-tab-container="modifiers">
+                    <div class="sm-grid tabs__info">
+                      <div class="sm-grid__body">
+                        <div class="sm-grid__row">
+                          <h2 class="title-lg sm-grid__col sm-grid__title">Size</h2>
+                        </div>
+                        <div class="sm-grid__row">
+                          <div class="sm-grid__col sm-grid__col_xs">
+                            <div class="sm-card sm-card_lg"> <label class="sm-card__label">
+		<input type="checkbox" >
+		<span class="sm-card__content" data-animation="ripple">
+			<i class="sm-card__icon icon icon-checked"></i>
+			<span class="sm-card__title">Small</span>
+			
+				<span class="sm-card__sticker">$10.00</span>
+			
+		</span>
+	</label> </div>
+                          </div>
+                          <div class="sm-grid__col sm-grid__col_xs">
+                            <div class="sm-card sm-card_lg"> <label class="sm-card__label">
+		<input type="checkbox" checked>
+		<span class="sm-card__content" data-animation="ripple">
+			<i class="sm-card__icon icon icon-checked"></i>
+			<span class="sm-card__title">Medium</span>
+			
+				<span class="sm-card__sticker">$15.00</span>
+			
+		</span>
+	</label> </div>
+                          </div>
+                          <div class="sm-grid__col sm-grid__col_xs">
+                            <div class="sm-card sm-card_lg"> <label class="sm-card__label">
+		<input type="checkbox" >
+		<span class="sm-card__content" data-animation="ripple">
+			<i class="sm-card__icon icon icon-checked"></i>
+			<span class="sm-card__title">Large</span>
+			
+				<span class="sm-card__sticker">$19.00</span>
+			
+		</span>
+	</label> </div>
+                          </div>
+                          <div class="sm-grid__col sm-grid__col_xs">
+                            <div class="sm-card sm-card_lg"> <label class="sm-card__label">
+		<input type="checkbox" >
+		<span class="sm-card__content" data-animation="ripple">
+			<i class="sm-card__icon icon icon-checked"></i>
+			<span class="sm-card__title">Extra Large XXXXL with long description</span>
+			
+				<span class="sm-card__sticker">$25,000.00</span>
+			
+		</span>
+	</label> </div>
+                          </div>
+                        </div>
+                        <div class="sm-grid__row">
+                          <h2 class="title-lg sm-grid__col sm-grid__title">Add-Ons</h2>
+                        </div>
+                        <div class="sm-grid__row">
+                          <div class="sm-grid__col sm-grid__col_xs">
+                            <div class="sm-card "> <label class="sm-card__label">
+		<input type="checkbox" >
+		<span class="sm-card__content" data-animation="ripple">
+			<i class="sm-card__icon icon icon-checked"></i>
+			<span class="sm-card__title">Double Cheese Topping</span>
+			
+				<span class="sm-card__sticker">+$2.00</span>
+			
+		</span>
+	</label> </div>
+                          </div>
+                          <div class="sm-grid__col sm-grid__col_xs">
+                            <div class="sm-card "> <label class="sm-card__label">
+		<input type="checkbox" checked>
+		<span class="sm-card__content" data-animation="ripple">
+			<i class="sm-card__icon icon icon-checked"></i>
+			<span class="sm-card__title">Salami</span>
+			
+				<span class="sm-card__sticker">+$3.00</span>
+			
+		</span>
+	</label> </div>
+                          </div>
+                          <div class="sm-grid__col sm-grid__col_xs">
+                            <div class="sm-card "> <label class="sm-card__label">
+		<input type="checkbox" checked>
+		<span class="sm-card__content" data-animation="ripple">
+			<i class="sm-card__icon icon icon-checked"></i>
+			<span class="sm-card__title">Tomatos</span>
+			
+				<span class="sm-card__sticker">+$3.00</span>
+			
+		</span>
+	</label> </div>
+                          </div>
+                        </div>
+                        <div class="sm-grid__row">
+                          <h2 class="title-lg sm-grid__col sm-grid__title">Exceptions</h2>
+                        </div>
+                        <div class="sm-grid__row">
+                          <div class="sm-grid__col sm-grid__col_xs">
+                            <div class="sm-card "> <label class="sm-card__label">
+		<input type="checkbox" >
+		<span class="sm-card__content" data-animation="ripple">
+			<i class="sm-card__icon icon icon-checked"></i>
+			<span class="sm-card__title">No Box Packaging</span>
+			
+				<span class="sm-card__sticker">-$1.00</span>
+			
+		</span>
+	</label> </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="sm-grid__footer"> <button class="btn btn_lg btn_primary btn_block sm-grid__btn" data-animation="ripple">Done</button> </div>
+                    </div>
+                  </div>
+                  <div class="tabs__content" data-tab-container="matrix">
+                    <div class="sm-grid tabs__info">
+                      <div class="sm-grid__body">
+                        <div class="sm-grid__row sm-grid__row_steps">
+                          <div class="sm-grid__col sm-grid__col_xs"> <i class="icon icon-next sm-grid__icon"></i>
+                            <div class="simple-card "> <label class="simple-card__label">
+		<input type="checkbox" >
+		<span class="simple-card__content" data-animation="ripple">
+			<span class="simple-card__title">Product Model</span>
+			
+				<span class="simple-card__description">Long Sleeves</span>
+			
+		</span>
+	</label> </div>
+                          </div>
+                          <div class="sm-grid__col sm-grid__col_xs"> <i class="icon icon-next sm-grid__icon"></i>
+                            <div class="simple-card "> <label class="simple-card__label">
+		<input type="checkbox" >
+		<span class="simple-card__content" data-animation="ripple">
+			<span class="simple-card__title">Size</span>
+			
+				<span class="simple-card__description">(select)</span>
+			
+		</span>
+	</label> </div>
+                          </div>
+                          <div class="sm-grid__col sm-grid__col_xs"> <i class="icon icon-next sm-grid__icon"></i>
+                            <div class="simple-card "> <label class="simple-card__label">
+		<input type="checkbox" disabled>
+		<span class="simple-card__content" data-animation="ripple">
+			<span class="simple-card__title">Color</span>
+			
+		</span>
+	</label> </div>
+                          </div>
+                        </div>
+                        <div class="sm-grid__row">
+                          <h2 class="title-lg sm-grid__col sm-grid__title">Size</h2>
+                        </div>
+                        <div class="sm-grid__row ">
+                          <div class="sm-grid__col sm-grid__col_xs">
+                            <div class="sm-card "> <label class="sm-card__label">
+		<input type="checkbox" >
+		<span class="sm-card__content" data-animation="ripple">
+			<i class="sm-card__icon icon icon-checked"></i>
+			<span class="sm-card__title">XS (Extra Small)</span>
+			
+		</span>
+	</label> </div>
+                          </div>
+                          <div class="sm-grid__col sm-grid__col_xs">
+                            <div class="sm-card "> <label class="sm-card__label">
+		<input type="checkbox" >
+		<span class="sm-card__content" data-animation="ripple">
+			<i class="sm-card__icon icon icon-checked"></i>
+			<span class="sm-card__title">S (Small)</span>
+			
+		</span>
+	</label> </div>
+                          </div>
+                          <div class="sm-grid__col sm-grid__col_xs">
+                            <div class="sm-card "> <label class="sm-card__label">
+		<input type="checkbox" checked>
+		<span class="sm-card__content" data-animation="ripple">
+			<i class="sm-card__icon icon icon-checked"></i>
+			<span class="sm-card__title">M (Medium)</span>
+			
+		</span>
+	</label> </div>
+                          </div>
+                          <div class="sm-grid__col sm-grid__col_xs">
+                            <div class="sm-card "> <label class="sm-card__label">
+		<input type="checkbox" >
+		<span class="sm-card__content" data-animation="ripple">
+			<i class="sm-card__icon icon icon-checked"></i>
+			<span class="sm-card__title">L (Large)</span>
+			
+		</span>
+	</label> </div>
+                          </div>
+                          <div class="sm-grid__col sm-grid__col_xs">
+                            <div class="sm-card "> <label class="sm-card__label">
+		<input type="checkbox" >
+		<span class="sm-card__content" data-animation="ripple">
+			<i class="sm-card__icon icon icon-checked"></i>
+			<span class="sm-card__title">XL (Extra Large)</span>
+			
+				<span class="sm-card__sticker">$23.00</span>
+			
+		</span>
+	</label> </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="sm-grid__footer"> <button class="btn btn_lg btn_primary btn_block sm-grid__btn" data-animation="ripple">Done</button> </div>
+                    </div>
+                  </div>
+                  <div class="tabs__content" data-tab-container="serials">
+                    <div class="sm-grid tabs__info">
+                      <div class="sm-grid__body">
+                        <div class="sm-grid__row">
+                          <p>Select serial number of product you&#39;re selling:</p>
+                        </div>
+                        <div class="sm-grid__row">
+                          <div class="sm-grid__col sm-grid__col_sm">
+                            <div class="card-serial "> <label class="card-serial__label">
+		<input type="checkbox" >
+		<span class="card-serial__content" data-animation="ripple">
+			<span class="card-serial__title">79049XXXA4S</span>
+		</span>
+	</label> </div>
+                          </div>
+                          <div class="sm-grid__col sm-grid__col_sm">
+                            <div class="card-serial "> <label class="card-serial__label">
+		<input type="checkbox" >
+		<span class="card-serial__content" data-animation="ripple">
+			<span class="card-serial__title">30384XXX991</span>
+		</span>
+	</label> </div>
+                          </div>
+                          <div class="sm-grid__col sm-grid__col_sm">
+                            <div class="card-serial "> <label class="card-serial__label">
+		<input type="checkbox" >
+		<span class="card-serial__content" data-animation="ripple">
+			<span class="card-serial__title">ULTRALONG-003233XX991-003233XX991</span>
+		</span>
+	</label> </div>
+                          </div>
+                          <div class="sm-grid__col sm-grid__col_sm">
+                            <div class="card-serial "> <label class="card-serial__label">
+		<input type="checkbox" >
+		<span class="card-serial__content" data-animation="ripple">
+			<span class="card-serial__title">TST0012345</span>
+		</span>
+	</label> </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="sm-grid__footer"> <button class="btn btn_lg btn_primary btn_block sm-grid__btn" data-animation="ripple">Done</button> </div>
+                    </div>
+                  </div>
+                  <div class="tabs__content" data-tab-container="notes">
+                    <div class="tabs__notes">
+                      <div class="fieldset fieldset_bordered">
+                        <div class="field ">
+                          <div class="field__inner"> <textarea class="textarea textarea_block" placeholder="Type here Item-specific note"></textarea> </div>
+                        </div>
+                      </div> <button class="btn btn_lg btn_primary btn_block text-uppercase" data-animation="ripple">Done</button> </div>
+                  </div>
+                </div>
+                <!-- end tabs container -->
+              </div>
+              <!-- end tabs -->
+            </div>
+          </div>
+        </div>
+      </main>
+      <!-- begin help -->
+      <div class="help" data-modal="help">
+        <div class="help__container" data-modal-container="help">
+          <div class="help__header">
+            <header class="header header_large"> <button class="btn-icon help__close icon icon-close" data-modal-close="help"></button>
+              <h2 class="title-xlg header__title">Help</h2>
+            </header>
+          </div>
+          <div class="help__body">
+            <p>Help content.</p>
+          </div>
+        </div>
+      </div>
+      <!-- end help -->
+      <!-- END content -->
+    </div>
+    <!-- end application -->
+    <!-- begin menu -->
+    <nav class="menu" data-menu-container="menu">
+      <header class="menu__header" data-menu-close="menu" data-animation="ripple"> <i class="icon icon-back menu__icon"></i>
+        <div class="title-xlg menu__title">Acme Inc.</div>
+      </header>
+      <div class="menu__container">
+        <ul class="nav">
+          <li class="nav__item is-active"> <a href="pos.html" class="nav__link"><i class="nav__icon icon icon-pos"></i>Point of Sale</a> </li>
+          <li class="nav__item "> <a href="orders.html" class="nav__link"><i class="nav__icon icon icon-orders"></i>Orders</a> </li>
+          <li class="nav__item "> <a href="pos.html" class="nav__link"><i class="nav__icon icon icon-undo"></i>Manual Refund</a> </li>
+          <li class="nav__item "> <a href="register-close.html" class="nav__link"><i class="nav__icon icon icon-close"></i>Close Register</a> </li>
+          <li class="nav__item "> <a href="payin.html" class="nav__link"><i class="nav__icon icon icon-cc"></i>Payins / Payouts</a> </li>
+          <li class="nav__item "> <a href="tips.html" class="nav__link"><i class="nav__icon icon icon-tips"></i>Tips</a> </li>
+          <li class="nav__item "> <a href="loyalty.html" class="nav__link"><i class="nav__icon icon icon-loyalty"></i>Loyalty</a> </li>
+          <li class="nav__item "> <a href="settings.html" class="nav__link"><i class="nav__icon icon icon-cog"></i>Settings</a> </li>
+          <li class="nav__item "> <a href="sync.html" class="nav__link"><i class="nav__icon icon icon-sync"></i>Synchronize</a> </li>
+          <li class="nav__item "> <a href="ui-kit.html" class="nav__link"><i class="nav__icon icon icon-bo"></i>Back Office &bull; UI-Kit</a> </li>
+          <li class="nav__item "> <a href="pos.html" class="nav__link"><i class="nav__icon icon icon-help"></i>Help</a> </li>
+          <li class="nav__item "> <a href="index.html" class="nav__link"><i class="nav__icon icon icon-exit"></i>Logout</a> </li>
+        </ul>
+      </div>
+    </nav>
+    <!-- end menu -->
+    <!-- begin overlay --><button type="button" class="overlay " data-color="dark-gray" data-overlay="overlay" data-menu-overlay="menu"></button>
+    <!-- end overlay -->
+    <!-- BEGIN scripts -->
+    <script type="text/javascript" src="static/js/app.js"></script>
+    <!-- END scripts -->
+    <!-- begin snackbar -->
+    <div class="snackbar" data-snackbar-container="snackbar" data-state="default">
+      <div class="snackbar__message" data-snackbar-content="snackbar"></div>
+    </div>
+    <!-- end snackbar -->
+  </body>
+
+</html>

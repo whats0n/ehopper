@@ -1,0 +1,21 @@
+---
+title: 'eHopper POS starting&hellip;'
+styles: 
+	- 'pos'
+bodyClasses: 'body-darkgray'
+---
+{% extends "layouts/_layout.html" %}
+
+{% block content %}
+	<main class="main">
+		{{header.large({
+			logo: true
+		})}}
+		<div class="loading-page text-center">
+			<div class="loading loading-page__icon"></div>
+			<div class="muted">
+				<p>eHopper POS is loading&hellip;</p>
+			</div>
+		</div>
+	</main>
+{% endblock %}

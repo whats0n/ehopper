@@ -1,0 +1,40 @@
+.alert
+	position: relative
+
+	display: block
+	padding: 20px
+	margin-bottom: 20px
+
+	color: #333
+	background: khaki
+
+	font-size: 16px
+	+clr
+	&__icon
+		vertical-align: middle
+
+	&__text
+		display: inline-block
+		vertical-align: middle
+		overflow: hidden
+
+	&__close
+		position: absolute
+		top: 0
+		right: 0
+		opacity: .5
+		cursor: pointer
+		+hover
+			opacity: 1
+
+	&-danger
+		color: #fff
+		background: #FF6431
+
+	&-success
+		color: #fff
+		background: #66BB6A
+
+	&-info
+		color: #2e99db
+		background: #c6e9ff

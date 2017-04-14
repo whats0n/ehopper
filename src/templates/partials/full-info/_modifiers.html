@@ -1,0 +1,77 @@
+{% import "partials/components/_card.html" as card %}
+<div class="sm-grid tabs__info">
+	{% set sections = [
+		{
+			title: 'Size',
+			items: [
+				{
+					classList: 'sm-card_lg',
+					sticker: '$10.00',
+					title: 'Small'
+				},
+				{
+					classList: 'sm-card_lg',
+					sticker: '$15.00',
+					title: 'Medium',
+					attrs: 'checked'
+				},
+				{
+					classList: 'sm-card_lg',
+					sticker: '$19.00',
+					title: 'Large'
+				},
+				{
+					classList: 'sm-card_lg',
+					sticker: '$25,000.00',
+					title: 'Extra Large XXXXL with long description'
+				}
+			]
+		},
+		{
+			title: 'Add-Ons',
+			items: [
+				{
+					sticker: '+$2.00',
+					title: 'Double Cheese Topping'
+				},
+				{
+					sticker: '+$3.00',
+					title: 'Salami',
+					attrs: 'checked'
+				},
+				{
+					sticker: '+$3.00',
+					title: 'Tomatos',
+					attrs: 'checked'
+				}
+			]
+		},
+		{
+			title: 'Exceptions',
+			items: [
+				{
+					sticker: '-$1.00',
+					title: 'No Box Packaging'
+				}
+			]
+		}
+	] %}
+	<div class="sm-grid__body">
+		{% for section in sections %}
+			<div class="sm-grid__row">
+				<h2 class="title-lg sm-grid__col sm-grid__title">{{section.title}}</h2>
+			</div>
+			<div class="sm-grid__row">
+				{% for item in section.items %}
+					<div class="sm-grid__col sm-grid__col_xs">
+						{{card.checkbox(item)}}
+					</div>
+				{% endfor %}
+			</div>
+		{% endfor %}
+		
+	</div>
+	<div class="sm-grid__footer">
+		<button class="btn btn_lg btn_primary btn_block sm-grid__btn" data-animation="ripple">Done</button>
+	</div>
+</div>

@@ -1,0 +1,34 @@
+// .search
+//   position: absolute
+//   z-index: -1
+//   top: 0
+//   left: 0
+//   width: 100%
+//   transform: translateY(-100%)
+//   transition: z-index 200ms step-end, transform 200ms ease-out
+
+//   &__input
+//     display: block
+//     padding-left: 20px
+
+//   &__input-wrapper
+//     overflow: hidden
+
+//   &__mask
+//     position: fixed
+//     z-index: -1
+//     top: 0
+//     right: 0
+//     bottom: 0
+//     left: 0
+//     opacity: 0
+//     background: #434c55
+//     transition: z-index 0s, opacity 300ms
+
+// .search-open
+//   z-index: 10
+//   transform: translateY(0)
+//   transition: z-index 0s, transform 300ms ease-out
+//   + .search__mask
+//     z-index: 9
+//     opacity: 0.8

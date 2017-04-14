@@ -1,0 +1,38 @@
+{% import '../_mixins.html' as mixins %}
+{% macro call(props) %}
+{% set active = props.active or 0 %}
+{% set nav = [
+	{ href: 'pos.html', icon: 'pos', text: 'Point of Sale' },
+	{ href: 'orders.html', icon: 'orders', text: 'Orders' },
+	{ href: 'pos.html', icon: 'undo', text: 'Manual Refund' },
+	{ href: 'register-close.html', icon: 'close', text: 'Close Register' },
+	{ href: 'payin.html', icon: 'cc', text: 'Payins / Payouts' },
+	{ href: 'tips.html', icon: 'tips', text: 'Tips' },
+	{ href: 'loyalty.html', icon: 'loyalty', text: 'Loyalty' },
+	{ href: 'settings.html', icon: 'cog', text: 'Settings' },
+	{ href: 'sync.html', icon: 'sync', text: 'Synchronize' },
+	{ href: 'ui-kit.html', icon: 'bo', text: 'Back Office &bull; UI-Kit' },
+	{ href: 'pos.html', icon: 'help', text: 'Help' },
+	{ href: 'index.html', icon: 'exit', text: 'Logout' }
+] %}
+<!-- begin menu -->
+<nav class="menu" data-menu-container="menu">
+	<header class="menu__header" data-menu-close="menu" data-animation="ripple">
+		<i class="icon icon-back menu__icon"></i>
+		<div class="title-xlg menu__title">Acme Inc.</div>
+	</header>
+	<div class="menu__container">
+		<ul class="nav">
+			{% for item in props.nav or nav %}
+			    <li class="nav__item {% if loop.index0 === active %}is-active{%- endif -%}">
+			    	<a href="{{item.href}}" class="nav__link"><i class="nav__icon icon icon-{{item.icon}}"></i>{{item.text | safe}}</a>
+			    </li>
+			{% endfor %}
+		</ul>
+	</div>
+</nav>
+<!-- end menu -->
+{{mixins.overlay({
+	attrs: 'data-menu-overlay="menu"'
+})}}
+{% endmacro %}

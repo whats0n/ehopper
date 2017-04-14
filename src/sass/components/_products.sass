@@ -1,0 +1,28 @@
+.products
+	position: relative
+	padding-bottom: 40px
+	height: 100%
+	&__container
+		overflow: auto
+		padding: 5px 10px
+		height: 100%
+		font-size: 0
+	&__slider, 
+	&__slider .slick-list, 
+	&__slider .slick-track
+		height: 100%
+	&__item
+		display: inline-block
+		vertical-align: top
+		padding: 5px
+		width: 25%
+		height: (100%/3)
+		// height: 33.33%
+		min-height: 62px
+		.item
+			height: 100%
+	&__pagination
+		position: absolute
+		right: 15px
+		left: 15px
+		bottom: 5px

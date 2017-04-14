@@ -1,0 +1,63 @@
+.item
+	position: relative
+	overflow: hidden
+	padding: 10px
+	border-radius: 2px
+	min-height: 50px
+	color: $darkGray
+	background: $lightGray
+	box-shadow: 0 0px 1px rgba($black, 0.2), 0 2px 4px rgba($black, 0.1)
+	text-align: left
+	cursor: pointer
+	+nosel
+	+gpu
+	transition: box-shadow 0.17s ease-in-out, background 0.17s ease-in-out, color 0.17s ease-in-out
+	+hover
+		box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3)
+	+active
+		box-shadow: none
+	&.is-active
+		color: $white
+		background: $blue !important
+	.ripple-circle
+		background: rgba($black, 0.1)
+	&__img
+		position: absolute
+		top: 0
+		right: 0
+		bottom: 0
+		left: 0
+		background-repeat: no-repeat
+		background-position: center center
+		background-size: cover
+	&__title,
+	&__description,
+	&__code
+		+text-overflow
+	&__title
+		position: absolute
+		bottom: 0
+		left: 0
+		right: 0
+		padding: 5px 10px
+		background: $white
+		font-size: 16px
+		line-height: (20/16)
+	&__price
+		position: absolute
+		top: 0
+		right: 0
+		padding: 3px 5px
+		background: rgba($white, 0.7)
+		font-size: 16px
+		line-height: 1
+	&__code
+		position: absolute
+		top: 50%
+		left: 0
+		right: 0
+		margin-top: -25px
+		font-size: 30px
+		text-align: center
+		line-height: 1
+		+text-overflow

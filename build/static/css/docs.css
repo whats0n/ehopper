@@ -1,0 +1,144 @@
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5,
+h6, p, blockquote, pre, a, abbr, acronym, address, big,
+cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small,
+strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt,
+dd, ol, ul, li, fieldset, form, label, legend, table, caption,
+tbody, tfoot, thead, tr, th, td, article, aside, canvas, details,
+embed, figure, figcaption, footer, header, hgroup, menu, nav,
+output, ruby, section, summary, time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  vertical-align: baseline;
+}
+
+html {
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+}
+
+img, fieldset, a img {
+  border: none;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+textarea,
+button {
+  -webkit-appearance: none;
+}
+
+input[type="submit"],
+button,
+a {
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+}
+
+input[type="submit"]::-moz-focus-inner,
+button::-moz-focus-inner,
+a::-moz-focus-inner {
+  padding: 0;
+  border: 0;
+}
+
+textarea {
+  overflow: auto;
+}
+
+input, button {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+div, input, textarea, select, button,
+h1, h2, h3, h4, h5, h6, a, span, a:focus {
+  outline: none;
+}
+
+ul, ol, li {
+  list-style-type: none;
+}
+
+table {
+  border-spacing: 0;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+html {
+  box-sizing: border-box;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+  -webkit-tap-highlight-color: transparent;
+}
+
+[hidden] {
+  display: none !important;
+}
+
+.docs-menu__link {
+  display: block;
+  padding: 10px 20px;
+  border-bottom: solid rgba(0, 0, 0, 0.1) 1px;
+  text-decoration: none;
+  color: inherit;
+}
+
+.docs-menu__link:hover {
+  background-color: #eeeeee;
+}
+
+code {
+  background: #d7f3ff;
+  color: #65b1d0;
+  padding: 0 7px 0 5px;
+  border-radius: 3px;
+}
+
+pre {
+  background: #fff;
+  font-family: "Sourc__e Code Pro", "Anonymous Pro", Courier, monospace;
+  font-weight: 300;
+  font-size: 90%;
+  line-height: 120%;
+  padding: 20px;
+  margin: 20px 0;
+  color: #434c55;
+  border-radius: 5px;
+  box-shadow: inset 1px 1px 6px rgba(0, 0, 0, 0.2);
+}
+
+pre u {
+  color: #2e99db;
+  text-decoration: none;
+}
+
+pre s {
+  font-weight: 700;
+  text-decoration: none;
+  color: black;
+}
+
+.docs-header {
+  height: auto;
+}
+
+article.docs aside {
+  width: 25%;
+  position: fixed;
+}
+
+article.docs main {
+  width: 75%;
+}
+
+article.docs main section {
+  border-bottom: solid rgba(0, 0, 0, 0.1) 1px;
+}
+
+/*# sourceMappingURL=docs.css.map */

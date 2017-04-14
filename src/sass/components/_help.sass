@@ -1,0 +1,43 @@
+.help
+	position: fixed
+	z-index: 100
+	top: 0
+	right: 0
+	bottom: 0
+	left: 0
+	opacity: 0
+	visibility: hidden
+	transition: opacity 0s 0.3s ease-out, visibility 0s 0.3s ease-out
+	&.is-open
+		opacity: 1
+		visibility: visible
+		transition: opacity 0s ease-out, visibility 0s ease-out
+		.help__container
+			+gpu
+	&__container
+		position: absolute
+		z-index: 2
+		top: 0
+		right: 0
+		bottom: 0
+		padding-top: 150px
+		width: 100%
+		max-width: 300px
+		background: $white
+		box-shadow: 0 2px 4px rgba($black, 0.3)
+		transform: translate3d(110%,0,0)
+		transition: transform 0.3s ease-out
+	&__header
+		position: absolute
+		z-index: 1
+		top: 0
+		right: 0
+		left: 0
+	&__body
+		position: relative
+		overflow: auto
+		padding: 20px
+		height: 100%
+	&__close
+		margin: 5px 5px 20px
+		font-size: 16px

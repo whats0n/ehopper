@@ -1,0 +1,64 @@
+.snackbar
+  position: fixed
+  z-index: 300
+  bottom: 0
+  left: 20%
+  right: 20%
+  padding: 20px
+  color: $lightGray
+  background: #434c55
+  +reg
+  font-size: 16px
+  transform: translate3d(0,100%,0)
+  transition: transform 0.3s ease-in-out
+  +xs
+    left: 0
+    right: 0
+  &.is-open
+    +gpu
+  &[data-state="success"]
+    color: $white
+    background: $green
+  &[data-state="error"]
+    color: $white
+    background: $orange
+  &__message
+    overflow: hidden
+    margin: 10px
+
+// .snackbar
+//   position: fixed
+//   bottom: 0
+//   left: 20%
+//   padding: 20px 20px
+//   width: 60%
+//   color: #eeeeee
+//   background: #434c55
+//   font-size: 16px
+//   font-weight: 400
+//   +xs
+//     left: 0
+//     width: 100%
+
+//   &__actions
+//     float: right
+//     margin-left: 20px
+
+//   &__message
+//     overflow: hidden
+//     margin: 10px 0
+
+// .snackbar-success
+//   color: #fff
+//   background: #66BB6A
+
+// .snackbar-danger
+//   color: #fff
+//   background: #FF6431
+
+// .animated .snackbar
+//   transform: translate(0, 0)
+//   transition: transform 300ms
+//   &.hide
+//     display: block !important
+//     transform: translate(0, 100%)

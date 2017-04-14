@@ -1,0 +1,57 @@
+{% import '../_mixins.html' as mixins %}
+
+{% macro menu(props) %}
+<div class="dropdown-menu {{props.classList}}" data-dropdown-menu="{{props.name}}">
+	{% if props.listOnly !== true %}
+		{% if props.search %}
+			<div class="dropdown-menu__search sm-search">
+				<form action="/">
+					<div class="sm-search__field">
+						<input type="text" class="sm-search__input" placeholder="Find Customer...">
+						<button class="sm-search__btn" data-animation="ripple"><i class="icon icon-search"></i></button>
+					</div>
+				</form>
+			</div>
+		{% endif %}
+	{% endif %}
+	<ul class="dropdown-menu__list">
+		{% for item in props.list %}
+			<li class="dropdown-menu__item {%- if loop.index0 === props.activeItem %} is-active {%- endif -%}" 
+				data-animation="ripple" 
+				{% if props.links !== true %} data-dropdown-item="{{props.name}}" {% endif %} 
+				{% if item.value %} data-value="{{item.value}}" {% endif %} >
+				{{item.text | safe}}
+			</li>
+		{% endfor %}
+	</ul>
+	{% if props.listOnly !== true %}
+		{% if props.btnAdd %}
+			{{mixins.button({
+				tagName: 'a',
+				classList: 'btn btn_block btn_lg btn_primary',
+				attrs: 'data-animation="ripple" href="#"',
+				content: '<i class="icon icon-plus"></i>' + props.btnAdd
+			})}}
+		{% endif %}
+	{% endif %}
+</div>
+
+{{mixins.overlay({ 
+	attrs: 'data-dropdown-overlay="' + props.name  + '"' 
+})}}
+{% endmacro %}
+
+{% macro simple(props) %}
+<!-- begin dropdown -->
+<div class="dropdown {{props.dropdownClassList}}" data-dropdown="{{props.name}}">
+	<div class="dropdown__header" data-dropdown-open="{{props.name}}" data-animation="ripple">
+		<i class="dropdown__arrow icon icon-expand"></i>
+		{% if props.label %}
+			<div class="dropdown__label">{{props.label}}</div>
+		{% endif %}
+		<div class="dropdown__value" data-dropdown-value="{{props.name}}">{{props.value}}</div>
+	</div>
+	{{menu(props)}}
+</div>
+<!-- end dropdown -->
+{% endmacro %}

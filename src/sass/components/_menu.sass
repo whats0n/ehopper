@@ -1,0 +1,145 @@
+.menu
+  position: fixed
+  z-index: 200
+  top: 0
+  left: 0
+  right: 0
+  bottom: 0
+
+  width: 300px
+  background: #434c55
+  box-shadow: 0 0 4px 1px rgba(0, 0, 0, 0.2)
+  transform: translate3d(-110%,0,0)
+  transition: transform 0.3s ease-in-out
+  &.is-open
+    +gpu
+  &__header
+    position: absolute
+    z-index: 10
+    top: 0
+    left: 0
+    right: 0
+    height: 50px
+    color: $white
+    background: $blue
+    cursor: pointer
+    +nosel
+  &__icon
+    position: absolute
+    top: 5px
+    left: 5px
+  &__title
+    padding: 12px 20px 12px 50px
+  &__container
+    position: relative
+    z-index: 5
+    overflow: auto
+    padding-top: 70px
+    height: 100%
+
+.nav
+  &__item
+    border-bottom: solid #4C5560 1px
+    color: #7D838B
+    +nosel
+    +hover
+      background: #4C5560
+    &.is-active
+      color: $white
+      background: #4C5560
+  &__link
+    position: relative
+    display: block
+    padding: 5px 20px 5px 50px
+    color: inherit
+    font-size: 16px
+    line-height: 40px
+    text-decoration: none
+    cursor: pointer
+  &__icon
+    position: absolute
+    top: 5px
+    left: 5px
+
+// .menu
+//   display: block
+//   position: fixed
+//   left: 0
+//   -webkit-transform: translate(-300px, 0)
+//   transform: translate(-300px, 0)
+//   top: 0
+//   bottom: 0
+//   width: 300px
+//   background: #434c55
+//   z-index: 2
+//   overflow-y: auto
+//   &::-webkit-scrollbar
+//     display: none
+
+//   &__mask
+//     position: fixed
+//     top: 0
+//     right: 0
+//     bottom: 0
+//     left: 0
+//     display: none
+//     opacity: 0
+//     background: #434c55
+//   &-active
+//     -webkit-transform: translate(0, 0)
+//     transform: translate(0, 0)
+//     + .menu__mask
+//       z-index: 1 !important
+//       display: block
+//       opacity: 0.8
+
+//   header
+//     cursor: pointer
+
+//   &__items
+//     margin-top: 20px
+//     font-size: 16px
+//     list-style: none
+//     +nosel
+
+//   &__item
+//     border-bottom: 1px solid #4C5560
+//     height: 50px
+//     line-height: 50px
+//     list-style: none
+
+//   &__item-active 
+//     .menu
+//       &__item-link
+//         color: #fff
+//         background: #4C5560
+
+//   &__item-link
+//     display: block
+//     color: #7D838B
+//     text-decoration: none
+//     +hover
+//       background: #4C5560
+//     +active
+//       color: #fff
+//       background: #333
+
+//   &__item-icon
+//     vertical-align: middle
+//     margin: 0 8px
+
+// .animated
+//   .menu
+//     transition: all 300ms ease-out
+//   .menu__item-link:hover
+//     transition: none
+//   .menu__mask
+//     z-index: -1
+//     display: block
+//     transition: opacity 200ms ease-out, z-index 200ms step-end
+//   .menu-active + .menu__mask
+//     transition: opacity 300ms ease-out, z-index 0s
+//   .menu header
+//     background: #434c55
+//   .menu-active header
+//     background: #2e99db

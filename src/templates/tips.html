@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset=utf-8>
+	<title>Tips &bull; eHopper POS</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+	<meta http-equiv=X-UA-Compatible content="IE=edge,chrome=1">
+	<link rel="stylesheet" type="text/css" href="static/css/pos.css">
+	<script src="static/js/demo.js"></script>
+	<link rel="icon" href="https://ehopper.com/wp-content/uploads/2016/03/favicon-01.png" type="image/png">
+</head>
+
+
+<body class="animated">
+
+	<article class="pos layout layout-rows">
+
+		<header class="layout__row">
+			<button class="btn icon icon-menu" title="Menu"></button>
+			<div class="header__icons">
+				<a href="search.html" class="btn icon icon-search" title="Search"></a>
+				<button class="btn icon icon-help" title="Help" onclick="demoDialogOpen('help')"></button>
+			</div>
+			<h1>Orders Tips</h1>
+		</header>
+
+		<div class="toolbar toolbar-flex toolbar-white layout__row">
+			<div class="toolbar__item">
+				<div class="dropdown dropdown-white w100">
+					<div class="dropdown__selected">
+						<div class="dropdown__selected-label">Stor(e):</div>
+						<div class="dropdown__selected-value">Show all stores</div>
+					</div>
+					<ul class="dropdown-menu">
+						<li class="dropdown-menu__item dropdown-menu__item-selected">Show all stores</li>
+						<li class="dropdown-menu__item">Main Store</li>
+						<li class="dropdown-menu__item">Second Store</li>
+					</ul>
+					<div class="dropdown-menu__mask"></div>
+				</div>
+			</div>
+
+			<div class="toolbar__item">
+				<div class="dropdown dropdown-white w100">
+					<div class="dropdown__selected">
+						<div class="dropdown__selected-label">Employee:</div>
+						<div class="dropdown__selected-value">All Employees</div>
+					</div>
+					<ul class="dropdown-menu">
+						<li class="dropdown-menu__item dropdown-menu__item-selected">Show all</li>
+						<li class="dropdown-menu__item">Mr. John Smith</li>
+						<li class="dropdown-menu__item">Mrs. Smith</li>
+						<li class="dropdown-menu__item">Dr. House MD</li>
+					</ul>
+					<div class="dropdown-menu__mask"></div>
+				</div>
+			</div>
+
+			<div class="toolbar__item toolbar__item-minimize">
+				<button class="btn btn-lg btn-white"><i class="icon icon-undo"></i>Apply&nbsp;</button>
+			</div>
+
+			<div class="toolbar__item w50"><!-- grow? --></div>
+
+			<!-- Action Buttons -->
+			<div class="toolbar__item toolbar__item-minimize"><button class="btn btn-lg btn-secondary">Save Orders</button></div>
+			<div class="toolbar__item toolbar__item-minimize"><button class="btn btn-lg btn-secondary">Close Orders</button></div>
+			<div class="toolbar__item toolbar__item-minimize"><button class="btn btn-lg btn-secondary">Close Batch</button></div>
+
+
+		</div>
+
+		<div class="layout__row layout__row-grow">
+		<table class="table table-striped table-hover">
+			<thead>
+				<tr>
+					<th class="table__cell-first table__cell-minimize"><label class="checkbox"><input type="checkbox"><i class="icon"></i></label></th>
+					<th class="valign-middle table__sortable table__sorted-asc">Order</th>
+					<th class="valign-middle">Store</th>
+					<th class="valign-middle">Register</th>
+					<th class="valign-middle">Refnum</th>
+					<th class="table__cell-minimize valign-middle">Status</th>
+					<th class="valign-middle">Type</th>
+					<th class="valign-middle text-right">Price</th>
+					<th class="table__sortable valign-middle">Date</th>
+					<th class="valign-middle">Employee</th>
+					<th class="table__cell-last valign-middle table__cell-minimize">Tips</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td class="table__cell-first no-vpadding"><label class="checkbox"><input type="checkbox" checked><i class="icon"></i></label></td>
+					<td>040660174749</td>
+					<td>Main Store</td>
+					<td>1</td>
+					<td></td>
+					<td class="no-vpadding"><i class="icon icon-check"></i></td>
+					<td>Quick Sale</td>
+					<td class="text-right">$200.00</td>
+					<td>03/07/2017<div class="small muted">12:59:00</div></td>
+					<td>Mr. John Snow</td>
+					<td class="no-vpadding no-wrap"><input size="8" class="input input-silver input-xs valign-middle text-right" placeholder="$" value="5.00"><a href="order.html" class="icon valign-middle icon-next btn"></a></td>
+				</tr>
+				<tr>
+					<td class="table__cell-first no-vpadding"><label class="checkbox"><input type="checkbox" checked><i class="icon"></i></label></td>
+					<td>040660174750<div class="muted">Saved order name</div></td>
+					<td>Second Store</td>
+					<td>4</td>
+					<td></td>
+					<td class="no-vpadding"><i class="icon icon-checked text-success"></i></td>
+					<td>Quick Sale</td>
+					<td class="text-right">$100.00</td>
+					<td>03/07/2017<div class="small muted">12:59:00</div></td>
+					<td>Mr. John Snow</td>
+					<td class="no-vpadding no-wrap"><input size="8" class="input input-silver input-xs valign-middle text-right" placeholder="$"><a href="order.html" class="icon valign-middle icon-next btn"></a></td>
+				</tr>
+				<tr>
+					<td class="table__cell-first no-vpadding"><label class="checkbox"><input type="checkbox"><i class="icon"></i></label></td>
+					<td>040660174000</td>
+					<td>Main Store</td>
+					<td>2</td>
+					<td></td>
+					<td class="no-vpadding"><i class="icon icon-close"></i></td>
+					<td>Delivery</td>
+					<td class="text-right">$4100.00</td>
+					<td>03/07/2017<div class="small muted">12:59:00</div></td>
+					<td>Mr. John Snow</td>
+					<td class="no-vpadding no-wrap"><input size="8" class="input input-silver input-xs valign-middle text-right" placeholder="$"><a href="order.html" class="icon valign-middle icon-next btn"></a></td>
+				</tr>
+				<tr>
+					<td class="table__cell-first no-vpadding"><label class="checkbox"><input type="checkbox"><i class="icon"></i></label></td>
+					<td>040660174001</td>
+					<td>Main Store</td>
+					<td>1</td>
+					<td></td>
+					<td class="no-vpadding"><i class="icon icon-clear text-danger"></i></td>
+					<td>Quick Sale</td>
+					<td class="text-right">$100.00</td>
+					<td>12/12/2016<div class="small muted">9:00:00</div></td>
+					<td>Samantha Fox</td>
+					<td class="no-vpadding no-wrap"><input size="8" class="input input-silver input-xs valign-middle text-right" placeholder="$"><a href="order.html" class="icon valign-middle icon-next btn"></a></td>
+				</tr>
+			</tbody>
+		</table>
+		</div>
+
+		<section class="text-center layout__row">
+			<button class="btn btn-default"><i class="icon icon-expand"></i>Show more</button>
+		</section>
+
+
+	</article>
+
+
+	<nav class="menu">
+		<header>
+			<i class="icon icon-back"></i>
+			<h1>Acme Inc.</h1>
+		</header>
+
+		<ul class="menu__items">
+			<li class="menu__item"><a href="pos.html" class="menu__item-link"><i class="icon icon-pos menu__item-icon"></i>Point of Sale</a></li>
+			<li class="menu__item"><a href="orders.html" class="menu__item-link"><i class="icon icon-orders menu__item-icon"></i>Orders</a></li>
+			<li class="menu__item"><a href="pos.html" class="menu__item-link"><i class="icon icon-undo menu__item-icon"></i>Manual Refund</a></li>
+			<li class="menu__item"><a href="register-close.html" class="menu__item-link"><i class="icon icon-close menu__item-icon"></i>Close Register</a></li>
+			<li class="menu__item"><a href="payin.html" class="menu__item-link"><i class="icon icon-cc menu__item-icon"></i>Payins / Payouts</a></li>
+			<li class="menu__item menu__item-active"><a href="tips.html" class="menu__item-link"><i class="icon icon-tips menu__item-icon"></i>Tips</a></li>
+			<li class="menu__item"><a href="loyalty.html" class="menu__item-link"><i class="icon icon-loyalty menu__item-icon"></i>Loyalty</a></li>
+			<li class="menu__item"><a href="settings.html" class="menu__item-link"><i class="icon icon-cog menu__item-icon"></i>Settings</a></li>
+			<li class="menu__item"><a href="sync.html" class="menu__item-link"><i class="icon icon-sync menu__item-icon"></i>Synchronize</a></li>
+			<li class="menu__item"><a href="ui-kit.html" class="menu__item-link"><i class="icon icon-bo menu__item-icon"></i>Back Office</a></li>
+			<li class="menu__item"><a href="pos.html" class="menu__item-link"><i class="icon icon-help menu__item-icon"></i>Help</a></li>
+			<li class="menu__item"><a href="index.html" class="menu__item-link"><i class="icon icon-exit menu__item-icon"></i>Logout</a></li>
+		</ul>
+	</nav>
+	<div class="menu__mask"></div>
+
+
+	<!-- Dialog: Help Panel -->
+	<link rel="import" href="inc/help.html" onload="demoTemplate(this)">
+
+
+</body>
+</html>

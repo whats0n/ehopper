@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset=utf-8>
+    <title>Orders #0123 &bull; eHopper POS</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta http-equiv=X-UA-Compatible content="IE=edge,chrome=1">
+    <link rel="stylesheet" type="text/css" href="static/css/pos.css">
+    <script src="static/js/demo.js"></script>
+    <link rel="icon" href="https://ehopper.com/wp-content/uploads/2016/03/favicon-01.png" type="image/png"> </head>
+
+  <body class="animated">
+    <article class="order-details">
+      <aside class="cutout-right">
+        <header class="cutout-right">
+          <a href="orders.html" class="btn icon icon-back"></a>
+          <h1>Orders</h1>
+        </header>
+        <section>
+          <p class="labeled-info"><label>Order ID:</label>0000123</p>
+          <p class="labeled-info"><label>Order date &amp; Time:</label>12/21/2016 14:19:28</p>
+          <p class="labeled-info"><label>Order type:</label>Quick Sale</p>
+        </section>
+        <hr>
+        <section>
+          <p class="labeled-info"> <i class="icon icon-check pull-right"></i> <label>Status:</label> Paid / Successfull </p>
+          <p class="labeled-info"><label>Tender Type:</label>Credit Card</p>
+          <p class="labeled-info"><label>Refnum:</label>V469GH9</p>
+          <div class="clear-hmargins">
+            <div class="dropdown dropdown-white w100 cutout-right">
+              <div class="dropdown__selected"> <i class="icon icon-time pull-right"></i>
+                <div class="dropdown__selected-label">Fulfillment:</div>
+                <div class="dropdown__selected-value">In Preparation</div>
+              </div>
+              <ul class="dropdown-menu">
+                <li class="dropdown-menu__item">New</li>
+                <li class="dropdown-menu__item dropdown-menu__item-selected">In Preparation</li>
+                <li class="dropdown-menu__item">Prepared</li>
+                <li class="dropdown-menu__item">In Fulfillment</li>
+                <li class="dropdown-menu__item">Fulfilled</li>
+              </ul>
+              <div class="dropdown-menu__mask"></div>
+            </div>
+          </div>
+        </section>
+        <hr>
+        <section>
+          <p class="labeled-info"><label>Employee:</label>Mr. Seller Name</p>
+          <p class="labeled-info"><label>Store:</label>Main Store</p>
+          <p class="labeled-info"><label>Register:</label>#2 (John's iPad)</p>
+        </section>
+      </aside>
+      <main class="layout layout-rows">
+        <header class="layout__row">
+          <div class="header__icons"> <button class="btn icon icon-help" title="Help" onclick="demoDialogOpen('help')"></button> </div>
+          <h1>Order #0123</h1>
+        </header>
+        <div class="layout__row layout__row-grow">
+          <!-- Scrollable table -->
+          <table class="table table-striped">
+            <thead>
+              <tr>
+                <th class="table__cell-first valign-middle">Order Item</th>
+                <th class="text-right valign-middle">Quantity</th>
+                <th class="text-right valign-middle">Item Price</th>
+                <th class="text-right valign-middle">Discount</th>
+                <th class="text-right valign-middle">Total</th>
+                <th class="text-right" width="7%"><label class="checkbox"><input type="checkbox"><i class="icon"></i></label></th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="table__cell-first">Hot-Dog</td>
+                <td class="text-right">2</td>
+                <td class="text-right">$5.00</td>
+                <td class="text-right"></td>
+                <td class="text-right">$10.00</td>
+                <td class="text-right"><label class="checkbox"><input type="checkbox"><i class="icon"></i></label></td>
+              </tr>
+              <tr>
+                <td class="table__cell-first">Hot-Dog XL
+                  <div class="muted">+Additional Ketchup</div>
+                </td>
+                <td class="text-right">1</td>
+                <td class="text-right">$8.00</td>
+                <td class="text-right">$1.00</td>
+                <td class="text-right">$7.00</td>
+                <td class="text-right"><label class="checkbox"><input type="checkbox" checked><i class="icon"></i></label></td>
+              </tr>
+              <tr>
+                <td class="table__cell-first">Whiskey</td>
+                <td class="text-right">200 <span class="muted">ml</span></td>
+                <td class="text-right">$8.00</td>
+                <td class="text-right">$1.00</td>
+                <td class="text-right">$7.00</td>
+                <td class="text-right"><label class="checkbox"><input type="checkbox"><i class="icon"></i></label></td>
+              </tr>
+              <tr>
+                <td class="table__cell-first">Very Good Wine
+                  <div class="muted">France, Glass Bottle, 700 ml</div>
+                </td>
+                <td class="text-right">11</td>
+                <td class="text-right">$1,048.90</td>
+                <td class="text-right">$48.90</td>
+                <td class="text-right">$11,480.00</td>
+                <td class="text-right"><label class="checkbox"><input type="checkbox"><i class="icon"></i></label></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="layout__row cutout-top">
+          <table class="table no-margin">
+            <tbody>
+              <tr>
+                <td class="valign-top" rowspan="5"><i class="icon icon-note baseline"></i><span>Order Note text goes here (if present)</span></td>
+                <td class="text-right muted">Subtotal:</td>
+                <td class="text-right">$11,540.54</td>
+                <td width="7%"></td>
+              </tr>
+              <tr>
+                <td class="text-right muted">Tax:</td>
+                <td class="text-right">$140.00</td>
+              </tr>
+              <tr>
+                <td class="text-right muted">Total:</td>
+                <td class="text-right"><b>$12,540.54</b></td>
+              </tr>
+            </tbody>
+          </table>
+          <section class="text-center"> <button class="btn btn-lg btn-primary">Print Receipt</button> <button class="btn btn-lg btn-default" onclick="demoDialogOpen('email')">Email Receipt</button> <button class="btn btn-lg btn-default">Void</button> <button class="btn btn-lg btn-default">Refund</button>            </section>
+        </div>
+      </main>
+    </article>
+    <!-- Dialog: Send Email -->
+    <div class="dialog" id="email">
+      <div class="dialog__content">
+        <header class="header">
+          <div class="header__icons"><i class="btn icon icon-close dialog__close"></i></div>
+          <h1>Email Receipt</h1>
+        </header>
+        <div class="dialog__body">
+          <div class="fieldset fieldset-lg fieldset-standalone"> <label class="fieldset__label" for="emailAddr">Email Address:</label> <input class="input input-lg fieldset__input" id="emailAddr" type="email" placeholder="user@domain.com" required="required"> </div>
+          <div class="fieldset fieldset-lg fieldset-standalone">
+          <label class="fieldset__label" for="receiptLang">Receipt Language:</label> <select class="input input-lg fieldset__input text-right" id="receiptLang">
+						<option>English</option>
+						<option>French</option>
+						<option>Russian</option>
+					</select> </div>
+        </div> <button class="btn btn-block btn-success btn-lg dialog__close">Send</button> </div>
+    </div>
+    <div class="dialog__mask"></div>
+    <!-- Dialog: Help Panel -->
+    <link rel="import" href="inc/help.html" onload="demoTemplate(this)"> </body>
+
+</html>

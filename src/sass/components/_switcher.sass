@@ -1,0 +1,52 @@
+.switcher
+	position: relative
+	display: inline-block
+	vertical-align: top
+	width: 50px
+	height: 30px
+	cursor: pointer
+	+active
+		.switcher__icon
+			&:before
+				box-shadow: inset 2px 2px 4px rgba(0, 0, 0, 0.3)
+	input 
+		position: absolute
+		top: 0
+		left: 0
+		opacity: 0
+		visibility: hidden
+		&:checked + .switcher__icon
+			&:before
+				background: $blue
+			&:after
+				box-shadow: -1px 2px 2px rgba(0, 0, 0, 0.2)
+				transform: translate3d(10px,0,0)
+	&__icon
+		position: absolute
+		top: 0
+		left: 0
+		right: 0
+		bottom: 0
+		&:before,
+		&:after
+			content: ''
+			position: absolute
+		&:before
+			top: 0
+			left: 0
+			right: 0
+			bottom: 0
+			border-radius: 15px
+			background: $lightGray
+			transition: background 0.2s ease-in-out, box-shadow 0.1s ease-in-out
+		&:after
+			top: 50%
+			left: 50%
+			margin: -12px 0 0 -12px
+			border-radius: 50%
+			width: 24px
+			height: 24px
+			background: $white
+			box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.2)
+			transform: translate3d(-10px,0,0)
+			transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out

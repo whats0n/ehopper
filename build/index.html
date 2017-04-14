@@ -1,0 +1,71 @@
+<!doctype html>
+<html>
+
+  <head>
+    <meta charset="utf-8">
+    <title>eHopper POS</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="theme-color" content="#fff">
+    <meta name="format-detection" content="telephone=no">
+    <link rel="stylesheet" media="all" href="static/css/pos.css">
+    <link rel="icon" href="https://ehopper.com/wp-content/uploads/2016/03/favicon-01.png" type="image/png">
+    <!-- BEGIN scripts -->
+    <script type="text/javascript" src="static/js/demo.js"></script>
+    <!-- END scripts -->
+  </head>
+
+  <body class="animated">
+    <!-- begin application -->
+    <div class="application" id="application">
+      <!-- BEGIN content -->
+      <main class="main">
+        <!-- begin header -->
+        <header class="header ">
+          <h2 class="title-xlg header__title ">eHopper 2017 Prototype</h2>
+        </header>
+        <!-- end header -->
+        <section class="section section_inner">
+          <h2 class="title-xlg">Login Sequence</h2>
+          <div class="wrapper text-center"> <a class="btn btn_lg btn_default" data-animation="ripple" href="loading.html"><i class="icon icon-lock"></i>Start Login Sequence</a> </div>
+          <!-- begin horizontal-menu -->
+          <div class="horizontal-menu">
+            <div class="horizontal-menu__container">
+              <ul class="horizontal-menu__list">
+                <li class="horizontal-menu__item"> <a class="horizontal-menu__link " data-animation="ripple" href="loading.html">Loading...</a> </li>
+                <li class="horizontal-menu__item"> <a class="horizontal-menu__link " data-animation="ripple" href="activate.html">Activation</a> </li>
+                <li class="horizontal-menu__item"> <a class="horizontal-menu__link " data-animation="ripple" href="pin.html">PIN screen</a> </li>
+                <li class="horizontal-menu__item"> <a class="horizontal-menu__link " data-animation="ripple" href="sync.html">Sync...</a> </li>
+                <li class="horizontal-menu__item"> <a class="horizontal-menu__link " data-animation="ripple" href="signup.html">Signup</a> </li>
+                <li class="horizontal-menu__item"> <a class="horizontal-menu__link " data-animation="ripple" href="signup-done.html">Signup complete</a> </li>
+              </ul>
+            </div>
+          </div>
+          <!-- end horizontal-menu -->
+          <hr>
+          <h2 class="title-xlg">POS Screen Demo</h2>
+          <p>Static HTML representation of eHopper POS screens. Some effects can be implemented with JavaScript, but no data integration is planned.</p>
+          <div class="wrapper text-center"> <a class="btn btn_lg btn_green" data-animation="ripple" href="pos.html"><i class="icon icon-pos"></i>Launch POS</a> </div>
+          <hr>
+          <h2 class="title-xlg">GUI Components Showcase</h2>
+          <p>This page contain as many GUI components in all different states as possible.</p>
+          <form method="get" action="ui-kit.html">
+            <div class="wrapper text-center"> <button class="btn btn_default" data-animation="ripple"><i class="icon icon-bo"></i>Show UI Kit</button> </div>
+          </form>
+          <hr>
+          <link rel="import" href="inc/uc.html" onload="demoTemplate(this)"> </section>
+      </main>
+      <!-- END content -->
+    </div>
+    <!-- end application -->
+    <!-- BEGIN scripts -->
+    <script type="text/javascript" src="static/js/app.js"></script>
+    <!-- END scripts -->
+    <!-- begin snackbar -->
+    <div class="snackbar" data-snackbar-container="snackbar" data-state="default">
+      <div class="snackbar__message" data-snackbar-content="snackbar"></div>
+    </div>
+    <!-- end snackbar -->
+  </body>
+
+</html>

@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset=utf-8>
+	<title>UI Kit &bull; eHopper POS</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+	<meta http-equiv=X-UA-Compatible content="IE=edge,chrome=1">
+	<link rel="stylesheet" type="text/css" href="static/css/pos.css">
+	<link rel="stylesheet" type="text/css" href="static/css/docs.css">
+	<script src="static/js/demo.js"></script>
+	<link rel="icon" href="https://ehopper.com/wp-content/uploads/2016/03/favicon-01.png" type="image/png">
+	<style>
+		
+		p {margin: 20px 0;}
+		.catalog-demo .categories__item,
+		.catalog-demo .products__item
+			{margin-right: 10px;max-width: 150px;}
+		.catalog-demo .products__item
+			{height: 130px;}
+	</style>
+</head>
+
+
+<body class="animated">
+
+	<article class="pos">
+
+		<header>
+			<button class="btn icon icon-menu" title="Menu"></button>
+			<div class="header__icons"><a href="pos.html" class="btn icon icon-delete" title="Close"></a></div>
+			<h1>UI Kit</h1>
+		</header>
+
+		<section>
+			<h1>GUI Components Showcase</h1>
+			<p>This page contain as many GUI components in all different states as possible.</p>
+
+
+			<h1>Loading</h1>
+			<p>Throbber: Work in progress</p>
+			<img src="/static/img/loading.svg" width="60">
+
+
+			<h1>POS Catalog</h1>
+			<h2>Cards</h2>
+			<p><code>.card</code> is generic Material Design inspired component used to represend content items in prominent way.</p>
+
+			<div class="card">
+				<div class="card__content">This is Card</div>
+				<div class="card__footer">This is block-level element, takes all available horizontal space. To make them smaller - put them in another container, layout columns columns or grids.</div>
+				<div class="card__corner">Corner</div>
+			</div>
+			<br>
+
+			<div class="layout layout-fixed">
+				<div class="layout__column">
+					<div class="card">
+						<div class="card__content">Card in layout cell</div>
+						<div class="card__footer card__footer-oneline">Only one line of footer text can be limited when it too long</div>
+					</div>
+				</div>
+				<div class="layout__column-gap"></div>
+				<div class="layout__column">
+					<div class="card" style="background: khaki">
+						<div class="card__content">Background color is set<br>No footer this time</div>
+						<div class="card__corner">Corner</div>
+					</div>
+				</div>
+				<div class="layout__column-gap"></div>
+				<div class="layout__column">
+					<div class="card card-interactive">
+						<div class="card__content">Interactive</div>
+						<div class="card__footer">With mouse Hover and Pressed states. Text spans multiple lines when needed.</div>
+						<div class="card__corner">Corner</div>
+					</div>
+				</div>
+			</div>
+
+
+			<h2>Products</h2>
+			<ul class="catalog-demo">
+				<li class="products__item btn-ripple">
+					<div class="products__item-price">1.00</div>
+					<div class="products__item-title">Regular Item with Long Description to demo text clipping</div>
+				</li>
+				<li class="products__item btn-ripple" style="background-color: khaki">
+					<div class="products__item-price">2.00</div>
+					<div class="products__item-code">KHA</div>
+					<div class="products__item-title">Colored</div>
+				</li>
+				<li class="products__item btn-ripple" style="background-image: url(static/img/products/sushi.jpg)">
+					<div class="products__item-price">2.50</div>
+					<div class="products__item-title">Sushi</div>
+				</li>
+			</ul>
+
+			<h2>Categories</h2>
+			<ul class="catalog-demo">
+				<li class="categories__item btn-ripple" style="background-color: khaki">
+					<div class="categories__item-code">COL</div>
+					<div class="categories__item-title">Colored</div></li>
+				<li class="categories__item btn-ripple">
+					<div class="categories__item-code">REG</div>
+					<div class="categories__item-title">Regular Category</div>
+				</li>
+				<li class="categories__item btn-ripple categories__item-active">
+					<div class="categories__item-code">SEL</div>
+					<div class="categories__item-title">Currently Selected</div>
+				</li>
+			</ul>
+
+			<h2>Pagination</h2>
+			<ul class="pagination">
+				<li class="pagination__item pagination__item-active" title="1"><a href="#" class="pagination__item-link"></a></li>
+				<li class="pagination__item" title="2"><a href="#" class="pagination__item-link"></a></li>
+				<li class="pagination__item" title="3"><a href="#" class="pagination__item-link"></a></li>
+			</ul>
+
+
+
+			<h1>Input Controls</h1>
+
+			<h2>Buttons</h2>
+			<p>Different implementations. Almost any element including link, button, input, div or span can be turned to button by adding <code>.btn</code> class.</p>
+			<div>
+				<a href="?" class="btn btn-default">Link Button</a>
+				<span href="?" class="btn btn-default">Span</span>
+				<div href="?" class="btn btn-default">Div</div>
+				<button class="btn btn-default">Button</button>
+				<input type="button" class="btn btn-default" value="Input.Button">
+			</div>
+
+			<p>Large Variations attained via additional <code>.btn-lg</code> class.</p>
+			<a href="?" class="btn btn-lg btn-default">Link Button</a>
+			<span href="?" class="btn btn-lg btn-default">Span</span>
+			<div href="?" class="btn btn-lg btn-default">Div</div>
+			<button class="btn btn-lg btn-default">Button</button>
+			<input type="button" class="btn btn-lg btn-default" value="Input.Button">
+
+			<p>Styling via additional <code>.btn-default</code>, <code>.btn-primary</code>, <code>.btn-success</code>, etc.</p>
+			<p>
+				<button class="btn btn-default">Default</button>
+				<button class="btn btn-primary">Primary</button>
+				<button class="btn btn-secondary">Secondary</button>
+				<button class="btn btn-success">Success</button>
+				<button class="btn btn-danger">Danger</button>
+				<button class="btn btn-white">White</button>
+				<button class="btn">Unstyled</button>
+				<button class="btn btn-link">Link</button>
+			</p>
+
+			<p>Styling options: <code>.btn-rounded</code>, with <code>.icon</code> inside, <code>.btn.icon</code></p>
+			<p>
+				<button class="btn btn-default btn-rounded">Rounded</button>
+				<button class="btn btn-default btn-ripple">With Ripple effect</button>
+				<button class="btn btn-default"><i class="icon"></i>With Icon</button>
+				<a class="btn icon" title="Icon button"></a>
+			</p>
+
+
+			<h2>Switches</h2>
+			<p>Checkboxes <code>.checkbox</code></p>
+			<p>
+				<label class="checkbox"><input type="checkbox" class="checkbox"><i class="icon"></i>Checkbox</label>
+				<label class="checkbox"><input type="checkbox" class="checkbox" checked><i class="icon"></i>Checked</label>
+				<label class="checkbox checkbox-success"><input type="checkbox" class="checkbox" checked><i class="icon"></i>Success</label>
+				<label class="checkbox"><input type="checkbox" class="checkbox" disabled><i class="icon"></i>Disabled</label>
+			</p>
+
+			<p>Radio buttons <code>.radio</code></p>
+			<p>
+				<label class="radio"><input type="radio" name="radio" class="radio"><i class="icon"></i>Radio</label>
+				<label class="radio"><input type="radio" name="radio" class="radio" checked><i class="icon"></i>Radio selected</label>
+				<label class="radio radio-success"><input type="radio" name="radio" class="radio"><i class="icon"></i>Success</label>
+				<label class="radio"><input type="radio" name="radio" class="radio" disabled><i class="icon"></i>Disabled</label>
+			</p>
+
+			<p>Checkboxes stylized to Toggle switches <code>.toggle</code></p>
+			<p>
+				<label><input type="checkbox" class="toggle">Off</label>
+				<label><input type="checkbox" class="toggle" checked>On</label>
+				<label><input type="checkbox" class="toggle toggle-danger" checked>Danger</label>
+				<label><input type="checkbox" class="toggle toggle-success" checked>Success</label>
+				<label><input type="checkbox" class="toggle" disabled>Disabled</label>
+			</p>
+
+
+			<h2>Dropowns</h2>
+
+			<div class="dropdown">
+				<div class="dropdown__selected">Dropdown</div>
+				<div class="dropdown-menu">
+					<li class="dropdown-menu__item">Option 1</li>
+					<li class="dropdown-menu__item">Option 2</li>
+				</div>
+			</div>
+			<div class="dropdown">
+				<div class="dropdown__selected">Lightboxed</div>
+				<div class="dropdown-menu">
+					<li class="dropdown-menu__item">Option 1</li>
+					<li class="dropdown-menu__item">Option 2</li>
+				</div>
+				<div class="dropdown-menu__mask"></div>
+			</div>
+			<div class="dropdown dropdown-white">
+				<div class="dropdown__selected">White Version</div>
+				<div class="dropdown-menu">
+					<li class="dropdown-menu__item">Option 1</li>
+					<li class="dropdown-menu__item">Option 2</li>
+				</div>
+			</div>
+			<div class="dropdown">
+				<div class="dropdown__selected">
+					<div class="dropdown__selected-label">Label:</div>
+					<div class="dropdown__selected-value">Value</div>
+				</div>
+				<div class="dropdown-menu">
+					<li class="dropdown-menu__item">Option 1</li>
+					<li class="dropdown-menu__item">Option 2</li>
+				</div>
+			</div>
+			<div class="dropdown">
+				<div class="dropdown__selected">
+					<div class="icon dropdown__selected-icon"></div>
+					<div class="dropdown__selected-label">Option:</div>
+					<div class="dropdown__selected-value">With Icon</div>
+				</div>
+			</div>
+
+			<h2>Toolbar</h2>
+			<p>Takes full row of horizontal space</p>
+
+			<div class="toolbar">
+				<div class="toolbar__item">
+					<div class="dropdown w100">
+						<div class="dropdown__selected">
+							<div class="dropdown__selected-label">First:</div>
+							<div class="dropdown__selected-value">Dropdown</div>
+						</div>
+						<div class="dropdown-menu">
+							<li class="dropdown-menu__item">Option 1</li>
+							<li class="dropdown-menu__item">Option 2</li>
+						</div>
+						<div class="dropdown-menu__mask"></div>
+					</div>
+				</div>
+				<div class="toolbar__item">
+					<div class="dropdown w100">
+						<div class="dropdown__selected">Simple Dropdown</div>
+						<div class="dropdown-menu">
+							<li class="dropdown-menu__item">Option 1</li>
+							<li class="dropdown-menu__item">Option 2</li>
+						</div>
+						<div class="dropdown-menu__mask"></div>
+					</div>
+				</div>
+				<div class="toolbar__item">
+					<button class="btn btn-lg btn-default">Button</button>
+				</div>
+			</div>
+
+			<h1>Icons</h1>
+			<p>Base class <code>.icon</code>, optional <code>.icon-sm</code>. Then apply <code>.icon-*</code> to inject specific glyph.</p>
+			<div>
+				<i class="icon" title="No or Unknown glyph specified"></i>
+				<i class="icon icon-delete"></i>
+				<i class="icon icon-menu"></i>
+				<i class="icon icon-back"></i>
+				<i class="icon icon-search"></i>
+				<i class="icon icon-offline"></i>
+				<i class="icon icon-more"></i>
+				<i class="icon icon-more-v"></i>
+				<hr>
+				<i class="icon icon-pos"></i>
+				<i class="icon icon-orders"></i>
+				<i class="icon icon-undo"></i>
+				<i class="icon icon-close"></i>
+				<i class="icon icon-cc"></i>
+				<i class="icon icon-tips"></i>
+				<i class="icon icon-cog"></i>
+				<i class="icon icon-sync"></i>
+				<i class="icon icon-bo"></i>
+				<i class="icon icon-help"></i>
+				<i class="icon icon-exit"></i>
+			</div>
+
+
+			<h1>Headers</h1>
+			<p>Regular header. Without any buttons</p>
+			<header><h1>Title</h1></header>
+
+			<p>With Menu button. And Single Icon on the right</p>
+			<header>
+				<button class="btn icon icon-menu"></button>
+				<div class="header__icons">
+					<button class="btn icon icon-search"></button>
+				</div>
+				<h1>Title</h1>
+			</header>
+
+			<p>Back button instead of menu. Header title with very long text. Multiple icons on the right</p>
+			<header>
+				<button class="btn icon icon-back"></button>
+				<div class="header__icons">
+					<button class="btn icon icon-help" title="Help" onclick="demoDialogOpen('help')"></button>
+					<button class="btn icon icon-offline" title="Sync"></button>				
+				</div>
+				<h1>Header title with very long text should not interfere with right icons and not wrap on the next line</h1>
+			</header>
+
+			<h1>Tabs</h1>
+			<p class="muted">(Not implemented)</p>
+			<ul class="tabs">
+				<li class="tabs__item">Tab 1</li>
+				<li class="tabs__item tabs__item-right">Right Tab</li>
+				<li class="tabs__item tabs__item-active">Active Tab</li>
+				<li class="tabs__item"><a class="tabs__item-link">Link-Tab</a></li>
+			</ul>
+			<br>
+
+			<div class="tabbed">
+				<ul class="tabs tabs-lg">
+					<li class="tabs__item" data-tab="1">Larger Tabs</li>
+					<li class="tabs__item tabs__item-right" data-tab="4">Right Tab</li>
+					<li class="tabs__item tabs__item-active" data-tab="2">Active Tab</li>
+					<li class="tabs__item" data-tab="3"><a class="tabs__item-link">Link-Tab</a></li>
+				</ul>
+				
+				<div class="tabbed__panel" data-tab="1"><p>Different content. For the first tab</p></div>
+				<div class="tabbed__panel tabbed__panel-active" data-tab="2">
+					<p><code>.tabs</code> with multiple <code>.tabbed__panel</code> can be placed inside <code>.tabbed</code> container. Then each <code>.tabs__item</code> will unhide corresponding .tabbed__panel (linked via corresponding <code>data-tab=</code> value)</p>
+				</div>
+				<div class="tabbed__panel" data-tab="3"><p>Different content. For third (3) tab</p></div>
+				<div class="tabbed__panel" data-tab="4"><p>Different content. For tab #4</p></div>
+			</div>
+
+			<h1>Horizontal Menu</h1>
+			<p>Used in POS under order payment button. <code>.hmenu</code> containing multiple <code>.hmenu__item</code>.</p>
+			<ul class="hmenu">
+				<li class="hmenu__item">Naked Item</li>
+				<li class="hmenu__item"><a href="?">A-Link Item</a></li>
+				<li class="hmenu__item hmenu__item-disabled">Disabled Item</li>
+				<li class="hmenu__item">Item with Icon<i class="icon icon-more-v"></i></li>
+			</ul>
+
+			<h1>Dialogs, Popups and Messages</h1>
+			<h2>Dialogs</h2>
+			<p class="muted">Docs Under Construction</p>
+			<p>To show dialog call <code>demoDialogOpen(id)</code>, and apply id= to corresponding .dialog instance.</p>
+			<p><button class="btn btn-default" onclick="demoDialogOpen('dialog')"><i class="icon icon-next"></i>Launch Dialog</button></p>
+
+			<h3>Help Panel</h3>
+			<p>Help panel is a special case of using dialog. It used the same way, but only has an additional <code>.dialog-help</code> class.</p>
+			<p><button class="btn btn-default" onclick="demoDialogOpen('help')"><i class="icon icon-help"></i>Show help panel</button></p>
+
+			<h2>Snackbar</h2>
+			<p>Used to display short notification messages without interrupting user tasks. Only one message can be displayed at any moment.</p>
+			<p>
+				<button class="btn btn-default" onclick="demoSnackbar()"><i class="icon icon-chat"></i>Emit message</button>
+				<button class="btn btn-default" onclick="demoSnackbar('success')"><i class="icon icon-check"></i>Success</button>
+				<button class="btn btn-default" onclick="demoSnackbar('danger')"><i class="icon icon-close"></i>Warning</button>
+				<button class="btn btn-default" onclick="demoSnackbar(undefined, 'Sample Action', function(){ alert('Message handler'); })">With Action<i class="icon icon-next"></i></button>
+			</p>
+
+			<h2>Alerts</h2>
+			<p>Div container with <code>.alert</code> class.</p>
+			<div class="alert">
+				<i class="icon alert__icon icon-note"></i>
+				<div class="alert__text">Alert text message (with optional icon in the left, and close icon on the right).</div>
+				<i class="alert__close"></i>
+			</div>
+
+			<p>Additional styling options: <code>.alert-danger</code>, <code>.alert-success</code>, <code>.alert-info</code></p>
+
+			<div class="layout">
+				<div class="layout__column">
+					<div class="alert">
+						<div class="alert__text">Alert text message (regular).</div>
+					</div>
+				</div>
+				<div class="layout__column-gap"></div>
+				<div class="layout__column">
+					<div class="alert alert-danger">
+						<div class="alert__text">Alert text message (danger).</div>
+					</div>
+				</div>
+				<div class="layout__column-gap"></div>
+				<div class="layout__column">
+					<div class="alert alert-success">
+						<div class="alert__text">Alert text message (success).</div>
+					</div>
+				</div>
+				<div class="layout__column-gap"></div>
+				<div class="layout__column">
+					<div class="alert alert-info">
+						<div class="alert__text">Alert text message (info).</div>
+					</div>
+				</div>
+			</div>
+
+			<h1>Table Grids</h1>
+			<p>Unified Table grid design when applied <code>.table</code> class to any table. Add <code>.table-striped</code> to interleave row colors.</p>
+			<table class="table table-striped">
+				<thead>
+					<tr>
+						<th>Col 1</th>
+						<th>Column 2</th>
+						<th class="text-right">Right</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr><td>Col 1</td>
+						<td>Column 2 Value</td>
+						<td class="text-right">$1.50</td>
+					</tr>
+					<tr><td>Second line</td>
+						<td>Column 2 Value</td>
+						<td class="text-right">$100.00</td>
+					</tr>
+				</tbody>
+			</table>
+
+			<hr>
+			<link rel="import" href="inc/uc.html" onload="demoTemplate(this)">
+
+		</section>
+
+	</article>
+
+
+	<nav class="menu">
+		<header>
+			<i class="icon icon-back"></i>
+			<h1>Acme Inc.</h1>
+		</header>
+
+		<ul class="menu__items">
+			<li class="menu__item"><a href="pos.html" class="menu__item-link"><i class="icon icon-pos menu__item-icon"></i>Point of Sale</a></li>
+			<li class="menu__item"><a href="orders.html" class="menu__item-link"><i class="icon icon-orders menu__item-icon"></i>Orders</a></li>
+			<li class="menu__item"><a href="pos.html" class="menu__item-link"><i class="icon icon-undo menu__item-icon"></i>Manual Refund</a></li>
+			<li class="menu__item"><a href="register-close.html" class="menu__item-link"><i class="icon icon-close menu__item-icon"></i>Close Register</a></li>
+			<li class="menu__item"><a href="payin.html" class="menu__item-link"><i class="icon icon-cc menu__item-icon"></i>Payins / Payouts</a></li>
+			<li class="menu__item"><a href="tips.html" class="menu__item-link"><i class="icon icon-tips menu__item-icon"></i>Tips</a></li>
+			<li class="menu__item"><a href="loyalty.html" class="menu__item-link"><i class="icon icon-loyalty menu__item-icon"></i>Loyalty</a></li>
+			<li class="menu__item"><a href="settings.html" class="menu__item-link"><i class="icon icon-cog menu__item-icon"></i>Settings</a></li>
+			<li class="menu__item"><a href="sync.html" class="menu__item-link"><i class="icon icon-sync menu__item-icon"></i>Synchronize</a></li>
+			<li class="menu__item menu__item-active"><a href="ui-kit.html" class="menu__item-link"><i class="icon icon-bo menu__item-icon"></i>Back Office</a></li>
+			<li class="menu__item"><a href="pos.html" class="menu__item-link"><i class="icon icon-help menu__item-icon"></i>Help</a></li>
+			<li class="menu__item"><a href="index.html" class="menu__item-link"><i class="icon icon-exit menu__item-icon"></i>Logout</a></li>
+		</ul>
+	</nav>
+	<div class="menu__mask"></div>
+
+
+	<div class="snackbar hide">
+		<div class="snackbar__actions"><button class="btn btn-link text-uppercase"></button></div>
+		<div class="snackbar__message">Snackbar Message</div>
+	</div>
+
+	<div class="dialog" id="dialog">
+		<div class="dialog__content">
+			<header class="header">
+			<div class="header__icons"><i class="btn icon icon-close dialog__close"></i></div>
+				<h1>Dialog Header</h1>
+			</header>
+			<section>
+				<p>This is Dialog content.</p>
+				<p>Assign <code>.dialog__close</code> class to any element(s) inside current .dialog scope to make it trigger dialog close. This class has no visual effects.</p>
+				<button class="btn btn-default dialog__close">Close</button>
+			</section>
+		</div>
+	</div>
+	<div class="dialog__mask"></div>
+
+	<link rel="import" href="inc/help.html" onload="demoTemplate(this)">
+
+</body>
+</html>

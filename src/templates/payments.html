@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset=utf-8>
+	<title>Other Payment Methods &bull; eHopper POS</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+	<!-- <meta name="viewport" content="width=device-width, initial-scale=1"> -->
+	<meta http-equiv=X-UA-Compatible content="IE=edge,chrome=1">
+	<link rel="stylesheet" type="text/css" href="static/css/pos.css">
+	<script src="static/js/demo.js"></script>
+	<link rel="icon" href="https://ehopper.com/wp-content/uploads/2016/03/favicon-01.png" type="image/png">
+</head>
+
+
+<body class="animated">
+
+	<article class="pos pos-payments">
+
+
+		<main class="pos-order disabled layout layout-rows">
+			<header>
+				<a class="btn icon icon-back" href="pos.html"></a>
+				<h1>Order</h1>
+			</header>
+
+			<link rel="import" href="inc/order.html" onload="demoTemplate(this)">
+		</main>
+
+
+		<aside class="pos-paymentmethods cutout-left">
+			<header class="cutout-left">
+				<div class="header__icons"><button class="btn icon icon-help" title="Help" onclick="demoDialogOpen('help')"></button></div>
+				<h1>Payment Methods</h1>
+			</header>
+
+			<!-- MD Cards with Payment Methods -->
+			<section class="grid grid-2-col grid-double-spacing methods">
+
+				<!--
+				<div class="grid__item">
+					<a class="card card-interactive card-payment-method btn-ripple" href="payment-cash.html" style="background: darkseagreen">
+						<div class="card__content icon-text icon-cash"></div>
+						<div class="card__footer card__footer-oneline">Cash</div>
+					</a>
+				</div>
+				-->
+
+				<div class="grid__item">
+					<a class="card card-interactive card-payment-method btn-ripple" href="payment-credit.html" style="background: khaki">
+						<div class="card__content icon-text icon-cc"></div>
+						<div class="card__footer card__footer-oneline">Credit Card</div>
+					</a>
+				</div>
+
+				<div class="grid__item">
+					<a class="card card-interactive card-payment-method btn-ripple" href="payment-debit.html" style="background: khaki">
+						<div class="card__content icon-text icon-cc"></div>
+						<div class="card__footer card__footer-oneline">Debit Card</div>
+					</a>
+				</div>
+
+				<div class="grid__item">
+					<a class="card card-interactive card-payment-method btn-ripple" href="payment-external.html">
+						<div class="card__content icon-text icon-print"></div>
+						<div class="card__footer card__footer-oneline">External Payment</div>
+					</a>
+				</div>
+
+				<div class="grid__item">
+					<a class="card card-interactive card-payment-method btn-ripple" href="payment-split.html" style="background: lightblue">
+						<div class="card__content icon-text icon-split"></div>
+						<div class="card__footer card__footer-oneline">Split Payment</div>
+					</a>
+				</div>
+
+			</section>
+		</aside>
+
+
+	</article>
+
+
+	<div class="snackbar hide">
+		<div class="snackbar__actions"><button class="btn btn-link text-uppercase"></button></div>
+		<div class="snackbar__message"></div>
+	</div>
+
+
+	<!-- Dialog: Help Panel -->
+	<link rel="import" href="inc/help.html" onload="demoTemplate(this)">
+
+
+</body>
+</html>

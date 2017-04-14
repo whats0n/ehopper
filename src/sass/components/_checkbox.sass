@@ -1,0 +1,46 @@
+.checkbox
+  position: relative
+  display: inline-block
+  vertical-align: middle
+  cursor: pointer
+  +active
+    .icon
+      box-shadow: inset 2px 2px 4px rgba($black, 0.3)
+  input
+    position: absolute
+    top: 0
+    left: 0
+    margin: 0
+    width: 100%
+    height: 100%
+    opacity: 0
+    cursor: pointer
+    &:checked + .icon
+      color: $white
+      background: $blue
+  .icon
+    display: inline-block
+    vertical-align: middle
+    padding: 0
+    margin-right: 6px
+    border-radius: 5px
+    width: 30px
+    height: 30px
+
+    color: $lightGray
+    background: $white
+
+    line-height: 30px
+    transition: background 0.05s ease, box-shadow 0.05s ease, color 0.05s ease
+
+  //mods
+  &_green
+    input
+      &:checked + .icon 
+        background: $green
+
+//delete
+.checkbox-success
+  input
+    &:checked + .icon 
+      background-color: #66BB6A

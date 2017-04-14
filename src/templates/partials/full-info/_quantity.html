@@ -1,0 +1,71 @@
+{% import '../components/_keyboard.html' as keyboard %}
+<div class="tabs__keyboard">
+	<form action="/">
+		{{keyboard.display({
+			field: {
+				label: 'Quantity:',
+				units: 'kg',
+				id: 'item-quantity',
+				value: '0',
+				placeholder: '0',
+				attrs: 'required readonly',
+				inputClassList: 'text-right input_xl'
+			},
+			keyboard: {
+				size: 'keyboard__lg',
+				keyboardSide: [
+					{
+						content: '<i class="icon icon-text icon-backspace"></i>'
+					},
+					{
+						content: '<i class="icon icon-text icon-undo"></i>'
+					},
+					{
+						content: 'Done',
+						type: 'submit',
+						classList: 'keyboard__submit',
+						colspan: '2'
+					}
+				],
+				keyboardMain: [
+					{
+						content: '1'
+					},
+					{
+						content: '2'
+					},
+					{
+						content: '3'
+					},
+					{
+						content: '4'
+					},
+					{
+						content: '5'
+					},
+					{
+						content: '6'
+					},
+					{
+						content: '7'
+					},
+					{
+						content: '8'
+					},
+					{
+						content: '9'
+					},
+					{
+						content: '0'
+					},
+					{
+						content: '00'
+					},
+					{
+						content: '<i class="icon icon-text icon-clear"></i>'
+					}
+				]
+			}
+		})}}
+	</form>
+</div>

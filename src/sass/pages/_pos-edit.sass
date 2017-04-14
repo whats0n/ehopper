@@ -1,0 +1,74 @@
+.pos-edit
+  background: #f8f8f8
+  .icon-close
+    float: right
+
+  &__info
+    background: white
+    +clr
+
+  &__info-product
+    float: left
+    margin-right: 20px
+    width: 20%
+    height: 120px
+
+  &__info-data
+    overflow: hidden
+
+  .tabs
+    border-top: 0
+    &__item
+      text-align: center
+  .tabbed__panel
+    padding-top: 40px
+    height: 100%
+
+  &__mods, 
+  &__matrix
+    padding: 0 20px
+    h2
+      margin: 10px 0 10px
+      clear: both
+    .card
+      &__content
+        margin-top: 20px
+    .icon,
+    .card-selected-marker:after
+      float: left
+      margin: -10px
+    .card-selected.card-selected-marked:after
+      content: "\e86c"
+      position: absolute
+      top: 0
+      left: 10px
+    .grid
+      &__item
+        position: relative
+      &__icon
+        position: absolute
+        z-index: 1
+        top: 50%
+        left: -25px
+
+        margin-top: -25px
+        border: solid #fff 1px
+        border-radius: 30px
+        width: 30px
+        height: 30px
+
+        background: #eeeeee
+        
+        line-height: 30px
+
+  &__serials
+    padding-left: 20px
+    padding-right: 20px
+
+.animated .pos-edit
+  transform: scaleX(1)
+  transform-origin: left
+  transition: transform 200ms ease-out
+  &.hide
+    display: block !important
+    transform: scale(0)

@@ -1,0 +1,22 @@
+---
+title: 'Sync...'
+styles: 
+	- 'pos'
+bodyClasses: 'body-darkgray'
+---
+{% extends "layouts/_layout.html" %}
+
+{% block content %}
+	<main class="main">
+		{{header.large()}}
+		<div class="content text-center">
+			<div class="figure box">
+				<div class="figure__title">Your Company Name Inc.</div>
+				<div class="figure__sync">
+					<div class="loading figure__loading"></div>
+					<div class="footnote figure__footer">Data syncronization&hellip;</div>
+				</div>
+			</div>
+		</div>
+	</main>
+{% endblock %}

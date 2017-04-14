@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset=utf-8>
+	<title>External Payment &bull; eHopper POS</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+	<!-- <meta name="viewport" content="width=device-width, initial-scale=1"> -->
+	<meta http-equiv=X-UA-Compatible content="IE=edge,chrome=1">
+	<link rel="stylesheet" type="text/css" href="static/css/pos.css">
+	<script src="static/js/demo.js"></script>
+	<link rel="icon" href="https://ehopper.com/wp-content/uploads/2016/03/favicon-01.png" type="image/png">
+</head>
+
+
+<body class="animated">
+
+	<article class="pos pos-payments">
+
+
+		<main class="pos-order disabled layout layout-rows">
+			<header>
+				<a class="btn icon icon-back" href="pos.html"></a>
+				<h1>Order</h1>
+			</header>
+			<link rel="import" href="inc/order.html" onload="demoTemplate(this)">
+		</main>
+
+
+		<aside class="pos-paymentmethods cutout-left layout layout-rows">
+
+			<header class="cutout-left layout__row">
+				<div class="header__icons"><button class="btn icon icon-help" title="Help" onclick="demoDialogOpen('help')"></button></div>
+				<h1>External Payment</h1>
+			</header>
+
+			<section class="layout__row layout__row-grow">
+				<form class="form-narrow" method="get" action="payment-receipt.html">
+
+					<div class="labeled-info text-right fieldset-standalone padding2-right">
+						<label>Amount Due:</label>
+						<span class="big">$<span class="xl">102.00</span></span>
+					</div>
+
+					<!-- Warning message -->
+					<div class="alert hide">
+						<!-- <i class="icon alert__icon icon-note"></i> -->
+						<div class="alert__text">Credit card will not be charged.</div>
+						<i class="alert__close"></i>
+					</div>
+
+					<!-- CC entry -->
+					<div class=" fieldset-bordered fieldset-standalone fieldset-keyboard">
+						
+						<div class="fieldset no-padding" id="demoCC">
+							<div class="layout">
+								<div class="layout__column w50">
+									<input class="input input-lg fieldset__input w100 padding2-left"
+										id="cc_number" placeholder="Card Number" required="required" autofocus>
+								</div>
+								<div class="layout__column w50 fieldset-border-left">
+									<input class="input input-lg fieldset__input w100 padding2-left"
+										id="cc_expire" placeholder="Expiration" required="required">
+								</div>
+							</div>
+
+							<div class="fieldset-border-top" id="demoCCkeyboard">
+								<!-- Numpad -->
+								<link rel="import" href="inc/numpad.html" onload="demoTemplate(this)">
+							</div>
+						</div>
+
+
+					</div>
+
+					<div class="fieldset fieldset-radio fieldset-bordered">
+						<label class="fieldset__label no-wrap">Tips and Signature</label>
+						<div class="fieldset__control">
+							<label class="radio fieldset__label">
+								<input class="radio" id="signature_screen" type="radio" name="signature">
+								<i class="icon"></i> On Screen
+							</label>
+							<label class="radio fieldset__label">
+								<input class="radio" id="signature_screen" type="radio" name="signature" checked>
+								<i class="icon"></i> On Receipt
+							</label>						
+						</div>
+					</div>
+
+				</form>
+			</section>
+
+			<!-- Bottom aligned button -->
+			<section class="layout__row">
+				<div class="form-narrow text-center">
+					<button class="btn btn-primary btn-lg btn-go" onclick="return demoDialogOpen('terminal')">Continue</button>
+				</div>
+			</section>
+
+		</aside>
+
+
+	</article>
+
+	<!-- Dialog: Terminal Active -->
+	<link rel="import" href="inc/dialog-terminal.html" onload="demoTemplate(this)">
+
+	<!-- Dialog: Help Panel -->
+	<link rel="import" href="inc/help.html" onload="demoTemplate(this)">
+
+
+</body>
+</html>

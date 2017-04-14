@@ -1,0 +1,46 @@
+---
+title: 'Login &bull; eHopper POS'
+styles: 
+	- 'pos'
+bodyClasses: 'body-darkgray'
+---
+{% extends "layouts/_layout.html" %}
+
+{% block content %}
+	<main class="main">
+		{{header.large({
+			help: true
+		})}}
+		<div class="content">
+			<div class="figure box">
+				<div class="figure__title">Your Company Name Inc.</div>
+				<div class="figure__body">
+					<div class="figure__text">Please enter your personal PIN code to login to this POS terminal:</div>
+				</div>
+				<div class="figure__display display">
+					<ul class="display__list">
+						{% for item in range(0, 5) %}
+							{% if loop.index0 < 2 %}
+								<li class="display__item" data-state="active"></li>
+							{% else %}
+								<li class="display__item" data-state="default"></li>
+							{% endif %}
+						{% endfor %}
+					</ul>
+					<div class="display__error" data-error="sm-error" hidden>
+						<div class="display__message">Incorrect PIN</div>
+						<button class="display__close" data-error-close="sm-error"><i class="icon icon-clear"></i></button>
+					</div>
+				</div>
+				<div class="figure__keyboard">
+					<form action="/">
+						{{keyboard.simple()}}
+					</form>
+				</div>
+				<div class="footnote figure__footnote">Attention: after multiple incorrect attempts terminal will be locked</div>
+			</div>
+		</div>
+	</main>
+
+	{{modal.help()}}
+{% endblock %}

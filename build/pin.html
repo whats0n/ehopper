@@ -1,0 +1,104 @@
+<!doctype html>
+<html>
+
+  <head>
+    <meta charset="utf-8">
+    <title>Login &bull; eHopper POS</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="theme-color" content="#fff">
+    <meta name="format-detection" content="telephone=no">
+    <link rel="stylesheet" media="all" href="static/css/pos.css">
+    <link rel="icon" href="https://ehopper.com/wp-content/uploads/2016/03/favicon-01.png" type="image/png">
+    <!-- BEGIN scripts -->
+    <!-- END scripts -->
+  </head>
+
+  <body class="body-darkgray">
+    <!-- begin application -->
+    <div class="application" id="application">
+      <!-- BEGIN content -->
+      <main class="main">
+        <!-- begin header -->
+        <header class="header header_large"> <button class="btn-icon header__help" title="Help" data-modal-open="help">
+			<i class="icon icon-help"></i>
+		</button> </header>
+        <!-- end header -->
+        <div class="content">
+          <div class="figure box">
+            <div class="figure__title">Your Company Name Inc.</div>
+            <div class="figure__body">
+              <div class="figure__text">Please enter your personal PIN code to login to this POS terminal:</div>
+            </div>
+            <div class="figure__display display">
+              <ul class="display__list">
+                <li class="display__item" data-state="active"></li>
+                <li class="display__item" data-state="active"></li>
+                <li class="display__item" data-state="default"></li>
+                <li class="display__item" data-state="default"></li>
+                <li class="display__item" data-state="default"></li>
+              </ul>
+              <div class="display__error" data-error="sm-error" hidden>
+                <div class="display__message">Incorrect PIN</div> <button class="display__close" data-error-close="sm-error"><i class="icon icon-clear"></i></button> </div>
+            </div>
+            <div class="figure__keyboard">
+              <form action="/">
+                <!-- begin simple-keyboard -->
+                <div class="simple-keyboard">
+                  <div class="simple-keyboard__container">
+                    <div class="simple-keyboard__head">
+                      <div class="simple-keyboard__item"><button type="button" class="simple-keyboard__button simple-keyboard__action" data-animation="ripple">Clock In</button></div>
+                      <div class="simple-keyboard__item"><button type="button" class="simple-keyboard__button simple-keyboard__action" data-animation="ripple">Clock Out</button></div>
+                      <div class="simple-keyboard__item"><button type="submit" class="simple-keyboard__button simple-keyboard__submit" data-animation="ripple">Login<i class="icon icon-next"></i></button></div>
+                    </div>
+                    <div class="simple-keyboard__body">
+                      <div class="simple-keyboard__item"><button type="button" class="simple-keyboard__button" data-animation="ripple">1</button></div>
+                      <div class="simple-keyboard__item"><button type="button" class="simple-keyboard__button" data-animation="ripple">2</button></div>
+                      <div class="simple-keyboard__item"><button type="button" class="simple-keyboard__button" data-animation="ripple">3</button></div>
+                      <div class="simple-keyboard__item"><button type="button" class="simple-keyboard__button" data-animation="ripple">4</button></div>
+                      <div class="simple-keyboard__item"><button type="button" class="simple-keyboard__button" data-animation="ripple">5</button></div>
+                      <div class="simple-keyboard__item"><button type="button" class="simple-keyboard__button" data-animation="ripple">6</button></div>
+                      <div class="simple-keyboard__item"><button type="button" class="simple-keyboard__button" data-animation="ripple">7</button></div>
+                      <div class="simple-keyboard__item"><button type="button" class="simple-keyboard__button" data-animation="ripple">8</button></div>
+                      <div class="simple-keyboard__item"><button type="button" class="simple-keyboard__button" data-animation="ripple">9</button></div>
+                      <div class="simple-keyboard__item"><button type="button" class="simple-keyboard__button" data-animation="ripple"><i class="icon icon-text icon-clear"></i></button></div>
+                      <div class="simple-keyboard__item"><button type="button" class="simple-keyboard__button" data-animation="ripple">0</button></div>
+                      <div class="simple-keyboard__item"><button type="button" class="simple-keyboard__button" data-animation="ripple"><i class="icon icon-text icon-backspace"></i></button></div>
+                    </div>
+                  </div>
+                </div>
+                <!-- end simple-keyboard -->
+              </form>
+            </div>
+            <div class="footnote figure__footnote">Attention: after multiple incorrect attempts terminal will be locked</div>
+          </div>
+        </div>
+      </main>
+      <!-- begin help -->
+      <div class="help" data-modal="help">
+        <div class="help__container" data-modal-container="help">
+          <div class="help__header">
+            <header class="header header_large"> <button class="btn-icon help__close icon icon-close" data-modal-close="help"></button>
+              <h2 class="title-xlg header__title">Help</h2>
+            </header>
+          </div>
+          <div class="help__body">
+            <p>Help content.</p>
+          </div>
+        </div>
+      </div>
+      <!-- end help -->
+      <!-- END content -->
+    </div>
+    <!-- end application -->
+    <!-- BEGIN scripts -->
+    <script type="text/javascript" src="static/js/app.js"></script>
+    <!-- END scripts -->
+    <!-- begin snackbar -->
+    <div class="snackbar" data-snackbar-container="snackbar" data-state="default">
+      <div class="snackbar__message" data-snackbar-content="snackbar"></div>
+    </div>
+    <!-- end snackbar -->
+  </body>
+
+</html>

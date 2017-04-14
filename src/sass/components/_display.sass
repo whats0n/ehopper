@@ -1,0 +1,45 @@
+.display
+	position: relative
+	min-height: 80px
+	background: $white
+	&__list
+		padding: 28px 0
+		font-size: 0
+		text-align: center
+	&__item
+		display: inline-block
+		vertical-align: top
+		margin: 0 10px
+		border: 2px solid $blue
+		border-radius: 50%
+		width: 1em
+		height: 1em
+		background: $white
+		font-size: 24px
+		transition: transform 0.3s ease, background 0.3s ease
+		&[data-state="active"]
+			background: $blue
+			transform: scaleX(-1)
+	&__error
+		position: absolute
+		z-index: 1
+		top: 0
+		right: 0
+		bottom: 0
+		left: 0
+		color: $white
+		background: $orange
+		+clr
+	&__close
+		position: absolute
+		top: 0
+		right: 0
+		bottom: 0
+		padding: 20px
+		color: $white
+		background: none
+		font-size: 24px
+	&__message
+		padding: 32px 20px
+		font-size: 16px
+		line-height: 1

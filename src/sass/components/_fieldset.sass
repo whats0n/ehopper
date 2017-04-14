@@ -1,0 +1,157 @@
+.fieldset
+  width: 100%
+  + .fieldset
+    margin-top: 1px
+  + .fieldset_standalone
+    margin-top: 30px
+  
+  &__divider
+    border-top: 2px solid $alabaster
+
+  //mods
+  &_lg
+    .fieldset
+      &__label-wrapper,
+      &__units-wrapper
+        line-height: 80px
+  &_bordered
+    border: 2px solid $lightGray
+  &_keyboard
+    border-radius: 0 0 6px 6px
+  &_first
+    border-radius: 3px 3px 0 0
+    .fieldset__inner
+      border-radius: 3px 3px 0 0
+  &_last
+    border-radius: 0 0 3px 3px
+    .fieldset__inner
+      border-radius: 0 0 3px 3px
+
+.field
+  display: table
+  width: 100%
+  &_static
+    .field
+      &__box
+        text-align: right
+      &__units,
+      &__static
+        display: inline-block
+        vertical-align: middle
+      &__units
+        padding-right: 10px
+        span
+          margin: 0
+      &__static
+        padding-right: 20px
+        height: 80px
+        color: #333
+        font-size: 30px
+        line-height: 80px
+        +nosel
+
+  &__inner
+    display: table-row
+    background: #fff
+    font-size: 0
+
+  &__label,
+  &__units,
+  &__switch
+    display: table-cell
+    vertical-align: middle
+    line-height: normal
+    +nosel
+  &__label,
+  &__switch
+    padding: 5px 10px 5px 20px
+    font-size: 14px
+    width: 33.5%
+  &__units
+    opacity: 0.5
+    font-size: 16px
+    padding: 5px 20px 5px 0
+    span
+      display: block
+      margin-left: -10px
+  &__switch-left,
+  &__switch-right,
+  &__switch-box
+    display: inline-block
+    vertical-align: middle
+  &__switch-box
+    margin: 0 10px
+
+  &__text
+    vertical-align: middle
+    font-size: 14px
+
+  &__box
+    display: table-cell
+    overflow: hidden
+  &__input
+    padding-right: 20px
+    padding-left: 20px
+    border: none
+    width: 100%
+    background: transparent
+    +nosel
+
+  &__textarea
+    display: block
+    padding: 15px 20px
+    border: none
+    width: 100%
+    resize: vertical
+
+// .fieldset-first
+//   border-radius: 3px 3px 0 0
+
+// .fieldset-last
+//   border-radius: 0 0 3px 3px
+
+// .fieldset-focus
+//   outline: 2px solid #2e99db
+//   outline-offset: 0
+//   .fieldset
+//     &__textarea
+//       height: 200px
+
+// .fieldset-bordered
+//   border: 2px solid #eeeeee
+//   &.fieldset-focus
+//     outline-offset: -2px
+
+// .fieldset-border-top
+//   border-top: 2px solid #eeeeee
+
+// .fieldset-border-left
+//   border-left: 2px solid #eeeeee
+
+// .fieldset-checkbox
+//   padding-top: 13px
+//   padding-bottom: 13px
+
+// .fieldset-radio
+//   padding-top: 13px
+//   padding-bottom: 13px
+//   padding-right: 0
+//   .fieldset__label
+//     width: 33%
+
+// .fieldset-textarea
+//   padding-right: 0
+
+// .fieldset-standalone
+//   margin-bottom: 20px
+
+// .fieldset-keyboard
+//   .keyboard
+//     background: #eeeeee
+//   &.fieldset .keyboard
+//     display: none
+//     width: auto
+//   &.active
+//     border-radius: 0 0 6px 6px
+//     .keyboard
+//       display: block

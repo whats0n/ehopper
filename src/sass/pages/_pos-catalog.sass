@@ -1,0 +1,135 @@
+// .categories, .products
+//   display: block
+//   font-size: 0
+
+//   &__item
+//     display: inline-block
+//     vertical-align: top
+//     padding: 10px
+//     margin: 5px
+//     border: solid rgba(0, 0, 0, 0.1) 1px
+//     width: calc(25% - 10px)
+
+//     background: #eeeeee
+
+//     text-align: left
+//     white-space: nowrap
+
+//     cursor: pointer
+//     +nosel
+
+//     +hover
+//       border-color: #2e99db
+//     +active
+//       box-shadow: inset 2px 2px 4px rgba(0, 0, 0, 0.3)
+
+// .categories
+//   padding: 5px 10px
+//   height: 162px
+
+//   &__item
+//     height: 60px
+
+//   &__item-title
+//     overflow: hidden
+//     opacity: 0.5
+//     font-size: 13px
+//     text-overflow: ellipsis
+//     white-space: nowrap
+
+//   &__item-code
+//     font-size: 20px
+
+//   &__item-active
+//     color: #fff
+//     background: #2e99db
+
+// .products
+//   position: absolute
+//   padding: 5px 10px
+//   width: 100%
+//   height: calc(100% - 212px )
+//   &__wrapper
+//     height: calc(100% - 22px)
+
+//   &__item
+//     position: relative
+
+//     padding: 0 0 26px
+//     height: calc((100% - 30px)/ 3)
+//     min-height: 95px
+
+//     background-color: #eeeeee
+//     background-repeat: no-repeat
+//     background-size: cover
+//     background-position: center
+//     background-origin: content-box
+
+//     +active
+//       box-shadow: inset 2px 2px 10px rgba(0, 0, 0, 0.3) !important
+//       transform: translate(0, 2px)
+//       transition-duration: 0s
+//       .products
+//         &__item-title
+//           box-shadow: inset 5px 0px 10px -3px rgba(0, 0, 0, 0.3)
+//         &__item-price
+//           box-shadow: inset -10px 10px 10px -10px rgba(0, 0, 0, 0.3), -1px 1px 2px rgba(0, 0, 0, 0.3)
+//   &__item-title
+//     position: absolute
+//     bottom: 0
+//     left: 0
+
+//     overflow: hidden
+//     padding: 5px 5px 5px 10px
+//     width: 100%
+
+//     background: white
+
+//     font-size: 16px
+//     text-overflow: ellipsis
+//     white-space: nowrap
+
+//   &__item-code
+//     position: absolute
+//     top: 50%
+//     left: 0
+
+//     overflow: hidden
+//     margin-top: -15px
+//     width: 100%
+
+//     font-size: 30px
+//     line-height: 100%
+//     text-align: center
+//     text-overflow: ellipsis
+//     white-space: nowrap
+
+//   &__item-price
+//     position: absolute
+//     top: 0
+//     right: 0
+
+//     overflow: hidden
+//     padding: 5px 5px 5px 10px
+//     border-radius: 0 0 0 4px
+//     max-width: 100%
+
+//     background: rgba(255, 255, 255, 0.8)
+//     box-shadow: -1px 1px 2px rgba(0, 0, 0, 0.3)
+
+//     font-size: 16px
+//     text-align: right
+//     text-overflow: ellipsis
+//     white-space: nowrap
+
+//   &__empty
+//     color: #aaa
+//     text-align: center
+//     &:before
+//       content: ""
+//       display: inline-block
+//       border: 2px dotted #cfcfcf 
+//       border-radius: 9px
+//       width: 60px
+//       height: 60px
+//       background: #fff

@@ -1,0 +1,95 @@
+.header 
+	position: relative
+
+	height: 50px
+
+	color: $white
+	background: $blue
+
+	font-size: 20px
+	font-weight: 500
+
+	cursor: default
+	+nosel
+	
+	&_large
+		height: 150px
+	&__menu
+		float: left
+		color: $blue
+		background: #cae9f4
+		+active
+			background: darken(#cae9f4, 10%)
+	&__back-icon
+		display: inline-block
+		vertical-align: middle
+	&__menu,
+	&__back-icon
+		margin: 0 -15px 0 0
+		width: 50px
+		height: 50px
+		line-height: 50px
+	&__title,
+	&__subtitle
+		overflow: hidden
+		padding: 0 20px
+		white-space: nowrap
+		text-overflow: ellipsis
+	&__title
+		font-size: 20px
+		margin: 0
+		&_vertical
+			padding-top: 13px
+			padding-bottom: 13px
+	&__subtitle
+		opacity: 0.5
+		+reg
+		font-size: 14px
+	&__back
+		position: absolute
+		top: 0
+		left: 0
+		white-space: nowrap
+		.header__title
+			display: inline-block
+			vertical-align: middle
+	&__help,
+	&__delete,
+	&__search
+		position: absolute
+		top: 0
+		right: 0
+		margin: 5px
+		color: $white
+	&__logo
+		line-height: 150px
+		text-align: center
+		img
+			vertical-align: middle
+			max-width: 200px
+	&__close
+		font-size: 16px
+	&__toolbar
+		padding: 0 50px
+		.toolbar
+			&__col
+				border: none
+	&__searchbox
+		max-width: 300px
+	&__sync
+		position: absolute
+		top: 0
+		right: 0
+		bottom: 0
+		padding: 5px 13px 5px 5px
+	&__indicator
+		position: absolute
+		top: 0
+		bottom: 0
+		right: 0
+		width: 8px
+		background: $red
+		transition: background 0.15s ease-in-out
+		&[data-state="active"]
+			background: $green
+

@@ -1,0 +1,90 @@
+.order
+  &__items
+    background: #fff
+    &:empty
+      display: none
+      + .order__totals 
+        display: none
+  &__items-interactive
+    .order
+      &__item
+        cursor: pointer
+        +active
+          background: #c6e9ff
+      &__item-info, 
+      &__item-price
+        opacity: 0.5
+
+  &__item
+    position: relative
+    padding: 13px 20px
+    border-bottom: solid rgba(0, 0, 0, 0.1) 1px
+    font-size: 16px
+    cursor: default
+    +nosel
+
+  &__item-product
+    overflow: hidden
+
+  &__item-data
+    float: right
+    width: 40%
+    text-align: right
+
+  &__item-data1
+    float: left
+    width: 40%
+
+  &__item-title,
+  &__item-qty,
+  &__item-total
+    font-weight: 400
+
+  &__item-info,
+  &__item-price
+    font-size: 13px
+
+  &__item-discount
+    font-size: 13px
+    color: #FF6431
+
+  &__item-active
+    background: #ecf7fd
+  
+  &__empty
+    padding: 20px
+    color: #aaa
+    text-align: center
+    &:before
+      content: ""
+      display: inline-block
+      border-radius: 9px
+      border: 2px dotted #cfcfcf 
+      width: 60px
+      height: 60px
+      background: #fff
+  &__totals
+    padding: 10px 20px
+    border-top: 1px solid rgba(0, 0, 0, 0.1) 
+    color: #434c55
+    background: #f8f8f8
+    text-decoration: none
+
+.animated
+  .order
+    &__item
+      transition: background-color 300ms
+    &__item-active
+      &:after
+        content: ""
+        position: absolute
+        top: 0
+        left: 0
+        width: 100%
+        height: 100%
+        transform: scaleX(0.1)
+        transition: all 1s
+    &__item-added
+      &:after
+        background: #2e99db
+        transform: scaleX(1)

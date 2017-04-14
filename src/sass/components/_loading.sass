@@ -1,0 +1,31 @@
+.loading
+	position: relative
+	display: inline-block
+	vertical-align: top
+	width: 1em
+	height: 1em
+	font-size: 150px
+	&:before,
+	&:after
+		content: ''
+		position: absolute
+		top: 50%
+		left: 50%
+		border-radius: 50%
+		width: 75%
+		height: 75%
+		background: rgba($black,0.3)
+		transform: translate3d(-50%,-50%,0) scale(0)
+		animation: scale 2s cubic-bezier(0.1,0.2,0.3,1) infinite
+	&:after
+		animation-delay: 1s
+
+@keyframes scale
+  0%
+    opacity: 1
+    transform: translate3d(-50%,-50%,0) scale(0)
+  90%
+    transform: translate3d(-50%,-50%,0) scale(1)
+  100%
+    opacity: 0
+    transform: translate3d(-50%,-50%,0) scale(1)

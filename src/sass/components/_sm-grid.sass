@@ -1,0 +1,62 @@
+.sm-grid
+	position: relative
+	padding-bottom: 70px
+	height: 100%
+	&__body
+		overflow: auto
+		padding: 15px 20px 10px
+		height: 100%
+	&__footer
+		position: absolute
+		left: 0
+		right: 0
+		bottom: 0
+	&__row
+		margin: 0 -5px
+		font-size: 0
+		+clr
+		&_steps
+			.sm-grid__col
+				padding-right: 15px
+	&__col
+		position: relative
+		display: inline-block
+		vertical-align: top
+		padding: 5px
+		width: 100%
+		&_xl
+			width: 75%
+		&_lg
+			width: 66.66%
+		&_md
+			width: 50%
+		&_sm
+			width: 33.33%
+		&_xs
+			width: 25%
+		&:last-child
+			.sm-grid__icon
+				display: none
+	&__title
+		margin: 5px 0 0
+	&__footer
+		text-align: center
+	&__btn
+		margin: 0 auto
+		max-width: 300px
+		text-transform: uppercase
+	&__icon
+		position: absolute
+		z-index: 1
+		top: 50%
+		right: -10px
+		margin-top: -15px
+		border: 1px solid $white
+		border-radius: 50%
+		width: 30px
+		height: 30px
+		background: $lightGray
+		line-height: 30px
+	p
+		padding: 0 5px
+		font-size: 14px
