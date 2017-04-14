@@ -904,8 +904,8 @@ a.shy {
   pointer-events: none;
 }
 
-.sidebar__toolbar .toolbar__col .btn {
-  background: #FF6431;
+.sidebar__toolbar .toolbar__button {
+  background: #ec4a41;
 }
 
 .items__top {
@@ -1151,7 +1151,7 @@ article aside.left {
   bottom: 0;
   right: 0;
   width: 8px;
-  background: #e74c3b;
+  background: #ec4a41;
   transition: background 0.15s ease-in-out;
 }
 
@@ -2101,6 +2101,15 @@ textarea.input {
 .search__field {
   position: relative;
   padding-left: 50px;
+}
+
+.search__field:before {
+  content: '';
+  position: absolute;
+  left: 10px;
+  right: 0;
+  bottom: 2px;
+  border-bottom: 2px solid #fff;
 }
 
 .search__input {
@@ -3309,11 +3318,11 @@ textarea.input {
 }
 
 .refund-mode .order-item[data-state="active"] {
-  background: #FFE5DA;
+  background: #fce5e3;
 }
 
 .order-item[data-animation="ripple"] .ripple-circle {
-  background: rgba(46, 153, 219, 0.1);
+  background: rgba(0, 0, 0, 0.05);
 }
 
 .order-item__info, .order-item__row {
@@ -3365,11 +3374,11 @@ textarea.input {
 }
 
 .order-item__meta, .order-item__price, .order-item__discount {
-  font-size: 13px;
+  font-size: 14px;
 }
 
 .order-item__discount {
-  color: #FF6431;
+  color: #ec4a41;
 }
 
 .order-empty {
@@ -3508,7 +3517,7 @@ textarea.input {
   vertical-align: top;
   padding: 5px;
   width: 25%;
-  height: 33.33333%;
+  height: 33%;
   min-height: 62px;
 }
 
@@ -4480,14 +4489,6 @@ textarea.input {
 
   .dropdown-menu {
     font-size: 13px;
-  }
-
-  .order-item__title, .order-item__col {
-    font-size: 13px;
-  }
-
-  .order-item__meta, .order-item__price, .order-item__discount {
-    font-size: 12px;
   }
 }
 

@@ -1,6 +1,7 @@
+import {$DOCUMENT} from '../_constants';
+
 export default (function() {
 
-	const buttons = document.querySelectorAll('[data-animation="ripple"]');
   const animation = e => {
   	const target = e.currentTarget;
     const width = target.offsetWidth;
@@ -21,6 +22,7 @@ export default (function() {
     
     target.appendChild(circle);
   };
-  Array.prototype.forEach.call(buttons, button => button.addEventListener('mousedown', animation, false));
+
+  $DOCUMENT.on('click', '[data-animation="ripple"]', animation);
 
 })();

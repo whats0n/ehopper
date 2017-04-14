@@ -1,4 +1,4 @@
-import {$DOCUMENT, OPEN} from '../_constants';
+import {$DOCUMENT, OPEN, ACTIVE} from '../_constants';
 
 export default (function() {
 
@@ -11,11 +11,18 @@ export default (function() {
 		const $tabTarget = $target.closest('[data-fullinfo-target]');
 		const currentTab = $tabTarget.length ? $tabTarget.data('fullinfo-target') : null;
 
+		const $tabOpen = $container.find(`[data-tab-open]`);
+		const $tabContainer = $container.find(`[data-tab-container]`);
+
+		$tabOpen.removeClass(ACTIVE);
+		$tabContainer.removeClass(OPEN);
 
 		if (currentTab) {
-			$(`[data-tab-open="${currentTab}"]`).trigger('click');
+			$tabOpen.filter(`[data-tab-open="${currentTab}"]`).addClass(ACTIVE);
+			$tabContainer.filter(`[data-tab-container="${currentTab}"]`).addClass(OPEN);
 		} else {
-			$(`[data-tab-open`).eq(0).trigger('click');
+			$tabOpen.eq(0).addClass(ACTIVE);
+			$tabContainer.eq(0).addClass(OPEN);
 		}
 		$items.attr('data-state', 'default');
 		$this.attr('data-state', 'active');
