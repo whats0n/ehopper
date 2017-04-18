@@ -1,7 +1,7 @@
 import slick from 'slick-carousel';
 import {$DOCUMENT, isTouch} from '../_constants';
 
-(function() {
+export default (function() {
 	
 	const DEFAULT = 'default';
 	const PREV = 'prev';

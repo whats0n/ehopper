@@ -6,9 +6,9 @@ styles:
 {% extends "layouts/_layout.html" %}
 
 {% block content %}
-	<main class="main refund-mode">
+	<main class="main" data-state-container="refund-mode">
 		<div class="inner">
-			<aside class="sidebar sidebar_left">
+			<aside class="sidebar sidebar_left" data-state-container="disabled">
 				{{header.simple({
 					delete: true,
 					menu: true,
@@ -70,7 +70,7 @@ styles:
 						] %}
 						<ul class="order-list" data-order-visible="order" data-order-list="order">
 							{% for item in orderList %}
-								<li class="order-item" data-state="{{item.state}}" data-animation="ripple" data-fullinfo-open="fullinfo" data-order-added="order">
+								<li class="order-item" data-state="{{item.state}}" data-animation="ripple" data-fullinfo-open="fullinfo" data-order-added="order" data-state-target="disabled">
 									<div class="order-item__info">
 										<div class="order-item__title">{{item.title | safe}}</div>
 									</div>
@@ -102,33 +102,33 @@ styles:
 						{% set totalsListMain = [
 							{
 								label: 'Sub',
-								value: '111'
+								value: '12345.00'
 							},
 							{
 								label: 'Discount',
-								value: '111'
+								value: '123.00'
 							}
 						] %}
 						{% set totalsListScroll = [
 							{
 								label: 'Lorem ipsum.',
-								value: '111'
+								value: '1234.00'
 							},
 							{
 								label: 'Lorem ipsum.',
-								value: '111'
+								value: '123456.00'
 							},
 							{
 								label: 'Lorem ipsum.',
-								value: '111'
+								value: '1234567.00'
 							},
 							{
 								label: 'Lorem ipsum.',
-								value: '111'
+								value: '123.00'
 							},
 							{
 								label: 'Lorem ipsum.',
-								value: '111'
+								value: '123456789.00'
 							}
 						] %}
 						<div class="totals__container">
@@ -137,7 +137,7 @@ styles:
 									<li class="totals-list__item">
 										{# <div class="totals-list__row"> #}
 											<div class="totals-list__label">{{item.label}}</div>
-											<div class="totals-list__value">{{item.value}}</div>
+											<div class="totals-list__value">${{item.value}}</div>
 										{# </div> #}
 									</li>
 								{% endfor %}
@@ -147,7 +147,7 @@ styles:
 									<li class="totals-list__item">
 										{# <a href="#" class="totals-list__row"> #}
 											<div class="totals-list__label">{{item.label}}</div>
-											<div class="totals-list__value">{{item.value}}</div>
+											<div class="totals-list__value">${{item.value}}</div>
 										{# </a> #}
 									</li>
 								{% endfor %}
@@ -177,6 +177,7 @@ styles:
 						</div>
 					</div>
 					{{horizontalMenu.call({
+						classList: 'sidebar__menu',
 						items: [
 							{
 								text: 'Save',
@@ -346,7 +347,7 @@ styles:
 				{{header.simple({
 					headerClassList: 'container__header',
 					back: true,
-					backAttrs: 'data-fullinfo-close="fullinfo"'
+					backAttrs: 'data-fullinfo-close="fullinfo" data-state-cancel="disabled"'
 				})}}
 				<div class="container__body">
 					{{tabs.call({

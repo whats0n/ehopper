@@ -2,6 +2,11 @@ import {$DOCUMENT, OPEN, ACTIVE} from '../_constants';
 
 export default (function() {
 
+	const state = {
+		active: 'active',
+		default: 'default'
+	};
+
 	$DOCUMENT.on('click', '[data-fullinfo-open]', function(e) {
 
 		const $this = $(this);
@@ -14,18 +19,26 @@ export default (function() {
 		const $tabOpen = $container.find(`[data-tab-open]`);
 		const $tabContainer = $container.find(`[data-tab-container]`);
 
-		$tabOpen.removeClass(ACTIVE);
-		$tabContainer.removeClass(OPEN);
+		const $tabOpenFiltered = currentTab 
+			? $tabOpen.filter(`[data-tab-open="${currentTab}"]`)
+			: $tabOpen.eq(0);
 
-		if (currentTab) {
-			$tabOpen.filter(`[data-tab-open="${currentTab}"]`).addClass(ACTIVE);
-			$tabContainer.filter(`[data-tab-container="${currentTab}"]`).addClass(OPEN);
-		} else {
-			$tabOpen.eq(0).addClass(ACTIVE);
-			$tabContainer.eq(0).addClass(OPEN);
+		const $tabContainerFiltered = currentTab 
+			? $tabContainer.filter(`[data-tab-container="${currentTab}"]`)
+			: $tabContainer.eq(0);
+
+		if (!$tabOpenFiltered.hasClass(ACTIVE) && !$tabContainerFiltered.hasClass(OPEN)) {
+			$tabOpen.removeClass(ACTIVE);
+			$tabContainer.removeClass(OPEN);
+
+			$tabOpenFiltered.addClass(ACTIVE);
+			$tabContainerFiltered.addClass(OPEN);
 		}
-		$items.attr('data-state', 'default');
-		$this.attr('data-state', 'active');
+
+		if ($this.attr('data-state') === state.active) return;
+
+		$items.attr('data-state', state.default);
+		$this.attr('data-state', state.active);
 
 		if ($container.hasClass(OPEN)) return;
 
@@ -40,7 +53,7 @@ export default (function() {
 
 		if ($container.hasClass(OPEN)) {
 			$container.removeClass(OPEN);
-			$items.attr('data-state', 'default');
+			$items.attr('data-state', state.default);
 		}
 
 	});

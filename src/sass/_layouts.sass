@@ -63,7 +63,16 @@
             visibility: hidden
             pointer-events: none
       &__button
-        background: $red
+        +refund
+          background: $red
+  //state
+  &.disabled
+    .sidebar
+      &__toolbar,
+      &__menu
+        display: none
+    .header__delete
+      display: none
 
 .items
   &__top

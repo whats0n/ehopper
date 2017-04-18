@@ -904,8 +904,16 @@ a.shy {
   pointer-events: none;
 }
 
-.sidebar__toolbar .toolbar__button {
+.refund-mode .sidebar__toolbar .toolbar__button {
   background: #ec4a41;
+}
+
+.sidebar.disabled .sidebar__toolbar, .sidebar.disabled .sidebar__menu {
+  display: none;
+}
+
+.sidebar.disabled .header__delete {
+  display: none;
 }
 
 .items__top {
@@ -2605,6 +2613,10 @@ textarea.input {
   font-size: 61px;
 }
 
+.keyboard__sm {
+  font-size: 65px;
+}
+
 .keyboard__lg {
   font-size: 81px;
 }
@@ -2703,7 +2715,6 @@ textarea.input {
 }
 
 .keyboard__discount {
-  margin-top: -1px;
   *zoom: 1;
 }
 
@@ -3126,20 +3137,14 @@ textarea.input {
   display: block;
 }
 
-.tabs__keyboard {
-  padding-top: 20px;
+.tabs__keyboard, .tabs__notes {
+  padding-top: 10px;
   margin: 0 auto;
   max-width: 460px;
 }
 
 .tabs__info {
   height: 100%;
-}
-
-.tabs__notes {
-  padding-top: 20px;
-  margin: 0 auto;
-  max-width: 460px;
 }
 
 .tabs__notes .fieldset {
@@ -3338,6 +3343,10 @@ textarea.input {
   white-space: nowrap;
 }
 
+.totals-list__value {
+  text-align: right;
+}
+
 .categories {
   position: relative;
   padding-bottom: 30px;
@@ -3477,7 +3486,7 @@ textarea.input {
 
 .sm-grid__body {
   overflow: auto;
-  padding: 15px 20px 10px;
+  padding: 5px 20px 10px;
   height: 100%;
 }
 

@@ -4,7 +4,7 @@
 {% set nav = [
 	{ href: 'pos.html', icon: 'pos', text: 'Point of Sale' },
 	{ href: 'orders.html', icon: 'orders', text: 'Orders' },
-	{ href: 'pos.html', icon: 'undo', text: 'Manual Refund' },
+	{ href: 'pos.html', icon: 'undo', text: 'Manual Refund', attrs: 'data-state-target="refund-mode"' },
 	{ href: 'register-close.html', icon: 'close', text: 'Close Register' },
 	{ href: 'payin.html', icon: 'cc', text: 'Payins / Payouts' },
 	{ href: 'tips.html', icon: 'tips', text: 'Tips' },
@@ -25,7 +25,7 @@
 		<ul class="nav">
 			{% for item in props.nav or nav %}
 			    <li class="nav__item {% if loop.index0 === active %}is-active{%- endif -%}">
-			    	<a href="{{item.href}}" class="nav__link"><i class="nav__icon icon icon-{{item.icon}}"></i>{{item.text | safe}}</a>
+			    	<a href="{{item.href}}" class="nav__link" {{item.attrs | safe}}><i class="nav__icon icon icon-{{item.icon}}"></i>{{item.text | safe}}</a>
 			    </li>
 			{% endfor %}
 		</ul>

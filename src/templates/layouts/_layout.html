@@ -38,15 +38,15 @@
       <!-- BEGIN content -->
       {% block content %}{% endblock %}
       <!-- END content -->
+      {% block navigation %}{% endblock %}
+      {{mixins.snackbar()}}
     </div>
     <!-- end application -->
 
-    {% block navigation %}{% endblock %}
     
     <!-- BEGIN scripts -->
     <script type="text/javascript" src="static/js/app.js"></script>
     <!-- END scripts -->
-    {{mixins.snackbar()}}
 
   </body>
 </html>

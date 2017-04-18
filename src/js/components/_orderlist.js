@@ -22,7 +22,7 @@ export default (function() {
 
 	const addItem = function (props) {
 		const template = `
-			<li class="order-item" data-state="default" data-animation="ripple" data-fullinfo-open="fullinfo" data-order-added="order">
+			<li class="order-item" data-state="default" data-animation="ripple" data-fullinfo-open="fullinfo" data-order-added="order" data-state-target="disabled">
 				<div class="order-item__info">
 					<div class="order-item__title">${props.title}</div>
 				</div>

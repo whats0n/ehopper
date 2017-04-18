@@ -4,7 +4,7 @@ export default (function() {
 
 	const addClass = 'addClass';
 	const removeClass = 'removeClass';
-	
+
 	const toggleMenu = (actionType) => {
 		$('[data-menu-container]')
 			.add('[data-menu-overlay]')
@@ -25,5 +25,14 @@ export default (function() {
 		e.preventDefault();
 		toggleMenu(removeClass);
 	});
+
+	window.menu = {
+		close() {
+			toggleMenu(removeClass);
+		},
+		open() {
+			toggleMenu(addClass);
+		}
+	};
 
 })();

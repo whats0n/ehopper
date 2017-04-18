@@ -53,7 +53,7 @@
 <!-- begin keyboard -->
 <div class="keyboard {{props.keyboardClassList}}">
 	{% if props.discount %}
-		<div class="keyboard__discount">
+		<div class="keyboard__discount {{props.size}}">
 			{% for key in props.discount %}
 			    <div class="keyboard__discount-item"><button type="button" data-animation="ripple" class="keyboard__discount-button">{{key.content | safe}}</button></div>
 			{% endfor %}

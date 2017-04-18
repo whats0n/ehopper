@@ -18,9 +18,9 @@
     <!-- begin application -->
     <div class="application" id="application">
       <!-- BEGIN content -->
-      <main class="main refund-mode">
+      <main class="main" data-state-container="refund-mode">
         <div class="inner">
-          <aside class="sidebar sidebar_left">
+          <aside class="sidebar sidebar_left" data-state-container="disabled">
             <!-- begin header -->
             <header class="header sidebar__header"> <button class="btn-icon btn-icon_square icon icon-menu header__menu" title="Menu" data-menu-open="menu"></button> <button class="header__delete btn-icon icon icon-delete" type="button" title="Delete" data-order-delete="order" data-snackbar-open="snackbar"
                 data-snackbar-message="All items removed from your shopping cart" data-snackbar-state="default"></button>
@@ -84,7 +84,7 @@
             <div class="sidebar__body" data-order-scroll="order">
               <div class="sidebar__content">
                 <ul class="order-list" data-order-visible="order" data-order-list="order">
-                  <li class="order-item" data-state="default" data-animation="ripple" data-fullinfo-open="fullinfo" data-order-added="order">
+                  <li class="order-item" data-state="default" data-animation="ripple" data-fullinfo-open="fullinfo" data-order-added="order" data-state-target="disabled">
                     <div class="order-item__info">
                       <div class="order-item__title">Hot Dog XL</div>
                     </div>
@@ -99,7 +99,7 @@
                     </div>
                     <div class="order-item__meta" data-fullinfo-target="modifiers"><strong>Note</strong> Click to duplicate in cart</div>
                   </li>
-                  <li class="order-item" data-state="default" data-animation="ripple" data-fullinfo-open="fullinfo" data-order-added="order">
+                  <li class="order-item" data-state="default" data-animation="ripple" data-fullinfo-open="fullinfo" data-order-added="order" data-state-target="disabled">
                     <div class="order-item__info">
                       <div class="order-item__title">T-Shirt with Print 23</div>
                     </div>
@@ -115,7 +115,7 @@
                     </div>
                     <div class="order-item__meta" data-fullinfo-target="modifiers">Long Sleeves, XL size, Black color</div>
                   </li>
-                  <li class="order-item" data-state="default" data-animation="ripple" data-fullinfo-open="fullinfo" data-order-added="order">
+                  <li class="order-item" data-state="default" data-animation="ripple" data-fullinfo-open="fullinfo" data-order-added="order" data-state-target="disabled">
                     <div class="order-item__info">
                       <div class="order-item__title">Hot Dog XL</div>
                     </div>
@@ -130,7 +130,7 @@
                     </div>
                     <div class="order-item__meta" data-fullinfo-target="modifiers"><strong>Note</strong> Click to duplicate in cart</div>
                   </li>
-                  <li class="order-item" data-state="default" data-animation="ripple" data-fullinfo-open="fullinfo" data-order-added="order">
+                  <li class="order-item" data-state="default" data-animation="ripple" data-fullinfo-open="fullinfo" data-order-added="order" data-state-target="disabled">
                     <div class="order-item__info">
                       <div class="order-item__title">Hot Dog XL</div>
                     </div>
@@ -145,7 +145,7 @@
                     </div>
                     <div class="order-item__meta" data-fullinfo-target="modifiers"><strong>Note</strong> Click to duplicate in cart</div>
                   </li>
-                  <li class="order-item" data-state="default" data-animation="ripple" data-fullinfo-open="fullinfo" data-order-added="order">
+                  <li class="order-item" data-state="default" data-animation="ripple" data-fullinfo-open="fullinfo" data-order-added="order" data-state-target="disabled">
                     <div class="order-item__info">
                       <div class="order-item__title">Hot Dog XL</div>
                     </div>
@@ -160,7 +160,7 @@
                     </div>
                     <div class="order-item__meta" data-fullinfo-target="modifiers"><strong>Note</strong> Click to duplicate in cart</div>
                   </li>
-                  <li class="order-item" data-state="default" data-animation="ripple" data-fullinfo-open="fullinfo" data-order-added="order">
+                  <li class="order-item" data-state="default" data-animation="ripple" data-fullinfo-open="fullinfo" data-order-added="order" data-state-target="disabled">
                     <div class="order-item__info">
                       <div class="order-item__title">Hot Dog XL</div>
                     </div>
@@ -188,33 +188,33 @@
                   <ul class="totals-list totals-list_main">
                     <li class="totals-list__item">
                       <div class="totals-list__label">Sub</div>
-                      <div class="totals-list__value">111</div>
+                      <div class="totals-list__value">$12345.00</div>
                     </li>
                     <li class="totals-list__item">
                       <div class="totals-list__label">Discount</div>
-                      <div class="totals-list__value">111</div>
+                      <div class="totals-list__value">$123.00</div>
                     </li>
                   </ul>
                   <ul class="totals-list totals-list_scroll">
                     <li class="totals-list__item">
                       <div class="totals-list__label">Lorem ipsum.</div>
-                      <div class="totals-list__value">111</div>
+                      <div class="totals-list__value">$1234.00</div>
                     </li>
                     <li class="totals-list__item">
                       <div class="totals-list__label">Lorem ipsum.</div>
-                      <div class="totals-list__value">111</div>
+                      <div class="totals-list__value">$123456.00</div>
                     </li>
                     <li class="totals-list__item">
                       <div class="totals-list__label">Lorem ipsum.</div>
-                      <div class="totals-list__value">111</div>
+                      <div class="totals-list__value">$1234567.00</div>
                     </li>
                     <li class="totals-list__item">
                       <div class="totals-list__label">Lorem ipsum.</div>
-                      <div class="totals-list__value">111</div>
+                      <div class="totals-list__value">$123.00</div>
                     </li>
                     <li class="totals-list__item">
                       <div class="totals-list__label">Lorem ipsum.</div>
-                      <div class="totals-list__value">111</div>
+                      <div class="totals-list__value">$123456789.00</div>
                     </li>
                   </ul>
                 </div>
@@ -228,7 +228,7 @@
                 </div>
               </div>
               <!-- begin horizontal-menu -->
-              <div class="horizontal-menu">
+              <div class="horizontal-menu sidebar__menu">
                 <div class="horizontal-menu__container">
                   <ul class="horizontal-menu__list">
                     <li class="horizontal-menu__item"> <a class="horizontal-menu__link " data-animation="ripple" href="order-save.html">Save</a> </li>
@@ -581,7 +581,7 @@
             <!-- begin header -->
             <header class="header container__header">
               <div class="header__back">
-                <a class="btn-icon btn-icon_square icon icon-back header__back-icon" href="#" data-fullinfo-close="fullinfo"></a>
+                <a class="btn-icon btn-icon_square icon icon-back header__back-icon" href="#" data-fullinfo-close="fullinfo" data-state-cancel="disabled"></a>
                 <div class="header__title">Cancel</div>
               </div>
             </header>
@@ -695,13 +695,13 @@
                           </div>
                           <!-- begin keyboard -->
                           <div class="keyboard ">
-                            <div class="keyboard__discount">
+                            <div class="keyboard__discount keyboard__sm">
                               <div class="keyboard__discount-item"><button type="button" data-animation="ripple" class="keyboard__discount-button">5%</button></div>
                               <div class="keyboard__discount-item"><button type="button" data-animation="ripple" class="keyboard__discount-button">10%</button></div>
                               <div class="keyboard__discount-item"><button type="button" data-animation="ripple" class="keyboard__discount-button">15%</button></div>
                               <div class="keyboard__discount-item"><button type="button" data-animation="ripple" class="keyboard__discount-button">20%</button></div>
                             </div>
-                            <div class="keyboard__container keyboard__lg">
+                            <div class="keyboard__container keyboard__sm">
                               <div class="keyboard__main">
                                 <div class="keyboard__item"> <button type="button" data-animation="ripple" class="keyboard__button">1</button> </div>
                                 <div class="keyboard__item"> <button type="button" data-animation="ripple" class="keyboard__button">2</button> </div>
@@ -1018,41 +1018,41 @@
       </div>
       <!-- end help -->
       <!-- END content -->
+      <!-- begin menu -->
+      <nav class="menu" data-menu-container="menu">
+        <header class="menu__header" data-menu-close="menu" data-animation="ripple"> <i class="icon icon-back menu__icon"></i>
+          <div class="title-xlg menu__title">Acme Inc.</div>
+        </header>
+        <div class="menu__container">
+          <ul class="nav">
+            <li class="nav__item is-active"> <a href="pos.html" class="nav__link"><i class="nav__icon icon icon-pos"></i>Point of Sale</a> </li>
+            <li class="nav__item "> <a href="orders.html" class="nav__link"><i class="nav__icon icon icon-orders"></i>Orders</a> </li>
+            <li class="nav__item "> <a href="pos.html" class="nav__link" data-state-target="refund-mode"><i class="nav__icon icon icon-undo"></i>Manual Refund</a> </li>
+            <li class="nav__item "> <a href="register-close.html" class="nav__link"><i class="nav__icon icon icon-close"></i>Close Register</a> </li>
+            <li class="nav__item "> <a href="payin.html" class="nav__link"><i class="nav__icon icon icon-cc"></i>Payins / Payouts</a> </li>
+            <li class="nav__item "> <a href="tips.html" class="nav__link"><i class="nav__icon icon icon-tips"></i>Tips</a> </li>
+            <li class="nav__item "> <a href="loyalty.html" class="nav__link"><i class="nav__icon icon icon-loyalty"></i>Loyalty</a> </li>
+            <li class="nav__item "> <a href="settings.html" class="nav__link"><i class="nav__icon icon icon-cog"></i>Settings</a> </li>
+            <li class="nav__item "> <a href="sync.html" class="nav__link"><i class="nav__icon icon icon-sync"></i>Synchronize</a> </li>
+            <li class="nav__item "> <a href="ui-kit.html" class="nav__link"><i class="nav__icon icon icon-bo"></i>Back Office &bull; UI-Kit</a> </li>
+            <li class="nav__item "> <a href="pos.html" class="nav__link"><i class="nav__icon icon icon-help"></i>Help</a> </li>
+            <li class="nav__item "> <a href="index.html" class="nav__link"><i class="nav__icon icon icon-exit"></i>Logout</a> </li>
+          </ul>
+        </div>
+      </nav>
+      <!-- end menu -->
+      <!-- begin overlay --><button type="button" class="overlay " data-color="dark-gray" data-overlay="overlay" data-menu-overlay="menu"></button>
+      <!-- end overlay -->
+      <!-- begin snackbar -->
+      <div class="snackbar" data-snackbar-container="snackbar" data-state="default">
+        <div class="snackbar__message" data-snackbar-content="snackbar"></div>
+      </div>
+      <!-- end snackbar -->
     </div>
     <!-- end application -->
-    <!-- begin menu -->
-    <nav class="menu" data-menu-container="menu">
-      <header class="menu__header" data-menu-close="menu" data-animation="ripple"> <i class="icon icon-back menu__icon"></i>
-        <div class="title-xlg menu__title">Acme Inc.</div>
-      </header>
-      <div class="menu__container">
-        <ul class="nav">
-          <li class="nav__item is-active"> <a href="pos.html" class="nav__link"><i class="nav__icon icon icon-pos"></i>Point of Sale</a> </li>
-          <li class="nav__item "> <a href="orders.html" class="nav__link"><i class="nav__icon icon icon-orders"></i>Orders</a> </li>
-          <li class="nav__item "> <a href="pos.html" class="nav__link"><i class="nav__icon icon icon-undo"></i>Manual Refund</a> </li>
-          <li class="nav__item "> <a href="register-close.html" class="nav__link"><i class="nav__icon icon icon-close"></i>Close Register</a> </li>
-          <li class="nav__item "> <a href="payin.html" class="nav__link"><i class="nav__icon icon icon-cc"></i>Payins / Payouts</a> </li>
-          <li class="nav__item "> <a href="tips.html" class="nav__link"><i class="nav__icon icon icon-tips"></i>Tips</a> </li>
-          <li class="nav__item "> <a href="loyalty.html" class="nav__link"><i class="nav__icon icon icon-loyalty"></i>Loyalty</a> </li>
-          <li class="nav__item "> <a href="settings.html" class="nav__link"><i class="nav__icon icon icon-cog"></i>Settings</a> </li>
-          <li class="nav__item "> <a href="sync.html" class="nav__link"><i class="nav__icon icon icon-sync"></i>Synchronize</a> </li>
-          <li class="nav__item "> <a href="ui-kit.html" class="nav__link"><i class="nav__icon icon icon-bo"></i>Back Office &bull; UI-Kit</a> </li>
-          <li class="nav__item "> <a href="pos.html" class="nav__link"><i class="nav__icon icon icon-help"></i>Help</a> </li>
-          <li class="nav__item "> <a href="index.html" class="nav__link"><i class="nav__icon icon icon-exit"></i>Logout</a> </li>
-        </ul>
-      </div>
-    </nav>
-    <!-- end menu -->
-    <!-- begin overlay --><button type="button" class="overlay " data-color="dark-gray" data-overlay="overlay" data-menu-overlay="menu"></button>
-    <!-- end overlay -->
     <!-- BEGIN scripts -->
     <script type="text/javascript" src="static/js/app.js"></script>
     <!-- END scripts -->
-    <!-- begin snackbar -->
-    <div class="snackbar" data-snackbar-container="snackbar" data-state="default">
-      <div class="snackbar__message" data-snackbar-content="snackbar"></div>
-    </div>
-    <!-- end snackbar -->
   </body>
 
 </html>

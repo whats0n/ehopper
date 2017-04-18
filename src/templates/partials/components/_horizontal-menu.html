@@ -3,7 +3,7 @@
 
 {% macro call(props) %}
 <!-- begin horizontal-menu -->
-<div class="horizontal-menu">
+<div class="horizontal-menu {{props.classList}}">
 	<div class="horizontal-menu__container">
 		<ul class="horizontal-menu__list">
 			{% for item in props.items %}
