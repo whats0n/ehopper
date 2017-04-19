@@ -6,9 +6,9 @@ styles:
 {% extends "layouts/_layout.html" %}
 
 {% block content %}
-	<main class="main" data-state-container="refund-mode">
+	<main class="main" data-toggle-class-container="main-container">
 		<div class="inner">
-			<aside class="sidebar sidebar_left" data-state-container="disabled">
+			<aside class="sidebar sidebar_left" data-toggle-class-container="sidebar-header">
 				{{header.simple({
 					delete: true,
 					menu: true,
@@ -68,25 +68,55 @@ styles:
 								state: 'default'
 							}
 						] %}
+						<!-- data-state - item state (can be default or active) -->
+						<!-- data-swipe - add class to himself -->
+						<!-- data-swipe-threshold - threshold that we have to swipe from the start point -->
+						<!-- data-fullinfo-open - open item tabs -->
+						<!-- data-toggle-class-target:
+							add/remove/toggle class (data-toggle-class-add/data-toggle-class-remove/data-toggle-class-toggle) 
+							to all current containers ('data-toggle-class-container') -->
+						<!-- data-fullinfo-target - open current tab in the fullinfo container -->
+						<!-- data-fullinfo-close - close item tabs -->
+						<!-- data-order-delete-item - delete item -->
 						<ul class="order-list" data-order-visible="order" data-order-list="order">
 							{% for item in orderList %}
-								<li class="order-item" data-state="{{item.state}}" data-animation="ripple" data-fullinfo-open="fullinfo" data-order-added="order" data-state-target="disabled">
-									<div class="order-item__info">
-										<div class="order-item__title">{{item.title | safe}}</div>
-									</div>
-									<div class="order-item__row">
-										<div class="order-item__col">
-											<div class="order-item__quantity" data-fullinfo-target="quantity">{{item.quantity | safe}}&times;</div>
-											<div class="order-item__price" data-fullinfo-target="price">{{item.price | safe}}</div>
+								<li class="order-item" 
+									data-order-added="item"
+									data-state="{{item.state}}" 
+									data-animation="ripple" 
+									data-swipe="is-open"
+									data-swipe-threshold="50">
+									<div class="order-item__container">
+										<div class="order-item__content"
+											data-fullinfo-open="fullinfo"
+											data-toggle-class-target="sidebar-header"
+											data-toggle-class-add="is-disabled">
+											<div class="order-item__info">
+												<div class="order-item__title">{{item.title | safe}}</div>
+											</div>
+											<div class="order-item__row">
+												<div class="order-item__col">
+													<div class="order-item__quantity" data-fullinfo-target="quantity">{{item.quantity | safe}}&times;</div>
+													<div class="order-item__price" data-fullinfo-target="price">{{item.price | safe}}</div>
+												</div>
+												<div class="order-item__col">
+													<div class="order-item__total" data-fullinfo-target="price">{{item.total | safe}}</div>
+													{% if item.discount %}
+														<div class="order-item__discount" data-fullinfo-target="discount">{{item.discount | safe}}</div>
+													{% endif %}
+												</div>
+											</div>
+											<div class="order-item__meta" data-fullinfo-target="modifiers">{{item.meta | safe}}</div>
 										</div>
-										<div class="order-item__col">
-											<div class="order-item__total" data-fullinfo-target="price">{{item.total | safe}}</div>
-											{% if item.discount %}
-												<div class="order-item__discount" data-fullinfo-target="discount">{{item.discount | safe}}</div>
-											{% endif %}
-										</div>
+										<button class="order-item__close" 
+											data-fullinfo-close="fullinfo" 
+											data-toggle-class-target="sidebar-header" 
+											data-toggle-class-remove="is-disabled"
+											data-order-delete-item="delete">
+											<i class="icon icon-clear"></i>
+											<i class="icon icon-close"></i>
+										</button>
 									</div>
-									<div class="order-item__meta" data-fullinfo-target="modifiers">{{item.meta | safe}}</div>
 								</li>
 							{% endfor %}
 						</ul>
@@ -347,7 +377,7 @@ styles:
 				{{header.simple({
 					headerClassList: 'container__header',
 					back: true,
-					backAttrs: 'data-fullinfo-close="fullinfo" data-state-cancel="disabled"'
+					backAttrs: 'data-fullinfo-close="fullinfo" data-toggle-class-target="sidebar-header" data-toggle-class-remove="is-disabled"'
 				})}}
 				<div class="container__body">
 					{{tabs.call({
@@ -402,635 +432,3 @@ styles:
 {% block navigation %}
 	{{menu.call({ active: 0 })}}
 {% endblock %}
-
-<!DOCTYPE html>
-<html>
-<head>
-	<meta charset=utf-8>
-	<title>eHopper POS</title>
-	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
-	<meta http-equiv=X-UA-Compatible content="IE=edge,chrome=1">
-	<link rel="stylesheet" type="text/css" href="static/css/pos.css">
-	<script src="static/js/demo.js"></script>
-	<link rel="icon" href="https://ehopper.com/wp-content/uploads/2016/03/favicon-01.png" type="image/png">
-</head>
-
-
-<body class="animated" id="body">
-
-	<article class="pos">
-
-		<!-- Order-item template -->
-		<script type="text/html" id="demoOrderItemTemplate" class="order__item">
-			<div class="order__item-data">
-				<div class="order__item-data1">
-					<div class="order__item-qty">3&times;</div>
-					<div class="order__item-price">100.00</div>
-				</div>
-				<div class="order__item-data2">
-					<div class="order__item-total">300.00</div>
-					<div class="order__item-discount"></div>
-				</div>
-			</div>
-			<div class="order__item-product">
-				<div class="order__item-title">Sample Order Item</div>
-				<div class="order__item-info">No description</div>
-			</div>
-		</script>
-
-
-		<main class="pos-order layout layout-rows" id="demoOrderPanel">
-			<header>
-				<button class="btn icon icon-menu" title="Menu"></button>
-				<div class="header__icons"><button class="btn icon icon-delete" title="Empty Order" onclick="demoEmptyOrder()"></button></div>
-				<h1>Order</h1>
-			</header>
-
-			<div class="toolbar toolbar-delimiter">
-				<div class="toolbar__item w50">
-					<div class="dropdown dropdown-white w100">
-						<div class="dropdown__selected">
-							<div class="dropdown__selected-label">Order Type:</div>
-							<div class="dropdown__selected-value">Quick Sale</div>
-						</div>
-						<ul class="dropdown-menu">
-							<li class="dropdown-menu__item dropdown-menu__item-selected">Quick Sale</li>
-							<li class="dropdown-menu__item">Dine In</li>
-							<li class="dropdown-menu__item">Take Out</li>
-							<li class="dropdown-menu__item">Drive Thru</li>
-							<li class="dropdown-menu__item">Delivery</li>
-						</ul>
-						<div class="dropdown-menu__mask"></div>
-					</div>
-				</div>
-				<div class="toolbar__item w50">
-					<div class="dropdown dropdown-white w100">
-						<div class="dropdown__selected">
-							<!-- <i class="icon icon-next dropdown__selected-icon"></i> -->
-							<div class="dropdown__selected-label">Customer:</div>
-							<div class="dropdown__selected-value">Walk In</div>
-						</div>
-						<ul class="dropdown-menu">
-							<li class="dropdown-menu__item dropdown-menu__item-selected"><i class="icon icon-walkin"></i>Walk In</li>
-							<li class="dropdown-menu__search">
-								<input class="input dropdown-menu__search-input" placeholder="Find Customer&hellip;">
-								<button class="btn dropdown-menu__search-btn icon-search btn-primary"></button>
-							</li>
-							<li class="dropdown-menu__item"><a class="btn icon icon-next pull-right" href="customer.html"></a>Recent Customer</li>
-							<li class="dropdown-menu__item"><i class="btn icon icon-next pull-right"></i>Recent Customer 2</li>
-							<li class="dropdown-menu__item"><i class="btn icon icon-user pull-right"></i>Another Customer</li>
-							<button class="btn btn-block btn-lg btn-primary" href="#"><i class="icon icon-plus"></i>New Customer</button>
-						</ul>
-						<div class="dropdown-menu__mask"></div>
-					</div>
-				</div>
-			</div>
-
-			<div class="order__empty layout__row layout__row-grow hide" id="demo_order_empty">
-				<h5>Order is empty</h5>
-				<p>Add items from catalog</p>
-			</div>
-
-
-			<ul class="order__items order__items-interactive layout__row layout__row-grow no-scrollbar" id="demo_order_items">
-				<li class="order__item" onclick="demoSetOrigin(this,'-20%','12%');demoEditItem()">
-					<div class="order__item-data">
-						<div class="order__item-data1">
-							<div class="order__item-qty">1&times;</div>
-							<div class="order__item-price">3.00</div>
-						</div>
-						<div class="order__item-data2">
-							<div class="order__item-total">3.00</div>
-							<div class="order__item-discount"></div>
-						</div>
-					</div>
-					<div class="order__item-product">
-						<div class="order__item-title">Hot Dog XL</div>
-						<div class="order__item-info"><b class="order__item-note">Note</b> Click to duplicate in cart</div>
-					</div>
-				</li>
-				<li class="order__item order__item-active" data-animation="ripple" onclick="demoSetOrigin(this,'-20%','20%');demoEditItem()">
-					<div class="order__item-data">
-						<div class="order__item-data1">
-							<div class="order__item-qty">2&times;</div>
-							<div class="order__item-price">100.00</div>
-						</div>
-						<div class="order__item-data2">
-							<div class="order__item-total">200.00</div>
-							<div class="order__item-discount">-5.10</div>
-						</div>
-					</div>
-					<div class="order__item-product">
-						<div class="order__item-title">T-Shirt with Print 23</div>
-						<div class="order__item-info">Long Sleeves, XL size, Black color</div>
-					</div>
-				</li>
-			</ul>
-
-
-			<a class="order__totals" href="order-taxes">
-				Order totals<br><big class="muted pull-right">TBD</big>
-				Tax totals<br>
-				Discount totals
-			</a>
-
-
-			<div class="toolbar toolbar-payments">
-				<div class="toolbar__item toolbar-payments__secondary">
-					<a class="btn btn-green btn-lg btn-block btn-ripple" href="payments.html">
-						<i class="icon icon-more-v"></i>
-						Other Payments
-					</a>
-				</div>
-				<div class="toolbar__item toolbar-payments__primary">
-					<a class="btn btn-green btn-lg btn-block btn-ripple" href="payment-cash.html">
-						<span class="toolbar-payments__primary-amount">$100.20</span>
-						Cash:
-					</a>
-				</div>
-			</div>
-
-			<ul class="hmenu">
-				<li class="hmenu__item"><a href="order-save.html">Save</a></li>
-				<li class="hmenu__item"><a href="order-note.html">Notes</a></li>
-				<li class="hmenu__item"><a href="terminal-cash.html">Terminal</a></li>
-				<li class="hmenu__item hmenu__item-disabled"><a href="">Drawer</a></li>
-				<li class="hmenu__item" onclick="toggleClass(demoMore, 'dropdown-menu-open')">
-					More<i class="icon icon-more-v"></i>
-					<ul class="dropdown-menu dropdown-menu-up" id="demoMore">
-						<li class="dropdown-menu__item" onclick="demoToggleAnimation()">Toggle animations</li>
-						<a class="dropdown-menu__item" href="order-taxes.html">Order Taxes</a>
-						<li class="dropdown-menu__item">More&hellip;</li>
-					</ul>
-					<div class="dropdown-menu__mask"></div>
-				</li>
-			</ul>
-		</main>
-
-
-		<aside class="pos-catalog cutout-left">
-			<header class="cutout-left">
-				<div class="header__icons"><button class="btn icon icon-search" title="Search" onclick="toggleClass(demoSearch, 'search-open', true)"></button></div>
-				<h1>Category</h1>
-			</header>
-
-			<!-- CATEGORIES -->
-			<section class="categories">
-
-				<!-- Scrollable list of categories -->
-				<ul class="categories__wrapper">
-					<li class="categories__item btn-ripple">
-						<div class="categories__item-code">DEF</div>
-						<div class="categories__item-title">Default Category</div>
-					</li>
-					<li class="categories__item btn-ripple categories__item-active">
-						<div class="categories__item-code">CUR</div>
-						<div class="categories__item-title">Currently Selected Category</div>
-					</li>
-					<li class="categories__item btn-ripple" style="background: khaki">
-						<div class="categories__item-code">KH</div>
-						<div class="categories__item-title">Colored Category</div>
-					</li>
-					<li class="categories__item btn-ripple">
-						<div class="categories__item-code">4</div>
-						<div class="categories__item-title">Category #4</div>
-					</li>
-					<li class="categories__item btn-ripple">
-						<div class="categories__item-code">5</div>
-						<div class="categories__item-title">Category #5</div>
-					</li>
-				</ul>
-
-
-				<ul class="pagination">
-					<li class="pagination__item pagination__item-active" title="1"><a href="#" class="pagination__item-link"></a></li>
-					<li class="pagination__item" title="2"><a href="#" class="pagination__item-link"></a></li>
-					<li class="pagination__item" title="3"><a href="#" class="pagination__item-link"></a></li>
-				</ul>
-			</section>
-
-			<!-- PRODUCTS -->
-			<section class="products">
-
-				<!-- Message: no products in category -->
-				<div class="products__empty hide">
-					<h5>No items in this category</h5>
-					<p>You can add them in Back Office</p>
-				</div>
-
-				<!-- Scrollable list of products -->
-				<ul class="products__wrapper">
-					<li class="products__item btn-ripple" onclick="demoAddToCart()">
-						<div class="products__item-title">Hot Dog XL</div>
-						<div class="products__item-code">HDXL</div>
-						<div class="products__item-price">4.00</div>
-					</li>
-					<li class="products__item btn-ripple" style="background-color: khaki" onclick="demoSetOrigin(this,'37%','35%');demoAddToCart('serials')">
-						<div class="products__item-title">Colored Item</div>
-						<div class="products__item-price">4,853.00</div>
-					</li>
-					<li class="products__item btn-ripple" style="background-image: url(static/img/products/sushi.jpg)" onclick="demoSetOrigin(this,'60%','35%');demoAddToCart('note')">
-						<div class="products__item-title">Sail Sushi</div>
-						<div class="products__item-price">1.50</div>
-					</li>
-					<li class="products__item btn-ripple" style="background-image: url(static/img/products/jack-daniels.jpg)" onclick="demoSetOrigin(this,'90%','30%');">
-						<div class="products__item-title">Jack Daniels</div>
-						<div class="products__item-price">37.99</div>
-					</li>
-					<li class="products__item btn-ripple" style="background-image: url(static/img/products/whiskey.jpg)">
-						<div class="products__item-title">Tennessee Honey Whiskey</div>
-						<div class="products__item-price">25.95</div>
-					</li>
-					<li class="products__item btn-ripple" style="background-image: url(static/img/products/pizza.jpg)" onclick="demoSetOrigin(this,'40%','60%');demoAddToCart('mods')">
-						<div class="products__item-title">Pizza Salami</div>
-						<div class="products__item-price">15.00</div>
-					</li>
-					<li class="products__item btn-ripple" style="background-image: url(static/img/products/shrimps.png)">
-						<div class="products__item-title">Shrimps Toriaki</div>
-						<div class="products__item-price">6.99</div>
-					</li>
-					<li class="products__item btn-ripple" style="background-color: #f9887c" onclick="emitMessage('Unable to initiate sell until register is closed', undefined, 'Open Register', function(){ window.location = 'register-open.html'; })">
-						<div class="products__item-title">Another colored</div>
-						<div class="products__item-code">RED</div>
-						<div class="products__item-price">6.99</div>
-					</li>
-					<li class="products__item" style="background-image: url(static/img/products/sushi2.jpg)">
-						<div class="products__item-title">Asparagus Roll</div>
-					</li>
-					<li class="products__item">
-						<div class="products__item-code">NO</div>
-						<div class="products__item-title">No Ripple, No Price</div>
-					</li>
-					<!-- <li class="products__item text-center" onclick="demoToggleAnimation()"><i class="icon icon-check" id="demoAnimated"></i><div class="products__item-title">Toggle<br>Animations</div></li> -->
-				</ul>
-
-				<ul class="pagination">
-					<li class="pagination__item pagination__item-active" title="1"><a href="#" class="pagination__item-link"></a></li>
-					<li class="pagination__item" title="2"><a href="#" class="pagination__item-link"></a></li>
-					<li class="pagination__item" title="3"><a href="#" class="pagination__item-link"></a></li>
-				</ul>
-			</section>
-
-			<!-- SEARCH -->
-			<div class="search" id="demoSearch">
-				<header class="search__form">
-					<div class="header__icons">
-						<button class="btn icon icon-search"></button>
-						<button class="btn icon icon-close" onclick="toggleClass(demoSearch, 'search-open', false)"></button>						
-					</div>
-					<div class="search__input-wrapper">
-						<input class="input search__input btn-block" id="demoSearchInput" placeholder="Quick Search">
-					</div>
-				</header>
-			</div>
-			<div class="search__mask" onclick="toggleClass(demoSearch, 'search-open')"></div>
-		</aside>
-
-
-		<!-- Edit Item: quantity, discount, etc -->
-		<aside class="pos-edit cutout-left layout layout-rows hide" style="transform-origin: -20% 200px" id="demoPosEditor">
-			<header class="cutout-left">
-				<!-- <div class="header__icons"><button class="btn icon icon-close" onclick="demoEditItem()"></button></div> -->
-				<i class="btn icon icon-back" onclick="demoEditItem()"></i>
-				<h1>Cancel</h1>
-			</header>
-
-
-			<!-- Tabs -->
-			<ul class="tabs tabs-lg tabs-flex tabs-centered pos-edit__tabs">
-				<li class="tabs__item tabs__item-active cutout-left padding2-left" data-tab="qty">
-					<!-- Example usage with multiple lines: label+value
-					<div class="tabs__item-label">Quantity</div>
-					<big class="tabs__item-value">20</big>-->
-					Quantity
-				</li>
-				<li class="tabs__item" data-tab="price">Price</li>
-				<li class="tabs__item" data-tab="discount">Discount</li>
-				<li class="tabs__item" data-tab="mods">Modifiers</li>
-				<li class="tabs__item" data-tab="matrix">Matrix</li>
-				<li class="tabs__item" data-tab="serials">Serials</li>
-				<li class="tabs__item" data-tab="note">Notes</li>
-			</ul>
-
-
-			<div class="tabbed layout__row layout__row-grow">
-
-				<!-- Tab: Quantity  -->
-				<section class="tabbed__panel tabbed__panel-active" data-tab="qty">
-					<form class="form-narrow" onsubmit="demoEditItem(); return false;">
-						<div class="fieldset-bordered fieldset-keyboard active">
-							
-							<div class="fieldset fieldset-lg">
-								<label class="fieldset__label">Quantity:</label>
-								<div class="fieldset__input text-right">
-									<span class="input inpu-text input-xl valign-middle">20</span>
-									<label class="fieldset__text muted padding-left"><big>items</big></label>
-								</div>
-							</div>
-
-							<div class="fieldset-border-top">
-								<link rel="import" href="inc/numpad-xl.html" onload="demoTemplate(this)">
-							</div>
-						</div>
-
-
-					</form>
-				</section>
-
-
-				<!-- Tab: Price  -->
-				<section class="tabbed__panel" data-tab="price">
-					<form class="form-narrow" onsubmit="demoEditItem(); return false;">
-						<div class="fieldset-bordered fieldset-keyboard active">
-							
-							<div class="fieldset fieldset-lg">
-								<label class="fieldset__label">Custom Price:</label>
-								<div class="fieldset__input text-right">
-									<label class="fieldset__text muted padding-right"><big>$</big></label>
-									<span class="input inpu-text input-xl valign-middle">49.95</span>
-								</div>
-							</div>
-
-							<div class="fieldset-border-top">
-								<link rel="import" href="inc/numpad-xl.html" onload="demoTemplate(this)">
-							</div>
-						</div>
-					</form>
-				</section>
-
-				
-				<!-- Tab: Discount  -->
-				<section class="tabbed__panel" data-tab="discount">
-					<form class="form-narrow" onsubmit="demoEditItem(); return false;">
-						<div class="fieldset-bordered fieldset-keyboard active">
-							
-							<div class="fieldset fieldset-lg">
-								<div class="fieldset__label">
-									<label class="fieldset__text padding-right" for="mode">$</label>
-									<input class="toggle" id="mode" type="checkbox" checked>
-									<label class="fieldset__text padding-left" for="mode">%</label>
-								</div>
-								<div class="fieldset__input text-right">
-									<span class="input inpu-text input-xl valign-middle">15</span>
-									<label class="fieldset__text muted padding-left"><big>%</big></label>
-								</div><!-- 
-								<input class="input input-xl fieldset__input text-right" id="amount" value="15%" placeholder="none"> -->
-							</div>
-
-							<div class="keyboard keyboard-4">
-								<div class="keyboard__row">
-									<span class="btn btn-lg btn-secondary btn-ripple keyboard__key">5%</span>
-									<span class="btn btn-lg btn-secondary btn-ripple keyboard__key">10%</span>
-									<span class="btn btn-lg btn-secondary btn-ripple keyboard__key">15%</span>
-									<span class="btn btn-lg btn-secondary btn-ripple keyboard__key">20%</span>
-								</div>
-								<div class="keyboard__row">
-									<span class="btn btn-xl btn-white btn-ripple keyboard__key">1</span>
-									<span class="btn btn-xl btn-white btn-ripple keyboard__key">2</span>
-									<span class="btn btn-xl btn-white btn-ripple keyboard__key">3</span>
-									<span class="btn btn-xl btn-white btn-ripple keyboard__key icon-text icon-backspace"></span>
-								</div>
-								<div class="keyboard__row">
-									<span class="btn btn-xl btn-white btn-ripple keyboard__key">4</span>
-									<span class="btn btn-xl btn-white btn-ripple keyboard__key">5</span>
-									<span class="btn btn-xl btn-white btn-ripple keyboard__key">6</span>
-									<span class="btn btn-xl btn-white btn-ripple keyboard__key icon-text icon-undo"></span>
-								</div>
-								<div class="keyboard__row keyboard__row-last">
-									<span class="btn btn-xl btn-white btn-ripple keyboard__key">7</span>
-									<span class="btn btn-xl btn-white btn-ripple keyboard__key">8</span>
-									<button class="btn btn-xl btn-primary btn-ripple keyboard__key keyboard__key-colspan-2 keyboard__key-last pull-right" type="submit">Done</button>
-									<span class="btn btn-xl btn-white btn-ripple keyboard__key">9</span>
-								</div>
-								<div class="keyboard__row keyboard__row-last">
-									<span class="btn btn-xl btn-white btn-ripple keyboard__key keyboard__key-first">0</span>
-									<span class="btn btn-xl btn-white btn-ripple keyboard__key">00</span>
-									<span class="btn btn-xl btn-white btn-ripple keyboard__key icon-text icon-clear"></span>
-								</div>
-							</div>
-
-						</div>
-					</form>
-				</section>
-
-
-				<!-- Tab: Modifiers  -->
-				<section class="tabbed__panel" data-tab="mods">
-					<form class="layout layout-rows h100" onsubmit="demoEditItem(); return false;">
-						<div class="layout__row layout__row-grow pos-edit__mods">
-							
-							<h2>Size</h2>
-
-							<div class="grid grid-4-col grid-normal-spacing">
-								<div class="grid__item">
-									<div class="card card-interactive card-selected-marked btn-ripple big" onclick="demoToggleModifier(this)">
-										<div class="card__corner">$10.00</div>
-										<div class="card__content text-overflow">Small</div>
-									</div>
-								</div>
-								<div class="grid__item">
-									<div class="card card-selected card-interactive card-selected-marked btn-ripple big" onclick="demoToggleModifier(this)">
-										<div class="card__corner">$15.00</div>
-										<div class="card__content text-overflow">Medium</div>
-									</div>
-								</div>
-								<div class="grid__item">
-									<div class="card card-interactive card-selected-marked btn-ripple big" onclick="demoToggleModifier(this)">
-										<div class="card__corner">$19.00</div>
-										<div class="card__content text-overflow">Large</div>
-									</div>
-								</div>
-								<div class="grid__item">
-									<div class="card card-interactive card-selected-marked btn-ripple big" onclick="demoToggleModifier(this)">
-										<div class="card__corner">$25,000.00</div>
-										<div class="card__content text-overflow">Extra Large XXXXL with long description</div>
-									</div>
-								</div>
-							</div>
-
-							<h2>Add-Ons</h2>
-
-							<div class="grid grid-4-col grid-normal-spacing">
-								<div class="grid__item">
-									<div class="card card-interactive card-selected-marked btn-ripple" onclick="demoToggleModifier(this)">
-										<div class="card__corner">+$2.00</div>
-										<div class="card__content text-overflow">Double Cheese Topping</div>
-									</div>
-								</div>
-								<div class="grid__item">
-									<div class="card card-selected card-interactive card-selected-marked btn-ripple" onclick="demoToggleModifier(this)">
-										<div class="card__corner">+$3.00</div>
-										<div class="card__content text-overflow">Salami</div>
-									</div>
-								</div>
-								<div class="grid__item">
-									<div class="card card-selected card-interactive card-selected-marked btn-ripple" onclick="demoToggleModifier(this)">
-										<div class="card__corner">+$3.00</div>
-										<div class="card__content text-overflow">Tomatos</div>
-									</div>
-								</div>
-							</div>
-
-							<h2>Exceptions</h2>
-
-							<div class="grid grid-4-col grid-normal-spacing fieldset-standalone">
-								<div class="grid__item">
-									<div class="card card-interactive card-selected-marked btn-ripple" onclick="demoToggleModifier(this)">
-										<div class="card__corner">&minus;$1.00</div>
-										<div class="card__content text-overflow">No Box Packaging</div>
-									</div>
-								</div>
-							</div>
-
-						</div>
-
-						<div class="pos-edit__mods padding-top text-center">
-							<button class="btn btn-lg btn-go btn-primary text-uppercase btn-ripple">Done</button>
-						</div>
-					</form>
-				</section>
-
-
-				<!-- Tab: Matrixed Product  -->
-				<section class="tabbed__panel" data-tab="matrix">
-					<form class="layout layout-rows h100" onsubmit="demoEditItem(); return false;">
-
-						<div class="layout__row layout__row-grow pos-edit__matrix">
-							<div class="grid grid-4-col grid-double-spacing">
-								<div class="grid__item">
-									<div class="card card-interactive btn-ripple" onclick="demoToggleModifier(this)">
-										<div class="card__content no-margin">
-											<div class="text-overflow big">Product Model</div>
-											<div class="muted text-overflow">Long Sleeves</div>
-										</div>
-									</div>
-								</div>
-								<div class="grid__item">
-									<i class="icon icon-next grid__icon"></i>
-									<div class="card card-selected card-interactive btn-ripple" onclick="demoToggleModifier(this)">
-										<div class="card__content no-margin">
-											<div class="text-overflow big">Size</div>
-											<div class="muted text-overflow">(select)</div>
-										</div>
-									</div>
-								</div>
-								<div class="grid__item">
-									<i class="icon icon-next grid__icon"></i>
-									<div class="card muted">
-										<div class="card__content no-margin">
-											<div class="text-overflow big">Color</div>
-											<div class="muted text-overflow">&nbsp;</div>
-										</div>
-									</div>
-								</div>
-							</div>
-
-							<h2>Size</h2>
-
-							<div class="grid grid-4-col grid-normal-spacing fieldset-standalone">
-								<div class="grid__item">
-									<div class="card card-interactive card-selected-marked btn-ripple" onclick="demoToggleModifier(this)">
-										<div class="card__content text-overflow">XS (Extra Small)</div>
-									</div>
-								</div>
-								<div class="grid__item">
-									<div class="card card-interactive card-selected-marked btn-ripple" onclick="demoToggleModifier(this)">
-										<div class="card__content text-overflow">S (Small)</div>
-									</div>
-								</div>
-								<div class="grid__item">
-									<div class="card card-selected card-interactive card-selected-marked btn-ripple" onclick="demoToggleModifier(this)">
-										<div class="card__content text-overflow">M (Medium)</div>
-									</div>
-								</div>
-								<div class="grid__item">
-									<div class="card card-interactive card-selected-marked btn-ripple" onclick="demoToggleModifier(this)">
-										<div class="card__content text-overflow">L (Large)</div>
-									</div>
-								</div>
-								<div class="grid__item">
-									<div class="card card-interactive card-selected-marked btn-ripple" onclick="demoToggleModifier(this)">
-										<div class="card__corner">$23.00</div>
-										<div class="card__content text-overflow">XL (Extra Large)</div>
-									</div>
-								</div>
-							</div>
-						</div>
-
-						<div class="layout__row pos-edit__matrix text-center">
-							<button class="btn btn-lg btn-go btn-primary text-uppercase btn-ripple">Done</button>
-						</div>
-					</form>
-				</section>
-
-
-				<!-- Tab: Serials  -->
-				<section class="tabbed__panel" data-tab="serials">
-					<form class="layout layout-rows h100" onsubmit="demoEditItem(); return false;">
-
-						<div class="layout__row layout__row-grow pos-edit__serials">
-							<p>Select serial number of product you're selling:</p>
-							<div class="grid grid-3-col grid-normal-spacing">
-								<div class="grid__item"><a class="card card-selected card-interactive" onclick="demoToggleModifier(this)"><div class="card__content big text-overflow">79049XXXA4S</div></a></div>
-								<div class="grid__item"><a class="card card-interactive" onclick="demoToggleModifier(this)"><div class="card__content big text-overflow">30384XXX991</div></a></div>
-								<div class="grid__item"><a class="card card-interactive" onclick="demoToggleModifier(this)"><div class="card__content big text-overflow">ULTRALONG-003233XX991-003233XX991</div></a></div>
-								<div class="grid__item"><a class="card card-interactive" onclick="demoToggleModifier(this)"><div class="card__content big text-overflow">TST0012345</div></a></div>
-							</div>							
-						</div>
-
-						<div class="layout__row pos-edit__serials text-center">
-							<button class="btn btn-lg btn-go btn-primary text-uppercase btn-ripple">Done</button>
-						</div>
-
-					</form>
-				</section>
-
-
-				<!-- Tab: Notes  -->
-				<section class="tabbed__panel" data-tab="note">
-					<form class="form-narrow" onsubmit="demoEditItem(); return false;">
-						<div class="fieldset fieldset-lg fieldset-bordered fieldset-standalone fieldset-textarea">
-							<textarea class="input fieldset__textarea" id="note" placeholder="Type here Item-specific note" style="height: 200px;"></textarea>
-						</div>
-
-						<button class="btn btn-lg btn-block btn-primary text-uppercase btn-ripple">Done</button>
-					</form>
-				</section>
-				
-			</div>
-
-
-		</aside>
-
-	</article>
-
-	<nav class="menu">
-		<header>
-			<i class="icon icon-back"></i>
-			<h1>Acme Inc.</h1>
-		</header>
-
-		<ul class="menu__items">
-			<li class="menu__item menu__item-active"><a href="pos.html" class="menu__item-link"><i class="icon icon-pos menu__item-icon"></i>Point of Sale</a></li>
-			<li class="menu__item"><a href="orders.html" class="menu__item-link"><i class="icon icon-orders menu__item-icon"></i>Orders</a></li>
-			<li class="menu__item"><a href="pos.html" class="menu__item-link" onclick="return demoManualRefund();"><i class="icon icon-undo menu__item-icon"></i>Manual Refund</a></li>
-			<li class="menu__item"><a href="register-close.html" class="menu__item-link"><i class="icon icon-close menu__item-icon"></i>Close Register</a></li>
-			<li class="menu__item"><a href="payin.html" class="menu__item-link"><i class="icon icon-cc menu__item-icon"></i>Payins / Payouts</a></li>
-			<li class="menu__item"><a href="tips.html" class="menu__item-link"><i class="icon icon-tips menu__item-icon"></i>Tips</a></li>
-			<li class="menu__item"><a href="loyalty.html" class="menu__item-link"><i class="icon icon-loyalty menu__item-icon"></i>Loyalty</a></li>
-			<li class="menu__item"><a href="settings.html" class="menu__item-link"><i class="icon icon-cog menu__item-icon"></i>Settings</a></li>
-			<li class="menu__item"><a href="sync.html" class="menu__item-link"><i class="icon icon-sync menu__item-icon"></i>Synchronize</a></li>
-			<li class="menu__item"><a href="ui-kit.html" class="menu__item-link"><i class="icon icon-bo menu__item-icon"></i>Back Office &bull; UI-Kit</a></li>
-			<li class="menu__item"><a href="pos.html" class="menu__item-link"><i class="icon icon-help menu__item-icon"></i>Help</a></li>
-			<li class="menu__item"><a href="index.html" class="menu__item-link"><i class="icon icon-exit menu__item-icon"></i>Logout</a></li>
-		</ul>
-	</nav>
-	<div class="menu__mask"></div>
-
-	<div class="snackbar hide">
-		<div class="snackbar__actions"><button class="btn btn-link text-uppercase"></button></div>
-		<div class="snackbar__message"></div>
-	</div>
-
-</body>
-</html>

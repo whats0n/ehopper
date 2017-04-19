@@ -4,7 +4,7 @@
 .inner,
 .application
   position: relative
-  height: 100vh
+  height: 100%
 
 .main
   overflow: auto
@@ -35,6 +35,11 @@
       +gpu
   &__body
     height: calc(100% - 50px)
+    // position: absolute
+    // top: 50px
+    // left: 0
+    // right: 0
+    // bottom: 0
 
 .sidebar
   position: relative
@@ -66,7 +71,7 @@
         +refund
           background: $red
   //state
-  &.disabled
+  &.is-disabled
     .sidebar
       &__toolbar,
       &__menu
@@ -79,6 +84,12 @@
     height: 180px
   &__body
     height: calc(100% - 180px)
+    // position: absolute
+    // top: 180px
+    // left: 0
+    // right: 0
+    // bottom: 0
+
 
 .wrapper
   margin: 10px 0

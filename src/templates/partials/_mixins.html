@@ -43,6 +43,7 @@
 				<input class="input field__input {{props.inputClassList}}" 
 					value="{{props.value}}" 
 					id="{{props.id}}" 
+					type="{{props.type or 'text'}}"
 					{% if props.placeholder %}placeholder="{{props.placeholder}}"{% endif %}
 					{{props.attrs | safe}}>
 			</div>

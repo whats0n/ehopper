@@ -14,6 +14,8 @@
 	
 	&_large
 		height: 150px
+	&_medium
+		height: 90px
 	&__menu
 		float: left
 		color: $blue
@@ -69,7 +71,20 @@
 			vertical-align: middle
 			max-width: 200px
 		&_sm
-			line-height: 50px
+			position: relative
+			padding-top: 30px
+			margin: 0 auto
+			max-width: 450px
+			line-height: 60px
+			&:before
+				content: ''
+				position: absolute
+				top: 30px
+				left: 0
+				right: 0
+				bottom: 0
+				border-radius: 2px 2px 0 0 
+				background: rgba($white, 0.2)
 			img
 				max-height: 40px
 	&__close

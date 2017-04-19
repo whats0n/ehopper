@@ -18,9 +18,9 @@
     <!-- begin application -->
     <div class="application" id="application">
       <!-- BEGIN content -->
-      <main class="main" data-state-container="refund-mode">
+      <main class="main" data-toggle-class-container="main-container">
         <div class="inner">
-          <aside class="sidebar sidebar_left" data-state-container="disabled">
+          <aside class="sidebar sidebar_left" data-toggle-class-container="sidebar-header">
             <!-- begin header -->
             <header class="header sidebar__header"> <button class="btn-icon btn-icon_square icon icon-menu header__menu" title="Menu" data-menu-open="menu"></button> <button class="header__delete btn-icon icon icon-delete" type="button" title="Delete" data-order-delete="order" data-snackbar-open="snackbar"
                 data-snackbar-message="All items removed from your shopping cart" data-snackbar-state="default"></button>
@@ -83,97 +83,143 @@
             <!-- end header -->
             <div class="sidebar__body" data-order-scroll="order">
               <div class="sidebar__content">
+                <!-- data-state - item state (can be default or active) -->
+                <!-- data-swipe - add class to himself -->
+                <!-- data-swipe-threshold - threshold that we have to swipe from the start point -->
+                <!-- data-fullinfo-open - open item tabs -->
+                <!-- data-toggle-class-target:
+							add/remove/toggle class (data-toggle-class-add/data-toggle-class-remove/data-toggle-class-toggle) 
+							to all current containers ('data-toggle-class-container') -->
+                <!-- data-fullinfo-target - open current tab in the fullinfo container -->
+                <!-- data-fullinfo-close - close item tabs -->
+                <!-- data-order-delete-item - delete item -->
                 <ul class="order-list" data-order-visible="order" data-order-list="order">
-                  <li class="order-item" data-state="default" data-animation="ripple" data-fullinfo-open="fullinfo" data-order-added="order" data-state-target="disabled">
-                    <div class="order-item__info">
-                      <div class="order-item__title">Hot Dog XL</div>
-                    </div>
-                    <div class="order-item__row">
-                      <div class="order-item__col">
-                        <div class="order-item__quantity" data-fullinfo-target="quantity">1&times;</div>
-                        <div class="order-item__price" data-fullinfo-target="price">3.00</div>
-                      </div>
-                      <div class="order-item__col">
-                        <div class="order-item__total" data-fullinfo-target="price">3.00</div>
-                      </div>
-                    </div>
-                    <div class="order-item__meta" data-fullinfo-target="modifiers"><strong data-fullinfo-target="notes">Note</strong> Click to duplicate in cart</div>
+                  <li class="order-item" data-order-added="item" data-state="default" data-animation="ripple" data-swipe="is-open" data-swipe-threshold="50">
+                    <div class="order-item__container">
+                      <div class="order-item__content" data-fullinfo-open="fullinfo" data-toggle-class-target="sidebar-header" data-toggle-class-add="is-disabled">
+                        <div class="order-item__info">
+                          <div class="order-item__title">Hot Dog XL</div>
+                        </div>
+                        <div class="order-item__row">
+                          <div class="order-item__col">
+                            <div class="order-item__quantity" data-fullinfo-target="quantity">1&times;</div>
+                            <div class="order-item__price" data-fullinfo-target="price">3.00</div>
+                          </div>
+                          <div class="order-item__col">
+                            <div class="order-item__total" data-fullinfo-target="price">3.00</div>
+                          </div>
+                        </div>
+                        <div class="order-item__meta" data-fullinfo-target="modifiers"><strong data-fullinfo-target="notes">Note</strong> Click to duplicate in cart</div>
+                      </div> <button class="order-item__close" data-fullinfo-close="fullinfo" data-toggle-class-target="sidebar-header" data-toggle-class-remove="is-disabled" data-order-delete-item="delete">
+											<i class="icon icon-clear"></i>
+											<i class="icon icon-close"></i>
+										</button> </div>
                   </li>
-                  <li class="order-item" data-state="default" data-animation="ripple" data-fullinfo-open="fullinfo" data-order-added="order" data-state-target="disabled">
-                    <div class="order-item__info">
-                      <div class="order-item__title">T-Shirt with Print 23</div>
-                    </div>
-                    <div class="order-item__row">
-                      <div class="order-item__col">
-                        <div class="order-item__quantity" data-fullinfo-target="quantity">2&times;</div>
-                        <div class="order-item__price" data-fullinfo-target="price">100.00</div>
-                      </div>
-                      <div class="order-item__col">
-                        <div class="order-item__total" data-fullinfo-target="price">200.00</div>
-                        <div class="order-item__discount" data-fullinfo-target="discount">-5.10</div>
-                      </div>
-                    </div>
-                    <div class="order-item__meta" data-fullinfo-target="modifiers">Long Sleeves, XL size, Black color</div>
+                  <li class="order-item" data-order-added="item" data-state="default" data-animation="ripple" data-swipe="is-open" data-swipe-threshold="50">
+                    <div class="order-item__container">
+                      <div class="order-item__content" data-fullinfo-open="fullinfo" data-toggle-class-target="sidebar-header" data-toggle-class-add="is-disabled">
+                        <div class="order-item__info">
+                          <div class="order-item__title">T-Shirt with Print 23</div>
+                        </div>
+                        <div class="order-item__row">
+                          <div class="order-item__col">
+                            <div class="order-item__quantity" data-fullinfo-target="quantity">2&times;</div>
+                            <div class="order-item__price" data-fullinfo-target="price">100.00</div>
+                          </div>
+                          <div class="order-item__col">
+                            <div class="order-item__total" data-fullinfo-target="price">200.00</div>
+                            <div class="order-item__discount" data-fullinfo-target="discount">-5.10</div>
+                          </div>
+                        </div>
+                        <div class="order-item__meta" data-fullinfo-target="modifiers">Long Sleeves, XL size, Black color</div>
+                      </div> <button class="order-item__close" data-fullinfo-close="fullinfo" data-toggle-class-target="sidebar-header" data-toggle-class-remove="is-disabled" data-order-delete-item="delete">
+											<i class="icon icon-clear"></i>
+											<i class="icon icon-close"></i>
+										</button> </div>
                   </li>
-                  <li class="order-item" data-state="default" data-animation="ripple" data-fullinfo-open="fullinfo" data-order-added="order" data-state-target="disabled">
-                    <div class="order-item__info">
-                      <div class="order-item__title">Hot Dog XL</div>
-                    </div>
-                    <div class="order-item__row">
-                      <div class="order-item__col">
-                        <div class="order-item__quantity" data-fullinfo-target="quantity">1&times;</div>
-                        <div class="order-item__price" data-fullinfo-target="price">3.00</div>
-                      </div>
-                      <div class="order-item__col">
-                        <div class="order-item__total" data-fullinfo-target="price">3.00</div>
-                      </div>
-                    </div>
-                    <div class="order-item__meta" data-fullinfo-target="modifiers"><strong data-fullinfo-target="notes">Note</strong> Click to duplicate in cart</div>
+                  <li class="order-item" data-order-added="item" data-state="default" data-animation="ripple" data-swipe="is-open" data-swipe-threshold="50">
+                    <div class="order-item__container">
+                      <div class="order-item__content" data-fullinfo-open="fullinfo" data-toggle-class-target="sidebar-header" data-toggle-class-add="is-disabled">
+                        <div class="order-item__info">
+                          <div class="order-item__title">Hot Dog XL</div>
+                        </div>
+                        <div class="order-item__row">
+                          <div class="order-item__col">
+                            <div class="order-item__quantity" data-fullinfo-target="quantity">1&times;</div>
+                            <div class="order-item__price" data-fullinfo-target="price">3.00</div>
+                          </div>
+                          <div class="order-item__col">
+                            <div class="order-item__total" data-fullinfo-target="price">3.00</div>
+                          </div>
+                        </div>
+                        <div class="order-item__meta" data-fullinfo-target="modifiers"><strong data-fullinfo-target="notes">Note</strong> Click to duplicate in cart</div>
+                      </div> <button class="order-item__close" data-fullinfo-close="fullinfo" data-toggle-class-target="sidebar-header" data-toggle-class-remove="is-disabled" data-order-delete-item="delete">
+											<i class="icon icon-clear"></i>
+											<i class="icon icon-close"></i>
+										</button> </div>
                   </li>
-                  <li class="order-item" data-state="default" data-animation="ripple" data-fullinfo-open="fullinfo" data-order-added="order" data-state-target="disabled">
-                    <div class="order-item__info">
-                      <div class="order-item__title">Hot Dog XL</div>
-                    </div>
-                    <div class="order-item__row">
-                      <div class="order-item__col">
-                        <div class="order-item__quantity" data-fullinfo-target="quantity">1&times;</div>
-                        <div class="order-item__price" data-fullinfo-target="price">3.00</div>
-                      </div>
-                      <div class="order-item__col">
-                        <div class="order-item__total" data-fullinfo-target="price">3.00</div>
-                      </div>
-                    </div>
-                    <div class="order-item__meta" data-fullinfo-target="modifiers"><strong data-fullinfo-target="notes">Note</strong> Click to duplicate in cart</div>
+                  <li class="order-item" data-order-added="item" data-state="default" data-animation="ripple" data-swipe="is-open" data-swipe-threshold="50">
+                    <div class="order-item__container">
+                      <div class="order-item__content" data-fullinfo-open="fullinfo" data-toggle-class-target="sidebar-header" data-toggle-class-add="is-disabled">
+                        <div class="order-item__info">
+                          <div class="order-item__title">Hot Dog XL</div>
+                        </div>
+                        <div class="order-item__row">
+                          <div class="order-item__col">
+                            <div class="order-item__quantity" data-fullinfo-target="quantity">1&times;</div>
+                            <div class="order-item__price" data-fullinfo-target="price">3.00</div>
+                          </div>
+                          <div class="order-item__col">
+                            <div class="order-item__total" data-fullinfo-target="price">3.00</div>
+                          </div>
+                        </div>
+                        <div class="order-item__meta" data-fullinfo-target="modifiers"><strong data-fullinfo-target="notes">Note</strong> Click to duplicate in cart</div>
+                      </div> <button class="order-item__close" data-fullinfo-close="fullinfo" data-toggle-class-target="sidebar-header" data-toggle-class-remove="is-disabled" data-order-delete-item="delete">
+											<i class="icon icon-clear"></i>
+											<i class="icon icon-close"></i>
+										</button> </div>
                   </li>
-                  <li class="order-item" data-state="default" data-animation="ripple" data-fullinfo-open="fullinfo" data-order-added="order" data-state-target="disabled">
-                    <div class="order-item__info">
-                      <div class="order-item__title">Hot Dog XL</div>
-                    </div>
-                    <div class="order-item__row">
-                      <div class="order-item__col">
-                        <div class="order-item__quantity" data-fullinfo-target="quantity">1&times;</div>
-                        <div class="order-item__price" data-fullinfo-target="price">3.00</div>
-                      </div>
-                      <div class="order-item__col">
-                        <div class="order-item__total" data-fullinfo-target="price">3.00</div>
-                      </div>
-                    </div>
-                    <div class="order-item__meta" data-fullinfo-target="modifiers"><strong data-fullinfo-target="notes">Note</strong> Click to duplicate in cart</div>
+                  <li class="order-item" data-order-added="item" data-state="default" data-animation="ripple" data-swipe="is-open" data-swipe-threshold="50">
+                    <div class="order-item__container">
+                      <div class="order-item__content" data-fullinfo-open="fullinfo" data-toggle-class-target="sidebar-header" data-toggle-class-add="is-disabled">
+                        <div class="order-item__info">
+                          <div class="order-item__title">Hot Dog XL</div>
+                        </div>
+                        <div class="order-item__row">
+                          <div class="order-item__col">
+                            <div class="order-item__quantity" data-fullinfo-target="quantity">1&times;</div>
+                            <div class="order-item__price" data-fullinfo-target="price">3.00</div>
+                          </div>
+                          <div class="order-item__col">
+                            <div class="order-item__total" data-fullinfo-target="price">3.00</div>
+                          </div>
+                        </div>
+                        <div class="order-item__meta" data-fullinfo-target="modifiers"><strong data-fullinfo-target="notes">Note</strong> Click to duplicate in cart</div>
+                      </div> <button class="order-item__close" data-fullinfo-close="fullinfo" data-toggle-class-target="sidebar-header" data-toggle-class-remove="is-disabled" data-order-delete-item="delete">
+											<i class="icon icon-clear"></i>
+											<i class="icon icon-close"></i>
+										</button> </div>
                   </li>
-                  <li class="order-item" data-state="default" data-animation="ripple" data-fullinfo-open="fullinfo" data-order-added="order" data-state-target="disabled">
-                    <div class="order-item__info">
-                      <div class="order-item__title">Hot Dog XL</div>
-                    </div>
-                    <div class="order-item__row">
-                      <div class="order-item__col">
-                        <div class="order-item__quantity" data-fullinfo-target="quantity">1&times;</div>
-                        <div class="order-item__price" data-fullinfo-target="price">3.00</div>
-                      </div>
-                      <div class="order-item__col">
-                        <div class="order-item__total" data-fullinfo-target="price">3.00</div>
-                      </div>
-                    </div>
-                    <div class="order-item__meta" data-fullinfo-target="modifiers"><strong data-fullinfo-target="notes">Note</strong> Click to duplicate in cart</div>
+                  <li class="order-item" data-order-added="item" data-state="default" data-animation="ripple" data-swipe="is-open" data-swipe-threshold="50">
+                    <div class="order-item__container">
+                      <div class="order-item__content" data-fullinfo-open="fullinfo" data-toggle-class-target="sidebar-header" data-toggle-class-add="is-disabled">
+                        <div class="order-item__info">
+                          <div class="order-item__title">Hot Dog XL</div>
+                        </div>
+                        <div class="order-item__row">
+                          <div class="order-item__col">
+                            <div class="order-item__quantity" data-fullinfo-target="quantity">1&times;</div>
+                            <div class="order-item__price" data-fullinfo-target="price">3.00</div>
+                          </div>
+                          <div class="order-item__col">
+                            <div class="order-item__total" data-fullinfo-target="price">3.00</div>
+                          </div>
+                        </div>
+                        <div class="order-item__meta" data-fullinfo-target="modifiers"><strong data-fullinfo-target="notes">Note</strong> Click to duplicate in cart</div>
+                      </div> <button class="order-item__close" data-fullinfo-close="fullinfo" data-toggle-class-target="sidebar-header" data-toggle-class-remove="is-disabled" data-order-delete-item="delete">
+											<i class="icon icon-clear"></i>
+											<i class="icon icon-close"></i>
+										</button> </div>
                   </li>
                 </ul>
                 <div class="order-empty" data-order-empty="order" hidden> <i class="order-empty__icon"></i>
@@ -581,7 +627,7 @@
             <!-- begin header -->
             <header class="header container__header">
               <div class="header__back">
-                <a class="btn-icon btn-icon_square icon icon-back header__back-icon" href="#" data-fullinfo-close="fullinfo" data-state-cancel="disabled"></a>
+                <a class="btn-icon btn-icon_square icon icon-back header__back-icon" href="#" data-fullinfo-close="fullinfo" data-toggle-class-target="sidebar-header" data-toggle-class-remove="is-disabled"></a>
                 <div class="header__title">Cancel</div>
               </div>
             </header>
@@ -610,7 +656,7 @@
                         <div class="fieldset fieldset_lg fieldset_bordered fieldset_keyboard">
                           <div class="field ">
                             <div class="field__inner field__display"> <label class="field__label" for="item-quantity">Quantity:</label>
-                              <div class="field__box"> <input class="input field__input text-right input_xl" value="0" id="item-quantity" placeholder="0" required readonly> </div> <label class="field__units" for="item-quantity"><span>kg</span></label> </div>
+                              <div class="field__box"> <input class="input field__input text-right input_xl" value="0" id="item-quantity" type="text" placeholder="0" required readonly> </div> <label class="field__units" for="item-quantity"><span>kg</span></label> </div>
                           </div>
                           <div class="fieldset__divider"></div>
                           <!-- begin keyboard -->
@@ -691,7 +737,7 @@
 					<input type="checkbox" id="discount-switcher">
 					<i class="switcher__icon"></i>
 				</label> <label class="field__switch-right" for="discount-switcher">%</label> </div>
-                              <div class="field__box"> <input class="input field__input text-right input_xl" value="15" id="item-discount" placeholder="0" required readonly> </div> <label class="field__units" for="item-discount"><span>%</span></label> </div>
+                              <div class="field__box"> <input class="input field__input text-right input_xl" value="15" id="item-discount" type="text" placeholder="0" required readonly> </div> <label class="field__units" for="item-discount"><span>%</span></label> </div>
                           </div>
                           <!-- begin keyboard -->
                           <div class="keyboard ">
@@ -1027,7 +1073,7 @@
           <ul class="nav">
             <li class="nav__item is-active"> <a href="pos.html" class="nav__link"><i class="nav__icon icon icon-pos"></i>Point of Sale</a> </li>
             <li class="nav__item "> <a href="orders.html" class="nav__link"><i class="nav__icon icon icon-orders"></i>Orders</a> </li>
-            <li class="nav__item "> <a href="pos.html" class="nav__link" data-state-target="refund-mode"><i class="nav__icon icon icon-undo"></i>Manual Refund</a> </li>
+            <li class="nav__item "> <a href="pos.html" class="nav__link" data-toggle-class-target="main-container" data-toggle-class-add="refund-mode"><i class="nav__icon icon icon-undo"></i>Manual Refund</a> </li>
             <li class="nav__item "> <a href="register-close.html" class="nav__link"><i class="nav__icon icon icon-close"></i>Close Register</a> </li>
             <li class="nav__item "> <a href="payin.html" class="nav__link"><i class="nav__icon icon icon-cc"></i>Payins / Payouts</a> </li>
             <li class="nav__item "> <a href="tips.html" class="nav__link"><i class="nav__icon icon icon-tips"></i>Tips</a> </li>

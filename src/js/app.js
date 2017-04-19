@@ -4,6 +4,7 @@ window.jQuery = jQuery;
 window.$ = jQuery;
 
 import rippleEffect from './components/_ripple-effect';
+import closeBlock from './components/_close-block';
 import modal from './components/_modal';
 import dropdown from './components/_dropdown';
 import tabs from './components/_tabs';
@@ -13,3 +14,6 @@ import menu from './components/_menu';
 import orderList from './components/_orderlist';
 import snackbar from './components/_snackbar';
 import changeState from './components/_change-state';
+import simpleSwipe from './components/_simple-swipe';
+
+import common from './_common';

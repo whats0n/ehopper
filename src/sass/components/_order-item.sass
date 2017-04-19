@@ -1,7 +1,8 @@
 .order-list
 	+clr
 .order-item
-	padding: 13px 20px
+	position: relative
+	overflow: hidden
 	border-bottom: 1px solid rgba(0, 0, 0, 0.1)
 	cursor: pointer
 	+nosel
@@ -9,6 +10,10 @@
 	transition: background 0.175s ease
 	+active
 		background: $azureActive
+	&.is-open
+		.order-item
+			&__container
+				transform: translate3d(-60px,0,0)
 	&[data-state="active"]
 		background: $azure
 		+active
@@ -19,6 +24,15 @@
 	&[data-animation="ripple"]
 		.ripple-circle
 			background: rgba($black, 0.05)
+	&__container
+		position: relative
+		+gpu
+		transition: transform 0.3s ease-in-out
+		+touch
+			padding-right: 30px
+			margin-right: -60px
+	&__content
+		padding: 13px 50px 13px 20px
 	&__info,
 	&__row
 		float: left
@@ -60,3 +74,21 @@
 		// 	font-size: 12px
 	&__discount
 		color: $red
+	&__close
+		position: absolute
+		top: 0
+		right: 0
+		color: $red
+		background: none
+		+touch
+			bottom: 0
+			width: 60px
+			color: $white
+			background: $red
+		.icon-close
+			display: none
+			+touch
+				display: inline-block
+		.icon-clear
+			+touch
+				display: none
