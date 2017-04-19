@@ -763,7 +763,7 @@ hr {
 
 .btn_green, .btn_success {
   color: #fff;
-  background: #66BB6A;
+  background: #22B745;
 }
 
 .btn_green:active, .btn_success:active {
@@ -994,7 +994,7 @@ input.btn {
 }
 
 .checkbox_green input:checked + .icon {
-  background: #66BB6A;
+  background: #22B745;
 }
 
 .checkbox-success input:checked + .icon {
@@ -1555,12 +1555,12 @@ textarea.input {
 
 .snackbar[data-state="success"] {
   color: #fff;
-  background: #66BB6A;
+  background: #22B745;
 }
 
 .snackbar[data-state="error"] {
   color: #fff;
-  background: #FF6431;
+  background: #ec4a41;
 }
 
 .snackbar__message {
@@ -2453,14 +2453,14 @@ textarea.input {
 }
 
 .simple-keyboard__container {
-  margin: -1px -1px 0 0;
+  margin: 0 -1px 0 0;
 }
 
-.simple-keyboard__head, .simple-keyboard__body {
+.simple-keyboard__actions, .simple-keyboard__body {
   *zoom: 1;
 }
 
-.simple-keyboard__head:after, .simple-keyboard__body:after {
+.simple-keyboard__actions:after, .simple-keyboard__body:after {
   content: " ";
   display: table;
   clear: both;
@@ -2471,6 +2471,14 @@ textarea.input {
   padding: 1px 1px 0 0;
   width: 33.33333%;
   height: 1em;
+}
+
+.simple-keyboard__item_lg {
+  width: 100%;
+}
+
+.simple-keyboard__item_md {
+  width: 50%;
 }
 
 .simple-keyboard__button {
@@ -2501,7 +2509,7 @@ textarea.input {
 
 .simple-keyboard__submit {
   color: #fff;
-  background: #66BB6A;
+  background: #22B745;
 }
 
 .simple-keyboard__submit:active {

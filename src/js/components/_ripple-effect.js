@@ -23,7 +23,7 @@ export default (function() {
     $item.append(circle);
   };
 
-  $DOCUMENT.on('click', '[data-animation="ripple"]', function(e) { 
+  $DOCUMENT.on('mousedown', '[data-animation="ripple"]', function(e) { 
     animation(e, $(this));
   });
 

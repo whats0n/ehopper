@@ -24,6 +24,12 @@
 		<h2 class="title-xlg header__title {{props.titleClassList}}">{{props.title}}</h2>
 	{% endif %}
 
+	{% if props.smLogo %}
+		<div class="header__logo header__logo_sm">
+			<img src="static/img/logo-white.svg" alt="eHopper">
+		</div>
+	{% endif %}
+
 	{% if props.delete %}
 		<button class="header__delete btn-icon icon icon-delete" 
 			type="button" 
