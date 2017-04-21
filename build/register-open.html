@@ -1,94 +1,142 @@
-<!DOCTYPE html>
+<!doctype html>
 <html>
 
   <head>
-    <meta charset=utf-8>
+    <meta charset="utf-8">
     <title>Open Register &bull; eHopper POS</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <meta http-equiv=X-UA-Compatible content="IE=edge,chrome=1">
-    <link rel="stylesheet" type="text/css" href="static/css/pos.css">
-    <script src="static/js/demo.js"></script>
-    <link rel="icon" href="https://ehopper.com/wp-content/uploads/2016/03/favicon-01.png" type="image/png"> </head>
+    <meta name="theme-color" content="#fff">
+    <meta name="format-detection" content="telephone=no">
+    <link rel="stylesheet" media="all" href="static/css/pos.css">
+    <link rel="icon" href="https://ehopper.com/wp-content/uploads/2016/03/favicon-01.png" type="image/png">
+    <!-- BEGIN scripts -->
+    <!-- END scripts -->
+  </head>
 
-  <body class="animated">
-    <article class="register">
-      <aside class="left bg-white cutout-right layout layout-rows">
-        <header class="cutout-right layout__row">
-          <a href="pos.html" class="btn icon icon-back"></a>
-          <h1>Back</h1>
-        </header>
-        <div class="layout__row layout__row-grow">
-          <section class="w50 pull-left">
-            <p class="labeled-info"><label>Opened:</label>12/21/2016 14:19:28</p>
-            <p class="labeled-info"><label>By Employee:</label>Mr. John Snow</p>
-          </section>
-          <section class="w50 pull-left">
-            <p class="labeled-info"><label>Closed:</label>12/21/2016 14:19:28</p>
-            <p class="labeled-info"><label>By Employee:</label>Mr. John Snow</p>
-          </section>
-          <hr>
-          <section>
-            <table class="table">
-              <tbody>
-                <tr>
-                  <td>Opening Amount</td>
-                  <td class="text-right muted">$0.00</td>
-                </tr>
-                <tr>
-                  <td>Cash Sale</td>
-                  <td class="text-right">$12,344.00</td>
-                </tr>
-                <tr>
-                  <td>Refunds</td>
-                  <td class="text-right">$44.20</td>
-                </tr>
-                <tr>
-                  <td>Payins</td>
-                  <td class="text-right">$10,000.00</td>
-                </tr>
-                <tr>
-                  <td>Payouts</td>
-                  <td class="text-right">$20,000.00</td>
-                </tr>
-                <tr>
-                  <td>Closing Amount</td>
-                  <td class="text-right">$8,200.00</td>
-                </tr>
-                <tr>
-                  <td><strong class="text-uppercase">Variance</strong></td>
-                  <td class="text-right"><big><strong>$44.20</strong></big></td>
-                </tr>
-              </tbody>
-            </table>
-          </section>
-        </div>
-        <!-- Bottom Button -->
-        <section class="layout__row text-center"> <button class="btn btn-secondary btn-lg btn-go btn-ripple">Print Z-Report</button> </section>
-      </aside>
-      <main class="right layout layout-rows">
-        <header class="layout__row">
-          <div class="header__icons">
-            <div href="help.html" class="btn icon icon-help" title="Help" onclick="demoDialogOpen('help')"></div>
-          </div>
-          <h1>Open Register</h1>
-        </header>
-        <section class="layout__row layout__row-grow">
-          <form class="form-narrow" method="get" action="register-close.html">
-            <div class="fieldset-bordered fieldset-standalone">
-              <div class="fieldset fieldset-lg"> <label class="fieldset__label" for="amount">Opening Amount:</label> <input class="input input-xl fieldset__input text-right" id="amount" value="200.00" placeholder="required" required="required"> </div>
-              <div class="fieldset-border-top">
-                <link rel="import" href="inc/numpad-xl.html" onload="demoTemplate(this)"> </div>
+  <body class="">
+    <!-- begin application -->
+    <div class="application" id="application">
+      <!-- BEGIN content -->
+      <main class="main">
+        <div class="inner">
+          <aside class="sidebar sidebar_left">
+            <!-- begin header -->
+            <header class="header sidebar__header">
+              <div class="header__back">
+                <a class="btn-icon btn-icon_square icon icon-back header__back-icon" href="#"></a>
+                <div class="header__title">Back</div>
+              </div>
+            </header>
+            <!-- end header -->
+            <div class="sidebar__body">
+              <div class="infoblock">
+                <div class="infoblock__row">
+                  <div class="infoblock__col infoblock__col_md">
+                    <div class="infoblock__box"> <small class="infoblock__label">Opened:</small> <em class="infoblock__value">12/21/2016 14:19:28</em> </div>
+                    <div class="infoblock__box"> <small class="infoblock__label">By Employee:</small> <em class="infoblock__value">Mr. John Snow</em> </div>
+                  </div>
+                  <div class="infoblock__col infoblock__col_md">
+                    <div class="infoblock__box"> <small class="infoblock__label">Closed:</small> <em class="infoblock__value">12/21/2016 14:19:28</em> </div>
+                    <div class="infoblock__box"> <small class="infoblock__label">By Employee:</small> <em class="infoblock__value">Mr. John Snow</em> </div>
+                  </div>
+                </div>
+              </div>
+              <hr />
+              <ul class="infotable">
+                <li class="infotable__row">
+                  <div class="infotable__label">Opening Amount</div>
+                  <div class="infotable__value"><small class="infotable__disabled">$0.00</small></div>
+                </li>
+                <li class="infotable__row">
+                  <div class="infotable__label">Cash Sale</div>
+                  <div class="infotable__value">$12,344.00</div>
+                </li>
+                <li class="infotable__row">
+                  <div class="infotable__label">Refunds</div>
+                  <div class="infotable__value">$44.20</div>
+                </li>
+                <li class="infotable__row">
+                  <div class="infotable__label">Payins</div>
+                  <div class="infotable__value">$10,000.00</div>
+                </li>
+                <li class="infotable__row">
+                  <div class="infotable__label">Payouts</div>
+                  <div class="infotable__value">$20,000.00</div>
+                </li>
+                <li class="infotable__row">
+                  <div class="infotable__label">Closing Amount</div>
+                  <div class="infotable__value">$8,200.00</div>
+                </li>
+                <li class="infotable__row">
+                  <div class="infotable__label"><strong>VARIANCE</strong></div>
+                  <div class="infotable__value"><strong class="infotable__big">$44.20</strong></div>
+                </li>
+              </ul>
             </div>
-            <div class="fieldset fieldset-lg fieldset-bordered fieldset-textarea fieldset-standalone fieldset-note"> <textarea class="input fieldset__textarea" id="note" placeholder="Register Opening Note"></textarea> </div>
-          </form>
-        </section>
-        <!-- Bottom Button -->
-        <section class="layout__row">
-          <div class="form-narrow text-center"> <button class="btn btn-lg btn-go btn-primary text-uppercase btn-ripple">Open Register</button> </div>
-        </section>
+          </aside>
+          <div class="container container_right container_upper">
+            <!-- begin header -->
+            <header class="header container__header"> <button class="btn-icon header__help" title="Help" data-modal-open="help">
+			<i class="icon icon-help"></i>
+		</button>
+              <h2 class="title-xlg header__title header__title_vertical">Open Register</h2>
+            </header>
+            <!-- end header -->
+            <div class="container__body"> </div>
+          </div>
+        </div>
       </main>
-    </article>
-    <!-- Dialog: Help Panel -->
-    <link rel="import" href="inc/help.html" onload="demoTemplate(this)"> </body>
+      <!-- begin help -->
+      <div class="help" data-modal="help">
+        <div class="help__container" data-modal-container="help">
+          <div class="help__header">
+            <header class="header header_large"> <button class="btn-icon help__close icon icon-close" data-modal-close="help"></button>
+              <h2 class="title-xlg header__title">Help</h2>
+            </header>
+          </div>
+          <div class="help__body">
+            <p>Help content.</p>
+          </div>
+        </div>
+      </div>
+      <!-- end help -->
+      <!-- END content -->
+      <!-- begin menu -->
+      <nav class="menu" data-menu-container="menu">
+        <header class="menu__header" data-menu-close="menu" data-animation="ripple"> <i class="icon icon-back menu__icon"></i>
+          <div class="title-xlg menu__title">Acme Inc.</div>
+        </header>
+        <div class="menu__container">
+          <ul class="nav">
+            <li class="nav__item is-active"> <a href="pos.html" class="nav__link"><i class="nav__icon icon icon-pos"></i>Point of Sale</a> </li>
+            <li class="nav__item "> <a href="orders.html" class="nav__link"><i class="nav__icon icon icon-orders"></i>Orders</a> </li>
+            <li class="nav__item "> <a href="pos.html" class="nav__link" data-toggle-class-target="main-container" data-toggle-class-add="refund-mode"><i class="nav__icon icon icon-undo"></i>Manual Refund</a> </li>
+            <li class="nav__item "> <a href="register-close.html" class="nav__link"><i class="nav__icon icon icon-close"></i>Close Register</a> </li>
+            <li class="nav__item "> <a href="payin.html" class="nav__link"><i class="nav__icon icon icon-cc"></i>Payins / Payouts</a> </li>
+            <li class="nav__item "> <a href="tips.html" class="nav__link"><i class="nav__icon icon icon-tips"></i>Tips</a> </li>
+            <li class="nav__item "> <a href="loyalty.html" class="nav__link"><i class="nav__icon icon icon-loyalty"></i>Loyalty</a> </li>
+            <li class="nav__item "> <a href="settings.html" class="nav__link"><i class="nav__icon icon icon-cog"></i>Settings</a> </li>
+            <li class="nav__item "> <a href="sync.html" class="nav__link"><i class="nav__icon icon icon-sync"></i>Synchronize</a> </li>
+            <li class="nav__item "> <a href="ui-kit.html" class="nav__link"><i class="nav__icon icon icon-bo"></i>Back Office &bull; UI-Kit</a> </li>
+            <li class="nav__item "> <a href="pos.html" class="nav__link"><i class="nav__icon icon icon-help"></i>Help</a> </li>
+            <li class="nav__item "> <a href="index.html" class="nav__link"><i class="nav__icon icon icon-exit"></i>Logout</a> </li>
+          </ul>
+        </div>
+      </nav>
+      <!-- end menu -->
+      <!-- begin overlay --><button type="button" class="overlay " data-color="dark-gray" data-overlay="overlay" data-menu-overlay="menu"></button>
+      <!-- end overlay -->
+      <!-- begin snackbar -->
+      <div class="snackbar" data-snackbar-container="snackbar" data-state="default">
+        <div class="snackbar__message" data-snackbar-content="snackbar"></div>
+      </div>
+      <!-- end snackbar -->
+    </div>
+    <!-- end application -->
+    <!-- BEGIN scripts -->
+    <script type="text/javascript" src="static/js/app.js"></script>
+    <!-- END scripts -->
+  </body>
 
 </html>

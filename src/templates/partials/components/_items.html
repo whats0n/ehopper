@@ -1,15 +1,14 @@
 {% macro smBox(props) %}
-<dl class="sm-box {{props.classList}}" data-animation="ripple" {% if props.background %}style="background-color: {{props.background}};"{% endif %} >
-	<dt class="sm-box__title">{{props.title}}</dt>
-	<dd class="sm-box__description">{{props.description}}</dd>
-</dl>
+<div class="sm-box {{props.classList}}" data-animation="ripple" {% if props.background %}style="background-color: {{props.background}};"{% endif %} >
+	<div class="sm-box__title">{{props.title}}</div>
+	<div class="sm-box__description">{{props.description}}</div>
+</div>
 {% endmacro %}
 
 {% macro item(props) %}
 <div class="item" 
 	{% if props.background %}style="background-color: {{props.background}};"{% endif %} 
 	{% if props.noRipple !== true %}data-animation="ripple"{% endif %} 
-	onclick="window.orderlist.addItem({title: 'some title', meta: 'some meta', price: '5.00', quantity: '10', total: '50.00', discount: '-5.00'})"
 	{{props.attrs | safe}} >
 
 	{% if props.image %}

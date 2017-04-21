@@ -1,0 +1,20 @@
+.infotable
+	padding: 20px
+	&__row
+		+clr
+		&:not(:first-child)
+			border-top: 1px solid $lightGray
+	&__label,
+	&__value
+		float: left
+		padding: 10px
+		width: 50%
+		font-size: 14px
+		small
+			font-size: inherit
+	&__value
+		text-align: right
+	&__big
+		font-size: 17px
+	&__disabled
+		opacity: 0.5

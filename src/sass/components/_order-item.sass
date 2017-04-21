@@ -27,12 +27,13 @@
 	&__container
 		position: relative
 		+gpu
-		transition: transform 0.3s ease-in-out
+		transition: transform 0.185s ease-in-out
 		+touch
 			padding-right: 30px
 			margin-right: -60px
 	&__content
 		padding: 13px 50px 13px 20px
+		+clr
 	&__info,
 	&__row
 		float: left
@@ -76,19 +77,19 @@
 		color: $red
 	&__close
 		position: absolute
-		top: 0
+		top: 1px
 		right: 0
 		color: $red
 		background: none
+		+lg
+			top: 0
 		+touch
+			top: 0
 			bottom: 0
 			width: 60px
 			color: $white
 			background: $red
 		.icon-close
-			display: none
-			+touch
-				display: inline-block
-		.icon-clear
-			+touch
-				display: none
+			display: inline-block
+			vertical-align: middle
+			font-size: 18px

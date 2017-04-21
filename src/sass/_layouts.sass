@@ -21,6 +21,10 @@
   &_right
     float: right
     width: 60%
+  &_upper
+    z-index: 15
+    background: #f8f8f8
+    box-shadow: 3px 0 4px 5px rgba(0, 0, 0, 0.2)
   &_overlay
     position: absolute
     z-index: 5
@@ -68,6 +72,8 @@
             visibility: hidden
             pointer-events: none
       &__button
+        height: 48px
+        line-height: 48px
         +refund
           background: $red
   //state

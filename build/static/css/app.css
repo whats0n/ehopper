@@ -286,6 +286,10 @@ hr {
   text-align: center;
 }
 
+.is-hidden {
+  display: none;
+}
+
 [data-animation="ripple"] {
   position: relative;
   overflow: hidden;
@@ -300,7 +304,6 @@ hr {
   width: 112px;
   height: 112px;
   background: rgba(0, 0, 0, 0.1);
-  transform: translate3d(-50%, -50%, 0) scale(0);
   animation: ripple 1s ease-in-out forwards;
   pointer-events: none;
 }
@@ -308,11 +311,11 @@ hr {
 @keyframes ripple {
   0% {
     opacity: 1;
-    transform: translate3d(-50%, -50%, 0) scale(0);
+    transform: scale(0);
   }
   100% {
     opacity: 0;
-    transform: translate3d(-50%, -50%, 0) scale(2);
+    transform: scale(2);
   }
 }
 
@@ -850,6 +853,12 @@ a.shy {
   width: 60%;
 }
 
+.container_upper {
+  z-index: 15;
+  background: #f8f8f8;
+  box-shadow: 3px 0 4px 5px rgba(0, 0, 0, 0.2);
+}
+
 .container_overlay {
   position: absolute;
   z-index: 5;
@@ -902,6 +911,11 @@ a.shy {
   opacity: 0;
   visibility: hidden;
   pointer-events: none;
+}
+
+.sidebar__toolbar .toolbar__button {
+  height: 48px;
+  line-height: 48px;
 }
 
 .refund-mode .sidebar__toolbar .toolbar__button {
@@ -3373,7 +3387,7 @@ textarea.input {
 .order-item__container {
   position: relative;
   transform: translate3d(0, 0, 0);
-  transition: transform 0.3s ease-in-out;
+  transition: transform 0.185s ease-in-out;
 }
 
 .is-touch .order-item__container {
@@ -3383,6 +3397,13 @@ textarea.input {
 
 .order-item__content {
   padding: 13px 50px 13px 20px;
+  *zoom: 1;
+}
+
+.order-item__content:after {
+  content: " ";
+  display: table;
+  clear: both;
 }
 
 .order-item__info, .order-item__row {
@@ -3443,13 +3464,14 @@ textarea.input {
 
 .order-item__close {
   position: absolute;
-  top: 0;
+  top: 1px;
   right: 0;
   color: #ec4a41;
   background: none;
 }
 
 .is-touch .order-item__close {
+  top: 0;
   bottom: 0;
   width: 60px;
   color: #fff;
@@ -3457,15 +3479,9 @@ textarea.input {
 }
 
 .order-item__close .icon-close {
-  display: none;
-}
-
-.is-touch .order-item__close .icon-close {
   display: inline-block;
-}
-
-.is-touch .order-item__close .icon-clear {
-  display: none;
+  vertical-align: middle;
+  font-size: 18px;
 }
 
 .order-empty {
@@ -3490,6 +3506,7 @@ textarea.input {
 }
 
 .totals {
+  padding: 10px 0;
   border-top: 1px solid rgba(0, 0, 0, 0.1);
   background: #f2f2f2;
 }
@@ -4008,6 +4025,85 @@ textarea.input {
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
+}
+
+.infoblock__row {
+  *zoom: 1;
+}
+
+.infoblock__row:after {
+  content: " ";
+  display: table;
+  clear: both;
+}
+
+.infoblock__col {
+  float: left;
+  padding: 25px 20px;
+  width: 100%;
+}
+
+.infoblock__col_md {
+  width: 50%;
+}
+
+.infoblock__box {
+  padding: 5px 0;
+}
+
+.infoblock__label, .infoblock__value {
+  display: block;
+  font-style: normal;
+}
+
+.infoblock__label {
+  font-size: 12px;
+  color: #aaa;
+}
+
+.infoblock__value {
+  font-size: 16px;
+}
+
+.infotable {
+  padding: 20px;
+}
+
+.infotable__row {
+  *zoom: 1;
+}
+
+.infotable__row:after {
+  content: " ";
+  display: table;
+  clear: both;
+}
+
+.infotable__row:not(:first-child) {
+  border-top: 1px solid #eee;
+}
+
+.infotable__label, .infotable__value {
+  float: left;
+  padding: 10px;
+  width: 50%;
+  font-size: 14px;
+}
+
+.infotable__label small, .infotable__value small {
+  font-size: inherit;
+}
+
+.infotable__value {
+  text-align: right;
+}
+
+.infotable__big {
+  font-size: 17px;
+}
+
+.infotable__disabled {
+  opacity: 0.5;
 }
 
 .sm-box {
@@ -4561,6 +4657,10 @@ textarea.input {
 
   .order-item__title, .order-item__col {
     font-size: 14px;
+  }
+
+  .order-item__close {
+    top: 0;
   }
 }
 

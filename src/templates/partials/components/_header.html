@@ -6,7 +6,7 @@
 	{% if props.back %}
 		<div class="header__back">
 			<a class="btn-icon btn-icon_square icon icon-back header__back-icon" href="#" {{props.backAttrs | safe}}></a>
-			<div class="header__title">Cancel</div>
+			<div class="header__title">{{props.backText or 'Cancel'}}</div>
 		</div>
 	{% endif %}
 

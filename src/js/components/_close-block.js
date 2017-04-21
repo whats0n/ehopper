@@ -6,7 +6,7 @@ export default (function() {
 			e.preventDefault();
 			const $this = $(this);
 			const target = $this.data('error-close');
-			$this.closest(`[data-error="${target}"]`).css('display', 'none');
+			$this.closest(`[data-error="${target}"]`).hide();
 		});
 	});
 })();
