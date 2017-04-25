@@ -1,0 +1,83 @@
+.modal-terms
+	position: fixed
+	z-index: 4000
+	top: 0
+	left: 0
+	right: 0
+	bottom: 0
+	padding: 30px 0
+	color: #4b5262
+	background: rgba($black, 0.3)
+	+oreg
+	&__container
+		position: relative
+		padding: 106px 0 80px
+		margin: 0 auto
+		max-width: 870px
+		height: 100%
+		background: $white
+		text-align: left
+	&__header
+		position: absolute
+		top: 0
+		left: 0
+		right: 0
+		padding: 40px 70px 40px 25px
+		min-height: 70px
+	&__close
+		position: absolute
+		top: 0
+		right: 0
+		width: 70px
+		height: 70px
+		background: none
+		.icon
+			color: $red
+			font-size: 36px
+	&__title
+		margin: 0
+		text-transform: uppercase
+	&__footer
+		position: absolute
+		left: 0
+		right: 0
+		bottom: 0
+		padding: 10px 25px
+		background: $alabaster
+		+clr
+	&__agreement
+		overflow: hidden
+		padding: 15px 0
+	&__submit
+		float: right
+		padding: 0 32px
+	&__body
+		overflow: auto
+		padding: 20px 25px
+		margin-right: 20px
+		max-height: 100%
+		font-size: 14px
+		line-height: 18px
+		p
+			margin: 15px 0 0
+		em 
+			text-decoration: underline
+		span
+			display: inline-block
+			vertical-align: top
+			margin-right: 10px
+		strong 
+			text-transform: uppercase
+		a
+			color: $blue
+			text-decoration: underline
+			+hover
+				color: $blueActive
+				text-decoration: none
+	&__subtitle
+		+obold
+		line-height: 20px
+		text-align: center
+	&__copyright
+		margin-top: 40px
+

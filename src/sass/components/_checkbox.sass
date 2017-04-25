@@ -2,6 +2,10 @@
   position: relative
   display: inline-block
   vertical-align: middle
+  min-width: 30px
+  min-height: 30px
+  font-size: 0
+  line-height: 30px
   cursor: pointer
   +active
     .icon
@@ -16,13 +20,14 @@
     opacity: 0
     cursor: pointer
     &:checked + .icon
+      border: none
       color: $white
       background: $blue
   .icon
-    display: inline-block
-    vertical-align: middle
+    position: absolute
+    top: 0
+    left: 0
     padding: 0
-    margin-right: 6px
     border-radius: 5px
     width: 30px
     height: 30px
@@ -33,11 +38,23 @@
     line-height: 30px
     transition: background 0.05s ease, box-shadow 0.05s ease, color 0.05s ease
 
+  span
+    display: inline-block
+    vertical-align: middle
+    padding-left: 36px
+    font-size: 14px
+    line-height: normal
   //mods
   &_green
     input
       &:checked + .icon 
         background: $green
+  &_bordered
+    .icon
+      border: 1px solid currentColor
+  &_lg
+    span
+      font-size: 18px
 
 //delete
 .checkbox-success

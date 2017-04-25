@@ -1,3 +1,87 @@
+@font-face {
+  font-family: "OpenSans Bold";
+  src: url("../fonts/opensans-bold.woff2") format("woff2"), url("../fonts/opensans-bold.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "OpenSans Bold Italic";
+  src: url("../fonts/opensans-bolditalic.woff2") format("woff2"), url("../fonts/opensans-bolditalic.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "OpenSans Italic";
+  src: url("../fonts/opensans-italic.woff2") format("woff2"), url("../fonts/opensans-italic.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "OpenSans Regular";
+  src: url("../fonts/opensans-regular.woff2") format("woff2"), url("../fonts/opensans-regular.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Roboto Bold";
+  src: url("../fonts/roboto-bold.woff2") format("woff2"), url("../fonts/roboto-bold.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Roboto Bold Italic";
+  src: url("../fonts/roboto-bolditalic.woff2") format("woff2"), url("../fonts/roboto-bolditalic.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Roboto Italic";
+  src: url("../fonts/roboto-italic.woff2") format("woff2"), url("../fonts/roboto-italic.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Roboto Light";
+  src: url("../fonts/roboto-light.woff2") format("woff2"), url("../fonts/roboto-light.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Roboto Light Italic";
+  src: url("../fonts/roboto-lightitalic.woff2") format("woff2"), url("../fonts/roboto-lightitalic.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Roboto Medium";
+  src: url("../fonts/roboto-medium.woff2") format("woff2"), url("../fonts/roboto-medium.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Roboto Medium Italic";
+  src: url("../fonts/roboto-mediumitalic.woff2") format("woff2"), url("../fonts/roboto-mediumitalic.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Roboto Regular";
+  src: url("../fonts/roboto-regular.woff2") format("woff2"), url("../fonts/roboto-regular.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
 html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5,
 h6, p, blockquote, pre, a, abbr, acronym, address, big,
 cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small,
@@ -192,8 +276,7 @@ body {
 body {
   color: #333;
   background: #f8f8f8;
-  font-family: Roboto, Arial;
-  font-weight: 300;
+  font-family: 'Roboto Light', Arial, sans-serif;
   font-size: 14px;
   line-height: 1.2;
 }
@@ -284,6 +367,35 @@ hr {
   color: #aaa;
   font-weight: 700;
   text-align: center;
+}
+
+.loader {
+  position: absolute;
+  z-index: 3000;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(255, 255, 255, 0.9);
+  text-align: center;
+  font-size: 0;
+}
+
+.loader:before {
+  content: "";
+  display: inline-block;
+  vertical-align: middle;
+  width: 0;
+  height: 100%;
+}
+
+.loader_fullscreen {
+  position: fixed;
+}
+
+.loader .loader__icon {
+  display: inline-block;
+  vertical-align: middle;
 }
 
 .is-hidden {
@@ -690,13 +802,20 @@ hr {
 
 h1, h2, h3, h4, h5, h6 {
   margin: 20px 0 10px;
-  font-family: Roboto, Arial;
-  font-weight: 500;
+  font-family: 'Roboto Medium', Arial, sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6, strong, b, em, i {
+  font-weight: normal;
+  font-style: normal;
+}
+
+strong, b {
+  font-family: 'Roboto Bold', Arial, sans-serif;
 }
 
 h1,
 .title-xlg {
-  font-family: "Open Sans", Roboto, Arial;
   font-size: 22px;
 }
 
@@ -876,6 +995,7 @@ a.shy {
 }
 
 .container__body {
+  position: relative;
   height: calc(100% - 50px);
 }
 
@@ -1101,8 +1221,7 @@ article aside.left {
   border: none;
   min-width: 40px;
   height: 40px;
-  font-family: Roboto, Arial;
-  font-weight: 300;
+  font-family: 'Roboto Light', Arial, sans-serif;
   font-size: 16px;
   line-height: 40px;
   text-align: center;
@@ -1206,7 +1325,6 @@ article aside.left {
   background: none;
   font-family: inherit;
   font-size: inherit;
-  font-weight: inherit;
 }
 
 .btn-lg {
@@ -1340,6 +1458,10 @@ input.btn {
   position: relative;
   display: inline-block;
   vertical-align: middle;
+  min-width: 30px;
+  min-height: 30px;
+  font-size: 0;
+  line-height: 30px;
   cursor: pointer;
 }
 
@@ -1359,15 +1481,16 @@ input.btn {
 }
 
 .checkbox input:checked + .icon {
+  border: none;
   color: #fff;
   background: #2e99db;
 }
 
 .checkbox .icon {
-  display: inline-block;
-  vertical-align: middle;
+  position: absolute;
+  top: 0;
+  left: 0;
   padding: 0;
-  margin-right: 6px;
   border-radius: 5px;
   width: 30px;
   height: 30px;
@@ -1377,8 +1500,24 @@ input.btn {
   transition: background 0.05s ease, box-shadow 0.05s ease, color 0.05s ease;
 }
 
+.checkbox span {
+  display: inline-block;
+  vertical-align: middle;
+  padding-left: 36px;
+  font-size: 14px;
+  line-height: normal;
+}
+
 .checkbox_green input:checked + .icon {
   background: #22B745;
+}
+
+.checkbox_bordered .icon {
+  border: 1px solid currentColor;
+}
+
+.checkbox_lg span {
+  font-size: 18px;
 }
 
 .checkbox-success input:checked + .icon {
@@ -1457,7 +1596,7 @@ input.btn {
   vertical-align: top;
   border: none;
   color: #333;
-  font-weight: 400;
+  font-family: 'Roboto Regular', Arial, sans-serif;
   font-size: 16px;
   line-height: 50px;
 }
@@ -1738,6 +1877,130 @@ textarea.input {
   font-size: 16px;
 }
 
+.modal-terms {
+  position: fixed;
+  z-index: 4000;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: 30px 0;
+  color: #4b5262;
+  background: rgba(0, 0, 0, 0.3);
+  font-family: 'OpenSans Regular', 'Roboto', Arial, sans-serif;
+}
+
+.modal-terms__container {
+  position: relative;
+  padding: 106px 0 80px;
+  margin: 0 auto;
+  max-width: 870px;
+  height: 100%;
+  background: #fff;
+  text-align: left;
+}
+
+.modal-terms__header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  padding: 40px 70px 40px 25px;
+  min-height: 70px;
+}
+
+.modal-terms__close {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 70px;
+  height: 70px;
+  background: none;
+}
+
+.modal-terms__close .icon {
+  color: #ec4a41;
+  font-size: 36px;
+}
+
+.modal-terms__title {
+  margin: 0;
+  text-transform: uppercase;
+}
+
+.modal-terms__footer {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: 10px 25px;
+  background: #f8f8f8;
+  *zoom: 1;
+}
+
+.modal-terms__footer:after {
+  content: " ";
+  display: table;
+  clear: both;
+}
+
+.modal-terms__agreement {
+  overflow: hidden;
+  padding: 15px 0;
+}
+
+.modal-terms__submit {
+  float: right;
+  padding: 0 32px;
+}
+
+.modal-terms__body {
+  overflow: auto;
+  padding: 20px 25px;
+  margin-right: 20px;
+  max-height: 100%;
+  font-size: 14px;
+  line-height: 18px;
+}
+
+.modal-terms__body p {
+  margin: 15px 0 0;
+}
+
+.modal-terms__body em {
+  text-decoration: underline;
+}
+
+.modal-terms__body span {
+  display: inline-block;
+  vertical-align: top;
+  margin-right: 10px;
+}
+
+.modal-terms__body strong {
+  text-transform: uppercase;
+}
+
+.modal-terms__body a {
+  color: #2e99db;
+  text-decoration: underline;
+}
+
+.modal-terms__body a:hover {
+  color: #2183bf;
+  text-decoration: none;
+}
+
+.modal-terms__subtitle {
+  font-family: 'OpenSans Bold', 'Roboto Bold', Arial, sans-serif;
+  line-height: 20px;
+  text-align: center;
+}
+
+.modal-terms__copyright {
+  margin-top: 40px;
+}
+
 .figure__title {
   overflow: hidden;
   padding: 0 20px;
@@ -1914,8 +2177,8 @@ textarea.input {
 }
 
 .toolbar__button strong {
+  font-family: 'Roboto Regular', Arial, sans-serif;
   font-size: 25px;
-  font-weight: normal;
 }
 
 .snackbar {
@@ -1927,7 +2190,7 @@ textarea.input {
   padding: 20px;
   color: #eee;
   background: #434c55;
-  font-weight: 400;
+  font-family: 'Roboto Regular', Arial, sans-serif;
   font-size: 16px;
   transform: translate3d(0, 100%, 0);
   transition: transform 0.3s ease-in-out;
@@ -1965,8 +2228,7 @@ textarea.input {
   color: #333;
   background: #f8f8f8;
   box-shadow: inset 0 6px 4px -5px rgba(0, 0, 0, 0.2);
-  font-family: Roboto, Arial;
-  font-weight: 400;
+  font-family: 'Roboto Regular', Arial, sans-serif;
   font-size: 16px;
   line-height: normal;
 }
@@ -2012,8 +2274,7 @@ textarea.input {
   height: 50px;
   color: #fff;
   background: none;
-  font-family: Roboto, Arial;
-  font-weight: 400;
+  font-family: 'Roboto Regular', Arial, sans-serif;
   font-size: 16px;
   line-height: normal;
 }
@@ -2164,6 +2425,7 @@ textarea.input {
 
 .dropdown {
   position: relative;
+  font-family: 'Roboto Light', Arial, sans-serif;
 }
 
 .dropdown_header {
@@ -2685,8 +2947,7 @@ textarea.input {
   width: 100%;
   height: 100%;
   background: #fff;
-  font-family: Roboto, Arial;
-  font-weight: 300;
+  font-family: 'Roboto Light', Arial, sans-serif;
   font-size: 30px;
   -webkit-user-select: none;
   -moz-user-select: none;
@@ -2867,8 +3128,7 @@ textarea.input {
   height: 100%;
   color: #000;
   background: #fff;
-  font-family: Roboto, Arial;
-  font-weight: 300;
+  font-family: 'Roboto Light', Arial, sans-serif;
   font-size: 19px;
   line-height: normal;
   -webkit-user-select: none;
@@ -3278,8 +3538,7 @@ textarea.input {
 }
 
 .order-item__title, .order-item__quantity, .order-item__total {
-  font-family: Roboto, Arial;
-  font-weight: 400;
+  font-family: 'Roboto Regular', Arial, sans-serif;
 }
 
 .order-item__title, .order-item__col {
@@ -3947,6 +4206,45 @@ textarea.input {
   opacity: 0.5;
 }
 
+[data-scrollbar="rounded"]::-webkit-scrollbar,
+[data-scrollbar="default"]::-webkit-scrollbar {
+  display: initial !important;
+}
+
+[data-scrollbar="rounded"]::-webkit-scrollbar-thumb,
+[data-scrollbar="default"]::-webkit-scrollbar-thumb {
+  background: #2e99db;
+}
+
+[data-scrollbar="rounded"]::-webkit-scrollbar-thumb:hover,
+[data-scrollbar="default"]::-webkit-scrollbar-thumb:hover {
+  background: #2183bf;
+}
+
+[data-scrollbar="rounded"]::-webkit-scrollbar:vertical {
+  width: 12px;
+  background: linear-gradient(to right, transparent 5px, #b9dff6 5px, #b9dff6 6px, transparent 6px);
+}
+
+[data-scrollbar="rounded"]::-webkit-scrollbar:horizontal {
+  height: 12px;
+  background: linear-gradient(to bottom, transparent 5px, #b9dff6 5px, #b9dff6 6px, transparent 6px);
+}
+
+[data-scrollbar="rounded"]::-webkit-scrollbar-thumb {
+  border-radius: 6px;
+}
+
+[data-scrollbar="default"]::-webkit-scrollbar:vertical {
+  width: 5px;
+  background: linear-gradient(to right, transparent 2px, #b9dff6 2px, #b9dff6 3px, transparent 3px);
+}
+
+[data-scrollbar="default"]::-webkit-scrollbar:horizontal {
+  height: 5px;
+  background: linear-gradient(to bottom, transparent 2px, #b9dff6 2px, #b9dff6 3px, transparent 3px);
+}
+
 .sm-box {
   position: relative;
   padding: 10px;
@@ -4420,7 +4718,7 @@ textarea.input {
 }
 
 .order__item-title, .order__item-qty, .order__item-total {
-  font-weight: 400;
+  font-family: 'Roboto Regular', Arial, sans-serif;
 }
 
 .order__item-info, .order__item-price {
@@ -4487,8 +4785,8 @@ textarea.input {
   height: 50px;
   color: #fff;
   background: #2e99db;
+  font-family: 'Roboto Medium', Arial, sans-serif;
   font-size: 20px;
-  font-weight: 500;
   cursor: default;
   -webkit-user-select: none;
   -moz-user-select: none;
@@ -4545,7 +4843,7 @@ textarea.input {
 
 .header__subtitle {
   opacity: 0.5;
-  font-weight: 400;
+  font-family: 'Roboto Regular', Arial, sans-serif;
   font-size: 14px;
 }
 

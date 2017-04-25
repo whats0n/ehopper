@@ -29,7 +29,9 @@ export default (function() {
 						prevArrow: getArrow(PREV, BEFORE),
 						nextArrow: getArrow(NEXT, AFTER),
 						appendArrows: $pagination,
-						appendDots: $pagination
+						appendDots: $pagination,
+						cssEase: 'ease-in-out',
+						speed: 700
 					});
 					break;
 			}

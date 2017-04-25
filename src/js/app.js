@@ -13,7 +13,7 @@ import fullinfo from './components/_fullinfo';
 import menu from './components/_menu';
 import orderList from './components/_orderlist';
 import snackbar from './components/_snackbar';
-import changeState from './components/_change-state';
+import toggleClass from './components/_toggle-class';
 import simpleSwipe from './components/_simple-swipe';
 
 import common from './_common';
