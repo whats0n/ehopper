@@ -122,7 +122,7 @@
 {% endmacro %}
 
 {% macro display(props) %}
-<div class="fieldset fieldset_lg fieldset_bordered fieldset_keyboard">
+<div class="fieldset fieldset_lg fieldset_bordered {%- if props.sharp != true %} fieldset_keyboard {%-endif%}">
 	{{mixins.field(props.field)}}
 	{% if props.dividerNone != true %}
 		<div class="fieldset__divider"></div>

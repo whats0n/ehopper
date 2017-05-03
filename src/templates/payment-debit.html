@@ -1,82 +1,62 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<meta charset=utf-8>
-	<title>Debit Card &bull; eHopper POS</title>
-	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
-	<!-- <meta name="viewport" content="width=device-width, initial-scale=1"> -->
-	<meta http-equiv=X-UA-Compatible content="IE=edge,chrome=1">
-	<link rel="stylesheet" type="text/css" href="static/css/pos.css">
-	<script src="static/js/demo.js"></script>
-	<link rel="icon" href="https://ehopper.com/wp-content/uploads/2016/03/favicon-01.png" type="image/png">
-</head>
+---
+title: 'Debit Card &bull; eHopper POS'
+styles: 
+	- 'pos'
+---
+{% extends "layouts/_layout.html" %}
 
-
-<body class="animated">
-
-	<article class="pos pos-payments">
-
-
-		<main class="pos-order disabled layout layout-rows">
-			<header>
-				<a class="btn icon icon-back" href="pos.html"></a>
-				<h1>Order</h1>
-			</header>
-			<link rel="import" href="inc/order.html" onload="demoTemplate(this)">
-		</main>
-
-
-		<aside class="pos-paymentmethods cutout-left layout layout-rows">
-
-			<header class="cutout-left layout__row">
-				<div class="header__icons"><button class="btn icon icon-help" title="Help" onclick="demoDialogOpen('help')"></button></div>
-				<h1>Debit Card Payment</h1>
-			</header>
-
-			<section class="layout__row layout__row-grow">
-				<form class="form-narrow" method="get" action="payment-receipt.html">
-
-					<div class="labeled-info text-right fieldset-standalone padding2-right">
-						<label>Total Due:</label>
-						<span class="big">$<span class="xl">102.00</span></span>
-					</div>
-
-					<div class="fieldset fieldset-radio fieldset-bordered fieldset-standalone">
-						<label class="fieldset__label no-wrap">Tips and Signature</label>
-						<div class="fieldset__control">
-							<label class="radio fieldset__label">
-								<input class="radio" id="signature_screen" type="radio" name="signature" checked>
-								<i class="icon"></i> On Screen
-							</label>
-							<label class="radio fieldset__label">
-								<input class="radio" id="signature_screen" type="radio" name="signature">
-								<i class="icon"></i> On Terminal
-							</label>							
+{% block content %}
+	<main class="main" data-toggle-class-container="main-container">
+		<div class="inner">
+			{% include 'partials/components/_payments-sidebar.html' %}
+			<div class="container container_right">
+				{{header.simple({
+					headerClassList: 'container__header',
+					title: 'Debit Card Payment',
+					titleClassList: 'header__title_vertical',
+					help: true
+				})}}
+				<div class="container__body step-body">
+					<div class="step-body__section">
+						<div class="form form_sm">
+							<div class="payment-top">
+								{{mixins.infoPrice({
+									label: 'Total Due:',
+									price: '102.00',
+									currency: '$',
+									classList: 'text-right'
+								})}}
+							</div>
+							<div class="payment-field">
+								{{mixins.fieldBox({
+									radios: true,
+									label: 'Tips and Signature',
+									colSize: 'sm',
+									list: [
+										{
+											content: 'On Screen',
+											name: 'tips-and-signature',
+											attrs: 'checked'
+										},
+										{
+											content: 'On Terminal',
+											name: 'tips-and-signature'
+										}
+									]
+								})}}
+							</div>
 						</div>
 					</div>
-
-
-				</form>
-			</section>
-
-			<section class="layout__row">
-				<div class="form-narrow text-center">
-					<button class="btn btn-primary btn-lg btn-go" onclick="demoDialogOpen('terminal'); return false;">Continue</button>
+					<div class="step-body__footer section">
+						<div class="form form_sm">
+							<button class="btn btn_primary btn_lg btn_block" data-animation="ripple" data-modal-open="payment-terminal">Continue</button>
+						</div>
+					</div>
 				</div>
-			</section>
+			</div>
+		</div>
+	</main>
 
-
-		</aside>
-
-
-	</article>
-
-	<!-- Dialog: Terminal Active -->
-	<link rel="import" href="inc/dialog-terminal.html" onload="demoTemplate(this)">
-
-	<!-- Dialog: Help Panel -->
-	<link rel="import" href="inc/help.html" onload="demoTemplate(this)">
-
-
-</body>
-</html>
+	{{modal.help()}}
+	{{modal.paymentTerminal()}}
+{% endblock %}

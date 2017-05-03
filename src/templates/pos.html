@@ -87,6 +87,13 @@ styles:
 									data-swipe="is-open"
 									data-swipe-threshold="50">
 									<div class="order-item__container">
+										<button class="order-item__close" 
+											data-fullinfo-close="fullinfo" 
+											data-toggle-class-target="sidebar-header" 
+											data-toggle-class-remove="is-disabled"
+											data-order-delete-item="delete">
+											<i class="icon icon-close"></i>
+										</button>
 										<div class="order-item__content"
 											data-fullinfo-open="fullinfo"
 											data-toggle-class-target="sidebar-header"
@@ -108,13 +115,6 @@ styles:
 											</div>
 											<div class="order-item__meta" data-fullinfo-target="modifiers">{{item.meta | safe}}</div>
 										</div>
-										<button class="order-item__close" 
-											data-fullinfo-close="fullinfo" 
-											data-toggle-class-target="sidebar-header" 
-											data-toggle-class-remove="is-disabled"
-											data-order-delete-item="delete">
-											<i class="icon icon-close"></i>
-										</button>
 									</div>
 								</li>
 							{% endfor %}

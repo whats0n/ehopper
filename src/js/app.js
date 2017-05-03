@@ -15,5 +15,6 @@ import orderList from './components/_orderlist';
 import snackbar from './components/_snackbar';
 import toggleClass from './components/_toggle-class';
 import simpleSwipe from './components/_simple-swipe';
+import table from './components/_table';
 
 import common from './_common';

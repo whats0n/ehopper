@@ -1,3 +1,25 @@
+.modal
+	position: fixed
+	z-index: 4000
+	top: 0
+	left: 0
+	right: 0
+	bottom: 0
+	opacity: 0
+	visibility: hidden
+	background: rgba(#434c55, 0.8)
+	+vertical
+	transition: opacity 0.2s ease-out, visibility 0.2s ease-out
+	&.is-open
+		opacity: 1
+		visibility: visible
+	&__container
+		display: inline-block
+		vertical-align: middle
+		width: 100%
+		box-shadow: 0 0 6px 2px rgba(0, 0, 0, 0.2);
+	
+
 .modal-terms
 	position: fixed
 	z-index: 4000
@@ -81,3 +103,48 @@
 	&__copyright
 		margin-top: 40px
 
+
+.add-terminal
+	&__container
+		max-width: 500px
+		background: $white
+	&__header
+		position: relative
+		padding: 13px 20px
+		color: $white
+		background: $blue
+		text-align: left
+	&__close 
+		position: absolute
+		top: 5px
+		right: 5px
+	&__title
+		margin: 0
+		font-size: 20px
+		line-height: 1.2
+	&__body
+		padding: 20px 
+		text-align: left
+	&__field
+		padding: 10px 0
+	&__input
+		text-align: right
+
+.payment-terminal
+	&__container
+		max-width: 500px
+		background: $white
+	&__vertical
+		height: 300px
+		+vertical
+	&__center
+		display: inline-block
+		vertical-align: middle
+		width: 100%
+		+rreg
+		font-size: 14px
+		p
+			padding: 10px 0 0
+			margin: 0
+	&__icon
+		font-size: 100px

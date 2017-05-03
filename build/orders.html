@@ -1,214 +1,214 @@
-<!DOCTYPE html>
+<!doctype html>
 <html>
 
   <head>
-    <meta charset=utf-8>
+    <meta charset="utf-8">
     <title>Orders &bull; eHopper POS</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <meta http-equiv=X-UA-Compatible content="IE=edge,chrome=1">
-    <link rel="stylesheet" type="text/css" href="static/css/pos.css">
-    <script src="static/js/demo.js"></script>
-    <link rel="icon" href="https://ehopper.com/wp-content/uploads/2016/03/favicon-01.png" type="image/png"> </head>
+    <meta name="theme-color" content="#fff">
+    <meta name="format-detection" content="telephone=no">
+    <link rel="stylesheet" media="all" href="static/css/pos.css">
+    <link rel="icon" href="https://ehopper.com/wp-content/uploads/2016/03/favicon-01.png" type="image/png">
+    <!-- BEGIN scripts -->
+    <!-- END scripts -->
+  </head>
 
-  <body class="animated">
-    <article class="pos layout layout-rows">
-      <header class="layout__row"> <button class="btn icon icon-menu" title="Menu"></button>
-        <div class="header__icons"> <button class="btn icon icon-help" title="Help" onclick="demoDialogOpen('help')"></button>
-          <a href="search.html" class="btn icon icon-search" title="Search"></a>
-        </div>
-        <h1>Orders</h1>
-      </header>
-      <div class="toolbar toolbar-flex toolbar-white layout__row">
-        <div class="toolbar__item">
-          <div class="dropdown dropdown-white w100">
-            <div class="dropdown__selected">
-              <div class="dropdown__selected-label">Stor(e):</div>
-              <div class="dropdown__selected-value">Show all</div>
+  <body class="">
+    <!-- begin application -->
+    <div class="application" id="application">
+      <!-- BEGIN content -->
+      <main class="main">
+        <div class="inner orders">
+          <div class="orders__container">
+            <!-- begin header -->
+            <header class="header orders__header"> <button class="btn-icon header__help" title="Help" data-modal-open="help">
+			<i class="icon icon-help"></i>
+		</button> <button class="btn-icon btn-icon_square icon icon-menu header__menu" title="Menu" data-menu-open="menu"></button>
+              <h2 class="title-xlg header__title header__title_vertical">Orders</h2>
+              <div class="header__searchbox header__searchbox_right">
+                <!-- begin search -->
+                <div class="search" data-modal="search">
+                  <form action="/">
+                    <div class="search__field" data-modal="container"> <input type="text" class="search__input" placeholder="Search for item">
+                      <div class="search__controls"> <button class="btn-icon search__button"><i class="icon icon-search"></i></button> </div>
+                    </div>
+                  </form>
+                </div>
+                <!-- end search -->
+              </div>
+            </header>
+            <!-- end header -->
+            <div class="orders__body">
+              <div class="toolbar orders__toolbar">
+                <div class="toolbar__container">
+                  <div class="toolbar__row">
+                    <div class="toolbar__col">
+                      <!-- begin dropdown -->
+                      <div class="dropdown " data-dropdown="orders-stores">
+                        <div class="dropdown__header" data-dropdown-open="orders-stores" data-animation="ripple"> <i class="dropdown__arrow icon icon-expand"></i>
+                          <div class="dropdown__label">Stores:</div>
+                          <div class="dropdown__value" data-dropdown-value="orders-stores">Show all</div>
+                        </div>
+                        <div class="dropdown-menu " data-dropdown-menu="orders-stores">
+                          <ul class="dropdown-menu__list">
+                            <li class="dropdown-menu__item is-active" data-animation="ripple" data-dropdown-item="orders-stores" data-value="Store 1"> Store 1 </li>
+                            <li class="dropdown-menu__item" data-animation="ripple" data-dropdown-item="orders-stores" data-value="Store 2"> Store 2 </li>
+                            <li class="dropdown-menu__item" data-animation="ripple" data-dropdown-item="orders-stores" data-value="Store 3"> Store 3 </li>
+                            <li class="dropdown-menu__item" data-animation="ripple" data-dropdown-item="orders-stores" data-value="Store 4"> Store 4 </li>
+                            <li class="dropdown-menu__item" data-animation="ripple" data-dropdown-item="orders-stores" data-value="Store 5"> Store 5 </li>
+                          </ul>
+                        </div>
+                        <!-- begin overlay --><button type="button" class="overlay " data-color="dark-gray" data-overlay="overlay" data-dropdown-overlay="orders-stores"></button>
+                        <!-- end overlay -->
+                      </div>
+                      <!-- end dropdown -->
+                    </div>
+                    <div class="toolbar__col">
+                      <!-- begin dropdown -->
+                      <div class="dropdown " data-dropdown="orders-register">
+                        <div class="dropdown__header" data-dropdown-open="orders-register" data-animation="ripple"> <i class="dropdown__arrow icon icon-expand"></i>
+                          <div class="dropdown__label">Register:</div>
+                          <div class="dropdown__value" data-dropdown-value="orders-register">(2 selected)</div>
+                        </div>
+                        <div class="dropdown-menu " data-dropdown-menu="orders-register">
+                          <ul class="dropdown-menu__list">
+                            <li class="dropdown-menu__item is-active" data-animation="ripple" data-dropdown-item="orders-register" data-value="Store 1"> Store 1 </li>
+                            <li class="dropdown-menu__item" data-animation="ripple" data-dropdown-item="orders-register" data-value="Store 2"> Store 2 </li>
+                            <li class="dropdown-menu__item" data-animation="ripple" data-dropdown-item="orders-register" data-value="Store 3"> Store 3 </li>
+                            <li class="dropdown-menu__item" data-animation="ripple" data-dropdown-item="orders-register" data-value="Store 4"> Store 4 </li>
+                            <li class="dropdown-menu__item" data-animation="ripple" data-dropdown-item="orders-register" data-value="Store 5"> Store 5 </li>
+                          </ul>
+                        </div>
+                        <!-- begin overlay --><button type="button" class="overlay " data-color="dark-gray" data-overlay="overlay" data-dropdown-overlay="orders-register"></button>
+                        <!-- end overlay -->
+                      </div>
+                      <!-- end dropdown -->
+                    </div>
+                    <div class="toolbar__col">
+                      <!-- begin dropdown -->
+                      <div class="dropdown " data-dropdown="orders-order-type">
+                        <div class="dropdown__header" data-dropdown-open="orders-order-type" data-animation="ripple"> <i class="dropdown__arrow icon icon-expand"></i>
+                          <div class="dropdown__label">Order Type:</div>
+                          <div class="dropdown__value" data-dropdown-value="orders-order-type">Quick Sale</div>
+                        </div>
+                        <div class="dropdown-menu " data-dropdown-menu="orders-order-type">
+                          <ul class="dropdown-menu__list">
+                            <li class="dropdown-menu__item is-active" data-animation="ripple" data-dropdown-item="orders-order-type" data-value="Store 1"> Store 1 </li>
+                            <li class="dropdown-menu__item" data-animation="ripple" data-dropdown-item="orders-order-type" data-value="Store 2"> Store 2 </li>
+                            <li class="dropdown-menu__item" data-animation="ripple" data-dropdown-item="orders-order-type" data-value="Store 3"> Store 3 </li>
+                            <li class="dropdown-menu__item" data-animation="ripple" data-dropdown-item="orders-order-type" data-value="Store 4"> Store 4 </li>
+                            <li class="dropdown-menu__item" data-animation="ripple" data-dropdown-item="orders-order-type" data-value="Store 5"> Store 5 </li>
+                          </ul>
+                        </div>
+                        <!-- begin overlay --><button type="button" class="overlay " data-color="dark-gray" data-overlay="overlay" data-dropdown-overlay="orders-order-type"></button>
+                        <!-- end overlay -->
+                      </div>
+                      <!-- end dropdown -->
+                    </div>
+                    <div class="toolbar__col">
+                      <!-- begin dropdown -->
+                      <div class="dropdown " data-dropdown="orders-status">
+                        <div class="dropdown__header" data-dropdown-open="orders-status" data-animation="ripple"> <i class="dropdown__arrow icon icon-expand"></i>
+                          <div class="dropdown__label">Status:</div>
+                          <div class="dropdown__value" data-dropdown-value="orders-status">Any</div>
+                        </div>
+                        <div class="dropdown-menu " data-dropdown-menu="orders-status">
+                          <ul class="dropdown-menu__list">
+                            <li class="dropdown-menu__item is-active" data-animation="ripple" data-dropdown-item="orders-status" data-value="Store 1"> Store 1 </li>
+                            <li class="dropdown-menu__item" data-animation="ripple" data-dropdown-item="orders-status" data-value="Store 2"> Store 2 </li>
+                            <li class="dropdown-menu__item" data-animation="ripple" data-dropdown-item="orders-status" data-value="Store 3"> Store 3 </li>
+                            <li class="dropdown-menu__item" data-animation="ripple" data-dropdown-item="orders-status" data-value="Store 4"> Store 4 </li>
+                            <li class="dropdown-menu__item" data-animation="ripple" data-dropdown-item="orders-status" data-value="Store 5"> Store 5 </li>
+                          </ul>
+                        </div>
+                        <!-- begin overlay --><button type="button" class="overlay " data-color="dark-gray" data-overlay="overlay" data-dropdown-overlay="orders-status"></button>
+                        <!-- end overlay -->
+                      </div>
+                      <!-- end dropdown -->
+                    </div>
+                    <div class="toolbar__col">
+                      <!-- begin dropdown -->
+                      <div class="dropdown " data-dropdown="orders-fulfillment">
+                        <div class="dropdown__header" data-dropdown-open="orders-fulfillment" data-animation="ripple"> <i class="dropdown__arrow icon icon-expand"></i>
+                          <div class="dropdown__label">Fulfillment:</div>
+                          <div class="dropdown__value" data-dropdown-value="orders-fulfillment">Any</div>
+                        </div>
+                        <div class="dropdown-menu " data-dropdown-menu="orders-fulfillment">
+                          <ul class="dropdown-menu__list">
+                            <li class="dropdown-menu__item is-active" data-animation="ripple" data-dropdown-item="orders-fulfillment" data-value="Store 1"> Store 1 </li>
+                            <li class="dropdown-menu__item" data-animation="ripple" data-dropdown-item="orders-fulfillment" data-value="Store 2"> Store 2 </li>
+                            <li class="dropdown-menu__item" data-animation="ripple" data-dropdown-item="orders-fulfillment" data-value="Store 3"> Store 3 </li>
+                            <li class="dropdown-menu__item" data-animation="ripple" data-dropdown-item="orders-fulfillment" data-value="Store 4"> Store 4 </li>
+                            <li class="dropdown-menu__item" data-animation="ripple" data-dropdown-item="orders-fulfillment" data-value="Store 5"> Store 5 </li>
+                          </ul>
+                        </div>
+                        <!-- begin overlay --><button type="button" class="overlay " data-color="dark-gray" data-overlay="overlay" data-dropdown-overlay="orders-fulfillment"></button>
+                        <!-- end overlay -->
+                      </div>
+                      <!-- end dropdown -->
+                    </div>
+                    <div class="toolbar__col toolbar__col_refresh"> <button class="btn btn_lg btn_white btn_block" data-animation="ripple">
+										<i class="icon icon-undo"></i>
+										Apply
+									</button> </div>
+                  </div>
+                </div>
+              </div>
             </div>
-            <ul class="dropdown-menu">
-              <li class="dropdown-menu__item dropdown-menu__item-selected">Show all</li>
-              <li class="dropdown-menu__item">Main Store</li>
-              <li class="dropdown-menu__item">Second Store</li>
-            </ul>
-            <div class="dropdown-menu__mask"></div>
           </div>
         </div>
-        <div class="toolbar__item">
-          <div class="dropdown dropdown-white w100">
-            <div class="dropdown__selected">
-              <div class="dropdown__selected-label">Register:</div>
-              <div class="dropdown__selected-value">(2 selected)</div>
-            </div>
-            <ul class="dropdown-menu">
-              <li class="dropdown-menu__item">Show all</li>
-              <li class="dropdown-menu__item dropdown-menu__item-selected"><i class="icon icon-check"></i>John's Notebook 1</li>
-              <li class="dropdown-menu__item dropdown-menu__item-selected"><i class="icon icon-check"></i>Register 2: iPad mini</li>
-              <li class="dropdown-menu__item">Register 3: Poynt</li>
-            </ul>
-            <div class="dropdown-menu__mask"></div>
+      </main>
+      <!-- begin help -->
+      <div class="help" data-modal="help">
+        <div class="help__container" data-modal-container="help">
+          <div class="help__header">
+            <header class="header header_large"> <button class="btn-icon help__close icon icon-close" data-modal-close="help"></button>
+              <h2 class="title-xlg header__title">Help</h2>
+            </header>
+          </div>
+          <div class="help__body">
+            <p>Help content.</p>
           </div>
         </div>
-        <div class="toolbar__item">
-          <div class="dropdown dropdown-white w100">
-            <div class="dropdown__selected">
-              <div class="dropdown__selected-label">Order Type:</div>
-              <div class="dropdown__selected-value">Quick Sale</div>
-            </div>
-            <ul class="dropdown-menu">
-              <li class="dropdown-menu__item">Show all</li>
-              <li class="dropdown-menu__item dropdown-menu__item-selected">Quick Sale</li>
-              <li class="dropdown-menu__item">Delivery</li>
-              <li class="dropdown-menu__item">Dine In</li>
-            </ul>
-            <div class="dropdown-menu__mask"></div>
-          </div>
-        </div>
-        <div class="toolbar__item">
-          <div class="dropdown dropdown-white w100">
-            <div class="dropdown__selected">
-              <div class="dropdown__selected-label">Status:</div>
-              <div class="dropdown__selected-value">Any</div>
-            </div>
-            <ul class="dropdown-menu">
-              <li class="dropdown-menu__item dropdown-menu__item-selected">Any</li>
-              <li class="dropdown-menu__item">Not Paid</li>
-              <li class="dropdown-menu__item">Pending Payment</li>
-              <li class="dropdown-menu__item">Paid</li>
-              <li class="dropdown-menu__item">Refunded</li>
-              <li class="dropdown-menu__item">Voided</li>
-            </ul>
-            <div class="dropdown-menu__mask"></div>
-          </div>
-        </div>
-        <div class="toolbar__item">
-          <div class="dropdown dropdown-white w100">
-            <div class="dropdown__selected">
-              <div class="dropdown__selected-label">Fulfillment:</div>
-              <div class="dropdown__selected-value">Any</div>
-            </div>
-            <ul class="dropdown-menu">
-              <li class="dropdown-menu__item dropdown-menu__item-selected">Any</li>
-              <li class="dropdown-menu__item">New</li>
-              <li class="dropdown-menu__item">In Preparation</li>
-              <li class="dropdown-menu__item">Prepared</li>
-              <li class="dropdown-menu__item">In Fulfillment</li>
-              <li class="dropdown-menu__item">Fulfilled</li>
-            </ul>
-            <div class="dropdown-menu__mask"></div>
-          </div>
-        </div>
-        <div class="toolbar__item toolbar__item-minimize"> <button class="btn btn-lg btn-white"><i class="icon icon-undo"></i>Apply&nbsp;</button> </div>
       </div>
-      <div class="layout__row layout__row-grow">
-        <table class="table table-striped table-hover">
-          <thead>
-            <tr>
-              <th class="table__cell-first table__cell-minimize">Status</th>
-              <th class="table__sortable table__sorted-asc">Order</th>
-              <th>Store</th>
-              <th>Register</th>
-              <th>Type</th>
-              <th>Fulfillment</th>
-              <th class="table__sortable">Date</th>
-              <th>Employee</th>
-              <th>Customer</th>
-              <th class="table__cell-last text-right">Action</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td class="no-vpadding"><i class="icon icon-check"></i></td>
-              <td>040660174749</td>
-              <td>Main Store</td>
-              <td>1</td>
-              <td>Quick Sale</td>
-              <td>Done</td>
-              <td>03/07/2017
-                <div class="small muted">12:59:00</div>
-              </td>
-              <td>Mr. John Snow</td>
-              <td>Walk In</td>
-              <td class="no-vpadding no-wrap text-right">
-                <a href="order.html" class="icon icon-next btn"></a>
-              </td>
-            </tr>
-            <tr>
-              <td class="no-vpadding"><i class="icon icon-checked text-success"></i></td>
-              <td>040660174750
-                <div class="muted">Saved order name</div>
-              </td>
-              <td>Second Store</td>
-              <td>4</td>
-              <td>Quick Sale</td>
-              <td>Done</td>
-              <td>03/07/2017
-                <div class="small muted">12:59:00</div>
-              </td>
-              <td>Mr. John Snow</td>
-              <td>Walk In</td>
-              <td class="no-vpadding no-wrap text-right">
-                <a href="pos.html" class="icon icon-pos btn"></a>
-                <a href="order.html" class="icon icon-next btn"></a>
-              </td>
-            </tr>
-            <tr>
-              <td class="no-vpadding"><i class="icon icon-close"></i></td>
-              <td>040660174000</td>
-              <td>Main Store</td>
-              <td>2</td>
-              <td>Delivery</td>
-              <td>Done</td>
-              <td>03/07/2017
-                <div class="small muted">12:59:00</div>
-              </td>
-              <td>Mr. John Snow</td>
-              <td>VIP Mr. Donald Trump</td>
-              <td class="no-vpadding no-wrap text-right">
-                <a href="order.html" class="icon icon-next btn"></a>
-              </td>
-            </tr>
-            <tr>
-              <td class="no-vpadding"><i class="icon icon-clear text-danger"></i></td>
-              <td>040660174001</td>
-              <td>Main Store</td>
-              <td>1</td>
-              <td>Quick Sale</td>
-              <td>Voided</td>
-              <td>12/12/2016
-                <div class="small muted">9:00:00</div>
-              </td>
-              <td>Samantha Fox</td>
-              <td>Walk In</td>
-              <td class="no-vpadding no-wrap text-right">
-                <a href="order.html" class="icon icon-next btn"></a>
-              </td>
-            </tr>
-          </tbody>
-        </table>
+      <!-- end help -->
+      <!-- begin menu -->
+      <nav class="menu" data-menu-container="menu">
+        <header class="menu__header" data-menu-close="menu" data-animation="ripple"> <i class="icon icon-back menu__icon"></i>
+          <div class="title-xlg menu__title">Acme Inc.</div>
+        </header>
+        <div class="menu__container">
+          <ul class="nav">
+            <li class="nav__item "> <a href="pos.html" class="nav__link"><i class="nav__icon icon icon-pos"></i>Point of Sale</a> </li>
+            <li class="nav__item is-active"> <a href="orders.html" class="nav__link"><i class="nav__icon icon icon-orders"></i>Orders</a> </li>
+            <li class="nav__item "> <a href="pos.html" class="nav__link" data-toggle-class-target="main-container" data-toggle-class-add="refund-mode"><i class="nav__icon icon icon-undo"></i>Manual Refund</a> </li>
+            <li class="nav__item "> <a href="register-close.html" class="nav__link"><i class="nav__icon icon icon-close"></i>Close Register</a> </li>
+            <li class="nav__item "> <a href="payin.html" class="nav__link"><i class="nav__icon icon icon-cc"></i>Payins / Payouts</a> </li>
+            <li class="nav__item "> <a href="tips.html" class="nav__link"><i class="nav__icon icon icon-tips"></i>Tips</a> </li>
+            <li class="nav__item "> <a href="loyalty.html" class="nav__link"><i class="nav__icon icon icon-loyalty"></i>Loyalty</a> </li>
+            <li class="nav__item "> <a href="settings.html" class="nav__link"><i class="nav__icon icon icon-cog"></i>Settings</a> </li>
+            <li class="nav__item "> <a href="sync.html" class="nav__link"><i class="nav__icon icon icon-sync"></i>Synchronize</a> </li>
+            <li class="nav__item "> <a href="ui-kit.html" class="nav__link"><i class="nav__icon icon icon-bo"></i>Back Office &bull; UI-Kit</a> </li>
+            <li class="nav__item "> <a href="pos.html" class="nav__link"><i class="nav__icon icon icon-help"></i>Help</a> </li>
+            <li class="nav__item "> <a href="index.html" class="nav__link"><i class="nav__icon icon icon-exit"></i>Logout</a> </li>
+          </ul>
+        </div>
+      </nav>
+      <!-- end menu -->
+      <!-- begin overlay --><button type="button" class="overlay " data-color="dark-gray" data-overlay="overlay" data-menu-overlay="menu"></button>
+      <!-- end overlay -->
+      <!-- END content -->
+      <!-- begin snackbar -->
+      <div class="snackbar" data-snackbar-container="snackbar" data-state="default">
+        <div class="snackbar__message" data-snackbar-content="snackbar"></div>
       </div>
-      <section class="text-center layout__row"> <button class="btn btn-default"><i class="icon icon-expand"></i>Show more</button> </section>
-    </article>
-    <nav class="menu">
-      <header> <i class="icon icon-back"></i>
-        <h1>Acme Inc.</h1>
-      </header>
-      <ul class="menu__items">
-        <li class="menu__item"><a href="pos.html" class="menu__item-link"><i class="icon icon-pos menu__item-icon"></i>Point of Sale</a></li>
-        <li class="menu__item menu__item-active"><a href="orders.html" class="menu__item-link"><i class="icon icon-orders menu__item-icon"></i>Orders</a></li>
-        <li class="menu__item"><a href="pos.html" class="menu__item-link"><i class="icon icon-undo menu__item-icon"></i>Manual Refund</a></li>
-        <li class="menu__item"><a href="register-close.html" class="menu__item-link"><i class="icon icon-close menu__item-icon"></i>Close Register</a></li>
-        <li class="menu__item"><a href="payin.html" class="menu__item-link"><i class="icon icon-cc menu__item-icon"></i>Payins / Payouts</a></li>
-        <li class="menu__item"><a href="tips.html" class="menu__item-link"><i class="icon icon-tips menu__item-icon"></i>Tips</a></li>
-        <li class="menu__item"><a href="loyalty.html" class="menu__item-link"><i class="icon icon-loyalty menu__item-icon"></i>Loyalty</a></li>
-        <li class="menu__item"><a href="settings.html" class="menu__item-link"><i class="icon icon-cog menu__item-icon"></i>Settings</a></li>
-        <li class="menu__item"><a href="sync.html" class="menu__item-link"><i class="icon icon-sync menu__item-icon"></i>Synchronize</a></li>
-        <li class="menu__item"><a href="ui-kit.html" class="menu__item-link"><i class="icon icon-bo menu__item-icon"></i>Back Office</a></li>
-        <li class="menu__item"><a href="pos.html" class="menu__item-link"><i class="icon icon-help menu__item-icon"></i>Help</a></li>
-        <li class="menu__item"><a href="index.html" class="menu__item-link"><i class="icon icon-exit menu__item-icon"></i>Logout</a></li>
-      </ul>
-    </nav>
-    <div class="menu__mask"></div>
-    <!-- Dialog: Help Panel -->
-    <link rel="import" href="inc/help.html" onload="demoTemplate(this)"> </body>
+      <!-- end snackbar -->
+    </div>
+    <!-- end application -->
+    <!-- BEGIN scripts -->
+    <script type="text/javascript" src="static/js/app.js"></script>
+    <!-- END scripts -->
+  </body>
 
 </html>

@@ -1,3 +1,5 @@
+{% import '../_mixins.html' as mixins %}
+
 {% macro help(props) %}
 <!-- begin help -->
 <div class="help" data-modal="help">
@@ -14,4 +16,60 @@
 	</div>
 </div>
 <!-- end help -->
+{% endmacro %}
+
+{% macro addTerminal(props) %}
+<!-- begin add-terminal -->
+<div class="modal add-terminal" data-modal="add-terminal">
+	<div class="modal__container add-terminal__container" data-modal-container="add-terminal">
+		<div class="add-terminal__header">
+			<button class="btn-icon add-terminal__close" data-modal-close="add-terminal"><i class="icon icon-close"></i></button>
+			<div class="add-terminal__title">Add New Terminal</div>
+		</div>
+		<div class="add-terminal__body">
+			<div class="add-terminal__field">
+				{{mixins.field({
+					label: 'Serial Number:',
+					value: '0000123',
+					id: 'terminal-serial-number',
+					placeholder: '(required)',
+					attrs: 'required',
+					inputClassList: 'input_lg add-terminal__input'
+				})}}
+			</div>
+			<div class="add-terminal__field">
+				{{mixins.field({
+					label: 'Friendly Name:',
+					id: 'terminal-name',
+					placeholder: '(optional)',
+					inputClassList: 'input_lg add-terminal__input'
+				})}}
+			</div>
+		</div>
+		<div class="add-terminal__footer">
+			<button class="btn btn_success btn_lg btn_block" data-animation="ripple" data-modal-close="add-terminal">Submit</button>
+		</div>
+	</div>
+</div>
+<!-- end add-terminal -->
+{% endmacro %}
+
+{% macro paymentTerminal(props) %}
+<!-- begin payment-terminal -->
+<div class="modal payment-terminal" data-modal="payment-terminal">
+	<div class="modal__container payment-terminal__container" data-modal-container="payment-terminal">
+		<div class="payment-terminal__body">
+			<div class="payment-terminal__vertical">
+				<div class="payment-terminal__center">
+					<div class="loading payment-terminal__icon"></div>
+					<p>Please process Payment on your Terminal</p>
+				</div>
+			</div>
+		</div>
+		<div class="payment-terminal__footer">
+			<button class="btn btn_error btn_lg btn_block" data-animation="ripple" data-modal-close="payment-terminal">Cancel</button>
+		</div>
+	</div>
+</div>
+<!-- end payment-terminal -->
 {% endmacro %}

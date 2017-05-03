@@ -1,0 +1,34 @@
+.select
+	position: relative
+	select
+		display: block
+		padding: 0 25px 0 10px
+		border-radius: 0
+		border: none
+		width: 100%
+		height: 40px
+		color: inherit
+		background: none
+		+rreg
+		+text-overflow
+		-webkit-appearance: none
+	//mods
+	&_lg
+		select
+			height: 60px
+			font-size: 20px
+			line-height: 60px
+		&:before,
+		&:after
+			right: 10px
+		&:before
+			top: 20px
+			+arr(10, 8, currentColor, t)
+		&:after
+			bottom: 20px
+			+arr(10, 8, currentColor, b)
+	&:before,
+	&:after
+		content: ''
+		position: absolute
+		pointer-events: none

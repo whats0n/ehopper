@@ -7,10 +7,26 @@
 	<{{tag}} class="{{props.classList}}" {{props.attrs | safe}}>{{props.content | safe}}</{{tag}}>
 {% endmacro %}
 
+{% macro switcher(props) %}
+<label class="switcher {{props.classList}}">
+	<input type="checkbox" id="{{props.id}}" {{props.attrs | safe}}>
+	<i class="switcher__icon"></i>
+</label>
+{% endmacro %}
+
 {% macro checkbox(props) %}
 <label class="checkbox {{props.classList}}">
-	<input type="checkbox">
-	<i class="icon icon-check"></i><span>{{props.content | safe}}</span>
+	<input type="checkbox" {{props.attrs | safe}}>
+	<i class="icon icon-check"></i>
+	{% if props.content %}<span>{{props.content | safe}}</span>{% endif %}
+</label>
+{% endmacro %}
+
+{% macro radio(props) %}
+<label class="radio {{props.classList}}">
+	<input type="radio" {{props.attrs | safe}} name="{{props.name}}">
+	<i></i>
+	{% if props.content %}<span>{{props.content | safe}}</span>{% endif %}
 </label>
 {% endmacro %}
 
@@ -41,8 +57,8 @@
 		{% if props.static !== true %}
 			<div class="field__box">
 				<input class="input field__input {{props.inputClassList}}" 
-					value="{{props.value}}" 
-					id="{{props.id}}" 
+					{% if props.value %}value="{{props.value}}"{% endif %}
+					{% if props.id %}id="{{props.id}}"{% endif %}
 					type="{{props.type or 'text'}}"
 					{% if props.placeholder %}placeholder="{{props.placeholder}}"{% endif %}
 					{{props.attrs | safe}}>
@@ -67,7 +83,7 @@
 {% macro textarea(props) %}
 <div class="field {{props.classList}}">
 	<div class="field__inner">
-		<textarea class="textarea textarea_block" placeholder="{{props.placeholder}}"></textarea>
+		<textarea class="textarea textarea_block {{props.textareaClassList}}" placeholder="{{props.placeholder}}"></textarea>
 	</div>
 </div>
 {% endmacro %}
@@ -78,4 +94,86 @@
 	<div class="snackbar__message" data-snackbar-content="snackbar"></div>
 </div>
 <!-- end snackbar -->
+{% endmacro %}
+
+{% macro infoPrice(props) %}
+<div class="info-price {{props.classList}}">
+	<div class="info-price__label">{{props.label}}</div>
+	<div class="info-price__value">
+		<small>{{props.currency}}</small>
+		<span>{{props.price}}</span>
+	</div>
+</div>
+{% endmacro %}
+
+{% macro select(props) %}
+<div class="select {{props.classList}}">
+	<select>
+		{% for option in props.options %}
+			<option value="{{option}}" {% if loop.index0 == props.selected %}selected{% endif %}>{{option}}</option>
+		{% endfor %}
+	</select>
+</div>
+{% endmacro %}
+
+{% macro fieldBox(props) %}
+<div class="field-box">
+	{% if props.switcher %}
+		<div class="field-box__switch">
+			<label class="field-box__label" for="{{props.id}}">{{props.label}}</label>
+			<div class="field-box__switcher">
+				{{switcher({
+					classList: props.switcherClassList,
+					id: props.id
+				})}}
+			</div>
+		</div>
+	{% elif props.radios %}
+		<div class="field-box__radios">
+			<div class="field-box__label"div>{{props.label}}</div>
+			<ul class="field-box__list">
+				{% for options in props.list %}
+					<li class="field-box__col field-box__col_{{props.colSize}} field-box__radio">
+						{{radio(options)}}
+					</li>
+				{% endfor %}
+			</ul>
+		</div>
+	{% elif props.counter %}
+		<div class="field-box__counter">
+			<div class="field-box__label">{{props.label}}</div>
+			<div class="field-box__controls">
+				<div class="field-box__controls-in">
+					<div class="field-box__control field-box__control_left">
+						<button class="btn btn_xl btn_secondary" data-animation="ripple">&#8211;</button>
+					</div>
+					<div class="field-box__control field-box__control_right">
+						<button class="btn btn_xl btn_secondary" data-animation="ripple">+</button>
+					</div>
+					<input type="text" class="input input_xl text-center field-box__counter-input" value="{{props.value or '0'}}" readonly>
+				</div>
+			</div>
+		</div>
+	{% elif props.select %}
+		<div class="field-box__select-set">
+			<div class="field-box__number">{{props.number}}</div>
+			<div class="field-box__select-col">
+				{% if props.selectStatic %}
+					<div class="field-box__select-static">
+						<i class="icon icon-checked"></i>
+						<span class="{{props.colMuted}}">{{props.selected}}</span>
+					</div>
+				{% else %}
+					{{select(props.select)}}
+				{% endif %}
+			</div>
+			<div class="field-box__select-col">
+				<input type="text" class="input input_lg input_block field-box__select-input {{props.colMuted}}" value="{{props.value}}">
+			</div>
+			<div class="field-box__button">
+				<button class="btn btn_lg btn_default btn_block" data-animation="ripple">{{props.button}}</button>
+			</div>
+		</div>
+	{% endif %}
+</div>
 {% endmacro %}

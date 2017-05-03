@@ -57,6 +57,8 @@
     float: left
     width: 40%
     box-shadow: -3px 0 4px 5px rgba(0, 0, 0, 0.2)
+  &_white
+    background: $white
   &__body
     position: relative
     overflow: auto
@@ -105,6 +107,111 @@
   padding: 20px 0
   &_inner
     padding: 20px
+
+.settings
+  &__sidebar,
+  &__container
+    position: relative
+    height: 100%
+  &__sidebar
+    float: left
+    width: 300px
+  &__container
+    margin-left: 300px
+    box-shadow: 3px 0 4px 5px rgba(0, 0, 0, 0.2)
+  .settings__header
+    position: absolute
+    top: 0
+    left: 0
+    right: 0
+  &__nav
+    overflow: auto
+    padding-top: 70px
+    height: 100%
+    background: #434c55
+  &__body
+    display: flex
+    flex-direction: column
+    padding-top: 50px
+    height: 100%
+    &_default
+      display: block
+      padding: 80px 20px 30px
+  &__explanation,
+  &__footer
+    padding: 20px
+  &__content
+    position: relative
+    height: calc(100% - 200px)
+
+.table-wrapper
+  position: relative
+  // overflow: auto
+  overflow: hidden
+  padding: 37px 0 61px
+  height: 100%
+  &__header
+    position: absolute
+    z-index: 2
+    top: 0
+    left: 0
+    right: 0
+    height: 37px
+  &__footer
+    position: relative
+    z-index: 2
+    margin-bottom: -61px
+    height: 61px
+    background: $alabaster
+  &__body
+    overflow: auto
+    // margin-bottom: -61px
+    max-height: 100%
+    // &:after
+    //   content: ''
+    //   display: block
+    //   clear: both
+    //   height: 61px
+  // &__header,
+  // &__body,
+  // &__footer
+  &__header,
+  &__table
+    min-width: 980px
+
+.table-header,
+.table-body
+  display: table
+  table-layout: fixed
+  width: 100%
+  font-size: 14px
+  &__tr
+    display: table-row
+  &__th,
+  &__td
+    display: table-cell
+    vertical-align: middle
+    padding: 10px
+    &:first-child
+      padding-left: 20px
+    &[data-column="icon"]
+      width: 60px
+
+.table-header
+  border-bottom: 1px solid $silverGray
+  background: $lightGray
+
+.table-body
+  &__tr
+    &:not(:first-child)
+      .table-body
+        &__td
+          border-top: 1px solid $lightGray
+
+.table-footer
+  padding: 10px 20px
+  border-top: 1px solid $lightGray
+
 /////////////////
 section
   padding: 20px

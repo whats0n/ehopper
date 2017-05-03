@@ -1,92 +1,166 @@
-<!DOCTYPE html>
+<!doctype html>
 <html>
 
   <head>
-    <meta charset=utf-8>
+    <meta charset="utf-8">
     <title>Close Register &bull; eHopper POS</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <meta http-equiv=X-UA-Compatible content="IE=edge,chrome=1">
-    <link rel="stylesheet" type="text/css" href="static/css/pos.css">
-    <script src="static/js/demo.js"></script>
-    <link rel="icon" href="https://ehopper.com/wp-content/uploads/2016/03/favicon-01.png" type="image/png"> </head>
+    <meta name="theme-color" content="#fff">
+    <meta name="format-detection" content="telephone=no">
+    <link rel="stylesheet" media="all" href="static/css/pos.css">
+    <link rel="icon" href="https://ehopper.com/wp-content/uploads/2016/03/favicon-01.png" type="image/png">
+    <!-- BEGIN scripts -->
+    <!-- END scripts -->
+  </head>
 
-  <body class="animated">
-    <article class="register">
-      <aside class="left bg-white cutout-right layout layout-rows">
-        <header class="cutout-right">
-          <a href="pos.html" class="btn icon icon-back"></a>
-          <h1>Back</h1>
-        </header>
-        <div class="layout__row layout__row-grow">
-          <section class="w50 pull-left">
-            <p class="labeled-info"><label>Opened:</label>12/21/2016 14:19:28</p>
-            <p class="labeled-info"><label>By Employee:</label>Mr. John Snow</p>
-          </section>
-          <section class="w50 pull-left">
-            <p class="labeled-info"><label>Closed:</label>(not closed)</p>
-            <p class="labeled-info"><label>By Employee (you):</label>Mr. John Snow</p>
-          </section>
-          <hr>
-          <section>
-            <table class="table">
-              <tbody>
-                <tr>
-                  <td>Opening Amount</td>
-                  <td class="text-right muted">$0.00</td>
-                </tr>
-                <tr>
-                  <td>Cash Sale</td>
-                  <td class="text-right">$12,344.00</td>
-                </tr>
-                <tr>
-                  <td>Refunds</td>
-                  <td class="text-right">$44.20</td>
-                </tr>
-                <tr>
-                  <td>Payins</td>
-                  <td class="text-right">$10,000.00</td>
-                </tr>
-                <tr>
-                  <td>Payouts</td>
-                  <td class="text-right">$20,000.00</td>
-                </tr>
-                <tr>
-                  <td>Closing Amount</td>
-                  <td class="text-right">$8,200.00</td>
-                </tr>
-                <tr>
-                  <td><strong class="text-uppercase">Variance</strong></td>
-                  <td class="text-right"><big><strong>$44.20</strong></big></td>
-                </tr>
-              </tbody>
-            </table>
-          </section>
-        </div>
-        <section class="layout__row text-center"> <button class="btn btn-secondary btn-lg btn-go btn-ripple">Print Z-Report</button> </section>
-      </aside>
-      <main class="right layout layout-rows">
-        <header class="layout__row">
-          <div class="header__icons">
-            <div href="help.html" class="btn icon icon-help" title="Help" onclick="demoDialogOpen('help')"></div>
-          </div>
-          <h1>Close Register</h1>
-        </header>
-        <section class="layout__row layout__row-grow">
-          <form class="form-narrow" method="get" action="register-open.html">
-            <div class="fieldset-bordered fieldset-standalone">
-              <div class="fieldset fieldset-lg"> <label class="fieldset__label" for="amount">Closing Amount:</label> <input class="input input-xl fieldset__input text-right" id="amount" value="200.00" placeholder="required" required="required"> </div>
-              <div class="fieldset-border-top">
-                <link rel="import" href="inc/numpad-xl.html" onload="demoTemplate(this)"> </div>
+  <body class="">
+    <!-- begin application -->
+    <div class="application" id="application">
+      <!-- BEGIN content -->
+      <main class="main">
+        <div class="inner">
+          <aside class="sidebar sidebar_left sidebar_white">
+            <!-- begin header -->
+            <header class="header sidebar__header">
+              <div class="header__back">
+                <a class="btn-icon btn-icon_square icon icon-back header__back-icon" href="#"></a>
+                <div class="header__title">Back</div>
+              </div>
+            </header>
+            <!-- end header -->
+            <div class="infoblock">
+              <div class="infoblock__row">
+                <div class="infoblock__col infoblock__col_md">
+                  <div class="infoblock__box"> <small class="infoblock__label">Opened:</small> <em class="infoblock__value">12/21/2016 14:19:28</em> </div>
+                  <div class="infoblock__box"> <small class="infoblock__label">By Employee:</small> <em class="infoblock__value">Mr. John Snow</em> </div>
+                </div>
+                <div class="infoblock__col infoblock__col_md">
+                  <div class="infoblock__box"> <small class="infoblock__label">Closed:</small> <em class="infoblock__value">(not closed)</em> </div>
+                  <div class="infoblock__box"> <small class="infoblock__label">By Employee (you):</small> <em class="infoblock__value">Mr. John Snow</em> </div>
+                </div>
+              </div>
             </div>
-            <div class="fieldset fieldset-lg fieldset-bordered fieldset-textarea fieldset-standalone fieldset-note"> <textarea class="input fieldset__textarea" id="note" placeholder="Register Closing Note"></textarea> </div>
-          </form>
-        </section>
-        <section class="layout__row">
-          <div class="form-narrow text-center"> <button class="btn btn-lg btn-go btn-primary text-uppercase btn-ripple">Close Register</button> </div>
-        </section>
+            <hr />
+            <div class="sidebar__body">
+              <ul class="infotable">
+                <li class="infotable__row">
+                  <div class="infotable__label">Opening Amount</div>
+                  <div class="infotable__value"><small class="infotable__disabled">$0.00</small></div>
+                </li>
+                <li class="infotable__row">
+                  <div class="infotable__label">Cash Sale</div>
+                  <div class="infotable__value">$12,344.00</div>
+                </li>
+                <li class="infotable__row">
+                  <div class="infotable__label">Refunds</div>
+                  <div class="infotable__value">$44.20</div>
+                </li>
+                <li class="infotable__row">
+                  <div class="infotable__label">Payins</div>
+                  <div class="infotable__value">$10,000.00</div>
+                </li>
+                <li class="infotable__row">
+                  <div class="infotable__label">Payouts</div>
+                  <div class="infotable__value">$20,000.00</div>
+                </li>
+                <li class="infotable__row">
+                  <div class="infotable__label">Closing Amount</div>
+                  <div class="infotable__value">$8,200.00</div>
+                </li>
+                <li class="infotable__row">
+                  <div class="infotable__label"><strong>VARIANCE</strong></div>
+                  <div class="infotable__value"><strong class="infotable__big">$44.20</strong></div>
+                </li>
+              </ul>
+            </div>
+            <div class="sidebar__footer">
+              <div class="section wrapper-btn-center"> <button class="btn btn_secondary btn_lg btn_block" data-animation="ripple">Print Z-Report</button> </div>
+            </div>
+          </aside>
+          <div class="container container_right container_upper">
+            <!-- begin header -->
+            <header class="header container__header"> <button class="btn-icon header__help" title="Help" data-modal-open="help">
+			<i class="icon icon-help"></i>
+		</button>
+              <h2 class="title-xlg header__title header__title_vertical">Close Register</h2>
+            </header>
+            <!-- end header -->
+            <div class="container__body step-body">
+              <div class="step-body__section">
+                <div class="form form_sm">
+                  <div class="fieldset fieldset_lg fieldset_bordered">
+                    <div class="field ">
+                      <div class="field__inner field__display"> <label class="field__label" for="item-quantity">Opening Amount:</label>
+                        <div class="field__box"> <input class="input field__input text-right input_xl" value="200.00" id="item-quantity" type="text" placeholder="0" required readonly> </div>
+                      </div>
+                    </div>
+                    <div class="fieldset__divider"></div>
+                    <!-- begin keyboard -->
+                    <div class="keyboard ">
+                      <div class="keyboard__container keyboard__lg">
+                        <div class="keyboard__main">
+                          <div class="keyboard__item"> <button type="button" data-animation="ripple" class="keyboard__button">1</button> </div>
+                          <div class="keyboard__item"> <button type="button" data-animation="ripple" class="keyboard__button">2</button> </div>
+                          <div class="keyboard__item"> <button type="button" data-animation="ripple" class="keyboard__button">3</button> </div>
+                          <div class="keyboard__item"> <button type="button" data-animation="ripple" class="keyboard__button">4</button> </div>
+                          <div class="keyboard__item"> <button type="button" data-animation="ripple" class="keyboard__button">5</button> </div>
+                          <div class="keyboard__item"> <button type="button" data-animation="ripple" class="keyboard__button">6</button> </div>
+                          <div class="keyboard__item"> <button type="button" data-animation="ripple" class="keyboard__button">7</button> </div>
+                          <div class="keyboard__item"> <button type="button" data-animation="ripple" class="keyboard__button">8</button> </div>
+                          <div class="keyboard__item"> <button type="button" data-animation="ripple" class="keyboard__button">9</button> </div>
+                          <div class="keyboard__item"> <button type="button" data-animation="ripple" class="keyboard__button">0</button> </div>
+                          <div class="keyboard__item"> <button type="button" data-animation="ripple" class="keyboard__button">00</button> </div>
+                          <div class="keyboard__item"> <button type="button" data-animation="ripple" class="keyboard__button"><i class="icon icon-text icon-clear"></i></button> </div>
+                        </div>
+                        <div class="keyboard__aside">
+                          <div class="keyboard__col"> <button type="button" data-animation="ripple" class="keyboard__button "><i class="icon icon-text icon-backspace"></i></button> </div>
+                          <div class="keyboard__col"> <button type="button" data-animation="ripple" class="keyboard__button "><i class="icon icon-text icon-undo"></i></button> </div>
+                          <div class="keyboard__col" data-colspan="2"> <button type="button" data-animation="ripple" class="keyboard__button keyboard__submit">Done</button> </div>
+                        </div>
+                      </div>
+                    </div>
+                    <!-- end keyboard -->
+                  </div>
+                  <div class="fieldset fieldset_lg fieldset_bordered fieldset_standalone">
+                    <div class="field ">
+                      <div class="field__inner"> <textarea class="textarea textarea_block textarea_little" placeholder="Register Closing Note"></textarea> </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="step-body__footer section">
+                <div class="wrapper-btn-center"> <button class="btn btn_primary btn_lg btn_block text-uppercase" data-animation="ripple">Close Register</button> </div>
+              </div>
+            </div>
+          </div>
+        </div>
       </main>
-    </article>
-    <!-- Dialog: Help Panel -->
-    <link rel="import" href="inc/help.html" onload="demoTemplate(this)"> </body>
+      <!-- begin help -->
+      <div class="help" data-modal="help">
+        <div class="help__container" data-modal-container="help">
+          <div class="help__header">
+            <header class="header header_large"> <button class="btn-icon help__close icon icon-close" data-modal-close="help"></button>
+              <h2 class="title-xlg header__title">Help</h2>
+            </header>
+          </div>
+          <div class="help__body">
+            <p>Help content.</p>
+          </div>
+        </div>
+      </div>
+      <!-- end help -->
+      <!-- END content -->
+      <!-- begin snackbar -->
+      <div class="snackbar" data-snackbar-container="snackbar" data-state="default">
+        <div class="snackbar__message" data-snackbar-content="snackbar"></div>
+      </div>
+      <!-- end snackbar -->
+    </div>
+    <!-- end application -->
+    <!-- BEGIN scripts -->
+    <script type="text/javascript" src="static/js/app.js"></script>
+    <!-- END scripts -->
+  </body>
 
 </html>

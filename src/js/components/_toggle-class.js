@@ -10,8 +10,6 @@ export default (function() {
 		const toggle = $(this).attr('data-toggle-class-toggle');
 		const $container = $(`[data-toggle-class-container="${target}"]`);
 
-		console.log($container, add);
-
 		if (!!add && $container.length) $container.addClass(add);
 		if (!!remove && $container.length) $container.removeClass(remove);
 		if (!!toggle && $container.length) $container.toggleClass(toggle);

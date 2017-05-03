@@ -1,0 +1,34 @@
+<aside class="settings__sidebar">
+	{{header.simple({
+		back: true,
+		backText: 'Settings',
+		headerClassList: 'settings__header'
+	})}}
+	<div class="settings__nav">
+		{% set settingsNav = [
+			{
+				text: 'Printer Setup',
+				icon: 'print'
+			},
+			{
+				text: 'Cash Drawer',
+				icon: 'cash'
+			},
+			{
+				text: 'Terminal Setup',
+				icon: 'cc'
+			},
+			{
+				text: 'Deactivate',
+				icon: 'exit'
+			}
+		] %}
+		<ul class="nav">
+			{% for item in settingsNav %}
+				<li class="nav__item {%- if loop.index0 == settingsActive %} is-active {% endif %}">
+					<a href="#" class="nav__link"><i class="nav__icon icon icon-{{item.icon}}"></i>{{item.text}}</a>
+				</li>
+			{% endfor %}
+		</ul>
+	</div>
+</aside>

@@ -1,0 +1,111 @@
+.field-box
+	padding: 13px 20px
+	border: 2px solid $lightGray
+	background: $white
+
+	//switcher
+	&__switch
+		position: relative
+		margin: -13px -20px
+		min-height: 56px
+		.field-box
+			&__label
+				padding: 20px 80px 20px 20px
+				cursor: pointer
+	&__label
+		display: block
+		padding: 5px 10px 5px 0
+		font-size: 14px
+		+nosel
+	&__switcher
+		position: absolute
+		top: 13px
+		right: 18px
+
+	//radio/checkboxes
+	&__list
+		padding: 0 10px
+		margin: 0 -20px
+		+clr
+	&__col
+		float: left
+		width: 100%
+		&_sm
+			width: 33.33%
+	&__radio
+		display: block
+		padding: 5px 10px
+	
+	//counter
+	&__counter
+		margin: -13px -20px
+		font-size: 0
+		.field-box
+			&__label
+				display: inline-block
+				vertical-align: middle
+				padding-left: 20px
+				padding-right: 20px
+				width: 35%
+		&-input
+			width: 80px
+	&__controls
+		display: inline-block
+		vertical-align: middle
+		width: 65%
+		+clr
+		&-in
+			position: relative
+			float: right
+			width: 240px
+			padding: 0 80px
+			max-width: 100%
+	&__control
+		position: absolute
+		top: 0
+		&_left
+			left: 0
+		&_right
+			right: 0
+
+	//select-set
+	&__select-set
+		position: relative
+		padding: 0 90px 0 35px
+		margin: -13px -20px
+		min-height: 60px
+		+clr
+	&__select-col
+		float: left
+		width: 50%
+		+clr
+	&__select-input
+		padding: 0 10px
+		text-align: right
+	&__select-static
+		i
+			float: left
+			margin: 10px 0
+			color: $green
+		span
+			display: block
+			overflow: hidden
+			+rreg
+			font-size: 20px
+			line-height: 60px
+			+nosel
+	&__number
+		position: absolute
+		top: 0
+		left: 20px
+		width: 15px
+		font-size: 14px
+		line-height: 60px
+		+nosel
+	&__button
+		position: absolute
+		top: 0
+		right: 0
+		width: 90px
+
+	

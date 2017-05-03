@@ -1,0 +1,121 @@
+<!doctype html>
+<html>
+
+  <head>
+    <meta charset="utf-8">
+    <title>Printer Setup &bull; eHopper POS</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="theme-color" content="#fff">
+    <meta name="format-detection" content="telephone=no">
+    <link rel="stylesheet" media="all" href="static/css/pos.css">
+    <link rel="icon" href="https://ehopper.com/wp-content/uploads/2016/03/favicon-01.png" type="image/png">
+    <!-- BEGIN scripts -->
+    <!-- END scripts -->
+  </head>
+
+  <body class="">
+    <!-- begin application -->
+    <div class="application" id="application">
+      <!-- BEGIN content -->
+      <main class="main">
+        <div class="inner settings">
+          <aside class="settings__sidebar">
+            <!-- begin header -->
+            <header class="header settings__header">
+              <div class="header__back">
+                <a class="btn-icon btn-icon_square icon icon-back header__back-icon" href="#"></a>
+                <div class="header__title">Settings</div>
+              </div>
+            </header>
+            <!-- end header -->
+            <div class="settings__nav">
+              <ul class="nav">
+                <li class="nav__item is-active "> <a href="#" class="nav__link"><i class="nav__icon icon icon-print"></i>Printer Setup</a> </li>
+                <li class="nav__item"> <a href="#" class="nav__link"><i class="nav__icon icon icon-cash"></i>Cash Drawer</a> </li>
+                <li class="nav__item"> <a href="#" class="nav__link"><i class="nav__icon icon icon-cc"></i>Terminal Setup</a> </li>
+                <li class="nav__item"> <a href="#" class="nav__link"><i class="nav__icon icon icon-exit"></i>Deactivate</a> </li>
+              </ul>
+            </div>
+          </aside>
+          <div class="settings__container">
+            <!-- begin header -->
+            <header class="header settings__header">
+              <h2 class="title-xlg header__title header__title_vertical">Printer Settings</h2>
+              <div class="header__sync">
+                <div class="header__indicator" data-state="active"></div> <button class="btn-icon icon icon-sync"></button> </div>
+            </header>
+            <!-- end header -->
+            <div class="settings__body settings__body_default">
+              <div class="form form_sm">
+                <div class="simple-field">
+                  <div class="title-xlg simple-field__title">No Printer set.</div>
+                </div>
+                <div class="simple-field">
+                  <div class="error-message simple-field__error">Could not retrieve results from Device Center. Please check if it is available.</div>
+                </div>
+                <div class="simple-field"> <label for="drawer-device-center-address" class="simple-field__label">Device Center Address</label>
+                  <div class="input-box simple-field__input"> <input type="text" class="simple-input" placeholder="Device Center Address" value="https://localhost:8080/DeviceCenterRest/" id="drawer-device-center-address"> <button class="btn-icon btn-icon_gray input-box__clear"><i class="icon icon-close"></i></button>                    </div>
+                </div>
+                <div class="simple-field"> <label for="drawer-security-key" class="simple-field__label">Security Key</label>
+                  <div class="input-box simple-field__input"> <input type="text" class="simple-input" placeholder="Security Key" value="0000" id="drawer-security-key"> <button class="btn-icon btn-icon_gray input-box__clear"><i class="icon icon-close"></i></button> </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+      <!-- begin help -->
+      <div class="help" data-modal="help">
+        <div class="help__container" data-modal-container="help">
+          <div class="help__header">
+            <header class="header header_large"> <button class="btn-icon help__close icon icon-close" data-modal-close="help"></button>
+              <h2 class="title-xlg header__title">Help</h2>
+            </header>
+          </div>
+          <div class="help__body">
+            <p>Help content.</p>
+          </div>
+        </div>
+      </div>
+      <!-- end help -->
+      <!-- begin add-terminal -->
+      <div class="modal add-terminal" data-modal="add-terminal">
+        <div class="modal__container add-terminal__container" data-modal-container="add-terminal">
+          <div class="add-terminal__header"> <button class="btn-icon add-terminal__close" data-modal-close="add-terminal"><i class="icon icon-close"></i></button>
+            <div class="add-terminal__title">Add New Terminal</div>
+          </div>
+          <div class="add-terminal__body">
+            <div class="add-terminal__field">
+              <div class="field ">
+                <div class="field__inner field__display"> <label class="field__label" for="terminal-serial-number">Serial Number:</label>
+                  <div class="field__box"> <input class="input field__input input_lg add-terminal__input" value="0000123" id="terminal-serial-number" type="text" placeholder="(required)" required> </div>
+                </div>
+              </div>
+            </div>
+            <div class="add-terminal__field">
+              <div class="field ">
+                <div class="field__inner field__display"> <label class="field__label" for="terminal-name">Friendly Name:</label>
+                  <div class="field__box"> <input class="input field__input input_lg add-terminal__input" id="terminal-name" type="text" placeholder="(optional)"> </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="add-terminal__footer"> <button class="btn btn_success btn_lg btn_block" data-animation="ripple" data-modal-close="add-terminal">Submit</button> </div>
+        </div>
+      </div>
+      <!-- end add-terminal -->
+      <!-- END content -->
+      <!-- begin snackbar -->
+      <div class="snackbar" data-snackbar-container="snackbar" data-state="default">
+        <div class="snackbar__message" data-snackbar-content="snackbar"></div>
+      </div>
+      <!-- end snackbar -->
+    </div>
+    <!-- end application -->
+    <!-- BEGIN scripts -->
+    <script type="text/javascript" src="static/js/app.js"></script>
+    <!-- END scripts -->
+  </body>
+
+</html>

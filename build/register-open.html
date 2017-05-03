@@ -20,7 +20,7 @@
       <!-- BEGIN content -->
       <main class="main">
         <div class="inner">
-          <aside class="sidebar sidebar_left">
+          <aside class="sidebar sidebar_left sidebar_white">
             <!-- begin header -->
             <header class="header sidebar__header">
               <div class="header__back">
@@ -29,20 +29,20 @@
               </div>
             </header>
             <!-- end header -->
-            <div class="sidebar__body">
-              <div class="infoblock">
-                <div class="infoblock__row">
-                  <div class="infoblock__col infoblock__col_md">
-                    <div class="infoblock__box"> <small class="infoblock__label">Opened:</small> <em class="infoblock__value">12/21/2016 14:19:28</em> </div>
-                    <div class="infoblock__box"> <small class="infoblock__label">By Employee:</small> <em class="infoblock__value">Mr. John Snow</em> </div>
-                  </div>
-                  <div class="infoblock__col infoblock__col_md">
-                    <div class="infoblock__box"> <small class="infoblock__label">Closed:</small> <em class="infoblock__value">12/21/2016 14:19:28</em> </div>
-                    <div class="infoblock__box"> <small class="infoblock__label">By Employee:</small> <em class="infoblock__value">Mr. John Snow</em> </div>
-                  </div>
+            <div class="infoblock">
+              <div class="infoblock__row">
+                <div class="infoblock__col infoblock__col_md">
+                  <div class="infoblock__box"> <small class="infoblock__label">Opened:</small> <em class="infoblock__value">12/21/2016 14:19:28</em> </div>
+                  <div class="infoblock__box"> <small class="infoblock__label">By Employee:</small> <em class="infoblock__value">Mr. John Snow</em> </div>
+                </div>
+                <div class="infoblock__col infoblock__col_md">
+                  <div class="infoblock__box"> <small class="infoblock__label">Closed:</small> <em class="infoblock__value">12/21/2016 14:19:28</em> </div>
+                  <div class="infoblock__box"> <small class="infoblock__label">By Employee:</small> <em class="infoblock__value">Mr. John Snow</em> </div>
                 </div>
               </div>
-              <hr />
+            </div>
+            <hr />
+            <div class="sidebar__body">
               <ul class="infotable">
                 <li class="infotable__row">
                   <div class="infotable__label">Opening Amount</div>
@@ -74,6 +74,9 @@
                 </li>
               </ul>
             </div>
+            <div class="sidebar__footer">
+              <div class="section wrapper-btn-center"> <button class="btn btn_secondary btn_lg btn_block" data-animation="ripple">Print Z-Report</button> </div>
+            </div>
           </aside>
           <div class="container container_right container_upper">
             <!-- begin header -->
@@ -83,7 +86,53 @@
               <h2 class="title-xlg header__title header__title_vertical">Open Register</h2>
             </header>
             <!-- end header -->
-            <div class="container__body"> </div>
+            <div class="container__body step-body">
+              <div class="step-body__section">
+                <div class="form form_sm">
+                  <div class="fieldset fieldset_lg fieldset_bordered">
+                    <div class="field ">
+                      <div class="field__inner field__display"> <label class="field__label" for="item-quantity">Opening Amount:</label>
+                        <div class="field__box"> <input class="input field__input text-right input_xl" value="200.00" id="item-quantity" type="text" placeholder="0" required readonly> </div>
+                      </div>
+                    </div>
+                    <div class="fieldset__divider"></div>
+                    <!-- begin keyboard -->
+                    <div class="keyboard ">
+                      <div class="keyboard__container keyboard__lg">
+                        <div class="keyboard__main">
+                          <div class="keyboard__item"> <button type="button" data-animation="ripple" class="keyboard__button">1</button> </div>
+                          <div class="keyboard__item"> <button type="button" data-animation="ripple" class="keyboard__button">2</button> </div>
+                          <div class="keyboard__item"> <button type="button" data-animation="ripple" class="keyboard__button">3</button> </div>
+                          <div class="keyboard__item"> <button type="button" data-animation="ripple" class="keyboard__button">4</button> </div>
+                          <div class="keyboard__item"> <button type="button" data-animation="ripple" class="keyboard__button">5</button> </div>
+                          <div class="keyboard__item"> <button type="button" data-animation="ripple" class="keyboard__button">6</button> </div>
+                          <div class="keyboard__item"> <button type="button" data-animation="ripple" class="keyboard__button">7</button> </div>
+                          <div class="keyboard__item"> <button type="button" data-animation="ripple" class="keyboard__button">8</button> </div>
+                          <div class="keyboard__item"> <button type="button" data-animation="ripple" class="keyboard__button">9</button> </div>
+                          <div class="keyboard__item"> <button type="button" data-animation="ripple" class="keyboard__button">0</button> </div>
+                          <div class="keyboard__item"> <button type="button" data-animation="ripple" class="keyboard__button">00</button> </div>
+                          <div class="keyboard__item"> <button type="button" data-animation="ripple" class="keyboard__button"><i class="icon icon-text icon-clear"></i></button> </div>
+                        </div>
+                        <div class="keyboard__aside">
+                          <div class="keyboard__col"> <button type="button" data-animation="ripple" class="keyboard__button "><i class="icon icon-text icon-backspace"></i></button> </div>
+                          <div class="keyboard__col"> <button type="button" data-animation="ripple" class="keyboard__button "><i class="icon icon-text icon-undo"></i></button> </div>
+                          <div class="keyboard__col" data-colspan="2"> <button type="button" data-animation="ripple" class="keyboard__button keyboard__submit">Done</button> </div>
+                        </div>
+                      </div>
+                    </div>
+                    <!-- end keyboard -->
+                  </div>
+                  <div class="fieldset fieldset_lg fieldset_bordered fieldset_standalone">
+                    <div class="field ">
+                      <div class="field__inner"> <textarea class="textarea textarea_block textarea_little" placeholder="Register Opening Note"></textarea> </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="step-body__footer section">
+                <div class="wrapper-btn-center"> <button class="btn btn_primary btn_lg btn_block text-uppercase" data-animation="ripple">Open Register</button> </div>
+              </div>
+            </div>
           </div>
         </div>
       </main>
@@ -102,31 +151,6 @@
       </div>
       <!-- end help -->
       <!-- END content -->
-      <!-- begin menu -->
-      <nav class="menu" data-menu-container="menu">
-        <header class="menu__header" data-menu-close="menu" data-animation="ripple"> <i class="icon icon-back menu__icon"></i>
-          <div class="title-xlg menu__title">Acme Inc.</div>
-        </header>
-        <div class="menu__container">
-          <ul class="nav">
-            <li class="nav__item is-active"> <a href="pos.html" class="nav__link"><i class="nav__icon icon icon-pos"></i>Point of Sale</a> </li>
-            <li class="nav__item "> <a href="orders.html" class="nav__link"><i class="nav__icon icon icon-orders"></i>Orders</a> </li>
-            <li class="nav__item "> <a href="pos.html" class="nav__link" data-toggle-class-target="main-container" data-toggle-class-add="refund-mode"><i class="nav__icon icon icon-undo"></i>Manual Refund</a> </li>
-            <li class="nav__item "> <a href="register-close.html" class="nav__link"><i class="nav__icon icon icon-close"></i>Close Register</a> </li>
-            <li class="nav__item "> <a href="payin.html" class="nav__link"><i class="nav__icon icon icon-cc"></i>Payins / Payouts</a> </li>
-            <li class="nav__item "> <a href="tips.html" class="nav__link"><i class="nav__icon icon icon-tips"></i>Tips</a> </li>
-            <li class="nav__item "> <a href="loyalty.html" class="nav__link"><i class="nav__icon icon icon-loyalty"></i>Loyalty</a> </li>
-            <li class="nav__item "> <a href="settings.html" class="nav__link"><i class="nav__icon icon icon-cog"></i>Settings</a> </li>
-            <li class="nav__item "> <a href="sync.html" class="nav__link"><i class="nav__icon icon icon-sync"></i>Synchronize</a> </li>
-            <li class="nav__item "> <a href="ui-kit.html" class="nav__link"><i class="nav__icon icon icon-bo"></i>Back Office &bull; UI-Kit</a> </li>
-            <li class="nav__item "> <a href="pos.html" class="nav__link"><i class="nav__icon icon icon-help"></i>Help</a> </li>
-            <li class="nav__item "> <a href="index.html" class="nav__link"><i class="nav__icon icon icon-exit"></i>Logout</a> </li>
-          </ul>
-        </div>
-      </nav>
-      <!-- end menu -->
-      <!-- begin overlay --><button type="button" class="overlay " data-color="dark-gray" data-overlay="overlay" data-menu-overlay="menu"></button>
-      <!-- end overlay -->
       <!-- begin snackbar -->
       <div class="snackbar" data-snackbar-container="snackbar" data-state="default">
         <div class="snackbar__message" data-snackbar-content="snackbar"></div>

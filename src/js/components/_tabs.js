@@ -1,8 +1,8 @@
-import {$DOCUMENT, $BODY, OPEN, ACTIVE} from '../_constants';
+import {$DOCUMENT, $BODY, OPEN, ACTIVE, smartClick} from '../_constants';
 
 export default (function() {
 
-	$DOCUMENT.on('click', '[data-tab-open]', function(e) {
+	smartClick('[data-tab-open]', function(e) {
 		e.preventDefault();
 		const $this = $(this);
 		if ($this.hasClass(ACTIVE)) return;

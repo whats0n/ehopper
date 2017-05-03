@@ -1,0 +1,28 @@
+.payment-card
+	display: block
+	overflow: hidden
+	border-radius: 2px
+	color: $darkGray
+	background: $lightGray
+	box-shadow: 0 0px 1px rgba(0, 0, 0, 0.2), 0 2px 4px rgba(0, 0, 0, 0.1)
+	font-size: 14px
+	text-align: left
+	cursor: pointer
+	+nosel
+	transition: box-shadow 0.15s ease-in-out, background 0.15s ease-in-out
+	+hover
+		box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3)
+	+active
+		box-shadow: none
+	&__icon
+		height: 120px
+		+vertical
+		.icon
+			display: inline-block
+			vertical-align: middle
+			width: auto
+			height: auto
+			font-size: 48px
+	&__title
+		padding: 10px 20px
+		background: $white

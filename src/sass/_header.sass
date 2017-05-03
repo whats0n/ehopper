@@ -22,6 +22,8 @@
 		background: #cae9f4
 		+active
 			background: darken(#cae9f4, 10%)
+		+ .header__title
+			padding-left: 35px
 	&__back-icon
 		display: inline-block
 		vertical-align: middle
@@ -96,6 +98,12 @@
 				border: none
 	&__searchbox
 		max-width: 300px
+		&_right
+			position: absolute
+			top: 0
+			right: 50px
+			width: 30%
+			max-width: none
 	&__sync
 		position: absolute
 		top: 0

@@ -4,6 +4,9 @@
   font-size: 61px
   &__sm
     font-size: 65px
+    .keyboard
+      &__button
+        font-size: 20px
   &__lg
     font-size: 81px
   &__container
@@ -31,11 +34,13 @@
     width: 100%
     height: 100%
     background: $white
-    +rlight
+    // +rlight
+    +rreg
     font-size: 30px
     +nosel
     transition: background 0.175s ease
     +active
+      color: inherit
       background: $eb
     .icon
       font-size: 30px
@@ -43,6 +48,7 @@
     color: $white
     background: $blue
     +active
+      color: $white
       background: $blueActive
   &__col
     padding-top: 1px
@@ -117,7 +123,7 @@
       &__key-first
         border-bottom-left-radius: 5px
 
-.keyboard-4 
-  .keyboard
-    &__key
-      width: calc((100% - 3px) / 4)
+// .keyboard-4 
+//   .keyboard
+//     &__key
+//       width: calc((100% - 3px) / 4)

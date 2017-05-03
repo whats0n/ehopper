@@ -7,6 +7,40 @@
   
   &__divider
     border-top: 2px solid $alabaster
+  &__container
+    overflow: hidden
+    border-bottom: 2px solid $lightGray
+  &__row
+    margin: 0 0 0 -2px
+    +clr
+  &__col
+    position: relative
+    float: left
+    width: 100%
+    + .fieldset__col
+      border-left: 1px solid $lightGray
+      &:before
+        left: 0
+    &_md
+      width: 50%
+    &.is-active
+      &:before
+        opacity: 1
+        visibility: visible
+    &:before
+      content: ''
+      position: absolute
+      top: 0
+      left: 2px
+      right: 0
+      bottom: 0
+      opacity: 0
+      visibility: hidden
+      box-shadow: inset 0 0 0 2px $blue
+      transition: opacity 0.2s ease-in-out, visibility 0.2s ease-in-out
+  &__input
+    padding: 0 20px
+    width: 100%
 
   //mods
   &_lg
@@ -26,6 +60,10 @@
     border-radius: 0 0 3px 3px
     .fieldset__inner
       border-radius: 0 0 3px 3px
+  &_sharp
+    border-radius: 0
+    .keyboard__container
+      border-radius: 0
 
 .field
   display: table

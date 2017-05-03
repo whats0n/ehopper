@@ -1,0 +1,50 @@
+---
+title: 'Printer Setup &bull; eHopper POS'
+styles: 
+	- 'pos'
+settingsActive: 0
+---
+{% extends "layouts/_layout.html" %}
+
+{% block content %}
+	<main class="main">
+		<div class="inner settings">
+			{% include 'partials/components/_settings-sidebar.html' %}
+			<div class="settings__container">
+				{{header.simple({
+					title: 'Printer Settings',
+					titleClassList: 'header__title_vertical',
+					headerClassList: 'settings__header',
+					sync: true
+				})}}
+				<div class="settings__body settings__body_default">
+					<div class="form form_sm">
+						<div class="simple-field">
+							<div class="title-xlg simple-field__title">No Printer set.</div>
+						</div>
+						<div class="simple-field">
+							<div class="error-message simple-field__error">Could not retrieve results from Device Center. Please check if it is available.</div>
+						</div>
+						<div class="simple-field">
+							<label for="drawer-device-center-address" class="simple-field__label">Device Center Address</label>
+							<div class="input-box simple-field__input">
+								<input type="text" class="simple-input" placeholder="Device Center Address" value="https://localhost:8080/DeviceCenterRest/" id="drawer-device-center-address">
+								<button class="btn-icon btn-icon_gray input-box__clear"><i class="icon icon-close"></i></button>
+							</div>
+						</div>
+						<div class="simple-field">
+							<label for="drawer-security-key" class="simple-field__label">Security Key</label>
+							<div class="input-box simple-field__input">
+								<input type="text" class="simple-input" placeholder="Security Key" value="0000" id="drawer-security-key">
+								<button class="btn-icon btn-icon_gray input-box__clear"><i class="icon icon-close"></i></button>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</main>
+
+	{{modal.help()}}
+	{{modal.addTerminal()}}
+{% endblock %}

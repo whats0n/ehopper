@@ -7,6 +7,7 @@
 	left: 0
 	opacity: 0
 	visibility: hidden
+	background: none
 	transition: opacity 0s 0.3s ease-out, visibility 0s 0.3s ease-out
 	&.is-open
 		opacity: 1
@@ -14,6 +15,20 @@
 		transition: opacity 0s ease-out, visibility 0s ease-out
 		.help__container
 			+gpu
+		&:before
+			opacity: 1
+			visibility: visible
+	&:before
+		content: ''
+		position: absolute
+		top: 0
+		left: 0
+		right: 0
+		bottom: 0
+		opacity: 0
+		visibility: hidden
+		background: rgba(#434c55, 0.8)
+		transition: opacity 0.2s ease-out, visibility 0.2s ease-out
 	&__container
 		position: absolute
 		z-index: 2

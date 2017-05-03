@@ -4,26 +4,29 @@
 	position: relative
 	overflow: hidden
 	border-bottom: 1px solid rgba(0, 0, 0, 0.1)
-	cursor: pointer
 	+nosel
 	+clr
 	transition: background 0.175s ease
-	+active
-		background: $azureActive
 	&.is-open
 		.order-item
 			&__container
 				transform: translate3d(-60px,0,0)
 	&[data-state="active"]
 		background: $azure
-		+active
-			background: $azureActive
 		+refund
 			background: lighten(#ec4a41, 35%)
 
 	&[data-animation="ripple"]
+		cursor: pointer
 		.ripple-circle
 			background: rgba($black, 0.05)
+		+active
+			background: $azureActive
+		&[data-state="active"]
+			+active
+				background: $azureActive
+			+refund
+				background: lighten(#ec4a41, 35%)
 	&__container
 		position: relative
 		+gpu
@@ -31,9 +34,31 @@
 		+touch
 			padding-right: 30px
 			margin-right: -60px
+	&__close
+		position: absolute
+		top: 1px
+		right: 0
+		color: $red
+		background: none
+		+lg
+			top: 0
+		+touch
+			top: 0
+			bottom: 0
+			width: 60px
+			color: $white
+			background: $red
+		.icon-close
+			display: inline-block
+			vertical-align: middle
+			font-size: 18px
+		+ .order-item__content
+			padding-right: 50px
 	&__content
-		padding: 13px 50px 13px 20px
+		padding: 13px 20px 13px 20px
 		+clr
+		+touch
+			padding-right: 50px
 	&__info,
 	&__row
 		float: left
@@ -75,21 +100,3 @@
 		// 	font-size: 12px
 	&__discount
 		color: $red
-	&__close
-		position: absolute
-		top: 1px
-		right: 0
-		color: $red
-		background: none
-		+lg
-			top: 0
-		+touch
-			top: 0
-			bottom: 0
-			width: 60px
-			color: $white
-			background: $red
-		.icon-close
-			display: inline-block
-			vertical-align: middle
-			font-size: 18px

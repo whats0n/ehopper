@@ -4,10 +4,10 @@
   vertical-align: top
   border: none
 
-  color: #333
+  color: $darkGray
   +rreg
   font-size: 16px
-  line-height: 50px
+  line-height: normal
   &::placeholder
     opacity: 1
 
@@ -41,24 +41,39 @@
   height: 50px
   &_xl
     height: 80px
-    line-height: 80px
   &_xs
     height: 30px
-    line-height: 30px
   &_sm
     height: 40px
-    line-height: 40px
   &_lg
     height: 60px
-    line-height: 60px
+
+.simple-input
+  display: inline-block
+  vertical-align: top
+  padding: 0 15px
+  border: 2px solid $lightGray
+  width: 100%
+  height: 60px
+  color: $darkGray
+  font-size: 18px
+  line-height: normal
 
 .textarea
   padding: 15px 20px
   height: 200px
   max-height: 300px
   resize: vertical
-  line-height: normal
+  &_little
+    height: 52px
 
+input[type="number"]
+  &::-webkit-inner-spin-button, 
+  &::-webkit-outer-spin-button
+    -webkit-appearance: none
+    -moz-appearance: none
+    appearance: none
+    margin: 0
 //delete --
 .input-xs
   height: 30px
