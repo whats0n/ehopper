@@ -150,6 +150,8 @@
   overflow: hidden
   padding: 37px 0 61px
   height: 100%
+  &_no-footer
+    padding-bottom: 0
   &__header
     position: absolute
     z-index: 2
@@ -157,6 +159,16 @@
     left: 0
     right: 0
     height: 37px
+    &:before
+      content: ''
+      position: absolute
+      top: 0
+      left: 100%
+      bottom: 0
+      border-bottom: 1px solid #aaa
+      width: 20px
+      background: #eee
+      margin-left: -1px
   &__footer
     position: relative
     z-index: 2
@@ -175,9 +187,16 @@
   // &__header,
   // &__body,
   // &__footer
-  &__header,
-  &__table
-    min-width: 980px
+
+  //min sizes
+  &[data-table="terminal"]
+    [data-table-fake],
+    [data-table-scrollable] > div
+      min-width: 980px
+  &[data-table="orders"]
+    [data-table-fake],
+    [data-table-scrollable] > div
+      min-width: 1200px
 
 .table-header,
 .table-body
@@ -196,12 +215,43 @@
       padding-left: 20px
     &[data-column="icon"]
       width: 60px
+    &[data-column="orders-status"]
+      width: 70px
+    &[data-column="orders-action"]
+      width: 110px
+      text-align: right
+    &[data-column="orders-id"]
+      width: 19%
+    &[data-column="orders-register"],
+    &[data-column="orders-type"],
+    &[data-column="orders-fulfillment"],
+    &[data-column="orders-date"]
+      width: 8%
+    &[data-column="orders-store"],
+    &[data-column="orders-employee"]
+      width: 10%
+  &__th
+    +rmed
 
 .table-header
   border-bottom: 1px solid $silverGray
   background: $lightGray
 
 .table-body
+  &_orders
+    .table-body
+      &__tr
+        &:nth-child(even)
+          background: $white
+          transition: background 0.1s ease-in-out
+        +hover
+          background: $azure
+          cursor: pointer
+        +active
+          background: $azureActive
+      &__td
+        padding-top: 5px 
+        padding-bottom: 5px
   &__tr
     &:not(:first-child)
       .table-body

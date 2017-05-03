@@ -2,6 +2,7 @@
 export const OPEN = 'is-open';
 export const ACTIVE = 'is-active';
 export const touchClass = 'is-touch';
+export const noTouchClass = 'no-touch';
 
 //jQuery dom elements
 export const $DOCUMENT = $(document);

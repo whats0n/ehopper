@@ -173,7 +173,7 @@ html {
   color: inherit;
 }
 
-.docs-menu__link:hover {
+.no-touch .docs-menu__link:hover {
   background-color: #eeeeee;
 }
 

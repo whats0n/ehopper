@@ -544,8 +544,30 @@ a.shy {
   color: inherit;
 }
 
+.text-date span,
+.text-date small {
+  display: block;
+}
+
+.text-date small {
+  opacity: 0.5;
+  font-size: 70%;
+}
+
 .error-message {
   color: #ec4a41;
+}
+
+.muted {
+  opacity: 0.5;
+}
+
+.color-red {
+  color: #ec4a41;
+}
+
+.color-green {
+  color: #22B745;
 }
 
 .small {
@@ -558,10 +580,6 @@ a.shy {
 
 .xl {
   font-size: 150%;
-}
-
-.muted {
-  opacity: 0.5;
 }
 
 .text-success {
@@ -1852,7 +1870,7 @@ textarea.input {
   text-decoration: underline;
 }
 
-.modal-terms__body a:hover {
+.no-touch .modal-terms__body a:hover {
   color: #2183bf;
   text-decoration: none;
 }
@@ -2388,7 +2406,7 @@ textarea.input {
   height: 50px;
 }
 
-.dropdown_header .dropdown__header:hover {
+.no-touch .dropdown_header .dropdown__header:hover {
   background: none;
 }
 
@@ -2412,7 +2430,7 @@ textarea.input {
   transition: background 0.175s ease;
 }
 
-.dropdown__header:hover {
+.no-touch .dropdown__header:hover {
   background: #eee;
 }
 
@@ -2527,7 +2545,7 @@ textarea.input {
   color: #2e99db;
 }
 
-.dropdown-menu__item:hover {
+.no-touch .dropdown-menu__item:hover {
   background: #eee;
 }
 
@@ -2977,7 +2995,7 @@ textarea.input {
   transition: color 0.1s ease, background 0.1s ease, box-shadow 0.1s ease;
 }
 
-.horizontal-menu__link:hover {
+.no-touch .horizontal-menu__link:hover {
   background: #f8f8f8;
 }
 
@@ -2994,7 +3012,7 @@ textarea.input {
   pointer-events: none;
 }
 
-.horizontal-menu__link.is-disabled:hover {
+.no-touch .horizontal-menu__link.is-disabled:hover {
   color: #aaa;
   background: #f8f8f8;
   cursor: default;
@@ -3038,7 +3056,7 @@ textarea.input {
   border-right: none;
 }
 
-.hmenu__item:hover {
+.no-touch .hmenu__item:hover {
   background: #f8f8f8;
 }
 
@@ -3426,7 +3444,7 @@ textarea.input {
   user-select: none;
 }
 
-.nav__item:hover {
+.no-touch .nav__item:hover {
   background: #4C5560;
 }
 
@@ -3478,7 +3496,7 @@ textarea.input {
   transition: box-shadow 0.17s ease-in-out;
 }
 
-.default-pagination__btn:hover {
+.no-touch .default-pagination__btn:hover {
   box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.2);
 }
 
@@ -3539,7 +3557,7 @@ textarea.input {
   background: #fff;
 }
 
-.table-hover tbody tr:hover td {
+.no-touch .table-hover tbody tr:hover td {
   background: #ecf7fd;
   cursor: pointer;
 }
@@ -3966,7 +3984,7 @@ textarea.input {
   transition: color 0.05s ease-in-out, box-shadow 0.17s ease-in-out, background 0.05s ease-in-out;
 }
 
-[data-slider-pagination] [data-slider-arrow]:hover {
+.no-touch [data-slider-pagination] [data-slider-arrow]:hover {
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
 
@@ -4011,7 +4029,7 @@ textarea.input {
   transition: box-shadow 0.17s ease-in-out, background 0.17s ease-in-out;
 }
 
-[data-slider-pagination] .slick-dots button:hover {
+.no-touch [data-slider-pagination] .slick-dots button:hover {
   box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.2);
 }
 
@@ -4182,7 +4200,7 @@ textarea.input {
   transition: box-shadow 0.15s ease-in-out, background 0.15s ease-in-out;
 }
 
-.sm-card__content:hover {
+.no-touch .sm-card__content:hover {
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
 }
 
@@ -4263,7 +4281,7 @@ textarea.input {
   transition: box-shadow 0.15s ease-in-out, background 0.15s ease-in-out;
 }
 
-.simple-card__content:hover {
+.no-touch .simple-card__content:hover {
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
 }
 
@@ -4330,7 +4348,7 @@ textarea.input {
   transition: box-shadow 0.15s ease-in-out, background 0.15s ease-in-out;
 }
 
-.card-serial__content:hover {
+.no-touch .card-serial__content:hover {
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
 }
 
@@ -4363,7 +4381,7 @@ textarea.input {
   transition: box-shadow 0.15s ease-in-out, background 0.15s ease-in-out;
 }
 
-.payment-card:hover {
+.no-touch .payment-card:hover {
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
 }
 
@@ -4513,7 +4531,7 @@ textarea.input {
   background: #2e99db;
 }
 
-[data-scrollbar="rounded"]::-webkit-scrollbar-thumb:hover,
+.no-touch [data-scrollbar="rounded"]::-webkit-scrollbar-thumb:hover, .no-touch
 [data-scrollbar="default"]::-webkit-scrollbar-thumb:hover {
   background: #2183bf;
 }

@@ -33,8 +33,8 @@ styles:
 						{
 							dropdownSimple: {
 								label: 'Register:',
-								value: '(2 selected)',
-								list: [ { text: 'Store 1', value: 'Store 1' }, { text: 'Store 2', value: 'Store 2' }, { text: 'Store 3', value: 'Store 3' }, { text: 'Store 4', value: 'Store 4' }, { text: 'Store 5', value: 'Store 5' } ],
+								value: 'All',
+								list: [ { text: 'All', value: 'All' }, { text: 'Register 1', value: 'Register 1' }, { text: 'Register 2', value: 'Register 2' }, { text: 'Register 3', value: 'Register 3' }, { text: 'Register 4', value: 'Register 4' }, { text: 'Register 5', value: 'Register 5' } ],
 								listOnly: true,
 								activeItem: 0,
 								name: 'orders-register'
@@ -43,8 +43,8 @@ styles:
 						{
 							dropdownSimple: {
 								label: 'Order Type:',
-								value: 'Quick Sale',
-								list: [ { text: 'Store 1', value: 'Store 1' }, { text: 'Store 2', value: 'Store 2' }, { text: 'Store 3', value: 'Store 3' }, { text: 'Store 4', value: 'Store 4' }, { text: 'Store 5', value: 'Store 5' } ],
+								value: 'All',
+								list: [ { text: 'All', value: 'All' }, { text: 'Quick Sale', value: 'Quick Sale' }, { text: 'Dine In', value: 'Dine In' }, { text: 'Take out', value: 'Take out' }, { text: 'Drive thru', value: 'Drive thru' }, { text: 'Delivery', value: 'Delivery' }, { text: 'Manual Sale', value: 'Manual Sale' } ],
 								listOnly: true,
 								activeItem: 0,
 								name: 'orders-order-type'
@@ -53,8 +53,8 @@ styles:
 						{
 							dropdownSimple: {
 								label: 'Status:',
-								value: 'Any',
-								list: [ { text: 'Store 1', value: 'Store 1' }, { text: 'Store 2', value: 'Store 2' }, { text: 'Store 3', value: 'Store 3' }, { text: 'Store 4', value: 'Store 4' }, { text: 'Store 5', value: 'Store 5' } ],
+								value: 'All',
+								list: [ { text: 'All', value: 'All' }, { text: 'Not Paid', value: 'Not Paid' }, { text: 'Pending Payment', value: 'Pending Payment' }, { text: 'Partially Paid', value: 'Partially Paid' }, { text: 'Paid', value: 'Paid' }, { text: 'Partially Refunded', value: 'Partially Refunded' }, { text: 'Refunded', value: 'Refunded' }, { text: 'Voided', value: 'Voided' } ],
 								listOnly: true,
 								activeItem: 0,
 								name: 'orders-status'
@@ -63,8 +63,8 @@ styles:
 						{
 							dropdownSimple: {
 								label: 'Fulfillment:',
-								value: 'Any',
-								list: [ { text: 'Store 1', value: 'Store 1' }, { text: 'Store 2', value: 'Store 2' }, { text: 'Store 3', value: 'Store 3' }, { text: 'Store 4', value: 'Store 4' }, { text: 'Store 5', value: 'Store 5' } ],
+								value: 'All',
+								list: [ { text: 'All', value: 'All' }, { text: 'New', value: 'New' }, { text: 'In Preparation', value: 'In Preparation' }, { text: 'Prepared', value: 'Prepared' }, { text: 'In Fulfillment', value: 'In Fulfillment' }, { text: 'Fulfilled', value: 'Fulfilled' } ],
 								listOnly: true,
 								activeItem: 0,
 								name: 'orders-fulfillment'
@@ -89,6 +89,118 @@ styles:
 								</div>
 							</div>
 						</div>
+					</div>
+					<div class="orders__content">
+						<div class="table-wrapper table-wrapper_no-footer" data-table="orders">
+							{% set table = {
+								header: [
+									{ column: 'orders-status', content: 'Status' },
+									{ column: 'orders-id', content: 'Order' },
+									{ column: 'orders-store', content: 'Store' },
+									{ column: 'orders-register', content: 'Register' },
+									{ column: 'orders-type', content: 'Type' },
+									{ column: 'orders-fulfillment', content: 'Fulfillment' },
+									{ column: 'orders-date', content: 'Date' },
+									{ column: 'orders-employee', content: 'Employee' },
+									{ column: 'orders-customer', content: 'Customer' },
+									{ column: 'orders-action', content: 'Action' }
+								],
+								body: [
+									[
+										{ column: 'orders-status', content: '<i class="icon icon-check"></i>' },
+										{ column: 'orders-id', content: '<div class="orders__id">040660174749</div>' },
+										{ column: 'orders-store', content: 'Main Store' },
+										{ column: 'orders-register', content: '1' },
+										{ column: 'orders-type', content: 'Quick Sale' },
+										{ column: 'orders-fulfillment', content: 'Done' },
+										{ column: 'orders-date', date: { day: '03/07/2017', time: '12:59:00' } },
+										{ column: 'orders-employee', content: 'Mr. John Snow' },
+										{ column: 'orders-customer', content: 'Walk In' },
+										{ column: 'orders-action', action: true }
+									],
+									[
+										{ column: 'orders-status', content: '<i class="icon icon-checked color-green"></i>' },
+										{ column: 'orders-id', content: '<div class="orders__id">040660174750</div> <div class="orders__meta">Saved order name</div>' },
+										{ column: 'orders-store', content: 'Second Store' },
+										{ column: 'orders-register', content: '4' },
+										{ column: 'orders-type', content: 'Quick Sale' },
+										{ column: 'orders-fulfillment', content: 'Done' },
+										{ column: 'orders-date', date: { day: '03/07/2017', time: '12:59:00' } },
+										{ column: 'orders-employee', content: 'Mr. John Snow' },
+										{ column: 'orders-customer', content: 'Walk In' },
+										{ column: 'orders-action', action: 'cart' }
+									],
+									[
+										{ column: 'orders-status', content: '<i class="icon icon-close"></i>' },
+										{ column: 'orders-id', content: '<div class="orders__id">040660174000</div>' },
+										{ column: 'orders-store', content: 'Main Store' },
+										{ column: 'orders-register', content: '2' },
+										{ column: 'orders-type', content: 'Delivery' },
+										{ column: 'orders-fulfillment', content: 'Done' },
+										{ column: 'orders-date', date: { day: '03/07/2017', time: '12:59:00' } },
+										{ column: 'orders-employee', content: 'Mr. John Snow' },
+										{ column: 'orders-customer', content: 'VIP Mr. Donald Trump' },
+										{ column: 'orders-action', action: true }
+									],
+									[
+										{ column: 'orders-status', content: '<i class="icon icon-clear color-red"></i>' },
+										{ column: 'orders-id', content: '<div class="orders__id">040660174001</div>' },
+										{ column: 'orders-store', content: 'Main Store' },
+										{ column: 'orders-register', content: '1' },
+										{ column: 'orders-type', content: 'Quick Sale' },
+										{ column: 'orders-fulfillment', content: 'Voided' },
+										{ column: 'orders-date', date: { day: '12/12/2016', time: '9:00:00' } },
+										{ column: 'orders-employee', content: 'Samantha Fox' },
+										{ column: 'orders-customer', content: 'Walk In' },
+										{ column: 'orders-action', action: true }
+									]
+								]
+							} %}
+							<div class="table-wrapper__header" data-table-fake="orders">
+								<div class="table-header">
+									<ul class="table-header__tr">
+										{% for th in table.header %}
+											<li class="table-header__th" data-column="{{th.column}}">{{th.content | safe}}</li>
+										{% endfor %}
+									</ul>
+								</div>
+							</div>
+							<div class="table-wrapper__body" data-scrollbar="default" data-table-scrollable="orders">
+								<div class="table-body table-body_orders table-wrapper__table">
+									{% for item in range(0,5) %}
+									    {% for tr in table.body %}
+									    	<div class="table-body__tr">
+									    		{% for td in tr %}
+									    			<div class="table-body__td" data-column="{{td.column}}">
+									    				{% if td.date %}
+									    					<div class="text-date">
+									    						<span>{{td.date.day}}</span>
+									    						<small>{{td.date.time}}</small>
+									    					</div>
+									    				{% elif td.action %}
+									    					<div class="orders__action">
+									    						{% if td.action === 'cart' %}
+									    							<button class="btn btn_icon"><i class="icon icon-pos"></i></button>
+									    						{% endif %}
+									    						<button class="btn btn_icon"><i class="icon icon-next"></i></button>
+									    					</div>
+									    				{% else %}
+									    					{{td.content | safe}}
+									    				{% endif %}
+									    			</div>
+									    		{% endfor %}
+									    	</div>
+									    {% endfor %}
+									{% endfor %}
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="orders__footer">
+						<button class="btn btn_default" data-animation="ripple">
+							<i class="icon icon-expand"></i>
+							Show more
+						</button>
 					</div>
 				</div>
 			</div>
