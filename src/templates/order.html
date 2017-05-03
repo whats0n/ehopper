@@ -1,189 +1,212 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<meta charset=utf-8>
-	<title>Orders #0123 &bull; eHopper POS</title>
-	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-	<meta http-equiv=X-UA-Compatible content="IE=edge,chrome=1">
-	<link rel="stylesheet" type="text/css" href="static/css/pos.css">
-	<script src="static/js/demo.js"></script>
-	<link rel="icon" href="https://ehopper.com/wp-content/uploads/2016/03/favicon-01.png" type="image/png">
-</head>
+---
+title: 'Orders #0123 &bull; eHopper POS'
+styles: 
+	- 'pos'
+settingsActive: 2
+---
+{% extends "layouts/_layout.html" %}
 
-
-<body class="animated">
-
-	<article class="order-details">
-
-		<aside class="cutout-right">
-			<header class="cutout-right">
-				<a href="orders.html" class="btn icon icon-back"></a>
-				<h1>Orders</h1>
-			</header>
-
-			<section>
-				<p class="labeled-info"><label>Order ID:</label>0000123</p>
-				<p class="labeled-info"><label>Order date &amp; Time:</label>12/21/2016 14:19:28</p>
-				<p class="labeled-info"><label>Order type:</label>Quick Sale</p>
-			</section>
-			<hr>
-
-			<section>
-				<p class="labeled-info">
-					<i class="icon icon-check pull-right"></i>
-					<label>Status:</label>
-					Paid / Successfull
-				</p>
-				<p class="labeled-info"><label>Tender Type:</label>Credit Card</p>
-				<p class="labeled-info"><label>Refnum:</label>V469GH9</p>
-				<div class="clear-hmargins">
-					<div class="dropdown dropdown-white w100 cutout-right">
-						<div class="dropdown__selected">
-							<i class="icon icon-time pull-right"></i>
-							<div class="dropdown__selected-label">Fulfillment:</div>
-							<div class="dropdown__selected-value">In Preparation</div>
+{% block content %}
+	<main class="main">
+		<div class="inner order">
+			<aside class="order__sidebar">
+				{{header.simple({
+					back: true,
+					backText: 'Orders',
+					headerClassList: 'order__header'
+				})}}
+				<div class="order__info">
+					<div class="infoblock">
+						<div class="infoblock__row">
+							<div class="infoblock__col">
+								<small class="infoblock__label">Order ID:</small>
+								<em class="infoblock__value">0000123</em>
+							</div>
+							<div class="infoblock__col">
+								<small class="infoblock__label">Order date & Time:</small>
+								<em class="infoblock__value">12/21/2016 14:19:28</em>
+							</div>
+							<div class="infoblock__col">
+								<small class="infoblock__label">Order type:</small>
+								<em class="infoblock__value">Quick Sale</em>
+							</div>
 						</div>
-						<ul class="dropdown-menu">
-							<li class="dropdown-menu__item">New</li>
-							<li class="dropdown-menu__item dropdown-menu__item-selected">In Preparation</li>
-							<li class="dropdown-menu__item">Prepared</li>
-							<li class="dropdown-menu__item">In Fulfillment</li>
-							<li class="dropdown-menu__item">Fulfilled</li>
-						</ul>
-						<div class="dropdown-menu__mask"></div>
-					</div>					
+					</div>
+					<hr>
+					<div class="infoblock">
+						<div class="infoblock__row">
+							<div class="infoblock__col">
+								<i class="icon icon-check infoblock__icon"></i>
+								<small class="infoblock__label">Status:</small>
+								<em class="infoblock__value">Paid / Successfull</em>
+							</div>
+							<div class="infoblock__col">
+								<small class="infoblock__label">Tender Type:</small>
+								<em class="infoblock__value">Credit Card</em>
+							</div>
+							<div class="infoblock__col">
+								<small class="infoblock__label">Refnum:</small>
+								<em class="infoblock__value">V469GH9</em>
+							</div>
+							<div class="infoblock__col">
+								{{dropdown.simple({
+									label: 'Fulfillment:',
+									value: 'New',
+									list: [ { text: 'New', value: 'New' }, { text: 'In Preparation', value: 'In Preparation' }, { text: 'Prepared', value: 'Prepared' }, { text: 'In Fulfillment', value: 'In Fulfillment' }, { text: 'Fulfilled', value: 'Fulfilled' } ],
+									listOnly: true,
+									activeItem: 0,
+									name: 'order-fulfillment',
+									dropdownClassList: 'infoblock__dropdown dropdown_md dropdown_time',
+									customIcon: '<i class="icon icon-time dropdown__icon"></i>'
+								})}}
+							</div>
+						</div>
+					</div>
+					<hr>
+					<div class="infoblock">
+						<div class="infoblock__row">
+							<div class="infoblock__col">
+								<small class="infoblock__label">Employee:</small>
+								<em class="infoblock__value">Mr. Seller Name</em>
+							</div>
+							<div class="infoblock__col">
+								<small class="infoblock__label">Store:</small>
+								<em class="infoblock__value">Main Store</em>
+							</div>
+							<div class="infoblock__col">
+								<small class="infoblock__label">Register:</small>
+								<em class="infoblock__value">#2 (John's iPad)</em>
+							</div>
+						</div>
+					</div>
 				</div>
-
-			</section>
-			<hr>
-
-			<section>
-				<p class="labeled-info"><label>Employee:</label>Mr. Seller Name</p>
-				<p class="labeled-info"><label>Store:</label>Main Store</p>
-				<p class="labeled-info"><label>Register:</label>#2 (John's iPad)</p>
-			</section>
-
-		</aside>
-
-
-
-		<main class="layout layout-rows">
-			<header class="layout__row">
-				<div class="header__icons">
-					<button class="btn icon icon-help" title="Help" onclick="demoDialogOpen('help')"></button>
+			</aside>
+			<div class="order__container">
+				{{header.simple({
+					title: 'Order #0123',
+					titleClassList: 'header__title_vertical',
+					headerClassList: 'order__header',
+					help: true
+				})}}
+				<div class="order__body">
+					<div class="order__content">
+						<div class="table-wrapper table-wrapper_no-footer table-wrapper_header-lg" data-table="orders">
+							{% set table = {
+								header: [
+									{ column: 'order-item', content: 'Order Item' },
+									{ column: 'order-quantity', content: 'Quantity' },
+									{ column: 'order-price', content: 'Item Price' },
+									{ column: 'order-discount', content: 'Discount' },
+									{ column: 'order-total', content: 'Total' },
+									{ column: 'order-check', checkbox: true }
+								],
+								body: [
+									[
+										{ column: 'order-item', content: '<div class="table-wrapper__value">Hot-Dog</div>' },
+										{ column: 'order-quantity', content: '2' },
+										{ column: 'order-price', content: '$5.00' },
+										{ column: 'order-discount', content: '&nbsp;' },
+										{ column: 'order-total', content: '$10.00' },
+										{ column: 'order-check', checkbox: true }
+									],
+									[
+										{ column: 'order-item', content: '<div class="table-wrapper__value">Hot-Dog XL</div> <div class="table-wrapper__meta">+Additional Ketchup</div>' },
+										{ column: 'order-quantity', content: '1' },
+										{ column: 'order-price', content: '$8.00' },
+										{ column: 'order-discount', content: '$1.00' },
+										{ column: 'order-total', content: '$7.00' },
+										{ column: 'order-check', checkbox: true }
+									],
+									[
+										{ column: 'order-item', content: '<div class="table-wrapper__value">Whiskey</div>' },
+										{ column: 'order-quantity', content: '200 <span class="muted">ml</span>' },
+										{ column: 'order-price', content: '$8.00' },
+										{ column: 'order-discount', content: '$1.00' },
+										{ column: 'order-total', content: '$7.00' },
+										{ column: 'order-check', checkbox: true }
+									],
+									[
+										{ column: 'order-item', content: '<div class="table-wrapper__value">Very Good Wine</div> <div class="table-wrapper__meta">France, Glass Bottle, 700 ml</div>' },
+										{ column: 'order-quantity', content: '11' },
+										{ column: 'order-price', content: '$1,048.90' },
+										{ column: 'order-discount', content: '$48.90' },
+										{ column: 'order-total', content: '$11,480.00' },
+										{ column: 'order-check', checkbox: true }
+									]
+								]
+							} %}
+							<div class="table-wrapper__header" data-table-fake="orders">
+								<div class="table-header">
+									<ul class="table-header__tr">
+										{% for th in table.header %}
+											<li class="table-header__th" data-column="{{th.column}}">
+												{% if th.checkbox %}
+													<div class="orders__action">
+														{{mixins.checkbox()}}
+													</div>
+												{% else %}
+													{{th.content | safe}}
+												{% endif %}
+											</li>
+										{% endfor %}
+									</ul>
+								</div>
+							</div>
+							<div class="table-wrapper__body" data-scrollbar="default" data-table-scrollable="orders">
+								<div class="table-body table-body_order table-wrapper__table">
+									{% for item in range(0,5) %}
+										{% for tr in table.body %}
+											<div class="table-body__tr">
+												{% for td in tr %}
+													<div class="table-body__td" data-column="{{td.column}}">
+														{% if td.checkbox %}
+															<div class="orders__action">
+																{{mixins.checkbox()}}
+															</div>
+														{% else %}
+															{{td.content | safe}}
+														{% endif %}
+													</div>
+												{% endfor %}
+											</div>
+										{% endfor %}
+									{% endfor %}
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="order__footer">
+						<div class="order-totals">
+							<div class="order-notes">
+								<i class="icon icon-note order-notes__icon"></i>
+								<div class="order-notes__content">Order Note text goes here (if present)</div>
+							</div>
+							{% set orderTotalsTable = [
+								{ label: 'Subtotal:', value: '$11,540.54' },
+								{ label: 'Tax:', value: '$140.00' },
+								{ label: 'Total:', value: '<em>$12,540.54</em>' }
+							] %}
+							<div class="order-totals__table">
+								{% for item in orderTotalsTable %}
+									<div class="order-totals__tr">
+										<div class="order-totals__td order-totals__label">{{item.label | safe}}</div>
+										<div class="order-totals__td order-totals__value">{{item.value | safe}}</div>
+									</div>
+								{% endfor %}
+							</div>
+						</div>
+						<div class="order__buttons">
+							<button class="btn btn_lg btn_primary" data-animation="ripple">Print Receipt</button>
+							<button class="btn btn_lg btn_default" data-animation="ripple">Email Receipt</button>
+							<button class="btn btn_lg btn_default" data-animation="ripple">Void</button>
+							<button class="btn btn_lg btn_default" data-animation="ripple">Refund</button>
+						</div>
+					</div>
 				</div>
-				<h1>Order #0123</h1>
-			</header>
-
-			<div class="layout__row layout__row-grow">
-				<!-- Scrollable table -->
-				<table class="table table-striped">
-					<thead>
-						<tr>
-							<th class="table__cell-first valign-middle">Order Item</th>
-							<th class="text-right valign-middle">Quantity</th>
-							<th class="text-right valign-middle">Item Price</th>
-							<th class="text-right valign-middle">Discount</th>
-							<th class="text-right valign-middle">Total</th>
-							<th class="text-right" width="7%"><label class="checkbox"><input type="checkbox"><i class="icon"></i></label></th>
-						</tr>
-					</thead>
-					<tbody>
-						<tr>
-							<td class="table__cell-first">Hot-Dog</td>
-							<td class="text-right">2</td>
-							<td class="text-right">$5.00</td>
-							<td class="text-right"></td>
-							<td class="text-right">$10.00</td>
-							<td class="text-right"><label class="checkbox"><input type="checkbox"><i class="icon"></i></label></td>
-						</tr>
-						<tr>
-							<td class="table__cell-first">Hot-Dog XL<div class="muted">+Additional Ketchup</div></td>
-							<td class="text-right">1</td>
-							<td class="text-right">$8.00</td>
-							<td class="text-right">$1.00</td>
-							<td class="text-right">$7.00</td>
-							<td class="text-right"><label class="checkbox"><input type="checkbox" checked><i class="icon"></i></label></td>
-						</tr>
-						<tr>
-							<td class="table__cell-first">Whiskey</td>
-							<td class="text-right">200 <span class="muted">ml</span></td>
-							<td class="text-right">$8.00</td>
-							<td class="text-right">$1.00</td>
-							<td class="text-right">$7.00</td>
-							<td class="text-right"><label class="checkbox"><input type="checkbox"><i class="icon"></i></label></td>
-						</tr>
-						<tr>
-							<td class="table__cell-first">Very Good Wine<div class="muted">France, Glass Bottle, 700 ml</div></td>
-							<td class="text-right">11</td>
-							<td class="text-right">$1,048.90</td>
-							<td class="text-right">$48.90</td>
-							<td class="text-right">$11,480.00</td>
-							<td class="text-right"><label class="checkbox"><input type="checkbox"><i class="icon"></i></label></td>
-						</tr>
-					</tbody>
-				</table>
 			</div>
-
-
-			<div class="layout__row cutout-top">
-				<table class="table no-margin">
-					<tbody>
-						<tr><td class="valign-top" rowspan="5"><i class="icon icon-note baseline"></i><span>Order Note text goes here (if present)</span></td>
-							<td class="text-right muted">Subtotal:</td>
-							<td class="text-right">$11,540.54</td>
-							<td width="7%"></td>
-						</tr>
-						<tr><td class="text-right muted">Tax:</td>
-							<td class="text-right">$140.00</td></tr>
-						<tr><td class="text-right muted">Total:</td>
-							<td class="text-right"><b>$12,540.54</b></td></tr>
-					</tbody>
-				</table>
-				<section class="text-center">
-					<button class="btn btn-lg btn-primary">Print Receipt</button>
-					<button class="btn btn-lg btn-default" onclick="demoDialogOpen('email')">Email Receipt</button>
-					<button class="btn btn-lg btn-default">Void</button>
-					<button class="btn btn-lg btn-default">Refund</button>					
-				</section>
-			</div>
-		</main>
-
-	</article>
-
-	<!-- Dialog: Send Email -->
-	<div class="dialog" id="email">
-		<div class="dialog__content">
-
-			<header class="header">
-				<div class="header__icons"><i class="btn icon icon-close dialog__close"></i></div>
-				<h1>Email Receipt</h1>
-			</header>
-
-			<div class="dialog__body">
-
-				<div class="fieldset fieldset-lg fieldset-standalone">
-					<label class="fieldset__label" for="emailAddr">Email Address:</label>
-					<input class="input input-lg fieldset__input" id="emailAddr" type="email" placeholder="user@domain.com" required="required">	
-				</div>
-
-				<div class="fieldset fieldset-lg fieldset-standalone">
-					<label class="fieldset__label" for="receiptLang">Receipt Language:</label>
-					<select class="input input-lg fieldset__input text-right" id="receiptLang">
-						<option>English</option>
-						<option>French</option>
-						<option>Russian</option>
-					</select>	
-				</div>
-
-			</div>
-			<button class="btn btn-block btn-success btn-lg dialog__close">Send</button>
 		</div>
-	</div>
-	<div class="dialog__mask"></div>
+	</main>
 
-	<!-- Dialog: Help Panel -->
-	<link rel="import" href="inc/help.html" onload="demoTemplate(this)">
-
-</body>
-</html>
+	{{modal.help()}}
+	{{modal.addTerminal()}}
+{% endblock %}

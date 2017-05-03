@@ -152,6 +152,11 @@
   height: 100%
   &_no-footer
     padding-bottom: 0
+  &_header-lg
+    padding-top: 50px
+    .table-wrapper
+      &__header 
+        height: 50px
   &__header
     position: absolute
     z-index: 2
@@ -164,11 +169,11 @@
       position: absolute
       top: 0
       left: 100%
-      bottom: 0
+      bottom: -1px
       border-bottom: 1px solid #aaa
       width: 20px
       background: #eee
-      margin-left: -1px
+      margin-left: -6px
   &__footer
     position: relative
     z-index: 2
@@ -187,6 +192,11 @@
   // &__header,
   // &__body,
   // &__footer
+  &__value,
+  &__meta
+    word-wrap: break-word
+  &__meta
+    opacity: 0.5
 
   //min sizes
   &[data-table="terminal"]
@@ -252,6 +262,11 @@
       &__td
         padding-top: 5px 
         padding-bottom: 5px
+  &_order
+    .table-body
+      &__tr
+        &:nth-child(even)
+          background: $white
   &__tr
     &:not(:first-child)
       .table-body

@@ -4,10 +4,10 @@
 <!-- begin header -->
 <header class="header {{props.headerClassList}}">
 	{% if props.back %}
-		<div class="header__back">
-			<a class="btn-icon btn-icon_square icon icon-back header__back-icon" href="#" {{props.backAttrs | safe}}></a>
-			{% if props.backButtonAlone != true %}<div class="header__title">{{props.backText or 'Cancel'}}</div>{% endif %}
-		</div>
+		<button class="header__back btn-back" {{props.backAttrs | safe}}>
+			<i class="icon icon-back btn-back__icon"></i>
+			{% if props.backButtonAlone != true %}<span class="btn-back__title">{{props.backText or 'Back'}}</span>{% endif %}
+		</button>
 	{% endif %}
 
 	{% if props.help %}

@@ -126,6 +126,29 @@ button
   +active
     color: inherit
 
+.btn-back
+  color: inherit
+  background: none
+  +rlight
+  font-size: 16px
+  transition: background 0.175s ease, box-shadow 0.175s ease
+  cursor: pointer
+  +active
+    color: inherit
+    background: rgba($black, 0.1)
+    box-shadow: inset 2px 2px 6px rgba($black, 0.2)
+  &__icon,
+  &__title
+    display: inline-block
+    vertical-align: top
+  &__icon
+    width: 50px
+    height: 50px
+    line-height: 50px
+  &__title
+    padding: 0 20px 0 0
+    line-height: 50px
+////
 .btn-lg
   padding: 0 15px
   min-width: 60px

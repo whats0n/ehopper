@@ -15,9 +15,11 @@ bodyClasses: 'animated'
 		'sync',
 		'pin',
 		'pos',
+		'register-open',
+		'register-close',
 		'settings',
 		'cash-drawer',
-		'print-setup',
+		'printer-setup',
 		'payments',
 		'payment-credit',
 		'payment-debit',
@@ -27,7 +29,7 @@ bodyClasses: 'animated'
 	] %}
 	<ul style="padding: 30px; font-size: 16px;">
 		{% for page in pages %}
-		    <li><a href="/{{page}}.html" target="_blank" style="padding: 10px; display: inline-block;">{{page}}</a></li>
+		    <li><a href="{{page}}.html" target="_blank" style="padding: 10px; display: inline-block;">{{page}}</a></li>
 		{% endfor %}
 	</ul>
 {% endblock %}

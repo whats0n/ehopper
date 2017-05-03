@@ -1080,6 +1080,37 @@ button:disabled, button.is-disabled {
   color: inherit;
 }
 
+.btn-back {
+  color: inherit;
+  background: none;
+  font-family: 'Roboto Light', Arial, sans-serif;
+  font-size: 16px;
+  transition: background 0.175s ease, box-shadow 0.175s ease;
+  cursor: pointer;
+}
+
+.btn-back:active {
+  color: inherit;
+  background: rgba(0, 0, 0, 0.1);
+  box-shadow: inset 2px 2px 6px rgba(0, 0, 0, 0.2);
+}
+
+.btn-back__icon, .btn-back__title {
+  display: inline-block;
+  vertical-align: top;
+}
+
+.btn-back__icon {
+  width: 50px;
+  height: 50px;
+  line-height: 50px;
+}
+
+.btn-back__title {
+  padding: 0 20px 0 0;
+  line-height: 50px;
+}
+
 .btn-lg {
   padding: 0 15px;
   min-width: 60px;
@@ -2418,6 +2449,14 @@ textarea.input {
   color: #fff;
 }
 
+.dropdown_md {
+  font-size: 16px;
+}
+
+.dropdown_time .dropdown__header {
+  padding-right: 70px;
+}
+
 .dropdown__header {
   position: relative;
   padding: 0 20px;
@@ -2463,6 +2502,13 @@ textarea.input {
 
 .dropdown__arrow ~ .dropdown__value {
   padding-right: 24px;
+}
+
+.dropdown__icon {
+  position: absolute;
+  top: 50%;
+  right: 30px;
+  transform: translate3d(0, -50%, 0);
 }
 
 .dropdown-menu {
@@ -4417,6 +4463,7 @@ textarea.input {
 }
 
 .infoblock__row {
+  padding: 20px 0;
   *zoom: 1;
 }
 
@@ -4427,8 +4474,9 @@ textarea.input {
 }
 
 .infoblock__col {
+  position: relative;
   float: left;
-  padding: 25px 20px;
+  padding: 5px 20px;
   width: 100%;
 }
 
@@ -4437,6 +4485,7 @@ textarea.input {
 }
 
 .infoblock__box {
+  position: relative;
   padding: 5px 0;
 }
 
@@ -4452,6 +4501,21 @@ textarea.input {
 
 .infoblock__value {
   font-size: 16px;
+}
+
+.infoblock__icon {
+  position: absolute;
+  top: 5px;
+  right: 20px;
+}
+
+.infoblock__icon ~ .infoblock__label,
+.infoblock__icon ~ .infoblock__value {
+  padding-right: 50px;
+}
+
+.infoblock__dropdown {
+  margin: 0 -20px;
 }
 
 .infotable {
