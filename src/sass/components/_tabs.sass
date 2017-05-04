@@ -31,8 +31,12 @@
     line-height: 20px
     text-align: center
     text-decoration: none
+    +nosel
     &.is-active
       background: $alabaster
+    &.is-disabled
+      color: rgba($black, 0.3)
+      pointer-events: none
   &__container
     height: 100%
     background: $alabaster

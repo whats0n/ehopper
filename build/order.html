@@ -459,7 +459,7 @@
                     </div>
                   </div>
                 </div>
-                <div class="order__buttons"> <button class="btn btn_lg btn_primary" data-animation="ripple">Print Receipt</button> <button class="btn btn_lg btn_default" data-animation="ripple">Email Receipt</button> <button class="btn btn_lg btn_default" data-animation="ripple">Void</button>                  <button class="btn btn_lg btn_default" data-animation="ripple">Refund</button> </div>
+                <div class="order__buttons"> <button class="btn btn_lg btn_primary" data-animation="ripple" data-modal-open="print-receipt">Print Receipt</button> <button class="btn btn_lg btn_default" data-animation="ripple" data-modal-open="email-receipt">Email Receipt</button>                  <button class="btn btn_lg btn_default" data-animation="ripple">Void</button> <button class="btn btn_lg btn_default" data-animation="ripple">Refund</button> </div>
               </div>
             </div>
           </div>
@@ -479,32 +479,84 @@
         </div>
       </div>
       <!-- end help -->
-      <!-- begin add-terminal -->
-      <div class="modal add-terminal" data-modal="add-terminal">
-        <div class="modal__container add-terminal__container" data-modal-container="add-terminal">
-          <div class="add-terminal__header"> <button class="btn-icon add-terminal__close" data-modal-close="add-terminal"><i class="icon icon-close"></i></button>
-            <div class="add-terminal__title">Add New Terminal</div>
+      <!-- begin order-receipt -->
+      <div class="modal order-receipt" data-modal="email-receipt">
+        <div class="modal__container order-receipt__container" data-modal-container="email-receipt">
+          <div class="order-receipt__header"> <button class="btn-icon order-receipt__close" data-modal-close="email-receipt"><i class="icon icon-close"></i></button>
+            <div class="order-receipt__title">Email Receipt</div>
           </div>
-          <div class="add-terminal__body">
-            <div class="add-terminal__field">
+          <div class="order-receipt__body">
+            <div class="order-receipt__field">
               <div class="field ">
-                <div class="field__inner field__display"> <label class="field__label" for="terminal-serial-number">Serial Number:</label>
-                  <div class="field__box"> <input class="input field__input input_lg add-terminal__input" value="0000123" id="terminal-serial-number" type="text" placeholder="(required)" required> </div>
+                <div class="field__inner field__display"> <label class="field__label" for="email-receipt-address">Email Address:</label>
+                  <div class="field__box"> <input class="input field__input input_lg" id="email-receipt-address" type="text" placeholder="user@domain.com"> </div>
                 </div>
               </div>
             </div>
-            <div class="add-terminal__field">
+            <div class="order-receipt__field">
               <div class="field ">
-                <div class="field__inner field__display"> <label class="field__label" for="terminal-name">Friendly Name:</label>
-                  <div class="field__box"> <input class="input field__input input_lg add-terminal__input" id="terminal-name" type="text" placeholder="(optional)"> </div>
+                <div class="field__inner field__display"> <label class="field__label" for="email-receipt-lang">Receipt Language:</label>
+                  <div class="field__box">
+                    <div class="select select_lg field__select"> <select id="email-receipt-lang">
+		
+			<option value="English" >English</option>
+		
+			<option value="Français" >Français</option>
+		
+			<option value="Русский" >Русский</option>
+		
+			<option value="Español" >Español</option>
+		
+			<option value="Custom" >Custom</option>
+		
+	</select> </div>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
-          <div class="add-terminal__footer"> <button class="btn btn_success btn_lg btn_block" data-animation="ripple" data-modal-close="add-terminal">Submit</button> </div>
+          <div class="order-receipt__footer"> <button class="btn btn_success btn_lg btn_block" data-animation="ripple">Send</button> </div>
         </div>
       </div>
-      <!-- end add-terminal -->
+      <!-- end order-receipt -->
+      <!-- begin order-receipt -->
+      <div class="modal order-receipt" data-modal="print-receipt">
+        <div class="modal__container order-receipt__container" data-modal-container="print-receipt">
+          <div class="order-receipt__header"> <button class="btn-icon order-receipt__close" data-modal-close="print-receipt"><i class="icon icon-close"></i></button>
+            <div class="order-receipt__title">Email Receipt</div>
+          </div>
+          <div class="order-receipt__body">
+            <div class="order-receipt__field">
+              <div class="field ">
+                <div class="field__inner field__display"> <label class="field__label" for="print-receipt-lang">Receipt Language:</label>
+                  <div class="field__box">
+                    <div class="select select_lg field__select"> <select id="print-receipt-lang">
+		
+			<option value="English" >English</option>
+		
+			<option value="Français" >Français</option>
+		
+			<option value="Русский" >Русский</option>
+		
+			<option value="Español" >Español</option>
+		
+			<option value="Custom" >Custom</option>
+		
+	</select> </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="order-receipt__checkbox"> <label class="checkbox ">
+	<input type="checkbox" >
+	<i class="icon icon-check"></i>
+	<span>Include signature</span>
+</label> </div>
+          </div>
+          <div class="order-receipt__footer"> <button class="btn btn_success btn_lg btn_block" data-animation="ripple">Send</button> </div>
+        </div>
+      </div>
+      <!-- end order-receipt -->
       <!-- END content -->
       <!-- begin snackbar -->
       <div class="snackbar" data-snackbar-container="snackbar" data-state="default">

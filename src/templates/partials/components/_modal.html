@@ -73,3 +73,32 @@
 </div>
 <!-- end payment-terminal -->
 {% endmacro %}
+
+{% macro orderReceipt(props) %}
+<!-- begin order-receipt -->
+<div class="modal order-receipt" data-modal="{{props.name or 'order-receipt'}}">
+	<div class="modal__container order-receipt__container" data-modal-container="{{props.name or 'order-receipt'}}">
+		<div class="order-receipt__header">
+			<button class="btn-icon order-receipt__close" data-modal-close="{{props.name or 'order-receipt'}}"><i class="icon icon-close"></i></button>
+			<div class="order-receipt__title">{{props.title}}</div>
+		</div>
+		<div class="order-receipt__body">
+			{% for item in props.fields %}
+				{% if item.field %}
+					<div class="order-receipt__field">
+						{{mixins.field(item.options)}}
+					</div>
+				{% elif item.checkbox %}
+					<div class="order-receipt__checkbox">
+						{{mixins.checkbox(item.checkbox)}}
+					</div>
+				{% endif %}
+			{% endfor %}
+		</div>
+		<div class="order-receipt__footer">
+			<button class="btn btn_success btn_lg btn_block" data-animation="ripple">{{props.submit or 'Send'}}</button>
+		</div>
+	</div>
+</div>
+<!-- end order-receipt -->
+{% endmacro %}

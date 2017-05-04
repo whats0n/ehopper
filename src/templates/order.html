@@ -196,8 +196,8 @@ settingsActive: 2
 							</div>
 						</div>
 						<div class="order__buttons">
-							<button class="btn btn_lg btn_primary" data-animation="ripple">Print Receipt</button>
-							<button class="btn btn_lg btn_default" data-animation="ripple">Email Receipt</button>
+							<button class="btn btn_lg btn_primary" data-animation="ripple" data-modal-open="print-receipt">Print Receipt</button>
+							<button class="btn btn_lg btn_default" data-animation="ripple" data-modal-open="email-receipt">Email Receipt</button>
 							<button class="btn btn_lg btn_default" data-animation="ripple">Void</button>
 							<button class="btn btn_lg btn_default" data-animation="ripple">Refund</button>
 						</div>
@@ -208,5 +208,56 @@ settingsActive: 2
 	</main>
 
 	{{modal.help()}}
-	{{modal.addTerminal()}}
+	{{modal.orderReceipt({
+		name: 'email-receipt',
+		title: 'Email Receipt',
+		fields: [
+			{
+				field: true,
+				options: {
+					label: 'Email Address:',
+					id: 'email-receipt-address',
+					placeholder: 'user@domain.com',
+					inputClassList: 'input_lg'
+				}
+			},
+			{
+				field: true,
+				options: {
+					label: 'Receipt Language:',
+					id: 'email-receipt-lang',
+					select: true,
+					selectOptions: {
+						id: 'email-receipt-lang',
+						classList: 'select_lg field__select',
+						options: [ 'English', 'Français', 'Русский', 'Español', 'Custom' ]
+					}
+				}
+			}
+		]
+	})}}
+	{{modal.orderReceipt({
+		name: 'print-receipt',
+		title: 'Email Receipt',
+		fields: [
+			{
+				field: true,
+				options: {
+					label: 'Receipt Language:',
+					id: 'print-receipt-lang',
+					select: true,
+					selectOptions: {
+						id: 'print-receipt-lang',
+						classList: 'select_lg field__select',
+						options: [ 'English', 'Français', 'Русский', 'Español', 'Custom' ]
+					}
+				}
+			},
+			{
+				checkbox: {
+					content: 'Include signature'
+				}
+			}
+		]
+	})}}
 {% endblock %}
