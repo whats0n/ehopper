@@ -18,9 +18,9 @@
     <!-- begin application -->
     <div class="application" id="application">
       <!-- BEGIN content -->
-      <main class="main" data-toggle-class-container="main-container">
+      <main class="main">
         <div class="inner">
-          <aside class="sidebar sidebar_left" data-toggle-class-container="sidebar-header">
+          <aside class="sidebar sidebar_left">
             <!-- begin header -->
             <header class="header sidebar__header"> <button class="header__back btn-back">
 			<i class="icon icon-back btn-back__icon"></i>
@@ -38,10 +38,10 @@
               </div>
             </header>
             <!-- end header -->
-            <div class="sidebar__body" data-order-scroll="order">
+            <div class="sidebar__body">
               <div class="sidebar__content">
-                <ul class="order-list" data-order-visible="order" data-order-list="order">
-                  <li class="order-item" data-order-added="item" data-state="default">
+                <ul class="order-list">
+                  <li class="order-item" data-state="default">
                     <div class="order-item__container">
                       <div class="order-item__content">
                         <div class="order-item__info">
@@ -56,11 +56,11 @@
                             <div class="order-item__total">3.00</div>
                           </div>
                         </div>
-                        <div class="order-item__meta"><strong data-fullinfo-target="notes">Note</strong> Click to duplicate in cart</div>
+                        <div class="order-item__meta"><strong>Note</strong> Click to duplicate in cart</div>
                       </div>
                     </div>
                   </li>
-                  <li class="order-item" data-order-added="item" data-state="default">
+                  <li class="order-item" data-state="default">
                     <div class="order-item__container">
                       <div class="order-item__content">
                         <div class="order-item__info">
@@ -81,14 +81,10 @@
                     </div>
                   </li>
                 </ul>
-                <div class="order-empty is-hidden" data-order-empty="order"> <i class="order-empty__icon"></i>
-                  <h5>Order is empty</h5>
-                  <p>Add items from catalog</p>
-                </div>
               </div>
             </div>
             <div class="sidebar__footer">
-              <div class="totals sidebar__totals" data-order-visible="order">
+              <div class="totals sidebar__totals">
                 <div class="totals__container">
                   <ul class="totals-list totals-list_main">
                     <li class="totals-list__item">
@@ -137,13 +133,13 @@
             <div class="container__body step-body">
               <div class="step-body__section">
                 <div class="form form_sm">
-                  <div class="payment-top">
+                  <div class="form__section">
                     <div class="info-price text-right">
                       <div class="info-price__label">Total Due:</div>
-                      <div class="info-price__value"> <small>$</small> <span>102.00</span> </div>
+                      <div class="info-price__value "> <small>$</small> <span>102.00</span> </div>
                     </div>
                   </div>
-                  <div class="payment-field">
+                  <div class="form__section">
                     <div class="field-box">
                       <div class="field-box__switch"> <label class="field-box__label" for="enter-card-manually">Enter Card Manually</label>
                         <div class="field-box__switcher"> <label class="switcher ">
@@ -188,28 +184,26 @@
                       </div>
                     </div>
                   </div>
-                  <div class="payment-field">
-                    <div class="field-box">
-                      <div class="field-box__radios">
-                        <div class="field-box__label" div>Tips and Signature</div>
-                        <ul class="field-box__list">
-                          <li class="field-box__col field-box__col_sm field-box__radio"> <label class="radio ">
+                  <div class="field-box">
+                    <div class="field-box__radios">
+                      <div class="field-box__label" div>Tips and Signature</div>
+                      <ul class="field-box__list">
+                        <li class="field-box__col field-box__col_sm field-box__radio"> <label class="radio ">
 	<input type="radio"  name="tips-and-signature">
 	<i></i>
 	<span>On Screen</span>
 </label> </li>
-                          <li class="field-box__col field-box__col_sm field-box__radio"> <label class="radio ">
+                        <li class="field-box__col field-box__col_sm field-box__radio"> <label class="radio ">
 	<input type="radio" checked name="tips-and-signature">
 	<i></i>
 	<span>On Receipt</span>
 </label> </li>
-                          <li class="field-box__col field-box__col_sm field-box__radio"> <label class="radio ">
+                        <li class="field-box__col field-box__col_sm field-box__radio"> <label class="radio ">
 	<input type="radio"  name="tips-and-signature">
 	<i></i>
 	<span>On Terminal</span>
 </label> </li>
-                        </ul>
-                      </div>
+                      </ul>
                     </div>
                   </div>
                 </div>

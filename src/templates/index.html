@@ -25,9 +25,15 @@ bodyClasses: 'animated'
 		'payment-debit',
 		'payment-external',
 		'payment-split',
-		'orders'
+		'payment-cash',
+		'payment-receipt',
+		'orders',
+		'order',
+		'order-taxes',
+		'order-save',
+		'order-note'
 	] %}
-	<ul style="padding: 30px; font-size: 16px;">
+	<ul style="padding: 30px; font-size: 16px; max-height: 100%; overflow: auto;">
 		{% for page in pages %}
 		    <li><a href="{{page}}.html" target="_blank" style="padding: 10px; display: inline-block;">{{page}}</a></li>
 		{% endfor %}

@@ -1,10 +1,7 @@
 {% import "partials/_mixins.html" as mixins %}
 <div class="tabs__notes">
 	<div class="fieldset fieldset_bordered">
-		{{mixins.textarea({
-			placeholder: 'Type here Item-specific note'
-		})}}
+		<textarea class="textarea textarea_block" placeholder="Type here Item-specific note"></textarea>
 	</div>
-	
 	<button class="btn btn_lg btn_primary btn_block text-uppercase" data-animation="ripple">Done</button>
 </div>

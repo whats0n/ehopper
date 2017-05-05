@@ -1,41 +1,173 @@
-<!DOCTYPE html>
+<!doctype html>
 <html>
 
   <head>
-    <meta charset=utf-8>
+    <meta charset="utf-8">
     <title>Order Note &bull; eHopper POS</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
-    <!-- <meta name="viewport" content="width=device-width, initial-scale=1"> -->
-    <meta http-equiv=X-UA-Compatible content="IE=edge,chrome=1">
-    <link rel="stylesheet" type="text/css" href="static/css/pos.css">
-    <script src="static/js/demo.js"></script>
-    <link rel="icon" href="https://ehopper.com/wp-content/uploads/2016/03/favicon-01.png" type="image/png"> </head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="theme-color" content="#fff">
+    <meta name="format-detection" content="telephone=no">
+    <link rel="stylesheet" media="all" href="static/css/pos.css">
+    <link rel="icon" href="https://ehopper.com/wp-content/uploads/2016/03/favicon-01.png" type="image/png">
+    <!-- BEGIN scripts -->
+    <!-- END scripts -->
+  </head>
 
-  <body class="animated">
-    <article class="pos pos-payments">
-      <main class="pos-order disabled layout layout-rows">
-        <header>
-          <a class="btn icon icon-back" href="pos.html"></a>
-          <h1>Order</h1>
-        </header>
-        <link rel="import" href="inc/order.html" onload="demoTemplate(this)"> </main>
-      <aside class="pos-paymentmethods cutout-left">
-        <header class="cutout-left">
-          <div class="header__icons"><button class="btn icon icon-help" title="Help" onclick="demoDialogOpen('help')"></button></div>
-          <h1>Order Notes</h1>
-        </header>
-        <section>
-          <p><br></p>
-          <form class="form-narrow" method="get" action="pos.html">
-            <div class="fieldset fieldset-lg fieldset-bordered fieldset-standalone fieldset-textarea"> <textarea class="input fieldset__textarea" id="note" placeholder="Type here Order-wide Note" style="height: 200px;" autofocus></textarea> </div> <button class="btn btn-lg btn-block btn-primary text-uppercase btn-ripple">Done</button> </form>
-        </section>
-      </aside>
-    </article>
-    <div class="snackbar hide">
-      <div class="snackbar__actions"><button class="btn btn-link text-uppercase"></button></div>
-      <div class="snackbar__message"></div>
+  <body class="">
+    <!-- begin application -->
+    <div class="application" id="application">
+      <!-- BEGIN content -->
+      <main class="main" data-toggle-class-container="main-container">
+        <div class="inner">
+          <aside class="sidebar sidebar_left">
+            <!-- begin header -->
+            <header class="header sidebar__header"> <button class="header__back btn-back">
+			<i class="icon icon-back btn-back__icon"></i>
+			
+		</button>
+              <div class="header__toolbar">
+                <div class="toolbar toolbar_static">
+                  <div class="toolbar__container">
+                    <div class="toolbar__row">
+                      <div class="toolbar__col">Quick Sale</div>
+                      <div class="toolbar__col">Walk In</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </header>
+            <!-- end header -->
+            <div class="sidebar__body">
+              <div class="sidebar__content">
+                <ul class="order-list">
+                  <li class="order-item" data-state="default">
+                    <div class="order-item__container">
+                      <div class="order-item__content">
+                        <div class="order-item__info">
+                          <div class="order-item__title">Hot Dog XL</div>
+                        </div>
+                        <div class="order-item__row">
+                          <div class="order-item__col">
+                            <div class="order-item__quantity">1&times;</div>
+                            <div class="order-item__price">3.00</div>
+                          </div>
+                          <div class="order-item__col">
+                            <div class="order-item__total">3.00</div>
+                          </div>
+                        </div>
+                        <div class="order-item__meta"><strong>Note</strong> Click to duplicate in cart</div>
+                      </div>
+                    </div>
+                  </li>
+                  <li class="order-item" data-state="default">
+                    <div class="order-item__container">
+                      <div class="order-item__content">
+                        <div class="order-item__info">
+                          <div class="order-item__title">T-Shirt with Print 23</div>
+                        </div>
+                        <div class="order-item__row">
+                          <div class="order-item__col">
+                            <div class="order-item__quantity">2&times;</div>
+                            <div class="order-item__price">100.00</div>
+                          </div>
+                          <div class="order-item__col">
+                            <div class="order-item__total">200.00</div>
+                            <div class="order-item__discount">-5.10</div>
+                          </div>
+                        </div>
+                        <div class="order-item__meta">Long Sleeves, XL size, Black color</div>
+                      </div>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div class="sidebar__footer">
+              <div class="totals sidebar__totals">
+                <div class="totals__container">
+                  <ul class="totals-list totals-list_main">
+                    <li class="totals-list__item">
+                      <div class="totals-list__label">Sub</div>
+                      <div class="totals-list__value">$12345.00</div>
+                    </li>
+                    <li class="totals-list__item">
+                      <div class="totals-list__label">Discount</div>
+                      <div class="totals-list__value">$123.00</div>
+                    </li>
+                  </ul>
+                  <ul class="totals-list totals-list_scroll">
+                    <li class="totals-list__item">
+                      <div class="totals-list__label">Lorem ipsum.</div>
+                      <div class="totals-list__value">$1234.00</div>
+                    </li>
+                    <li class="totals-list__item">
+                      <div class="totals-list__label">Lorem ipsum.</div>
+                      <div class="totals-list__value">$123456.00</div>
+                    </li>
+                    <li class="totals-list__item">
+                      <div class="totals-list__label">Lorem ipsum.</div>
+                      <div class="totals-list__value">$1234567.00</div>
+                    </li>
+                    <li class="totals-list__item">
+                      <div class="totals-list__label">Lorem ipsum.</div>
+                      <div class="totals-list__value">$123.00</div>
+                    </li>
+                    <li class="totals-list__item">
+                      <div class="totals-list__label">Lorem ipsum.</div>
+                      <div class="totals-list__value">$123456789.00</div>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </aside>
+          <div class="container container_right">
+            <!-- begin header -->
+            <header class="header container__header"> <button class="btn-icon header__help" title="Help" data-modal-open="help">
+			<i class="icon icon-help"></i>
+		</button>
+              <h2 class="title-xlg header__title header__title_vertical">Order Notes</h2>
+            </header>
+            <!-- end header -->
+            <div class="container__body step-body">
+              <div class="step-body__section">
+                <div class="form form_sm">
+                  <div class="form__section">
+                    <div class="form-box"> <textarea class="textarea textarea_block" placeholder="Type here Order-wide Note"></textarea> </div>
+                  </div>
+                  <div class="form__section"> <button class="btn btn_primary btn_lg btn_block text-uppercase" data-animation="ripple">Done</button> </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+      <!-- begin help -->
+      <div class="help" data-modal="help">
+        <div class="help__container" data-modal-container="help">
+          <div class="help__header">
+            <header class="header header_large"> <button class="btn-icon help__close icon icon-close" data-modal-close="help"></button>
+              <h2 class="title-xlg header__title">Help</h2>
+            </header>
+          </div>
+          <div class="help__body">
+            <p>Help content.</p>
+          </div>
+        </div>
+      </div>
+      <!-- end help -->
+      <!-- END content -->
+      <!-- begin snackbar -->
+      <div class="snackbar" data-snackbar-container="snackbar" data-state="default">
+        <div class="snackbar__message" data-snackbar-content="snackbar"></div>
+      </div>
+      <!-- end snackbar -->
     </div>
-    <!-- Dialog: Help Panel -->
-    <link rel="import" href="inc/help.html" onload="demoTemplate(this)"> </body>
+    <!-- end application -->
+    <!-- BEGIN scripts -->
+    <script type="text/javascript" src="static/js/app.js"></script>
+    <!-- END scripts -->
+  </body>
 
 </html>

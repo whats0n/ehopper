@@ -53,6 +53,23 @@ hr
 	margin: 0 auto
 	&_sm
 		max-width: 460px
+	&__section
+		margin-bottom: 20px
+	&__row
+		position: relative
+		+clr
+		&:before
+			content: ''
+			position: absolute
+			top: 0
+			left: 50%
+			bottom: 0
+			margin-left: -1px
+			border-left: 2px solid $lightGray
+	&__col
+		float: left
+		padding: 12px 20px
+		width: 50%
 
 .loading-page
 	&__icon

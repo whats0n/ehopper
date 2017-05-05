@@ -18,9 +18,9 @@
     <!-- begin application -->
     <div class="application" id="application">
       <!-- BEGIN content -->
-      <main class="main" data-toggle-class-container="main-container">
+      <main class="main">
         <div class="inner">
-          <aside class="sidebar sidebar_left" data-toggle-class-container="sidebar-header">
+          <aside class="sidebar sidebar_left">
             <!-- begin header -->
             <header class="header sidebar__header"> <button class="header__back btn-back">
 			<i class="icon icon-back btn-back__icon"></i>
@@ -38,10 +38,10 @@
               </div>
             </header>
             <!-- end header -->
-            <div class="sidebar__body" data-order-scroll="order">
+            <div class="sidebar__body">
               <div class="sidebar__content">
-                <ul class="order-list" data-order-visible="order" data-order-list="order">
-                  <li class="order-item" data-order-added="item" data-state="default">
+                <ul class="order-list">
+                  <li class="order-item" data-state="default">
                     <div class="order-item__container">
                       <div class="order-item__content">
                         <div class="order-item__info">
@@ -56,11 +56,11 @@
                             <div class="order-item__total">3.00</div>
                           </div>
                         </div>
-                        <div class="order-item__meta"><strong data-fullinfo-target="notes">Note</strong> Click to duplicate in cart</div>
+                        <div class="order-item__meta"><strong>Note</strong> Click to duplicate in cart</div>
                       </div>
                     </div>
                   </li>
-                  <li class="order-item" data-order-added="item" data-state="default">
+                  <li class="order-item" data-state="default">
                     <div class="order-item__container">
                       <div class="order-item__content">
                         <div class="order-item__info">
@@ -81,14 +81,10 @@
                     </div>
                   </li>
                 </ul>
-                <div class="order-empty is-hidden" data-order-empty="order"> <i class="order-empty__icon"></i>
-                  <h5>Order is empty</h5>
-                  <p>Add items from catalog</p>
-                </div>
               </div>
             </div>
             <div class="sidebar__footer">
-              <div class="totals sidebar__totals" data-order-visible="order">
+              <div class="totals sidebar__totals">
                 <div class="totals__container">
                   <ul class="totals-list totals-list_main">
                     <li class="totals-list__item">
@@ -136,8 +132,8 @@
             <!-- end header -->
             <div class="container__body step-body">
               <div class="step-body__section">
-                <div class="form form_sm">
-                  <div class="payment-field">
+                <div class="form form_sm"> <br>
+                  <div class="form__section">
                     <div class="field-box">
                       <div class="field-box__counter">
                         <div class="field-box__label">Payments</div>
@@ -149,7 +145,7 @@
                       </div>
                     </div>
                   </div>
-                  <div class="payment-field">
+                  <div class="form__section">
                     <div class="field-box">
                       <div class="field-box__select-set">
                         <div class="field-box__number">1</div>
@@ -171,7 +167,7 @@
                       </div>
                     </div>
                   </div>
-                  <div class="payment-field">
+                  <div class="form__section">
                     <div class="field-box">
                       <div class="field-box__select-set">
                         <div class="field-box__number">2</div>
@@ -193,7 +189,7 @@
                       </div>
                     </div>
                   </div>
-                  <div class="payment-field">
+                  <div class="form__section">
                     <div class="field-box">
                       <div class="field-box__select-set">
                         <div class="field-box__number">3</div>

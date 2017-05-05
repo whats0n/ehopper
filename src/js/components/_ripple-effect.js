@@ -9,8 +9,10 @@ export default (function() {
 		const height = $item.outerHeight();
 		const size = width >= height ? width : height;
 		const offset = $item.offset();
-		const x = e.pageX - offset.left;
-		const y = e.pageY - offset.top;
+		const pageX = e.type !== 'touchstart' ? e.pageX : e.touches[0].clientX;
+		const pageY = e.type !== 'touchstart' ? e.pageY : e.touches[0].clientY;
+		const x = pageX - offset.left;
+		const y = pageY - offset.top;
 		
 		const circle = document.createElement('span');
 		circle.classList.add('ripple-circle');
@@ -20,7 +22,7 @@ export default (function() {
 		circle.style.height = `${size}px`;
 		circle.addEventListener('animationend', e => circle.remove(), false);
 		circle.addEventListener('webkitAnimationEnd', e => circle.remove(), false);
-		
+
 		$item.append(circle);
 	};
 

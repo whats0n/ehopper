@@ -1,125 +1,97 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<meta charset=utf-8>
-	<title>Receipt &bull; eHopper POS</title>
-	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
-	<!-- <meta name="viewport" content="width=device-width, initial-scale=1"> -->
-	<meta http-equiv=X-UA-Compatible content="IE=edge,chrome=1">
-	<link rel="stylesheet" type="text/css" href="static/css/pos.css">
-	<script src="static/js/demo.js"></script>
-	<link rel="icon" href="https://ehopper.com/wp-content/uploads/2016/03/favicon-01.png" type="image/png">
-</head>
+---
+title: 'Receipt &bull; eHopper POS'
+styles: 
+	- 'pos'
+---
+{% extends "layouts/_layout.html" %}
 
-
-<body class="animated">
-
-	<article class="pos pos-payments">
-
-
-		<main class="pos-order disabled layout layout-rows">
-			<header>
-				<a class="btn icon icon-back" href="pos.html"></a>
-				<h1>POS</h1>
-			</header>
-			<link rel="import" href="inc/order.html" onload="demoTemplate(this)">
-		</main>
-
-
-		<aside class="pos-paymentmethods cutout-left layout layout-rows">
-
-			<header class="cutout-left layout__row">
-				<div class="header__icons"><button class="btn icon icon-help" title="Help" onclick="demoDialogOpen('help')"></button></div>
-				<h1>Receipt #001234</h1>
-			</header>
-
-			<section class="layout__row layout__row-grow">
-				<form class="form-narrow" method="get" action="pos.html">
-
-					<div class="layout fieldset-standalone">
-						<!-- <p class="layout__column labeled-info">
-							<label>Amount Due:</label>
-							<span class="big muted">$<span class="xl">102.00</span></span></p> -->
-						<p class="layout__column labeled-info text-right">
-							<label>Amount Tendered:</label>
-							<span class="big text-prima____ry">$<span class="xl">200.00</span></span></p>
-						<div class="layout__column-gap"></div>
-						<div class="layout__column-gap fieldset-border-left"></div>
-						<p class="layout__column labeled-info text-left">
-							<label>Change Due:</label>
-							<span class="big text-danger">$<span class="xl">98.00</span></span>
-						</p>
+{% block content %}
+	<main class="main">
+		<div class="inner">
+			{% include 'partials/components/_payments-sidebar.html' %}
+			<div class="container container_right">
+				{{header.simple({
+					headerClassList: 'container__header',
+					title: 'Receipt #001234',
+					titleClassList: 'header__title_vertical',
+					help: true
+				})}}
+				<div class="container__body step-body">
+					<div class="step-body__section">
+						<div class="form form_sm">
+							<div class="form__section">
+								<div class="form__row">
+									<div class="form__col">
+										{{mixins.infoPrice({
+											label: 'Amount Tendered:',
+											price: '200.00',
+											currency: '$',
+											classList: 'text-right'
+										})}}
+									</div>
+									<div class="form__col">
+										{{mixins.infoPrice({
+											label: 'Change Due:',
+											price: '98.00',
+											currency: '$',
+											classList: 'text-left',
+											valueClassList: 'color-red'
+										})}}
+									</div>
+								</div>
+							</div>
+							<div class="form__section">
+								<div class="form-box">
+									<div class="form-box__field">
+										{{mixins.field({
+											label: 'Bill Language:',
+											select: true,
+											id: 'bill-language',
+											selectOptions: {
+												id: 'bill-language',
+												classList: 'select_lg field__select',
+												options: [ 'English', 'French', 'Russion' ]
+											}
+										})}}
+									</div>
+									<div class="form-box__field">
+										<label for="federal-tax" class="form-box__label">Email Bill</label>
+										{{mixins.switcher({ id: 'email-bill', classList: 'form-box__switcher' })}}
+									</div>
+									<div class="form-box__field">
+										{{mixins.field({
+											label: 'Email address:',
+											id: 'order-email-address',
+											placeholder: 'user@domain.com',
+											inputClassList: 'input_lg text-right'
+										})}}
+									</div>
+									<div class="form-box__field">
+										<label for="state-tax" class="form-box__label">Print Bill</label>
+										{{mixins.switcher({ id: 'print-bill', classList: 'form-box__switcher' })}}
+									</div>
+								</div>
+							</div>
+							<div class="form__section">
+								<div class="form-box">
+									<div class="form-box__field">
+										<label for="state-tax" class="form-box__label">Loyalty Checkin</label>
+										{{mixins.switcher({ id: 'print-bill', classList: 'form-box__switcher switcher_green' })}}
+									</div>
+								</div>
+							</div>
+						</div>
 					</div>
-
-					<!-- <table class="table">
-						<tr>
-							<td>Amount Tendered</td>
-							<td class="text-right big">$<span class="xl">102.00</span></td>
-						</tr>
-						<tr>
-							<td>Change Due</td>
-							<td class="text-right big text-danger">$<span class="xl">98.00</span></td>
-						</tr>
-					</table> -->
-
-					<div class="fieldset-bordered fieldset-standalone">
-
-						<div class="fieldset fieldset-lg">
-							<label class="fieldset__label" for="language">Receipt Language:</label>
-							<select class="input input-lg fieldset__input text-right" id="language">
-								<option>English</option>
-								<option>French</option>
-								<option>Russian</option>
-							</select>
+					<div class="step-body__footer section">
+						<div class="wrapper-btn-center">
+							<button class="btn btn_primary btn_lg btn_block text-uppercase" data-animation="ripple">Done</button>
 						</div>
-
-						<div class="fieldset fieldset-checkbox fieldset-border-top">
-							<label class="fieldset__label" for="email">Email Receipt</label>
-							<div class="fieldset__input text-right"><input class="toggle" id="email" type="checkbox" onchange="toggleClass(demoEmailTo, 'hide', !this.checked)"></div>
-						</div>
-						
-						<div class="fieldset fieldset-lg hide" id="demoEmailTo">
-							<label class="fieldset__label" for="email_to">Email address:</label>
-							<input class="input input-lg fieldset__input text-right" id="email_to" type="email" placeholder="user@domain.com" required>
-						</div>
-
-						<div class="fieldset fieldset-checkbox fieldset-border-top">
-							<label class="fieldset__label" for="print">Print Receipt</label>
-							<div class="fieldset__input text-right"><input class="toggle" id="print" type="checkbox" checked></div>
-						</div>
-						
 					</div>
-
-					<div class="fieldset fieldset-checkbox fieldset-bordered fieldset-standalone">
-						<label class="fieldset__label" for="loyalty">Loyalty Checkin</label>
-						<div class="fieldset__input text-right"><input class="toggle toggle-success" id="loyalty" type="checkbox"></div>
-					</div>
-
-
-				</form>
-			</section>
-
-			<!-- Bottom aligned button -->
-			<section class="layout__row">
-				<div class="form-narrow text-center">
-					<a class="btn btn-primary btn-lg btn-go text-uppercase" href="pos.html">Done</a>
 				</div>
-			</section>
+			</div>
+		</div>
+	</main>
 
-		</aside>
-
-	</article>
-
-
-	<div class="snackbar hide">
-		<div class="snackbar__actions"><button class="btn btn-link text-uppercase"></button></div>
-		<div class="snackbar__message"></div>
-	</div>
-
-
-	<!-- Dialog: Help Panel -->
-	<link rel="import" href="inc/help.html" onload="demoTemplate(this)">
-
-
-</body>
-</html>
+	{{modal.help()}}
+	{{modal.paymentTerminal()}}
+{% endblock %}

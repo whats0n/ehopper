@@ -6,7 +6,7 @@ styles:
 {% extends "layouts/_layout.html" %}
 
 {% block content %}
-	<main class="main" data-toggle-class-container="main-container">
+	<main class="main">
 		<div class="inner">
 			{% include 'partials/components/_payments-sidebar.html' %}
 			<div class="container container_right">
@@ -19,14 +19,15 @@ styles:
 				<div class="container__body step-body">
 					<div class="step-body__section">
 						<div class="form form_sm">
-							<div class="payment-field">
+							<br>
+							<div class="form__section">
 								{{mixins.fieldBox({
 									counter: true,
 									value: '3',
 									label: 'Payments'
 								})}}
 							</div>
-							<div class="payment-field">
+							<div class="form__section">
 								{{mixins.fieldBox({
 									select: {
 										selected: 0,
@@ -43,7 +44,7 @@ styles:
 									number: 1
 								})}}
 							</div>
-							<div class="payment-field">
+							<div class="form__section">
 								{{mixins.fieldBox({
 									select: {
 										selected: 1,
@@ -60,7 +61,7 @@ styles:
 									number: 2
 								})}}
 							</div>
-							<div class="payment-field">
+							<div class="form__section">
 								{{mixins.fieldBox({
 									select: true,
 									selectStatic: true,

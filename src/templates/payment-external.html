@@ -6,7 +6,7 @@ styles:
 {% extends "layouts/_layout.html" %}
 
 {% block content %}
-	<main class="main" data-toggle-class-container="main-container">
+	<main class="main">
 		<div class="inner">
 			{% include 'partials/components/_payments-sidebar.html' %}
 			<div class="container container_right">
@@ -19,7 +19,7 @@ styles:
 				<div class="container__body step-body">
 					<div class="step-body__section">
 						<div class="form form_sm">
-							<div class="payment-top">
+							<div class="form__section">
 								{{mixins.infoPrice({
 									label: 'Amount Due:',
 									price: '102.00',
@@ -27,7 +27,7 @@ styles:
 									classList: 'text-right'
 								})}}
 							</div>
-							<div class="payment-field">
+							<div class="form__section">
 								<div class="payment-fieldset">
 									<div class="fieldset fieldset_lg fieldset_bordered">
 										<div class="fieldset__container">
@@ -97,24 +97,22 @@ styles:
 									</div>
 								</div>
 							</div>
-							<div class="payment-field">
-								{{mixins.fieldBox({
-									radios: true,
-									label: 'Tips and Signature',
-									colSize: 'sm',
-									list: [
-										{
-											content: 'On Screen',
-											name: 'tips-and-signature'
-										},
-										{
-											content: 'On Receipt',
-											attrs: 'checked',
-											name: 'tips-and-signature'
-										}
-									]
-								})}}
-							</div>
+							{{mixins.fieldBox({
+								radios: true,
+								label: 'Tips and Signature',
+								colSize: 'sm',
+								list: [
+									{
+										content: 'On Screen',
+										name: 'tips-and-signature'
+									},
+									{
+										content: 'On Receipt',
+										attrs: 'checked',
+										name: 'tips-and-signature'
+									}
+								]
+							})}}
 						</div>
 					</div>
 					<div class="step-body__footer section">

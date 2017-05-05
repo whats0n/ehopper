@@ -39,7 +39,7 @@
 
 {% macro field(props) %}
 <div class="field {{props.classList}}">
-	<div class="field__inner field__display">
+	<div class="field__inner">
 
 		{% if props.label %}
 			<label class="field__label" for="{{props.id}}">{{props.label}}</label>
@@ -104,7 +104,7 @@
 {% macro infoPrice(props) %}
 <div class="info-price {{props.classList}}">
 	<div class="info-price__label">{{props.label}}</div>
-	<div class="info-price__value">
+	<div class="info-price__value {{props.valueClassList}}">
 		<small>{{props.currency}}</small>
 		<span>{{props.price}}</span>
 	</div>

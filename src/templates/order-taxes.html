@@ -1,91 +1,54 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<meta charset=utf-8>
-	<title>Order Taxes &bull; eHopper POS</title>
-	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
-	<!-- <meta name="viewport" content="width=device-width, initial-scale=1"> -->
-	<meta http-equiv=X-UA-Compatible content="IE=edge,chrome=1">
-	<link rel="stylesheet" type="text/css" href="static/css/pos.css">
-	<script src="static/js/demo.js"></script>
-	<link rel="icon" href="https://ehopper.com/wp-content/uploads/2016/03/favicon-01.png" type="image/png">
-</head>
+---
+title: 'Order Taxes &bull; eHopper POS'
+styles: 
+	- 'pos'
+---
+{% extends "layouts/_layout.html" %}
 
-
-<body class="animated">
-
-	<article class="pos pos-payments">
-
-
-		<main class="pos-order disabled layout layout-rows">
-			<header>
-				<a class="btn icon icon-back" href="pos.html"></a>
-				<h1>Order</h1>
-			</header>
-			<link rel="import" href="inc/order.html" onload="demoTemplate(this)">
-		</main>
-
-
-		<aside class="layout layout-rows cutout-left">
-
-			<header class="cutout-left">
-				<div class="header__icons"><button class="btn icon icon-help" title="Help" onclick="demoDialogOpen('help')"></button></div>
-				<h1>Order Taxes</h1>
-			</header>
-
-			<section class="layout__row layout__row-grow">
-				<p><br></p>
-				<form class="form-narrow" method="get" action="pos.html">
-
-					<div class="fieldset-standalone text-right">
-						<label>Exclude All Taxes <input class="toggle" type="checkbox"></label>
-					</div>
-
-					<div class="fieldset-standalone text-right">
-						<label>Include in Price <input class="toggle" type="checkbox"></label>
-					</div>
-
-
-					<div class="fieldset-bordered fieldset-standalone">
-
-						<div class="fieldset fieldset-checkbox">
-							<label class="fieldset__label" for="tax1">Federal Tax (5%)</label>
-							<div class="fieldset__input text-right"><input class="toggle" id="tax1" type="checkbox" checked></div>
+{% block content %}
+	<main class="main" data-toggle-class-container="main-container">
+		<div class="inner">
+			{% include 'partials/components/_order-sidebar.html' %}
+			<div class="container container_right">
+				{{header.simple({
+					headerClassList: 'container__header',
+					title: 'Order Taxes',
+					titleClassList: 'header__title_vertical',
+					help: true
+				})}}
+				<div class="container__body step-body">
+					<div class="step-body__section">
+						<div class="form form_sm">
+							<br>
+							<div class="switcher-box text-right">
+								<label for="exclude-all-taxes" class="switcher-box__label">Exclude All Taxes</label>
+								{{mixins.switcher({ id: 'exclude-all-taxes' })}}
+							</div>
+							<div class="switcher-box text-right">
+								<label for="include-in-price" class="switcher-box__label">Include In Price</label>
+								{{mixins.switcher({ id: 'include-in-price' })}}
+							</div>
+							<div class="form-box">
+								<div class="form-box__field">
+									<label for="federal-tax" class="form-box__label">Federal Tax (5%)</label>
+									{{mixins.switcher({ id: 'federal-tax', classList: 'form-box__switcher' })}}
+								</div>
+								<div class="form-box__field">
+									<label for="state-tax" class="form-box__label">State Tax (10%)</label>
+									{{mixins.switcher({ id: 'state-tax', classList: 'form-box__switcher' })}}
+								</div>
+							</div>
 						</div>
-
-						<div class="fieldset fieldset-checkbox">
-							<label class="fieldset__label" for="tax2">State Tax (10%)</label>
-							<div class="fieldset__input text-right"><input class="toggle" id="tax2" type="checkbox"></div>
-						</div>
-						
 					</div>
-
-				</form>
-			</section>
-
-
-			<section class="layout__row">
-				<div class="form-narrow text-center">
-					<a href="pos.html" class="btn btn-lg btn-go btn-primary text-uppercase btn-ripple">Done</a>
+					<div class="step-body__footer section">
+						<div class="wrapper-btn-center">
+							<button class="btn btn_primary btn_lg btn_block text-uppercase" data-animation="ripple">Done</button>
+						</div>
+					</div>
 				</div>
-			</section>
+			</div>
+		</div>
+	</main>
 
-
-		</aside>
-
-
-	</article>
-
-
-	<div class="snackbar hide">
-		<div class="snackbar__actions"><button class="btn btn-link text-uppercase"></button></div>
-		<div class="snackbar__message"></div>
-	</div>
-
-
-	<!-- Dialog: Help Panel -->
-	<link rel="import" href="inc/help.html" onload="demoTemplate(this)">
-
-
-</body>
-</html>
+	{{modal.help()}}
+{% endblock %}
