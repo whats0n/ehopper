@@ -18,6 +18,16 @@
 		left: 0
 		right: 0
 		background: $white
+		+clr
+		&-left
+			float: left 
+			border-right: 1px solid rgba($black, 0.1)
+		&-right
+			float: right
+		&-right,
+		&-left
+			width: 50%
+			max-width: 500px
 	&__content
 		height: 100%
 	&__footer
@@ -31,3 +41,14 @@
 	&__action
 		font-size: 0
 		text-align: right
+
+.orders-buttons
+	font-size: 0
+	white-space: nowrap
+	&__item
+		display: inline-block
+		vertical-align: top
+		border-left: 1px solid rgba($black, 0.1)
+		width: 33.33%
+	.btn
+		width: 100%

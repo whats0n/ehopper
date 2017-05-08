@@ -78,6 +78,8 @@
         vertical-align: middle
       &__units
         padding-right: 10px
+        &[data-units="currency"]
+          display: none
         span
           margin: 0
       &__static
@@ -91,7 +93,15 @@
           padding-right: 20px
           span
             margin-left: -10px
-
+  &_currency
+    .field
+      &__units
+        display: inline-block
+        vertical-align: middle
+        &[data-units="percent"]
+          display: none
+        &[data-units="currency"]
+          display: inline-block
   &__inner
     display: table-row
     background: #fff

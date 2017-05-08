@@ -170,11 +170,11 @@
       position: absolute
       top: 0
       left: 100%
-      bottom: 0
+      bottom: -1px
       border-bottom: 1px solid #aaa
-      width: 20px
+      width: 30px
       background: #eee
-      margin-left: -6px
+      margin-left: -10px
   &__footer
     position: relative
     z-index: 2
@@ -226,21 +226,37 @@
       padding-left: 20px
     &[data-column="icon"]
       width: 60px
-    &[data-column="orders-status"]
+    &[data-column="orders-tips-tips"]
+      width: 62px
+    &[data-column="orders-status"],
+    &[data-column="orders-tips-status"]
       width: 70px
     &[data-column="orders-action"]
       width: 110px
+    &[data-column="orders-action"],
+    &[data-column="orders-tips-price"]
       text-align: right
     &[data-column="orders-id"]
       width: 19%
     &[data-column="orders-register"],
     &[data-column="orders-type"],
     &[data-column="orders-fulfillment"],
-    &[data-column="orders-date"]
+    &[data-column="orders-date"],
+
+    &[data-column="orders-tips-register"],
+    &[data-column="orders-tips-refnum"],
+    &[data-column="orders-tips-type"],
+    &[data-column="orders-tips-price"],
+    &[data-column="orders-tips-date"]
       width: 8%
     &[data-column="orders-store"],
-    &[data-column="orders-employee"]
+    &[data-column="orders-employee"],
+
+    &[data-column="orders-tips-store"],
+    &[data-column="orders-tips-employee"]
       width: 10%
+    &[data-column="orders-tips-order"]
+      width: 15%
   &__th
     +rmed
 

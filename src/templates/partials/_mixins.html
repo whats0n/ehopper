@@ -70,24 +70,19 @@
 		{% if props.static and props.staticInput !== true %}
 			<div class="field__box">
 				{% if props.units %}
-					<label class="field__units" for="{{props.id}}"><span>{{props.units}}</span></label>
+					<div class="field__units" for="{{props.id}}"><span>{{props.units}}</span></div>
 				{% endif %}
 				<span class="field__static">{{props.value}}</span>
 			</div>
 		{% endif %}
-		{% if props.staticInput and props.staticInputRight %}
+		{% if props.staticInput %}
 			<div class="field__box">
-				{% if props.units %}
-					<label class="field__units" for="{{props.id}}"><span>{{props.units}}</span></label>
+				{% if props.unitsLeft %}
+					<div class="field__units" data-units="currency"><span>{{props.unitsLeft}}</span></div>
 				{% endif %}
 				<span class="field__static">{{props.value}}</span>
-			</div>
-		{% endif %}
-		{% if props.staticInput and props.staticInputLeft %}
-			<div class="field__box">
-				<span class="field__static">{{props.value}}</span>
-				{% if props.units %}
-					<label class="field__units" for="{{props.id}}"><span>{{props.units}}</span></label>
+				{% if props.unitsRight %}
+					<div class="field__units" data-units="percent"><span>{{props.unitsRight}}</span></div>
 				{% endif %}
 			</div>
 		{% endif %}

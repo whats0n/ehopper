@@ -704,7 +704,8 @@
                       <div class="fieldset fieldset_lg fieldset_bordered fieldset_keyboard">
                         <div class="field field_static">
                           <div class="field__inner"> <label class="field__label" for="item-custom-price">Custom Price:</label>
-                            <div class="field__box"> <label class="field__units" for="item-custom-price"><span>$</span></label> <span class="field__static">49.95</span> </div>
+                            <div class="field__box">
+                              <div class="field__units" for="item-custom-price"><span>$</span></div> <span class="field__static">49.95</span> </div>
                           </div>
                         </div>
                         <div class="fieldset__divider"></div>
@@ -739,55 +740,16 @@
                   <div class="tabs__content" data-tab-container="discount">
                     <div class="tabs__keyboard">
                       <div class="fieldset fieldset_lg fieldset_bordered fieldset_keyboard">
-                        <div class="field field_static">
+                        <div class="field field_static field_currency">
                           <div class="field__inner">
                             <div class="field__switch"> <label class="field__switch-left" for="discount-switcher">$</label> <label class="field__switch-box switcher">
 					<input type="checkbox" id="discount-switcher">
 					<i class="switcher__icon"></i>
 				</label> <label class="field__switch-right" for="discount-switcher">%</label> </div>
-                            <div class="field__box"> <label class="field__units" for="item-discount"><span>$</span></label> <span class="field__static">15</span> </div>
-                          </div>
-                        </div>
-                        <!-- begin keyboard -->
-                        <div class="keyboard ">
-                          <div class="keyboard__discount keyboard__sm">
-                            <div class="keyboard__discount-item"><button type="button" data-animation="ripple" class="keyboard__discount-button">5%</button></div>
-                            <div class="keyboard__discount-item"><button type="button" data-animation="ripple" class="keyboard__discount-button">10%</button></div>
-                            <div class="keyboard__discount-item"><button type="button" data-animation="ripple" class="keyboard__discount-button">15%</button></div>
-                            <div class="keyboard__discount-item"><button type="button" data-animation="ripple" class="keyboard__discount-button">20%</button></div>
-                          </div>
-                          <div class="keyboard__container keyboard__sm">
-                            <div class="keyboard__main">
-                              <div class="keyboard__item"> <button type="button" data-animation="ripple" class="keyboard__button">1</button> </div>
-                              <div class="keyboard__item"> <button type="button" data-animation="ripple" class="keyboard__button">2</button> </div>
-                              <div class="keyboard__item"> <button type="button" data-animation="ripple" class="keyboard__button">3</button> </div>
-                              <div class="keyboard__item"> <button type="button" data-animation="ripple" class="keyboard__button">4</button> </div>
-                              <div class="keyboard__item"> <button type="button" data-animation="ripple" class="keyboard__button">5</button> </div>
-                              <div class="keyboard__item"> <button type="button" data-animation="ripple" class="keyboard__button">6</button> </div>
-                              <div class="keyboard__item"> <button type="button" data-animation="ripple" class="keyboard__button">7</button> </div>
-                              <div class="keyboard__item"> <button type="button" data-animation="ripple" class="keyboard__button">8</button> </div>
-                              <div class="keyboard__item"> <button type="button" data-animation="ripple" class="keyboard__button">9</button> </div>
-                              <div class="keyboard__item"> <button type="button" data-animation="ripple" class="keyboard__button">0</button> </div>
-                              <div class="keyboard__item"> <button type="button" data-animation="ripple" class="keyboard__button">00</button> </div>
-                              <div class="keyboard__item"> <button type="button" data-animation="ripple" class="keyboard__button"><i class="icon icon-text icon-clear"></i></button> </div>
+                            <div class="field__box">
+                              <div class="field__units" data-units="currency"><span>$</span></div> <span class="field__static">15</span>
+                              <div class="field__units" data-units="percent"><span>%</span></div>
                             </div>
-                            <div class="keyboard__aside">
-                              <div class="keyboard__col"> <button type="button" data-animation="ripple" class="keyboard__button "><i class="icon icon-text icon-backspace"></i></button> </div>
-                              <div class="keyboard__col"> <button type="button" data-animation="ripple" class="keyboard__button "><i class="icon icon-text icon-undo"></i></button> </div>
-                              <div class="keyboard__col" data-colspan="2"> <button type="button" data-animation="ripple" class="keyboard__button keyboard__submit">Done</button> </div>
-                            </div>
-                          </div>
-                        </div>
-                        <!-- end keyboard -->
-                      </div>
-                      <div class="fieldset fieldset_lg fieldset_bordered fieldset_keyboard">
-                        <div class="field field_static">
-                          <div class="field__inner">
-                            <div class="field__switch"> <label class="field__switch-left" for="discount-switcher">$</label> <label class="field__switch-box switcher">
-					<input type="checkbox" id="discount-switcher">
-					<i class="switcher__icon"></i>
-				</label> <label class="field__switch-right" for="discount-switcher">%</label> </div>
-                            <div class="field__box"> <span class="field__static">15</span> <label class="field__units" for="item-discount"><span>%</span></label> </div>
                           </div>
                         </div>
                         <!-- begin keyboard -->

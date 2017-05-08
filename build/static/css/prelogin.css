@@ -847,24 +847,6 @@ hr {
   margin: 0;
 }
 
-.payment-methods {
-  overflow: auto;
-  padding: 35px 30px 0;
-  max-height: 100%;
-}
-
-.payment-top {
-  padding: 0 20px;
-}
-
-.payment-field {
-  padding: 20px 0 0;
-}
-
-.payment-fieldset {
-  margin-top: -2px;
-}
-
 .is-hidden {
   display: none;
 }
@@ -1333,6 +1315,10 @@ input.btn {
 
 .checkbox_green input:checked + .icon {
   background: #22B745;
+}
+
+.checkbox_no-border .icon {
+  box-shadow: none;
 }
 
 .checkbox_bordered .icon {
@@ -2833,6 +2819,10 @@ textarea.input {
   padding-right: 10px;
 }
 
+.field_static .field__units[data-units="currency"] {
+  display: none;
+}
+
 .field_static .field__units span {
   margin: 0;
 }
@@ -2855,6 +2845,19 @@ textarea.input {
 
 .field_static .field__static + .field__units span {
   margin-left: -10px;
+}
+
+.field_currency .field__units {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.field_currency .field__units[data-units="percent"] {
+  display: none;
+}
+
+.field_currency .field__units[data-units="currency"] {
+  display: inline-block;
 }
 
 .field__inner {

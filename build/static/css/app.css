@@ -465,24 +465,6 @@ hr {
   margin: 0;
 }
 
-.payment-methods {
-  overflow: auto;
-  padding: 35px 30px 0;
-  max-height: 100%;
-}
-
-.payment-top {
-  padding: 0 20px;
-}
-
-.payment-field {
-  padding: 20px 0 0;
-}
-
-.payment-fieldset {
-  margin-top: -2px;
-}
-
 .is-hidden {
   display: none;
 }
@@ -1267,11 +1249,11 @@ a.shy {
   position: absolute;
   top: 0;
   left: 100%;
-  bottom: 0;
+  bottom: -1px;
   border-bottom: 1px solid #aaa;
-  width: 20px;
+  width: 30px;
   background: #eee;
-  margin-left: -6px;
+  margin-left: -10px;
 }
 
 .table-wrapper__footer {
@@ -1338,9 +1320,17 @@ a.shy {
   width: 60px;
 }
 
-.table-header__th[data-column="orders-status"], .table-header__td[data-column="orders-status"],
+.table-header__th[data-column="orders-tips-tips"], .table-header__td[data-column="orders-tips-tips"],
+.table-body__th[data-column="orders-tips-tips"],
+.table-body__td[data-column="orders-tips-tips"] {
+  width: 62px;
+}
+
+.table-header__th[data-column="orders-status"], .table-header__th[data-column="orders-tips-status"], .table-header__td[data-column="orders-status"], .table-header__td[data-column="orders-tips-status"],
 .table-body__th[data-column="orders-status"],
-.table-body__td[data-column="orders-status"] {
+.table-body__th[data-column="orders-tips-status"],
+.table-body__td[data-column="orders-status"],
+.table-body__td[data-column="orders-tips-status"] {
   width: 70px;
 }
 
@@ -1348,6 +1338,13 @@ a.shy {
 .table-body__th[data-column="orders-action"],
 .table-body__td[data-column="orders-action"] {
   width: 110px;
+}
+
+.table-header__th[data-column="orders-action"], .table-header__th[data-column="orders-tips-price"], .table-header__td[data-column="orders-action"], .table-header__td[data-column="orders-tips-price"],
+.table-body__th[data-column="orders-action"],
+.table-body__th[data-column="orders-tips-price"],
+.table-body__td[data-column="orders-action"],
+.table-body__td[data-column="orders-tips-price"] {
   text-align: right;
 }
 
@@ -1357,24 +1354,44 @@ a.shy {
   width: 19%;
 }
 
-.table-header__th[data-column="orders-register"], .table-header__th[data-column="orders-type"], .table-header__th[data-column="orders-fulfillment"], .table-header__th[data-column="orders-date"], .table-header__td[data-column="orders-register"], .table-header__td[data-column="orders-type"], .table-header__td[data-column="orders-fulfillment"], .table-header__td[data-column="orders-date"],
+.table-header__th[data-column="orders-register"], .table-header__th[data-column="orders-type"], .table-header__th[data-column="orders-fulfillment"], .table-header__th[data-column="orders-date"], .table-header__th[data-column="orders-tips-register"], .table-header__th[data-column="orders-tips-refnum"], .table-header__th[data-column="orders-tips-type"], .table-header__th[data-column="orders-tips-price"], .table-header__th[data-column="orders-tips-date"], .table-header__td[data-column="orders-register"], .table-header__td[data-column="orders-type"], .table-header__td[data-column="orders-fulfillment"], .table-header__td[data-column="orders-date"], .table-header__td[data-column="orders-tips-register"], .table-header__td[data-column="orders-tips-refnum"], .table-header__td[data-column="orders-tips-type"], .table-header__td[data-column="orders-tips-price"], .table-header__td[data-column="orders-tips-date"],
 .table-body__th[data-column="orders-register"],
 .table-body__th[data-column="orders-type"],
 .table-body__th[data-column="orders-fulfillment"],
 .table-body__th[data-column="orders-date"],
+.table-body__th[data-column="orders-tips-register"],
+.table-body__th[data-column="orders-tips-refnum"],
+.table-body__th[data-column="orders-tips-type"],
+.table-body__th[data-column="orders-tips-price"],
+.table-body__th[data-column="orders-tips-date"],
 .table-body__td[data-column="orders-register"],
 .table-body__td[data-column="orders-type"],
 .table-body__td[data-column="orders-fulfillment"],
-.table-body__td[data-column="orders-date"] {
+.table-body__td[data-column="orders-date"],
+.table-body__td[data-column="orders-tips-register"],
+.table-body__td[data-column="orders-tips-refnum"],
+.table-body__td[data-column="orders-tips-type"],
+.table-body__td[data-column="orders-tips-price"],
+.table-body__td[data-column="orders-tips-date"] {
   width: 8%;
 }
 
-.table-header__th[data-column="orders-store"], .table-header__th[data-column="orders-employee"], .table-header__td[data-column="orders-store"], .table-header__td[data-column="orders-employee"],
+.table-header__th[data-column="orders-store"], .table-header__th[data-column="orders-employee"], .table-header__th[data-column="orders-tips-store"], .table-header__th[data-column="orders-tips-employee"], .table-header__td[data-column="orders-store"], .table-header__td[data-column="orders-employee"], .table-header__td[data-column="orders-tips-store"], .table-header__td[data-column="orders-tips-employee"],
 .table-body__th[data-column="orders-store"],
 .table-body__th[data-column="orders-employee"],
+.table-body__th[data-column="orders-tips-store"],
+.table-body__th[data-column="orders-tips-employee"],
 .table-body__td[data-column="orders-store"],
-.table-body__td[data-column="orders-employee"] {
+.table-body__td[data-column="orders-employee"],
+.table-body__td[data-column="orders-tips-store"],
+.table-body__td[data-column="orders-tips-employee"] {
   width: 10%;
+}
+
+.table-header__th[data-column="orders-tips-order"], .table-header__td[data-column="orders-tips-order"],
+.table-body__th[data-column="orders-tips-order"],
+.table-body__td[data-column="orders-tips-order"] {
+  width: 15%;
 }
 
 .table-header__th,
@@ -2125,6 +2142,10 @@ input.btn {
 
 .checkbox_green input:checked + .icon {
   background: #22B745;
+}
+
+.checkbox_no-border .icon {
+  box-shadow: none;
 }
 
 .checkbox_bordered .icon {
@@ -3625,6 +3646,10 @@ textarea.input {
   padding-right: 10px;
 }
 
+.field_static .field__units[data-units="currency"] {
+  display: none;
+}
+
 .field_static .field__units span {
   margin: 0;
 }
@@ -3647,6 +3672,19 @@ textarea.input {
 
 .field_static .field__static + .field__units span {
   margin-left: -10px;
+}
+
+.field_currency .field__units {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.field_currency .field__units[data-units="percent"] {
+  display: none;
+}
+
+.field_currency .field__units[data-units="currency"] {
+  display: inline-block;
 }
 
 .field__inner {
@@ -6053,6 +6091,27 @@ textarea.input {
   left: 0;
   right: 0;
   background: #fff;
+  *zoom: 1;
+}
+
+.orders__toolbar:after {
+  content: " ";
+  display: table;
+  clear: both;
+}
+
+.orders__toolbar-left {
+  float: left;
+  border-right: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.orders__toolbar-right {
+  float: right;
+}
+
+.orders__toolbar-right, .orders__toolbar-left {
+  width: 50%;
+  max-width: 500px;
 }
 
 .orders__content {
@@ -6072,6 +6131,22 @@ textarea.input {
 .orders__action {
   font-size: 0;
   text-align: right;
+}
+
+.orders-buttons {
+  font-size: 0;
+  white-space: nowrap;
+}
+
+.orders-buttons__item {
+  display: inline-block;
+  vertical-align: top;
+  border-left: 1px solid rgba(0, 0, 0, 0.1);
+  width: 33.33%;
+}
+
+.orders-buttons .btn {
+  width: 100%;
 }
 
 .order .order__header {
@@ -6189,6 +6264,24 @@ textarea.input {
   padding-left: 30px;
   margin: 2px 0;
   height: 64px;
+}
+
+.payment-methods {
+  overflow: auto;
+  padding: 35px 30px 0;
+  max-height: 100%;
+}
+
+.payment-top {
+  padding: 0 20px;
+}
+
+.payment-field {
+  padding: 20px 0 0;
+}
+
+.payment-fieldset {
+  margin-top: -2px;
 }
 
 #payment-cash .keyboard__lg {

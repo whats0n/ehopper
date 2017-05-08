@@ -5,6 +5,7 @@ export const touchClass = 'is-touch';
 export const noTouchClass = 'no-touch';
 
 //jQuery dom elements
+export const $WIN = $(window);
 export const $DOCUMENT = $(document);
 export const $BODY = $('body');
 

@@ -1,4 +1,4 @@
-import {$DOCUMENT} from '../_constants';
+import {$WIN} from '../_constants';
 
 export default (function() {
 
@@ -13,7 +13,6 @@ export default (function() {
 		if (x.start === x.end) return;
 
 		const fake = $target.data('table-scrollable');
-		const target = $target.get(0);
 		//move fixed elements
 		$target
 			.closest(`[data-table="${fake}"]`)
@@ -25,5 +24,28 @@ export default (function() {
 		//set end scroll
 		x.end = $target.scrollLeft();
 	});
+
+	const checkTableOnScroll = () => {
+		$('[data-table-scrollable]').each(function(e) {
+			const $target = $(this);
+			const scrollHeight = this.scrollHeight;
+			const clientHeight = this.clientHeight;
+			const offsetWidth = this.offsetWidth;
+			const clientWidth = this.clientWidth;
+			const diff = offsetWidth - clientWidth;
+			const fake = $target.data('table-scrollable');
+			
+			$target
+				.closest(`[data-table="${fake}"]`)
+				.find(`[data-table-fake="${fake}"]`)
+				.css({
+					'padding-right': `${diff}px`
+				});
+		});
+	};
+
+	$WIN.resize(checkTableOnScroll);
+	checkTableOnScroll();
+	
 
 })();
