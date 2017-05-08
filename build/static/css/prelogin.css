@@ -2849,6 +2849,14 @@ textarea.input {
   user-select: none;
 }
 
+.field_static .field__static + .field__units {
+  padding-right: 20px;
+}
+
+.field_static .field__static + .field__units span {
+  margin-left: -10px;
+}
+
 .field__inner {
   display: table-row;
   background: #fff;

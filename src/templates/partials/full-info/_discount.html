@@ -7,12 +7,96 @@
 				right: '%',
 				id: 'discount-switcher'
 			},
+			staticInput: true,
+			staticInputRight: true,
+			classList: 'field_static',
+			units: '$',
+			id: 'item-discount',
+			value: '15'
+		},
+		dividerNone: true,
+		keyboard: {
+			size: 'keyboard__sm',
+			discount: [
+				{
+					content: '5%'
+				},
+				{
+					content: '10%'
+				},
+				{
+					content: '15%'
+				},
+				{
+					content: '20%'
+				}
+			],
+			keyboardSide: [
+				{
+					content: '<i class="icon icon-text icon-backspace"></i>'
+				},
+				{
+					content: '<i class="icon icon-text icon-undo"></i>'
+				},
+				{
+					content: 'Done',
+					classList: 'keyboard__submit',
+					colspan: '2'
+				}
+			],
+			keyboardMain: [
+				{
+					content: '1'
+				},
+				{
+					content: '2'
+				},
+				{
+					content: '3'
+				},
+				{
+					content: '4'
+				},
+				{
+					content: '5'
+				},
+				{
+					content: '6'
+				},
+				{
+					content: '7'
+				},
+				{
+					content: '8'
+				},
+				{
+					content: '9'
+				},
+				{
+					content: '0'
+				},
+				{
+					content: '00'
+				},
+				{
+					content: '<i class="icon icon-text icon-clear"></i>'
+				}
+			]
+		}
+	})}}
+	{{keyboard.display({
+		field: {
+			switch: {
+				left: '$',
+				right: '%',
+				id: 'discount-switcher'
+			},
+			staticInput: true,
+			staticInputLeft: true,
+			classList: 'field_static',
 			units: '%',
 			id: 'item-discount',
-			value: '15',
-			placeholder: '0',
-			attrs: 'required readonly',
-			inputClassList: 'text-right input_xl'
+			value: '15'
 		},
 		dividerNone: true,
 		keyboard: {

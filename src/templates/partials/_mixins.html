@@ -54,7 +54,7 @@
 				<label class="field__switch-right" for="{{props.switch.id}}">{{props.switch.right}}</label>
 			</div>
 		{% endif %}
-		{% if props.static !== true and props.select !== true %}
+		{% if props.static !== true and props.select !== true and props.staticInput !== true %} %}
 			<div class="field__box">
 				<input class="input field__input {{props.inputClassList}}" 
 					{% if props.value %}value="{{props.value}}"{% endif %}
@@ -67,12 +67,28 @@
 				<label class="field__units" for="{{props.id}}"><span>{{props.units}}</span></label>
 			{% endif %}
 		{% endif %}
-		{% if props.static %}
+		{% if props.static and props.staticInput !== true %}
 			<div class="field__box">
 				{% if props.units %}
 					<label class="field__units" for="{{props.id}}"><span>{{props.units}}</span></label>
 				{% endif %}
 				<span class="field__static">{{props.value}}</span>
+			</div>
+		{% endif %}
+		{% if props.staticInput and props.staticInputRight %}
+			<div class="field__box">
+				{% if props.units %}
+					<label class="field__units" for="{{props.id}}"><span>{{props.units}}</span></label>
+				{% endif %}
+				<span class="field__static">{{props.value}}</span>
+			</div>
+		{% endif %}
+		{% if props.staticInput and props.staticInputLeft %}
+			<div class="field__box">
+				<span class="field__static">{{props.value}}</span>
+				{% if props.units %}
+					<label class="field__units" for="{{props.id}}"><span>{{props.units}}</span></label>
+				{% endif %}
 			</div>
 		{% endif %}
 		{% if props.select %}
