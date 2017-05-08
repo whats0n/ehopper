@@ -126,7 +126,7 @@
 <div class="select {{props.classList}}">
 	<select {% if props.id %}id="{{props.id}}"{% endif %}>
 		{% for option in props.options %}
-			<option value="{{option}}" {% if loop.index0 == props.selected %}selected{% endif %}>{{option}}</option>
+			<option value="{{option}}" {% if loop.index0 == props.selected %}selected{% endif %} {% if loop.index0 == props.disabled %}disabled selected{% endif %}>{{option}}</option>
 		{% endfor %}
 	</select>
 </div>

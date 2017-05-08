@@ -1,0 +1,49 @@
+<!doctype html>
+<html>
+
+  <head>
+    <meta charset="utf-8">
+    <title>Help &bull; eHopper POS</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="theme-color" content="#fff">
+    <meta name="format-detection" content="telephone=no">
+    <link rel="stylesheet" media="all" href="static/css/pos.css">
+    <link rel="icon" href="https://ehopper.com/wp-content/uploads/2016/03/favicon-01.png" type="image/png">
+    <!-- BEGIN scripts -->
+    <script type="text/javascript" src="static/js/demo.js"></script>
+    <!-- END scripts -->
+  </head>
+
+  <body class="animated">
+    <!-- begin application -->
+    <div class="application" id="application">
+      <!-- BEGIN content -->
+      <div class="main-help"> <button class="main-help__close"><i class="icon icon-close"></i></button>
+        <div class="main-help__slider js-help-slider">
+          <div class="main-help__slide"> <img src="https://placecage.com/1280/800" alt="help-1"> </div>
+          <div class="main-help__slide"> <img src="https://placecage.com/1280/800" alt="help-2"> </div>
+          <div class="main-help__slide"> <img src="https://placecage.com/1280/800" alt="help-3"> </div>
+          <div class="main-help__slide"> <img src="https://placecage.com/1280/800" alt="help-4"> </div>
+        </div>
+        <ul class="main-help__controls">
+          <li class="main-help__control js-help-control is-active" data-slide="0"><span data-animation="ripple">Open Register</span></li>
+          <li class="main-help__control js-help-control" data-slide="1"><span data-animation="ripple">Make Sales</span></li>
+          <li class="main-help__control js-help-control" data-slide="2"><span data-animation="ripple">Process Payment</span></li>
+          <li class="main-help__control js-help-control" data-slide="3"><span data-animation="ripple">Close Register</span></li>
+        </ul>
+      </div>
+      <!-- END content -->
+      <!-- begin snackbar -->
+      <div class="snackbar" data-snackbar-container="snackbar" data-state="default">
+        <div class="snackbar__message" data-snackbar-content="snackbar"></div>
+      </div>
+      <!-- end snackbar -->
+    </div>
+    <!-- end application -->
+    <!-- BEGIN scripts -->
+    <script type="text/javascript" src="static/js/app.js"></script>
+    <!-- END scripts -->
+  </body>
+
+</html>

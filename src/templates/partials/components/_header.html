@@ -103,7 +103,9 @@
 	{% if props.sync %}
 		<div class="header__sync">
 			<div class="header__indicator" data-state="active"></div>
-			<button class="btn-icon icon icon-sync"></button>
+			{% if props.syncIndicatorOnly !== true %}
+				<button class="btn-icon icon icon-sync"></button>
+			{% endif %}
 		</div>
 	{% endif %}
 </header>

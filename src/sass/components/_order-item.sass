@@ -11,7 +11,7 @@
 		.order-item
 			&__container
 				transform: translate3d(-60px,0,0)
-	&[data-state="active"]
+	&.is-active
 		background: $azure
 		+refund
 			background: lighten(#ec4a41, 35%)
@@ -22,7 +22,7 @@
 			background: rgba($black, 0.05)
 		+active
 			background: $azureActive
-		&[data-state="active"]
+		&.is-active
 			+active
 				background: $azureActive
 			+refund

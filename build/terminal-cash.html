@@ -1,49 +1,121 @@
-<!DOCTYPE html>
+<!doctype html>
 <html>
 
   <head>
-    <meta charset=utf-8>
+    <meta charset="utf-8">
     <title>Terminal &bull; eHopper POS</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
-    <!-- <meta name="viewport" content="width=device-width, initial-scale=1"> -->
-    <meta http-equiv=X-UA-Compatible content="IE=edge,chrome=1">
-    <link rel="stylesheet" type="text/css" href="static/css/pos.css">
-    <script src="static/js/demo.js"></script>
-    <link rel="icon" href="https://ehopper.com/wp-content/uploads/2016/03/favicon-01.png" type="image/png"> </head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="theme-color" content="#fff">
+    <meta name="format-detection" content="telephone=no">
+    <link rel="stylesheet" media="all" href="static/css/pos.css">
+    <link rel="icon" href="https://ehopper.com/wp-content/uploads/2016/03/favicon-01.png" type="image/png">
+    <!-- BEGIN scripts -->
+    <!-- END scripts -->
+  </head>
 
-  <body class="animated">
-    <article>
-      <header>
-        <div class="pull-left">
-          <a class="btn icon icon-back" href="pos.html"></a>
-          <h1>Cancel</h1>
-        </div>
-        <div class="header__icons"><button class="btn icon icon-help" title="Help" onclick="demoDialogOpen('help')"></button></div>
-        <h1 class="text-center">Terminal</h1>
-      </header>
-      <section>
-        <form class="form-narrow" method="get" action="payment-receipt.html">
-          <!-- MD Cards with Payment Methods -->
-          <div class="layout layout-fixed fieldset-standalone">
-            <div class="layout__column"> <a class="btn btn-lg btn-block btn-primary btn-rounded" href="terminal-cash.html"><i class="icon icon-cash"></i>Cash</a> </div>
-            <div class="layout__column-gap"></div>
-            <div class="layout__column"> <a class="btn btn-lg btn-block btn-default btn-rounded" href="terminal-card.html"><i class="icon icon-cc"></i>Credit Card</a> </div>
-          </div>
-          <div class="fieldset fieldset-lg fieldset-bordered fieldset-standalone" id="demoAmount"> <label class="fieldset__label" for="amount">Amount Due:</label> <input class="input input-lg fieldset__input text-right" id="amount" value="212.00" required="required" placeholder="0.00" onfocus="toggleClass(demoAmount,'fieldset-focus',true);toggleClass(demoTendered,'fieldset-focus',false);">            </div>
-          <div class="fieldset fieldset-lg fieldset-bordered fieldset-standalone" id="demoTendered"> <label class="fieldset__label" for="tendered">Amount Tendered:</label> <input class="input input-lg fieldset__input text-right" id="tendered" required="required" placeholder="0.00" onfocus="toggleClass(demoAmount,'fieldset-focus',false);toggleClass(demoTendered,'fieldset-focus',true);">            </div>
-          <div class="fieldset-bordered">
-            <div class="keyboard keyboard-4">
-              <div class="keyboard__row"> <span class="btn btn-xl btn-white btn-ripple keyboard__key">1</span> <span class="btn btn-xl btn-white btn-ripple keyboard__key">2</span> <span class="btn btn-xl btn-white btn-ripple keyboard__key">3</span> <span class="btn btn-xl btn-white btn-ripple keyboard__key icon-text icon-backspace"></span>                </div>
-              <div class="keyboard__row"> <span class="btn btn-xl btn-white btn-ripple keyboard__key">4</span> <span class="btn btn-xl btn-white btn-ripple keyboard__key">5</span> <span class="btn btn-xl btn-white btn-ripple keyboard__key">6</span> <span class="btn btn-xl btn-white btn-ripple keyboard__key icon-text icon-undo"></span>                </div>
-              <div class="keyboard__row keyboard__row-last"> <span class="btn btn-xl btn-white btn-ripple keyboard__key">7</span> <span class="btn btn-xl btn-white btn-ripple keyboard__key">8</span> <button class="btn btn-xl btn-primary btn-ripple keyboard__key keyboard__key-colspan-2 keyboard__key-last pull-right"
-                  type="submit">Pay</button> <span class="btn btn-xl btn-white btn-ripple keyboard__key">9</span> </div>
-              <div class="keyboard__row keyboard__row-last"> <span class="btn btn-xl btn-white btn-ripple keyboard__key keyboard__key-first">0</span> <span class="btn btn-xl btn-white btn-ripple keyboard__key">00</span> <span class="btn btn-xl btn-white btn-ripple keyboard__key icon-text icon-clear"></span>                </div>
+  <body class="">
+    <!-- begin application -->
+    <div class="application" id="application">
+      <!-- BEGIN content -->
+      <main class="container">
+        <!-- begin header -->
+        <header class="header "> <button class="header__back btn-back">
+			<i class="icon icon-back btn-back__icon"></i>
+			<span class="btn-back__title">Back</span>
+		</button> <button class="btn-icon header__help" title="Help" data-modal-open="help">
+			<i class="icon icon-help"></i>
+		</button>
+          <h2 class="title-xlg header__title header__title_vertical text-center">Terminal</h2>
+        </header>
+        <!-- end header -->
+        <div class="container__body">
+          <div class="section section_inner">
+            <div class="form form_sm">
+              <div class="form__columns">
+                <div class="form__column form__column_md"> <button class="btn btn_lg btn_block btn_primary btn_rounded" data-animation="ripple">
+								<i class="icon icon-cash"></i>
+								Cash
+							</button> </div>
+                <div class="form__column form__column_md"> <button class="btn btn_lg btn_block btn_default btn_rounded" data-animation="ripple">
+								<i class="icon icon-cc"></i>
+								Credit Card
+							</button> </div>
+              </div>
+              <div class="form__section">
+                <div class="form-box">
+                  <div class="field ">
+                    <div class="field__inner"> <label class="field__label" for="ternimal-cash-amount-due">Amount Due::</label> %}
+                      <div class="field__box"> <input class="input field__input input_lg text-right" id="ternimal-cash-amount-due" type="text" placeholder="0.00" readonly> </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="form__section">
+                <div class="form-box">
+                  <div class="field ">
+                    <div class="field__inner"> <label class="field__label" for="terminal-cash-amount-tendered">Amount Tendered:</label> %}
+                      <div class="field__box"> <input class="input field__input input_lg text-right" id="terminal-cash-amount-tendered" type="text" placeholder="0.00" readonly> </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="fieldset fieldset_lg fieldset_bordered">
+                <!-- begin keyboard -->
+                <div class="keyboard ">
+                  <div class="keyboard__container keyboard__lg">
+                    <div class="keyboard__main">
+                      <div class="keyboard__item"> <button type="button" data-animation="ripple" class="keyboard__button">1</button> </div>
+                      <div class="keyboard__item"> <button type="button" data-animation="ripple" class="keyboard__button">2</button> </div>
+                      <div class="keyboard__item"> <button type="button" data-animation="ripple" class="keyboard__button">3</button> </div>
+                      <div class="keyboard__item"> <button type="button" data-animation="ripple" class="keyboard__button">4</button> </div>
+                      <div class="keyboard__item"> <button type="button" data-animation="ripple" class="keyboard__button">5</button> </div>
+                      <div class="keyboard__item"> <button type="button" data-animation="ripple" class="keyboard__button">6</button> </div>
+                      <div class="keyboard__item"> <button type="button" data-animation="ripple" class="keyboard__button">7</button> </div>
+                      <div class="keyboard__item"> <button type="button" data-animation="ripple" class="keyboard__button">8</button> </div>
+                      <div class="keyboard__item"> <button type="button" data-animation="ripple" class="keyboard__button">9</button> </div>
+                      <div class="keyboard__item"> <button type="button" data-animation="ripple" class="keyboard__button">0</button> </div>
+                      <div class="keyboard__item"> <button type="button" data-animation="ripple" class="keyboard__button">00</button> </div>
+                      <div class="keyboard__item"> <button type="button" data-animation="ripple" class="keyboard__button"><i class="icon icon-text icon-clear"></i></button> </div>
+                    </div>
+                    <div class="keyboard__aside">
+                      <div class="keyboard__col"> <button type="button" data-animation="ripple" class="keyboard__button "><i class="icon icon-text icon-backspace"></i></button> </div>
+                      <div class="keyboard__col"> <button type="button" data-animation="ripple" class="keyboard__button "><i class="icon icon-text icon-undo"></i></button> </div>
+                      <div class="keyboard__col" data-colspan="2"> <button type="button" data-animation="ripple" class="keyboard__button keyboard__submit">Pay</button> </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- end keyboard -->
+              </div>
             </div>
           </div>
-        </form>
-      </section>
-    </article>
-    <!-- Dialog: Help Panel -->
-    <link rel="import" href="inc/help.html" onload="demoTemplate(this)"> </body>
+        </div>
+      </main>
+      <!-- begin help -->
+      <div class="help" data-modal="help">
+        <div class="help__container" data-modal-container="help">
+          <div class="help__header">
+            <header class="header header_large"> <button class="btn-icon help__close icon icon-close" data-modal-close="help"></button>
+              <h2 class="title-xlg header__title">Help</h2>
+            </header>
+          </div>
+          <div class="help__body">
+            <p>Help content.</p>
+          </div>
+        </div>
+      </div>
+      <!-- end help -->
+      <!-- END content -->
+      <!-- begin snackbar -->
+      <div class="snackbar" data-snackbar-container="snackbar" data-state="default">
+        <div class="snackbar__message" data-snackbar-content="snackbar"></div>
+      </div>
+      <!-- end snackbar -->
+    </div>
+    <!-- end application -->
+    <!-- BEGIN scripts -->
+    <script type="text/javascript" src="static/js/app.js"></script>
+    <!-- END scripts -->
+  </body>
 
 </html>

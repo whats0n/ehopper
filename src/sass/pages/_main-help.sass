@@ -1,0 +1,68 @@
+.main-help
+	position: relative
+	height: 100%
+	&__slider,
+	&__slide
+		height: 100%
+	&__close
+		position: absolute
+		z-index: 50
+		top: 0
+		right: 0
+		color: $red
+		background: none
+	&__slide
+		font-size: 0
+		text-align: center
+		img
+			margin: 0 auto
+			max-width: 100%
+			max-height: 100%
+	&__controls
+		position: absolute
+		left: 0
+		right: 0
+		bottom: 0
+		overflow: hidden
+		background: $blue
+		font-size: 0
+	&__control
+		position: relative
+		z-index: 5
+		display: inline-block
+		vertical-align: top
+		border-top: 1px solid $blue
+		border-right: 1px solid $alabaster
+		width: 25%
+		color: $white
+		text-align: center
+		cursor: pointer
+		+nosel
+		transition: background 0.175s ease
+		&.is-active
+			z-index: 10
+			border-right: none
+			color: $blue
+			background: $alabaster
+			pointer-events: none
+			+active
+				background: $alabaster
+			&:before
+				opacity: 1
+		+active
+			background: $blueActive
+		&:before
+			content: ''
+			position: absolute
+			z-index: 1
+			top: 50%
+			left: 100%
+			margin: -8px 0 0 -1px
+			+arr(10, 16, $alabaster, r)
+			opacity: 0
+			transition: opacity 0.175s ease
+		span
+			display: block
+			+rreg
+			font-size: 16px
+			line-height: 59px

@@ -53,6 +53,10 @@ hr
 	margin: 0 auto
 	&_sm
 		max-width: 460px
+	&_md
+		max-width: 800px
+		.form__col
+			padding: 10px
 	&__section
 		margin-bottom: 20px
 	&__row
@@ -70,6 +74,19 @@ hr
 		float: left
 		padding: 12px 20px
 		width: 50%
+		&_xs
+			width: 25%
+	&__columns
+		margin: 0 -10px
+		+clr
+	&__column
+		float: left
+		padding: 0 10px 20px
+		width: 100%
+		&_md
+			width: 50%
+		&_xs
+			width: 25%
 
 .loading-page
 	&__icon

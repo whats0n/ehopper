@@ -64,6 +64,7 @@
     position: relative
     overflow: auto
     flex: 1
+    background: $white
   &__toolbar
     .toolbar
       &__col
@@ -227,7 +228,7 @@
     &[data-column="icon"]
       width: 60px
     &[data-column="orders-tips-tips"]
-      width: 62px
+      width: 7%
     &[data-column="orders-status"],
     &[data-column="orders-tips-status"]
       width: 70px
@@ -289,6 +290,9 @@
       .table-body
         &__td
           border-top: 1px solid $lightGray
+    .input
+      width: 100%
+      padding: 0 4px
 
 .table-footer
   padding: 10px 20px

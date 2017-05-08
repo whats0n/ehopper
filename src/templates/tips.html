@@ -188,7 +188,7 @@ styles:
 													{% elif td.checkbox %}
 														{{mixins.checkbox()}}
 													{% elif td.tipsInput %}
-														<input type="text" class="small-input small-input_gray" placeholder="$" {%- if td.content %} value="{{td.content}}" {%- endif -%} >
+														<input type="text" class="input input_xs input_silver text-right" placeholder="$" {%- if td.content %} value="{{td.content}}" {%- endif -%} >
 								    				{% else %}
 								    					{{td.content | safe}}
 								    				{% endif %}

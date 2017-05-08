@@ -1,5 +1,5 @@
 import slick from 'slick-carousel';
-import {$DOCUMENT, isTouch} from '../_constants';
+import {$DOCUMENT, isTouch, ACTIVE} from '../_constants';
 
 export default (function() {
 	
@@ -35,6 +35,23 @@ export default (function() {
 					});
 					break;
 			}
+		});
+
+		const $helpSlider = $('.js-help-slider');
+		if (!$helpSlider.length) return
+		$helpSlider.slick({
+			arrows: false,
+			infinite: false
+		});
+		$helpSlider.on('beforeChange', function(e, slick, current, next) {
+			$('.js-help-control')
+				.removeClass(ACTIVE)
+				.filter(`[data-slide="${next}"]`)
+				.addClass(ACTIVE);
+		});
+		$DOCUMENT.on('click', '.js-help-control', function(e) {
+			const index = $(this).data('slide');
+			$helpSlider.slick('slickGoTo', index);
 		});
 	};
 

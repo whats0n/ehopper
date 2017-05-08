@@ -1,5 +1,7 @@
 .form-box
 	border: 2px solid $lightGray
+	&.is-focus
+		border-color: $blue
 	&__field + &__field
 		margin-top: 1px
 	&__field
@@ -17,3 +19,12 @@
 		position: absolute
 		top: 13px
 		right: 20px
+	&__payment
+		padding: 18px 20px
+		background: $white
+		+clr
+		li
+			float: left
+			width: 50%
+		li + li
+			text-align: right

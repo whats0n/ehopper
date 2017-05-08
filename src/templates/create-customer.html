@@ -1,0 +1,72 @@
+---
+title: 'Customer &bull; eHopper POS'
+styles: 
+	- 'pos'
+---
+{% extends "layouts/_layout.html" %}
+
+{% block content %}
+	
+	<main class="container">
+		{{header.simple({
+			back: true,
+			title: 'New Customer',
+			titleClassList: 'header__title_vertical text-center',
+			sync: true,
+			syncIndicatorOnly: true
+		})}}
+		<div class="container__body step-body create-customer">
+			<div class="section section_inner step-body__section">
+				{% set form = [
+					[
+						{ placeholder: 'First Name *' },
+						{ placeholder: 'Last Name *' }
+					],
+					[
+						{ placeholder: 'Phone' },
+						{ placeholder: 'Email' }
+					],
+					[
+						{ placeholder: 'Address line 1 *' },
+						{ placeholder: 'Address line 2' }
+					],
+					[
+						{ placeholder: 'City *' },
+						{ placeholder: 'State' }
+					],
+					[
+						{ select: { classList: 'select_simple', options: [ 'Country *', 'option 1', 'option 2', 'option 3', 'option 4' ], disabled: 0 } },
+						{ placeholder: 'Zip', colSize: 'xs' }
+					]
+				] %}
+				<div class="form form_md">
+					{% for row in form %}
+						<div class="form__columns">
+							{% for field in row %}
+								<div class="form__column form__column_{{field.colSize or 'md'}}">
+									{% if field.select %}
+										{{mixins.select(field.select)}}
+									{% else %}
+										<div class="input-box">
+											<input type="text" class="simple-input" placeholder="{{field.placeholder}}">
+											<button class="btn-icon btn-icon_gray input-box__clear is-hidden"><i class="icon icon-close"></i></button>
+										</div>
+									{% endif %}
+								</div>
+							{% endfor %}
+						</div>
+					{% endfor %}
+					<div class="form__checkbox">
+						{{mixins.checkbox({ content: 'Marketing', classList: 'checkbox_lg' })}}
+					</div>
+				</div>
+			</div>
+			<div class="step-body__footer section">
+				<div class="wrapper-btn-center">
+					<button class="btn btn_primary btn_lg btn_block text-uppercase" data-animation="ripple">Done</button>
+				</div>
+			</div>
+		</div>
+	</main>
+
+{% endblock %}

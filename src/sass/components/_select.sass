@@ -10,6 +10,7 @@
 		color: inherit
 		background: none
 		+rreg
+		font-size: 14px
 		+text-overflow
 		-webkit-appearance: none
 	//mods
@@ -26,6 +27,24 @@
 			+arr(10, 8, currentColor, t)
 		&:after
 			bottom: 20px
+			+arr(10, 8, currentColor, b)
+	&_simple
+		background: $white
+		select 
+			padding-left: 15px
+			border: 2px solid $lightGray
+			height: 60px
+			font-size: 18px
+		&:before,
+		&:after
+			right: 10px
+		&:before
+			top: 50%
+			margin-top: -10px
+			+arr(10, 8, currentColor, t)
+		&:after
+			bottom: 50%
+			margin-bottom: -10px
 			+arr(10, 8, currentColor, b)
 	&:before,
 	&:after

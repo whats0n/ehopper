@@ -78,7 +78,7 @@
 		<div class="keyboard__aside">
 			{% for key in props.keyboardSide or keyboardSide %}
 			    <div class="keyboard__col" {%- if key.colspan %} data-colspan="{{key.colspan}}" {%- endif -%} >
-			    	<button type="{{key.type or 'button'}}" data-animation="ripple" class="keyboard__button {{key.classList}}">{{key.content | safe}}</button>
+			    	<button type="{{key.type or 'button'}}" data-animation="ripple" class="keyboard__button {{key.classList}}" {{key.attrs | safe}}>{{key.content | safe}}</button>
 			    </div>
 			{% endfor %}
 		</div>
