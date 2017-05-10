@@ -1,69 +1,136 @@
-<!DOCTYPE html>
+<!doctype html>
 <html>
 
   <head>
-    <meta charset=utf-8>
+    <meta charset="utf-8">
     <title>Create New Account &bull; eHopper</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
-    <meta http-equiv=X-UA-Compatible content="IE=edge,chrome=1">
-    <link rel="stylesheet" type="text/css" href="static/css/prelogin.css">
-    <script src="static/js/demo.js"></script>
-    <link rel="icon" href="https://ehopper.com/wp-content/uploads/2016/03/favicon-01.png" type="image/png"> </head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="theme-color" content="#fff">
+    <meta name="format-detection" content="telephone=no">
+    <link rel="stylesheet" media="all" href="static/css/pos.css">
+    <link rel="icon" href="https://ehopper.com/wp-content/uploads/2016/03/favicon-01.png" type="image/png">
+    <!-- BEGIN scripts -->
+    <!-- END scripts -->
+  </head>
 
-  <body class="prelogin animated page-signup">
-    <header class="header"> <button class="btn icon icon-help" onclick="demoDialogOpen('help');"></button>
-      <div class="header__logo"> <img src="static/img/logo-white.svg" class="header__logo-img" alt="eHopper"> </div>
-    </header>
-    <main class="content">
-      <p class="intro muted">In order to create new eHopper account, please fill-in your business profile and indicate your acceptance of terms and conditions. Upon acceptance, you will receive an email with instructions on how to activate your account for Android, Windows
-        and Poynt.</p>
-      <form method="get" action="signup-done.html">
-        <div class="fieldset fieldset-first"> <label class="fieldset__label" for="store_name">Store name:</label> <input class="input fieldset__input" id="store_name" placeholder="ex: Acme Inc." required autofocus> </div>
-        <div class="fieldset"> <label class="fieldset__label" for="business_type">Business type:</label> <select class="input fieldset__input" id="business_type" placeholder="please select" required>
-					<option value="">please select</option>
-					<option value="1">Coffee Shop</option>
-				</select> </div>
-        <div class="fieldset"> <label class="fieldset__label" for="first_name">First name:</label> <input class="input fieldset__input" id="first_name" placeholder="required" required> </div>
-        <div class="fieldset"> <label class="fieldset__label" for="last_name">Last name:</label> <input class="input fieldset__input" id="last_name" placeholder="required" required> </div>
-        <div class="fieldset"> <label class="fieldset__label" for="country">Country:</label> <select class="input fieldset__input" id="country" placeholder="please select" required>
-					<option value="">please select</option>
-					<option value="US">United States of America</option>
-				</select> <label class="input__icon"></label> </div>
-        <div class="fieldset"> <label class="fieldset__label" for="email">Email:</label> <input class="input fieldset__input" id="email" placeholder="user@domain.com" required> </div>
-        <div class="fieldset fieldset-last"> <label class="fieldset__label" for="phone">Phone number:</label> <input class="input fieldset__input" type="tel" id="phone" placeholder="required" required> </div>
-        <p class="terms"> <label class="checkbox">
-					<input class="checkbox__input" type="checkbox" id="accept_terms" required>
-					<i class="icon"></i>
-					I Agree with
-				</label> <a href="terms.html" class="shy" onclick="return demoDialogOpen('terms');">Terms and Conditions</a> </p> <button class="btn btn-lg btn-primary btn-block btn-rounded btn-ripple">Create Account<i class="icon icon-next"></i></button> </form>
-    </main>
-    <!-- Dialog example: Terms and Conditions -->
-    <div class="dialog" id="terms">
-      <div class="dialog__content">
-        <div class="dialog__header">
-          <header class="header">Terms and Conditions</header>
-        </div>
-        <div class="dialog__body">
-          <p>Here is full text of Terms and Conditions</p>
-          <p>We need to go <button class="btn btn-sm btn-default baseline" onclick="demoDialogOpen('help')">deeper&hellip;</button></p>
+  <body class="body-darkgray">
+    <!-- begin application -->
+    <div class="application" id="application">
+      <!-- BEGIN content -->
+      <main class="main">
+        <!-- begin header -->
+        <header class="header header_large"> <button class="btn-icon header__help" title="Help" data-modal-open="help">
+			<i class="icon icon-help"></i>
+		</button>
+          <div class="header__logo"> <img src="static/img/logo-white.svg" alt="eHopper"> </div>
+        </header>
+        <!-- end header -->
+        <section class="section section_inner">
+          <div class="form form_sm">
+            <div class="form__intro">In order to create new eHopper account, please fill-in your business profile and indicate your acceptance of terms and conditions. Upon acceptance, you will receive an email with instructions on how to activate your account for Android, Windows
+              and Poynt.</div>
+            <div class="form__section">
+              <div class="fieldset fieldset_first">
+                <div class="field ">
+                  <div class="field__inner"> <label class="field__label" for="signup-stroe-name">Store name:</label> %}
+                    <div class="field__box"> <input class="input field__input input_md" id="signup-stroe-name" type="text" placeholder="ex: Acme Inc." required> </div>
+                  </div>
+                </div>
+              </div>
+              <div class="fieldset">
+                <div class="field ">
+                  <div class="field__inner"> <label class="field__label" for="signup-business-type">Business type:</label>
+                    <div class="field__box">
+                      <div class="select select_md field__select_md"> <select>
+		
+			<option value="please select" selected disabled selected>please select</option>
+		
+			<option value="Coffee Shop"  >Coffee Shop</option>
+		
+	</select> </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="fieldset">
+                <div class="field ">
+                  <div class="field__inner"> <label class="field__label" for="signup-first-name">First name:</label> %}
+                    <div class="field__box"> <input class="input field__input input_md" id="signup-first-name" type="text" placeholder="required" required> </div>
+                  </div>
+                </div>
+              </div>
+              <div class="fieldset">
+                <div class="field ">
+                  <div class="field__inner"> <label class="field__label" for="signup-last-name">Last name:</label> %}
+                    <div class="field__box"> <input class="input field__input input_md" id="signup-last-name" type="text" placeholder="required" required> </div>
+                  </div>
+                </div>
+              </div>
+              <div class="fieldset">
+                <div class="field ">
+                  <div class="field__inner"> <label class="field__label" for="signup-business-type">Country:</label>
+                    <div class="field__box">
+                      <div class="select select_md field__select_md"> <select>
+		
+			<option value="please select" selected disabled selected>please select</option>
+		
+			<option value="United States of America"  >United States of America</option>
+		
+	</select> </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="fieldset">
+                <div class="field ">
+                  <div class="field__inner"> <label class="field__label" for="signup-mail">Email:</label> %}
+                    <div class="field__box"> <input class="input field__input input_md" id="signup-mail" type="mail" placeholder="user@domain.com" required> </div>
+                  </div>
+                </div>
+              </div>
+              <div class="fieldset fieldset_last">
+                <div class="field ">
+                  <div class="field__inner"> <label class="field__label" for="signup-phone-number">Phone number:</label> %}
+                    <div class="field__box"> <input class="input field__input input_md" id="signup-phone-number" type="text" placeholder="required" required> </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="form__section"> <label class="checkbox ">
+	<input type="checkbox" >
+	<i class="icon icon-check"></i>
+	<span>I Agree with</span>
+</label> <a href="#" class="form__link">Terms and Conditions</a> </div>
+            <div class="fieldset"> <button class="btn btn_lg btn_primary btn_block btn_rounded" data-animation="ripple">Create Account<i class="icon icon-next"></i></button> </div>
+          </div>
+        </section>
+      </main>
+      <!-- begin help -->
+      <div class="help" data-modal="help">
+        <div class="help__container" data-modal-container="help">
+          <div class="help__header">
+            <header class="header header_large"> <button class="btn-icon help__close icon icon-close" data-modal-close="help"></button>
+              <h2 class="title-xlg header__title">Help</h2>
+            </header>
+          </div>
+          <div class="help__body">
+            <p>Help content.</p>
+          </div>
         </div>
       </div>
-    </div>
-    <div class="dialog__mask"></div>
-    <!-- Dialog: Help Panel -->
-    <div class="dialog dialog-help" id="help">
-      <div class="dialog__content">
-        <div class="dialog__header">
-          <header class="header"> <span class="btn icon icon-close dialog__close pull-right"></span>
-            <h1>Help</h1>
-          </header>
-        </div>
-        <div class="dialog__body">
-          <p>Help content</p>
-        </div>
+      <!-- end help -->
+      <!-- END content -->
+      <!-- begin snackbar -->
+      <div class="snackbar" data-snackbar-container="snackbar" data-state="default">
+        <div class="snackbar__message" data-snackbar-content="snackbar"></div>
       </div>
+      <!-- end snackbar -->
     </div>
-    <div class="dialog__mask"></div>
+    <!-- end application -->
+    <!-- BEGIN scripts -->
+    <script type="text/javascript" src="static/js/app.js"></script>
+    <!-- END scripts -->
   </body>
 
 </html>

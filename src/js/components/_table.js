@@ -34,12 +34,15 @@ export default (function() {
 			const clientWidth = this.clientWidth;
 			const diff = offsetWidth - clientWidth;
 			const fake = $target.data('table-scrollable');
-			
-			$target
+			const $fakeScrollableElement = $target
 				.closest(`[data-table="${fake}"]`)
-				.find(`[data-table-fake="${fake}"]`)
+				.find(`[data-table-fake="${fake}"]`);
+			const minWidth = +$fakeScrollableElement.css('min-width').replace('px', '');
+
+			$fakeScrollableElement
 				.css({
-					'padding-right': `${diff}px`
+					'padding-right': `${diff}px`,
+					'min-width': `${minWidth + diff}px`
 				});
 		});
 	};

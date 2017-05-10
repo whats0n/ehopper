@@ -1,12 +1,13 @@
 .checkbox
   position: relative
   display: inline-block
-  vertical-align: middle
+  vertical-align: top
   min-width: 30px
   min-height: 30px
   font-size: 0
   line-height: 30px
   cursor: pointer
+  +nosel
   +active
     .icon, input:checked + .icon
       box-shadow: inset 2px 2px 4px rgba($black, 0.3)
@@ -14,9 +15,6 @@
     position: absolute
     top: 0
     left: 0
-    margin: 0
-    width: 100%
-    height: 100%
     opacity: 0
     cursor: pointer
     &:checked + .icon

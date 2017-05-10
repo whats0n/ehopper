@@ -19,7 +19,7 @@
     <!-- begin application -->
     <div class="application" id="application">
       <!-- BEGIN content -->
-      <main class="main">
+      <main class="container">
         <!-- begin header -->
         <header class="header "> <button class="header__back btn-back">
 			<i class="icon icon-back btn-back__icon"></i>
@@ -30,45 +30,49 @@
           <h2 class="title-xlg header__title header__title_vertical text-center text-uppercase">Loyalty program</h2>
         </header>
         <!-- end header -->
-        <div class="section section_inner">
-          <div class="form-wrapper">
-            <div class="fieldset fieldset_lg fieldset_bordered fieldset_keyboard">
-              <div class="field ">
-                <div class="field__inner"> <label class="field__label" for="item-quantity">Mobile Phone</label> %}
-                  <div class="field__box"> <input class="input field__input text-right input_xl" value="555-123-4567" id="item-quantity" type="text" placeholder="000-000-0000" required readonly> </div>
-                </div>
-              </div>
-              <div class="fieldset__divider"></div>
-              <!-- begin keyboard -->
-              <div class="keyboard ">
-                <div class="keyboard__container keyboard__lg">
-                  <div class="keyboard__main">
-                    <div class="keyboard__item"> <button type="button" data-animation="ripple" class="keyboard__button">1</button> </div>
-                    <div class="keyboard__item"> <button type="button" data-animation="ripple" class="keyboard__button">2</button> </div>
-                    <div class="keyboard__item"> <button type="button" data-animation="ripple" class="keyboard__button">3</button> </div>
-                    <div class="keyboard__item"> <button type="button" data-animation="ripple" class="keyboard__button">4</button> </div>
-                    <div class="keyboard__item"> <button type="button" data-animation="ripple" class="keyboard__button">5</button> </div>
-                    <div class="keyboard__item"> <button type="button" data-animation="ripple" class="keyboard__button">6</button> </div>
-                    <div class="keyboard__item"> <button type="button" data-animation="ripple" class="keyboard__button">7</button> </div>
-                    <div class="keyboard__item"> <button type="button" data-animation="ripple" class="keyboard__button">8</button> </div>
-                    <div class="keyboard__item"> <button type="button" data-animation="ripple" class="keyboard__button">9</button> </div>
-                    <div class="keyboard__item"> <button type="button" data-animation="ripple" class="keyboard__button"><i class="icon icon-text icon-clear"></i></button> </div>
-                    <div class="keyboard__item"> <button type="button" data-animation="ripple" class="keyboard__button">0</button> </div>
-                    <div class="keyboard__item"> <button type="button" data-animation="ripple" class="keyboard__button">&ndash;</button> </div>
+        <div class="container__body">
+          <div class="section section_inner">
+            <div class="form-wrapper">
+              <div class="form form_sm">
+                <div class="fieldset fieldset_lg fieldset_bordered fieldset_keyboard">
+                  <div class="field ">
+                    <div class="field__inner"> <label class="field__label" for="item-quantity">Mobile Phone</label> %}
+                      <div class="field__box"> <input class="input field__input text-right input_xl" value="555-123-4567" id="item-quantity" type="text" placeholder="000-000-0000" required readonly> </div>
+                    </div>
                   </div>
-                  <div class="keyboard__aside">
-                    <div class="keyboard__col"> <button type="button" data-animation="ripple" class="keyboard__button "><i class="icon icon-text icon-backspace"></i></button> </div>
-                    <div class="keyboard__col" data-colspan="3"> <button type="submit" data-animation="ripple" class="keyboard__button keyboard__submit">OK</button> </div>
+                  <div class="fieldset__divider"></div>
+                  <!-- begin keyboard -->
+                  <div class="keyboard ">
+                    <div class="keyboard__container keyboard__lg">
+                      <div class="keyboard__main">
+                        <div class="keyboard__item"> <button type="button" data-animation="ripple" class="keyboard__button">1</button> </div>
+                        <div class="keyboard__item"> <button type="button" data-animation="ripple" class="keyboard__button">2</button> </div>
+                        <div class="keyboard__item"> <button type="button" data-animation="ripple" class="keyboard__button">3</button> </div>
+                        <div class="keyboard__item"> <button type="button" data-animation="ripple" class="keyboard__button">4</button> </div>
+                        <div class="keyboard__item"> <button type="button" data-animation="ripple" class="keyboard__button">5</button> </div>
+                        <div class="keyboard__item"> <button type="button" data-animation="ripple" class="keyboard__button">6</button> </div>
+                        <div class="keyboard__item"> <button type="button" data-animation="ripple" class="keyboard__button">7</button> </div>
+                        <div class="keyboard__item"> <button type="button" data-animation="ripple" class="keyboard__button">8</button> </div>
+                        <div class="keyboard__item"> <button type="button" data-animation="ripple" class="keyboard__button">9</button> </div>
+                        <div class="keyboard__item"> <button type="button" data-animation="ripple" class="keyboard__button"><i class="icon icon-text icon-clear"></i></button> </div>
+                        <div class="keyboard__item"> <button type="button" data-animation="ripple" class="keyboard__button">0</button> </div>
+                        <div class="keyboard__item"> <button type="button" data-animation="ripple" class="keyboard__button">&ndash;</button> </div>
+                      </div>
+                      <div class="keyboard__aside">
+                        <div class="keyboard__col"> <button type="button" data-animation="ripple" class="keyboard__button "><i class="icon icon-text icon-backspace"></i></button> </div>
+                        <div class="keyboard__col" data-colspan="3"> <button type="submit" data-animation="ripple" class="keyboard__button keyboard__submit">OK</button> </div>
+                      </div>
+                    </div>
                   </div>
+                  <!-- end keyboard -->
                 </div>
-              </div>
-              <!-- end keyboard -->
-            </div>
-            <p class="fieldset fieldset_standalone"> <label class="checkbox checkbox_green">
+                <p class="fieldset fieldset_standalone"> <label class="checkbox checkbox_green">
 	<input type="checkbox" required>
 	<i class="icon icon-check"></i>
 	<span>I agree with</span>
-</label> <a href="#">Terms and Conditions</a> </p>
+</label> <a href="#" class="form__link">Terms and Conditions</a> </p>
+              </div>
+            </div>
           </div>
         </div>
       </main>

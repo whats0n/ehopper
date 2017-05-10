@@ -53,10 +53,12 @@
   &_keyboard
     border-radius: 0 0 6px 6px
   &_first
+    overflow: hidden
     border-radius: 3px 3px 0 0
     .fieldset__inner
       border-radius: 3px 3px 0 0
   &_last
+    overflow: hidden
     border-radius: 0 0 3px 3px
     .fieldset__inner
       border-radius: 0 0 3px 3px
@@ -159,6 +161,13 @@
   &__select
     select
       padding-left: 20px
+    &_md
+      select
+        padding-left: 20px
+        padding-right: 40px
+      &:before,
+      &:after
+        right: 20px
 
 // .fieldset-first
 //   border-radius: 3px 3px 0 0

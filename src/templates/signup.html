@@ -1,117 +1,112 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<meta charset=utf-8>
-	<title>Create New Account &bull; eHopper</title>
-	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
-	<meta http-equiv=X-UA-Compatible content="IE=edge,chrome=1">
-	<link rel="stylesheet" type="text/css" href="static/css/prelogin.css">
-	<script src="static/js/demo.js"></script>
-	<link rel="icon" href="https://ehopper.com/wp-content/uploads/2016/03/favicon-01.png" type="image/png">
-</head>
-<body class="prelogin animated page-signup">
+---
+title: 'Create New Account &bull; eHopper'
+styles: 
+	- 'pos'
+bodyClasses: 'body-darkgray'
+---
+{% extends "layouts/_layout.html" %}
 
-	<header class="header">
-		<button class="btn icon icon-help" onclick="demoDialogOpen('help');"></button>
-		<div class="header__logo">
-			<img src="static/img/logo-white.svg" class="header__logo-img" alt="eHopper">
-		</div>
-	</header>
-
-	<main class="content">
-		<p class="intro muted">In order to create new eHopper account, please fill-in your business profile and indicate your acceptance of terms and conditions. Upon acceptance, you will receive an email with instructions on how to activate your account for Android, Windows and Poynt.</p>
-
-		<form method="get" action="signup-done.html">
-			<div class="fieldset fieldset-first">
-				<label class="fieldset__label" for="store_name">Store name:</label>
-				<input class="input fieldset__input" id="store_name" placeholder="ex: Acme Inc." required autofocus>
+{% block content %}
+	
+	<main class="main">
+		{{header.large({
+			help: true,
+			logo: true
+		})}}
+		<section class="section section_inner">
+			<div class="form form_sm">
+				<div class="form__intro">In order to create new eHopper account, please fill-in your business profile and indicate your acceptance of terms and conditions. Upon acceptance, you will receive an email with instructions on how to activate your account for Android, Windows and Poynt.</div>
+				<div class="form__section">
+					<div class="fieldset fieldset_first">
+						{{mixins.field({
+							label: 'Store name:',
+							placeholder: 'ex: Acme Inc.',
+							attrs: 'required',
+							type: 'text',
+							id: 'signup-stroe-name',
+							inputClassList: 'input_md'
+						})}}
+					</div>
+					<div class="fieldset">
+						{{mixins.field({
+							label: 'Business type:',
+							select: true,
+							selectOptions: {
+								attrs: 'required id="signup-business-type"',
+								options: [ 'please select', 'Coffee Shop' ],
+								selected: 0,
+								disabled: 0,
+								classList: 'select_md field__select_md'
+							},
+							id: 'signup-business-type'
+						})}}
+					</div>
+					<div class="fieldset">
+						{{mixins.field({
+							label: 'First name:',
+							placeholder: 'required',
+							attrs: 'required',
+							type: 'text',
+							id: 'signup-first-name',
+							inputClassList: 'input_md'
+						})}}
+					</div>
+					<div class="fieldset">
+						{{mixins.field({
+							label: 'Last name:',
+							placeholder: 'required',
+							attrs: 'required',
+							type: 'text',
+							id: 'signup-last-name',
+							inputClassList: 'input_md'
+						})}}
+					</div>
+					<div class="fieldset">
+						{{mixins.field({
+							label: 'Country:',
+							select: true,
+							selectOptions: {
+								attrs: 'required id="signup-country"',
+								options: [ 'please select', 'United States of America' ],
+								selected: 0,
+								disabled: 0,
+								classList: 'select_md field__select_md'
+							},
+							id: 'signup-business-type'
+						})}}
+					</div>
+					<div class="fieldset">
+						{{mixins.field({
+							label: 'Email:',
+							placeholder: 'user@domain.com',
+							attrs: 'required',
+							type: 'mail',
+							id: 'signup-mail',
+							inputClassList: 'input_md'
+						})}}
+					</div>
+					<div class="fieldset fieldset_last">
+						{{mixins.field({
+							label: 'Phone number:',
+							placeholder: 'required',
+							attrs: 'required',
+							id: 'signup-phone-number',
+							inputClassList: 'input_md'
+						})}}
+					</div>
+				</div>
+				<div class="form__section">
+					{{mixins.checkbox({ content: 'I Agree with' })}}
+					<a href="#" class="form__link">Terms and Conditions</a>
+				</div>
+				<div class="fieldset">
+					<button class="btn btn_lg btn_primary btn_block btn_rounded" data-animation="ripple">Create Account<i class="icon icon-next"></i></button>
+				</div>
 			</div>
-
-			<div class="fieldset">
-				<label class="fieldset__label" for="business_type">Business type:</label>
-				<select class="input fieldset__input" id="business_type" placeholder="please select" required>
-					<option value="">please select</option>
-					<option value="1">Coffee Shop</option>
-				</select>
-			</div>
-
-			<div class="fieldset">
-				<label class="fieldset__label" for="first_name">First name:</label>
-				<input class="input fieldset__input" id="first_name" placeholder="required" required>
-			</div>
-
-			<div class="fieldset">
-				<label class="fieldset__label" for="last_name">Last name:</label>
-				<input class="input fieldset__input" id="last_name" placeholder="required" required>
-			</div>
-
-			<div class="fieldset">
-				<label class="fieldset__label" for="country">Country:</label>
-				<select class="input fieldset__input" id="country" placeholder="please select" required>
-					<option value="">please select</option>
-					<option value="US">United States of America</option>
-				</select>
-				<label class="input__icon"></label>
-			</div>
-
-			<div class="fieldset">
-				<label class="fieldset__label" for="email">Email:</label>
-				<input class="input fieldset__input" id="email" placeholder="user@domain.com" required>
-			</div>
-
-			<div class="fieldset fieldset-last">
-				<label class="fieldset__label" for="phone">Phone number:</label>
-				<input class="input fieldset__input" type="tel" id="phone" placeholder="required" required>
-			</div>
-
-
-			<p class="terms">
-				<label class="checkbox">
-					<input class="checkbox__input" type="checkbox" id="accept_terms" required>
-					<i class="icon"></i>
-					I Agree with
-				</label>
-				<a href="terms.html" class="shy" onclick="return demoDialogOpen('terms');">Terms and Conditions</a>
-			</p>
-
-			<button class="btn btn-lg btn-primary btn-block btn-rounded btn-ripple">Create Account<i class="icon icon-next"></i></button>
-		</form>
-
+		</section>
 	</main>
 
-
-	<!-- Dialog example: Terms and Conditions -->
-	<div class="dialog" id="terms">
-		<div class="dialog__content">
-			<div class="dialog__header">
-				<header class="header">Terms and Conditions</header>
-			</div>
-			<div class="dialog__body">
-				<p>Here is full text of Terms and Conditions</p>
-				<p>We need to go <button class="btn btn-sm btn-default baseline" onclick="demoDialogOpen('help')">deeper&hellip;</button></p>
-			</div>
-		</div>
-	</div>
-	<div class="dialog__mask"></div>
+	{{modal.help()}}
 
 
-
-	<!-- Dialog: Help Panel -->
-	<div class="dialog dialog-help" id="help">
-		<div class="dialog__content">
-			<div class="dialog__header">
-				<header class="header">
-					<span class="btn icon icon-close dialog__close pull-right"></span>
-					<h1>Help</h1>
-				</header>
-			</div>
-			<div class="dialog__body">
-				<p>Help content</p>
-			</div>
-		</div>
-	</div>
-	<div class="dialog__mask"></div>
-
-
-</body>
-</html>
+{% endblock %}
