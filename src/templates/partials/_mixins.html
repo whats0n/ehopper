@@ -54,7 +54,7 @@
 				<label class="field__switch-right" for="{{props.switch.id}}">{{props.switch.right}}</label>
 			</div>
 		{% endif %}
-		{% if props.static !== true and props.select !== true and props.staticInput !== true %} %}
+		{% if props.static !== true and props.select !== true and props.staticInput !== true %}
 			<div class="field__box">
 				<input class="input field__input {{props.inputClassList}}" 
 					{% if props.value %}value="{{props.value}}"{% endif %}
