@@ -1,5 +1,5 @@
 ---
-title: 'External Payment &bull; eHopper POS'
+title: 'EBT Card &bull; eHopper POS'
 styles: 
 	- 'pos'
 ---
@@ -13,7 +13,7 @@ styles:
 				{{header.simple({
 					headerClassList: 'container__header header_payments',
 					back: true,
-					title: 'External Payment',
+					title: 'EBT Card Payment',
 					titleClassList: 'header__title_vertical',
 					help: true
 				})}}
@@ -22,13 +22,28 @@ styles:
 						<div class="form form_sm">
 							<div class="form__section">
 								{{mixins.infoPrice({
-									label: 'Amount Due:',
+									label: 'Total Due:',
 									price: '102.00',
 									currency: '$',
 									classList: 'text-right'
 								})}}
 							</div>
 							<div class="form__section">
+								{{mixins.fieldBox({
+									label: 'What type of EBT benefit is this?',
+									colSize: 'md',
+									content: [
+										'<button class="btn btn_block btn_lg btn_default is-active" data-animation="ripple">Cash Benefit</button>',
+										'<button class="btn btn_block btn_lg btn_default" data-animation="ripple">SNAP Food Benefit</button>'
+									]
+								})}}
+							</div>
+							{#<div class="form__section">
+								{{mixins.fieldBox({
+									switcher: true,
+									label: 'Enter Card Manually',
+									id: 'enter-card-manually'
+								})}}
 								<div class="payment-fieldset">
 									<div class="fieldset fieldset_lg fieldset_bordered">
 										<div class="fieldset__container">
@@ -97,30 +112,14 @@ styles:
 										})}}
 									</div>
 								</div>
-							</div>
-							{{mixins.fieldBox({
-								radios: true,
-								label: 'Tips and Signature',
-								colSize: 'md',
-								list: [
-									{
-										content: 'On Screen',
-										name: 'tips-and-signature'
-									},
-									{
-										content: 'On Receipt',
-										attrs: 'checked',
-										name: 'tips-and-signature'
-									}
-								]
-							})}}
+							</div>#}
 						</div>
 					</div>
-					<div class="step-body__footer section">
+					<!-- <div class="step-body__footer section">
 						<div class="form form_sm">
 							<button class="btn btn_primary btn_lg btn_block" data-animation="ripple" data-modal-open="payment-terminal">Continue</button>
 						</div>
-					</div>
+					</div> -->
 				</div>
 			</div>
 		</div>

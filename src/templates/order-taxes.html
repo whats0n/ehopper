@@ -9,9 +9,10 @@ styles:
 	<main class="main" data-toggle-class-container="main-container">
 		<div class="inner">
 			{% include 'partials/components/_order-sidebar.html' %}
-			<div class="container container_right">
+			<div class="container container_right container_order">
 				{{header.simple({
-					headerClassList: 'container__header',
+					headerClassList: 'container__header header_order',
+					back: true,
 					title: 'Order Taxes',
 					titleClassList: 'header__title_vertical',
 					help: true

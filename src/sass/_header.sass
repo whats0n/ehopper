@@ -12,10 +12,149 @@
 	cursor: default
 	+nosel
 	
+	//mods
 	&_large
 		height: 150px
 	&_medium
 		height: 90px
+	&_double
+		position: absolute
+		z-index: 20
+		top: 0
+		left: 0
+		right: 0
+		+poynt
+			z-index: initial
+	&_container-upper
+		.header
+			&__sidebar
+				z-index: initial
+				box-shadow: none 
+			&__container
+				z-index: 10
+				box-shadow: 3px -5px 4px 5px rgba(0, 0, 0, 0.2)
+	&_settings
+		.header
+			&__sidebar
+				width: 300px
+			&__container
+				float: none
+				margin-left: 300px
+				width: auto
+				+poynt
+					margin: 0
+	&_poynt-sm
+		.header
+			&__sidebar
+				+poynt
+					float: left
+					width: auto
+			&__container
+				+poynt 
+					overflow: hidden
+					width: auto
+					text-align: center
+	&_payments,
+	&_order
+		.header
+			&__back
+				display: none
+				+poynt
+					display: block
+			&__title
+				+poynt 
+					text-align: center
+	//components double
+	&__sidebar
+		z-index: 20
+		float: left
+		width: 40%
+		box-shadow: -3px -5px 4px 5px rgba(0, 0, 0, 0.2)
+		+poynt
+			z-index: 35
+		.header
+			&__delete
+				+poynt
+					display: none
+			&__toolbar
+				+poynt
+					padding-right: 58px
+	&__container
+		float: right
+		+poynt
+			z-index: 30
+		.header
+			&__searchbox
+				+poynt
+					padding-right: 188px
+					max-width: none
+					background: #e6e6e6
+			&__delete
+				right: 8px
+				display: none
+				color: $darkGray
+				+active
+					color: $darkGray
+				+poynt
+					display: block
+		.search
+			&__field
+				+poynt
+					padding-left: 60px
+				&:before
+					+poynt
+						left: 15px
+						right: 5px
+						border-color: $darkGray
+			&__controls
+				+poynt
+					left: 10px
+			&__input,
+			&__button
+				+poynt
+					color: $darkGray
+			&__input 
+				+placeholder
+					+poynt
+						color: $darkGray
+	&__fullinfo
+		position: absolute
+		z-index: 15
+		top: 0
+		right: 0
+		bottom: 0
+		box-shadow: -3px -5px 4px 5px rgba(0, 0, 0, 0.2)
+		transform: translate3d(-110%,0,0)
+		transition: transform 0.3s ease-in-out
+		+poynt
+			z-index: 45
+		&.is-open
+			+gpu
+	&__sidebar,
+	&__container
+		position: relative
+	&__sidebar,
+	&__container,
+	&__fullinfo
+		min-height: 50px
+		background: $blue
+		+poynt
+			float: none
+			width: 100%
+	&__container,
+	&__fullinfo
+		width: 60%
+	&__scan
+		position: absolute
+		right: 58px
+		bottom: 0
+		display: none
+		+poynt
+			display: block
+		.btn-scan
+			color: $darkGray
+
+	//components	
 	&__menu
 		float: left
 		color: $blue
@@ -104,12 +243,17 @@
 			right: 50px
 			width: 30%
 			max-width: none
+			+poynt
+				width: 260px
 	&__sync
 		position: absolute
+		z-index: 10
 		top: 0
 		right: 0
-		bottom: 0
+		height: 50px
 		padding: 5px 13px 5px 5px
+		+poynt
+			z-index: 50
 	&__indicator
 		position: absolute
 		top: 0
@@ -120,4 +264,16 @@
 		transition: background 0.15s ease-in-out
 		&[data-state="active"]
 			background: $green
+	&__search-for
+		padding: 0 10px
+		margin: -5px -5px -5px 0
+		height: 50px
+		color: inherit
+		background: none
+		+rlight
+		font-size: 16px
+		+active
+			color: inherit
+			background: rgba(0, 0, 0, 0.1)
+			box-shadow: inset 2px 2px 6px rgba(0, 0, 0, 0.2)
 

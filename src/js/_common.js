@@ -4,5 +4,6 @@ export default (function() {
 	$DOCUMENT.ready(function() {
 		isTouch() && $BODY.addClass(touchClass);
 		!isTouch() && $BODY.addClass(noTouchClass);
+		// true && $BODY.addClass('is-poynt');
 	});
 })();

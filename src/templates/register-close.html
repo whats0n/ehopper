@@ -8,13 +8,20 @@ styles:
 {% block content %}
 	<main class="main">
 		<div class="inner">
-			<aside class="sidebar sidebar_left sidebar_white">
-				{{header.simple({
+			{{header.double({
+				classList: 'header_container-upper header_poynt-sm',
+				sidebar: {
 					back: true,
-					backText: 'Back',
-					headerClassList: 'sidebar__header'
-				})}}
-				<div class="infoblock">
+					backText: 'Back'
+				},
+				container: {
+					help: true,
+					title: 'Close Register',
+					titleClassList: 'header__title_vertical'
+				}
+			})}}
+			<aside class="sidebar sidebar_left sidebar_white">
+				<div class="infoblock infoblock_collapsed">
 					<div class="infoblock__row">
 						<div class="infoblock__col infoblock__col_md">
 							<div class="infoblock__box">
@@ -37,9 +44,17 @@ styles:
 							</div>
 						</div>
 					</div>
+					<button class="btn-open infoblock__open" onclick="(function() { 
+						[].forEach.call(document.querySelectorAll('.sidebar__poynt-hidden'), function(element) {
+							element.classList.toggle('is-open'); 
+						});
+						event.currentTarget.classList.toggle('is-active'); 
+					}());">
+						<i class="icon icon-caret"></i>
+					</button>
 				</div>
 				<hr />
-				<div class="sidebar__body">
+				<div class="sidebar__body sidebar__poynt-hidden">
 					{% set infoTable = [
 						{
 							label: 'Opening Amount',
@@ -79,19 +94,13 @@ styles:
 						{% endfor %}
 					</ul>
 				</div>
-				<div class="sidebar__footer">
+				<div class="sidebar__footer sidebar__poynt-hidden">
 					<div class="section wrapper-btn-center">
 						<button class="btn btn_secondary btn_lg btn_block" data-animation="ripple">Print X-Report</button>
 					</div>
 				</div>
 			</aside>
-			<div class="container container_right container_upper">
-				{{header.simple({
-					headerClassList: 'container__header',
-					help: true,
-					title: 'Close Register',
-					titleClassList: 'header__title_vertical'
-				})}}
+			<div class="container container_right container_upper container_poynt-register">
 				<div class="container__body step-body">
 					<div class="step-body__section">
 						<div class="form form_sm">
@@ -161,7 +170,7 @@ styles:
 								}
 							})}}
 							<div class="fieldset fieldset_lg fieldset_bordered fieldset_standalone">
-								<textarea class="textarea textarea_block textarea_little" placeholder="Register Closing None"></textarea>
+								<textarea class="textarea textarea_block textarea_little" placeholder="Register Closing Note"></textarea>
 							</div>
 						</div>
 					</div>

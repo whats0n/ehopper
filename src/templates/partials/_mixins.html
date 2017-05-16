@@ -117,7 +117,11 @@
 	<div class="info-price__label">{{props.label}}</div>
 	<div class="info-price__value {{props.valueClassList}}">
 		<small>{{props.currency}}</small>
-		<span>{{props.price}}</span>
+		{% if props.priceClassList %}
+			<span class="{{props.priceClassList}}">{{props.price}}</span>
+		{% else %}
+			<span>{{props.price}}</span>
+		{% endif %}
 	</div>
 </div>
 {% endmacro %}
@@ -145,12 +149,26 @@
 			</div>
 		</div>
 	{% elif props.radios %}
-		<div class="field-box__radios">
-			<div class="field-box__label"div>{{props.label}}</div>
+		{% if props.label %}
+			<div class="field-box__label">{{props.label}}</div>
+		{% endif %}
+		<ul class="field-box__list">
+			{% for options in props.list %}
+				<li class="field-box__col field-box__col_{{props.colSize}} field-box__radio">
+					{#{{radio(options)}}#}
+					<button class="btn btn_default btn_block btn_lg" data-animation="ripple">{{options.content}}</button>
+				</li>
+			{% endfor %}
+		</ul>
+	{% elif props.checkboxes %}
+		<div class="field-box__checkbox">
+			{% if props.label %}
+				<div class="field-box__label">{{props.label}}</div>
+			{% endif %}
 			<ul class="field-box__list">
 				{% for options in props.list %}
-					<li class="field-box__col field-box__col_{{props.colSize}} field-box__radio">
-						{{radio(options)}}
+					<li class="field-box__col field-box__col_{{props.colSize}} field-box__checkbox">
+						{{checkbox(options)}}
 					</li>
 				{% endfor %}
 			</ul>
@@ -184,11 +202,19 @@
 				{% endif %}
 			</div>
 			<div class="field-box__select-col">
-				<input type="text" class="input input_lg input_block field-box__select-input {{props.colMuted}}" value="{{props.value}}">
+				<input type="text" class="input input_lg input_block field-box__select-input {{props.colMuted}}" value="{{props.value}}" {{props.inputAttrs}}>
 			</div>
 			<div class="field-box__button">
 				<button class="btn btn_lg btn_default btn_block" data-animation="ripple">{{props.button}}</button>
 			</div>
+		</div>
+	{% elif props.content %}
+		<div class="field-box__content">
+			{% for content in props.content %}
+				<div class="field-box__col field-box__col_{{props.colSize}}">
+					{{content | safe}}
+				</div>
+			{% endfor %}
 		</div>
 	{% endif %}
 </div>

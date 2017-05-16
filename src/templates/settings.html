@@ -9,14 +9,21 @@ settingsActive: 2
 {% block content %}
 	<main class="main">
 		<div class="inner settings">
-			{% include 'partials/components/_settings-sidebar.html' %}
-			<div class="settings__container">
-				{{header.simple({
+			{{header.double({
+				classList: 'header_container-upper header_poynt-sm header_settings',
+				sidebar: {
+					back: true,
+					backText: 'Settings'
+				},
+				container: {
 					title: 'Terminals',
 					titleClassList: 'header__title_vertical',
 					headerClassList: 'settings__header',
 					help: true
-				})}}
+				}
+			})}}
+			{% include 'partials/components/_settings-sidebar.html' %}
+			<div class="settings__container">
 				<div class="settings__body">
 					<div class="explanation settings__explanation">
 						<i class="icon icon-cc explanation__icon"></i>
@@ -140,7 +147,7 @@ settingsActive: 2
 								</div>
 							</div>
 							<div class="table-wrapper__body" data-scrollbar="default" data-table-scrollable="terminal">
-								<div class="table-body table-wrapper__table">
+								<div class="table-body table-wrapper__table" data-table-main="terminal">
 									{% for tr in table.body %}
 										<div class="table-body__tr">
 											{% for td in tr %}

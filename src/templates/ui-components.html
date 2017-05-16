@@ -1,0 +1,547 @@
+---
+title: 'UI Components &bull; eHopper POS'
+styles: 
+	- 'pos'
+---
+{% extends "layouts/_layout.html" %}
+
+{% block content %}
+	<main class="main">
+		<div class="inner">
+			{% set buttons = [
+				{
+					code: '<button class="btn" data-animation="ripple">Button</button>'
+				},
+				{
+					code: '<button class="btn btn_lg" data-animation="ripple">Button</button>'
+				},
+				{
+					code: '<button class="btn btn_xl" data-animation="ripple">Button</button>'
+				},
+				{
+					code: '<button class="btn btn_xl" data-animation="ripple">Button</button>'
+				},
+				{
+					code: '<button class="btn btn_block" data-animation="ripple">Button</button>'
+				},
+				{
+					code: '<button class="btn btn_rounded" data-animation="ripple">Button</button>'
+				},
+				{
+					code: '<button class="btn btn_green" data-animation="ripple">Button</button>'
+				},
+				{
+					code: '<button class="btn btn_success" data-animation="ripple">Button</button>'
+				},
+				{
+					code: '<button class="btn btn_red" data-animation="ripple">Button</button>'
+				},
+				{
+					code: '<button class="btn btn_error" data-animation="ripple">Button</button>'
+				},
+				{
+					code: '<button class="btn btn_primary" data-animation="ripple">Button</button>'
+				},
+				{
+					code: '<button class="btn is-active" data-animation="ripple">Button</button>'
+				},
+				{
+					code: '<button class="btn btn_secondary" data-animation="ripple">Button</button>'
+				},
+				{
+					code: '<button class="btn btn_white" data-animation="ripple">Button</button>'
+				},
+				{
+					code: '<button class="btn" data-animation="ripple">Button<i class="icon icon-more-v"></i></button>'
+				},
+				{
+					code: '<button class="btn btn_lg" data-animation="ripple">Button<i class="icon icon-next"></i></button>'
+				}
+			] %}
+			<div class="ui-container">
+				<div class="ui-title">Buttons:</div>
+				{% for item in buttons %}
+					<div class="ui-col ui-col_md">
+						<div class="ui-label">html code: <div class="ui-label__code">{{item.code}}</div></div>
+						{{item.code | safe}}
+					</div>
+				{% endfor %}
+			</div>
+			{% set CR = [
+				{
+					code: '<label class="switcher">
+						<input type="checkbox">
+						<i class="switcher__icon"></i>
+					</label>'
+				},
+				{
+					code: '<label class="switcher">
+						<input type="checkbox" checked>
+						<i class="switcher__icon"></i>
+					</label>'
+				},
+				{
+					code: '<label class="switcher switcher_success">
+						<input type="checkbox" checked>
+						<i class="switcher__icon"></i>
+					</label>'
+				},
+				{
+					code: '<div class="switcher-box">
+						<label class="switcher ">
+							<input type="checkbox" id="ui-component-switcher-box-left">
+							<i class="switcher__icon"></i>
+						</label>
+						<label for="ui-component-switcher-box-left" class="switcher-box__label">Label</label> 
+					</div>'
+				},
+				{
+					code: '<div class="switcher-box text-right">
+						<label for="ui-component-switcher-box-right" class="switcher-box__label">Label</label> 
+						<label class="switcher ">
+							<input type="checkbox" id="ui-component-switcher-box-right">
+							<i class="switcher__icon"></i>
+						</label>
+					</div>'
+				},
+				{
+					code: '<label class="checkbox">
+						<input type="checkbox" checked>
+						<i class="icon icon-check"></i>
+						<span>Lorem ipsum.</span>
+					</label>'
+				},
+				{
+					code: '<label class="checkbox checkbox_success">
+						<input type="checkbox" checked>
+						<i class="icon icon-check"></i>
+						<span>Lorem ipsum.</span>
+					</label>'
+				},
+				{
+					code: '<label class="checkbox">
+						<input type="checkbox" disabled>
+						<i class="icon icon-check"></i>
+						<span>Lorem ipsum.</span>
+					</label>'
+				},
+				{
+					code: '<label class="radio">
+						<input type="radio" name="ui-component-radiolist1">
+						<i></i>
+						<span>Lorem ipsum.</span>
+					</label>'
+				},
+				{
+					code: '<label class="radio">
+						<input type="radio" name="ui-component-radiolist1" checked>
+						<i></i>
+						<span>Lorem ipsum.</span>
+					</label>'
+				},
+				{
+					code: '<label class="radio">
+						<input type="radio" name="ui-component-radiolist1" disabled>
+						<i></i>
+						<span>Lorem ipsum.</span>
+					</label>'
+				}
+			] %}
+			<div class="ui-container">
+				<div class="ui-title">Switcher (+)/Checkbox (+)/Radio (deprecated):</div>
+				{% for item in CR %}
+					<div class="ui-col ui-col_md">
+						<div class="ui-label">html code: <div class="ui-label__code">{{item.code}}</div></div>
+						{{item.code | safe}}
+					</div>
+				{% endfor %}
+			</div>
+			{% set loaders = [
+					{
+						code: '<div class="loading"></div>'
+					}
+			] %}	
+			<div class="ui-container">
+				<div class="ui-title">Loader:</div>
+				{% for item in loaders %}
+					<div class="ui-col ui-col_md">
+						<div class="ui-label">html code: <div class="ui-label__code">{{item.code}}</div></div>
+						{{item.code | safe}}
+					</div>
+				{% endfor %}
+			</div>
+			{% set fields = [
+				{
+					code: '<div class="field-box field-box_switch">
+						<label class="field-box__label" for="ui-switcher-field">Label</label>
+						<div class="field-box__switcher">
+							<label class="switcher">
+								<input type="checkbox" id="ui-switcher-field">
+								<i class="switcher__icon"></i>
+							</label>
+						</div>
+					</div>'
+				},
+				{
+					code: '<div class="field-box field-box_btns">
+						<div class="field-box__label">Label</div>
+						<ul class="field-box__list">
+							<li class="field-box__col field-box__col_sm field-box__btn">
+								<button class="btn btn_default btn_block btn_lg" data-animation="ripple">Button</button>
+							</li>
+							<li class="field-box__col field-box__col_sm field-box__btn">
+								<button class="btn btn_default btn_block btn_lg" data-animation="ripple">Button</button>
+							</li>
+							<li class="field-box__col field-box__col_sm field-box__btn">
+								<button class="btn btn_default btn_block btn_lg" data-animation="ripple">Button</button>
+							</li>
+						</ul>
+					</div>'
+				},
+				{
+					code: '<div class="field-box field-box_btns">
+						<ul class="field-box__list">
+							<li class="field-box__col field-box__col_md field-box__btn">
+								<button class="btn btn_default btn_block btn_lg" data-animation="ripple">Button</button>
+							</li>
+							<li class="field-box__col field-box__col_md field-box__btn">
+								<button class="btn btn_default btn_block btn_lg" data-animation="ripple">Button</button>
+							</li>
+						</ul>
+					</div>'
+				},
+				{
+					code: '<div class="field-box field-box_checkbox">
+						<div class="field-box__label">Label</div>
+						<ul class="field-box__list">
+							<li class="field-box__col field-box__col_sm field-box__checkbox">
+								<label class="checkbox">
+									<input type="checkbox">
+									<i class="icon icon-check"></i>
+									<span>Lorem ipsum.</span>
+								</label>
+							</li>
+							<li class="field-box__col field-box__col_sm field-box__checkbox">
+								<label class="checkbox">
+									<input type="checkbox">
+									<i class="icon icon-check"></i>
+									<span>Lorem ipsum.</span>
+								</label>
+							</li>
+							<li class="field-box__col field-box__col_sm field-box__checkbox">
+								<label class="checkbox">
+									<input type="checkbox">
+									<i class="icon icon-check"></i>
+									<span>Lorem ipsum.</span>
+								</label>
+							</li>
+						</ul>
+					</div>'
+				},
+				{
+					code: '<div class="field-box">
+						<div class="field-box__counter">
+							<div class="field-box__label">Label</div>
+							<div class="field-box__controls">
+								<div class="field-box__controls-in">
+									<div class="field-box__control field-box__control_left">
+										<button class="btn btn_xl btn_secondary" data-animation="ripple">&#8211;</button>
+									</div>
+									<div class="field-box__control field-box__control_right">
+										<button class="btn btn_xl btn_secondary" data-animation="ripple">+</button>
+									</div>
+									<input type="text" class="input input_xl text-center field-box__counter-input" value="0" readonly>
+								</div>
+							</div>
+						</div>
+					</div>'
+				},
+				{
+					code: '<div class="field-box">
+						<div class="field-box__select-set">
+							<div class="field-box__number">1</div>
+							<div class="field-box__select-col">
+								<div class="select select_lg">
+									<select>
+										<option value="option 1">option 1</option>
+										<option value="option 2">option 2</option>
+										<option value="option 3">option 3</option>
+									</select>
+								</div>
+							</div>
+							<div class="field-box__select-col">
+								<input type="text" class="input input_lg input_block field-box__select-input" value="0.00">
+							</div>
+							<div class="field-box__button">
+								<button class="btn btn_lg btn_default btn_block" data-animation="ripple">Lorem.</button>
+							</div>
+						</div>
+					</div>'
+				},
+				{
+					code: '<div class="field-box">
+						<div class="field-box__select-set">
+							<div class="field-box__number">1</div>
+							<div class="field-box__select-col">
+								<div class="field-box__select-static">
+									<i class="icon icon-checked"></i>
+									<span class="muted">option 1</span>
+								</div>
+							</div>
+							<div class="field-box__select-col">
+								<input type="text" class="input input_lg input_block field-box__select-input muted" value="0.00" readonly>
+							</div>
+							<div class="field-box__button">
+								<button class="btn btn_lg btn_default btn_block" data-animation="ripple">Lorem.</button>
+							</div>
+						</div>
+					</div>'
+				},
+				{
+					code: '<div class="form-box">
+						<div class="field form-box__field">
+							<div class="field__inner">
+								<label class="field__label" for="ui-field-input-alone">Label</label>
+								<div class="field__box">
+									<input class="input field__input input_lg" 
+										id="ui-field-input-alone"
+										type="text"
+										placeholder="placeholder">
+								</div>
+							</div>
+						</div>
+					</div>'
+				},
+				{
+					code: '<div class="form-box">
+						<div class="field field_static form-box__field">
+							<div class="field__inner">
+								<div class="field__switch">
+									<label class="field__switch-left" for="ui-field-currency-percent">$</label>
+									<label class="field__switch-box switcher">
+										<input type="checkbox" id="ui-field-currency-percent" checked>
+										<i class="switcher__icon"></i>
+									</label>
+									<label class="field__switch-right" for="ui-field-currency-percent">%</label>
+								</div>
+								<div class="field__box">
+									<div class="field__units" data-units="currency"><span>$</span></div>
+									<span class="field__static">0.00</span>
+									<div class="field__units" data-units="percent"><span>%</span></div>
+								</div>
+							</div>
+						</div>
+					</div>'
+				},
+				{
+					code: '<div class="form-box">
+						<div class="field field_static field_currency form-box__field">
+							<div class="field__inner">
+								<div class="field__switch">
+									<label class="field__switch-left" for="ui-field-currency-percent">$</label>
+									<label class="field__switch-box switcher">
+										<input type="checkbox" id="ui-field-currency-percent">
+										<i class="switcher__icon"></i>
+									</label>
+									<label class="field__switch-right" for="ui-field-currency-percent">%</label>
+								</div>
+								<div class="field__box">
+									<div class="field__units" data-units="currency"><span>$</span></div>
+									<span class="field__static">0.00</span>
+									<div class="field__units" data-units="percent"><span>%</span></div>
+								</div>
+							</div>
+						</div>
+					</div>'
+				},
+				{
+					code: '<div class="form-box">
+						<div class="field field_static form-box__field">
+							<div class="field__inner">
+								<div class="field__label">Label</div>
+								<div class="field__box">
+									<span class="field__static">0.00</span>
+									<div class="field__units"><span>%</span></div>
+								</div>
+							</div>
+						</div>
+					</div>'
+				},
+				{
+					code: '<div class="form-box">
+						<div class="field field_static form-box__field">
+							<div class="field__inner">
+								<div class="field__label">Label</div>
+								<div class="field__box">
+									<div class="field__units"><span>$</span></div>
+									<span class="field__static">0.00</span>
+								</div>
+							</div>
+						</div>
+					</div>'
+				},
+				{
+					code: '<div class="form-box">
+						<div class="field form-box__field">
+							<div class="field__inner">
+								<div class="field__label">Label</div>
+								<div class="field__box">
+									<div class="select select_lg">
+										<select>
+											<option value="option 1">option 1</option>
+											<option value="option 2">option 2</option>
+											<option value="option 3">option 3</option>
+										</select>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>'
+				},
+				{
+					code: '<div class="select select_simple">
+						<select>
+							<option value="option 1">option 1</option>
+							<option value="option 2">option 2</option>
+							<option value="option 3">option 3</option>
+						</select>
+					</div>'
+				},
+				{
+					code: '<div class="form-box">
+						<div class="field form-box__field">
+							<div class="field__inner">
+								<div class="field__label">Label</div>
+								<div class="field__box">
+									<div class="select select_md">
+										<select>
+											<option value="option 1">option 1</option>
+											<option value="option 2">option 2</option>
+											<option value="option 3">option 3</option>
+										</select>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>'
+				},
+				{
+					code: '<div class="form-box">
+						<div class="form-box__field">
+							<textarea class="textarea textarea_block textarea_little" placeholder="placeholder"></textarea>
+						</div>
+					</div>'
+				},
+				{
+					code: '<div class="form-box">
+						<div class="form-box__field">
+							<textarea class="textarea textarea_block" placeholder="placeholder"></textarea>
+						</div>
+					</div>'
+				},
+				{
+					code: '<textarea class="textarea textarea_block textarea_simple" placeholder="placeholder"></textarea>'
+				},
+				{
+					code: '<div class="field">
+						<div class="field__inner">
+							<label for="ui-component-field-input1" class="field__label">Label</label>
+							<div class="field__box">
+								<input type="text" class="input input_lg field__input" placeholder="placeholder">
+							</div>
+						</div>
+					</div>'
+				}
+			] %}
+			<div class="ui-container">
+				<div class="ui-title">Fields:</div>
+				{% for item in fields %}
+					<div class="ui-col ui-col_md">
+						<div class="ui-label">html code: <div class="ui-label__code">{{item.code}}</div></div>
+						{{item.code | safe}}
+					</div>
+				{% endfor %}
+			</div>
+			{% set cards = [
+				{
+					code: '<div class="sm-card">
+						<label class="sm-card__label">
+							<input type="checkbox">
+							<span class="sm-card__content" data-animation="ripple">
+								<i class="sm-card__icon icon icon-checked"></i>
+								<span class="sm-card__title">Lorem ipsum.</span>
+								<span class="sm-card__sticker">0.00</span>
+							</span>
+						</label>
+					</div>'
+				},
+				{
+					code: '<div class="simple-card">
+						<label class="simple-card__label">
+							<input type="checkbox">
+							<span class="simple-card__content" data-animation="ripple">
+								<span class="simple-card__title">Lorem ipsum.</span>
+								<span class="simple-card__description">Lorem ipsum dolor.</span>
+							</span>
+						</label>
+					</div>'
+				},
+				{
+					code: '<div class="card-serial">
+						<label class="card-serial__label">
+							<input type="checkbox">
+							<span class="card-serial__content" data-animation="ripple">
+								<span class="card-serial__title">Lorem ipsum.</span>
+							</span>
+						</label>
+					</div>'
+				},
+				{
+					code: '<div class="payment-card" data-animation="ripple">
+						<div class="payment-card__icon">
+							<i class="icon icon-cc"></i>
+						</div>
+						<div class="payment-card__title">Lorem ipsum dolor.</div>
+					</div>'
+				},
+				{
+					code: '<div class="payment-card" data-animation="ripple" style="background: khaki;">
+						<div class="payment-card__icon">
+						    <span class="payment-card__icon-text">Lorem ipsum.</span>
+						</div>
+						<div class="payment-card__title">Lorem ipsum dolor.</div>
+					</div>'
+				}
+			] %}
+			<div class="ui-container">
+				<div class="ui-title">Fields:</div>
+				{% for item in cards %}
+					<div class="ui-col ui-col_md">
+						<div class="ui-label">html code: <div class="ui-label__code">{{item.code}}</div></div>
+						{{item.code | safe}}
+					</div>
+				{% endfor %}
+			</div>
+			{% set pagination = [
+				{
+					code: '<div class="default-pagination">
+						<ul class="default-pagination__list">
+							<li class="default-pagination__item"><button class="default-pagination__btn is-active"></button></li>
+							<li class="default-pagination__item"><button class="default-pagination__btn"></button></li>
+							<li class="default-pagination__item"><button class="default-pagination__btn"></button></li>
+						</ul>
+					</div>'
+				}
+			] %}
+			<div class="ui-container">
+				<div class="ui-title">Pagination:</div>
+				{% for item in pagination %}
+					<div class="ui-col ui-col_md">
+						<div class="ui-label">html code: <div class="ui-label__code">{{item.code}}</div></div>
+						{{item.code | safe}}
+					</div>
+				{% endfor %}
+			</div>
+		</div>
+	</main>
+{% endblock %}

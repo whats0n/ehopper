@@ -22,6 +22,12 @@
     &:checked + i
       &:before
         transform: scale(1)
+    &:disabled + i,
+    &:disabled ~ span
+      opacity: 0.5
+      pointer-events: none
+    &:disabled + i
+      background: none !important
   i
     position: absolute
     top: 0

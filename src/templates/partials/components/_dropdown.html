@@ -1,7 +1,7 @@
 {% import '../_mixins.html' as mixins %}
 
 {% macro menu(props) %}
-<div class="dropdown-menu {{props.classList}}" data-dropdown-menu="{{props.name}}">
+<div class="dropdown-menu {{props.classList}}" data-dropdown-menu="{{props.name}}" {{props.attrs | safe}}>
 	{% if props.listOnly !== true %}
 		{% if props.search %}
 			<div class="dropdown-menu__search sm-search">

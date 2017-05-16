@@ -9,9 +9,10 @@ styles:
 	<main class="main">
 		<div class="inner">
 			{% include 'partials/components/_payments-sidebar.html' %}
-			<div class="container container_right">
+			<div class="container container_right container_payments">
 				{{header.simple({
-					headerClassList: 'container__header',
+					headerClassList: 'container__header header_payments',
+					back: true,
 					title: 'Credit Card Payment',
 					titleClassList: 'header__title_vertical',
 					help: true
@@ -102,26 +103,28 @@ styles:
 									</div>
 								</div>
 							</div>
-							{{mixins.fieldBox({
-								radios: true,
-								label: 'Tips and Signature',
-								colSize: 'sm',
-								list: [
-									{
-										content: 'On Screen',
-										name: 'tips-and-signature'
-									},
-									{
-										content: 'On Receipt',
-										attrs: 'checked',
-										name: 'tips-and-signature'
-									},
-									{
-										content: 'On Terminal',
-										name: 'tips-and-signature'
-									}
-								]
-							})}}
+							<div class="form__section">
+								{{mixins.fieldBox({
+									radios: true,
+									label: 'Tips and Signature',
+									colSize: 'sm',
+									list: [
+										{
+											content: 'On Screen',
+											name: 'tips-and-signature'
+										},
+										{
+											content: 'On Receipt',
+											attrs: 'checked',
+											name: 'tips-and-signature'
+										},
+										{
+											content: 'On Terminal',
+											name: 'tips-and-signature'
+										}
+									]
+								})}}
+							</div>
 						</div>
 					</div>
 					<div class="step-body__footer section">

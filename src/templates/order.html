@@ -19,22 +19,42 @@ settingsActive: 2
 					<div class="infoblock">
 						<div class="infoblock__row">
 							<div class="infoblock__col">
+								<small class="infoblock__label">Store:</small>
+								<em class="infoblock__value">WestGuestCafe</em>
+							</div>
+							<div class="infoblock__col">
 								<small class="infoblock__label">Order ID:</small>
 								<em class="infoblock__value">0000123</em>
 							</div>
 							<div class="infoblock__col">
-								<small class="infoblock__label">Order date & Time:</small>
-								<em class="infoblock__value">12/21/2016 14:19:28</em>
+								<small class="infoblock__label">Order Name:</small>
+								<em class="infoblock__value"></em>
 							</div>
 							<div class="infoblock__col">
-								<small class="infoblock__label">Order type:</small>
-								<em class="infoblock__value">Quick Sale</em>
+								<small class="infoblock__label">Customer:</small>
+								<em class="infoblock__value">Walk-In</em>
+							</div>
+							<div class="infoblock__col">
+								<small class="infoblock__label">Customer Phone:</small>
+								<em class="infoblock__value"></em>
+							</div>
+							<div class="infoblock__col">
+								<small class="infoblock__label">Employee:</small>
+								<em class="infoblock__value">Mr. Seller Name</em>
+							</div>
+							<div class="infoblock__col">
+								<small class="infoblock__label">Order Date:</small>
+								<em class="infoblock__value">12/21/2016 14:19:28</em>
 							</div>
 						</div>
 					</div>
 					<hr>
 					<div class="infoblock">
 						<div class="infoblock__row">
+							<div class="infoblock__col">
+								<small class="infoblock__label">Type:</small>
+								<em class="infoblock__value">Quick Sale</em>
+							</div>
 							<div class="infoblock__col">
 								<i class="icon icon-check infoblock__icon"></i>
 								<small class="infoblock__label">Status:</small>
@@ -45,10 +65,10 @@ settingsActive: 2
 								<em class="infoblock__value">Credit Card</em>
 							</div>
 							<div class="infoblock__col">
-								<small class="infoblock__label">Refnum:</small>
-								<em class="infoblock__value">V469GH9</em>
+								<small class="infoblock__label">Fulfillment:</small>
+								<em class="infoblock__value">Fulfilled</em>
 							</div>
-							<div class="infoblock__col">
+							{# <div class="infoblock__col">
 								{{dropdown.simple({
 									label: 'Fulfillment:',
 									value: 'New',
@@ -59,23 +79,46 @@ settingsActive: 2
 									dropdownClassList: 'infoblock__dropdown dropdown_md dropdown_time',
 									customIcon: '<i class="icon icon-time dropdown__icon"></i>'
 								})}}
+							</div> #}
+							<div class="infoblock__col">
+								<small class="infoblock__label">Refnum:</small>
+								<em class="infoblock__value">V469GH9</em>
 							</div>
 						</div>
 					</div>
 					<hr>
-					<div class="infoblock">
+					<div class="infoblock infoblock_inline">
 						<div class="infoblock__row">
 							<div class="infoblock__col">
-								<small class="infoblock__label">Employee:</small>
-								<em class="infoblock__value">Mr. Seller Name</em>
+								<small class="infoblock__label">Sub:</small>
+								<em class="infoblock__value">$50.00</em>
 							</div>
 							<div class="infoblock__col">
-								<small class="infoblock__label">Store:</small>
-								<em class="infoblock__value">Main Store</em>
+								<small class="infoblock__label">Discount:</small>
+								<em class="infoblock__value">$0.00</em>
 							</div>
 							<div class="infoblock__col">
-								<small class="infoblock__label">Register:</small>
-								<em class="infoblock__value">#2 (John's iPad)</em>
+								<small class="infoblock__label">Tax:</small>
+								<em class="infoblock__value">$0.00</em>
+							</div>
+							<div class="infoblock__col">
+								<small class="infoblock__label">Tips:</small>
+								<em class="infoblock__value">$0.00</em>
+							</div>
+							<div class="infoblock__col">
+								<small class="infoblock__label">Total:</small>
+								<em class="infoblock__value">$50.00</em>
+							</div>
+						</div>
+					</div>
+					<hr>
+					<div class="infoblock infoblock_inline">
+						<div class="infoblock__row">
+							<div class="infoblock__col">
+								<div class="order-notes">
+									<i class="icon icon-note order-notes__icon"></i>
+									<div class="order-notes__content">Order Note text goes here (if present)</div>
+								</div>
 							</div>
 						</div>
 					</div>
@@ -93,7 +136,7 @@ settingsActive: 2
 						<div class="table-wrapper table-wrapper_no-footer table-wrapper_header-lg" data-table="orders">
 							{% set table = {
 								header: [
-									{ column: 'order-item', content: 'Order Item' },
+									{ column: 'order-item', content: 'Description' },
 									{ column: 'order-quantity', content: 'Quantity' },
 									{ column: 'order-price', content: 'Item Price' },
 									{ column: 'order-discount', content: 'Discount' },
@@ -153,7 +196,7 @@ settingsActive: 2
 								</div>
 							</div>
 							<div class="table-wrapper__body" data-scrollbar="default" data-table-scrollable="orders">
-								<div class="table-body table-body_order table-wrapper__table">
+								<div class="table-body table-body_order table-wrapper__table" data-table-main="orders">
 									{% for item in range(0,5) %}
 										{% for tr in table.body %}
 											<div class="table-body__tr">
@@ -176,7 +219,7 @@ settingsActive: 2
 						</div>
 					</div>
 					<div class="order__footer">
-						<div class="order-totals">
+						{# <div class="order-totals">
 							<div class="order-notes">
 								<i class="icon icon-note order-notes__icon"></i>
 								<div class="order-notes__content">Order Note text goes here (if present)</div>
@@ -194,11 +237,11 @@ settingsActive: 2
 									</div>
 								{% endfor %}
 							</div>
-						</div>
+						</div> #}
 						<div class="order__buttons">
 							<button class="btn btn_lg btn_primary" data-animation="ripple" data-modal-open="print-receipt">Print Receipt</button>
 							<button class="btn btn_lg btn_default" data-animation="ripple" data-modal-open="email-receipt">Email Receipt</button>
-							<button class="btn btn_lg btn_default" data-animation="ripple">Void</button>
+							<button class="btn btn_lg btn_default" data-animation="ripple" data-modal-open="order-void">Void</button>
 							<button class="btn btn_lg btn_default" data-animation="ripple">Refund</button>
 						</div>
 					</div>
@@ -258,6 +301,17 @@ settingsActive: 2
 					content: 'Include signature'
 				}
 			}
+		]
+	})}}
+	{{modal.confirm({
+		name: 'order-void',
+		title: 'Void Confirmation',
+		content: '<p>Are you sure you want to void the order?</p>',
+		colSize: 'md',
+		rowClassList: 'confirm__buttons',
+		buttons: [
+			'<button class="btn btn_block btn_success" data-animation="ripple">Yes</button>',
+			'<button class="btn btn_block btn_success" data-animation="ripple">No</button>'
 		]
 	})}}
 {% endblock %}

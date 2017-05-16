@@ -41,7 +41,11 @@
 {% macro payment(props) %}
 <div class="payment-card" data-animation="ripple" {%- if props.color %} style="background-color: {{props.color}};" {%- endif %}>
 	<div class="payment-card__icon">
-		<i class="icon icon-{{props.icon}}"></i>
+		{% if props.icon %}
+			<i class="icon icon-{{props.icon}}"></i>
+		{% elif props.iconText %}
+		    <span class="payment-card__icon-text">{{props.iconText}}</span>
+		{% endif %}
 	</div>
 	<div class="payment-card__title">{{props.title}}</div>
 </div>

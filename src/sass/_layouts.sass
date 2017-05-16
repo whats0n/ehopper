@@ -11,6 +11,8 @@
 .inner
   min-width: 980px
   +clr
+  +poynt
+    min-width: 600px
 
 .content 
   position: relative
@@ -21,6 +23,30 @@
   &_right
     float: right
     width: 60%
+    +poynt
+      width: 100%
+    &.container_poynt-pos
+      +poynt
+        position: absolute
+        top: 0
+        left: 0
+        right: 0
+        bottom: 0
+        width: auto
+      .container 
+        &__header
+          +poynt 
+            display: none
+        &__body
+          +poynt
+            padding-top: 200px
+            height: 100%
+      .container
+        &__body
+          padding-top: 50px
+    .container
+      &__body
+        height: 100%
   &_upper
     z-index: 15
     background: #f8f8f8
@@ -37,6 +63,25 @@
     transition: transform 0.3s ease-in-out
     &.is-open
       +gpu
+    &.container_poynt-pos
+      +poynt
+        z-index: 35
+        width: 100%
+    .container
+      &__body
+        padding-top: 50px
+        height: 100%
+  &_poynt-register
+    .container
+      &__body
+        padding-top: 50px
+    +poynt
+      padding: 150px 0 0
+  &_payments,
+  &_order
+    .container
+      &__body
+        height: calc(100% - 50px)
   &__body
     position: relative
     overflow: auto
@@ -53,13 +98,55 @@
   display: flex
   flex-direction: column
   background: $alabaster
+  +poynt
+    position: absolute
+    z-index: 30
+    top: 50px
+    left: 0
+    right: 0
+    bottom: auto
+    width: auto
+    height: auto
+    max-height: calc(100% - 50px)
+    box-shadow: none
   &_left
     // z-index: 1
     float: left
+    padding-top: 50px
     width: 40%
     box-shadow: -3px 0 4px 5px rgba(0, 0, 0, 0.2)
+    +poynt
+      padding-top: 0
   &_white
     background: $white
+  &_adaptive-poynt
+    +poynt
+      z-index: -1
+      top: 200px
+      bottom: 0
+      visibility: hidden
+    &.is-open
+      +poynt
+        z-index: 30
+        visibility: visible
+    .sidebar 
+      &__toolbar
+        .toolbar
+          &__button
+            height: 60px
+            line-height: 60px
+            +poynt
+              font-size: 18px
+            strong
+              +poynt
+                font-size: 20px
+  .sidebar__header
+    position: absolute
+    top: 0
+    left: 0
+    right: 0
+    +poynt
+      display: none
   &__body
     position: relative
     overflow: auto
@@ -118,9 +205,16 @@
   &__sidebar
     float: left
     width: 300px
+    +poynt
+      z-index: 10
+      width: 100%
+      height: auto
   &__container
     margin-left: 300px
     box-shadow: 3px 0 4px 5px rgba(0, 0, 0, 0.2)
+    +poynt
+      padding-top: 152px
+      margin: 0
   .settings__header
     position: absolute
     top: 0
@@ -131,14 +225,31 @@
     padding-top: 70px
     height: 100%
     background: #434c55
+    +poynt
+      padding-top: 50px
+    .nav
+      +poynt
+        font-size: 0
+      &__item
+        +poynt 
+          display: inline-block
+          vertical-align: top
+          width: 50%
+        &:nth-child(even)
+          +poynt
+            border-left: 1px solid #4C5560
   &__body
     display: flex
     flex-direction: column
     padding-top: 50px
     height: 100%
+    +poynt
+      padding-top: 0
     &_default
       display: block
       padding: 80px 20px 30px
+      +poynt 
+        padding-top: 30px
   &__explanation,
   &__footer
     padding: 20px
@@ -238,17 +349,19 @@
     &[data-column="orders-tips-price"]
       text-align: right
     &[data-column="orders-id"]
-      width: 19%
+      width: 11%
     &[data-column="orders-register"],
     &[data-column="orders-type"],
     &[data-column="orders-fulfillment"],
     &[data-column="orders-date"],
 
+    &[data-column="orders-name"],
     &[data-column="orders-tips-register"],
     &[data-column="orders-tips-refnum"],
     &[data-column="orders-tips-type"],
     &[data-column="orders-tips-price"],
-    &[data-column="orders-tips-date"]
+    &[data-column="orders-tips-date"],
+    &[data-column="orders-total"]
       width: 8%
     &[data-column="orders-store"],
     &[data-column="orders-employee"],

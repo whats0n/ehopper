@@ -1,5 +1,5 @@
 ---
-title: 'Save Order &bull; eHopper POS'
+title: 'Cash Refund &bull; eHopper POS'
 styles: 
 	- 'pos'
 ---
@@ -13,7 +13,7 @@ styles:
 				{{header.simple({
 					headerClassList: 'container__header header_order',
 					back: true,
-					title: 'Save Order',
+					title: 'Cash Refund',
 					titleClassList: 'header__title_vertical',
 					help: true
 				})}}
@@ -21,52 +21,56 @@ styles:
 					<div class="step-body__section">
 						<div class="form form_sm">
 							<div class="form__section">
-								<div class="info-price text-right">
-									<div class="info-price__label">Total Due:</div>
-									<div class="info-price__value info-price__value_blue"> <small>$</small> <span>102.00</span> </div>
-								</div>
+								{{mixins.infoPrice({
+									label: 'Amount Due:',
+									price: '102.00',
+									currency: '$',
+									priceClassList: 'color-red',
+									classList: 'text-right'
+								})}}
 							</div>
 							<div class="form__section">
 								<div class="form-box">
 									<div class="form-box__field">
 										{{mixins.field({
-											label: 'Order Name:',
-											id: 'order-name',
-											placeholder: 'Type here',
-											inputClassList: 'input_lg'
-										})}}
-									</div>
-								</div>
-							</div>
-							<div class="form__section">
-								<div class="form-box">
-									<div class="form-box__field">
-										{{mixins.field({
-											label: 'Bill Language:',
+											label: 'Receipt Language:',
 											select: true,
 											id: 'bill-language',
 											selectOptions: {
 												id: 'bill-language',
 												classList: 'select_lg field__select',
-												options: [ 'English', 'French', 'Russion' ]
+												options: [ 'English', 'French', 'Russian' ]
 											}
 										})}}
 									</div>
-									<div class="form-box__field">
-										<label for="email-bill" class="form-box__label">Email Bill</label>
-										{{mixins.switcher({ id: 'email-bill', classList: 'form-box__switcher' })}}
-									</div>
+								</div>
+							</div>
+							<div class="form__section">
+								{{mixins.fieldBox({
+									checkboxes: true,
+									colSize: 'md',
+									list: [
+										{
+											content: 'E-mail Receipt',
+											name: 'refund-receipt'
+										},
+										{
+											content: 'Print Receipt',
+											attrs: 'checked',
+											name: 'refund-receipt'
+										}
+									]
+								})}}
+							</div>
+							<div class="form__section">
+								<div class="form-box">
 									<div class="form-box__field">
 										{{mixins.field({
-											label: 'Email address:',
-											id: 'order-email-address',
+											label: 'Email Address:',
+											id: 'refund-email-address',
 											placeholder: 'user@domain.com',
 											inputClassList: 'input_lg text-right'
 										})}}
-									</div>
-									<div class="form-box__field">
-										<label for="print-bill" class="form-box__label">Print Bill</label>
-										{{mixins.switcher({ id: 'print-bill', classList: 'form-box__switcher' })}}
 									</div>
 								</div>
 							</div>
@@ -74,7 +78,7 @@ styles:
 					</div>
 					<div class="step-body__footer section">
 						<div class="wrapper-btn-center">
-							<button class="btn btn_primary btn_lg btn_block text-uppercase" data-animation="ripple">Save Order</button>
+							<button class="btn btn_error btn_lg btn_block text-uppercase" data-animation="ripple">Done</button>
 						</div>
 					</div>
 				</div>

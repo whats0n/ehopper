@@ -20,14 +20,21 @@
       <!-- BEGIN content -->
       <main class="main">
         <div class="inner">
+          <!-- begin header -->
+          <header class="header header_double header_container-upper header_poynt-sm">
+            <div class="header__sidebar"> <button class="header__back btn-back">
+				<i class="icon icon-back btn-back__icon"></i>
+				<span class="btn-back__title">Back</span>
+			</button> </div>
+            <div class="header__container"> <button class="btn-icon header__help" title="Help" data-modal-open="help">
+				<i class="icon icon-help"></i>
+			</button>
+              <h2 class="title-xlg header__title header__title_vertical">Open Register</h2>
+            </div>
+          </header>
+          <!-- end header -->
           <aside class="sidebar sidebar_left sidebar_white">
-            <!-- begin header -->
-            <header class="header sidebar__header"> <button class="header__back btn-back">
-			<i class="icon icon-back btn-back__icon"></i>
-			<span class="btn-back__title">Back</span>
-		</button> </header>
-            <!-- end header -->
-            <div class="infoblock">
+            <div class="infoblock infoblock_collapsed">
               <div class="infoblock__row">
                 <div class="infoblock__col infoblock__col_md">
                   <div class="infoblock__box"> <small class="infoblock__label">Opened:</small> <em class="infoblock__value">12/21/2016 14:19:28</em> </div>
@@ -37,10 +44,16 @@
                   <div class="infoblock__box"> <small class="infoblock__label">Closed:</small> <em class="infoblock__value">12/21/2016 14:19:28</em> </div>
                   <div class="infoblock__box"> <small class="infoblock__label">By Employee:</small> <em class="infoblock__value">Mr. John Snow</em> </div>
                 </div>
-              </div>
-            </div>
+              </div> <button class="btn-open infoblock__open" onclick="(function() { 
+						[].forEach.call(document.querySelectorAll('.sidebar__poynt-hidden'), function(element) {
+							element.classList.toggle('is-open'); 
+						});
+						event.currentTarget.classList.toggle('is-active'); 
+					}());">
+						<i class="icon icon-caret"></i>
+					</button> </div>
             <hr />
-            <div class="sidebar__body">
+            <div class="sidebar__body sidebar__poynt-hidden">
               <ul class="infotable">
                 <li class="infotable__row">
                   <div class="infotable__label">Opening Amount</div>
@@ -72,18 +85,11 @@
                 </li>
               </ul>
             </div>
-            <div class="sidebar__footer">
+            <div class="sidebar__footer sidebar__poynt-hidden">
               <div class="section wrapper-btn-center"> <button class="btn btn_secondary btn_lg btn_block" data-animation="ripple">Print Z-Report</button> </div>
             </div>
           </aside>
-          <div class="container container_right container_upper">
-            <!-- begin header -->
-            <header class="header container__header"> <button class="btn-icon header__help" title="Help" data-modal-open="help">
-			<i class="icon icon-help"></i>
-		</button>
-              <h2 class="title-xlg header__title header__title_vertical">Open Register</h2>
-            </header>
-            <!-- end header -->
+          <div class="container container_right container_upper container_poynt-register">
             <div class="container__body step-body">
               <div class="step-body__section">
                 <div class="form form_sm">

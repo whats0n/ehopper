@@ -1,4 +1,40 @@
 .infoblock
+	position: relative
+	
+	//mods
+	&_collapsed
+		+poynt
+			padding-right: 70px
+	&_inline
+		.infoblock
+			&__col
+				&:not(:first-child)
+					&:before
+						content: ''
+						position: absolute
+						top: 0
+						left: 15px
+						right: 15px
+						border-top: 1px solid $lightGray
+			&__label
+				padding: 2px 0
+				text-align: left
+			&__value
+				text-align: right
+			&__label,
+			&__value
+				float: left
+				width: 50%
+	
+	//components
+	&__open
+		position: absolute
+		z-index: 2
+		bottom: -25px
+		right: 15px
+		display: none
+		+poynt
+			display: block
 	&__row
 		padding: 20px 0
 		+clr

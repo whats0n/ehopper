@@ -3,7 +3,7 @@
 
   <head>
     <meta charset="utf-8">
-    <title>Order Taxes &bull; eHopper POS</title>
+    <title>Cash Refund &bull; eHopper POS</title>
     <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <meta name="theme-color" content="#fff">
@@ -130,34 +130,72 @@
 		</button> <button class="btn-icon header__help" title="Help" data-modal-open="help">
 			<i class="icon icon-help"></i>
 		</button>
-              <h2 class="title-xlg header__title header__title_vertical">Order Taxes</h2>
+              <h2 class="title-xlg header__title header__title_vertical">Cash Refund</h2>
             </header>
             <!-- end header -->
             <div class="container__body step-body">
               <div class="step-body__section">
-                <div class="form form_sm"> <br>
-                  <div class="switcher-box text-right"> <label for="exclude-all-taxes" class="switcher-box__label">Exclude All Taxes</label> <label class="switcher ">
-	<input type="checkbox" id="exclude-all-taxes" >
-	<i class="switcher__icon"></i>
-</label> </div>
-                  <div class="switcher-box text-right"> <label for="include-in-price" class="switcher-box__label">Include In Price</label> <label class="switcher ">
-	<input type="checkbox" id="include-in-price" >
-	<i class="switcher__icon"></i>
-</label> </div>
-                  <div class="form-box">
-                    <div class="form-box__field"> <label for="federal-tax" class="form-box__label">Federal Tax (5%)</label> <label class="switcher form-box__switcher">
-	<input type="checkbox" id="federal-tax" >
-	<i class="switcher__icon"></i>
-</label> </div>
-                    <div class="form-box__field"> <label for="state-tax" class="form-box__label">State Tax (10%)</label> <label class="switcher form-box__switcher">
-	<input type="checkbox" id="state-tax" >
-	<i class="switcher__icon"></i>
-</label> </div>
+                <div class="form form_sm">
+                  <div class="form__section">
+                    <div class="info-price text-right">
+                      <div class="info-price__label">Amount Due:</div>
+                      <div class="info-price__value "> <small>$</small> <span class="color-red">102.00</span> </div>
+                    </div>
+                  </div>
+                  <div class="form__section">
+                    <div class="form-box">
+                      <div class="form-box__field">
+                        <div class="field ">
+                          <div class="field__inner"> <label class="field__label" for="bill-language">Receipt Language:</label>
+                            <div class="field__box">
+                              <div class="select select_lg field__select"> <select id="bill-language">
+		
+			<option value="English"  >English</option>
+		
+			<option value="French"  >French</option>
+		
+			<option value="Russian"  >Russian</option>
+		
+	</select> </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="form__section">
+                    <div class="field-box">
+                      <div class="field-box__checkbox">
+                        <ul class="field-box__list">
+                          <li class="field-box__col field-box__col_md field-box__checkbox"> <label class="checkbox ">
+	<input type="checkbox" >
+	<i class="icon icon-check"></i>
+	<span>E-mail Receipt</span>
+</label> </li>
+                          <li class="field-box__col field-box__col_md field-box__checkbox"> <label class="checkbox ">
+	<input type="checkbox" checked>
+	<i class="icon icon-check"></i>
+	<span>Print Receipt</span>
+</label> </li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="form__section">
+                    <div class="form-box">
+                      <div class="form-box__field">
+                        <div class="field ">
+                          <div class="field__inner"> <label class="field__label" for="refund-email-address">Email Address:</label>
+                            <div class="field__box"> <input class="input field__input input_lg text-right" id="refund-email-address" type="text" placeholder="user@domain.com"> </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
               <div class="step-body__footer section">
-                <div class="wrapper-btn-center"> <button class="btn btn_primary btn_lg btn_block text-uppercase" data-animation="ripple">Done</button> </div>
+                <div class="wrapper-btn-center"> <button class="btn btn_error btn_lg btn_block text-uppercase" data-animation="ripple">Done</button> </div>
               </div>
             </div>
           </div>

@@ -1,0 +1,156 @@
+.poynt-header
+	position: absolute
+	z-index: 20
+	top: 0
+	left: 0
+	right: 0
+	display: none
+	height: auto
+	+poynt
+		display: block
+	.header
+		&__searchbox
+			padding-right: 138px
+			max-width: none
+			background: #e6e6e6
+		&__scan
+			position: absolute
+			right: 0
+			bottom: 0
+			.btn-scan
+				color: $darkGray
+
+	//header search
+	.search
+		&__field
+			padding-left: 60px
+			&:before
+				left: 15px
+				right: 5px
+				border-color: $darkGray
+		&__controls
+			left: 10px
+		&__input,
+		&__button
+			color: $darkGray
+		&__input 
+			+placeholder
+				color: $darkGray
+
+.cart
+	position: relative
+	z-index: 15
+	display: none
+	padding-top: 100px
+	background: #e6e6e6
+	&_poynt
+		+poynt 
+			display: block
+	&__inner
+		border-top: 2px solid #dadada
+		border-bottom: 2px solid #dadada
+		+clr
+
+.cart-total
+	position: relative
+	float: left
+	padding: 0 0 0 80px
+	width: 65%
+	height: 96px
+	background: $lightGray
+	.icon
+		position: absolute
+		top: 50%
+		left: 15px
+		margin-top: -20px
+		width: auto
+		height: auto
+		color: $green
+		font-size: 46px
+	&__quantity
+		position: absolute
+		top: 50%
+		left: 45px
+		padding: 0 4px
+		margin-top: -27px
+		border-radius: 11px
+		min-width: 22px
+		color: $white
+		background: $red
+		font-size: 16px
+		line-height: 22px
+		text-align: center
+	&__content
+		line-height: 96px
+		&-in
+			display: inline-block
+			vertical-align: middle
+			line-height: 1.2
+	&__title,
+	&__price
+		display: inline-block
+		vertical-align: middle
+		line-height: 1.2
+	&__title
+		padding: 4px 4px 2px 0
+		color: $darkGray
+		+rreg
+		font-size: 24px
+		text-transform: uppercase
+	&__price
+		color: $green
+		+rreg
+		font-size: 30px
+
+.cart-toggle
+	position: relative
+	float: right
+	padding: 20px 80px 20px 20px
+	border-left: 2px solid #dadada
+	width: 35%
+	height: 96px
+	color: $darkGray
+	background: none
+	+rreg
+	font-size: 24px
+	text-align: left
+	text-transform: uppercase
+	transition: background 0.175s ease, box-shadow 0.175s ease
+	+active 
+		color: $darkGray
+		background: rgba($black, 0.1)
+		box-shadow: inset 2px 2px 6px rgba($black, 0.2)
+	&.is-active
+		background: rgba($black, 0.03)
+		.icon
+			transform: rotate(180deg)
+	.icon
+		position: absolute
+		top: 50%
+		right: 20px
+		margin-top: -20px
+		font-size: 32px
+		transition: transform 0.175s ease-in-out
+
+.infoblock
+	&__row 
+		+poynt
+			padding: 5px 0
+	&__box
+		+poynt
+			padding: 3px 0
+
+.sidebar
+	&__poynt-hidden
+		&:last-child
+			box-shadow: 0 0px 4px 5px rgba(0, 0, 0, 0.2)
+		&.is-open
+			+poynt
+				display: block
+		+poynt 
+			display: none
+
+
+.is-poynt-hidden
+	+poynt
+		display: none

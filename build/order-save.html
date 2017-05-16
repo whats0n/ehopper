@@ -20,7 +20,7 @@
       <!-- BEGIN content -->
       <main class="main" data-toggle-class-container="main-container">
         <div class="inner">
-          <aside class="sidebar sidebar_left">
+          <aside class="sidebar sidebar_left is-poynt-hidden">
             <!-- begin header -->
             <header class="header sidebar__header"> <button class="header__back btn-back">
 			<i class="icon icon-back btn-back__icon"></i>
@@ -122,9 +122,12 @@
               </div>
             </div>
           </aside>
-          <div class="container container_right">
+          <div class="container container_right container_order">
             <!-- begin header -->
-            <header class="header container__header"> <button class="btn-icon header__help" title="Help" data-modal-open="help">
+            <header class="header container__header header_order"> <button class="header__back btn-back">
+			<i class="icon icon-back btn-back__icon"></i>
+			<span class="btn-back__title">Back</span>
+		</button> <button class="btn-icon header__help" title="Help" data-modal-open="help">
 			<i class="icon icon-help"></i>
 		</button>
               <h2 class="title-xlg header__title header__title_vertical">Save Order</h2>
@@ -169,7 +172,7 @@
                           </div>
                         </div>
                       </div>
-                      <div class="form-box__field"> <label for="federal-tax" class="form-box__label">Email Bill</label> <label class="switcher form-box__switcher">
+                      <div class="form-box__field"> <label for="email-bill" class="form-box__label">Email Bill</label> <label class="switcher form-box__switcher">
 	<input type="checkbox" id="email-bill" >
 	<i class="switcher__icon"></i>
 </label> </div>
@@ -180,7 +183,7 @@
                           </div>
                         </div>
                       </div>
-                      <div class="form-box__field"> <label for="state-tax" class="form-box__label">Print Bill</label> <label class="switcher form-box__switcher">
+                      <div class="form-box__field"> <label for="print-bill" class="form-box__label">Print Bill</label> <label class="switcher form-box__switcher">
 	<input type="checkbox" id="print-bill" >
 	<i class="switcher__icon"></i>
 </label> </div>

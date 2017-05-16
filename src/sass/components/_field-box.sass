@@ -1,16 +1,39 @@
 .field-box
+	position: relative
 	padding: 13px 20px
 	border: 2px solid $lightGray
 	background: $white
+
+	//mods
+	&_switch
+		padding: 0
+		min-height: 60px
+		.field-box
+			&__label
+				padding: 22px 80px 22px 20px
+				cursor: pointer
+
+	//elements
+	&__content
+		margin: 0 -10px
+		+clr
+	&__col
+		float: left
+		padding: 0 10px
+		width: 100%
+		&_sm
+			width: 33.33%
+		&_md
+			width: 50%
 
 	//switcher
 	&__switch
 		position: relative
 		margin: -13px -20px
-		min-height: 56px
+		min-height: 60px
 		.field-box
 			&__label
-				padding: 20px 80px 20px 20px
+				padding: 22px 80px 22px 20px
 				cursor: pointer
 	&__label
 		display: block
@@ -19,7 +42,7 @@
 		+nosel
 	&__switcher
 		position: absolute
-		top: 13px
+		top: 15px
 		right: 18px
 
 	//radio/checkboxes
@@ -27,12 +50,8 @@
 		padding: 0 10px
 		margin: 0 -20px
 		+clr
-	&__col
-		float: left
-		width: 100%
-		&_sm
-			width: 33.33%
-	&__radio
+	&__radio,
+	&__checkbox
 		display: block
 		padding: 5px 10px
 	

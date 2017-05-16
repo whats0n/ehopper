@@ -20,7 +20,7 @@
       <!-- BEGIN content -->
       <main class="main">
         <div class="inner">
-          <aside class="sidebar sidebar_left">
+          <aside class="sidebar sidebar_left is-poynt-hidden">
             <!-- begin header -->
             <header class="header sidebar__header"> <button class="header__back btn-back">
 			<i class="icon icon-back btn-back__icon"></i>
@@ -122,9 +122,12 @@
               </div>
             </div>
           </aside>
-          <div class="container container_right">
+          <div class="container container_right container_payments">
             <!-- begin header -->
-            <header class="header container__header"> <button class="btn-icon header__help" title="Help" data-modal-open="help">
+            <header class="header container__header header_payments"> <button class="header__back btn-back">
+			<i class="icon icon-back btn-back__icon"></i>
+			<span class="btn-back__title">Back</span>
+		</button> <button class="btn-icon header__help" title="Help" data-modal-open="help">
 			<i class="icon icon-help"></i>
 		</button>
               <h2 class="title-xlg header__title header__title_vertical">Debit Card Payment</h2>
@@ -140,21 +143,11 @@
                     </div>
                   </div>
                   <div class="field-box">
-                    <div class="field-box__radios">
-                      <div class="field-box__label" div>Tips and Signature</div>
-                      <ul class="field-box__list">
-                        <li class="field-box__col field-box__col_sm field-box__radio"> <label class="radio ">
-	<input type="radio" checked name="tips-and-signature">
-	<i></i>
-	<span>On Screen</span>
-</label> </li>
-                        <li class="field-box__col field-box__col_sm field-box__radio"> <label class="radio ">
-	<input type="radio"  name="tips-and-signature">
-	<i></i>
-	<span>On Terminal</span>
-</label> </li>
-                      </ul>
-                    </div>
+                    <div class="field-box__label">Tips and Signature</div>
+                    <ul class="field-box__list">
+                      <li class="field-box__col field-box__col_md field-box__radio"> <button class="btn btn_default btn_block btn_lg" data-animation="ripple">On Screen</button> </li>
+                      <li class="field-box__col field-box__col_md field-box__radio"> <button class="btn btn_default btn_block btn_lg" data-animation="ripple">On Terminal</button> </li>
+                    </ul>
                   </div>
                 </div>
               </div>

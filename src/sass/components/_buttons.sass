@@ -9,6 +9,7 @@
   height: 40px
 
   color: $darkGray
+  background: $lightGray
 
   +rlight
   font-size: 16px
@@ -23,7 +24,8 @@
   cursor: pointer
   user-select: none
   +active
-    color: inherit
+    color: $darkGray
+    background: $lightGrayActive
     box-shadow: inset 2px 2px 6px rgba($black, 0.2)
   .icon
     vertical-align: top
@@ -71,13 +73,8 @@
     +active
       color: $white
       background: $redActive
-  &_default
-    color: $darkGray
-    background: $lightGray
-    +active
-      color: $darkGray
-      background: $lightGrayActive
-  &_primary
+  &_primary,
+  &.is-active
     color: $white
     background: $blue
     +active
@@ -110,7 +107,7 @@ button
   color: inherit
   background: none
   text-decoration: none
-  transition: background 0.175s ease
+  transition: color 0.175s ease, background 0.175s ease
   +active
     color: inherit
     background: rgba($black, 0.1)
@@ -151,6 +148,54 @@ button
   &__title
     padding: 0 20px 0 0
     line-height: 50px
+
+.btn-scan
+  display: inline-block
+  vertical-align: top
+  padding: 12px 10px
+  width: 130px
+  color: $white
+  background: none
+  font-size: 0
+  text-align: center
+  transition: background 0.175s ease, box-shadow 0.175s ease
+  +active
+    background: rgba($black, 0.1)
+    box-shadow: inset 2px 2px 6px rgba($black, 0.2)
+  &__icon,
+  &__text
+    display: inline-block
+    vertical-align: top
+  &__icon
+    width: 0.96em
+    height: 1em
+    fill: currentColor
+    font-size: 26px
+  &__text
+    padding: 5px 0 5px 5px
+    +rlight
+    font-size: 16px
+    line-height: 1
+
+.btn-open
+  width: 50px
+  height: 50px
+  border-radius: 50%
+  color: $blue
+  background: $azureActive
+  transition: background 0.175s ease, box-shadow 0.175s ease, color 0.175s ease
+  +active
+    box-shadow: inset 2px 2px 6px rgba($black, 0.2)
+  &.is-active
+    color: $white
+    background: $blue
+    .icon
+      transform: rotate(180deg)
+  .icon
+    font-size: 28px
+    transition: transform 0.175s ease-in-out
+
+
 ////
 .btn-lg
   padding: 0 15px

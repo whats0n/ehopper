@@ -20,7 +20,7 @@
       <!-- BEGIN content -->
       <main class="main">
         <div class="inner">
-          <aside class="sidebar sidebar_left">
+          <aside class="sidebar sidebar_left is-poynt-hidden">
             <!-- begin header -->
             <header class="header sidebar__header"> <button class="header__back btn-back">
 			<i class="icon icon-back btn-back__icon"></i>
@@ -122,9 +122,12 @@
               </div>
             </div>
           </aside>
-          <div class="container container_right">
+          <div class="container container_right container_payments">
             <!-- begin header -->
-            <header class="header container__header"> <button class="btn-icon header__help" title="Help" data-modal-open="help">
+            <header class="header container__header header_payments"> <button class="header__back btn-back">
+			<i class="icon icon-back btn-back__icon"></i>
+			<span class="btn-back__title">Back</span>
+		</button> <button class="btn-icon header__help" title="Help" data-modal-open="help">
 			<i class="icon icon-help"></i>
 		</button>
               <h2 class="title-xlg header__title header__title_vertical">Split Payment</h2>
@@ -196,7 +199,7 @@
                         <div class="field-box__select-col">
                           <div class="field-box__select-static"> <i class="icon icon-checked"></i> <span class="muted">Cash</span> </div>
                         </div>
-                        <div class="field-box__select-col"> <input type="text" class="input input_lg input_block field-box__select-input muted" value="100.00"> </div>
+                        <div class="field-box__select-col"> <input type="text" class="input input_lg input_block field-box__select-input muted" value="100.00" readonly> </div>
                         <div class="field-box__button"> <button class="btn btn_lg btn_default btn_block" data-animation="ripple">Void</button> </div>
                       </div>
                     </div>

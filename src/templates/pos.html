@@ -8,13 +8,44 @@ styles:
 {% block content %}
 	<main class="main" data-toggle-class-container="main-container">
 		<div class="inner">
-			<aside class="sidebar sidebar_left" data-toggle-class-container="sidebar-header">
-				{{header.simple({
-					delete: true,
+			{{header.double({
+				sync: true,
+				delete: true,
+				sidebar: {
 					menu: true,
-					toolbar: true,
-					headerClassList: 'sidebar__header'
-				})}}
+					toolbar: true
+				},
+				container: {
+					search: true,
+					scan: true
+				},
+				fullinfo: {
+					back: true,
+					backAttrs: 'data-fullinfo-close="fullinfo" data-toggle-class-target="sidebar-header" data-toggle-class-remove="is-disabled"'
+				}
+			})}}
+			<div class="cart cart_poynt">
+				<div class="cart__inner">
+					<div class="cart-total">
+						<i class="icon icon-pos"></i>
+						<div class="cart-total__quantity">4</div>
+						<div class="cart-total__content">
+							<div class="cart-total__content-in">
+								<div class="cart-total__title">Total</div>
+								<div class="cart-total__price">$ 400000000.00</div>
+							</div>
+						</div>
+					</div>
+					<button class="cart-toggle" data-animation="ripple" onclick="(function() { 
+						document.querySelector('.sidebar').classList.toggle('is-open'); 
+						event.currentTarget.classList.toggle('is-active'); 
+					}());">
+						<span class="cart-toggle__title">Cart</span>
+						<i class="icon icon-caret"></i>
+					</button>
+				</div>
+			</div>
+			<aside class="sidebar sidebar_left sidebar_adaptive-poynt" data-toggle-class-container="sidebar-header">
 				<div class="sidebar__body" data-order-scroll="order">
 					<div class="sidebar__content">
 						{% set orderList = [
@@ -197,7 +228,7 @@ styles:
 									{{mixins.button({
 										tagName: 'a',
 										classList: 'btn btn_green btn_lg btn_block toolbar__button',
-										attrs: 'data-animation="ripple" href="payment-cash.html"',
+										attrs: 'data-animation="ripple" href="payment-cash.html" id="cart-cash-button"',
 										content: 'Cash: <strong>$100.20</strong>'
 									})}}
 								</div>
@@ -225,11 +256,16 @@ styles:
 								linkClassList: 'is-disabled'
 							},
 							{
+								text: 'Discount',
+								href: '#'
+							},
+							{
 								text: 'More <i class="icon icon-more-v"></i>',
 								href: '#',
 								dropdown: {
 									name: 'more',
 									classList: 'dropdown-menu_up dropdown-menu_no-scroll',
+									attrs: 'id="more-menu"',
 									links: true,
 									list: [ 
 										{ text: '<a href="#">Tax exempt</a>' }, 
@@ -244,12 +280,7 @@ styles:
 					})}}
 				</div>
 			</aside>
-			<div class="container container_right">
-				{{header.simple({
-					search: true,
-					headerClassList: 'container__header',
-					sync: true
-				})}}
+			<div class="container container_right container_poynt-pos">
 				<div class="items container__body">
 					<div class="items__top">
 						<div class="categories" data-slider-wrapper="default">
@@ -371,12 +402,7 @@ styles:
 					</div>
 				</div>
 			</div>
-			<div class="container container_overlay" data-fullinfo-container="fullinfo">
-				{{header.simple({
-					headerClassList: 'container__header',
-					back: true,
-					backAttrs: 'data-fullinfo-close="fullinfo" data-toggle-class-target="sidebar-header" data-toggle-class-remove="is-disabled"'
-				})}}
+			<div class="container container_overlay container_poynt-pos" data-fullinfo-container="fullinfo">
 				<div class="container__body">
 					{{tabs.call({
 						classList: 'tabs_lg container__content',

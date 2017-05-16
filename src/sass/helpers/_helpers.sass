@@ -21,6 +21,10 @@
   transform: translate3d(0,0,0)
 
 //vertical
+=xlg
+  +r(1280)
+    @content
+
 =lg
   +r(1200)
     @content
@@ -50,4 +54,8 @@ $hxs: 570
 
 =touch
   .is-touch &
+    @content
+
+=poynt
+  .is-poynt &
     @content

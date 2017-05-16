@@ -84,10 +84,10 @@ styles:
 								columns: [ 'icon', 'orders-tips-order', 'orders-tips-store', 'orders-tips-register', 'orders-tips-refnum', 'orders-tips-status', 'orders-tips-type', 'orders-tips-price', 'orders-tips-date', 'orders-tips-employee', 'orders-tips-tips', 'icon' ],
 								header: [
 									{ checkbox: true },
-									{ content: 'Order' },
+									{ content: 'Order ID' },
 									{ content: 'Store' },
 									{ content: 'Register' },
-									{ content: 'Refnum' },
+									{ content: 'Ref Num' },
 									{ content: 'Status' },
 									{ content: 'Type' },
 									{ content: 'Price' },
@@ -171,7 +171,7 @@ styles:
 								</div>
 							</div>
 							<div class="table-wrapper__body" data-scrollbar="default" data-table-scrollable="orders">
-								<div class="table-body table-body_orders table-wrapper__table">
+								<div class="table-body table-body_orders table-wrapper__table" data-table-main="orders">
 								    {% for tr in table.body %}
 								    	<div class="table-body__tr">
 								    		{% for td in tr %}

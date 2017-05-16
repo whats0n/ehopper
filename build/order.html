@@ -30,46 +30,43 @@
             <div class="order__info">
               <div class="infoblock">
                 <div class="infoblock__row">
+                  <div class="infoblock__col"> <small class="infoblock__label">Store:</small> <em class="infoblock__value">WestGuestCafe</em> </div>
                   <div class="infoblock__col"> <small class="infoblock__label">Order ID:</small> <em class="infoblock__value">0000123</em> </div>
-                  <div class="infoblock__col"> <small class="infoblock__label">Order date & Time:</small> <em class="infoblock__value">12/21/2016 14:19:28</em> </div>
-                  <div class="infoblock__col"> <small class="infoblock__label">Order type:</small> <em class="infoblock__value">Quick Sale</em> </div>
+                  <div class="infoblock__col"> <small class="infoblock__label">Order Name:</small> <em class="infoblock__value"></em> </div>
+                  <div class="infoblock__col"> <small class="infoblock__label">Customer:</small> <em class="infoblock__value">Walk-In</em> </div>
+                  <div class="infoblock__col"> <small class="infoblock__label">Customer Phone:</small> <em class="infoblock__value"></em> </div>
+                  <div class="infoblock__col"> <small class="infoblock__label">Employee:</small> <em class="infoblock__value">Mr. Seller Name</em> </div>
+                  <div class="infoblock__col"> <small class="infoblock__label">Order Date:</small> <em class="infoblock__value">12/21/2016 14:19:28</em> </div>
                 </div>
               </div>
               <hr>
               <div class="infoblock">
                 <div class="infoblock__row">
+                  <div class="infoblock__col"> <small class="infoblock__label">Type:</small> <em class="infoblock__value">Quick Sale</em> </div>
                   <div class="infoblock__col"> <i class="icon icon-check infoblock__icon"></i> <small class="infoblock__label">Status:</small> <em class="infoblock__value">Paid / Successfull</em> </div>
                   <div class="infoblock__col"> <small class="infoblock__label">Tender Type:</small> <em class="infoblock__value">Credit Card</em> </div>
+                  <div class="infoblock__col"> <small class="infoblock__label">Fulfillment:</small> <em class="infoblock__value">Fulfilled</em> </div>
                   <div class="infoblock__col"> <small class="infoblock__label">Refnum:</small> <em class="infoblock__value">V469GH9</em> </div>
-                  <div class="infoblock__col">
-                    <!-- begin dropdown -->
-                    <div class="dropdown infoblock__dropdown dropdown_md dropdown_time" data-dropdown="order-fulfillment">
-                      <div class="dropdown__header" data-dropdown-open="order-fulfillment" data-animation="ripple"> <i class="dropdown__arrow icon icon-expand"></i> <i class="icon icon-time dropdown__icon"></i>
-                        <div class="dropdown__label">Fulfillment:</div>
-                        <div class="dropdown__value" data-dropdown-value="order-fulfillment">New</div>
-                      </div>
-                      <div class="dropdown-menu " data-dropdown-menu="order-fulfillment">
-                        <ul class="dropdown-menu__list">
-                          <li class="dropdown-menu__item is-active" data-animation="ripple" data-dropdown-item="order-fulfillment" data-value="New"> New </li>
-                          <li class="dropdown-menu__item" data-animation="ripple" data-dropdown-item="order-fulfillment" data-value="In Preparation"> In Preparation </li>
-                          <li class="dropdown-menu__item" data-animation="ripple" data-dropdown-item="order-fulfillment" data-value="Prepared"> Prepared </li>
-                          <li class="dropdown-menu__item" data-animation="ripple" data-dropdown-item="order-fulfillment" data-value="In Fulfillment"> In Fulfillment </li>
-                          <li class="dropdown-menu__item" data-animation="ripple" data-dropdown-item="order-fulfillment" data-value="Fulfilled"> Fulfilled </li>
-                        </ul>
-                      </div>
-                      <!-- begin overlay --><button type="button" class="overlay " data-color="dark-gray" data-overlay="overlay" data-dropdown-overlay="order-fulfillment"></button>
-                      <!-- end overlay -->
-                    </div>
-                    <!-- end dropdown -->
-                  </div>
                 </div>
               </div>
               <hr>
-              <div class="infoblock">
+              <div class="infoblock infoblock_inline">
                 <div class="infoblock__row">
-                  <div class="infoblock__col"> <small class="infoblock__label">Employee:</small> <em class="infoblock__value">Mr. Seller Name</em> </div>
-                  <div class="infoblock__col"> <small class="infoblock__label">Store:</small> <em class="infoblock__value">Main Store</em> </div>
-                  <div class="infoblock__col"> <small class="infoblock__label">Register:</small> <em class="infoblock__value">#2 (John's iPad)</em> </div>
+                  <div class="infoblock__col"> <small class="infoblock__label">Sub:</small> <em class="infoblock__value">$50.00</em> </div>
+                  <div class="infoblock__col"> <small class="infoblock__label">Discount:</small> <em class="infoblock__value">$0.00</em> </div>
+                  <div class="infoblock__col"> <small class="infoblock__label">Tax:</small> <em class="infoblock__value">$0.00</em> </div>
+                  <div class="infoblock__col"> <small class="infoblock__label">Tips:</small> <em class="infoblock__value">$0.00</em> </div>
+                  <div class="infoblock__col"> <small class="infoblock__label">Total:</small> <em class="infoblock__value">$50.00</em> </div>
+                </div>
+              </div>
+              <hr>
+              <div class="infoblock infoblock_inline">
+                <div class="infoblock__row">
+                  <div class="infoblock__col">
+                    <div class="order-notes"> <i class="icon icon-note order-notes__icon"></i>
+                      <div class="order-notes__content">Order Note text goes here (if present)</div>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
@@ -88,7 +85,7 @@
                   <div class="table-wrapper__header" data-table-fake="orders">
                     <div class="table-header">
                       <ul class="table-header__tr">
-                        <li class="table-header__th" data-column="order-item"> Order Item </li>
+                        <li class="table-header__th" data-column="order-item"> Description </li>
                         <li class="table-header__th" data-column="order-quantity"> Quantity </li>
                         <li class="table-header__th" data-column="order-price"> Item Price </li>
                         <li class="table-header__th" data-column="order-discount"> Discount </li>
@@ -104,7 +101,7 @@
                     </div>
                   </div>
                   <div class="table-wrapper__body" data-scrollbar="default" data-table-scrollable="orders">
-                    <div class="table-body table-body_order table-wrapper__table">
+                    <div class="table-body table-body_order table-wrapper__table" data-table-main="orders">
                       <div class="table-body__tr">
                         <div class="table-body__td" data-column="order-item">
                           <div class="table-wrapper__value">Hot-Dog</div>
@@ -440,26 +437,7 @@
                 </div>
               </div>
               <div class="order__footer">
-                <div class="order-totals">
-                  <div class="order-notes"> <i class="icon icon-note order-notes__icon"></i>
-                    <div class="order-notes__content">Order Note text goes here (if present)</div>
-                  </div>
-                  <div class="order-totals__table">
-                    <div class="order-totals__tr">
-                      <div class="order-totals__td order-totals__label">Subtotal:</div>
-                      <div class="order-totals__td order-totals__value">$11,540.54</div>
-                    </div>
-                    <div class="order-totals__tr">
-                      <div class="order-totals__td order-totals__label">Tax:</div>
-                      <div class="order-totals__td order-totals__value">$140.00</div>
-                    </div>
-                    <div class="order-totals__tr">
-                      <div class="order-totals__td order-totals__label">Total:</div>
-                      <div class="order-totals__td order-totals__value"><em>$12,540.54</em></div>
-                    </div>
-                  </div>
-                </div>
-                <div class="order__buttons"> <button class="btn btn_lg btn_primary" data-animation="ripple" data-modal-open="print-receipt">Print Receipt</button> <button class="btn btn_lg btn_default" data-animation="ripple" data-modal-open="email-receipt">Email Receipt</button>                  <button class="btn btn_lg btn_default" data-animation="ripple">Void</button> <button class="btn btn_lg btn_default" data-animation="ripple">Refund</button> </div>
+                <div class="order__buttons"> <button class="btn btn_lg btn_primary" data-animation="ripple" data-modal-open="print-receipt">Print Receipt</button> <button class="btn btn_lg btn_default" data-animation="ripple" data-modal-open="email-receipt">Email Receipt</button>                  <button class="btn btn_lg btn_default" data-animation="ripple" data-modal-open="order-void">Void</button> <button class="btn btn_lg btn_default" data-animation="ripple">Refund</button> </div>
               </div>
             </div>
           </div>
@@ -557,6 +535,24 @@
         </div>
       </div>
       <!-- end order-receipt -->
+      <!-- begin confirm -->
+      <div class="modal confirm" data-modal="order-void">
+        <div class="modal__container confirm__container" data-modal-container="order-void">
+          <div class="confirm__header">
+            <div class="confirm__title">Void Confirmation</div>
+          </div>
+          <div class="confirm__body">
+            <p>Are you sure you want to void the order?</p>
+          </div>
+          <div class="confirm__footer">
+            <div class="confirm__row confirm__buttons">
+              <div class="confirm__col confirm__col_md"><button class="btn btn_block btn_success" data-animation="ripple">Yes</button></div>
+              <div class="confirm__col confirm__col_md"><button class="btn btn_block btn_success" data-animation="ripple">No</button></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- end confirm -->
       <!-- END content -->
       <!-- begin snackbar -->
       <div class="snackbar" data-snackbar-container="snackbar" data-state="default">

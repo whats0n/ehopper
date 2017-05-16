@@ -3,7 +3,7 @@
 
   <head>
     <meta charset="utf-8">
-    <title>Order Taxes &bull; eHopper POS</title>
+    <title>EBT Card &bull; eHopper POS</title>
     <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <meta name="theme-color" content="#fff">
@@ -18,7 +18,7 @@
     <!-- begin application -->
     <div class="application" id="application">
       <!-- BEGIN content -->
-      <main class="main" data-toggle-class-container="main-container">
+      <main class="main">
         <div class="inner">
           <aside class="sidebar sidebar_left is-poynt-hidden">
             <!-- begin header -->
@@ -122,44 +122,41 @@
               </div>
             </div>
           </aside>
-          <div class="container container_right container_order">
+          <div class="container container_right container_payments">
             <!-- begin header -->
-            <header class="header container__header header_order"> <button class="header__back btn-back">
+            <header class="header container__header header_payments"> <button class="header__back btn-back">
 			<i class="icon icon-back btn-back__icon"></i>
 			<span class="btn-back__title">Back</span>
 		</button> <button class="btn-icon header__help" title="Help" data-modal-open="help">
 			<i class="icon icon-help"></i>
 		</button>
-              <h2 class="title-xlg header__title header__title_vertical">Order Taxes</h2>
+              <h2 class="title-xlg header__title header__title_vertical">EBT Card Payment</h2>
             </header>
             <!-- end header -->
             <div class="container__body step-body">
               <div class="step-body__section">
-                <div class="form form_sm"> <br>
-                  <div class="switcher-box text-right"> <label for="exclude-all-taxes" class="switcher-box__label">Exclude All Taxes</label> <label class="switcher ">
-	<input type="checkbox" id="exclude-all-taxes" >
-	<i class="switcher__icon"></i>
-</label> </div>
-                  <div class="switcher-box text-right"> <label for="include-in-price" class="switcher-box__label">Include In Price</label> <label class="switcher ">
-	<input type="checkbox" id="include-in-price" >
-	<i class="switcher__icon"></i>
-</label> </div>
-                  <div class="form-box">
-                    <div class="form-box__field"> <label for="federal-tax" class="form-box__label">Federal Tax (5%)</label> <label class="switcher form-box__switcher">
-	<input type="checkbox" id="federal-tax" >
-	<i class="switcher__icon"></i>
-</label> </div>
-                    <div class="form-box__field"> <label for="state-tax" class="form-box__label">State Tax (10%)</label> <label class="switcher form-box__switcher">
-	<input type="checkbox" id="state-tax" >
-	<i class="switcher__icon"></i>
-</label> </div>
+                <div class="form form_sm">
+                  <div class="form__section">
+                    <div class="info-price text-right">
+                      <div class="info-price__label">Total Due:</div>
+                      <div class="info-price__value "> <small>$</small> <span>102.00</span> </div>
+                    </div>
+                  </div>
+                  <div class="form__section">
+                    <div class="field-box">
+                      <div class="field-box__content">
+                        <div class="field-box__col field-box__col_md"> <button class="btn btn_block btn_lg btn_default is-active" data-animation="ripple">Cash Benefit</button> </div>
+                        <div class="field-box__col field-box__col_md"> <button class="btn btn_block btn_lg btn_default" data-animation="ripple">SNAP Food Benefit</button> </div>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
-              <div class="step-body__footer section">
-                <div class="wrapper-btn-center"> <button class="btn btn_primary btn_lg btn_block text-uppercase" data-animation="ripple">Done</button> </div>
-              </div>
-            </div>
+              <!-- <div class="step-body__footer section">
+						<div class="form form_sm">
+							<button class="btn btn_primary btn_lg btn_block" data-animation="ripple" data-modal-open="payment-terminal">Continue</button>
+						</div>
+					</div> --></div>
           </div>
         </div>
       </main>
@@ -177,6 +174,21 @@
         </div>
       </div>
       <!-- end help -->
+      <!-- begin payment-terminal -->
+      <div class="modal payment-terminal" data-modal="payment-terminal">
+        <div class="modal__container payment-terminal__container" data-modal-container="payment-terminal">
+          <div class="payment-terminal__body">
+            <div class="payment-terminal__vertical">
+              <div class="payment-terminal__center">
+                <div class="loading payment-terminal__icon"></div>
+                <p>Please process Payment on your Terminal</p>
+              </div>
+            </div>
+          </div>
+          <div class="payment-terminal__footer"> <button class="btn btn_error btn_lg btn_block" data-animation="ripple" data-modal-close="payment-terminal">Cancel</button> </div>
+        </div>
+      </div>
+      <!-- end payment-terminal -->
       <!-- END content -->
       <!-- begin snackbar -->
       <div class="snackbar" data-snackbar-container="snackbar" data-state="default">

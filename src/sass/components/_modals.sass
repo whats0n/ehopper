@@ -176,4 +176,41 @@
 	&__checkbox
 		padding: 10px 20px 25px
 
-
+.confirm
+	&__container
+		max-width: 320px
+		background: $white
+		text-align: left
+	&__header
+		background: $blue
+		text-align: center
+	&__title
+		padding: 13px 20px 13px 20px
+		color: $white
+		+rmed
+		font-size: 20px
+		line-height: 1.2
+	&__body
+		padding: 20px
+		p
+			margin: 0
+			font-size: 14px
+	&__buttons
+		.confirm__col
+			&:not(:first-child)
+				&:before
+					content: ''
+					position: absolute
+					z-index: 2
+					top: 0
+					left: 0
+					bottom: 0
+					border-left: 1px solid rgba($black, 0.2)
+	&__row
+		+clr 
+	&__col
+		position: relative
+		float: left
+		width: 100%
+		&_md
+			width: 50%

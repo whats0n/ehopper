@@ -12,6 +12,8 @@
 		position: relative
 		padding: 60px 0 80px
 		height: 100%
+		+poynt
+			padding-top: 120px
 	&__toolbar
 		position: absolute
 		top: 0
@@ -22,12 +24,36 @@
 		&-left
 			float: left 
 			border-right: 1px solid rgba($black, 0.1)
+			+poynt
+				border-right: none
 		&-right
 			float: right
+			+poynt
+				border-top: 1px solid rgba($black, 0.1)
 		&-right,
 		&-left
 			width: 50%
 			max-width: 500px
+			+poynt
+				width: 100%
+				max-width: 100%
+		.toolbar
+			&__container,
+			&__row,
+			&__col
+				+poynt 
+					display: block
+			&__row
+				+poynt
+					+clr 
+			&__col
+				+poynt
+					float: left
+					border-top: 1px solid rgba($black, 0.1)
+					width: 33.33%
+				&:nth-child(3)
+					+poynt
+						border-right: none
 	&__content
 		height: 100%
 	&__footer
@@ -50,5 +76,11 @@
 		vertical-align: top
 		border-left: 1px solid rgba($black, 0.1)
 		width: 33.33%
+		+poynt
+			border-left: none
+			border-right: 1px solid rgba($black, 0.1)
+		&:last-child
+			+poynt
+				border-right: none
 	.btn
 		width: 100%

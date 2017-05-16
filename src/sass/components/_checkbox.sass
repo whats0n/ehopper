@@ -26,6 +26,8 @@
     &:disabled ~ span
       opacity: 0.5
       pointer-events: none
+    &:disabled + .icon
+      box-shadow: inset 0 0 0 1px $lightGray !important
   .icon
     position: absolute
     top: 0
@@ -49,11 +51,15 @@
     font-size: 14px
     line-height: normal
   //mods
-  &_green
+  &_green,
+  &_success
     input
       &:checked + .icon 
         background: $green
   &_no-border
+    input
+      &:disabled + .icon
+        box-shadow: none !important
     .icon
       box-shadow: none
   &_bordered

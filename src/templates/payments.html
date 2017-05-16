@@ -9,9 +9,10 @@ styles:
 	<main class="main" data-toggle-class-container="main-container">
 		<div class="inner">
 			{% include 'partials/components/_payments-sidebar.html' %}
-			<div class="container container_right">
+			<div class="container container_right container_payments">
 				{{header.simple({
-					headerClassList: 'container__header',
+					headerClassList: 'container__header header_payments',
+					back: true,
 					title: 'Payment Methods',
 					titleClassList: 'header__title_vertical',
 					help: true
@@ -36,6 +37,11 @@ styles:
 							title: 'Split Payment',
 							icon: 'split',
 							color: 'lightblue'
+						},
+						{
+							title: 'EBT Card',
+							iconText: 'EBT',
+							color: 'khaki'
 						}
 					] %}
 					<div class="payment-methods">

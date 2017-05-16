@@ -9,9 +9,10 @@ styles:
 	<main class="main">
 		<div class="inner">
 			{% include 'partials/components/_payments-sidebar.html' %}
-			<div class="container container_right">
+			<div class="container container_right container_payments">
 				{{header.simple({
-					headerClassList: 'container__header',
+					headerClassList: 'container__header header_payments',
+					back: true,
 					title: 'Cash Payment',
 					titleClassList: 'header__title_vertical',
 					help: true

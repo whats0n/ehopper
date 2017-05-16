@@ -102,3 +102,25 @@
 </div>
 <!-- end order-receipt -->
 {% endmacro %}
+
+{% macro confirm(props) %}
+<!-- begin confirm -->
+<div class="modal confirm" data-modal="{{props.name}}">
+	<div class="modal__container confirm__container" data-modal-container="{{props.name}}">
+		<div class="confirm__header">
+			<div class="confirm__title">{{props.title | safe}}</div>
+		</div>
+		<div class="confirm__body">
+			{{props.content | safe}}
+		</div>
+		<div class="confirm__footer">
+			<div class="confirm__row {{props.rowClassList}}">
+				{% for item in props.buttons %}
+					<div class="confirm__col confirm__col_{{props.colSize}}">{{item | safe}}</div>
+				{% endfor %}
+			</div>
+		</div>
+	</div>
+</div>
+<!-- end confirm -->
+{% endmacro %}

@@ -9,14 +9,23 @@ settingsActive: 0
 {% block content %}
 	<main class="main">
 		<div class="inner settings">
-			{% include 'partials/components/_settings-sidebar.html' %}
-			<div class="settings__container">
-				{{header.simple({
+			{{header.double({
+				classList: 'header_container-upper header_poynt-sm header_settings',
+				sync: true,
+				syncIndicatorOnly: true,
+				searchFor: 'Search for Cash Drawer',
+				sidebar: {
+					back: true,
+					backText: 'Settings'
+				},
+				container: {
 					title: 'Printer Settings',
 					titleClassList: 'header__title_vertical',
-					headerClassList: 'settings__header',
-					sync: true
-				})}}
+					headerClassList: 'settings__header'
+				}
+			})}}
+			{% include 'partials/components/_settings-sidebar.html' %}
+			<div class="settings__container">
 				<div class="settings__body settings__body_default">
 					<div class="form form_sm">
 						<div class="simple-field">

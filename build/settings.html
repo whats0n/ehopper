@@ -20,13 +20,20 @@
       <!-- BEGIN content -->
       <main class="main">
         <div class="inner settings">
+          <!-- begin header -->
+          <header class="header header_double header_container-upper header_poynt-sm header_settings">
+            <div class="header__sidebar"> <button class="header__back btn-back">
+				<i class="icon icon-back btn-back__icon"></i>
+				<span class="btn-back__title">Settings</span>
+			</button> </div>
+            <div class="header__container"> <button class="btn-icon header__help" title="Help" data-modal-open="help">
+				<i class="icon icon-help"></i>
+			</button>
+              <h2 class="title-xlg header__title header__title_vertical">Terminals</h2>
+            </div>
+          </header>
+          <!-- end header -->
           <aside class="settings__sidebar">
-            <!-- begin header -->
-            <header class="header settings__header"> <button class="header__back btn-back">
-			<i class="icon icon-back btn-back__icon"></i>
-			<span class="btn-back__title">Settings</span>
-		</button> </header>
-            <!-- end header -->
             <div class="settings__nav">
               <ul class="nav">
                 <li class="nav__item"> <a href="#" class="nav__link"><i class="nav__icon icon icon-print"></i>Printer Setup</a> </li>
@@ -37,13 +44,6 @@
             </div>
           </aside>
           <div class="settings__container">
-            <!-- begin header -->
-            <header class="header settings__header"> <button class="btn-icon header__help" title="Help" data-modal-open="help">
-			<i class="icon icon-help"></i>
-		</button>
-              <h2 class="title-xlg header__title header__title_vertical">Terminals</h2>
-            </header>
-            <!-- end header -->
             <div class="settings__body">
               <div class="explanation settings__explanation"> <i class="icon icon-cc explanation__icon"></i>
                 <div class="explanation__text">
@@ -66,7 +66,7 @@
                     </div>
                   </div>
                   <div class="table-wrapper__body" data-scrollbar="default" data-table-scrollable="terminal">
-                    <div class="table-body table-wrapper__table">
+                    <div class="table-body table-wrapper__table" data-table-main="terminal">
                       <div class="table-body__tr">
                         <div class="table-body__td" data-column="icon"> <label class="checkbox ">
 	<input type="checkbox" checked>

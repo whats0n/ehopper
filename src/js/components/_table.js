@@ -37,7 +37,7 @@ export default (function() {
 			const $fakeScrollableElement = $target
 				.closest(`[data-table="${fake}"]`)
 				.find(`[data-table-fake="${fake}"]`);
-			const minWidth = +$fakeScrollableElement.css('min-width').replace('px', '');
+			const minWidth = +$target.find(`[data-table-main="${fake}"]`).css('min-width').replace('px', '');
 
 			$fakeScrollableElement
 				.css({
