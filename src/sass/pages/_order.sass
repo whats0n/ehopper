@@ -1,9 +1,26 @@
 .order
-	.order__header
+	.order-header
 		position: absolute
 		top: 0
 		left: 0
 		right: 0
+		&__sidebar
+			z-index: 10
+			width: 300px
+			box-shadow: none
+			+poynt
+				width: 0
+				height: auto
+				min-height: 0
+		&__container
+			z-index: 20
+			float: none
+			margin-left: 300px
+			width: auto
+			box-shadow: 3px -5px 4px 5px rgba(0, 0, 0, 0.2)
+			+poynt
+				margin-left: 0
+				text-align: center
 	&__sidebar,
 	&__container
 		position: relative
@@ -12,13 +29,28 @@
 	&__sidebar
 		float: left
 		width: 300px
-		// +poynt
-		// 	display: none
+		+poynt
+			z-index: 5
+			width: 100%
+			height: auto
+			font-size: 0
+		.infoblock
+			+poynt
+				display: inline-block
+				vertical-align: top
+				width: 50%
+			&__col
+				+poynt
+					padding: 1px 20px
+		hr
+			+poynt
+				display: none
 	&__container
 		margin-left: 300px
 		box-shadow: 3px 0 4px 5px rgba(0, 0, 0, 0.2)
-		// +poynt
-		// 	margin-left: 0
+		+poynt
+			padding-top: 400px
+			margin-left: 0
 	&__info
 		overflow: auto
 		height: 100%
@@ -88,6 +120,7 @@
 	// padding: 20px 
 	// width: 59%
 	// height: 100%
+	font-size: 14px
 	&__icon
 		position: absolute
 		// top: 10px

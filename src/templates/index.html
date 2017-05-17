@@ -31,7 +31,7 @@ bodyClasses: 'animated'
 		payment-cash +
 		payment-receip +
 		orders +
-		order -
+		order +
 		order-taxes +
 		order-save +
 		order-note +
@@ -82,7 +82,7 @@ bodyClasses: 'animated'
 	<ul style="padding: 30px; font-size: 16px; max-height: 100%; overflow: auto;">
 		<li style="padding-bottom: 30px; font-size: 24px; "><a href="ui-components.html" target="_blank" style="padding: 10px; display: inline-block;">ui-components</a></li>
 		{% for page in pages %}
-		    <li><a href="{{page}}.html" target="_blank" style="padding: 10px; display: inline-block;">{{page}}</a></li>
+		    <li>{% if loop.index < 10 %}0{% endif %}{{loop.index}}. <a href="{{page}}.html" target="_blank" style="padding: 10px; display: inline-block;">{{page}}</a></li>
 		{% endfor %}
 	</ul>
 {% endblock %}

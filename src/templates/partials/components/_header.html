@@ -159,7 +159,7 @@
 {% macro double(props) %}
 <!-- begin header -->
 <header class="header header_double {{props.classList}}">
-	<div class="header__sidebar">
+	<div class="header__sidebar {{props.sidebar.classList}}">
 		{% if props.sidebar.back %}
 			<button class="header__back btn-back" {{props.backAttrs | safe}}>
 				<i class="icon icon-back btn-back__icon"></i>
@@ -224,7 +224,7 @@
 			{% endif %}
 		{% endif %}
 	</div>
-	<div class="header__container">
+	<div class="header__container {{props.container.classList}}">
 		{% if props.container.help %}
 			<button class="btn-icon header__help" title="Help" data-modal-open="help">
 				<i class="icon icon-help"></i>

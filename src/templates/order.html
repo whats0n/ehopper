@@ -9,12 +9,23 @@ settingsActive: 2
 {% block content %}
 	<main class="main">
 		<div class="inner order">
-			<aside class="order__sidebar">
-				{{header.simple({
+			{{header.double({
+				classList: 'order-header',
+				sidebar: {
 					back: true,
 					backText: 'Orders',
-					headerClassList: 'order__header'
-				})}}
+					classList: 'order-header__sidebar'
+				},
+				container: {
+					back: true,
+					backText: 'Orders',
+					help: true,
+					title: 'Order #0123',
+					titleClassList: 'header__title_vertical',
+					classList: 'order-header__container'
+				}
+			})}}
+			<aside class="order__sidebar">
 				<div class="order__info">
 					<div class="infoblock">
 						<div class="infoblock__row">
@@ -87,6 +98,7 @@ settingsActive: 2
 						</div>
 					</div>
 					<hr>
+					<div class="poynt-divider"></div>
 					<div class="infoblock infoblock_inline">
 						<div class="infoblock__row">
 							<div class="infoblock__col">
@@ -125,12 +137,6 @@ settingsActive: 2
 				</div>
 			</aside>
 			<div class="order__container">
-				{{header.simple({
-					title: 'Order #0123',
-					titleClassList: 'header__title_vertical',
-					headerClassList: 'order__header',
-					help: true
-				})}}
 				<div class="order__body">
 					<div class="order__content">
 						<div class="table-wrapper table-wrapper_no-footer table-wrapper_header-lg" data-table="orders">
