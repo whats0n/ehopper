@@ -25,7 +25,7 @@ settingsActive: 2
 					classList: 'order-header__container'
 				}
 			})}}
-			<aside class="order__sidebar">
+			<aside class="order__sidebar" data-dropdown-parent="sidebar">
 				<div class="order__info">
 					<div class="infoblock">
 						<div class="infoblock__row">
@@ -75,13 +75,14 @@ settingsActive: 2
 								<small class="infoblock__label">Tender Type:</small>
 								<em class="infoblock__value">Credit Card</em>
 							</div>
-							<div class="infoblock__col">
+							<!-- <div class="infoblock__col">
 								<small class="infoblock__label">Fulfillment:</small>
 								<em class="infoblock__value">Fulfilled</em>
-							</div>
-							{# <div class="infoblock__col">
+							</div> -->
+							<div class="infoblock__col">
 								{{dropdown.simple({
 									label: 'Fulfillment:',
+									openAttrs: 'data-dropdown-parent-name="sidebar"',
 									value: 'New',
 									list: [ { text: 'New', value: 'New' }, { text: 'In Preparation', value: 'In Preparation' }, { text: 'Prepared', value: 'Prepared' }, { text: 'In Fulfillment', value: 'In Fulfillment' }, { text: 'Fulfilled', value: 'Fulfilled' } ],
 									listOnly: true,
@@ -90,7 +91,7 @@ settingsActive: 2
 									dropdownClassList: 'infoblock__dropdown dropdown_md dropdown_time',
 									customIcon: '<i class="icon icon-time dropdown__icon"></i>'
 								})}}
-							</div> #}
+							</div>
 							<div class="infoblock__col">
 								<small class="infoblock__label">Refnum:</small>
 								<em class="infoblock__value">V469GH9</em>

@@ -3,14 +3,13 @@ import {$DOCUMENT, $BODY, OPEN, ACTIVE} from '../_constants';
 export default (function() {
 	const addClass = 'addClass';
 	const removeClass = 'removeClass';
+	const UP = 'is-dropdown-upper';
 
-	const getDropdownComponents = (name) => {
-		const $menu = $(`[data-dropdown-menu="${name}"]`);
-		const $overlay = $(`[data-dropdown-overlay="${name}"]`);
-
+	const getDropdownComponents = (name, parentName) => {
 		return {
-			menu: $menu,
-			overlay: $overlay
+			menu: $(`[data-dropdown-menu="${name}"]`),
+			overlay: $(`[data-dropdown-overlay="${name}"]`),
+			parent: $(`[data-dropdown-parent="${parentName}"]`)
 		};
 	};
 
@@ -19,13 +18,17 @@ export default (function() {
 			.menu
 			.add(components.overlay)
 			[actionType](OPEN);
+		components.parent && components.parent[actionType](UP);
+		console.log(components.parent);
 	};
 
 	$DOCUMENT.on('click', '[data-dropdown-open]', function(e) { 
 		e.preventDefault();
 		const $this = $(this);
 		const target = $this.data('dropdown-open');
-		const $components = getDropdownComponents(target); 
+		const parentName = $this.data('dropdown-parent-name');
+		console.log(parentName);
+		const $components = getDropdownComponents(target, parentName); 
 		if ($components.menu.hasClass(OPEN)) {
 			toggleDropdown($components, removeClass);
 		} else {
@@ -39,9 +42,11 @@ export default (function() {
 		if ($target.closest('[data-dropdown-menu]').length) return;
 		const $overlay = $('[data-dropdown-overlay]');
 		const $menu = $('[data-dropdown-menu]');
+		const $parent = $('[data-dropdown-parent]');
 		$overlay
 			.add($menu)
 			.removeClass(OPEN);
+		$parent.removeClass(UP);
 	});
 
 	$DOCUMENT.on('click', '[data-dropdown-item]', function(e) {

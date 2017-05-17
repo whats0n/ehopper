@@ -45,7 +45,7 @@ styles:
 					</button>
 				</div>
 			</div>
-			<aside class="sidebar sidebar_left sidebar_adaptive-poynt" data-toggle-class-container="sidebar-header">
+			<aside class="sidebar sidebar_left sidebar_adaptive-poynt" data-toggle-class-container="sidebar-header" data-dropdown-parent="sidebar">
 				<div class="sidebar__body" data-order-scroll="order">
 					<div class="sidebar__content">
 						{% set orderList = [
@@ -150,9 +150,11 @@ styles:
 							{% endfor %}
 						</ul>
 						<div class="order-empty is-hidden" data-order-empty="order">
-							<i class="order-empty__icon"></i>
-							<h5>Order is empty</h5>
-							<p>Add items from catalog</p>
+							<div class="order-empty__center">
+								<!-- <i class="order-empty__icon"></i> -->
+								<h5>Order is empty</h5>
+								<p>Add items from catalog</p>
+							</div>
 						</div>
 					</div>
 				</div>
@@ -261,11 +263,13 @@ styles:
 							},
 							{
 								text: 'More <i class="icon icon-more-v"></i>',
+								attrs: 'data-dropdown-parent-name="sidebar"',
 								href: '#',
 								dropdown: {
+									upper: 'sidebar',
 									name: 'more',
 									classList: 'dropdown-menu_up dropdown-menu_no-scroll',
-									attrs: 'id="more-menu"',
+									attrs: 'id="btn-more-menu"',
 									links: true,
 									list: [ 
 										{ text: '<a href="#">Tax exempt</a>' }, 

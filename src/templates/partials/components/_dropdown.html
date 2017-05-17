@@ -14,7 +14,7 @@
 			</div>
 		{% endif %}
 	{% endif %}
-	<ul class="dropdown-menu__list">
+	<ul class="dropdown-menu__list" {{props.menuAttrs | safe}}>
 		{% for item in props.list %}
 			<li class="dropdown-menu__item {%- if loop.index0 === props.activeItem %} is-active {%- endif -%}" 
 				data-animation="ripple" 
@@ -44,7 +44,7 @@
 {% macro simple(props) %}
 <!-- begin dropdown -->
 <div class="dropdown {{props.dropdownClassList}}" data-dropdown="{{props.name}}">
-	<div class="dropdown__header" data-dropdown-open="{{props.name}}" data-animation="ripple">
+	<div class="dropdown__header" data-dropdown-open="{{props.name}}" {{props.openAttrs | safe}} data-animation="ripple">
 		<i class="dropdown__arrow icon icon-expand"></i>
 		{% if props.customIcon %}{{props.customIcon | safe}}{% endif %}
 		{% if props.label %}
