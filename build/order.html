@@ -20,13 +20,20 @@
       <!-- BEGIN content -->
       <main class="main">
         <div class="inner order">
-          <aside class="order__sidebar">
-            <!-- begin header -->
-            <header class="header order__header"> <button class="header__back btn-back">
-			<i class="icon icon-back btn-back__icon"></i>
-			<span class="btn-back__title">Orders</span>
-		</button> </header>
-            <!-- end header -->
+          <!-- begin header -->
+          <header class="header header_double order-header">
+            <div class="header__sidebar order-header__sidebar"> <button class="header__back btn-back">
+				<i class="icon icon-back btn-back__icon"></i>
+				<span class="btn-back__title">Orders</span>
+			</button> </div>
+            <div class="header__container order-header__container"> <button class="btn-icon header__help" title="Help" data-modal-open="help">
+				<i class="icon icon-help"></i>
+			</button>
+              <h2 class="title-xlg header__title header__title_vertical">Order #0123</h2>
+            </div>
+          </header>
+          <!-- end header -->
+          <aside class="order__sidebar" data-dropdown-parent="sidebar">
             <div class="order__info">
               <div class="infoblock">
                 <div class="infoblock__row">
@@ -45,11 +52,36 @@
                   <div class="infoblock__col"> <small class="infoblock__label">Type:</small> <em class="infoblock__value">Quick Sale</em> </div>
                   <div class="infoblock__col"> <i class="icon icon-check infoblock__icon"></i> <small class="infoblock__label">Status:</small> <em class="infoblock__value">Paid / Successfull</em> </div>
                   <div class="infoblock__col"> <small class="infoblock__label">Tender Type:</small> <em class="infoblock__value">Credit Card</em> </div>
-                  <div class="infoblock__col"> <small class="infoblock__label">Fulfillment:</small> <em class="infoblock__value">Fulfilled</em> </div>
+                  <!-- <div class="infoblock__col">
+								<small class="infoblock__label">Fulfillment:</small>
+								<em class="infoblock__value">Fulfilled</em>
+							</div> -->
+                  <div class="infoblock__col">
+                    <!-- begin dropdown -->
+                    <div class="dropdown infoblock__dropdown dropdown_md dropdown_time" data-dropdown="order-fulfillment">
+                      <div class="dropdown__header" data-dropdown-open="order-fulfillment" data-dropdown-parent-name="sidebar" data-animation="ripple"> <i class="dropdown__arrow icon icon-expand"></i> <i class="icon icon-time dropdown__icon"></i>
+                        <div class="dropdown__label">Fulfillment:</div>
+                        <div class="dropdown__value" data-dropdown-value="order-fulfillment">New</div>
+                      </div>
+                      <div class="dropdown-menu " data-dropdown-menu="order-fulfillment">
+                        <ul class="dropdown-menu__list">
+                          <li class="dropdown-menu__item is-active" data-animation="ripple" data-dropdown-item="order-fulfillment" data-value="New"> New </li>
+                          <li class="dropdown-menu__item" data-animation="ripple" data-dropdown-item="order-fulfillment" data-value="In Preparation"> In Preparation </li>
+                          <li class="dropdown-menu__item" data-animation="ripple" data-dropdown-item="order-fulfillment" data-value="Prepared"> Prepared </li>
+                          <li class="dropdown-menu__item" data-animation="ripple" data-dropdown-item="order-fulfillment" data-value="In Fulfillment"> In Fulfillment </li>
+                          <li class="dropdown-menu__item" data-animation="ripple" data-dropdown-item="order-fulfillment" data-value="Fulfilled"> Fulfilled </li>
+                        </ul>
+                      </div>
+                      <!-- begin overlay --><button type="button" class="overlay " data-color="dark-gray" data-overlay="overlay" data-dropdown-overlay="order-fulfillment"></button>
+                      <!-- end overlay -->
+                    </div>
+                    <!-- end dropdown -->
+                  </div>
                   <div class="infoblock__col"> <small class="infoblock__label">Refnum:</small> <em class="infoblock__value">V469GH9</em> </div>
                 </div>
               </div>
               <hr>
+              <div class="poynt-divider"></div>
               <div class="infoblock infoblock_inline">
                 <div class="infoblock__row">
                   <div class="infoblock__col"> <small class="infoblock__label">Sub:</small> <em class="infoblock__value">$50.00</em> </div>
@@ -72,13 +104,6 @@
             </div>
           </aside>
           <div class="order__container">
-            <!-- begin header -->
-            <header class="header order__header"> <button class="btn-icon header__help" title="Help" data-modal-open="help">
-			<i class="icon icon-help"></i>
-		</button>
-              <h2 class="title-xlg header__title header__title_vertical">Order #0123</h2>
-            </header>
-            <!-- end header -->
             <div class="order__body">
               <div class="order__content">
                 <div class="table-wrapper table-wrapper_no-footer table-wrapper_header-lg" data-table="orders">

@@ -906,6 +906,10 @@ hr {
   display: none;
 }
 
+.is-dropdown-upper {
+  z-index: 100 !important;
+}
+
 [data-animation="ripple"] {
   position: relative;
   overflow: hidden;
@@ -2978,7 +2982,7 @@ textarea.input {
   z-index: 200;
   top: 0;
   left: 0;
-  max-width: 600px;
+  max-width: 400px;
   min-width: 100%;
   color: #333;
   background: #fff;
@@ -3023,7 +3027,7 @@ textarea.input {
 
 .dropdown-menu__list {
   overflow: auto;
-  max-height: 200px;
+  max-height: 175px;
 }
 
 .dropdown-menu__list a {
@@ -3071,6 +3075,15 @@ textarea.input {
   position: absolute;
   top: 5px;
   right: 10px;
+}
+
+.dropdown-menu__item .icon:after {
+  content: '';
+  position: absolute;
+  top: 5px;
+  left: 0;
+  bottom: 5px;
+  border-left: 1px solid #e6e6e6;
 }
 
 .fieldset {
@@ -3618,8 +3631,9 @@ textarea.input {
 .horizontal-menu__link .icon {
   vertical-align: top;
   width: 16px;
+  height: 100%;
   opacity: 0.5;
-  line-height: 60px;
+  line-height: inherit;
 }
 
 .hmenu {
@@ -4472,15 +4486,25 @@ textarea.input {
   color: #aaa;
   background: #f8f8f8;
   text-align: center;
+  font-size: 0;
 }
 
-.order-empty__icon {
-  display: block;
-  margin: 0 auto;
-  border: 2px dotted #cfcfcf;
-  border-radius: 9px;
-  width: 60px;
-  height: 60px;
+.order-empty:before {
+  content: "";
+  display: inline-block;
+  vertical-align: middle;
+  width: 0;
+  height: 100%;
+}
+
+.order-empty__center {
+  display: inline-block;
+  vertical-align: middle;
+  width: 100%;
+}
+
+.order-empty p {
+  font-size: 14px;
 }
 
 .totals {
@@ -5336,6 +5360,11 @@ textarea.input {
 }
 
 .no-touch .input-box:hover .input-box__clear.is-hidden {
+  opacity: 1;
+  visibility: visible;
+}
+
+.input-box input:focus + .input-box__clear {
   opacity: 1;
   visibility: visible;
 }

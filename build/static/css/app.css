@@ -524,6 +524,10 @@ hr {
   display: none;
 }
 
+.is-dropdown-upper {
+  z-index: 100 !important;
+}
+
 [data-animation="ripple"] {
   position: relative;
   overflow: hidden;
@@ -1227,11 +1231,22 @@ a.shy {
   float: left;
   padding-top: 50px;
   width: 40%;
-  box-shadow: -3px 0 4px 5px rgba(0, 0, 0, 0.2);
+  box-shadow: -3px 5px 4px 5px rgba(0, 0, 0, 0.2);
 }
 
 .is-poynt .sidebar_left {
   padding-top: 0;
+}
+
+.sidebar_left.is-dropdown-upper {
+  padding-top: 0;
+  margin-top: 50px;
+  height: calc(100% - 50px);
+}
+
+.is-poynt .sidebar_left.is-dropdown-upper {
+  margin-top: 0;
+  height: auto;
 }
 
 .sidebar_white {
@@ -1250,13 +1265,10 @@ a.shy {
   visibility: visible;
 }
 
-.sidebar_adaptive-poynt .sidebar__toolbar .toolbar__button {
-  height: 60px;
-  line-height: 60px;
-}
-
 .is-poynt .sidebar_adaptive-poynt .sidebar__toolbar .toolbar__button {
+  height: 60px;
   font-size: 18px;
+  line-height: 60px;
 }
 
 .is-poynt .sidebar_adaptive-poynt .sidebar__toolbar .toolbar__button strong {
@@ -4197,7 +4209,7 @@ textarea.input {
   z-index: 200;
   top: 0;
   left: 0;
-  max-width: 600px;
+  max-width: 400px;
   min-width: 100%;
   color: #333;
   background: #fff;
@@ -4242,7 +4254,7 @@ textarea.input {
 
 .dropdown-menu__list {
   overflow: auto;
-  max-height: 200px;
+  max-height: 175px;
 }
 
 .dropdown-menu__list a {
@@ -4290,6 +4302,15 @@ textarea.input {
   position: absolute;
   top: 5px;
   right: 10px;
+}
+
+.dropdown-menu__item .icon:after {
+  content: '';
+  position: absolute;
+  top: 5px;
+  left: 0;
+  bottom: 5px;
+  border-left: 1px solid #e6e6e6;
 }
 
 .fieldset {
@@ -4837,8 +4858,9 @@ textarea.input {
 .horizontal-menu__link .icon {
   vertical-align: top;
   width: 16px;
+  height: 100%;
   opacity: 0.5;
-  line-height: 60px;
+  line-height: inherit;
 }
 
 .hmenu {
@@ -5691,15 +5713,25 @@ textarea.input {
   color: #aaa;
   background: #f8f8f8;
   text-align: center;
+  font-size: 0;
 }
 
-.order-empty__icon {
-  display: block;
-  margin: 0 auto;
-  border: 2px dotted #cfcfcf;
-  border-radius: 9px;
-  width: 60px;
-  height: 60px;
+.order-empty:before {
+  content: "";
+  display: inline-block;
+  vertical-align: middle;
+  width: 0;
+  height: 100%;
+}
+
+.order-empty__center {
+  display: inline-block;
+  vertical-align: middle;
+  width: 100%;
+}
+
+.order-empty p {
+  font-size: 14px;
 }
 
 .totals {
@@ -6559,6 +6591,11 @@ textarea.input {
   visibility: visible;
 }
 
+.input-box input:focus + .input-box__clear {
+  opacity: 1;
+  visibility: visible;
+}
+
 .input-box__clear {
   position: absolute;
   top: 50%;
@@ -6767,6 +6804,41 @@ textarea.input {
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
+}
+
+.items-empty {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: 70px 20px 20px;
+  color: #aaa;
+  background: #f8f8f8;
+  text-align: center;
+  font-size: 0;
+}
+
+.items-empty:before {
+  content: "";
+  display: inline-block;
+  vertical-align: middle;
+  width: 0;
+  height: 100%;
+}
+
+.items-empty__center {
+  display: inline-block;
+  vertical-align: middle;
+  width: 100%;
+}
+
+.items-empty p {
+  font-size: 14px;
+}
+
+.no-touch .items-empty a:hover {
+  text-decoration: none;
 }
 
 .alert {
@@ -7196,11 +7268,36 @@ textarea.input {
   width: 100%;
 }
 
-.order .order__header {
+.order .order-header {
   position: absolute;
   top: 0;
   left: 0;
   right: 0;
+}
+
+.order .order-header__sidebar {
+  z-index: 10;
+  width: 300px;
+  box-shadow: none;
+}
+
+.is-poynt .order .order-header__sidebar {
+  width: 0;
+  height: auto;
+  min-height: 0;
+}
+
+.order .order-header__container {
+  z-index: 20;
+  float: none;
+  margin-left: 300px;
+  width: auto;
+  box-shadow: 3px -5px 4px 5px rgba(0, 0, 0, 0.2);
+}
+
+.is-poynt .order .order-header__container {
+  margin-left: 0;
+  text-align: center;
 }
 
 .order__sidebar, .order__container {
@@ -7214,9 +7311,39 @@ textarea.input {
   width: 300px;
 }
 
+.is-poynt .order__sidebar {
+  z-index: 5;
+  width: 100%;
+  height: auto;
+  font-size: 0;
+}
+
+.is-poynt .order__sidebar.is-dropdown-upper {
+  z-index: 50;
+}
+
+.is-poynt .order__sidebar .infoblock {
+  display: inline-block;
+  vertical-align: top;
+  width: 50%;
+}
+
+.is-poynt .order__sidebar .infoblock__col {
+  padding: 1px 20px;
+}
+
+.is-poynt .order__sidebar hr {
+  display: none;
+}
+
 .order__container {
   margin-left: 300px;
   box-shadow: 3px 0 4px 5px rgba(0, 0, 0, 0.2);
+}
+
+.is-poynt .order__container {
+  padding-top: 400px;
+  margin-left: 0;
 }
 
 .order__info {
@@ -7313,6 +7440,7 @@ textarea.input {
 .order-notes {
   position: relative;
   float: left;
+  font-size: 14px;
 }
 
 .order-notes__icon {
