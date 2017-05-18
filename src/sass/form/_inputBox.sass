@@ -1,0 +1,34 @@
+.input-box
+	position: relative
+	&.is-error
+		input
+			border-color: $red
+	+hover
+		.input-box__clear
+			opacity: 1
+			visibility: visible
+	input:focus + .input-box__clear
+		opacity: 1
+		visibility: visible
+	&__clear
+		position: absolute
+		top: 50%
+		right: 15px
+		border-radius: 50%
+		opacity: 0
+		visibility: hidden
+		color: $darkGray
+		background: $lightGray
+		transform: translate3d(0,-50%,0)
+		transition: opacity 0.2s ease-in-out, visibility 0.2s ease-in-out, color 0.175s ease-in-out, background 0.175s ease-in-out
+		+active
+			color: $darkGray
+			background: $lightGrayActive
+	&__input
+		padding-right: 60px
+	&__error-message
+		position: absolute
+		top: 100%
+		left: 0
+		right: 0
+

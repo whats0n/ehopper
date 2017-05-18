@@ -106,8 +106,8 @@
 
 {% macro snackbar(props) %}
 <!-- begin snackbar -->
-<div class="snackbar" data-snackbar-container="snackbar" data-state="default">
-	<div class="snackbar__message" data-snackbar-content="snackbar"></div>
+<div class="snackbar {{props.classList}}" data-snackbar-container="snackbar" data-state="{{props.state or 'default'}}">
+	<div class="snackbar__message" data-snackbar-content="snackbar">{{props.content}}</div>
 </div>
 <!-- end snackbar -->
 {% endmacro %}

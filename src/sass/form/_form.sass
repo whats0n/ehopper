@@ -1,0 +1,52 @@
+.form
+	margin: 0 auto
+	&_sm
+		max-width: 460px
+	&_md
+		max-width: 800px
+		.form__col
+			padding: 10px
+	&__section
+		margin-bottom: 25px
+	&__row
+		position: relative
+		+clr
+		&:before
+			content: ''
+			position: absolute
+			top: 0
+			left: 50%
+			bottom: 0
+			margin-left: -1px
+			border-left: 2px solid $lightGray
+	&__col
+		float: left
+		padding: 12px 20px
+		width: 50%
+		&_xl
+			width: 100%
+		&_xs
+			width: 25%
+	&__columns
+		margin: 0 -10px
+		+clr
+	&__column
+		float: left
+		padding: 0 10px 25px
+		width: 100%
+		&_md
+			width: 50%
+		&_xs
+			width: 25%
+	&__intro
+		padding: 0 0 25px
+		opacity: 0.5
+	&__link
+		display: inline-block
+		vertical-align: top
+		padding: 9px 0 7px
+		color: inherit
+		font-size: 14px
+		line-height: 1
+		+hover
+			text-decoration: none

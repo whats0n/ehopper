@@ -14,38 +14,34 @@
     <!-- END scripts -->
   </head>
 
-  <body class="body-darkgray page-activate">
+  <body class="">
     <!-- begin application -->
     <div class="application" id="application">
       <!-- BEGIN content -->
       <main class="main">
         <!-- begin header -->
-        <header class="header header_large"> <button class="btn-icon header__help" title="Help" data-modal-open="help">
-			<i class="icon icon-help"></i>
-		</button>
+        <header class="header header_large">
           <div class="header__logo"> <img src="static/img/logo-white.svg" alt="eHopper"> </div>
         </header>
         <!-- end header -->
-        <section class="section section_inner">
-          <div class="box">
-            <div class="intro muted">To activate this device as a POS terminal please enter your eHopper enterprise ID and license key:</div>
-            <div class="fieldset fieldset_first">
-              <div class="field ">
-                <div class="field__inner"> <label class="field__label" for="account_id">Enterprise ID:</label>
-                  <div class="field__box"> <input class="input field__input input_lg" value="12300" id="account_id" type="number" placeholder="required" required> </div>
-                </div>
+        <div class="section section_form">
+          <div class="form form_sm">
+            <div class="form__section">
+              <div class="input-box is-error"> <input type="text" class="simple-input input-box__input " placeholder="Enterprise ID *" required> <button class="input-box__clear">
+		<i class="icon icon-close"></i>
+	</button>
+                <div class="error-message input-box__error-message">Lorem ipsum dolor sit amet, consectetur adipisicing.</div>
               </div>
             </div>
-            <div class="fieldset">
-              <div class="field ">
-                <div class="field__inner"> <label class="field__label" for="license_key">License Key:</label>
-                  <div class="field__box"> <input class="input field__input input_lg" id="license_key" type="text" placeholder="required" required autofocus> </div>
-                </div>
-              </div>
-            </div> <button class="btn btn_lg btn_primary btn_block fieldset fieldset_last" data-animation="ripple">Activate<i class="icon icon-next"></i></button>
-            <div class="footnote box__footnote">Not yet registered? <a href="signup.html" class="shy">Create New Account</a></div>
+            <div class="form__section">
+              <div class="input-box "> <input type="text" class="simple-input input-box__input " placeholder="License Key *" required> <button class="input-box__clear">
+		<i class="icon icon-close"></i>
+	</button> </div>
+            </div>
+            <div class="form__section"> <button class="btn btn_lg btn_blue btn_block text-uppercase" data-animation="ripple">DONE</button> </div>
+            <div class="footnote">Not yet registered? <a href="signup.html" class="shy">Create New Account</a></div>
           </div>
-        </section>
+        </div>
       </main>
       <!-- begin help -->
       <div class="help" data-modal="help">
@@ -63,7 +59,7 @@
       <!-- end help -->
       <!-- END content -->
       <!-- begin snackbar -->
-      <div class="snackbar" data-snackbar-container="snackbar" data-state="default">
+      <div class="snackbar " data-snackbar-container="snackbar" data-state="default">
         <div class="snackbar__message" data-snackbar-content="snackbar"></div>
       </div>
       <!-- end snackbar -->

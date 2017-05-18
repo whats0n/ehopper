@@ -2,7 +2,6 @@
 title: 'Create New Account &bull; eHopper'
 styles: 
 	- 'pos'
-bodyClasses: 'body-darkgray'
 ---
 {% extends "layouts/_layout.html" %}
 
@@ -13,100 +12,81 @@ bodyClasses: 'body-darkgray'
 			help: true,
 			logo: true
 		})}}
-		<section class="section section_inner">
-			<div class="form form_sm">
+		<section class="section section_form">
+			<div class="form form_md">
 				<div class="form__intro">In order to create new eHopper account, please fill-in your business profile and indicate your acceptance of terms and conditions. Upon acceptance, you will receive an email with instructions on how to activate your account for Android, Windows and Poynt.</div>
 				<div class="form__section">
-					<div class="fieldset fieldset_first">
-						{{mixins.field({
-							label: 'Store name:',
-							placeholder: 'ex: Acme Inc.',
-							attrs: 'required',
-							type: 'text',
-							id: 'signup-stroe-name',
-							inputClassList: 'input_md'
+				{{form.inputBox.call({
+					placeholder: 'Store name *',
+					inputAttrs: 'required'
+				})}}
+				</div>
+				<div class="form__section">
+					{{form.selectBox.call({
+						placeholder: 'Business type',
+						options: [ 'Lorem ipsum.', 'Coffee Shop' ]
+					})}}
+				</div>
+				<div class="form__columns">
+					<div class="form__column form__column_md">
+						{{form.inputBox.call({
+							placeholder: 'First name *',
+							inputAttrs: 'required',
+							classList: 'is-error',
+							errorMessage: 'Lorem ipsum dolor sit amet, consectetur adipisicing.'
 						})}}
 					</div>
-					<div class="fieldset">
-						{{mixins.field({
-							label: 'Business type:',
-							select: true,
-							selectOptions: {
-								attrs: 'required id="signup-business-type"',
-								options: [ 'please select', 'Coffee Shop' ],
-								selected: 0,
-								disabled: 0,
-								classList: 'select_md field__select_md'
-							},
-							id: 'signup-business-type'
+					<div class="form__column form__column_md">
+						{{form.inputBox.call({
+							placeholder: 'Last name *',
+							inputAttrs: 'required'
 						})}}
 					</div>
-					<div class="fieldset">
-						{{mixins.field({
-							label: 'First name:',
-							placeholder: 'required',
-							attrs: 'required',
-							type: 'text',
-							id: 'signup-first-name',
-							inputClassList: 'input_md'
-						})}}
-					</div>
-					<div class="fieldset">
-						{{mixins.field({
-							label: 'Last name:',
-							placeholder: 'required',
-							attrs: 'required',
-							type: 'text',
-							id: 'signup-last-name',
-							inputClassList: 'input_md'
-						})}}
-					</div>
-					<div class="fieldset">
-						{{mixins.field({
-							label: 'Country:',
-							select: true,
-							selectOptions: {
-								attrs: 'required id="signup-country"',
-								options: [ 'please select', 'United States of America' ],
-								selected: 0,
-								disabled: 0,
-								classList: 'select_md field__select_md'
-							},
-							id: 'signup-business-type'
-						})}}
-					</div>
-					<div class="fieldset">
-						{{mixins.field({
-							label: 'Email:',
-							placeholder: 'user@domain.com',
-							attrs: 'required',
-							type: 'mail',
-							id: 'signup-mail',
-							inputClassList: 'input_md'
-						})}}
-					</div>
-					<div class="fieldset fieldset_last">
-						{{mixins.field({
-							label: 'Phone number:',
-							placeholder: 'required',
-							attrs: 'required',
-							id: 'signup-phone-number',
-							inputClassList: 'input_md'
-						})}}
-					</div>
+				</div>
+				<div class="form__section">
+					{{form.selectBox.call({
+						placeholder: 'Country',
+						options: [ 'Lorem.', 'United States of America' ],
+						classList: 'is-error',
+						errorMessage: 'Lorem ipsum dolor sit amet, consectetur adipisicing.'
+					})}}
+				</div>
+				<div class="form__section">
+					{{form.inputBox.call({
+						placeholder: 'Email *',
+						inputAttrs: 'required',
+						type: 'mail'
+					})}}
+				</div>
+				<div class="form__section">
+					{{form.inputBox.call({
+						placeholder: 'Password *',
+						inputAttrs: 'required'
+					})}}
+				</div>
+				<div class="form__section">
+					{{form.inputBox.call({
+						placeholder: 'Confirm Password *',
+						inputAttrs: 'required'
+					})}}
+				</div>
+				<div class="form__section">
+					{{form.inputBox.call({
+						placeholder: 'Phone number *',
+						inputAttrs: 'required'
+					})}}
 				</div>
 				<div class="form__section">
 					{{mixins.checkbox({ content: 'I Agree with' })}}
 					<a href="#" class="form__link">Terms and Conditions</a>
 				</div>
 				<div class="fieldset">
-					<button class="btn btn_lg btn_primary btn_block btn_rounded" data-animation="ripple">Create Account<i class="icon icon-next"></i></button>
+					<button class="btn btn_lg btn_blue btn_block text-uppercase" data-animation="ripple">Create Account</button>
 				</div>
 			</div>
 		</section>
 	</main>
 
 	{{modal.help()}}
-
 
 {% endblock %}

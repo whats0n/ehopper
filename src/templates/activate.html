@@ -2,7 +2,6 @@
 title: 'Activate your POS &bull; eHopper'
 styles: 
 	- 'pos'
-bodyClasses: 'body-darkgray page-activate'
 ---
 {% extends "layouts/_layout.html" %}
 
@@ -13,37 +12,28 @@ bodyClasses: 'body-darkgray page-activate'
 			help: true,
 			logo: true
 		})}}
-		<section class="section section_inner">
-			<div class="box">
-				<div class="intro muted">To activate this device as a POS terminal please enter your eHopper enterprise ID and license key:</div>
-				<div class="fieldset fieldset_first">
-					{{mixins.field({
-						label: 'Enterprise ID:',
-						value: '12300',
-						placeholder: 'required',
-						attrs: 'required',
-						type: 'number',
-						id: 'account_id',
-						inputClassList: 'input_lg'
+		<div class="section section_form">
+			<div class="form form_sm">
+				<div class="form__section">
+					{{form.inputBox.call({
+						placeholder: 'Enterprise ID *',
+						classList: 'is-error',
+						inputAttrs: 'required',
+						errorMessage: 'Lorem ipsum dolor sit amet, consectetur adipisicing.'
 					})}}
 				</div>
-				<div class="fieldset">
-					{{mixins.field({
-						label: 'License Key:',
-						placeholder: 'required',
-						attrs: 'required autofocus',
-						id: 'license_key',
-						inputClassList: 'input_lg'
+				<div class="form__section">
+					{{form.inputBox.call({
+						placeholder: 'License Key *',
+						inputAttrs: 'required'
 					})}}
 				</div>
-				{{mixins.button({
-					classList: 'btn btn_lg btn_primary btn_block fieldset fieldset_last',
-					attrs: 'data-animation="ripple"',
-					content: 'Activate<i class="icon icon-next"></i>'
-				})}}
-				<div class="footnote box__footnote">Not yet registered? <a href="signup.html" class="shy">Create New Account</a></div>
+				<div class="form__section">
+					<button class="btn btn_lg btn_blue btn_block text-uppercase" data-animation="ripple">DONE</button>
+				</div>
+				<div class="footnote">Not yet registered? <a href="signup.html" class="shy">Create New Account</a></div>
 			</div>
-		</section>
+		</div>
 	</main>
 
 	{{modal.help()}}

@@ -1,0 +1,13 @@
+{% macro call(props) %}
+<div class="input-box {{props.classList}}">
+	<input type="{{props.type or 'text'}}" 
+		class="simple-input input-box__input {{props.inputClassList}}" 
+		placeholder="{{props.placeholder}}" {{props.inputAttrs | safe}}>
+	<button class="input-box__clear">
+		<i class="icon icon-close"></i>
+	</button>
+	{% if props.errorMessage %}
+		<div class="error-message input-box__error-message">{{props.errorMessage}}</div>
+	{% endif %}
+</div>
+{% endmacro %}

@@ -1,0 +1,38 @@
+.select-box
+	position: relative
+	&.is-error
+		select
+			border-color: $red
+	select
+		display: block
+		padding: 0 35px 0 15px
+		border: 2px solid $lightGray
+		border-radius: 0
+		width: 100%
+		height: 60px
+		color: $darkGray
+		background: $white
+		+rreg
+		font-size: 18px
+		line-height: 56px
+		+text-overflow
+		-webkit-appearance: none
+	&:before,
+	&:after
+		content: ''
+		position: absolute
+		right: 15px
+		pointer-events: none
+	&:before
+		top: 50%
+		margin-top: -10px
+		+arr(10, 8, currentColor, t)
+	&:after
+		bottom: 50%
+		margin-bottom: -10px
+		+arr(10, 8, currentColor, b)
+	&__error-message
+		position: absolute
+		top: 100%
+		left: 0
+		right: 0

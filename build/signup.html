@@ -14,95 +14,99 @@
     <!-- END scripts -->
   </head>
 
-  <body class="body-darkgray">
+  <body class="">
     <!-- begin application -->
     <div class="application" id="application">
       <!-- BEGIN content -->
       <main class="main">
         <!-- begin header -->
-        <header class="header header_large"> <button class="btn-icon header__help" title="Help" data-modal-open="help">
-			<i class="icon icon-help"></i>
-		</button>
+        <header class="header header_large">
           <div class="header__logo"> <img src="static/img/logo-white.svg" alt="eHopper"> </div>
         </header>
         <!-- end header -->
-        <section class="section section_inner">
-          <div class="form form_sm">
+        <section class="section section_form">
+          <div class="form form_md">
             <div class="form__intro">In order to create new eHopper account, please fill-in your business profile and indicate your acceptance of terms and conditions. Upon acceptance, you will receive an email with instructions on how to activate your account for Android, Windows
               and Poynt.</div>
             <div class="form__section">
-              <div class="fieldset fieldset_first">
-                <div class="field ">
-                  <div class="field__inner"> <label class="field__label" for="signup-stroe-name">Store name:</label>
-                    <div class="field__box"> <input class="input field__input input_md" id="signup-stroe-name" type="text" placeholder="ex: Acme Inc." required> </div>
-                  </div>
-                </div>
-              </div>
-              <div class="fieldset">
-                <div class="field ">
-                  <div class="field__inner"> <label class="field__label" for="signup-business-type">Business type:</label>
-                    <div class="field__box">
-                      <div class="select select_md field__select_md"> <select>
+              <div class="input-box "> <input type="text" class="simple-input input-box__input " placeholder="Store name *" required> <button class="input-box__clear">
+		<i class="icon icon-close"></i>
+	</button> </div>
+            </div>
+            <div class="form__section">
+              <div class="select-box "> <select>
 		
-			<option value="please select" selected disabled selected>please select</option>
+			<option value="Business type" disabled selected>Business type</option>
 		
-			<option value="Coffee Shop"  >Coffee Shop</option>
 		
-	</select> </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="fieldset">
-                <div class="field ">
-                  <div class="field__inner"> <label class="field__label" for="signup-first-name">First name:</label>
-                    <div class="field__box"> <input class="input field__input input_md" id="signup-first-name" type="text" placeholder="required" required> </div>
-                  </div>
-                </div>
-              </div>
-              <div class="fieldset">
-                <div class="field ">
-                  <div class="field__inner"> <label class="field__label" for="signup-last-name">Last name:</label>
-                    <div class="field__box"> <input class="input field__input input_md" id="signup-last-name" type="text" placeholder="required" required> </div>
-                  </div>
-                </div>
-              </div>
-              <div class="fieldset">
-                <div class="field ">
-                  <div class="field__inner"> <label class="field__label" for="signup-business-type">Country:</label>
-                    <div class="field__box">
-                      <div class="select select_md field__select_md"> <select>
+			
+				<option value="Lorem ipsum.">Lorem ipsum.</option>
+			
 		
-			<option value="please select" selected disabled selected>please select</option>
-		
-			<option value="United States of America"  >United States of America</option>
+			
+				<option value="Coffee Shop">Coffee Shop</option>
+			
 		
 	</select> </div>
-                    </div>
-                  </div>
+            </div>
+            <div class="form__columns">
+              <div class="form__column form__column_md">
+                <div class="input-box is-error"> <input type="text" class="simple-input input-box__input " placeholder="First name *" required> <button class="input-box__clear">
+		<i class="icon icon-close"></i>
+	</button>
+                  <div class="error-message input-box__error-message">Lorem ipsum dolor sit amet, consectetur adipisicing.</div>
                 </div>
               </div>
-              <div class="fieldset">
-                <div class="field ">
-                  <div class="field__inner"> <label class="field__label" for="signup-mail">Email:</label>
-                    <div class="field__box"> <input class="input field__input input_md" id="signup-mail" type="mail" placeholder="user@domain.com" required> </div>
-                  </div>
-                </div>
+              <div class="form__column form__column_md">
+                <div class="input-box "> <input type="text" class="simple-input input-box__input " placeholder="Last name *" required> <button class="input-box__clear">
+		<i class="icon icon-close"></i>
+	</button> </div>
               </div>
-              <div class="fieldset fieldset_last">
-                <div class="field ">
-                  <div class="field__inner"> <label class="field__label" for="signup-phone-number">Phone number:</label>
-                    <div class="field__box"> <input class="input field__input input_md" id="signup-phone-number" type="text" placeholder="required" required> </div>
-                  </div>
-                </div>
+            </div>
+            <div class="form__section">
+              <div class="select-box is-error"> <select>
+		
+			<option value="Country" disabled selected>Country</option>
+		
+		
+			
+				<option value="Lorem.">Lorem.</option>
+			
+		
+			
+				<option value="United States of America">United States of America</option>
+			
+		
+	</select>
+                <div class="error-message select-box__error-message">Lorem ipsum dolor sit amet, consectetur adipisicing.</div>
               </div>
+            </div>
+            <div class="form__section">
+              <div class="input-box "> <input type="mail" class="simple-input input-box__input " placeholder="Email *" required> <button class="input-box__clear">
+		<i class="icon icon-close"></i>
+	</button> </div>
+            </div>
+            <div class="form__section">
+              <div class="input-box "> <input type="text" class="simple-input input-box__input " placeholder="Password *" required> <button class="input-box__clear">
+		<i class="icon icon-close"></i>
+	</button> </div>
+            </div>
+            <div class="form__section">
+              <div class="input-box "> <input type="text" class="simple-input input-box__input " placeholder="Confirm Password *" required> <button class="input-box__clear">
+		<i class="icon icon-close"></i>
+	</button> </div>
+            </div>
+            <div class="form__section">
+              <div class="input-box "> <input type="text" class="simple-input input-box__input " placeholder="Phone number *" required> <button class="input-box__clear">
+		<i class="icon icon-close"></i>
+	</button> </div>
             </div>
             <div class="form__section"> <label class="checkbox ">
 	<input type="checkbox" >
 	<i class="icon icon-check"></i>
 	<span>I Agree with</span>
 </label> <a href="#" class="form__link">Terms and Conditions</a> </div>
-            <div class="fieldset"> <button class="btn btn_lg btn_primary btn_block btn_rounded" data-animation="ripple">Create Account<i class="icon icon-next"></i></button> </div>
+            <div class="fieldset"> <button class="btn btn_lg btn_blue btn_block text-uppercase" data-animation="ripple">Create Account</button> </div>
           </div>
         </section>
       </main>
@@ -122,7 +126,7 @@
       <!-- end help -->
       <!-- END content -->
       <!-- begin snackbar -->
-      <div class="snackbar" data-snackbar-container="snackbar" data-state="default">
+      <div class="snackbar " data-snackbar-container="snackbar" data-state="default">
         <div class="snackbar__message" data-snackbar-content="snackbar"></div>
       </div>
       <!-- end snackbar -->
