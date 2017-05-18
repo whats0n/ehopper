@@ -18,10 +18,6 @@ styles:
 				container: {
 					search: true,
 					scan: true
-				},
-				fullinfo: {
-					back: true,
-					backAttrs: 'data-fullinfo-close="fullinfo" data-toggle-class-target="sidebar-header" data-toggle-class-remove="is-disabled"'
 				}
 			})}}
 			<div class="cart cart_poynt">
@@ -190,51 +186,6 @@ styles:
 							<p>Please set up at <a href="#">https://bo.ehopper.com</a> or <a href="#">Sync</a> data</p>
 						</div>
 					</div>
-				</div>
-			</div>
-			<div class="container container_overlay container_poynt-pos" data-fullinfo-container="fullinfo">
-				<div class="container__body">
-					{{tabs.call({
-						classList: 'tabs_lg container__content',
-						name: 'item-info',
-						list: [
-							{
-								name: 'quantity',
-								text: 'Quantity',
-								content: 'partials/full-info/_quantity.html'
-							},
-							{
-								name: 'price',
-								text: 'Price',
-								content: 'partials/full-info/_price.html'
-							},
-							{
-								name: 'discount',
-								text: 'Discount',
-								content: 'partials/full-info/_discount.html'
-							},
-							{
-								name: 'modifiers',
-								text: 'Modifiers',
-								content: 'partials/full-info/_modifiers.html'
-							},
-							{
-								name: 'matrix',
-								text: 'Matrix',
-								content: 'partials/full-info/_matrix.html'
-							},
-							{
-								name: 'serials',
-								text: 'Serials',
-								content: 'partials/full-info/_serials.html'
-							},
-							{
-								name: 'notes',
-								text: 'Notes',
-								content: 'partials/full-info/_notes.html'
-							}
-						]
-					})}}
 				</div>
 			</div>
 		</div>

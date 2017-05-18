@@ -58,6 +58,7 @@
     right: 0
     bottom: 0
     width: 60%
+    background: $alabaster
     box-shadow: -3px 0 4px 5px rgba(0, 0, 0, 0.2)
     transform: translate3d(-110%,0,0)
     transition: transform 0.3s ease-in-out
@@ -70,7 +71,14 @@
     .container
       &__body
         padding-top: 50px
+        padding-bottom: 100px
         height: 100%
+      &__submit
+        position: absolute
+        bottom: 0
+        left: 0
+        right: 0
+        padding: 0 20px 20px
   &_poynt-register
     .container
       &__body
@@ -318,10 +326,14 @@
     [data-table-fake],
     [data-table-scrollable] > div
       min-width: 980px
-  &[data-table="orders"]
+  &[data-table="order"]
     [data-table-fake],
     [data-table-scrollable] > div
       min-width: 1200px
+  &[data-table="orders"]
+    [data-table-fake],
+    [data-table-scrollable] > div
+      min-width: 1400px
 
 .table-header,
 .table-body
@@ -363,7 +375,8 @@
     &[data-column="orders-tips-type"],
     &[data-column="orders-tips-price"],
     &[data-column="orders-tips-date"],
-    &[data-column="orders-total"]
+    &[data-column="orders-total"],
+    &[data-column="orders-customer"]
       width: 8%
     &[data-column="orders-store"],
     &[data-column="orders-employee"],

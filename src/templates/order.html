@@ -140,52 +140,52 @@ settingsActive: 2
 			<div class="order__container">
 				<div class="order__body">
 					<div class="order__content">
-						<div class="table-wrapper table-wrapper_no-footer table-wrapper_header-lg" data-table="orders">
+						<div class="table-wrapper table-wrapper_no-footer table-wrapper_header-lg" data-table="order">
 							{% set table = {
 								header: [
+									{ column: 'icon', checkbox: true },
 									{ column: 'order-item', content: 'Description' },
 									{ column: 'order-quantity', content: 'Quantity' },
 									{ column: 'order-price', content: 'Item Price' },
 									{ column: 'order-discount', content: 'Discount' },
-									{ column: 'order-total', content: 'Total' },
-									{ column: 'order-check', checkbox: true }
+									{ column: 'order-total', content: 'Total' }
 								],
 								body: [
 									[
+										{ column: 'icon', checkbox: true },
 										{ column: 'order-item', content: '<div class="table-wrapper__value">Hot-Dog</div>' },
 										{ column: 'order-quantity', content: '2' },
 										{ column: 'order-price', content: '$5.00' },
 										{ column: 'order-discount', content: '&nbsp;' },
-										{ column: 'order-total', content: '$10.00' },
-										{ column: 'order-check', checkbox: true }
+										{ column: 'order-total', content: '$10.00' }
 									],
 									[
+										{ column: 'icon', checkbox: true },
 										{ column: 'order-item', content: '<div class="table-wrapper__value">Hot-Dog XL</div> <div class="table-wrapper__meta">+Additional Ketchup</div>' },
 										{ column: 'order-quantity', content: '1' },
 										{ column: 'order-price', content: '$8.00' },
 										{ column: 'order-discount', content: '$1.00' },
-										{ column: 'order-total', content: '$7.00' },
-										{ column: 'order-check', checkbox: true }
+										{ column: 'order-total', content: '$7.00' }
 									],
 									[
+										{ column: 'icon', checkbox: true },
 										{ column: 'order-item', content: '<div class="table-wrapper__value">Whiskey</div>' },
 										{ column: 'order-quantity', content: '200 <span class="muted">ml</span>' },
 										{ column: 'order-price', content: '$8.00' },
 										{ column: 'order-discount', content: '$1.00' },
-										{ column: 'order-total', content: '$7.00' },
-										{ column: 'order-check', checkbox: true }
+										{ column: 'order-total', content: '$7.00' }
 									],
 									[
+										{ column: 'icon', checkbox: true },
 										{ column: 'order-item', content: '<div class="table-wrapper__value">Very Good Wine</div> <div class="table-wrapper__meta">France, Glass Bottle, 700 ml</div>' },
 										{ column: 'order-quantity', content: '11' },
 										{ column: 'order-price', content: '$1,048.90' },
 										{ column: 'order-discount', content: '$48.90' },
-										{ column: 'order-total', content: '$11,480.00' },
-										{ column: 'order-check', checkbox: true }
+										{ column: 'order-total', content: '$11,480.00' }
 									]
 								]
 							} %}
-							<div class="table-wrapper__header" data-table-fake="orders">
+							<div class="table-wrapper__header" data-table-fake="order">
 								<div class="table-header">
 									<ul class="table-header__tr">
 										{% for th in table.header %}
@@ -202,8 +202,8 @@ settingsActive: 2
 									</ul>
 								</div>
 							</div>
-							<div class="table-wrapper__body" data-scrollbar="default" data-table-scrollable="orders">
-								<div class="table-body table-body_order table-wrapper__table" data-table-main="orders">
+							<div class="table-wrapper__body" data-scrollbar="default" data-table-scrollable="order">
+								<div class="table-body table-body_order table-wrapper__table" data-table-main="order">
 									{% for item in range(0,5) %}
 										{% for tr in table.body %}
 											<div class="table-body__tr">

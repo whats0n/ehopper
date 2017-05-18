@@ -1,299 +1,334 @@
 .btn
-  display: inline-block
-  vertical-align: top
+	display: inline-block
+	vertical-align: top
 
-  padding: 0 10px
-  margin: 0
-  border: none
-  min-width: 40px
-  height: 40px
+	padding: 0 10px
+	margin: 0
+	border: none
+	min-width: 40px
+	height: 40px
 
-  color: $darkGray
-  background: $lightGray
+	color: $darkGray
+	background: $lightGray
 
-  +rlight
-  font-size: 16px
-  line-height: 40px
-  text-align: center
-  text-decoration: none
+	+rlight
+	font-size: 16px
+	line-height: 40px
+	text-align: center
+	text-decoration: none
 
-  white-space: nowrap
+	white-space: nowrap
 
-  transition: background 0.175s ease, box-shadow 0.175s ease
+	transition: background 0.175s ease, box-shadow 0.175s ease
 
-  cursor: pointer
-  user-select: none
-  +active
-    color: $darkGray
-    background: $lightGrayActive
-    box-shadow: inset 2px 2px 6px rgba($black, 0.2)
-  .icon
-    vertical-align: top
-  
-  //mods
-  &_lg
-    padding: 0 15px
-    min-width: 60px
-    height: 60px
-    font-size: 19px
-    line-height: 60px
-    .icon
-      margin-top: 10px
-    .icon-more-v
-      margin-top: 0
-  &_xl
-    padding: 0 20px
-    min-width: 80px
-    height: 80px
-    font-size: 30px
-    line-height: 80px
+	cursor: pointer
+	user-select: none
+	+active
+		color: $darkGray
+		background: $lightGrayActive
+		box-shadow: inset 2px 2px 6px rgba($black, 0.2)
+	.icon
+		vertical-align: top
+	
+	//mods
+	&_lg
+		padding: 0 15px
+		min-width: 60px
+		height: 60px
+		font-size: 19px
+		line-height: 60px
+		.icon
+			margin-top: 10px
+		.icon-more-v
+			margin-top: 0
+	&_xl
+		padding: 0 20px
+		min-width: 80px
+		height: 80px
+		font-size: 30px
+		line-height: 80px
 
-  &_block
-    display: block
-    width: 100%
+	&_block
+		display: block
+		width: 100%
 
-  &_icon
-    padding: 0
-    background: none
+	&_icon
+		padding: 0
+		background: none
 
-  &_rounded
-    border-radius: 5px
+	&_rounded
+		border-radius: 5px
 
-  &_green,
-  &_success
-    color: $white
-    background: $green
-    +active
-      color: $white
-      background: $greenActive
-  &_red,
-  &_error
-    color: $white
-    background: $red
-    +active
-      color: $white
-      background: $redActive
-  &_primary,
-  &_blue,
-  &.is-active
-    color: $white
-    background: $blue
-    +active
-      color: $white
-      background: $blueActive
-  &_secondary
-    color: $blue
-    background: $azure
-    +active
-      color: $blue
-      background: $azureActive
-  &_white
-    color: inherit
-    background: $white
-    +active
-      background-color: $eb
+	&_green,
+	&_success
+		color: $white
+		background: $green
+		+active
+			color: $white
+			background: $greenActive
+	&_red,
+	&_error
+		color: $white
+		background: $red
+		+active
+			color: $white
+			background: $redActive
+	&_primary,
+	&_blue,
+	&.is-active
+		color: $white
+		background: $blue
+		+active
+			color: $white
+			background: $blueActive
+	&_secondary
+		color: $blue
+		background: $azure
+		+active
+			color: $blue
+			background: $azureActive
+	&_white
+		color: inherit
+		background: $white
+		+active
+			background-color: $eb
 
 button
-  &:disabled,
-  &.is-disabled
-    opacity: 0.5
-    pointer-events: none
+	&:disabled,
+	&.is-disabled
+		opacity: 0.5
+		pointer-events: none
 
 .btn-icon
-  display: inline-block
-  vertical-align: top
-  border-radius: 50%
-  width: 40px
-  height: 40px
-  color: inherit
-  background: none
-  text-decoration: none
-  transition: color 0.175s ease, background 0.175s ease
-  +active
-    color: inherit
-    background: rgba($black, 0.1)
-  &_square
-    border-radius: 0
-  &_gray
-    background: $lightGray
-    +active
-      background: $lightGrayActive
+	display: inline-block
+	vertical-align: top
+	border-radius: 50%
+	width: 40px
+	height: 40px
+	color: inherit
+	background: none
+	text-decoration: none
+	transition: color 0.175s ease, background 0.175s ease
+	+active
+		color: inherit
+		background: rgba($black, 0.1)
+	&_square
+		border-radius: 0
+	&_gray
+		background: $lightGray
+		+active
+			background: $lightGrayActive
 
 .btn-link
-  color: inherit
-  background: none
-  font-family: inherit
-  font-size: inherit
-  +active
-    color: inherit
+	color: inherit
+	background: none
+	font-family: inherit
+	font-size: inherit
+	+active
+		color: inherit
 
 .btn-back
-  color: inherit
-  background: none
-  +rlight
-  font-size: 16px
-  transition: background 0.175s ease, box-shadow 0.175s ease
-  cursor: pointer
-  +active
-    color: inherit
-    background: rgba($black, 0.1)
-    box-shadow: inset 2px 2px 6px rgba($black, 0.2)
-  &__icon,
-  &__title
-    display: inline-block
-    vertical-align: top
-  &__icon
-    width: 50px
-    height: 50px
-    line-height: 50px
-  &__title
-    padding: 0 20px 0 0
-    line-height: 50px
+	color: inherit
+	background: none
+	+rlight
+	font-size: 16px
+	transition: background 0.175s ease, box-shadow 0.175s ease
+	cursor: pointer
+	+active
+		color: inherit
+		background: rgba($black, 0.1)
+		box-shadow: inset 2px 2px 6px rgba($black, 0.2)
+	&__icon,
+	&__title
+		display: inline-block
+		vertical-align: top
+	&__icon
+		width: 50px
+		height: 50px
+		line-height: 50px
+	&__title
+		padding: 0 20px 0 0
+		line-height: 50px
 
 .btn-scan
-  display: inline-block
-  vertical-align: top
-  padding: 12px 10px
-  width: 130px
-  color: $white
-  background: none
-  font-size: 0
-  text-align: center
-  transition: background 0.175s ease, box-shadow 0.175s ease
-  +active
-    background: rgba($black, 0.1)
-    box-shadow: inset 2px 2px 6px rgba($black, 0.2)
-  &__icon,
-  &__text
-    display: inline-block
-    vertical-align: top
-  &__icon
-    width: 0.96em
-    height: 1em
-    fill: currentColor
-    font-size: 26px
-  &__text
-    padding: 5px 0 5px 5px
-    +rlight
-    font-size: 16px
-    line-height: 1
+	display: inline-block
+	vertical-align: top
+	padding: 12px 10px
+	width: 130px
+	color: $white
+	background: none
+	font-size: 0
+	text-align: center
+	transition: background 0.175s ease, box-shadow 0.175s ease
+	+active
+		background: rgba($black, 0.1)
+		box-shadow: inset 2px 2px 6px rgba($black, 0.2)
+	&__icon,
+	&__text
+		display: inline-block
+		vertical-align: top
+	&__icon
+		width: 0.96em
+		height: 1em
+		fill: currentColor
+		font-size: 26px
+	&__text
+		padding: 5px 0 5px 5px
+		+rlight
+		font-size: 16px
+		line-height: 1
 
 .btn-open
-  width: 50px
-  height: 50px
-  border-radius: 50%
-  color: $blue
-  background: $azureActive
-  transition: background 0.175s ease, box-shadow 0.175s ease, color 0.175s ease
-  +active
-    box-shadow: inset 2px 2px 6px rgba($black, 0.2)
-  &.is-active
-    color: $white
-    background: $blue
-    .icon
-      transform: rotate(180deg)
-  .icon
-    font-size: 28px
-    transition: transform 0.175s ease-in-out
+	width: 50px
+	height: 50px
+	border-radius: 50%
+	color: $blue
+	background: $azureActive
+	transition: background 0.175s ease, box-shadow 0.175s ease, color 0.175s ease
+	+active
+		box-shadow: inset 2px 2px 6px rgba($black, 0.2)
+	&.is-active
+		color: $white
+		background: $blue
+		.icon
+			transform: rotate(180deg)
+	.icon
+		font-size: 28px
+		transition: transform 0.175s ease-in-out
 
+.btn-sync
+	display: inline-block
+	vertical-align: top
+	color: $white
+	background: none
+	+rlight
+	font-size: 16px
+	transition: background 0.175s ease, box-shadow 0.175s ease
+	cursor: pointer
+	+active
+		color: $white
+		background: rgba($black, 0.1)
+		box-shadow: inset 2px 2px 6px rgba($black, 0.2)
+	&__icon,
+	&__title
+		display: inline-block
+		vertical-align: top
+	&__icon
+		width: 50px
+		height: 50px
+		line-height: 50px
+		animation: sync 2.25s ease-in-out infinite
+	&__title
+		padding-left: 20px
+		line-height: 50px
+
+@keyframes sync
+	0%
+		transform: rotate(0deg)
+	30%
+		transform: rotate(-360deg)
+	30%
+		transform: rotate(0)
+	100%
+		transform: rotate(-360deg)
 
 ////
 .btn-lg
-  padding: 0 15px
-  min-width: 60px
-  height: 60px
-  font-size: 19px
-  line-height: 60px
+	padding: 0 15px
+	min-width: 60px
+	height: 60px
+	font-size: 19px
+	line-height: 60px
 
 .btn-xl
-  padding: 0 20px
-  min-width: 80px
-  height: 80px
-  font-size: 30px
-  line-height: 80px
+	padding: 0 20px
+	min-width: 80px
+	height: 80px
+	font-size: 30px
+	line-height: 80px
 
 .btn-block
-  display: block
-  width: 100%
+	display: block
+	width: 100%
 
 .btn-rounded
-  border-radius: 5px
+	border-radius: 5px
 
 .btn-go
-  width: 300px
+	width: 300px
 
 input.btn
-  -webkit-appearance: none
-  -webkit-border-radius: 0
+	-webkit-appearance: none
+	-webkit-border-radius: 0
 
 .btn-default
-  color: $darkGray
-  background: $lightGray
-  +active
-    background: $lightGrayActive
+	color: $darkGray
+	background: $lightGray
+	+active
+		background: $lightGrayActive
 
 .btn-primary
-  color: $white
-  background: $blue
-  +active
-    background: $blueActive
+	color: $white
+	background: $blue
+	+active
+		background: $blueActive
 
 .btn-secondary
-  color: #2e99db
-  background: #ecf7fd
-  +active
-    background: #c7e7f9
+	color: #2e99db
+	background: #ecf7fd
+	+active
+		background: #c7e7f9
 
 .btn-danger
-  color: #fff
-  background: #FF6431
-  +active
-    background: #ff4508
+	color: #fff
+	background: #FF6431
+	+active
+		background: #ff4508
 
 .btn-green, .btn-success
-  color: #fff
-  background: #66BB6A
-  +active
-    background: #4cac51
+	color: #fff
+	background: #66BB6A
+	+active
+		background: #4cac51
 
 .btn-white
-  color: inherit
-  background: #fff
-  +active
-    background-color: #ebebeb
+	color: inherit
+	background: #fff
+	+active
+		background-color: #ebebeb
 
 .animated
-  .btn-ripple
-    position: relative
-    overflow: hidden
-  .btn-ripple__effect
-    position: absolute
-    z-index: 100
-    top: 50%
-    left: 50%
-    margin: -10px 0 0 -10px
-    border-radius: 50%
-    width: 20px
-    height: 20px
+	.btn-ripple
+		position: relative
+		overflow: hidden
+	.btn-ripple__effect
+		position: absolute
+		z-index: 100
+		top: 50%
+		left: 50%
+		margin: -10px 0 0 -10px
+		border-radius: 50%
+		width: 20px
+		height: 20px
 
-    opacity: 0.05
-    background: black
+		opacity: 0.05
+		background: black
 
-    transform: scale(0)
-    transition: transform 500ms ease-out, opacity 500ms ease-out
-    pointer-events: none
-    &.effect-on
-      opacity: 0
-      transform: scale(2)
-  .btn-ripple
-    +active
-      box-shadow: none
+		transform: scale(0)
+		transition: transform 500ms ease-out, opacity 500ms ease-out
+		pointer-events: none
+		&.effect-on
+			opacity: 0
+			transform: scale(2)
+	.btn-ripple
+		+active
+			box-shadow: none
 
 .btn.icon
-  padding: 0
-  min-width: 0
-  color: inherit
-  background: transparent
+	padding: 0
+	min-width: 0
+	color: inherit
+	background: transparent
 
 // header .btn.icon
 //   border-radius: 40px

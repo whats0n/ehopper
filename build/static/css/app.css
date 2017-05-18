@@ -1073,6 +1073,7 @@ a.shy {
   right: 0;
   bottom: 0;
   width: 60%;
+  background: #f8f8f8;
   box-shadow: -3px 0 4px 5px rgba(0, 0, 0, 0.2);
   transform: translate3d(-110%, 0, 0);
   transition: transform 0.3s ease-in-out;
@@ -1089,7 +1090,16 @@ a.shy {
 
 .container_overlay .container__body {
   padding-top: 50px;
+  padding-bottom: 100px;
   height: 100%;
+}
+
+.container_overlay .container__submit {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 0 20px 20px;
 }
 
 .container_poynt-register .container__body {
@@ -1395,9 +1405,14 @@ a.shy {
   min-width: 980px;
 }
 
+.table-wrapper[data-table="order"] [data-table-fake],
+.table-wrapper[data-table="order"] [data-table-scrollable] > div {
+  min-width: 1200px;
+}
+
 .table-wrapper[data-table="orders"] [data-table-fake],
 .table-wrapper[data-table="orders"] [data-table-scrollable] > div {
-  min-width: 1200px;
+  min-width: 1400px;
 }
 
 .table-header,
@@ -1467,7 +1482,7 @@ a.shy {
   width: 11%;
 }
 
-.table-header__th[data-column="orders-register"], .table-header__th[data-column="orders-type"], .table-header__th[data-column="orders-fulfillment"], .table-header__th[data-column="orders-date"], .table-header__th[data-column="orders-name"], .table-header__th[data-column="orders-tips-register"], .table-header__th[data-column="orders-tips-refnum"], .table-header__th[data-column="orders-tips-type"], .table-header__th[data-column="orders-tips-price"], .table-header__th[data-column="orders-tips-date"], .table-header__th[data-column="orders-total"], .table-header__td[data-column="orders-register"], .table-header__td[data-column="orders-type"], .table-header__td[data-column="orders-fulfillment"], .table-header__td[data-column="orders-date"], .table-header__td[data-column="orders-name"], .table-header__td[data-column="orders-tips-register"], .table-header__td[data-column="orders-tips-refnum"], .table-header__td[data-column="orders-tips-type"], .table-header__td[data-column="orders-tips-price"], .table-header__td[data-column="orders-tips-date"], .table-header__td[data-column="orders-total"],
+.table-header__th[data-column="orders-register"], .table-header__th[data-column="orders-type"], .table-header__th[data-column="orders-fulfillment"], .table-header__th[data-column="orders-date"], .table-header__th[data-column="orders-name"], .table-header__th[data-column="orders-tips-register"], .table-header__th[data-column="orders-tips-refnum"], .table-header__th[data-column="orders-tips-type"], .table-header__th[data-column="orders-tips-price"], .table-header__th[data-column="orders-tips-date"], .table-header__th[data-column="orders-total"], .table-header__th[data-column="orders-customer"], .table-header__td[data-column="orders-register"], .table-header__td[data-column="orders-type"], .table-header__td[data-column="orders-fulfillment"], .table-header__td[data-column="orders-date"], .table-header__td[data-column="orders-name"], .table-header__td[data-column="orders-tips-register"], .table-header__td[data-column="orders-tips-refnum"], .table-header__td[data-column="orders-tips-type"], .table-header__td[data-column="orders-tips-price"], .table-header__td[data-column="orders-tips-date"], .table-header__td[data-column="orders-total"], .table-header__td[data-column="orders-customer"],
 .table-body__th[data-column="orders-register"],
 .table-body__th[data-column="orders-type"],
 .table-body__th[data-column="orders-fulfillment"],
@@ -1479,6 +1494,7 @@ a.shy {
 .table-body__th[data-column="orders-tips-price"],
 .table-body__th[data-column="orders-tips-date"],
 .table-body__th[data-column="orders-total"],
+.table-body__th[data-column="orders-customer"],
 .table-body__td[data-column="orders-register"],
 .table-body__td[data-column="orders-type"],
 .table-body__td[data-column="orders-fulfillment"],
@@ -1489,7 +1505,8 @@ a.shy {
 .table-body__td[data-column="orders-tips-type"],
 .table-body__td[data-column="orders-tips-price"],
 .table-body__td[data-column="orders-tips-date"],
-.table-body__td[data-column="orders-total"] {
+.table-body__td[data-column="orders-total"],
+.table-body__td[data-column="orders-customer"] {
   width: 8%;
 }
 
@@ -2028,6 +2045,10 @@ article aside.left {
   z-index: 50;
 }
 
+.header__sync .btn-sync {
+  margin: -5px;
+}
+
 .header__indicator {
   position: absolute;
   top: 0;
@@ -2424,6 +2445,61 @@ button:disabled, button.is-disabled {
 .btn-open .icon {
   font-size: 28px;
   transition: transform 0.175s ease-in-out;
+}
+
+.btn-sync {
+  display: inline-block;
+  vertical-align: top;
+  color: #fff;
+  background: none;
+  font-family: 'Roboto Light', Arial, sans-serif;
+  font-size: 16px;
+  transition: background 0.175s ease, box-shadow 0.175s ease;
+  cursor: pointer;
+}
+
+.btn-sync:active {
+  color: #fff;
+  background: rgba(0, 0, 0, 0.1);
+  box-shadow: inset 2px 2px 6px rgba(0, 0, 0, 0.2);
+}
+
+.no-touch .btn-sync:active {
+  color: #fff;
+  background: rgba(0, 0, 0, 0.1);
+  box-shadow: inset 2px 2px 6px rgba(0, 0, 0, 0.2);
+}
+
+.btn-sync__icon, .btn-sync__title {
+  display: inline-block;
+  vertical-align: top;
+}
+
+.btn-sync__icon {
+  width: 50px;
+  height: 50px;
+  line-height: 50px;
+  animation: sync 2.25s ease-in-out infinite;
+}
+
+.btn-sync__title {
+  padding-left: 20px;
+  line-height: 50px;
+}
+
+@keyframes sync {
+  0% {
+    transform: rotate(0deg);
+  }
+  30% {
+    transform: rotate(-360deg);
+  }
+  30% {
+    transform: rotate(0);
+  }
+  100% {
+    transform: rotate(-360deg);
+  }
 }
 
 .btn-lg {
@@ -5644,8 +5720,8 @@ textarea.input {
 .totals-list_scroll {
   overflow: auto;
   padding-bottom: 5px;
-  border-top: 1px solid #92d4e9;
-  max-height: 72px;
+  border-top: 1px solid #bde5f2;
+  max-height: 60px;
 }
 
 .totals-list__item {
@@ -5837,6 +5913,10 @@ textarea.input {
   position: relative;
   padding-bottom: 70px;
   height: 100%;
+}
+
+.sm-grid_full {
+  padding-bottom: 0;
 }
 
 .sm-grid_space-md .sm-grid__row {

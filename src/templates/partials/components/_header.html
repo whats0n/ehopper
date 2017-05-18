@@ -284,7 +284,11 @@
 		<div class="header__sync">
 			<div class="header__indicator" data-state="active"></div>
 			{% if props.syncIndicatorOnly !== true %}
-				<button class="btn-icon icon icon-sync" title="Sync"></button>
+				<button class="btn-sync">
+					<span class="btn-sync__title">Sync</span>
+					<i class="icon icon-sync btn-sync__icon"></i>
+				</button>
+				<!-- <button class="btn-icon icon icon-sync" title="Sync"></button> -->
 			{% endif %}
 			{% if props.searchFor %}
 				<button class="header__search-for">{{props.searchFor}}</button>
