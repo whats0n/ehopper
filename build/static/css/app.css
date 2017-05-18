@@ -6354,7 +6354,7 @@ textarea.input {
 
 .infotable__label, .infotable__value {
   float: left;
-  padding: 10px;
+  padding: 10px 0;
   width: 50%;
   font-size: 14px;
 }
