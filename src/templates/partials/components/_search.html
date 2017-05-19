@@ -2,15 +2,31 @@
 
 <!-- begin search -->
 <div class="search" data-modal="search">
-	<form action="/">
-		<div class="search__field" data-modal="container">
-			<input type="text" class="search__input" placeholder="Search for item, upc">
-			<div class="search__controls">
-				<button class="btn-icon search__button"><i class="icon icon-search"></i></button>
-				{# <button class="btn-icon search__button" data-modal-close="search" type="button"><i class="icon icon-close"></i></button> #}
-			</div>
+	<div class="search__field" data-modal="container">
+		<input type="text" class="search__input" placeholder="Search for item: name, upc">
+		<div class="search__controls">
+			<button class="btn-icon search__button"><i class="icon icon-search"></i></button>
+			{# <button class="btn-icon search__button" data-modal-close="search" type="button"><i class="icon icon-close"></i></button> #}
 		</div>
-	</form>
-	{# {{mixins.overlay({ classList: 'search__overlay' })}} #}
+	</div>
+	<div class="search-dropdown">
+		<i class="search-dropdown__arrow"></i>
+		<div class="search-dropdown__container">
+			<div class="search-dropdown__body">
+				<ul class="search-dropdown__list">
+					{% for item in range(0, 12) %}
+					    <li class="search-dropdown__item">
+					    	<div class="search-dropdown__price">
+					    		<span class="search-dropdown__currency">$</span>
+					    		<span class="search-dropdown__value">99.99</span>
+					    	</div>
+					    	<div class="search-dropdown__text">Lorem ipsum dolor.</div>
+					    </li>
+					{% endfor %}
+				</ul>
+			</div>
+			<button class="btn btn_block" data-animation="ripple"><i class="icon icon-expand"></i>Show more</button>
+		</div>
+	</div>
 </div>
 <!-- end search -->

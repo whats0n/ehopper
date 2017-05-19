@@ -22,11 +22,12 @@ styles:
 					{% set ordersToolbar = [
 						{
 							dropdownSimple: {
+								multiple: true,
+								placeholder: 'Show all',
 								label: 'Stores:',
 								value: 'Show all',
 								list: [ { text: 'Store 1', value: 'Store 1' }, { text: 'Store 2', value: 'Store 2' }, { text: 'Store 3', value: 'Store 3' }, { text: 'Store 4', value: 'Store 4' }, { text: 'Store 5', value: 'Store 5' } ],
 								listOnly: true,
-								activeItem: 0,
 								name: 'orders-stores'
 							}
 						},

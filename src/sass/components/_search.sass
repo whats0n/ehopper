@@ -1,31 +1,8 @@
 .search
-	// position: absolute
-	// z-index: 100
-	// top: 0
-	// left: 0
-	// right: 0
-	// opacity: 0
-	// visibility: hidden
-	// transition: opacity 0s 0.2s, visibility 0s 0.2s
-	// &.is-open
-	// 	opacity: 1
-	// 	visibility: visible
-	// 	transition: none
-	// 	.search
-	// 		&__field
-	// 			+gpu
-	// 		&__overlay
-	// 			opacity: 0.8
-	// 			visibility: visible
+	position: relative
 	&__field
 		position: relative
-		// z-index: 200
-		// padding-right: 95px
 		padding-left: 50px
-		// background: $white
-		// box-shadow: 0 2px 4px rgba($black, 0.2)
-		// transform: translate3d(0,-100%,0)
-		// transition: transform 0.2s ease-in-out
 		&:before
 			content: ''
 			position: absolute
@@ -35,13 +12,10 @@
 			border-bottom: 2px solid $white
 			opacity: 0.7
 	&__input
-		// padding: 0 20px
 		padding: 0 10px
 		width: 100%
 		height: 50px
-		// color: $darkGray
 		color: $white
-		// background: $white
 		background: none
 		+rreg
 		font-size: 16px
@@ -52,12 +26,71 @@
 	&__controls
 		position: absolute
 		top: 0
-		// right: 0
 		left: 0
-		// padding: 5px 0 5px 5px
 		padding: 5px
-		// background: $blue
 		font-size: 0
 	&__button
-		// margin-right: 5px
 		color: $white
+
+.search-dropdown
+	position: absolute
+	z-index: 100
+	top: 100%
+	left: 10px
+	right: 0
+	margin-top: 14px
+	opacity: 0
+	visibility: hidden
+	box-shadow: 0 0 4px 2px rgba($black, 0.15)
+	transition: opacity 0.15s ease-in-out, visibility 0.15s ease-in-out
+	&.is-open
+		opacity: 1
+		visibility: visible
+	&__container
+		position: relative
+		z-index: 2
+		background: $white
+	&__body
+		overflow: auto
+		max-height: 209px
+	&__list
+		padding: 0 12px
+	&__item
+		padding: 10px 0
+		margin: 0 -5px
+		color: $darkGray
+		font-size: 18px
+		cursor: pointer
+		transition: color 0.17s ease-in-out
+		+clr
+		&:not(:last-child)
+			border-bottom: 1px solid $lightGrayActive
+		+hover
+			color: $blue
+	&__price,
+	&__text
+		padding: 0 5px
+	&__price
+		float: right
+		+rreg
+		white-space: nowrap
+	&__text
+		overflow: hidden
+		+rlight
+	&__arrow
+		position: absolute
+		z-index: 1
+		left: 40px
+		bottom: 100%
+		width: 20px
+		height: 20px
+		&:before
+			content: ''
+			position: absolute
+			bottom: 0
+			left: 50%
+			width: 14px
+			height: 14px
+			background: $white
+			box-shadow: 0 0 4px 2px rgba($black, 0.15)
+			transform: translate3d(-50%,50%,0) rotate(45deg)

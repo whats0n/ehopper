@@ -61,7 +61,7 @@ export default (function() {
 
 		//set value
 		$dropdownValue.text(value);
-
+		
 		//change active item
 		$items.removeClass(ACTIVE);
 		$this.addClass(ACTIVE);

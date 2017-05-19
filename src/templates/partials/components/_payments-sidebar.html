@@ -36,8 +36,11 @@
 					<li class="order-item">
 						<div class="order-item__container">
 							<div class="order-item__content">
-								<div class="order-item__info">
-									<div class="order-item__title">{{item.title | safe}}</div>
+								<div class="order-item__row">
+									<div class="order-item__info">
+										<div class="order-item__title">{{item.title | safe}}</div>
+									</div>
+									<div class="order-item__meta">{{item.meta | safe}}</div>
 								</div>
 								<div class="order-item__row">
 									<div class="order-item__col">
@@ -48,10 +51,11 @@
 										<div class="order-item__total">{{item.total | safe}}</div>
 										{% if item.discount %}
 											<div class="order-item__discount">{{item.discount | safe}}</div>
+										{% else %}
+										    <div class="order-item__tag"></div>
 										{% endif %}
 									</div>
 								</div>
-								<div class="order-item__meta">{{item.meta | safe}}</div>
 							</div>
 						</div>
 					</li>
