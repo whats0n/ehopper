@@ -70,7 +70,16 @@ hr
 .footnote
 	color: $silverGray
 	+bold
+	font-size: 14px
 	text-align: center
+	&_lg
+		font-size: 16px
+	a
+		color: $blue
+		+hover
+			text-decoration: underline
+		+active
+			color: $blueActive
 
 .loader
 	position: absolute
@@ -86,6 +95,18 @@ hr
 	.loader__icon
 		display: inline-block
 		vertical-align: middle
+	&__center
+		display: inline-block
+		vertical-align: middle
+		width: 100%
+		.loader__icon
+			vertical-align: top
+	&__text
+		margin: 0 auto
+		max-width: 400px
+		color: $darkGray 
+		font-size: 16px
+
 
 .wrapper-btn-center
 	margin: 0 auto

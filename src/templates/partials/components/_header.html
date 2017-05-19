@@ -63,7 +63,7 @@
 						<div class="toolbar__row">
 							<div class="toolbar__col">
 								{{dropdown.simple({
-									dropdownClassList: 'dropdown_header',
+									dropdownClassList: 'dropdown_header dropdown-menu_no-scroll',
 									value: 'Quick Sale',
 									list: [ { text: 'Quick Sale', value: 'Quick Sale' }, { text: 'Dine In', value: 'Dine In' }, { text: 'Take Out', value: 'Take Out' }, { text: 'Drive Thru', value: 'Drive Thru' }, { text: 'Delivery', value: 'Delivery' } ],
 									listOnly: true,
@@ -73,13 +73,14 @@
 							</div>
 							<div class="toolbar__col">
 								{{dropdown.simple({
-									dropdownClassList: 'dropdown_header',
+									dropdownClassList: 'dropdown_header dropdown_fixed',
 									value: 'Walk In',
+									special: 0,
 									list: [ 
-										{ text: 'Walk In <i class="icon icon-walkin"></i>', value: 'Recent Customer' }, 
-										{ text: 'Customer <i class="icon icon-next"></i>', value: 'Customer' }, 
-										{ text: 'Recent Customer <i class="icon icon-next"></i>', value: 'Recent Customer' }, 
-										{ text: 'Another Customer <i class="icon icon-next"></i>', value: 'Another Customer' }
+										{ text: 'Walk In <i class="icon icon-walkin"></i>', value: 'Walk In' }, 
+										{ text: 'John Doe <i class="icon icon-next"></i>', value: 'John Doe' }, 
+										{ text: 'Charlie Sheen <i class="icon icon-next"></i>', value: 'Charlie Sheen' }, 
+										{ text: 'Wendy Williams <i class="icon icon-next"></i>', value: 'Wendy Williams' }
 									],
 									search: true,
 									btnAdd: 'New Customer',
@@ -193,7 +194,7 @@
 							<div class="toolbar__row">
 								<div class="toolbar__col">
 									{{dropdown.simple({
-										dropdownClassList: 'dropdown_header',
+										dropdownClassList: 'dropdown_header dropdown-menu_no-scroll',
 										value: 'Quick Sale',
 										list: [ { text: 'Quick Sale', value: 'Quick Sale' }, { text: 'Dine In', value: 'Dine In' }, { text: 'Take Out', value: 'Take Out' }, { text: 'Drive Thru', value: 'Drive Thru' }, { text: 'Delivery', value: 'Delivery' } ],
 										listOnly: true,
@@ -203,13 +204,14 @@
 								</div>
 								<div class="toolbar__col">
 									{{dropdown.simple({
-										dropdownClassList: 'dropdown_header',
+										dropdownClassList: 'dropdown_header dropdown_fixed',
 										value: 'Walk In',
+										special: 0,
 										list: [ 
 											{ text: 'Walk In <i class="icon icon-walkin"></i>', value: 'Walk In' }, 
-											{ text: 'Customer <i class="icon icon-next"></i>', value: 'Customer' }, 
-											{ text: 'Recent Customer <i class="icon icon-next"></i>', value: 'Recent Customer' }, 
-											{ text: 'Another Customer <i class="icon icon-next"></i>', value: 'Another Customer' }
+											{ text: 'John Doe <i class="icon icon-next"></i>', value: 'John Doe' }, 
+											{ text: 'Charlie Sheen <i class="icon icon-next"></i>', value: 'Charlie Sheen' }, 
+											{ text: 'Wendy Williams <i class="icon icon-next"></i>', value: 'Wendy Williams' }
 										],
 										search: true,
 										btnAdd: 'New Customer',
@@ -291,7 +293,10 @@
 				<!-- <button class="btn-icon icon icon-sync" title="Sync"></button> -->
 			{% endif %}
 			{% if props.searchFor %}
-				<button class="header__search-for">{{props.searchFor}}</button>
+				<button class="header__search-for">
+					<span>{{props.searchFor}}</span>
+					<i class="icon icon-sync"></i>
+				</button>
 			{% endif %}
 		</div>
 	{% endif %}

@@ -236,7 +236,8 @@
 			&__col
 				border: none
 	&__searchbox
-		max-width: 300px
+		// max-width: 300px
+		max-width: 400px
 		&_right
 			position: absolute
 			top: 0
@@ -267,15 +268,23 @@
 		&[data-state="active"]
 			background: $green
 	&__search-for
-		padding: 0 10px
+		padding: 0 0 0 10px
 		margin: -5px -5px -5px 0
 		height: 50px
 		color: inherit
 		background: none
 		+rlight
 		font-size: 16px
+		+poynt
+			font-size: 14px
 		+active
 			color: inherit
 			background: rgba(0, 0, 0, 0.1)
 			box-shadow: inset 2px 2px 6px rgba(0, 0, 0, 0.2)
+		span, .icon
+			display: inline-block
+			vertical-align: middle
+		span
+			+poynt
+				margin-right: -5px
 

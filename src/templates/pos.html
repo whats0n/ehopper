@@ -21,7 +21,7 @@ styles:
 				},
 				fullinfo: {
 					back: true,
-					backAttrs: 'data-fullinfo-close="fullinfo" data-toggle-class-target="sidebar-header" data-toggle-class-remove="is-disabled"'
+					backAttrs: 'data-fullinfo-close="fullinfo" data-toggle-class-target="sidebar-header" data-toggle-class-remove="is-disabled" id="cart-item-details-back"'
 				}
 			})}}
 			<div class="cart cart_poynt">
@@ -128,8 +128,11 @@ styles:
 											data-fullinfo-open="fullinfo"
 											data-toggle-class-target="sidebar-header"
 											data-toggle-class-add="is-disabled">
-											<div class="order-item__info">
-												<div class="order-item__title">{{item.title | safe}}</div>
+											<div class="order-item__row">
+												<div class="order-item__info">
+													<div class="order-item__title">{{item.title | safe}}</div>
+												</div>
+												<div class="order-item__meta" data-fullinfo-target="modifiers">{{item.meta | safe}}</div>
 											</div>
 											<div class="order-item__row">
 												<div class="order-item__col">
@@ -140,10 +143,11 @@ styles:
 													<div class="order-item__total" data-fullinfo-target="price">{{item.total | safe}}</div>
 													{% if item.discount %}
 														<div class="order-item__discount" data-fullinfo-target="discount">{{item.discount | safe}}</div>
+													{% else %}
+													    <div class="order-item__tag"></div>
 													{% endif %}
 												</div>
 											</div>
-											<div class="order-item__meta" data-fullinfo-target="modifiers">{{item.meta | safe}}</div>
 										</div>
 									</div>
 								</li>
@@ -223,7 +227,7 @@ styles:
 										tagName: 'a',
 										classList: 'btn btn_green btn_lg btn_block toolbar__button',
 										attrs: 'data-animation="ripple" href="payments.html"',
-										content: 'Other Payments <i class="icon icon-more-v"></i>'
+										content: 'Other Payments'
 									})}}
 								</div>
 								<div class="toolbar__col toolbar__col_lg">
@@ -263,13 +267,13 @@ styles:
 							},
 							{
 								text: 'More <i class="icon icon-more-v"></i>',
-								attrs: 'data-dropdown-parent-name="sidebar"',
+								attrs: 'data-dropdown-parent-name="sidebar" id="more-menu-btn"',
 								href: '#',
 								dropdown: {
 									upper: 'sidebar',
 									name: 'more',
 									classList: 'dropdown-menu_up dropdown-menu_no-scroll',
-									attrs: 'id="btn-more-menu"',
+									attrs: 'id="more-menu-dropdown"',
 									links: true,
 									list: [ 
 										{ text: '<a href="#">Tax exempt</a>' }, 
@@ -451,7 +455,7 @@ styles:
 					})}}
 					<div class="container__submit">
 						<div class="wrapper-btn-center">
-							<button class="btn btn_lg btn_blue btn_block text-uppercase" data-animation="ripple">Done</button>
+							<button class="btn btn_lg btn_blue btn_block text-uppercase" data-animation="ripple" value="Done">Done</button>
 						</div>
 					</div>
 				</div>

@@ -55,16 +55,15 @@
 		+ .order-item__content
 			padding-right: 50px
 	&__content
-		padding: 13px 20px 13px 20px
+		// padding: 13px 20px 13px 20px
+		padding: 5px 20px
 		+clr
 		+touch
 			padding-right: 50px
-	&__info,
+	&__info
+		// width: 50%
 	&__row
 		float: left
-	&__info
-		width: 50%
-	&__row
 		width: 50%
 		+clr
 	&__col
@@ -74,6 +73,13 @@
 		text-align: right
 		&:first-child
 			text-align: left
+	&__quantity,
+	&__price,
+	&__total,
+	&__discount,
+	&__info,
+	&__meta
+		padding: 12px 0
 	&__title,
 	&__quantity,
 	&__total
@@ -87,7 +93,7 @@
 		// 	font-size: 13px
 	&__meta
 		clear: both
-		padding-top: 5px
+		// padding-top: 5px
 	&__meta,
 	&__price
 		opacity: 0.5
@@ -100,3 +106,11 @@
 		// 	font-size: 12px
 	&__discount
 		color: $red
+	&__tag
+		display: inline-block
+		vertical-align: top
+		// border: 1px solid lighten($darkGray, 40%)
+		width: 40px
+		height: 40px
+		background: url(../img/tag.svg) no-repeat center center
+		background-size: 24px 24px

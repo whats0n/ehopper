@@ -53,6 +53,12 @@ styles:
 				</div>
 				<div class="form__section">
 					{{form.inputBox.call({
+						placeholder: 'Phone number *',
+						inputAttrs: 'required'
+					})}}
+				</div>
+				<div class="form__section">
+					{{form.inputBox.call({
 						placeholder: 'Email *',
 						inputAttrs: 'required',
 						type: 'mail'
@@ -71,17 +77,11 @@ styles:
 					})}}
 				</div>
 				<div class="form__section">
-					{{form.inputBox.call({
-						placeholder: 'Phone number *',
-						inputAttrs: 'required'
-					})}}
-				</div>
-				<div class="form__section">
 					{{mixins.checkbox({ content: 'I Agree with' })}}
 					<a href="#" class="form__link">Terms and Conditions</a>
 				</div>
 				<div class="wrapper-btn-center">
-					<button class="btn btn_lg btn_blue btn_block text-uppercase" data-animation="ripple">Create Account</button>
+					<button class="btn btn_lg btn_blue btn_block text-uppercase" data-animation="ripple" value="Done">Create Account</button>
 				</div>
 			</div>
 		</section>

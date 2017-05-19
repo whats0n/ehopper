@@ -29,7 +29,7 @@
                     <div class="toolbar__row">
                       <div class="toolbar__col">
                         <!-- begin dropdown -->
-                        <div class="dropdown dropdown_header" data-dropdown="order-type">
+                        <div class="dropdown dropdown_header dropdown-menu_no-scroll" data-dropdown="order-type">
                           <div class="dropdown__header" data-dropdown-open="order-type" data-animation="ripple"> <i class="dropdown__arrow icon icon-expand"></i>
                             <div class="dropdown__value" data-dropdown-value="order-type">Quick Sale</div>
                           </div>
@@ -49,7 +49,7 @@
                       </div>
                       <div class="toolbar__col">
                         <!-- begin dropdown -->
-                        <div class="dropdown dropdown_header" data-dropdown="customer">
+                        <div class="dropdown dropdown_header dropdown_fixed" data-dropdown="customer">
                           <div class="dropdown__header" data-dropdown-open="customer" data-animation="ripple"> <i class="dropdown__arrow icon icon-expand"></i>
                             <div class="dropdown__value" data-dropdown-value="customer">Walk In</div>
                           </div>
@@ -60,11 +60,11 @@
                               </form>
                             </div>
                             <ul class="dropdown-menu__list">
-                              <li class="dropdown-menu__item is-active" data-animation="ripple" data-dropdown-item="customer" data-value="Walk In"> Walk In <i class="icon icon-walkin"></i> </li>
-                              <li class="dropdown-menu__item" data-animation="ripple" data-dropdown-item="customer" data-value="Customer"> Customer <i class="icon icon-next"></i> </li>
-                              <li class="dropdown-menu__item" data-animation="ripple" data-dropdown-item="customer" data-value="Recent Customer"> Recent Customer <i class="icon icon-next"></i> </li>
-                              <li class="dropdown-menu__item" data-animation="ripple" data-dropdown-item="customer" data-value="Another Customer"> Another Customer <i class="icon icon-next"></i> </li>
-                            </ul> <a class="btn btn_block btn_lg btn_primary" data-animation="ripple" href="#"><i class="icon icon-plus"></i>New Customer</a> </div>
+                              <li class="dropdown-menu__item is-active dropdown-menu__item_special" data-animation="ripple" data-dropdown-item="customer" data-value="Walk In"> Walk In <i class="icon icon-walkin"></i> </li>
+                              <li class="dropdown-menu__item" data-animation="ripple" data-dropdown-item="customer" data-value="John Doe"> John Doe <i class="icon icon-next"></i> </li>
+                              <li class="dropdown-menu__item" data-animation="ripple" data-dropdown-item="customer" data-value="Charlie Sheen"> Charlie Sheen <i class="icon icon-next"></i> </li>
+                              <li class="dropdown-menu__item" data-animation="ripple" data-dropdown-item="customer" data-value="Wendy Williams"> Wendy Williams <i class="icon icon-next"></i> </li>
+                            </ul> <button class="btn btn_block btn_md btn_green" data-animation="ripple" id="add-new-customer-btn"><i class="icon icon-plus"></i>New Customer</button> </div>
                           <!-- begin overlay --><button type="button" class="overlay " data-color="dark-gray" data-overlay="overlay" data-dropdown-overlay="customer"></button>
                           <!-- end overlay -->
                         </div>
@@ -80,7 +80,7 @@
                 <!-- begin search -->
                 <div class="search" data-modal="search">
                   <form action="/">
-                    <div class="search__field" data-modal="container"> <input type="text" class="search__input" placeholder="Search for item">
+                    <div class="search__field" data-modal="container"> <input type="text" class="search__input" placeholder="Search for item, upc">
                       <div class="search__controls"> <button class="btn-icon search__button"><i class="icon icon-search"></i></button> </div>
                     </div>
                   </form>
@@ -197,9 +197,9 @@
                     <li class="horizontal-menu__item"> <a class="horizontal-menu__link " data-animation="ripple" href="terminal-cash.html">Terminal</a> </li>
                     <li class="horizontal-menu__item"> <a class="horizontal-menu__link is-disabled" data-animation="ripple" href="#">Drawer</a> </li>
                     <li class="horizontal-menu__item"> <a class="horizontal-menu__link " data-animation="ripple" href="#">Discount</a> </li>
-                    <li class="horizontal-menu__item"> <a class="horizontal-menu__link " data-animation="ripple" href="#" data-dropdown-parent-name="sidebar" data-dropdown-open="more">More <i class="icon icon-more-v"></i></a>
+                    <li class="horizontal-menu__item"> <a class="horizontal-menu__link " data-animation="ripple" href="#" data-dropdown-parent-name="sidebar" id="more-menu-btn" data-dropdown-open="more">More <i class="icon icon-more-v"></i></a>
                       <div class="dropdown-menu dropdown-menu_up dropdown-menu_no-scroll"
-                        data-dropdown-menu="more" id="btn-more-menu">
+                        data-dropdown-menu="more" id="more-menu-dropdown">
                         <ul class="dropdown-menu__list">
                           <li class="dropdown-menu__item" data-animation="ripple"> <a href="#">Tax exempt</a> </li>
                           <li class="dropdown-menu__item" data-animation="ripple"> <a href="#">Revert tax</a> </li>

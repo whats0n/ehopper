@@ -51,7 +51,7 @@
 	}
 ] %}
 <!-- begin keyboard -->
-<div class="keyboard {{props.keyboardClassList}}">
+<div class="keyboard numpad {{props.keyboardClassList}}">
 	{% if props.discount %}
 		<div class="keyboard__discount {{props.size}}">
 			{% for key in props.discount %}
@@ -103,7 +103,7 @@
 	'<i class="icon icon-text icon-backspace"></i>'
 ] %}
 <!-- begin simple-keyboard -->
-<div class="simple-keyboard">
+<div class="simple-keyboard numpad">
 	<div class="simple-keyboard__container">
 		<div class="simple-keyboard__body">
 			{% for key in keyboardMain %}

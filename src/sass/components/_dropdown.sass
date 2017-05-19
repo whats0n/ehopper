@@ -20,6 +20,10 @@
     .dropdown
       &__header
         padding-right: 70px
+  &_fixed
+    .dropdown-menu
+      width: 400px
+      max-width: none
   &__header
     position: relative
     padding: 0 20px
@@ -118,6 +122,8 @@
     +active
       color: $white
       background: $blue
+    &_special
+      border-bottom: 1px solid #e6e6e6
     .icon
       position: absolute
       top: 5px
