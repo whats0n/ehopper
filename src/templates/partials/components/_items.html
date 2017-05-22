@@ -6,7 +6,7 @@
 {% endmacro %}
 
 {% macro item(props) %}
-<div class="item" 
+<div class="item {{props.classList}}" 
 	{% if props.background %}style="background-color: {{props.background}};"{% endif %} 
 	{% if props.noRipple !== true %}data-animation="ripple"{% endif %} 
 	{{props.attrs | safe}} >

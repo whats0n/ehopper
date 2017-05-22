@@ -118,15 +118,14 @@ styles:
 									size: 'keyboard__lg',
 									keyboardSide: [
 										{
+											attrs: 'data-numpad="numpad-backspace"',
 											content: '<i class="icon icon-text icon-backspace"></i>'
 										},
 										{
-											content: '<i class="icon icon-text icon-undo"></i>'
-										},
-										{
+											attrs: 'value="numpad-submit"',
 											content: 'Done',
 											classList: 'keyboard__submit',
-											colspan: '2'
+											colspan: '3'
 										}
 									],
 									keyboardMain: [
@@ -164,6 +163,7 @@ styles:
 											content: '00'
 										},
 										{
+											attrs: 'data-numpad="numpad-clear"',
 											content: '<i class="icon icon-text icon-clear"></i>'
 										}
 									]
@@ -176,7 +176,7 @@ styles:
 					</div>
 					<div class="step-body__footer section">
 						<div class="wrapper-btn-center">
-							<button class="btn btn_primary btn_lg btn_block text-uppercase" data-animation="ripple">Close Register</button>
+							<button class="btn btn_primary btn_lg btn_block text-uppercase" data-animation="ripple" value="Done">Close Register</button>
 						</div>
 					</div>
 				</div>

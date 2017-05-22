@@ -71,7 +71,7 @@
 				{% endif %}
 
 				<div class="keyboard__item">
-					<button type="button" data-animation="ripple" class="keyboard__button{{classList}}">{{key.content | safe}}</button>
+					<button type="button" data-animation="ripple" class="keyboard__button{{classList}}" {{key.attrs | safe}}>{{key.content | safe}}</button>
 				</div>
 			{% endfor %}
 		</div>
@@ -89,31 +89,57 @@
 
 {% macro simple(props) %}
 {% set keyboardMain = [
-	'1',
-	'2',
-	'3',
-	'4',
-	'5',
-	'6',
-	'7',
-	'8',
-	'9',
-	'<i class="icon icon-text icon-clear"></i>',
-	'0',
-	'<i class="icon icon-text icon-backspace"></i>'
+	{ 
+		content: '1'
+	},
+	{ 
+		content: '2'
+	},
+	{ 
+		content: '3'
+	},
+	{ 
+		content: '4'
+	},
+	{ 
+		content: '5'
+	},
+	{ 
+		content: '6'
+	},
+	{ 
+		content: '7'
+	},
+	{ 
+		content: '8'
+	},
+	{ 
+		content: '9'
+	},
+	{ 
+		attrs: 'data-numpad="numpad-clear"',
+		content: '<i class="icon icon-text icon-clear"></i>'
+	},
+	{ 
+		content: '0'
+	},
+	{ 
+		attrs: 'data-numpad="numpad-backspace"',
+		content: '<i class="icon icon-text icon-backspace"></i>'
+	}
 ] %}
 <!-- begin simple-keyboard -->
 <div class="simple-keyboard numpad">
 	<div class="simple-keyboard__container">
 		<div class="simple-keyboard__body">
 			{% for key in keyboardMain %}
-				<div class="simple-keyboard__item"><button type="button" class="simple-keyboard__button" data-animation="ripple">{{key | safe}}</button></div>
+				<div class="simple-keyboard__item"><button type="button" class="simple-keyboard__button" data-animation="ripple" {{key.attrs | safe}}>{{key.content | safe}}</button></div>
 			{% endfor %}
 		</div>
 		<div class="simple-keyboard__actions">
-			<div class="simple-keyboard__item"><button type="button" class="simple-keyboard__button simple-keyboard__action" data-animation="ripple">Clock In</button></div>
-			<div class="simple-keyboard__item"><button type="button" class="simple-keyboard__button simple-keyboard__action" data-animation="ripple">Clock Out</button></div>
-			<div class="simple-keyboard__item"><button type="submit" class="simple-keyboard__button simple-keyboard__submit" data-animation="ripple">Login<i class="icon icon-next"></i></button></div>
+			<div class="simple-keyboard__item"><button type="button" class="simple-keyboard__button simple-keyboard__action" data-animation="ripple" data-numpad="numpad-clockin">Clock In</button></div>
+			<div class="simple-keyboard__item"><button type="button" class="simple-keyboard__button simple-keyboard__action" data-animation="ripple" data-numpad="numpad-clockout">Clock Out</button></div>
+			<div class="simple-keyboard__item"><button type="submit" class="simple-keyboard__button simple-keyboard__submit" data-animation="ripple" value="numpad-submit">Login<i class="icon icon-next"></i></button></div>
 			<!-- Add the class 'simple-keyboard__item_lg' to 'simple-keyboard__item', this will make the width 100% -->
 		</div>
 	</div>

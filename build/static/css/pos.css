@@ -6797,6 +6797,10 @@ textarea.input {
   background: rgba(0, 0, 0, 0.1);
 }
 
+.item_contain .item__img {
+  background-size: initial;
+}
+
 .item__img {
   position: absolute;
   top: 0;
