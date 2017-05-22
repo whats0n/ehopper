@@ -6798,6 +6798,10 @@ textarea.input {
 }
 
 .item_contain .item__img {
+  background-size: 160px;
+}
+
+.item_real .item__img {
   background-size: initial;
 }
 
