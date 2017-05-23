@@ -1,0 +1,62 @@
+---
+title: Signature &bull; eHopper POS'
+styles: 
+	- 'pos'
+---
+{% extends "layouts/_layout.html" %}
+
+{% block content %}
+	<main class="main" data-toggle-class-container="main-container">
+		<div class="inner">
+			{% include 'partials/components/_order-sidebar.html' %}
+			<div class="container container_right container_order">
+				{{header.simple({
+					headerClassList: 'container__header header_order',
+					back: true,
+					title: 'Signature',
+					titleClassList: 'header__title_vertical',
+					help: true
+				})}}
+				<div class="container__body step-body">
+					<div class="step-body__section">
+						<div class="form form_sm">
+							<div class="form__section">
+								{{mixins.infoPrice({
+									label: 'Total Due:',
+									price: '389.40',
+									currency: '$',
+									classList: 'text-center',
+									priceClassList: 'color-green'
+								})}}
+							</div>
+						</div>
+						<div class="signature-box">
+							<button class="btn-icon signature-box__close"><i class="icon icon-close"></i></button>
+						</div>
+						<div class="form form_sm">
+							{{mixins.fieldBox({
+								checkboxes: true,
+								colSize: 'md',
+								list: [
+									{
+										content: 'E-mail Receipt'
+									},
+									{
+										content: 'Print Receipt'
+									}
+								]
+							})}}
+						</div>
+					</div>
+					<div class="step-body__footer section">
+						<div class="wrapper-btn-center">
+							<button class="btn btn_lg btn_block btn_primary" data-animtaion="ripple" value="Done">Done</button>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</main>
+
+	{{modal.help()}}
+{% endblock %}

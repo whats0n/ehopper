@@ -3,7 +3,7 @@
 
   <head>
     <meta charset="utf-8">
-    <title>External Payment &bull; eHopper POS</title>
+    <title>Signature &bull; eHopper POS'</title>
     <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <meta name="theme-color" content="#fff">
@@ -18,7 +18,7 @@
     <!-- begin application -->
     <div class="application" id="application">
       <!-- BEGIN content -->
-      <main class="main">
+      <main class="main" data-toggle-class-container="main-container">
         <div class="inner">
           <aside class="sidebar sidebar_left is-poynt-hidden">
             <!-- begin header -->
@@ -127,13 +127,13 @@
               </div>
             </div>
           </aside>
-          <div class="container container_right container_payments">
+          <div class="container container_right container_order">
             <!-- begin header -->
-            <header class="header container__header header_payments"> <button class="header__back btn-back">
+            <header class="header container__header header_order"> <button class="header__back btn-back">
 			<i class="icon icon-back btn-back__icon"></i>
 			<span class="btn-back__title">Back</span>
 		</button>
-              <h2 class="title-xlg header__title header__title_vertical">External Payment</h2>
+              <h2 class="title-xlg header__title header__title_vertical">Signature</h2>
             </header>
             <!-- end header -->
             <div class="container__body step-body">
@@ -141,57 +141,33 @@
                 <div class="form form_sm">
                   <div class="form__section">
                     <div class="info-price text-center">
-                      <div class="info-price__label">Amount Due:</div>
-                      <div class="info-price__value "> <small>$</small> <span>102.00</span> </div>
+                      <div class="info-price__label">Total Due:</div>
+                      <div class="info-price__value "> <small>$</small> <span class="color-green">389.40</span> </div>
                     </div>
                   </div>
-                  <div class="form__section">
-                    <div class="payment-fieldset">
-                      <div class="fieldset fieldset_lg fieldset_bordered">
-                        <div class="fieldset__container">
-                          <div class="fieldset__row">
-                            <div class="fieldset__col fieldset__col_md is-active"> <input type="text" class="input input_lg fieldset__input" placeholder="Card Number" readonly> </div>
-                            <div class="fieldset__col fieldset__col_md"> <input type="text" class="input input_lg fieldset__input" placeholder="Expiration" readonly> </div>
-                          </div>
-                        </div>
-                        <!-- begin keyboard -->
-                        <div class="keyboard numpad ">
-                          <div class="keyboard__container keyboard__sm">
-                            <div class="keyboard__main">
-                              <div class="keyboard__item"> <button type="button" data-animation="ripple" class="keyboard__button">1</button> </div>
-                              <div class="keyboard__item"> <button type="button" data-animation="ripple" class="keyboard__button">2</button> </div>
-                              <div class="keyboard__item"> <button type="button" data-animation="ripple" class="keyboard__button">3</button> </div>
-                              <div class="keyboard__item"> <button type="button" data-animation="ripple" class="keyboard__button">4</button> </div>
-                              <div class="keyboard__item"> <button type="button" data-animation="ripple" class="keyboard__button">5</button> </div>
-                              <div class="keyboard__item"> <button type="button" data-animation="ripple" class="keyboard__button">6</button> </div>
-                              <div class="keyboard__item"> <button type="button" data-animation="ripple" class="keyboard__button">7</button> </div>
-                              <div class="keyboard__item"> <button type="button" data-animation="ripple" class="keyboard__button">8</button> </div>
-                              <div class="keyboard__item"> <button type="button" data-animation="ripple" class="keyboard__button">9</button> </div>
-                              <div class="keyboard__item"> <button type="button" data-animation="ripple" class="keyboard__button">0</button> </div>
-                              <div class="keyboard__item"> <button type="button" data-animation="ripple" class="keyboard__button">00</button> </div>
-                              <div class="keyboard__item"> <button type="button" data-animation="ripple" class="keyboard__button" value="numpad-submit"><i class="icon icon-text icon-clear"></i></button> </div>
-                            </div>
-                            <div class="keyboard__aside">
-                              <div class="keyboard__col"> <button type="button" data-animation="ripple" class="keyboard__button " data-numpad="numpad-backspace"><i class="icon icon-text icon-backspace"></i></button> </div>
-                              <div class="keyboard__col" data-colspan="3"> <button type="button" data-animation="ripple" class="keyboard__button keyboard__submit" value="numpad-submit">Done</button> </div>
-                            </div>
-                          </div>
-                        </div>
-                        <!-- end keyboard -->
-                      </div>
-                    </div>
-                  </div>
+                </div>
+                <div class="signature-box"> <button class="btn-icon signature-box__close"><i class="icon icon-close"></i></button> </div>
+                <div class="form form_sm">
                   <div class="field-box">
-                    <div class="field-box__label">Tips and Signature</div>
-                    <ul class="field-box__list">
-                      <li class="field-box__col field-box__col_md field-box__radio"> <button class="btn btn_default btn_block btn_lg" data-animation="ripple">On Screen</button> </li>
-                      <li class="field-box__col field-box__col_md field-box__radio"> <button class="btn btn_default btn_block btn_lg" data-animation="ripple">On Receipt</button> </li>
-                    </ul>
+                    <div class="field-box__checkbox">
+                      <ul class="field-box__list">
+                        <li class="field-box__col field-box__col_md field-box__checkbox"> <label class="checkbox ">
+	<input type="checkbox" >
+	<i class="icon icon-check"></i>
+	<span>E-mail Receipt</span>
+</label> </li>
+                        <li class="field-box__col field-box__col_md field-box__checkbox"> <label class="checkbox ">
+	<input type="checkbox" >
+	<i class="icon icon-check"></i>
+	<span>Print Receipt</span>
+</label> </li>
+                      </ul>
+                    </div>
                   </div>
                 </div>
               </div>
               <div class="step-body__footer section">
-                <div class="form form_sm"> <button class="btn btn_primary btn_lg btn_block" data-animation="ripple" data-modal-open="payment-terminal" value="Done">Continue</button> </div>
+                <div class="wrapper-btn-center"> <button class="btn btn_lg btn_block btn_primary" data-animtaion="ripple" value="Done">Done</button> </div>
               </div>
             </div>
           </div>
@@ -211,20 +187,6 @@
         </div>
       </div>
       <!-- end help -->
-      <!-- begin payment-terminal -->
-      <div class="modal payment-terminal" data-modal="payment-terminal">
-        <div class="modal__container payment-terminal__container" data-modal-container="payment-terminal">
-          <div class="payment-terminal__body">
-            <div class="payment-terminal__vertical">
-              <div class="payment-terminal__center">
-                <div class="loading payment-terminal__icon"></div>
-                <p>Please process Payment on your Terminal</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <!-- end payment-terminal -->
       <!-- END content -->
       <!-- begin snackbar -->
       <div class="snackbar " data-snackbar-container="snackbar" data-state="default">

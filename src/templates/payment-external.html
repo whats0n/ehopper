@@ -45,10 +45,12 @@ styles:
 											size: 'keyboard__sm',
 											keyboardSide: [
 												{
+													attrs: 'data-numpad="numpad-backspace"',
 													content: '<i class="icon icon-text icon-backspace"></i>'
 												},
 												{
 													content: 'Done',
+													attrs: 'value="numpad-submit"',
 													classList: 'keyboard__submit',
 													colspan: '3'
 												}
@@ -88,6 +90,7 @@ styles:
 													content: '00'
 												},
 												{
+													attrs: 'value="numpad-submit"',
 													content: '<i class="icon icon-text icon-clear"></i>'
 												}
 											]
@@ -115,7 +118,7 @@ styles:
 					</div>
 					<div class="step-body__footer section">
 						<div class="form form_sm">
-							<button class="btn btn_primary btn_lg btn_block" data-animation="ripple" data-modal-open="payment-terminal">Continue</button>
+							<button class="btn btn_primary btn_lg btn_block" data-animation="ripple" data-modal-open="payment-terminal" value="Done">Continue</button>
 						</div>
 					</div>
 				</div>

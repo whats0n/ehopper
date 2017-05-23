@@ -76,13 +76,14 @@ styles:
 							size: 'keyboard__lg',
 							keyboardSide: [
 								{
+									attrs: 'data-numpad="numpad-backspace"',
 									content: '<i class="icon icon-text icon-backspace"></i>'
 								},
 								{
 									content: 'Pay',
 									classList: 'keyboard__submit',
 									colspan: '3',
-									attrs: 'data-modal-open="payment-terminal"'
+									attrs: 'data-modal-open="payment-terminal" value="numpad-submit"'
 								}
 							],
 							keyboardMain: [
@@ -120,6 +121,7 @@ styles:
 									content: '00'
 								},
 								{
+									attrs: 'data-numpad="numpad-clear"',
 									content: '<i class="icon icon-text icon-clear"></i>'
 								}
 							]

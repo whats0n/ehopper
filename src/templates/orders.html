@@ -22,6 +22,7 @@ styles:
 					{% set ordersToolbar = [
 						{
 							dropdownSimple: {
+								dropdownClassList: 'dropdown_xl',
 								multiple: true,
 								placeholder: 'Show all',
 								label: 'Stores:',
@@ -33,6 +34,7 @@ styles:
 						},
 						{
 							dropdownSimple: {
+								dropdownClassList: 'dropdown_xl',
 								label: 'Register:',
 								value: 'All',
 								list: [ { text: 'All', value: 'All' }, { text: 'Register 1', value: 'Register 1' }, { text: 'Register 2', value: 'Register 2' }, { text: 'Register 3', value: 'Register 3' }, { text: 'Register 4', value: 'Register 4' }, { text: 'Register 5', value: 'Register 5' } ],
@@ -43,6 +45,7 @@ styles:
 						},
 						{
 							dropdownSimple: {
+								dropdownClassList: 'dropdown_xl',
 								label: 'Order Type:',
 								value: 'All',
 								list: [ { text: 'All', value: 'All' }, { text: 'Quick Sale', value: 'Quick Sale' }, { text: 'Dine In', value: 'Dine In' }, { text: 'Take out', value: 'Take out' }, { text: 'Drive thru', value: 'Drive thru' }, { text: 'Delivery', value: 'Delivery' }, { text: 'Manual Sale', value: 'Manual Sale' } ],
@@ -53,6 +56,7 @@ styles:
 						},
 						{
 							dropdownSimple: {
+								dropdownClassList: 'dropdown_xl',
 								label: 'Status:',
 								value: 'All',
 								list: [ { text: 'All', value: 'All' }, { text: 'Not Paid', value: 'Not Paid' }, { text: 'Pending Payment', value: 'Pending Payment' }, { text: 'Partially Paid', value: 'Partially Paid' }, { text: 'Paid', value: 'Paid' }, { text: 'Partially Refunded', value: 'Partially Refunded' }, { text: 'Refunded', value: 'Refunded' }, { text: 'Voided', value: 'Voided' } ],
@@ -63,6 +67,7 @@ styles:
 						},
 						{
 							dropdownSimple: {
+								dropdownClassList: 'dropdown_xl',
 								label: 'Fulfillment:',
 								value: 'All',
 								list: [ { text: 'All', value: 'All' }, { text: 'New', value: 'New' }, { text: 'In Preparation', value: 'In Preparation' }, { text: 'Prepared', value: 'Prepared' }, { text: 'In Fulfillment', value: 'In Fulfillment' }, { text: 'Fulfilled', value: 'Fulfilled' } ],
@@ -83,7 +88,7 @@ styles:
 									</div>
 								{% endfor %}
 								<div class="toolbar__col toolbar__col_refresh">
-									<button class="btn btn_lg btn_white btn_block" data-animation="ripple">
+									<button class="btn btn_lg btn_white btn_block toolbar__refresh" data-animation="ripple">
 										<i class="icon icon-undo"></i>
 										Refresh
 									</button>
@@ -193,7 +198,7 @@ styles:
 																{% if td.action === 'cart' %}
 																	<button class="btn btn_icon"><i class="icon icon-pos"></i></button>
 																{% endif %}
-																<button class="btn btn_icon"><i class="icon icon-next"></i></button>
+																<button class="btn btn_icon"><i class="icon icon-nav-next"></i></button>
 															</div>
 														{% else %}
 															{{td.content | safe}}

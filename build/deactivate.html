@@ -1,0 +1,60 @@
+<!doctype html>
+<html>
+
+  <head>
+    <meta charset="utf-8">
+    <title>Deactivation &bull; eHopper POS</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="theme-color" content="#fff">
+    <meta name="format-detection" content="telephone=no">
+    <link rel="stylesheet" media="all" href="static/css/pos.css">
+    <link rel="icon" href="https://ehopper.com/wp-content/uploads/2016/03/favicon-01.png" type="image/png">
+    <!-- BEGIN scripts -->
+    <!-- END scripts -->
+  </head>
+
+  <body class="">
+    <!-- begin application -->
+    <div class="application" id="application">
+      <!-- BEGIN content -->
+      <main class="container">
+        <!-- begin header -->
+        <header class="header "> <button class="header__back btn-back">
+			<i class="icon icon-back btn-back__icon"></i>
+			<span class="btn-back__title">Back</span>
+		</button>
+          <h2 class="title-xlg header__title header__title_vertical text-center">Device deactivation</h2>
+          <div class="header__sync">
+            <div class="header__indicator" data-state="active"></div>
+          </div>
+        </header>
+        <!-- end header -->
+        <div class="section section_form">
+          <div class="form form_sm">
+            <div class="form__section simple-field">
+              <div class="title-xlg simple-field__title">While deactivation all local data will be removed from device.</div>
+            </div>
+            <div class="form__section">
+              <div class="input-box "> <input type="text" class="simple-input input-box__input " placeholder="License Key"> <button class="input-box__clear">
+		<i class="icon icon-close"></i>
+	</button> </div>
+            </div>
+            <div class="form__section"> <button class="btn btn_primary btn_lg btn_block text-uppercase" data-animation="ripple" value="Done">Done</button> </div>
+          </div>
+        </div>
+      </main>
+      <!-- END content -->
+      <!-- begin snackbar -->
+      <div class="snackbar " data-snackbar-container="snackbar" data-state="default">
+        <div class="snackbar__message" data-snackbar-content="snackbar"></div>
+      </div>
+      <!-- end snackbar -->
+    </div>
+    <!-- end application -->
+    <!-- BEGIN scripts -->
+    <script type="text/javascript" src="static/js/app.js"></script>
+    <!-- END scripts -->
+  </body>
+
+</html>

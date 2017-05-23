@@ -1,0 +1,36 @@
+---
+title: 'Deactivation &bull; eHopper POS'
+styles: 
+	- 'pos'
+---
+{% extends "layouts/_layout.html" %}
+
+{% block content %}
+	
+	<main class="container">
+		{{header.simple({
+			back: true,
+			title: 'Device deactivation',
+			titleClassList: 'header__title_vertical text-center',
+			sync: true,
+			syncIndicatorOnly: true
+		})}}
+		<div class="section section_form">
+			<div class="form form_sm">
+				<div class="form__section simple-field">
+					<div class="title-xlg simple-field__title">While deactivation all local data will be removed from device.</div>
+				</div>
+				<div class="form__section">
+					{{form.inputBox.call({
+						placeholder: 'License Key',
+						attrs: 'required'
+					})}}
+				</div>
+				<div class="form__section">
+					<button class="btn btn_primary btn_lg btn_block text-uppercase" data-animation="ripple" value="Done">Done</button>
+				</div>
+			</div>
+		</div>
+	</main>
+
+{% endblock %}

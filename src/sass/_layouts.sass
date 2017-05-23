@@ -333,8 +333,21 @@
   &[data-table="orders"]
     [data-table-fake],
     [data-table-scrollable] > div
-      min-width: 1400px
-
+      // min-width: 1400px
+      // min-width: 980px
+      +poynt
+        min-width: 1200px
+    .table-header,
+    .table-body
+      +lg
+        font-size: 12px
+      // +poynt
+      //   font-size: 14px
+    .table-header
+      &__th
+        +lg
+          padding-top: 11px
+          padding-bottom: 11px
 .table-header,
 .table-body
   display: table
@@ -348,6 +361,8 @@
     display: table-cell
     vertical-align: middle
     padding: 10px
+    +lg
+      padding: 10px 4px
     &:first-child
       padding-left: 20px
     &[data-column="icon"]
@@ -359,6 +374,8 @@
       width: 70px
     &[data-column="orders-action"]
       width: 110px
+      +lg
+        width: 90px
     &[data-column="orders-action"],
     &[data-column="orders-tips-price"]
       text-align: right
