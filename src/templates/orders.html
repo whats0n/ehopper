@@ -185,7 +185,7 @@ styles:
 								<div class="table-body table-body_orders table-wrapper__table" data-table-main="orders">
 									{% for item in range(0,5) %}
 										{% for tr in table.body %}
-											<div class="table-body__tr">
+											<div class="table-body__tr {% if loop.first %}is-disabled{% endif %}">
 												{% for td in tr %}
 													<div class="table-body__td" data-column="{{td.column}}">
 														{% if td.date %}

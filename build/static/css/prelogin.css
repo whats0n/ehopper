@@ -846,6 +846,10 @@ hr {
   margin: 0;
 }
 
+.explanation__error {
+  clear: both;
+}
+
 .signature-box {
   position: relative;
   margin-bottom: 20px;
@@ -2323,7 +2327,32 @@ textarea.input {
 }
 
 .add-terminal__field {
+  position: relative;
   padding: 10px 0;
+}
+
+.add-terminal__field.is-error:before {
+  opacity: 1;
+}
+
+.add-terminal__field:before {
+  content: '';
+  position: absolute;
+  left: 20px;
+  right: 20px;
+  bottom: 20px;
+  border-bottom: 1px solid #ec4a41;
+  opacity: 0;
+  transition: opacity 0.17s ease-in-out;
+}
+
+.add-terminal__field .error-message {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -10px;
+  padding-left: 20px;
+  padding-right: 20px;
 }
 
 .add-terminal__input {

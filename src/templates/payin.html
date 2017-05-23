@@ -14,8 +14,8 @@ styles:
 			title: 'Payins — Register #4',
 			titleClassList: 'header__title_vertical text-center'
 		})}}
-		<div class="container__body">
-			<div class="section section_inner">
+		<div class="container__body step-body">
+			<div class="section section_inner step-body__section">
 				<div class="form form_sm">
 
 					<div class="form__section">
@@ -46,75 +46,82 @@ styles:
 							</ul>
 						</div>
 					</div>
+					
+					<div class="form__section">
+						{{keyboard.display({
+							field: {
+								label: 'Amount Tendered:',
+								id: 'amount-tendered',
+								placeholder: '0.00',
+								attrs: 'required readonly',
+								inputClassList: 'text-right input_lg'
+							},
+							keyboard: {
+								keyboardSide: [
+									{
+										attrs: 'data-numpad="numpad-backspace"',
+										content: '<i class="icon icon-text icon-backspace"></i>'
+									},
+									{
+										attrs: 'value="Done"',
+										content: 'Enter',
+										classList: 'keyboard__submit',
+										colspan: '3'
+									}
+								],
+								keyboardMain: [
+									{
+										content: '1'
+									},
+									{
+										content: '2'
+									},
+									{
+										content: '3'
+									},
+									{
+										content: '4'
+									},
+									{
+										content: '5'
+									},
+									{
+										content: '6'
+									},
+									{
+										content: '7'
+									},
+									{
+										content: '8'
+									},
+									{
+										content: '9'
+									},
+									{
+										content: '0'
+									},
+									{
+										content: '00'
+									},
+									{
+										attrs: 'data-numpad="numpad-clear"',
+										content: '<i class="icon icon-text icon-clear"></i>'
+									}
+								]
+							}
+						})}}
+					</div>
 
 					<div class="form__section">
 						<div class="form-box">
 							<textarea class="textarea textarea_block textarea_little" placeholder="Add Notes here"></textarea>
 						</div>
 					</div>
-					
-					{{keyboard.display({
-						field: {
-							label: 'Amount Tendered:',
-							id: 'amount-tendered',
-							placeholder: '0.00',
-							attrs: 'required readonly',
-							inputClassList: 'text-right input_lg'
-						},
-						keyboard: {
-							keyboardSide: [
-								{
-									attrs: 'data-numpad="numpad-backspace"',
-									content: '<i class="icon icon-text icon-backspace"></i>'
-								},
-								{
-									attrs: 'value="Done"',
-									content: 'Enter',
-									classList: 'keyboard__submit',
-									colspan: '3'
-								}
-							],
-							keyboardMain: [
-								{
-									content: '1'
-								},
-								{
-									content: '2'
-								},
-								{
-									content: '3'
-								},
-								{
-									content: '4'
-								},
-								{
-									content: '5'
-								},
-								{
-									content: '6'
-								},
-								{
-									content: '7'
-								},
-								{
-									content: '8'
-								},
-								{
-									content: '9'
-								},
-								{
-									content: '0'
-								},
-								{
-									content: '00'
-								},
-								{
-									attrs: 'data-numpad="numpad-clear"',
-									content: '<i class="icon icon-text icon-clear"></i>'
-								}
-							]
-						}
-					})}}
+				</div>
+			</div>
+			<div class="step-body__footer section">
+				<div class="form form_sm">
+					<button class="btn btn_lg btn_block btn_primary text-uppercase" data-animation="ripple" value="Done">Done</button>
 				</div>
 			</div>
 		</div>

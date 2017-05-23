@@ -263,9 +263,11 @@
   &__explanation,
   &__footer
     padding: 20px
+  &__explanation
+    height: 117px
   &__content
     position: relative
-    height: calc(100% - 200px)
+    height: calc(100% - 217px)
 
 .table-wrapper
   position: relative
@@ -356,6 +358,9 @@
   font-size: 14px
   &__tr
     display: table-row
+    &.is-disabled
+      opacity: 0.3
+      pointer-events: none
   &__th,
   &__td
     display: table-cell

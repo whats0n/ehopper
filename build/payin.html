@@ -27,8 +27,8 @@
           <h2 class="title-xlg header__title header__title_vertical text-center">Payins — Register #4</h2>
         </header>
         <!-- end header -->
-        <div class="container__body">
-          <div class="section section_inner">
+        <div class="container__body step-body">
+          <div class="section section_inner step-body__section">
             <div class="form form_sm">
               <div class="form__section">
                 <div class="info-price text-right">
@@ -53,41 +53,46 @@
                 </div>
               </div>
               <div class="form__section">
+                <div class="fieldset fieldset_lg fieldset_bordered fieldset_keyboard">
+                  <div class="field ">
+                    <div class="field__inner"> <label class="field__label" for="amount-tendered">Amount Tendered:</label>
+                      <div class="field__box"> <input class="input field__input text-right input_lg" id="amount-tendered" type="text" placeholder="0.00" required readonly> </div>
+                    </div>
+                  </div>
+                  <div class="fieldset__divider"></div>
+                  <!-- begin keyboard -->
+                  <div class="keyboard numpad ">
+                    <div class="keyboard__container ">
+                      <div class="keyboard__main">
+                        <div class="keyboard__item"> <button type="button" data-animation="ripple" class="keyboard__button">1</button> </div>
+                        <div class="keyboard__item"> <button type="button" data-animation="ripple" class="keyboard__button">2</button> </div>
+                        <div class="keyboard__item"> <button type="button" data-animation="ripple" class="keyboard__button">3</button> </div>
+                        <div class="keyboard__item"> <button type="button" data-animation="ripple" class="keyboard__button">4</button> </div>
+                        <div class="keyboard__item"> <button type="button" data-animation="ripple" class="keyboard__button">5</button> </div>
+                        <div class="keyboard__item"> <button type="button" data-animation="ripple" class="keyboard__button">6</button> </div>
+                        <div class="keyboard__item"> <button type="button" data-animation="ripple" class="keyboard__button">7</button> </div>
+                        <div class="keyboard__item"> <button type="button" data-animation="ripple" class="keyboard__button">8</button> </div>
+                        <div class="keyboard__item"> <button type="button" data-animation="ripple" class="keyboard__button">9</button> </div>
+                        <div class="keyboard__item"> <button type="button" data-animation="ripple" class="keyboard__button">0</button> </div>
+                        <div class="keyboard__item"> <button type="button" data-animation="ripple" class="keyboard__button">00</button> </div>
+                        <div class="keyboard__item"> <button type="button" data-animation="ripple" class="keyboard__button" data-numpad="numpad-clear"><i class="icon icon-text icon-clear"></i></button> </div>
+                      </div>
+                      <div class="keyboard__aside">
+                        <div class="keyboard__col"> <button type="button" data-animation="ripple" class="keyboard__button " data-numpad="numpad-backspace"><i class="icon icon-text icon-backspace"></i></button> </div>
+                        <div class="keyboard__col" data-colspan="3"> <button type="button" data-animation="ripple" class="keyboard__button keyboard__submit" value="Done">Enter</button> </div>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- end keyboard -->
+                </div>
+              </div>
+              <div class="form__section">
                 <div class="form-box"> <textarea class="textarea textarea_block textarea_little" placeholder="Add Notes here"></textarea> </div>
               </div>
-              <div class="fieldset fieldset_lg fieldset_bordered fieldset_keyboard">
-                <div class="field ">
-                  <div class="field__inner"> <label class="field__label" for="amount-tendered">Amount Tendered:</label>
-                    <div class="field__box"> <input class="input field__input text-right input_lg" id="amount-tendered" type="text" placeholder="0.00" required readonly> </div>
-                  </div>
-                </div>
-                <div class="fieldset__divider"></div>
-                <!-- begin keyboard -->
-                <div class="keyboard numpad ">
-                  <div class="keyboard__container ">
-                    <div class="keyboard__main">
-                      <div class="keyboard__item"> <button type="button" data-animation="ripple" class="keyboard__button">1</button> </div>
-                      <div class="keyboard__item"> <button type="button" data-animation="ripple" class="keyboard__button">2</button> </div>
-                      <div class="keyboard__item"> <button type="button" data-animation="ripple" class="keyboard__button">3</button> </div>
-                      <div class="keyboard__item"> <button type="button" data-animation="ripple" class="keyboard__button">4</button> </div>
-                      <div class="keyboard__item"> <button type="button" data-animation="ripple" class="keyboard__button">5</button> </div>
-                      <div class="keyboard__item"> <button type="button" data-animation="ripple" class="keyboard__button">6</button> </div>
-                      <div class="keyboard__item"> <button type="button" data-animation="ripple" class="keyboard__button">7</button> </div>
-                      <div class="keyboard__item"> <button type="button" data-animation="ripple" class="keyboard__button">8</button> </div>
-                      <div class="keyboard__item"> <button type="button" data-animation="ripple" class="keyboard__button">9</button> </div>
-                      <div class="keyboard__item"> <button type="button" data-animation="ripple" class="keyboard__button">0</button> </div>
-                      <div class="keyboard__item"> <button type="button" data-animation="ripple" class="keyboard__button">00</button> </div>
-                      <div class="keyboard__item"> <button type="button" data-animation="ripple" class="keyboard__button" data-numpad="numpad-clear"><i class="icon icon-text icon-clear"></i></button> </div>
-                    </div>
-                    <div class="keyboard__aside">
-                      <div class="keyboard__col"> <button type="button" data-animation="ripple" class="keyboard__button " data-numpad="numpad-backspace"><i class="icon icon-text icon-backspace"></i></button> </div>
-                      <div class="keyboard__col" data-colspan="3"> <button type="button" data-animation="ripple" class="keyboard__button keyboard__submit" value="Done">Enter</button> </div>
-                    </div>
-                  </div>
-                </div>
-                <!-- end keyboard -->
-              </div>
             </div>
+          </div>
+          <div class="step-body__footer section">
+            <div class="form form_sm"> <button class="btn btn_lg btn_block btn_primary text-uppercase" data-animation="ripple" value="Done">Done</button> </div>
           </div>
         </div>
       </main>

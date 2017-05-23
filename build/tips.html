@@ -98,7 +98,7 @@
                       <div class="toolbar__row">
                         <div class="toolbar__col">
                           <!-- begin dropdown -->
-                          <div class="dropdown " data-dropdown="orders-stores">
+                          <div class="dropdown dropdown_xl" data-dropdown="orders-stores">
                             <div class="dropdown__header" data-dropdown-open="orders-stores" data-animation="ripple"> <i class="dropdown__arrow icon icon-expand"></i>
                               <div class="dropdown__label">Stores:</div>
                               <div class="dropdown__value" data-dropdown-value="orders-stores">Show all</div>
@@ -119,14 +119,14 @@
                         </div>
                         <div class="toolbar__col">
                           <!-- begin dropdown -->
-                          <div class="dropdown " data-dropdown="orders-register">
+                          <div class="dropdown dropdown_xl" data-dropdown="orders-register">
                             <div class="dropdown__header" data-dropdown-open="orders-register" data-animation="ripple"> <i class="dropdown__arrow icon icon-expand"></i>
                               <div class="dropdown__label">Employee:</div>
                               <div class="dropdown__value" data-dropdown-value="orders-register">All</div>
                             </div>
                             <div class="dropdown-menu " data-dropdown-menu="orders-register">
                               <ul class="dropdown-menu__list">
-                                <li class="dropdown-menu__item is-active" data-animation="ripple" data-dropdown-item="orders-register" data-value="Shaow All"> Shaow All </li>
+                                <li class="dropdown-menu__item is-active" data-animation="ripple" data-dropdown-item="orders-register" data-value="Show All"> Show All </li>
                                 <li class="dropdown-menu__item" data-animation="ripple" data-dropdown-item="orders-register" data-value="Mr. John Smith"> Mr. John Smith </li>
                                 <li class="dropdown-menu__item" data-animation="ripple" data-dropdown-item="orders-register" data-value="Mrs. Smith"> Mrs. Smith </li>
                                 <li class="dropdown-menu__item" data-animation="ripple" data-dropdown-item="orders-register" data-value="Dr. House MD"> Dr. House MD </li>
@@ -137,9 +137,9 @@
                           </div>
                           <!-- end dropdown -->
                         </div>
-                        <div class="toolbar__col toolbar__col_refresh"> <button class="btn btn_lg btn_white btn_block" data-animation="ripple">
+                        <div class="toolbar__col toolbar__col_refresh"> <button class="btn btn_lg btn_white btn_block toolbar__refresh" data-animation="ripple">
 												<i class="icon icon-undo"></i>
-												Apply
+												Refresh
 											</button> </div>
                       </div>
                     </div>
@@ -163,11 +163,11 @@
 	<i class="icon icon-check"></i>
 	
 </label> </li>
+                        <li class="table-header__th" data-column="orders-tips-status"> Status </li>
                         <li class="table-header__th" data-column="orders-tips-order"> Order ID </li>
                         <li class="table-header__th" data-column="orders-tips-store"> Store </li>
                         <li class="table-header__th" data-column="orders-tips-register"> Register </li>
                         <li class="table-header__th" data-column="orders-tips-refnum"> Ref Num </li>
-                        <li class="table-header__th" data-column="orders-tips-status"> Status </li>
                         <li class="table-header__th" data-column="orders-tips-type"> Type </li>
                         <li class="table-header__th" data-column="orders-tips-price"> Price </li>
                         <li class="table-header__th" data-column="orders-tips-date"> Date </li>
@@ -185,13 +185,13 @@
 	<i class="icon icon-check"></i>
 	
 </label> </div>
+                        <div class="table-body__td" data-column="orders-tips-status"> <i class="icon icon-check"></i> </div>
                         <div class="table-body__td" data-column="orders-tips-order">
                           <div class="table-wrapper__value">040660174749</div>
                         </div>
                         <div class="table-body__td" data-column="orders-tips-store"> Main Store </div>
                         <div class="table-body__td" data-column="orders-tips-register"> 1 </div>
                         <div class="table-body__td" data-column="orders-tips-refnum"> &nbsp; </div>
-                        <div class="table-body__td" data-column="orders-tips-status"> <i class="icon icon-check"></i> </div>
                         <div class="table-body__td" data-column="orders-tips-type"> Quick Sale </div>
                         <div class="table-body__td" data-column="orders-tips-price"> $200.00 </div>
                         <div class="table-body__td" data-column="orders-tips-date">
@@ -200,7 +200,7 @@
                         <div class="table-body__td" data-column="orders-tips-employee"> Mr. John Snow </div>
                         <div class="table-body__td" data-column="orders-tips-tips"> <input type="text" class="input input_xs input_silver text-right" placeholder="$" value="5.00"> </div>
                         <div class="table-body__td" data-column="icon">
-                          <div class="orders__action"> <button class="btn btn_icon"><i class="icon icon-next"></i></button> </div>
+                          <div class="orders__action"> <button class="btn btn_icon"><i class="icon icon-nav-next"></i></button> </div>
                         </div>
                       </div>
                       <div class="table-body__tr">
@@ -209,6 +209,7 @@
 	<i class="icon icon-check"></i>
 	
 </label> </div>
+                        <div class="table-body__td" data-column="orders-tips-status"> <i class="icon icon-checked color-green"></i> </div>
                         <div class="table-body__td" data-column="orders-tips-order">
                           <div class="table-wrapper__value">040660174749</div>
                           <div class="table-wrapper__meta">Saved order name</div>
@@ -216,7 +217,6 @@
                         <div class="table-body__td" data-column="orders-tips-store"> Main Store </div>
                         <div class="table-body__td" data-column="orders-tips-register"> 1 </div>
                         <div class="table-body__td" data-column="orders-tips-refnum"> &nbsp; </div>
-                        <div class="table-body__td" data-column="orders-tips-status"> <i class="icon icon-checked color-green"></i> </div>
                         <div class="table-body__td" data-column="orders-tips-type"> Quick Sale </div>
                         <div class="table-body__td" data-column="orders-tips-price"> $100.00 </div>
                         <div class="table-body__td" data-column="orders-tips-date">
@@ -225,7 +225,7 @@
                         <div class="table-body__td" data-column="orders-tips-employee"> Mr. John Snow </div>
                         <div class="table-body__td" data-column="orders-tips-tips"> <input type="text" class="input input_xs input_silver text-right" placeholder="$"> </div>
                         <div class="table-body__td" data-column="icon">
-                          <div class="orders__action"> <button class="btn btn_icon"><i class="icon icon-next"></i></button> </div>
+                          <div class="orders__action"> <button class="btn btn_icon"><i class="icon icon-nav-next"></i></button> </div>
                         </div>
                       </div>
                       <div class="table-body__tr">
@@ -234,13 +234,13 @@
 	<i class="icon icon-check"></i>
 	
 </label> </div>
+                        <div class="table-body__td" data-column="orders-tips-status"> <i class="icon icon-close"></i> </div>
                         <div class="table-body__td" data-column="orders-tips-order">
                           <div class="table-wrapper__value">040660174749</div>
                         </div>
                         <div class="table-body__td" data-column="orders-tips-store"> Main Store </div>
                         <div class="table-body__td" data-column="orders-tips-register"> 2 </div>
                         <div class="table-body__td" data-column="orders-tips-refnum"> &nbsp; </div>
-                        <div class="table-body__td" data-column="orders-tips-status"> <i class="icon icon-close"></i> </div>
                         <div class="table-body__td" data-column="orders-tips-type"> Quick Sale </div>
                         <div class="table-body__td" data-column="orders-tips-price"> $4100.00 </div>
                         <div class="table-body__td" data-column="orders-tips-date">
@@ -249,7 +249,7 @@
                         <div class="table-body__td" data-column="orders-tips-employee"> Mr. John Snow </div>
                         <div class="table-body__td" data-column="orders-tips-tips"> <input type="text" class="input input_xs input_silver text-right" placeholder="$"> </div>
                         <div class="table-body__td" data-column="icon">
-                          <div class="orders__action"> <button class="btn btn_icon"><i class="icon icon-next"></i></button> </div>
+                          <div class="orders__action"> <button class="btn btn_icon"><i class="icon icon-nav-next"></i></button> </div>
                         </div>
                       </div>
                       <div class="table-body__tr">
@@ -258,13 +258,13 @@
 	<i class="icon icon-check"></i>
 	
 </label> </div>
+                        <div class="table-body__td" data-column="orders-tips-status"> <i class="icon icon-clear color-red"></i> </div>
                         <div class="table-body__td" data-column="orders-tips-order">
                           <div class="table-wrapper__value">040660174749</div>
                         </div>
                         <div class="table-body__td" data-column="orders-tips-store"> Main Store </div>
                         <div class="table-body__td" data-column="orders-tips-register"> 1 </div>
                         <div class="table-body__td" data-column="orders-tips-refnum"> &nbsp; </div>
-                        <div class="table-body__td" data-column="orders-tips-status"> <i class="icon icon-clear color-red"></i> </div>
                         <div class="table-body__td" data-column="orders-tips-type"> Quick Sale </div>
                         <div class="table-body__td" data-column="orders-tips-price"> $200.00 </div>
                         <div class="table-body__td" data-column="orders-tips-date">
@@ -273,7 +273,7 @@
                         <div class="table-body__td" data-column="orders-tips-employee"> Mr. John Snow </div>
                         <div class="table-body__td" data-column="orders-tips-tips"> <input type="text" class="input input_xs input_silver text-right" placeholder="$"> </div>
                         <div class="table-body__td" data-column="icon">
-                          <div class="orders__action"> <button class="btn btn_icon"><i class="icon icon-next"></i></button> </div>
+                          <div class="orders__action"> <button class="btn btn_icon"><i class="icon icon-nav-next"></i></button> </div>
                         </div>
                       </div>
                     </div>

@@ -464,6 +464,10 @@ hr {
   margin: 0;
 }
 
+.explanation__error {
+  clear: both;
+}
+
 .signature-box {
   position: relative;
   margin-bottom: 20px;
@@ -1392,9 +1396,13 @@ a.shy {
   padding: 20px;
 }
 
+.settings__explanation {
+  height: 117px;
+}
+
 .settings__content {
   position: relative;
-  height: calc(100% - 200px);
+  height: calc(100% - 217px);
 }
 
 .table-wrapper {
@@ -1484,6 +1492,12 @@ a.shy {
 .table-header__tr,
 .table-body__tr {
   display: table-row;
+}
+
+.table-header__tr.is-disabled,
+.table-body__tr.is-disabled {
+  opacity: 0.3;
+  pointer-events: none;
 }
 
 .table-header__th, .table-header__td,
@@ -3412,7 +3426,32 @@ textarea.input {
 }
 
 .add-terminal__field {
+  position: relative;
   padding: 10px 0;
+}
+
+.add-terminal__field.is-error:before {
+  opacity: 1;
+}
+
+.add-terminal__field:before {
+  content: '';
+  position: absolute;
+  left: 20px;
+  right: 20px;
+  bottom: 20px;
+  border-bottom: 1px solid #ec4a41;
+  opacity: 0;
+  transition: opacity 0.17s ease-in-out;
+}
+
+.add-terminal__field .error-message {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -10px;
+  padding-left: 20px;
+  padding-right: 20px;
 }
 
 .add-terminal__input {
@@ -7358,6 +7397,7 @@ textarea.input {
 
 .orders-buttons .btn {
   width: 100%;
+  height: 80px;
 }
 
 .order .order-header {

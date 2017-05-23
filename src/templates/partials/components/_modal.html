@@ -27,7 +27,7 @@
 			<div class="add-terminal__title">Add New Terminal</div>
 		</div>
 		<div class="add-terminal__body">
-			<div class="add-terminal__field">
+			<div class="add-terminal__field is-error">
 				{{mixins.field({
 					label: 'Serial Number:',
 					value: '0000123',
@@ -36,6 +36,7 @@
 					attrs: 'required',
 					inputClassList: 'input_lg add-terminal__input'
 				})}}
+				<div class="error-message">Lorem ipsum dolor sit amet, consectetur adipisicing.</div>
 			</div>
 			<div class="add-terminal__field">
 				{{mixins.field({

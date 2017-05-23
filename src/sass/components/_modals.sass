@@ -126,7 +126,27 @@
 		padding: 20px 
 		text-align: left
 	&__field
+		position: relative
 		padding: 10px 0
+		&.is-error
+			&:before
+				opacity: 1
+		&:before 
+			content: ''
+			position: absolute
+			left: 20px
+			right: 20px
+			bottom: 20px
+			border-bottom: 1px solid $red
+			opacity: 0
+			transition: opacity 0.17s ease-in-out
+		.error-message
+			position: absolute
+			left: 0
+			right: 0
+			bottom: -10px
+			padding-left: 20px
+			padding-right: 20px
 	&__input
 		text-align: right
 
