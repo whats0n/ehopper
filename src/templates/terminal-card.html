@@ -39,6 +39,29 @@ styles:
 							id: 'terminal-card-enter-card-manually'
 						})}}
 					</div>
+
+					<div class="form__section">
+						<div class="card-field">
+							<div class="card-field__lg">
+								<div class="form-box is-focus">
+									{{mixins.field({
+										placeholder: '# Card Credit',
+										inputClassList: 'input_lg',
+										attrs: 'readonly'
+									})}}
+								</div>
+							</div>
+							<div class="card-field__sm">
+								<div class="form-box">
+									{{mixins.field({
+										placeholder: 'Exp',
+										inputClassList: 'input_lg',
+										attrs: 'readonly'
+									})}}
+								</div>
+							</div>
+						</div>
+					</div>
 					
 					<div class="form__section">
 						{{mixins.fieldBox({

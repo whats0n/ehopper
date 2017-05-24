@@ -6951,6 +6951,34 @@ textarea.input {
   text-align: right;
 }
 
+.card-field {
+  margin: 0 -10px;
+  *zoom: 1;
+}
+
+.card-field:after {
+  content: " ";
+  display: table;
+  clear: both;
+}
+
+.card-field__lg, .card-field__sm {
+  float: left;
+  padding: 0 10px;
+}
+
+.card-field__lg {
+  width: 60%;
+}
+
+.card-field__sm {
+  width: 40%;
+}
+
+.card-field .simple-input {
+  border-width: 2px;
+}
+
 .sm-box {
   position: relative;
   padding: 10px;
