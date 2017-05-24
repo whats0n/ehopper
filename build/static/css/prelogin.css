@@ -4586,11 +4586,13 @@ textarea.input {
   transform: translate3d(-60px, 0, 0);
 }
 
-.order-item.is-active {
+.order-item.is-active, .order-item[data-state="active"],
+.order-item [data-state="active"] {
   background: #ecf7fd;
 }
 
-.refund-mode .order-item.is-active {
+.refund-mode .order-item.is-active, .refund-mode .order-item[data-state="active"], .refund-mode
+.order-item [data-state="active"] {
   background: #fce5e3;
 }
 

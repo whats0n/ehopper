@@ -5685,11 +5685,13 @@ textarea.input {
   transform: translate3d(-60px, 0, 0);
 }
 
-.order-item.is-active {
+.order-item.is-active, .order-item[data-state="active"],
+.order-item [data-state="active"] {
   background: #ecf7fd;
 }
 
-.refund-mode .order-item.is-active {
+.refund-mode .order-item.is-active, .refund-mode .order-item[data-state="active"], .refund-mode
+.order-item [data-state="active"] {
   background: #fce5e3;
 }
 
@@ -7732,6 +7734,132 @@ textarea.input {
   font-family: 'Roboto Regular', Arial, sans-serif;
   font-size: 16px;
   line-height: 59px;
+}
+
+.cash-drawer__title {
+  padding-bottom: 10px;
+  font-family: 'Roboto Medium', Arial, sans-serif;
+  font-size: 20px;
+}
+
+.cash-drawer__row {
+  padding: 10px 0;
+  font-size: 0;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  *zoom: 1;
+}
+
+.cash-drawer__row:after {
+  content: " ";
+  display: table;
+  clear: both;
+}
+
+.cash-drawer__radio, .cash-drawer__center, .cash-drawer__test {
+  display: inline-block;
+  vertical-align: middle;
+  padding-right: 15px;
+  font-size: 15px;
+  line-height: 1.3;
+}
+
+.cash-drawer__radio {
+  position: relative;
+  padding-left: 42px;
+  width: 70%;
+  min-height: 30px;
+  line-height: 30px;
+}
+
+.cash-drawer__radio .radio {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translate3d(0, -50%, 0);
+}
+
+.cash-drawer__radio label {
+  line-height: 1.3;
+}
+
+.cash-drawer__center, .cash-drawer__test {
+  width: 15%;
+}
+
+.cash-drawer label {
+  display: inline-block;
+  width: 100%;
+  cursor: pointer;
+}
+
+.printer-setup__title {
+  padding-bottom: 10px;
+  font-family: 'Roboto Medium', Arial, sans-serif;
+  font-size: 20px;
+}
+
+.printer-setup__row {
+  padding: 10px 0;
+  font-size: 0;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  *zoom: 1;
+}
+
+.printer-setup__row:after {
+  content: " ";
+  display: table;
+  clear: both;
+}
+
+.printer-setup__checkbox, .printer-setup__center, .printer-setup__test {
+  display: inline-block;
+  vertical-align: middle;
+  padding-right: 15px;
+  font-size: 15px;
+  line-height: 1.3;
+}
+
+.printer-setup__checkbox {
+  position: relative;
+  padding-left: 42px;
+  width: 50%;
+  min-height: 30px;
+  line-height: 30px;
+}
+
+.printer-setup__checkbox .checkbox {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translate3d(0, -50%, 0);
+}
+
+.printer-setup__checkbox label {
+  line-height: 1.3;
+}
+
+.printer-setup__center, .printer-setup__test {
+  width: 25%;
+}
+
+.printer-setup label {
+  display: inline-block;
+  width: 100%;
+  cursor: pointer;
+}
+
+.printer-setup__radios {
+  padding: 5px 0 0 42px;
+}
+
+.printer-setup__radio {
+  padding: 10px 0;
 }
 
 .header {

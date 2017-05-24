@@ -46,8 +46,8 @@
               </ul>
             </div>
           </aside>
-          <div class="settings__container">
-            <div class="settings__body settings__body_default">
+          <div class="settings__container step-body">
+            <div class="settings__body settings__body_default step-body__section">
               <div class="form form_sm">
                 <div class="simple-field">
                   <div class="title-xlg simple-field__title">No Cash Drawer set.</div>
@@ -61,7 +61,42 @@
                 <div class="simple-field"> <label for="drawer-security-key" class="simple-field__label">Security Key</label>
                   <div class="input-box simple-field__input"> <input type="text" class="simple-input" placeholder="Security Key" value="0000" id="drawer-security-key"> <button class="btn-icon btn-icon_gray input-box__clear"><i class="icon icon-close"></i></button> </div>
                 </div>
+                <div class="simple-field cash-drawer">
+                  <div class="cash-drawer__title">Cash Drawers</div>
+                  <div class="cash-drawer__list">
+                    <div class="cash-drawer__row">
+                      <div class="cash-drawer__radio"> <label class="radio ">
+	<input type="radio" id="cash-drawer-radio0" name="cash-drawer">
+	<i></i>
+	
+</label> <label for="cash-drawer-radio0">M-S Cash drawer via serial/parallel Star Epson Printer</label> </div>
+                      <div class="cash-drawer__center"> <label for="cash-drawer-radio0">Device Center</label> </div>
+                      <div class="cash-drawer__test"> <a href="#">Test</a> </div>
+                    </div>
+                    <div class="cash-drawer__row">
+                      <div class="cash-drawer__radio"> <label class="radio ">
+	<input type="radio" id="cash-drawer-radio1" name="cash-drawer">
+	<i></i>
+	
+</label> <label for="cash-drawer-radio1">M-S Cash drawer via serial/parallel Star Epson Printer</label> </div>
+                      <div class="cash-drawer__center"> <label for="cash-drawer-radio1">Device Center</label> </div>
+                      <div class="cash-drawer__test"> <a href="#">Test</a> </div>
+                    </div>
+                    <div class="cash-drawer__row">
+                      <div class="cash-drawer__radio"> <label class="radio ">
+	<input type="radio" id="cash-drawer-radio2" name="cash-drawer">
+	<i></i>
+	
+</label> <label for="cash-drawer-radio2">M-S Cash drawer via serial/parallel Star Epson Printer</label> </div>
+                      <div class="cash-drawer__center"> <label for="cash-drawer-radio2">Device Center</label> </div>
+                      <div class="cash-drawer__test"> <a href="#">Test</a> </div>
+                    </div>
+                  </div>
+                </div>
               </div>
+            </div>
+            <div class="step-body__footer section">
+              <div class="wrapper-btn-center"> <button class="btn btn_lg btn_block btn_primary text-uppercase" data-animation="ripple" value="Done">Done</button> </div>
             </div>
           </div>
         </div>
