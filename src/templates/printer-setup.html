@@ -9,7 +9,19 @@ settingsActive: 0
 {% block content %}
 	<main class="main">
 		<div class="inner settings">
-			{{header.double({
+			{{header.call({
+				sidebarClassList: 'is-hidden',
+				fullinfoClassList: 'is-hidden',
+				menuBtnClassList: 'is-hidden',
+				helpBtnClassList: 'is-hidden',
+				searchClassList: 'is-hidden',
+				syncBtnClassList: 'is-hidden',
+				scanBtnClassList: 'is-hidden',
+				containerClassList: 'main-header__container_full',
+				title: 'Printer Settings',
+				searchFor: 'Search for Printers'
+			})}}
+			{# {{header.double({
 				classList: 'header_container-upper header_poynt-sm header_settings',
 				sync: true,
 				syncIndicatorOnly: true,
@@ -23,8 +35,7 @@ settingsActive: 0
 					titleClassList: 'header__title_vertical',
 					headerClassList: 'settings__header'
 				}
-			})}}
-			{% include 'partials/components/_settings-sidebar.html' %}
+			})}} #}
 			<div class="settings__container step-body">
 				<div class="settings__body settings__body_default step-body__section">
 					<div class="form form_sm">
@@ -96,5 +107,4 @@ settingsActive: 0
 	</main>
 
 	{{modal.help()}}
-	{{modal.addTerminal()}}
 {% endblock %}

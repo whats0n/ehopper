@@ -7,70 +7,80 @@ styles:
 
 {% block content %}
 	
-	<main class="container">
-		{{header.simple({
-			back: true,
-			title: 'New Customer',
-			titleClassList: 'header__title_vertical text-center',
-			sync: true,
-			syncIndicatorOnly: true
+	<main class="main">
+		{{header.call({
+			sidebarClassList: 'is-hidden',
+			fullinfoClassList: 'is-hidden',
+			menuBtnClassList: 'is-hidden',
+			helpBtnClassList: 'is-hidden',
+			searchClassList: 'is-hidden',
+			syncBtnClassList: 'is-hidden',
+			searchBtnClassList: 'is-hidden',
+			syncClassList: 'is-hidden',
+			scanBtnClassList: 'is-hidden',
+			containerClassList: 'main-header__container_full',
+			title: 'New Customer'
 		})}}
-		<div class="section section_form">
-			{% set fields = [
-				[
-					{ placeholder: 'First Name *', inputAttrs: 'required' },
-					{ placeholder: 'Last Name *', inputAttrs: 'required' }
-				],
-				[
-					{ placeholder: 'Phone' },
-					{ 
-						placeholder: 'Email', 
-						classList: 'is-error', 
-						errorMessage: 'Lorem ipsum dolor sit amet, consectetur adipisicing.' 
-					}
-				],
-				[
-					{ placeholder: 'Address line 1 *', inputAttrs: 'required' },
-					{ placeholder: 'Address line 2' }
-				],
-				[
-					{ placeholder: 'City *', inputAttrs: 'required' },
-					{ placeholder: 'State' }
-				],
-				[
-					{ select: { 
-						placeholder: 'Country *', 
-						options: [ 
-							'option 1', 
-							'option 2', 
-							'option 3', 
-							'option 4' 
-						], 
-						classList: 'is-error', 
-						errorMessage: 'Lorem ipsum dolor sit amet, consectetur adipisicing.' 
-					} },
-					{ placeholder: 'Zip', colSize: 'xs' }
-				]
-			] %}
-			<div class="form form_md">
-				{% for row in fields %}
-					<div class="form__columns">
-						{% for field in row %}
-							<div class="form__column form__column_{{field.colSize or 'md'}}">
-								{% if field.select %}
-									{{form.selectBox.call(field.select)}}
-								{% else %}
-									{{form.inputBox.call(field)}}
-								{% endif %}
+		<div class="continer container_simple">
+			<div class="container__body">
+				<div class="section section_form">
+					{% set fields = [
+						[
+							{ placeholder: 'First Name *', inputAttrs: 'required' },
+							{ placeholder: 'Last Name *', inputAttrs: 'required' }
+						],
+						[
+							{ placeholder: 'Phone' },
+							{ 
+								placeholder: 'Email', 
+								classList: 'is-error', 
+								errorMessage: 'Lorem ipsum dolor sit amet, consectetur adipisicing.' 
+							}
+						],
+						[
+							{ placeholder: 'Address line 1 *', inputAttrs: 'required' },
+							{ placeholder: 'Address line 2' }
+						],
+						[
+							{ placeholder: 'City *', inputAttrs: 'required' },
+							{ placeholder: 'State' }
+						],
+						[
+							{ select: { 
+								placeholder: 'Country *', 
+								options: [ 
+									'option 1', 
+									'option 2', 
+									'option 3', 
+									'option 4' 
+								], 
+								classList: 'is-error', 
+								errorMessage: 'Lorem ipsum dolor sit amet, consectetur adipisicing.' 
+							} },
+							{ placeholder: 'Zip', colSize: 'xs' }
+						]
+					] %}
+					<div class="form form_md">
+						{% for row in fields %}
+							<div class="form__columns">
+								{% for field in row %}
+									<div class="form__column form__column_{{field.colSize or 'md'}}">
+										{% if field.select %}
+											{{form.selectBox.call(field.select)}}
+										{% else %}
+											{{form.inputBox.call(field)}}
+										{% endif %}
+									</div>
+								{% endfor %}
 							</div>
 						{% endfor %}
+						<div class="form__section">
+							{{mixins.checkbox({ content: 'Marketing', classList: 'checkbox_lg' })}}
+						</div>
+						<div class="wrapper-btn-center">
+							<button class="btn btn_primary btn_lg btn_block text-uppercase" data-animation="ripple" value="Done">Done</button>
+						</div>
 					</div>
-				{% endfor %}
-				<div class="form__section">
-					{{mixins.checkbox({ content: 'Marketing', classList: 'checkbox_lg' })}}
-				</div>
-				<div class="wrapper-btn-center">
-					<button class="btn btn_primary btn_lg btn_block text-uppercase" data-animation="ripple" value="Done">Done</button>
 				</div>
 			</div>
 		</div>

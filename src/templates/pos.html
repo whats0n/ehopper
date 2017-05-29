@@ -8,7 +8,14 @@ styles:
 {% block content %}
 	<main class="main" data-toggle-class-container="main-container">
 		<div class="inner">
-			{{header.double({
+			{{header.call({
+				backBtnClassList: 'is-hidden',
+				titleClassList: 'is-hidden',
+				helpBtnClassList: 'is-hidden',
+				searchBtnClassList: 'is-hidden',
+				fullinfoBackBtnAttrs: 'data-fullinfo-close="fullinfo data-toggle-class-target="sidebar-header" data-toggle-class-remove="is-disabled" id="cart-item-details-back"'
+			})}}
+			{# {{header.double({
 				sync: true,
 				delete: true,
 				sidebar: {
@@ -23,7 +30,7 @@ styles:
 					back: true,
 					backAttrs: 'data-fullinfo-close="fullinfo" data-toggle-class-target="sidebar-header" data-toggle-class-remove="is-disabled" id="cart-item-details-back"'
 				}
-			})}}
+			})}} #}
 			<div class="cart cart_poynt">
 				<div class="cart__inner">
 					<div class="cart-total">
@@ -120,7 +127,7 @@ styles:
 													{% if item.discount %}
 														<div class="order-item__discount" data-fullinfo-target="discount">{{item.discount | safe}}</div>
 													{% else %}
-													    <div class="order-item__tag"></div>
+														<div class="order-item__tag" data-fullinfo-target="discount"></div>
 													{% endif %}
 												</div>
 											</div>
@@ -131,7 +138,6 @@ styles:
 						</ul>
 						<div class="order-empty is-hidden" data-order-empty="order">
 							<div class="order-empty__center">
-								<!-- <i class="order-empty__icon"></i> -->
 								<h5>Order is empty</h5>
 								<p>Add items from catalog</p>
 							</div>

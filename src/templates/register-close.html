@@ -8,7 +8,21 @@ styles:
 {% block content %}
 	<main class="main">
 		<div class="inner">
-			{{header.double({
+			{{header.call({
+				sidebarClassList: 'is-hidden',
+				fullinfoClassList: 'is-hidden',
+				menuBtnClassList: 'is-hidden',
+				helpBtnClassList: 'is-hidden',
+				searchClassList: 'is-hidden',
+				syncBtnClassList: 'is-hidden',
+				searchBtnClassList: 'is-hidden',
+				scanBtnClassList: 'is-hidden',
+				syncClassList: 'is-hidden',
+				containerClassList: 'main-header__container_full',
+				title: 'Close Register'
+			})}}
+			
+			{# {{header.double({
 				classList: 'header_container-upper header_poynt-sm',
 				sidebar: {
 					back: true,
@@ -19,7 +33,7 @@ styles:
 					title: 'Close Register',
 					titleClassList: 'header__title_vertical'
 				}
-			})}}
+			})}} #}
 			<aside class="sidebar sidebar_left sidebar_white">
 				<div class="infoblock infoblock_collapsed">
 					<div class="infoblock__row">
@@ -100,7 +114,7 @@ styles:
 					</div>
 				</div>
 			</aside>
-			<div class="container container_right container_upper container_poynt-register">
+			<div class="container container_right container_poynt-register">
 				<div class="container__body step-body">
 					<div class="step-body__section">
 						<div class="form form_sm">

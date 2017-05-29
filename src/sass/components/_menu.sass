@@ -39,14 +39,18 @@
 
 .nav
   &__item
-    border-bottom: solid #4C5560 1px
+    border-bottom: 1px solid #4C5560 
     color: #7D838B
     +nosel
-    +hover
-      background: #4C5560
-    &.is-active
-      color: $white
-      background: #4C5560
+    &.is-open
+      >
+        .nav__link
+          color: $white
+          background: darken(#4C5560, 20%)
+          +hover
+            background: darken(#4C5560, 20%)
+          .nav__arrow
+            transform: rotate(180deg)
   &__link
     position: relative
     display: block
@@ -56,10 +60,33 @@
     line-height: 40px
     text-decoration: none
     cursor: pointer
+    +hover
+      background: #4C5560
+    &.is-active
+      color: $white
+      background: #4C5560
   &__icon
     position: absolute
     top: 5px
     left: 5px
+  &__arrow
+    position: absolute
+    top: 5px
+    right: 5px
+    transition: transform 0.17s ease-in-out
+  &__submenu
+    display: none
+    border-bottom: 1px solid darken(#4C5560, 10%)
+    background: darken(#4C5560, 10%)
+    .nav__item.is-open &
+      display: block
+    .nav__link
+      +hover 
+        color: $white
+    .nav__item
+      &:last-child
+        border: none
+
 
 // .menu
 //   display: block

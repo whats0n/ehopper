@@ -18,71 +18,236 @@
     <!-- begin application -->
     <div class="application" id="application">
       <!-- BEGIN content -->
-      <main class="container">
+      <main class="main">
         <!-- begin header -->
-        <header class="header "> <button class="header__back btn-back">
+        <header class="main-header ">
+          <!-- begin button 'back' --><button class="main-header__back btn-back ">
+		<i class="icon icon-back btn-back__icon"></i>
+		<span class="btn-back__title">Back</span>
+	</button>
+          <!-- end button 'back' -->
+          <!-- begin main container -->
+          <div class="main-header__container main-header__container_full"> <button class="btn-icon main-header__help is-hidden" title="Help" data-modal-open="help">
+			<i class="icon icon-help"></i>
+		</button>
+            <h2 class="title-xlg main-header__title ">Terminal</h2>
+            <div class="main-header__searchbox is-hidden">
+              <!-- begin search -->
+              <div class="search" data-modal="search">
+                <div class="search__field" data-modal="container"> <input type="text" class="search__input" placeholder="Search by item: name, UPC">
+                  <div class="search__controls"> <span class="search__button"><i class="icon icon-search"></i></span> </div>
+                </div>
+                <div class="search-dropdown"> <i class="search-dropdown__arrow"></i>
+                  <div class="search-dropdown__container">
+                    <div class="search-dropdown__body">
+                      <ul class="search-dropdown__list">
+                        <li class="search-dropdown__item">
+                          <div class="search-dropdown__price"> <span class="search-dropdown__currency">$</span> <span class="search-dropdown__value">99.99</span> </div>
+                          <div class="search-dropdown__text">Lorem ipsum dolor.</div>
+                        </li>
+                        <li class="search-dropdown__item">
+                          <div class="search-dropdown__price"> <span class="search-dropdown__currency">$</span> <span class="search-dropdown__value">99.99</span> </div>
+                          <div class="search-dropdown__text">Lorem ipsum dolor.</div>
+                        </li>
+                        <li class="search-dropdown__item">
+                          <div class="search-dropdown__price"> <span class="search-dropdown__currency">$</span> <span class="search-dropdown__value">99.99</span> </div>
+                          <div class="search-dropdown__text">Lorem ipsum dolor.</div>
+                        </li>
+                        <li class="search-dropdown__item">
+                          <div class="search-dropdown__price"> <span class="search-dropdown__currency">$</span> <span class="search-dropdown__value">99.99</span> </div>
+                          <div class="search-dropdown__text">Lorem ipsum dolor.</div>
+                        </li>
+                        <li class="search-dropdown__item">
+                          <div class="search-dropdown__price"> <span class="search-dropdown__currency">$</span> <span class="search-dropdown__value">99.99</span> </div>
+                          <div class="search-dropdown__text">Lorem ipsum dolor.</div>
+                        </li>
+                        <li class="search-dropdown__item">
+                          <div class="search-dropdown__price"> <span class="search-dropdown__currency">$</span> <span class="search-dropdown__value">99.99</span> </div>
+                          <div class="search-dropdown__text">Lorem ipsum dolor.</div>
+                        </li>
+                        <li class="search-dropdown__item">
+                          <div class="search-dropdown__price"> <span class="search-dropdown__currency">$</span> <span class="search-dropdown__value">99.99</span> </div>
+                          <div class="search-dropdown__text">Lorem ipsum dolor.</div>
+                        </li>
+                        <li class="search-dropdown__item">
+                          <div class="search-dropdown__price"> <span class="search-dropdown__currency">$</span> <span class="search-dropdown__value">99.99</span> </div>
+                          <div class="search-dropdown__text">Lorem ipsum dolor.</div>
+                        </li>
+                        <li class="search-dropdown__item">
+                          <div class="search-dropdown__price"> <span class="search-dropdown__currency">$</span> <span class="search-dropdown__value">99.99</span> </div>
+                          <div class="search-dropdown__text">Lorem ipsum dolor.</div>
+                        </li>
+                        <li class="search-dropdown__item">
+                          <div class="search-dropdown__price"> <span class="search-dropdown__currency">$</span> <span class="search-dropdown__value">99.99</span> </div>
+                          <div class="search-dropdown__text">Lorem ipsum dolor.</div>
+                        </li>
+                        <li class="search-dropdown__item">
+                          <div class="search-dropdown__price"> <span class="search-dropdown__currency">$</span> <span class="search-dropdown__value">99.99</span> </div>
+                          <div class="search-dropdown__text">Lorem ipsum dolor.</div>
+                        </li>
+                        <li class="search-dropdown__item">
+                          <div class="search-dropdown__price"> <span class="search-dropdown__currency">$</span> <span class="search-dropdown__value">99.99</span> </div>
+                          <div class="search-dropdown__text">Lorem ipsum dolor.</div>
+                        </li>
+                      </ul>
+                    </div> <button class="btn btn_block" data-animation="ripple"><i class="icon icon-expand"></i>Show more</button> </div>
+                </div>
+              </div>
+              <!-- end search -->
+            </div>
+          </div>
+          <!-- end main container -->
+          <!-- begin block sync/search for -->
+          <div class="main-header__sync is-hidden">
+            <div class="main-header__indicator" data-state="active"></div> <button class="btn-sync is-hidden">
+			<span class="btn-sync__title">Sync</span>
+			<i class="icon icon-sync btn-sync__icon"></i>
+		</button> <button class="main-header__search-for is-hidden">
+			<span></span>
+			<i class="icon icon-sync"></i>
+		</button> </div>
+          <!-- end block sync/search for -->
+          <!-- begin button 'menu' --><button class="main-header__menu icon icon-menu is-hidden" title="Menu" data-menu-open="menu"></button>
+          <!-- end button 'menu' -->
+          <!-- begin sidebar for shopping cart -->
+          <div class="main-header__sidebar is-hidden"> <button class="main-header__delete btn-icon icon icon-delete " type="button" title="Delete"></button>
+            <div class="main-header__toolbar ">
+              <div class="toolbar">
+                <div class="toolbar__container">
+                  <div class="toolbar__row">
+                    <div class="toolbar__col">
+                      <!-- begin dropdown -->
+                      <div class="dropdown dropdown_header dropdown-menu_no-scroll" data-dropdown="order-type">
+                        <div class="dropdown__header" data-dropdown-open="order-type" data-animation="ripple"> <i class="dropdown__arrow icon icon-expand"></i>
+                          <div class="dropdown__value" data-dropdown-value="order-type">Quick Sale</div>
+                        </div>
+                        <div class="dropdown-menu " data-dropdown-menu="order-type">
+                          <ul class="dropdown-menu__list">
+                            <li class="dropdown-menu__item is-active" data-animation="ripple" data-dropdown-item="order-type" data-value="Quick Sale"> Quick Sale </li>
+                            <li class="dropdown-menu__item" data-animation="ripple" data-dropdown-item="order-type" data-value="Dine In"> Dine In </li>
+                            <li class="dropdown-menu__item" data-animation="ripple" data-dropdown-item="order-type" data-value="Take Out"> Take Out </li>
+                            <li class="dropdown-menu__item" data-animation="ripple" data-dropdown-item="order-type" data-value="Drive Thru"> Drive Thru </li>
+                            <li class="dropdown-menu__item" data-animation="ripple" data-dropdown-item="order-type" data-value="Delivery"> Delivery </li>
+                          </ul>
+                        </div>
+                        <!-- begin overlay --><button type="button" class="overlay " data-color="dark-gray" data-overlay="overlay" data-dropdown-overlay="order-type"></button>
+                        <!-- end overlay -->
+                      </div>
+                      <!-- end dropdown -->
+                    </div>
+                    <div class="toolbar__col">
+                      <!-- begin dropdown -->
+                      <div class="dropdown dropdown_header dropdown_fixed" data-dropdown="customer">
+                        <div class="dropdown__header" data-dropdown-open="customer" data-animation="ripple"> <i class="dropdown__arrow icon icon-expand"></i>
+                          <div class="dropdown__value" data-dropdown-value="customer">Walk In</div>
+                        </div>
+                        <div class="dropdown-menu " data-dropdown-menu="customer">
+                          <div class="dropdown-menu__search sm-search">
+                            <form action="/">
+                              <div class="sm-search__field"> <input type="text" class="sm-search__input" placeholder="Search for customer"> <button class="sm-search__btn" data-animation="ripple"><i class="icon icon-search"></i></button> </div>
+                            </form>
+                          </div>
+                          <ul class="dropdown-menu__list">
+                            <li class="dropdown-menu__item is-active dropdown-menu__item_special" data-animation="ripple" data-dropdown-item="customer" data-value="Walk In"> Walk In </li>
+                            <li class="dropdown-menu__item" data-animation="ripple" data-dropdown-item="customer" data-value="John Doe"> John Doe <i class="icon icon-next"></i> </li>
+                            <li class="dropdown-menu__item" data-animation="ripple" data-dropdown-item="customer" data-value="Charlie Sheen"> Charlie Sheen <i class="icon icon-next"></i> </li>
+                            <li class="dropdown-menu__item" data-animation="ripple" data-dropdown-item="customer" data-value="Wendy Williams"> Wendy Williams <i class="icon icon-next"></i> </li>
+                          </ul> <button class="btn btn_block btn_md btn_green" data-animation="ripple" id="add-new-customer-btn"><i class="icon icon-plus"></i>New Customer</button> </div>
+                        <!-- begin overlay --><button type="button" class="overlay " data-color="dark-gray" data-overlay="overlay" data-dropdown-overlay="customer"></button>
+                        <!-- end overlay -->
+                      </div>
+                      <!-- end dropdown -->
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- end sidebar for shopping cart -->
+          <!-- begin button 'scan' -->
+          <div class="main-header__scan is-hidden"> <button class="btn-scan" data-animation="ripple">
+			<svg viewBox="0 0 26 25" class="btn-scan__icon">
+				<path d="M0,0v6c0.7,0,1.3,0,2,0V2h4c0-1,0-1,0-2H0z"></path>
+				<path d="M20,0c0,0.7,0,1.3,0,2h4v4c0.6,0,1.3,0,2,0V0H20z"></path>
+				<path d="M2,23v-4c-0.7,0-1.3,0-2,0v6h6c0-0.8,0-1.4,0-2H2z"></path>
+				<path d="M26,19c-0.7,0-1.4,0-2,0v4h-4c0,0.6,0,1.4,0,2h6V19z"></path>
+				<path d="M5,5v15h1C6,15.3,6,9.7,6,5H5z"></path>
+				<path d="M7,5c0,4.7,0,10.3,0,15h1C8,15.3,8,9.7,8,5H7z"></path>
+				<path d="M9,5c0,4.7,0,10.3,0,15h2c0-4.7,0-10.3,0-15H9z"></path>
+				<path d="M13,5c0,4.7,0,10.3,0,15h1c0-4.7,0-10.3,0-15H13z"></path>
+				<path d="M15,5c0,4.7,0,10.3,0,15h1c0-4.7,0-10.3,0-15H15z"></path>
+				<path d="M17,5c0,4.7,0,10.3,0,15h2c0-5.2,0-9.7,0-15H17z"></path>
+				<path d="M21,5h-1c0,4.7,0,10.3,0,15h1V5z"></path>
+			</svg>
+			<span class="btn-scan__text">Scan</span>
+		</button> </div>
+          <!-- end button scan -->
+          <!-- begin container for fullinfo on the shopping cart -->
+          <div class="main-header__fullinfo is-hidden" data-fullinfo-container="fullinfo"> <button class="header__back btn-back">
 			<i class="icon icon-back btn-back__icon"></i>
 			<span class="btn-back__title">Back</span>
-		</button>
-          <h2 class="title-xlg header__title header__title_vertical text-center">Terminal</h2>
+		</button> </div>
+          <!-- end container for fullinfo on the shopping cart -->
         </header>
         <!-- end header -->
-        <div class="container__body">
-          <div class="section section_inner">
-            <div class="form form_sm">
-              <div class="form__columns">
-                <div class="form__column form__column_md"> <button class="btn btn_lg btn_block btn_default btn_rounded" data-animation="ripple">
-								<i class="icon icon-cc"></i>
-								Credit Card
-							</button> </div>
-                <div class="form__column form__column_md"> <button class="btn btn_lg btn_block btn_primary btn_rounded" data-animation="ripple">
-								<i class="icon icon-cash"></i>
-								Cash
-							</button> </div>
-              </div>
-              <div class="form__section">
-                <div class="form-box is-focus">
-                  <div class="field ">
-                    <div class="field__inner"> <label class="field__label" for="ternimal-cash-amount-due">Amount Due:</label>
-                      <div class="field__box"> <input class="input field__input input_lg text-right" id="ternimal-cash-amount-due" type="text" placeholder="0.00" readonly> </div>
+        <div class="container container_simple">
+          <div class="container__body">
+            <div class="section section_inner">
+              <div class="form form_sm">
+                <div class="form__columns">
+                  <div class="form__column form__column_md"> <button class="btn btn_lg btn_block btn_default btn_rounded" data-animation="ripple">
+									<i class="icon icon-cc"></i>
+									Credit Card
+								</button> </div>
+                  <div class="form__column form__column_md"> <button class="btn btn_lg btn_block btn_primary btn_rounded" data-animation="ripple">
+									<i class="icon icon-cash"></i>
+									Cash
+								</button> </div>
+                </div>
+                <div class="form__section">
+                  <div class="form-box is-focus">
+                    <div class="field ">
+                      <div class="field__inner"> <label class="field__label" for="ternimal-cash-amount-due">Amount Due:</label>
+                        <div class="field__box"> <input class="input field__input input_lg text-right" id="ternimal-cash-amount-due" type="text" placeholder="0.00" readonly> </div>
+                      </div>
                     </div>
                   </div>
                 </div>
-              </div>
-              <div class="form__section">
-                <div class="form-box">
-                  <div class="field ">
-                    <div class="field__inner"> <label class="field__label" for="terminal-cash-amount-tendered">Amount Tendered:</label>
-                      <div class="field__box"> <input class="input field__input input_lg text-right" id="terminal-cash-amount-tendered" type="text" placeholder="0.00" readonly> </div>
+                <div class="form__section">
+                  <div class="form-box">
+                    <div class="field ">
+                      <div class="field__inner"> <label class="field__label" for="terminal-cash-amount-tendered">Amount Tendered:</label>
+                        <div class="field__box"> <input class="input field__input input_lg text-right" id="terminal-cash-amount-tendered" type="text" placeholder="0.00" readonly> </div>
+                      </div>
                     </div>
                   </div>
                 </div>
-              </div>
-              <div class="fieldset fieldset_lg fieldset_bordered">
-                <!-- begin keyboard -->
-                <div class="keyboard numpad ">
-                  <div class="keyboard__container keyboard__lg">
-                    <div class="keyboard__main">
-                      <div class="keyboard__item"> <button type="button" data-animation="ripple" class="keyboard__button">1</button> </div>
-                      <div class="keyboard__item"> <button type="button" data-animation="ripple" class="keyboard__button">2</button> </div>
-                      <div class="keyboard__item"> <button type="button" data-animation="ripple" class="keyboard__button">3</button> </div>
-                      <div class="keyboard__item"> <button type="button" data-animation="ripple" class="keyboard__button">4</button> </div>
-                      <div class="keyboard__item"> <button type="button" data-animation="ripple" class="keyboard__button">5</button> </div>
-                      <div class="keyboard__item"> <button type="button" data-animation="ripple" class="keyboard__button">6</button> </div>
-                      <div class="keyboard__item"> <button type="button" data-animation="ripple" class="keyboard__button">7</button> </div>
-                      <div class="keyboard__item"> <button type="button" data-animation="ripple" class="keyboard__button">8</button> </div>
-                      <div class="keyboard__item"> <button type="button" data-animation="ripple" class="keyboard__button">9</button> </div>
-                      <div class="keyboard__item"> <button type="button" data-animation="ripple" class="keyboard__button">0</button> </div>
-                      <div class="keyboard__item"> <button type="button" data-animation="ripple" class="keyboard__button">00</button> </div>
-                      <div class="keyboard__item"> <button type="button" data-animation="ripple" class="keyboard__button" data-numpad="numpad-clear"><i class="icon icon-text icon-clear"></i></button> </div>
-                    </div>
-                    <div class="keyboard__aside">
-                      <div class="keyboard__col"> <button type="button" data-animation="ripple" class="keyboard__button " data-numpad="numpad-backspace"><i class="icon icon-text icon-backspace"></i></button> </div>
-                      <div class="keyboard__col" data-colspan="3"> <button type="button" data-animation="ripple" class="keyboard__button keyboard__submit" value="Done">Pay</button> </div>
+                <div class="fieldset fieldset_lg fieldset_bordered">
+                  <!-- begin keyboard -->
+                  <div class="keyboard numpad ">
+                    <div class="keyboard__container keyboard__lg">
+                      <div class="keyboard__main">
+                        <div class="keyboard__item"> <button type="button" data-animation="ripple" class="keyboard__button">1</button> </div>
+                        <div class="keyboard__item"> <button type="button" data-animation="ripple" class="keyboard__button">2</button> </div>
+                        <div class="keyboard__item"> <button type="button" data-animation="ripple" class="keyboard__button">3</button> </div>
+                        <div class="keyboard__item"> <button type="button" data-animation="ripple" class="keyboard__button">4</button> </div>
+                        <div class="keyboard__item"> <button type="button" data-animation="ripple" class="keyboard__button">5</button> </div>
+                        <div class="keyboard__item"> <button type="button" data-animation="ripple" class="keyboard__button">6</button> </div>
+                        <div class="keyboard__item"> <button type="button" data-animation="ripple" class="keyboard__button">7</button> </div>
+                        <div class="keyboard__item"> <button type="button" data-animation="ripple" class="keyboard__button">8</button> </div>
+                        <div class="keyboard__item"> <button type="button" data-animation="ripple" class="keyboard__button">9</button> </div>
+                        <div class="keyboard__item"> <button type="button" data-animation="ripple" class="keyboard__button">0</button> </div>
+                        <div class="keyboard__item"> <button type="button" data-animation="ripple" class="keyboard__button">00</button> </div>
+                        <div class="keyboard__item"> <button type="button" data-animation="ripple" class="keyboard__button" data-numpad="numpad-clear"><i class="icon icon-text icon-clear"></i></button> </div>
+                      </div>
+                      <div class="keyboard__aside">
+                        <div class="keyboard__col"> <button type="button" data-animation="ripple" class="keyboard__button " data-numpad="numpad-backspace"><i class="icon icon-text icon-backspace"></i></button> </div>
+                        <div class="keyboard__col" data-colspan="3"> <button type="button" data-animation="ripple" class="keyboard__button keyboard__submit" value="Done">Pay</button> </div>
+                      </div>
                     </div>
                   </div>
+                  <!-- end keyboard -->
                 </div>
-                <!-- end keyboard -->
               </div>
             </div>
           </div>

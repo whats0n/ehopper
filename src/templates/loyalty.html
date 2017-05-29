@@ -9,39 +9,47 @@ bodyClasses: 'animated'
 {% extends "layouts/_layout.html" %}
 
 {% block content %}
-	<main class="container">
-		{{header.simple({
-			cancel: 'pos.html',
-			title: 'Loyalty program',
-			titleClassList: 'header__title_vertical text-center text-uppercase',
-			help: true,
-			back: true
+	<main class="main">
+		{{header.call({
+			sidebarClassList: 'is-hidden',
+			fullinfoClassList: 'is-hidden',
+			menuBtnClassList: 'is-hidden',
+			helpBtnClassList: 'is-hidden',
+			searchClassList: 'is-hidden',
+			syncBtnClassList: 'is-hidden',
+			searchBtnClassList: 'is-hidden',
+			syncClassList: 'is-hidden',
+			scanBtnClassList: 'is-hidden',
+			containerClassList: 'main-header__container_full',
+			title: 'LOYALTY PROGRAM'
 		})}}
-		<div class="container__body">
-			<div class="section section_inner">
-				<div class="form-wrapper">
-					<div class="form form_sm">
-						{{keyboard.display({
-							field: {
-								label: 'Mobile Phone',
-								id: 'item-quantity',
-								value: '555-123-4567',
-								placeholder: '000-000-0000',
-								attrs: 'required readonly',
-								inputClassList: 'text-right input_xl'
-							},
-							keyboard: {
-								size: 'keyboard__lg'
-							}
-						})}}
-						<p class="fieldset fieldset_standalone">
-							{{mixins.checkbox({
-								classList: 'checkbox_green',
-								attrs: 'required',
-								content: 'I agree with'
+		<div class="container container-simple">
+			<div class="container__body">
+				<div class="section section_inner">
+					<div class="form-wrapper">
+						<div class="form form_sm">
+							{{keyboard.display({
+								field: {
+									label: 'Mobile Phone',
+									id: 'item-quantity',
+									value: '555-123-4567',
+									placeholder: '000-000-0000',
+									attrs: 'required readonly',
+									inputClassList: 'text-right input_xl'
+								},
+								keyboard: {
+									size: 'keyboard__lg'
+								}
 							})}}
-							<a href="#" class="form__link">Terms and Conditions</a>
-						</p>
+							<p class="fieldset fieldset_standalone">
+								{{mixins.checkbox({
+									classList: 'checkbox_green',
+									attrs: 'required',
+									content: 'I agree with'
+								})}}
+								<a href="#" class="form__link">Terms and Conditions</a>
+							</p>
+						</div>
 					</div>
 				</div>
 			</div>

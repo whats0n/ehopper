@@ -2823,6 +2823,8 @@ textarea.input {
 }
 
 .search__button {
+  display: inline-block;
+  vertical-align: top;
   color: #fff;
 }
 
@@ -4069,12 +4071,12 @@ textarea.input {
   height: 1em;
 }
 
-.keyboard__col[data-colspan="3"] {
+.keyboard__col[data-colspan*="3"] {
   height: 3em;
   line-height: 3em;
 }
 
-.keyboard__col[data-colspan="2"] {
+.keyboard__col[data-colspan*="2"] {
   height: 2em;
   line-height: 2em;
 }
@@ -4237,6 +4239,10 @@ textarea.input {
   background: #ebebeb;
 }
 
+.simple-keyboard__button.is-pressed {
+  background: #ebebeb;
+}
+
 .simple-keyboard__button .icon {
   font-size: 24px;
   vertical-align: middle;
@@ -4327,7 +4333,7 @@ textarea.input {
 }
 
 .nav__item {
-  border-bottom: solid #4C5560 1px;
+  border-bottom: 1px solid #4C5560;
   color: #7D838B;
   -webkit-user-select: none;
   -moz-user-select: none;
@@ -4335,13 +4341,18 @@ textarea.input {
   user-select: none;
 }
 
-.no-touch .nav__item:hover {
-  background: #4C5560;
+.nav__item.is-open > .nav__link {
+  color: #fff;
+  background: #1f2327;
 }
 
-.nav__item.is-active {
-  color: #fff;
-  background: #4C5560;
+.no-touch .nav__item.is-open > .nav__link:hover {
+  background: #1f2327;
+}
+
+.nav__item.is-open > .nav__link .nav__arrow {
+  -ms-transform: rotate(180deg);
+  transform: rotate(180deg);
 }
 
 .nav__link {
@@ -4355,10 +4366,44 @@ textarea.input {
   cursor: pointer;
 }
 
+.no-touch .nav__link:hover {
+  background: #4C5560;
+}
+
+.nav__link.is-active {
+  color: #fff;
+  background: #4C5560;
+}
+
 .nav__icon {
   position: absolute;
   top: 5px;
   left: 5px;
+}
+
+.nav__arrow {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  transition: transform 0.17s ease-in-out;
+}
+
+.nav__submenu {
+  display: none;
+  border-bottom: 1px solid #353c44;
+  background: #353c44;
+}
+
+.nav__item.is-open .nav__submenu {
+  display: block;
+}
+
+.no-touch .nav__submenu .nav__link:hover {
+  color: #fff;
+}
+
+.nav__submenu .nav__item:last-child {
+  border: none;
 }
 
 .default-pagination {
@@ -4776,6 +4821,19 @@ textarea.input {
   padding: 10px 0;
   border-top: 1px solid rgba(0, 0, 0, 0.1);
   background: #d2edf6;
+}
+
+.totals_static {
+  border-top: 2px solid rgba(0, 0, 0, 0.1);
+  background: none;
+}
+
+.totals_static .totals-list_scroll {
+  border-top-color: #ebebeb;
+}
+
+.totals_static .totals-list__item:not(:first-child):before {
+  border-top-color: #d2d2d2;
 }
 
 .totals__container {

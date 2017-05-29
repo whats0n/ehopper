@@ -7,149 +7,158 @@ styles:
 
 {% block content %}
 	
-	<main class="container">
-		{{header.simple({
-			help: true,
-			back: true,
-			title: 'Terminal',
-			titleClassList: 'header__title_vertical text-center'
+	<main class="main">
+		{{header.call({
+			sidebarClassList: 'is-hidden',
+			fullinfoClassList: 'is-hidden',
+			menuBtnClassList: 'is-hidden',
+			helpBtnClassList: 'is-hidden',
+			searchClassList: 'is-hidden',
+			syncBtnClassList: 'is-hidden',
+			searchBtnClassList: 'is-hidden',
+			syncClassList: 'is-hidden',
+			scanBtnClassList: 'is-hidden',
+			containerClassList: 'main-header__container_full',
+			title: 'Terminal'
 		})}}
-		<div class="container__body">
-			<div class="section section_inner">
-				<div class="form form_sm">
-					<div class="form__columns">
-						<div class="form__column form__column_md">
-							<button class="btn btn_lg btn_block btn_primary btn_rounded" data-animation="ripple">
-								<i class="icon icon-cc"></i>
-								Credit Card
-							</button>
-						</div>
-						<div class="form__column form__column_md">
-							<button class="btn btn_lg btn_block btn_default btn_rounded" data-animation="ripple">
-								<i class="icon icon-cash"></i>
-								Cash
-							</button>
-						</div>
-					</div>
-
-					<div class="form__section">
-						{{mixins.fieldBox({
-							switcher: true,
-							label: 'Enter Card Manually',
-							id: 'terminal-card-enter-card-manually'
-						})}}
-					</div>
-
-					<div class="form__section">
-						<div class="card-field">
-							<div class="card-field__lg">
-								<div class="form-box is-focus">
-									{{mixins.field({
-										placeholder: '# Card Credit',
-										inputClassList: 'input_lg',
-										attrs: 'readonly'
-									})}}
-								</div>
+		<div class="container container_simple">
+			<div class="container__body">
+				<div class="section section_inner">
+					<div class="form form_sm">
+						<div class="form__columns">
+							<div class="form__column form__column_md">
+								<button class="btn btn_lg btn_block btn_primary btn_rounded" data-animation="ripple">
+									<i class="icon icon-cc"></i>
+									Credit Card
+								</button>
 							</div>
-							<div class="card-field__sm">
-								<div class="form-box">
-									{{mixins.field({
-										placeholder: 'Exp',
-										inputClassList: 'input_lg',
-										attrs: 'readonly'
-									})}}
-								</div>
+							<div class="form__column form__column_md">
+								<button class="btn btn_lg btn_block btn_default btn_rounded" data-animation="ripple">
+									<i class="icon icon-cash"></i>
+									Cash
+								</button>
 							</div>
 						</div>
-					</div>
-					
-					<div class="form__section">
-						{{mixins.fieldBox({
-							radios: true,
-							label: 'Collect Signature',
-							colSize: 'sm',
-							list: [
-								{
-									content: 'On Screen',
-									name: 'terminal-card-and-signature'
-								},
-								{
-									content: 'On Receipt',
-									attrs: 'checked',
-									name: 'terminal-card-and-signature'
-								},
-								{
-									content: 'On Terminal',
-									name: 'terminal-card-and-signature'
-								}
-							]
+
+						<div class="form__section">
+							{{mixins.fieldBox({
+								switcher: true,
+								label: 'Enter Card Manually',
+								id: 'terminal-card-enter-card-manually'
+							})}}
+						</div>
+
+						<div class="form__section">
+							<div class="card-field">
+								<div class="card-field__lg">
+									<div class="form-box is-focus">
+										{{mixins.field({
+											placeholder: '# Card Credit',
+											inputClassList: 'input_lg',
+											attrs: 'readonly'
+										})}}
+									</div>
+								</div>
+								<div class="card-field__sm">
+									<div class="form-box">
+										{{mixins.field({
+											placeholder: 'Exp',
+											inputClassList: 'input_lg',
+											attrs: 'readonly'
+										})}}
+									</div>
+								</div>
+							</div>
+						</div>
+						
+						<div class="form__section">
+							{{mixins.fieldBox({
+								radios: true,
+								label: 'Collect Signature',
+								colSize: 'sm',
+								list: [
+									{
+										content: 'On Screen',
+										name: 'terminal-card-and-signature'
+									},
+									{
+										content: 'On Receipt',
+										attrs: 'checked',
+										name: 'terminal-card-and-signature'
+									},
+									{
+										content: 'On Terminal',
+										name: 'terminal-card-and-signature'
+									}
+								]
+							})}}
+						</div>
+
+						{{keyboard.display({
+							field: {
+								label: 'Amount Due:',
+								id: 'terminal-card-amount-due',
+								placeholder: '0.00',
+								attrs: 'required readonly',
+								inputClassList: 'text-right input_xl'
+							},
+							dividerNone: true,
+							keyboard: {
+								size: 'keyboard__lg',
+								keyboardSide: [
+									{
+										attrs: 'data-numpad="numpad-backspace"',
+										content: '<i class="icon icon-text icon-backspace"></i>'
+									},
+									{
+										content: 'Pay',
+										classList: 'keyboard__submit',
+										colspan: '3',
+										attrs: 'data-modal-open="payment-terminal" value="numpad-submit"'
+									}
+								],
+								keyboardMain: [
+									{
+										content: '1'
+									},
+									{
+										content: '2'
+									},
+									{
+										content: '3'
+									},
+									{
+										content: '4'
+									},
+									{
+										content: '5'
+									},
+									{
+										content: '6'
+									},
+									{
+										content: '7'
+									},
+									{
+										content: '8'
+									},
+									{
+										content: '9'
+									},
+									{
+										content: '0'
+									},
+									{
+										content: '00'
+									},
+									{
+										attrs: 'data-numpad="numpad-clear"',
+										content: '<i class="icon icon-text icon-clear"></i>'
+									}
+								]
+							}
 						})}}
 					</div>
-
-					{{keyboard.display({
-						field: {
-							label: 'Amount Due:',
-							id: 'terminal-card-amount-due',
-							placeholder: '0.00',
-							attrs: 'required readonly',
-							inputClassList: 'text-right input_xl'
-						},
-						dividerNone: true,
-						keyboard: {
-							size: 'keyboard__lg',
-							keyboardSide: [
-								{
-									attrs: 'data-numpad="numpad-backspace"',
-									content: '<i class="icon icon-text icon-backspace"></i>'
-								},
-								{
-									content: 'Pay',
-									classList: 'keyboard__submit',
-									colspan: '3',
-									attrs: 'data-modal-open="payment-terminal" value="numpad-submit"'
-								}
-							],
-							keyboardMain: [
-								{
-									content: '1'
-								},
-								{
-									content: '2'
-								},
-								{
-									content: '3'
-								},
-								{
-									content: '4'
-								},
-								{
-									content: '5'
-								},
-								{
-									content: '6'
-								},
-								{
-									content: '7'
-								},
-								{
-									content: '8'
-								},
-								{
-									content: '9'
-								},
-								{
-									content: '0'
-								},
-								{
-									content: '00'
-								},
-								{
-									attrs: 'data-numpad="numpad-clear"',
-									content: '<i class="icon icon-text icon-clear"></i>'
-								}
-							]
-						}
-					})}}
 				</div>
 			</div>
 		</div>

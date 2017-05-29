@@ -11,7 +11,7 @@ export default (function() {
 			this.swipeEndX = e.targetTouches[0].pageX;
 		},
 		end(e) {
-			const activeClass = this.getAttribute('data-swipe');
+			const activeClass = this.getAttribute('data-swipe').replace(' ', '');
 			const threshold = +this.getAttribute('data-swipe-threshold') || 30;
 
 			if (this.swipeStartX > this.swipeEndX + threshold) {

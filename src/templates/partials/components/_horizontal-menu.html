@@ -9,7 +9,10 @@
 			{% for item in props.items %}
 				<li class="horizontal-menu__item">
 					{% if item.dropdown %}
-						<a class="horizontal-menu__link {{item.linkClassList}}" data-animation="ripple" href="{{item.href}}" {{item.attrs | safe}} data-dropdown-open="{{item.dropdown.name}}">{{item.text | safe}}</a>
+						<a class="horizontal-menu__link {{item.linkClassList}}" 
+							data-animation="ripple" 
+							href="{{item.href}}"
+							data-dropdown-open="{{item.dropdown.name}}" {{item.attrs | safe}}>{{item.text | safe}}</a>
 						{{dropdown.menu(item.dropdown)}}
 					{% else %}
 						<a class="horizontal-menu__link {{item.linkClassList}}" data-animation="ripple" href="{{item.href}}" {{item.attrs | safe}}>{{item.text | safe}}</a>

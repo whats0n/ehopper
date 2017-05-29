@@ -39,7 +39,7 @@
             display: none
         &__body
           +poynt
-            padding-top: 200px
+            padding-top: 210px
             height: 100%
       .container
         &__body
@@ -86,10 +86,16 @@
     +poynt
       padding: 150px 0 0
   &_payments,
-  &_order
+  &_order,
+  &_simple
     .container
       &__body
-        height: calc(100% - 50px)
+        padding-top: 50px
+        // height: calc(100% - 50px)
+  &_simple
+    .container 
+      &__body 
+        height: 100%
   &__body
     position: relative
     overflow: auto
@@ -132,8 +138,18 @@
       +poynt
         margin-top: 0
         height: auto
+  &_white,
+  &_list
+    border-right: 2px solid rgba($black, 0.1)
+    box-shadow: none
+    +poynt
+      border-right: none
   &_white
     background: $white
+  &_list
+    background: $lightGray
+    .sidebar__body
+      background: none
   &_adaptive-poynt
     +poynt
       z-index: -1
@@ -155,13 +171,18 @@
             strong
               +poynt
                 font-size: 20px
-  .sidebar__header
-    position: absolute
-    top: 0
-    left: 0
-    right: 0
-    +poynt
-      display: none
+  // .sidebar__header
+  //   position: absolute
+  //   top: 0
+  //   left: 0
+  //   right: 0
+  //   +poynt
+  //     display: none
+  &__header 
+    border-bottom: 2px solid rgba($black, 0.1)
+    .toolbar_static
+      .toolbar__col
+        padding: 0 20px
   &__body
     position: relative
     overflow: auto
@@ -220,16 +241,17 @@
       width: 100%
       height: auto
   &__container
-    margin-left: 300px
-    box-shadow: 3px 0 4px 5px rgba(0, 0, 0, 0.2)
+    // margin-left: 300px
+    // box-shadow: 3px 0 4px 5px rgba(0, 0, 0, 0.2)
     +poynt
-      padding-top: 152px
+      // padding-top: 152px
+      padding-top: 50px
       margin: 0
-  .settings__header
-    position: absolute
-    top: 0
-    left: 0
-    right: 0
+  // .settings__header
+  //   position: absolute
+  //   top: 0
+  //   left: 0
+  //   right: 0
   &__nav
     overflow: auto
     padding-top: 70px
@@ -348,8 +370,13 @@
     .table-header
       &__th
         +lg
-          padding-top: 11px
-          padding-bottom: 11px
+          padding-top: 10px
+          padding-bottom: 10px
+  &[data-table="customer-details"]
+    [data-table-fake],
+    [data-table-scrollable] > div
+      min-width: 1200px
+
 .table-header,
 .table-body
   display: table

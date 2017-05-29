@@ -14,6 +14,7 @@ import menu from './components/_menu';
 import orderList from './components/_orderlist';
 import snackbar from './components/_snackbar';
 import toggleClass from './components/_toggle-class';
+import nav from './components/_nav';
 import simpleSwipe from './components/_simple-swipe';
 import table from './components/_table';
 

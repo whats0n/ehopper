@@ -9,7 +9,21 @@ settingsActive: 2
 {% block content %}
 	<main class="main">
 		<div class="inner settings">
-			{{header.double({
+			{{header.call({
+				sidebarClassList: 'is-hidden',
+				fullinfoClassList: 'is-hidden',
+				menuBtnClassList: 'is-hidden',
+				helpBtnClassList: 'is-hidden',
+				searchClassList: 'is-hidden',
+				syncBtnClassList: 'is-hidden',
+				searchBtnClassList: 'is-hidden',
+				scanBtnClassList: 'is-hidden',
+				syncClassList: 'is-hidden',
+				containerClassList: 'main-header__container_full',
+				title: 'Settings'
+			})}}
+			
+			{# {{header.double({
 				classList: 'header_container-upper header_poynt-sm header_settings',
 				sidebar: {
 					back: true,
@@ -21,8 +35,8 @@ settingsActive: 2
 					headerClassList: 'settings__header',
 					help: true
 				}
-			})}}
-			{% include 'partials/components/_settings-sidebar.html' %}
+			})}} #}
+			{# {% include 'partials/components/_settings-sidebar.html' %} #}
 			<div class="settings__container">
 				<div class="settings__body">
 					<div class="explanation settings__explanation is-error">

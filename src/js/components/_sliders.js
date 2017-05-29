@@ -3,7 +3,6 @@ import {$DOCUMENT, isTouch, ACTIVE} from '../_constants';
 
 export default (function() {
 	
-	const DEFAULT = 'default';
 	const PREV = 'prev';
 	const NEXT = 'next';
 	const BEFORE = 'before';
@@ -21,20 +20,16 @@ export default (function() {
 			const $parent = $this.closest('[data-slider-wrapper]');
 			const $pagination = $parent.find('[data-slider-pagination]');
 
-			switch (type) {
-				case DEFAULT: 
-					$this.slick({
-						dots: true,
-						arrows: !isTouch(),
-						prevArrow: getArrow(PREV, BEFORE),
-						nextArrow: getArrow(NEXT, AFTER),
-						appendArrows: $pagination,
-						appendDots: $pagination,
-						cssEase: 'ease-in-out',
-						speed: 700
-					});
-					break;
-			}
+			$this.slick({
+				dots: true,
+				arrows: !isTouch(),
+				prevArrow: getArrow(PREV, BEFORE),
+				nextArrow: getArrow(NEXT, AFTER),
+				appendArrows: $pagination,
+				appendDots: $pagination,
+				cssEase: 'ease-in-out',
+				speed: 700
+			});
 		});
 
 		const $helpSlider = $('.js-help-slider');

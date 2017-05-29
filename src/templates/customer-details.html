@@ -9,12 +9,19 @@ settingsActive: 2
 {% block content %}
 	<main class="main">
 		<div class="inner order">
+			{{header.call({
+				sidebarClassList: 'is-hidden',
+				fullinfoClassList: 'is-hidden',
+				menuBtnClassList: 'is-hidden',
+				helpBtnClassList: 'is-hidden',
+				searchClassList: 'is-hidden',
+				syncBtnClassList: 'is-hidden',
+				searchBtnClassList: 'is-hidden',
+				scanBtnClassList: 'is-hidden',
+				containerClassList: 'main-header__container_full',
+				title: 'Customer Details'
+			})}}
 			<aside class="order__sidebar">
-				{{header.simple({
-					back: true,
-					backText: 'Back',
-					headerClassList: 'order__header'
-				})}}
 				<div class="order__info">
 					<div class="infoblock">
 						<div class="infoblock__row">
@@ -56,16 +63,9 @@ settingsActive: 2
 				</div>
 			</aside>
 			<div class="order__container">
-				{{header.simple({
-					title: 'Customer Details',
-					titleClassList: 'header__title_vertical',
-					headerClassList: 'order__header',
-					sync: true,
-					syncIndicatorOnly: true
-				})}}
 				<div class="order__body">
 					<div class="order__content">
-						<div class="table-wrapper table-wrapper_no-footer" data-table="orders">
+						<div class="table-wrapper table-wrapper_customer table-wrapper_no-footer" data-table="customer-details">
 							{% set table = {
 								header: [
 									{ column: 'orders-status', content: 'Status' },
@@ -135,7 +135,7 @@ settingsActive: 2
 									]
 								]
 							} %}
-							<div class="table-wrapper__header" data-table-fake="orders">
+							<div class="table-wrapper__header" data-table-fake="customer-details">
 								<div class="table-header">
 									<ul class="table-header__tr">
 										{% for th in table.header %}
@@ -152,8 +152,8 @@ settingsActive: 2
 									</ul>
 								</div>
 							</div>
-							<div class="table-wrapper__body" data-scrollbar="default" data-table-scrollable="orders">
-								<div class="table-body table-body_order table-wrapper__table" data-table-main="orders">
+							<div class="table-wrapper__body" data-scrollbar="default" data-table-scrollable="customer-details">
+								<div class="table-body table-body_order table-wrapper__table" data-table-main="customer-details">
 									{% for item in range(0,5) %}
 										{% for tr in table.body %}
 											<div class="table-body__tr">

@@ -20,24 +20,188 @@
       <!-- BEGIN content -->
       <main class="main">
         <div class="inner">
-          <aside class="sidebar sidebar_left is-poynt-hidden">
-            <!-- begin header -->
-            <header class="header sidebar__header"> <button class="header__back btn-back">
-			<i class="icon icon-back btn-back__icon"></i>
-			
+          <!-- begin header -->
+          <header class="main-header ">
+            <!-- begin button 'back' --><button class="main-header__back btn-back ">
+		<i class="icon icon-back btn-back__icon"></i>
+		<span class="btn-back__title">Back</span>
+	</button>
+            <!-- end button 'back' -->
+            <!-- begin main container -->
+            <div class="main-header__container main-header__container_full"> <button class="btn-icon main-header__help is-hidden" title="Help" data-modal-open="help">
+			<i class="icon icon-help"></i>
 		</button>
-              <div class="header__toolbar">
-                <div class="toolbar toolbar_static">
+              <h2 class="title-xlg main-header__title ">Split Payment</h2>
+              <div class="main-header__searchbox is-hidden">
+                <!-- begin search -->
+                <div class="search" data-modal="search">
+                  <div class="search__field" data-modal="container"> <input type="text" class="search__input" placeholder="Search by item: name, UPC">
+                    <div class="search__controls"> <span class="search__button"><i class="icon icon-search"></i></span> </div>
+                  </div>
+                  <div class="search-dropdown"> <i class="search-dropdown__arrow"></i>
+                    <div class="search-dropdown__container">
+                      <div class="search-dropdown__body">
+                        <ul class="search-dropdown__list">
+                          <li class="search-dropdown__item">
+                            <div class="search-dropdown__price"> <span class="search-dropdown__currency">$</span> <span class="search-dropdown__value">99.99</span> </div>
+                            <div class="search-dropdown__text">Lorem ipsum dolor.</div>
+                          </li>
+                          <li class="search-dropdown__item">
+                            <div class="search-dropdown__price"> <span class="search-dropdown__currency">$</span> <span class="search-dropdown__value">99.99</span> </div>
+                            <div class="search-dropdown__text">Lorem ipsum dolor.</div>
+                          </li>
+                          <li class="search-dropdown__item">
+                            <div class="search-dropdown__price"> <span class="search-dropdown__currency">$</span> <span class="search-dropdown__value">99.99</span> </div>
+                            <div class="search-dropdown__text">Lorem ipsum dolor.</div>
+                          </li>
+                          <li class="search-dropdown__item">
+                            <div class="search-dropdown__price"> <span class="search-dropdown__currency">$</span> <span class="search-dropdown__value">99.99</span> </div>
+                            <div class="search-dropdown__text">Lorem ipsum dolor.</div>
+                          </li>
+                          <li class="search-dropdown__item">
+                            <div class="search-dropdown__price"> <span class="search-dropdown__currency">$</span> <span class="search-dropdown__value">99.99</span> </div>
+                            <div class="search-dropdown__text">Lorem ipsum dolor.</div>
+                          </li>
+                          <li class="search-dropdown__item">
+                            <div class="search-dropdown__price"> <span class="search-dropdown__currency">$</span> <span class="search-dropdown__value">99.99</span> </div>
+                            <div class="search-dropdown__text">Lorem ipsum dolor.</div>
+                          </li>
+                          <li class="search-dropdown__item">
+                            <div class="search-dropdown__price"> <span class="search-dropdown__currency">$</span> <span class="search-dropdown__value">99.99</span> </div>
+                            <div class="search-dropdown__text">Lorem ipsum dolor.</div>
+                          </li>
+                          <li class="search-dropdown__item">
+                            <div class="search-dropdown__price"> <span class="search-dropdown__currency">$</span> <span class="search-dropdown__value">99.99</span> </div>
+                            <div class="search-dropdown__text">Lorem ipsum dolor.</div>
+                          </li>
+                          <li class="search-dropdown__item">
+                            <div class="search-dropdown__price"> <span class="search-dropdown__currency">$</span> <span class="search-dropdown__value">99.99</span> </div>
+                            <div class="search-dropdown__text">Lorem ipsum dolor.</div>
+                          </li>
+                          <li class="search-dropdown__item">
+                            <div class="search-dropdown__price"> <span class="search-dropdown__currency">$</span> <span class="search-dropdown__value">99.99</span> </div>
+                            <div class="search-dropdown__text">Lorem ipsum dolor.</div>
+                          </li>
+                          <li class="search-dropdown__item">
+                            <div class="search-dropdown__price"> <span class="search-dropdown__currency">$</span> <span class="search-dropdown__value">99.99</span> </div>
+                            <div class="search-dropdown__text">Lorem ipsum dolor.</div>
+                          </li>
+                          <li class="search-dropdown__item">
+                            <div class="search-dropdown__price"> <span class="search-dropdown__currency">$</span> <span class="search-dropdown__value">99.99</span> </div>
+                            <div class="search-dropdown__text">Lorem ipsum dolor.</div>
+                          </li>
+                        </ul>
+                      </div> <button class="btn btn_block" data-animation="ripple"><i class="icon icon-expand"></i>Show more</button> </div>
+                  </div>
+                </div>
+                <!-- end search -->
+              </div>
+            </div>
+            <!-- end main container -->
+            <!-- begin block sync/search for -->
+            <div class="main-header__sync is-hidden">
+              <div class="main-header__indicator" data-state="active"></div> <button class="btn-sync is-hidden">
+			<span class="btn-sync__title">Sync</span>
+			<i class="icon icon-sync btn-sync__icon"></i>
+		</button> <button class="main-header__search-for is-hidden">
+			<span></span>
+			<i class="icon icon-sync"></i>
+		</button> </div>
+            <!-- end block sync/search for -->
+            <!-- begin button 'menu' --><button class="main-header__menu icon icon-menu is-hidden" title="Menu" data-menu-open="menu"></button>
+            <!-- end button 'menu' -->
+            <!-- begin sidebar for shopping cart -->
+            <div class="main-header__sidebar is-hidden"> <button class="main-header__delete btn-icon icon icon-delete " type="button" title="Delete"></button>
+              <div class="main-header__toolbar ">
+                <div class="toolbar">
                   <div class="toolbar__container">
                     <div class="toolbar__row">
-                      <div class="toolbar__col">Quick Sale</div>
-                      <div class="toolbar__col">Walk In</div>
+                      <div class="toolbar__col">
+                        <!-- begin dropdown -->
+                        <div class="dropdown dropdown_header dropdown-menu_no-scroll" data-dropdown="order-type">
+                          <div class="dropdown__header" data-dropdown-open="order-type" data-animation="ripple"> <i class="dropdown__arrow icon icon-expand"></i>
+                            <div class="dropdown__value" data-dropdown-value="order-type">Quick Sale</div>
+                          </div>
+                          <div class="dropdown-menu " data-dropdown-menu="order-type">
+                            <ul class="dropdown-menu__list">
+                              <li class="dropdown-menu__item is-active" data-animation="ripple" data-dropdown-item="order-type" data-value="Quick Sale"> Quick Sale </li>
+                              <li class="dropdown-menu__item" data-animation="ripple" data-dropdown-item="order-type" data-value="Dine In"> Dine In </li>
+                              <li class="dropdown-menu__item" data-animation="ripple" data-dropdown-item="order-type" data-value="Take Out"> Take Out </li>
+                              <li class="dropdown-menu__item" data-animation="ripple" data-dropdown-item="order-type" data-value="Drive Thru"> Drive Thru </li>
+                              <li class="dropdown-menu__item" data-animation="ripple" data-dropdown-item="order-type" data-value="Delivery"> Delivery </li>
+                            </ul>
+                          </div>
+                          <!-- begin overlay --><button type="button" class="overlay " data-color="dark-gray" data-overlay="overlay" data-dropdown-overlay="order-type"></button>
+                          <!-- end overlay -->
+                        </div>
+                        <!-- end dropdown -->
+                      </div>
+                      <div class="toolbar__col">
+                        <!-- begin dropdown -->
+                        <div class="dropdown dropdown_header dropdown_fixed" data-dropdown="customer">
+                          <div class="dropdown__header" data-dropdown-open="customer" data-animation="ripple"> <i class="dropdown__arrow icon icon-expand"></i>
+                            <div class="dropdown__value" data-dropdown-value="customer">Walk In</div>
+                          </div>
+                          <div class="dropdown-menu " data-dropdown-menu="customer">
+                            <div class="dropdown-menu__search sm-search">
+                              <form action="/">
+                                <div class="sm-search__field"> <input type="text" class="sm-search__input" placeholder="Search for customer"> <button class="sm-search__btn" data-animation="ripple"><i class="icon icon-search"></i></button> </div>
+                              </form>
+                            </div>
+                            <ul class="dropdown-menu__list">
+                              <li class="dropdown-menu__item is-active dropdown-menu__item_special" data-animation="ripple" data-dropdown-item="customer" data-value="Walk In"> Walk In </li>
+                              <li class="dropdown-menu__item" data-animation="ripple" data-dropdown-item="customer" data-value="John Doe"> John Doe <i class="icon icon-next"></i> </li>
+                              <li class="dropdown-menu__item" data-animation="ripple" data-dropdown-item="customer" data-value="Charlie Sheen"> Charlie Sheen <i class="icon icon-next"></i> </li>
+                              <li class="dropdown-menu__item" data-animation="ripple" data-dropdown-item="customer" data-value="Wendy Williams"> Wendy Williams <i class="icon icon-next"></i> </li>
+                            </ul> <button class="btn btn_block btn_md btn_green" data-animation="ripple" id="add-new-customer-btn"><i class="icon icon-plus"></i>New Customer</button> </div>
+                          <!-- begin overlay --><button type="button" class="overlay " data-color="dark-gray" data-overlay="overlay" data-dropdown-overlay="customer"></button>
+                          <!-- end overlay -->
+                        </div>
+                        <!-- end dropdown -->
+                      </div>
                     </div>
                   </div>
                 </div>
               </div>
-            </header>
-            <!-- end header -->
+            </div>
+            <!-- end sidebar for shopping cart -->
+            <!-- begin button 'scan' -->
+            <div class="main-header__scan is-hidden"> <button class="btn-scan" data-animation="ripple">
+			<svg viewBox="0 0 26 25" class="btn-scan__icon">
+				<path d="M0,0v6c0.7,0,1.3,0,2,0V2h4c0-1,0-1,0-2H0z"></path>
+				<path d="M20,0c0,0.7,0,1.3,0,2h4v4c0.6,0,1.3,0,2,0V0H20z"></path>
+				<path d="M2,23v-4c-0.7,0-1.3,0-2,0v6h6c0-0.8,0-1.4,0-2H2z"></path>
+				<path d="M26,19c-0.7,0-1.4,0-2,0v4h-4c0,0.6,0,1.4,0,2h6V19z"></path>
+				<path d="M5,5v15h1C6,15.3,6,9.7,6,5H5z"></path>
+				<path d="M7,5c0,4.7,0,10.3,0,15h1C8,15.3,8,9.7,8,5H7z"></path>
+				<path d="M9,5c0,4.7,0,10.3,0,15h2c0-4.7,0-10.3,0-15H9z"></path>
+				<path d="M13,5c0,4.7,0,10.3,0,15h1c0-4.7,0-10.3,0-15H13z"></path>
+				<path d="M15,5c0,4.7,0,10.3,0,15h1c0-4.7,0-10.3,0-15H15z"></path>
+				<path d="M17,5c0,4.7,0,10.3,0,15h2c0-5.2,0-9.7,0-15H17z"></path>
+				<path d="M21,5h-1c0,4.7,0,10.3,0,15h1V5z"></path>
+			</svg>
+			<span class="btn-scan__text">Scan</span>
+		</button> </div>
+            <!-- end button scan -->
+            <!-- begin container for fullinfo on the shopping cart -->
+            <div class="main-header__fullinfo is-hidden" data-fullinfo-container="fullinfo"> <button class="header__back btn-back">
+			<i class="icon icon-back btn-back__icon"></i>
+			<span class="btn-back__title">Back</span>
+		</button> </div>
+            <!-- end container for fullinfo on the shopping cart -->
+          </header>
+          <!-- end header -->
+          <aside class="sidebar sidebar_left sidebar_list is-poynt-hidden">
+            <div class="sidebar__header">
+              <div class="toolbar toolbar_static">
+                <div class="toolbar__container">
+                  <div class="toolbar__row">
+                    <div class="toolbar__col">Quick Sale</div>
+                    <div class="toolbar__col">Walk in</div>
+                  </div>
+                </div>
+              </div>
+            </div>
             <div class="sidebar__body">
               <div class="sidebar__content">
                 <ul class="order-list">
@@ -57,7 +221,6 @@
                           </div>
                           <div class="order-item__col">
                             <div class="order-item__total">3.00</div>
-                            <div class="order-item__tag"></div>
                           </div>
                         </div>
                       </div>
@@ -101,7 +264,6 @@
                           </div>
                           <div class="order-item__col">
                             <div class="order-item__total">8.00</div>
-                            <div class="order-item__tag"></div>
                           </div>
                         </div>
                       </div>
@@ -111,7 +273,7 @@
               </div>
             </div>
             <div class="sidebar__footer">
-              <div class="totals sidebar__totals">
+              <div class="totals totals_static sidebar__totals">
                 <div class="totals__container">
                   <ul class="totals-list totals-list_main">
                     <li class="totals-list__item">
@@ -134,14 +296,6 @@
             </div>
           </aside>
           <div class="container container_right container_payments">
-            <!-- begin header -->
-            <header class="header container__header header_payments"> <button class="header__back btn-back">
-			<i class="icon icon-back btn-back__icon"></i>
-			<span class="btn-back__title">Back</span>
-		</button>
-              <h2 class="title-xlg header__title header__title_vertical">Split Payment</h2>
-            </header>
-            <!-- end header -->
             <div class="container__body step-body">
               <div class="step-body__section">
                 <div class="form form_sm"> <br>

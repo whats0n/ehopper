@@ -4,6 +4,17 @@
 	// background: $alabaster
 	// background: #f2f2f2
 	background: #d2edf6
+	&_static
+		// background: $alabaster
+		border-top: 2px solid rgba($black, 0.1)
+		background: none
+		.totals-list 
+			&_scroll
+				border-top-color: darken($alabaster, 5%)
+			&__item
+				&:not(:first-child)
+					&:before
+						border-top-color: darken($alabaster, 15%)
 	&__container
 		// float: right
 		padding-top: 5px

@@ -8,15 +8,21 @@ styles:
 {% block content %}
 	<main class="main">
 		<div class="inner">
+			{{header.call({
+				sidebarClassList: 'is-hidden',
+				fullinfoClassList: 'is-hidden',
+				menuBtnClassList: 'is-hidden',
+				helpBtnClassList: 'is-hidden',
+				searchClassList: 'is-hidden',
+				syncBtnClassList: 'is-hidden',
+				searchBtnClassList: 'is-hidden',
+				syncClassList: 'is-hidden',
+				scanBtnClassList: 'is-hidden',
+				containerClassList: 'main-header__container_full',
+				title: 'EBT Card Payment'
+			})}}
 			{% include 'partials/components/_payments-sidebar.html' %}
 			<div class="container container_right container_payments">
-				{{header.simple({
-					headerClassList: 'container__header header_payments',
-					back: true,
-					title: 'EBT Card Payment',
-					titleClassList: 'header__title_vertical',
-					help: true
-				})}}
 				<div class="container__body step-body">
 					<div class="step-body__section">
 						<div class="form form_sm">

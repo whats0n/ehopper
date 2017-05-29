@@ -1,26 +1,26 @@
 .order
-	.order-header
-		position: absolute
-		top: 0
-		left: 0
-		right: 0
-		&__sidebar
-			z-index: 10
-			width: 300px
-			box-shadow: none
-			+poynt
-				width: 0
-				height: auto
-				min-height: 0
-		&__container
-			z-index: 20
-			float: none
-			margin-left: 300px
-			width: auto
-			box-shadow: 3px -5px 4px 5px rgba(0, 0, 0, 0.2)
-			+poynt
-				margin-left: 0
-				text-align: center
+	// .order-header
+	// 	position: absolute
+	// 	top: 0
+	// 	left: 0
+	// 	right: 0
+	// 	&__sidebar
+	// 		z-index: 10
+	// 		width: 300px
+	// 		box-shadow: none
+	// 		+poynt
+	// 			width: 0
+	// 			height: auto
+	// 			min-height: 0
+	// 	&__container
+	// 		z-index: 20
+	// 		float: none
+	// 		margin-left: 300px
+	// 		width: auto
+	// 		box-shadow: 3px -5px 4px 5px rgba(0, 0, 0, 0.2)
+	// 		+poynt
+	// 			margin-left: 0
+	// 			text-align: center
 	&__sidebar,
 	&__container
 		position: relative
@@ -28,9 +28,11 @@
 		height: 100%
 	&__sidebar
 		float: left
+		border-right: 2px solid rgba($black, 0.1)
 		width: 300px
 		+poynt
 			z-index: 5
+			border-right: none
 			width: 100%
 			height: auto
 			font-size: 0
@@ -50,7 +52,7 @@
 				display: none
 	&__container
 		margin-left: 300px
-		box-shadow: 3px 0 4px 5px rgba(0, 0, 0, 0.2)
+		// box-shadow: 3px 0 4px 5px rgba(0, 0, 0, 0.2)
 		+poynt
 			padding-top: 400px
 			margin-left: 0

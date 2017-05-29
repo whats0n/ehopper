@@ -170,7 +170,6 @@
 		{% if props.sidebar.menu %}
 			<button class="btn-icon btn-icon_square icon icon-menu header__menu" title="Menu" data-menu-open="menu"></button>
 		{% endif %}
-
 		{% if props.delete %}
 			<button class="header__delete btn-icon icon icon-delete" type="button" title="Delete"></button>
 		{% endif %}
@@ -300,6 +299,123 @@
 			{% endif %}
 		</div>
 	{% endif %}
+</header>
+<!-- end header -->
+{% endmacro %}
+
+{% macro call(props) %}
+<!-- begin header -->
+<header class="main-header {{props.classList}}">
+
+	<!-- begin button 'back' -->
+	<button class="main-header__back btn-back {{props.backBtnClassList}}" {{props.backAttrs | safe}}>
+		<i class="icon icon-back btn-back__icon"></i>
+		<span class="btn-back__title">{{props.backBtnText or 'Back'}}</span>
+	</button>
+	<!-- end button 'back' -->
+	
+	<!-- begin main container -->
+	<div class="main-header__container {{props.containerClassList}}">
+		<button class="btn-icon main-header__help {{props.helpBtnClassList}}" title="Help" data-modal-open="help">
+			<i class="icon icon-help"></i>
+		</button>
+
+		<h2 class="title-xlg main-header__title {{props.titleClassList}}">{{props.title}}</h2>
+
+		<div class="main-header__searchbox {{props.searchClassList}}">
+			{% include './_search.html' %}
+		</div>
+	</div>
+	<!-- end main container -->
+
+	<!-- begin block sync/search for -->
+	<div class="main-header__sync {{props.syncClassList}}">
+		<div class="main-header__indicator" data-state="active"></div>
+		<button class="btn-sync {{props.syncBtnClassList}}">
+			<span class="btn-sync__title">Sync</span>
+			<i class="icon icon-sync btn-sync__icon"></i>
+		</button>
+		<button class="main-header__search-for {{props.searchBtnClassList}}">
+			<span>{{props.searchFor}}</span>
+			<i class="icon icon-sync"></i>
+		</button>
+	</div>
+	<!-- end block sync/search for -->
+
+	<!-- begin button 'menu' -->
+	<button class="main-header__menu icon icon-menu {{props.menuBtnClassList}}" title="Menu" data-menu-open="menu"></button>
+	<!-- end button 'menu' -->
+
+	<!-- begin sidebar for shopping cart -->
+	<div class="main-header__sidebar {{props.sidebarClassList}}">
+		<button class="main-header__delete btn-icon icon icon-delete {{props.deleteBtnClassList}}" type="button" title="Delete"></button>
+		<div class="main-header__toolbar {{props.toolbarClassList}}">
+			<div class="toolbar">
+				<div class="toolbar__container">
+					<div class="toolbar__row">
+						<div class="toolbar__col">
+							{{dropdown.simple({
+								dropdownClassList: 'dropdown_header dropdown-menu_no-scroll',
+								value: 'Quick Sale',
+								list: [ { text: 'Quick Sale', value: 'Quick Sale' }, { text: 'Dine In', value: 'Dine In' }, { text: 'Take Out', value: 'Take Out' }, { text: 'Drive Thru', value: 'Drive Thru' }, { text: 'Delivery', value: 'Delivery' } ],
+								listOnly: true,
+								activeItem: 0,
+								name: 'order-type'
+							})}}
+						</div>
+						<div class="toolbar__col">
+							{{dropdown.simple({
+								dropdownClassList: 'dropdown_header dropdown_fixed',
+								value: 'Walk In',
+								special: 0,
+								list: [ 
+									{ text: 'Walk In', value: 'Walk In' }, 
+									{ text: 'John Doe <i class="icon icon-next"></i>', value: 'John Doe' }, 
+									{ text: 'Charlie Sheen <i class="icon icon-next"></i>', value: 'Charlie Sheen' }, 
+									{ text: 'Wendy Williams <i class="icon icon-next"></i>', value: 'Wendy Williams' }
+								],
+								search: true,
+								btnAdd: 'New Customer',
+								activeItem: 0,
+								name: 'customer'
+							})}}
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- end sidebar for shopping cart -->
+
+	<!-- begin button 'scan' -->
+	<div class="main-header__scan {{props.scanBtnClassList}}">
+		<button class="btn-scan" data-animation="ripple">
+			<svg viewBox="0 0 26 25" class="btn-scan__icon">
+				<path d="M0,0v6c0.7,0,1.3,0,2,0V2h4c0-1,0-1,0-2H0z"></path>
+				<path d="M20,0c0,0.7,0,1.3,0,2h4v4c0.6,0,1.3,0,2,0V0H20z"></path>
+				<path d="M2,23v-4c-0.7,0-1.3,0-2,0v6h6c0-0.8,0-1.4,0-2H2z"></path>
+				<path d="M26,19c-0.7,0-1.4,0-2,0v4h-4c0,0.6,0,1.4,0,2h6V19z"></path>
+				<path d="M5,5v15h1C6,15.3,6,9.7,6,5H5z"></path>
+				<path d="M7,5c0,4.7,0,10.3,0,15h1C8,15.3,8,9.7,8,5H7z"></path>
+				<path d="M9,5c0,4.7,0,10.3,0,15h2c0-4.7,0-10.3,0-15H9z"></path>
+				<path d="M13,5c0,4.7,0,10.3,0,15h1c0-4.7,0-10.3,0-15H13z"></path>
+				<path d="M15,5c0,4.7,0,10.3,0,15h1c0-4.7,0-10.3,0-15H15z"></path>
+				<path d="M17,5c0,4.7,0,10.3,0,15h2c0-5.2,0-9.7,0-15H17z"></path>
+				<path d="M21,5h-1c0,4.7,0,10.3,0,15h1V5z"></path>
+			</svg>
+			<span class="btn-scan__text">Scan</span>
+		</button>
+	</div>
+	<!-- end button scan -->
+
+	<!-- begin container for fullinfo on the shopping cart -->
+	<div class="main-header__fullinfo {{props.fullinfoClassList}}" data-fullinfo-container="fullinfo">
+		<button class="header__back btn-back" {{props.fullinfoBackBtnAttrs | safe}}>
+			<i class="icon icon-back btn-back__icon"></i>
+			<span class="btn-back__title">Back</span>
+		</button>
+	</div>
+	<!-- end container for fullinfo on the shopping cart -->
 </header>
 <!-- end header -->
 {% endmacro %}

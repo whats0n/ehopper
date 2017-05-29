@@ -27,15 +27,15 @@
 			&:before
 				left: 15px
 				right: 5px
-				border-color: $darkGray
+				// border-color: $darkGray
 		&__controls
 			left: 10px
 		&__input,
 		&__button
-			color: $darkGray
+			// color: $darkGray
 		&__input 
 			+placeholder
-				color: $darkGray
+				// color: $darkGray
 
 .cart
 	position: relative
@@ -123,14 +123,22 @@
 	&.is-active
 		background: rgba($black, 0.03)
 		.icon
-			transform: rotate(180deg)
+			background: $lightGray
+			&:before
+				transform: rotate(180deg)
 	.icon
 		position: absolute
 		top: 50%
 		right: 20px
 		margin-top: -20px
+		border-radius: 4px
+		background: $alabaster
 		font-size: 32px
-		transition: transform 0.175s ease-in-out
+		&:before
+			display: inline-block
+			vertical-align: top
+			transition: transform 0.175s ease-in-out
+
 
 .infoblock
 	&__row 
@@ -143,7 +151,8 @@
 .sidebar
 	&__poynt-hidden
 		&:last-child
-			box-shadow: 0 0px 4px 5px rgba(0, 0, 0, 0.2)
+			+poynt
+				box-shadow: 0 0px 4px 5px rgba(0, 0, 0, 0.2)
 		&.is-open
 			+poynt
 				display: block

@@ -9,8 +9,13 @@
 	{ href: 'payin.html', icon: 'cc', text: 'Payins / Payouts' },
 	{ href: 'tips.html', icon: 'tips', text: 'Tips' },
 	{ href: 'loyalty.html', icon: 'loyalty', text: 'Loyalty' },
-	{ href: 'settings.html', icon: 'cog', text: 'Settings' },
+	{ href: '#', icon: 'cog', text: 'Settings', attrs: 'data-nav-submenu-open="nav-settings"', list: [ 
+		{ icon: 'print', href: 'printer-setup.html', text: 'Printer Setup' },
+		{ icon: 'cash', href: 'cash-drawer.html', text: 'Cash Drawer' },
+		{ icon: 'cc', href: 'settings.html', text: 'Terminal Setup' }
+	] },
 	{ href: 'sync.html', icon: 'sync', text: 'Synchronize' },
+	{ href: 'deactivate.html', icon: 'offline', text: 'Deactivate' },
 	{ href: 'ui-kit.html', icon: 'bo', text: 'Back Office &bull; UI-Kit' },
 	{ href: 'pos.html', icon: 'help', text: 'Help' },
 	{ href: 'index.html', icon: 'exit', text: 'Logout' }
@@ -24,8 +29,18 @@
 	<div class="menu__container">
 		<ul class="nav">
 			{% for item in props.nav or nav %}
-			    <li class="nav__item {% if loop.index0 === active %}is-active{%- endif -%}">
-			    	<a href="{{item.href}}" class="nav__link" {{item.attrs | safe}}><i class="nav__icon icon icon-{{item.icon}}"></i>{{item.text | safe}}</a>
+			    <li class="nav__item" {% if item.list %}data-nav-submenu="nav-settings"{% endif %}>
+			    	<a href="{{item.href}}" class="nav__link {% if loop.index0 === active %}is-active{%- endif -%}" {{item.attrs | safe}}>
+			    		<i class="nav__icon icon icon-{{item.icon}}"></i>{{item.text | safe}}
+			    		{%- if item.list -%}<i class="nav__arrow icon icon-caret"></i>{%- endif -%}
+			    	</a>
+			    	{% if item.list %}
+						<ul class="nav__submenu">
+							{% for item in item.list %}
+								<li class="nav__item"><a href="{{item.href}}" class="nav__link"><i class="nav__icon icon icon-{{item.icon}}"></i>{{item.text}}</a></li>
+							{% endfor %}
+						</ul>
+			    	{% endif %}
 			    </li>
 			{% endfor %}
 		</ul>

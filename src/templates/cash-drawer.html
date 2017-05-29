@@ -9,22 +9,18 @@ settingsActive: 1
 {% block content %}
 	<main class="main">
 		<div class="inner settings">
-			{{header.double({
-				classList: 'header_container-upper header_poynt-sm header_settings',
-				sync: true,
-				syncIndicatorOnly: true,
-				searchFor: 'Search for Cash Drawer',
-				sidebar: {
-					back: true,
-					backText: 'Settings'
-				},
-				container: {
-					title: 'Cash Drawer Settings',
-					titleClassList: 'header__title_vertical',
-					headerClassList: 'settings__header'
-				}
+			{{header.call({
+				sidebarClassList: 'is-hidden',
+				fullinfoClassList: 'is-hidden',
+				menuBtnClassList: 'is-hidden',
+				helpBtnClassList: 'is-hidden',
+				searchClassList: 'is-hidden',
+				syncBtnClassList: 'is-hidden',
+				scanBtnClassList: 'is-hidden',
+				containerClassList: 'main-header__container_full',
+				title: 'Cash Drawer Settings',
+				searchFor: 'Search for Cash Drawer'
 			})}}
-			{% include 'partials/components/_settings-sidebar.html' %}
 			<div class="settings__container step-body">
 				<div class="settings__body settings__body_default step-body__section">
 					<div class="form form_sm">
@@ -82,5 +78,4 @@ settingsActive: 1
 	</main>
 
 	{{modal.help()}}
-	{{modal.addTerminal()}}
 {% endblock %}

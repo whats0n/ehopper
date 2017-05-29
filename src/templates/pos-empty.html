@@ -8,7 +8,15 @@ styles:
 {% block content %}
 	<main class="main" data-toggle-class-container="main-container">
 		<div class="inner">
-			{{header.double({
+			{{header.call({
+				backBtnClassList: 'is-hidden',
+				titleClassList: 'is-hidden',
+				helpBtnClassList: 'is-hidden',
+				searchBtnClassList: 'is-hidden',
+				fullinfoBackBtnAttrs: 'data-fullinfo-close="fullinfo data-toggle-class-target="sidebar-header" data-toggle-class-remove="is-disabled" id="cart-item-details-back"'
+			})}}
+			
+			{# {{header.double({
 				sync: true,
 				delete: true,
 				sidebar: {
@@ -19,7 +27,7 @@ styles:
 					search: true,
 					scan: true
 				}
-			})}}
+			})}} #}
 			<div class="cart cart_poynt">
 				<div class="cart__inner">
 					<div class="cart-total">
@@ -58,33 +66,17 @@ styles:
 						{% set totalsListMain = [
 							{
 								label: 'Sub',
-								value: '12345.00'
+								value: '1299.00'
 							},
 							{
 								label: 'Discount',
-								value: '123.00'
+								value: '0.00'
 							}
 						] %}
 						{% set totalsListScroll = [
 							{
-								label: 'Lorem ipsum.',
-								value: '1234.00'
-							},
-							{
-								label: 'Lorem ipsum.',
-								value: '123456.00'
-							},
-							{
-								label: 'Lorem ipsum.',
-								value: '1234567.00'
-							},
-							{
-								label: 'Lorem ipsum.',
-								value: '123.00'
-							},
-							{
-								label: 'Lorem ipsum.',
-								value: '123456789.00'
+								label: 'Tax',
+								value: '6.75'
 							}
 						] %}
 						<div class="totals__container">
@@ -137,11 +129,13 @@ styles:
 						items: [
 							{
 								text: 'Save',
-								href: 'order-save.html'
+								href: 'order-save.html',
+								linkClassList: 'is-disabled'
 							},
 							{
 								text: 'Notes',
-								href: 'order-note.html'
+								href: 'order-note.html',
+								linkClassList: 'is-disabled'
 							},
 							{
 								text: 'Terminal',
@@ -154,7 +148,8 @@ styles:
 							},
 							{
 								text: 'Discount',
-								href: '#'
+								href: '#',
+								linkClassList: 'is-disabled'
 							},
 							{
 								text: 'More <i class="icon icon-more-v"></i>',
