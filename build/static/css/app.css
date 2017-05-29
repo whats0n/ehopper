@@ -2385,7 +2385,24 @@ article aside.left {
   background-color: #ebebeb;
 }
 
-button:disabled, button.is-disabled {
+.btn_transparent {
+  color: #2e99db;
+  background: transparent;
+}
+
+.btn_transparent:active {
+  color: #2e99db;
+  background: transparent;
+}
+
+.no-touch .btn_transparent:active {
+  color: #2e99db;
+  background: transparent;
+}
+
+button:disabled, button.is-disabled,
+.btn:disabled,
+.btn.is-disabled {
   opacity: 0.5;
   pointer-events: none;
 }

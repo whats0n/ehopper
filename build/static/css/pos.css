@@ -2237,7 +2237,24 @@ article aside.left {
   background-color: #ebebeb;
 }
 
-button:disabled, button.is-disabled {
+.btn_transparent {
+  color: #2e99db;
+  background: transparent;
+}
+
+.btn_transparent:active {
+  color: #2e99db;
+  background: transparent;
+}
+
+.no-touch .btn_transparent:active {
+  color: #2e99db;
+  background: transparent;
+}
+
+button:disabled, button.is-disabled,
+.btn:disabled,
+.btn.is-disabled {
   opacity: 0.5;
   pointer-events: none;
 }
@@ -8377,7 +8394,7 @@ textarea.input {
   z-index: initial;
 }
 
-.main-header_simple-search .main-header__title {
+.is-poynt .main-header_simple-search .main-header__title {
   padding-right: 300px;
   padding-left: 130px;
 }

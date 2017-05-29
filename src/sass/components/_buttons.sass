@@ -98,8 +98,15 @@
 		background: $white
 		+active
 			background-color: $eb
+	&_transparent 
+		color: $blue
+		background: transparent
+		+active
+			color: $blue
+			background: transparent
 
-button
+button,
+.btn
 	&:disabled,
 	&.is-disabled
 		opacity: 0.5

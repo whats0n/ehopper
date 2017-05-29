@@ -15,7 +15,7 @@ styles:
 				searchBtnClassList: 'is-hidden',
 				fullinfoBackBtnAttrs: 'data-fullinfo-close="fullinfo data-toggle-class-target="sidebar-header" data-toggle-class-remove="is-disabled" id="cart-item-details-back"'
 			})}}
-			
+
 			{# {{header.double({
 				sync: true,
 				delete: true,
@@ -108,7 +108,7 @@ styles:
 								<div class="toolbar__col toolbar__col_sm">
 									{{mixins.button({
 										tagName: 'a',
-										classList: 'btn btn_green btn_lg btn_block toolbar__button',
+										classList: 'btn btn_green btn_lg btn_block toolbar__button is-disabled',
 										attrs: 'data-animation="ripple" href="payments.html"',
 										content: 'Other Payments <i class="icon icon-more-v"></i>'
 									})}}
@@ -116,7 +116,7 @@ styles:
 								<div class="toolbar__col toolbar__col_lg">
 									{{mixins.button({
 										tagName: 'a',
-										classList: 'btn btn_green btn_lg btn_block toolbar__button',
+										classList: 'btn btn_green btn_lg btn_block toolbar__button is-disabled',
 										attrs: 'data-animation="ripple" href="payment-cash.html" id="cart-cash-button"',
 										content: 'Cash: <strong>$100.20</strong>'
 									})}}
