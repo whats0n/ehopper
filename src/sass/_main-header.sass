@@ -33,9 +33,6 @@ $menuButtonIndex: 50
 			background: $alabaster
 			box-shadow: none
 		.main-header
-			&__delete
-				+poynt
-					// display: none
 			&__toolbar
 				+poynt
 					padding-right: 58px
@@ -61,15 +58,6 @@ $menuButtonIndex: 50
 					padding-left: 60px
 					padding-right: 188px
 					max-width: none
-					// background: #e6e6e6
-			// &__delete
-			// 	right: 8px
-			// 	display: none
-			// 	color: $darkGray
-			// 	+active
-			// 		color: $darkGray
-			// 	+poynt
-			// 		display: block
 		.search
 			&__field
 				+poynt
@@ -78,18 +66,9 @@ $menuButtonIndex: 50
 					+poynt
 						left: 15px
 						right: 5px
-						// border-color: $darkGray
 			&__controls
 				+poynt
 					left: 10px
-			&__input,
-			&__button
-				+poynt
-					// color: $darkGray
-			&__input 
-				+placeholder
-					+poynt
-						// color: $darkGray
 	&__fullinfo
 		position: absolute
 		z-index: 15
@@ -143,8 +122,11 @@ $menuButtonIndex: 50
 			color: $white
 			background: darken(#cae9f4, 10%)
 		+poynt 
+			position: fixed
+			top: 0
+			left: 0
 			z-index: ($poyntContainerIndex + 1)
-		+ .main-header__sidebar
+		~ .main-header__toolbar
 			padding-left: 60px
 			+poynt
 				padding-left: 0
@@ -253,9 +235,5 @@ $menuButtonIndex: 50
 		.main-header__title
 			display: inline-block
 			vertical-align: middle
-		// &:not(.is-hidden)
-		// 	~ .main-header
-		// 		&__container
-		// 			padding-left: 120px
 	.is-hidden
 		display: none

@@ -27,10 +27,13 @@ styles:
 					<div class="step-body__section">
 						<div class="form form_sm">
 							<div class="form__section">
-								<div class="info-price text-right">
-									<div class="info-price__label">Total Due:</div>
-									<div class="info-price__value info-price__value_blue"> <small>$</small> <span>102.00</span> </div>
-								</div>
+								{{mixins.infoPrice({
+									label: 'Total Due:',
+									price: '102.00',
+									currency: '$',
+									valueClassList: 'color-blue',
+									classList: 'text-center'
+								})}}
 							</div>
 							<div class="form__section">
 								<div class="form-box">

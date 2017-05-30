@@ -570,6 +570,10 @@ a.shy {
   color: #22B745;
 }
 
+.color-blue {
+  color: #2e99db;
+}
+
 .small {
   font-size: 70%;
 }
@@ -878,12 +882,12 @@ hr {
   z-index: 100 !important;
 }
 
-[data-animation="ripple"] {
+[data-animation*="ripple"] {
   position: relative;
   overflow: hidden;
 }
 
-[data-animation="ripple"] .ripple-circle {
+[data-animation*="ripple"] .ripple-circle {
   position: absolute;
   z-index: 20;
   top: 50%;
@@ -3276,6 +3280,10 @@ textarea.input {
   white-space: nowrap;
 }
 
+.dropdown-menu .btn_transparent {
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+
 .dropdown-checkbox {
   position: relative;
   display: block;
@@ -3545,7 +3553,14 @@ textarea.input {
 .field__label, .field__switch {
   padding: 5px 10px 5px 20px;
   font-size: 14px;
+}
+
+.field__label {
   width: 33.5%;
+}
+
+.field__switch {
+  width: 140px;
 }
 
 .field__units {
@@ -3976,6 +3991,206 @@ textarea.input {
   pointer-events: none;
 }
 
+.main-keyboard {
+  position: relative;
+  padding: 0 0 1px 1px;
+  width: 100%;
+  background: #eee;
+  font-size: 61px;
+}
+
+.main-keyboard__sm {
+  font-size: 65px;
+}
+
+.main-keyboard__sm .main-keyboard__button, .main-keyboard__sm .main-keyboard__discount-button {
+  font-size: 20px;
+}
+
+.main-keyboard__lg {
+  font-size: 81px;
+}
+
+.main-keyboard__container {
+  position: relative;
+  margin-top: -1px;
+  width: 100%;
+  transform: translate3d(0, 0, 0);
+  *zoom: 1;
+}
+
+.main-keyboard__container:after {
+  content: " ";
+  display: table;
+  clear: both;
+}
+
+.main-keyboard__main {
+  float: left;
+  width: 100%;
+  *zoom: 1;
+}
+
+.main-keyboard__main:after {
+  content: " ";
+  display: table;
+  clear: both;
+}
+
+.main-keyboard__aside {
+  position: absolute;
+  top: 0;
+  left: 100%;
+  bottom: -1px;
+  padding-bottom: 1px;
+  width: 25%;
+  background: #eee;
+  *zoom: 1;
+}
+
+.main-keyboard__aside:after {
+  content: " ";
+  display: table;
+  clear: both;
+}
+
+.main-keyboard__aside-item {
+  padding: 1px 1px 0 0;
+  height: 25%;
+}
+
+.main-keyboard__item {
+  float: left;
+  padding: 1px 1px 0 0;
+  width: 33.33333%;
+  height: 1em;
+}
+
+.main-keyboard__button {
+  display: block;
+  width: 100%;
+  height: 100%;
+  color: #333;
+  background: #fff;
+  font-family: 'Roboto Regular', Arial, sans-serif;
+  font-size: 30px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  transition: background 0.175s ease;
+}
+
+.main-keyboard__button:active {
+  color: inherit;
+  background: #ebebeb;
+}
+
+.no-touch .main-keyboard__button:active {
+  color: inherit;
+  background: #ebebeb;
+}
+
+.main-keyboard__button .icon {
+  font-size: 30px;
+}
+
+.main-keyboard__submit {
+  color: #fff;
+  background: #22B745;
+}
+
+.main-keyboard__submit:active {
+  color: #fff;
+  background: #4cac51;
+}
+
+.no-touch .main-keyboard__submit:active {
+  color: #fff;
+  background: #4cac51;
+}
+
+.main-keyboard__col {
+  padding-top: 1px;
+  height: 1em;
+}
+
+.main-keyboard__col[data-colspan*="3"] {
+  height: 3em;
+  line-height: 3em;
+}
+
+.main-keyboard__col[data-colspan*="2"] {
+  height: 2em;
+  line-height: 2em;
+}
+
+.main-keyboard__discount {
+  *zoom: 1;
+}
+
+.main-keyboard__discount:after {
+  content: " ";
+  display: table;
+  clear: both;
+}
+
+.main-keyboard__discount-button {
+  display: block;
+  width: 100%;
+  height: 100%;
+  color: #2e99db;
+  background: #ecf7fd;
+  font-family: 'Roboto Regular', Arial, sans-serif;
+  font-size: 19px;
+}
+
+.main-keyboard__discount-button:active {
+  background: #c7e7f9;
+}
+
+.no-touch .main-keyboard__discount-button:active {
+  background: #c7e7f9;
+}
+
+.main-keyboard__discount-button[data-animation="ripple"] .ripple-circle {
+  background: rgba(46, 153, 219, 0.1);
+}
+
+.main-keyboard__display {
+  position: relative;
+  padding: 1px 41px 1px 0;
+}
+
+.main-keyboard__clear {
+  position: absolute;
+  top: 1px;
+  right: 1px;
+  bottom: 1px;
+  width: 60px;
+  background: #fff;
+}
+
+.main-keyboard__clear .icon {
+  font-size: 30px;
+}
+
+.main-keyboard__help {
+  clear: both;
+  *zoom: 1;
+}
+
+.main-keyboard__help:after {
+  content: " ";
+  display: table;
+  clear: both;
+}
+
+.main-keyboard__help-item {
+  width: 33.33%;
+  height: 1em;
+}
+
 .keyboard {
   width: 100%;
   background: #eee;
@@ -4044,6 +4259,7 @@ textarea.input {
   display: block;
   width: 100%;
   height: 100%;
+  color: #333;
   background: #fff;
   font-family: 'Roboto Regular', Arial, sans-serif;
   font-size: 30px;
@@ -4606,6 +4822,12 @@ textarea.input {
   padding-top: 10px;
   margin: 0 auto;
   max-width: 460px;
+}
+
+.tabs__main-keyboard {
+  padding-top: 10px;
+  margin: 0 auto;
+  max-width: 360px;
 }
 
 .tabs__info {

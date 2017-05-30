@@ -108,10 +108,10 @@
 			<i class="icon icon-sync"></i>
 		</button> </div>
             <!-- end block sync/search for -->
-            <!-- begin button 'menu' --><button class="main-header__menu icon icon-menu " title="Menu" data-menu-open="menu"></button>
-            <!-- end button 'menu' -->
             <!-- begin sidebar for shopping cart -->
-            <div class="main-header__sidebar "> <button class="main-header__delete btn-icon icon icon-delete " type="button" title="Delete"></button>
+            <div class="main-header__sidebar ">
+              <!-- begin button 'menu' --><button class="main-header__menu icon icon-menu " title="Menu" data-menu-open="menu"></button>
+              <!-- end button 'menu' --><button class="main-header__delete btn-icon icon icon-delete " type="button" title="Delete"></button>
               <div class="main-header__toolbar ">
                 <div class="toolbar">
                   <div class="toolbar__container">
@@ -1560,10 +1560,16 @@
 		
 		    <div class="tabs__content " data-tab-container="discount ">
 	    		
-<div class="tabs__keyboard ">
+<div class="tabs__main-keyboard ">
 	
-<div class="fieldset fieldset_lg fieldset_bordered fieldset_keyboard ">
+
 	
+<!-- begin keyboard -->
+<div class="main-keyboard numpad ">
+	
+		<div class="main-keyboard__display ">
+			<button class="main-keyboard__clear " data-numpad="numpad-clear "><i class="icon icon-clear "></i></button>
+			
 <div class="field field_static field_currency ">
 	<div class="field__inner ">
 
@@ -1596,27 +1602,24 @@
 	</div>
 </div>
 
-	
-	
-
-
-<!-- begin keyboard -->
-<div class="keyboard numpad ">
-	
-		<div class="keyboard__discount keyboard__sm ">
-			
-			    <div class="keyboard__discount-item "><button type="button " data-animation="ripple " class="keyboard__discount-button ">5%</button></div>
-			
-			    <div class="keyboard__discount-item "><button type="button " data-animation="ripple " class="keyboard__discount-button ">10%</button></div>
-			
-			    <div class="keyboard__discount-item "><button type="button " data-animation="ripple " class="keyboard__discount-button ">15%</button></div>
-			
-			    <div class="keyboard__discount-item "><button type="button " data-animation="ripple " class="keyboard__discount-button ">20%</button></div>
-			
 		</div>
 	
-	<div class="keyboard__container keyboard__sm ">
-		<div class="keyboard__main ">
+	<div class="main-keyboard__container main-keyboard__sm ">
+		
+			<div class="main-keyboard__aside ">
+				
+					<div class="main-keyboard__aside-item "><button type="button " data-animation="ripple " class="main-keyboard__discount-button ">5%</button></div>
+				
+					<div class="main-keyboard__aside-item "><button type="button " data-animation="ripple " class="main-keyboard__discount-button ">10%</button></div>
+				
+					<div class="main-keyboard__aside-item "><button type="button " data-animation="ripple " class="main-keyboard__discount-button ">15%</button></div>
+				
+					<div class="main-keyboard__aside-item "><button type="button " data-animation="ripple " class="main-keyboard__discount-button ">20%</button></div>
+				
+			</div>
+		
+		
+		<div class="main-keyboard__main ">
 			
 				
 				
@@ -1624,8 +1627,8 @@
 				    
 				
 
-				<div class="keyboard__item ">
-					<button type="button " data-animation="ripple " class="keyboard__button " >1</button>
+				<div class="main-keyboard__item ">
+					<button type="button " data-animation="ripple " class="main-keyboard__button " >1</button>
 				</div>
 			
 				
@@ -1634,8 +1637,8 @@
 				    
 				
 
-				<div class="keyboard__item ">
-					<button type="button " data-animation="ripple " class="keyboard__button " >2</button>
+				<div class="main-keyboard__item ">
+					<button type="button " data-animation="ripple " class="main-keyboard__button " >2</button>
 				</div>
 			
 				
@@ -1644,8 +1647,8 @@
 				    
 				
 
-				<div class="keyboard__item ">
-					<button type="button " data-animation="ripple " class="keyboard__button " >3</button>
+				<div class="main-keyboard__item ">
+					<button type="button " data-animation="ripple " class="main-keyboard__button " >3</button>
 				</div>
 			
 				
@@ -1654,8 +1657,8 @@
 				    
 				
 
-				<div class="keyboard__item ">
-					<button type="button " data-animation="ripple " class="keyboard__button " >4</button>
+				<div class="main-keyboard__item ">
+					<button type="button " data-animation="ripple " class="main-keyboard__button " >4</button>
 				</div>
 			
 				
@@ -1664,8 +1667,8 @@
 				    
 				
 
-				<div class="keyboard__item ">
-					<button type="button " data-animation="ripple " class="keyboard__button " >5</button>
+				<div class="main-keyboard__item ">
+					<button type="button " data-animation="ripple " class="main-keyboard__button " >5</button>
 				</div>
 			
 				
@@ -1674,8 +1677,8 @@
 				    
 				
 
-				<div class="keyboard__item ">
-					<button type="button " data-animation="ripple " class="keyboard__button " >6</button>
+				<div class="main-keyboard__item ">
+					<button type="button " data-animation="ripple " class="main-keyboard__button " >6</button>
 				</div>
 			
 				
@@ -1684,8 +1687,8 @@
 				    
 				
 
-				<div class="keyboard__item ">
-					<button type="button " data-animation="ripple " class="keyboard__button " >7</button>
+				<div class="main-keyboard__item ">
+					<button type="button " data-animation="ripple " class="main-keyboard__button " >7</button>
 				</div>
 			
 				
@@ -1694,8 +1697,8 @@
 				    
 				
 
-				<div class="keyboard__item ">
-					<button type="button " data-animation="ripple " class="keyboard__button " >8</button>
+				<div class="main-keyboard__item ">
+					<button type="button " data-animation="ripple " class="main-keyboard__button " >8</button>
 				</div>
 			
 				
@@ -1704,8 +1707,8 @@
 				    
 				
 
-				<div class="keyboard__item ">
-					<button type="button " data-animation="ripple " class="keyboard__button " >9</button>
+				<div class="main-keyboard__item ">
+					<button type="button " data-animation="ripple " class="main-keyboard__button " >9</button>
 				</div>
 			
 				
@@ -1714,8 +1717,8 @@
 				    
 				
 
-				<div class="keyboard__item ">
-					<button type="button " data-animation="ripple " class="keyboard__button " >0</button>
+				<div class="main-keyboard__item ">
+					<button type="button " data-animation="ripple " class="main-keyboard__button " >0</button>
 				</div>
 			
 				
@@ -1724,8 +1727,8 @@
 				    
 				
 
-				<div class="keyboard__item ">
-					<button type="button " data-animation="ripple " class="keyboard__button " >00</button>
+				<div class="main-keyboard__item ">
+					<button type="button " data-animation="ripple " class="main-keyboard__button " >00</button>
 				</div>
 			
 				
@@ -1734,27 +1737,15 @@
 				    
 				
 
-				<div class="keyboard__item ">
-					<button type="button " data-animation="ripple " class="keyboard__button " data-numpad="numpad-clear "><i class="icon icon-text icon-clear "></i></button>
+				<div class="main-keyboard__item ">
+					<button type="button " data-animation="ripple " class="main-keyboard__button " data-numpad="numpad-backspace "><i class="icon icon-backspace "></i></button>
 				</div>
 			
 		</div>
-		<div class="keyboard__aside ">
-			
-			    <div class="keyboard__col ">
-			    	<button type="button " data-animation="ripple " class="keyboard__button " data-numpad="numpad-backspace "><i class="icon icon-text icon-backspace "></i></button>
-			    </div>
-			
-			    <div class="keyboard__col " data-colspan="3 ">
-			    	<button type="button " data-animation="ripple " class="keyboard__button keyboard__submit " value="numpad-submit ">Done</button>
-			    </div>
-			
-		</div>
+		
 	</div>
 </div>
 <!-- end keyboard -->
-
-</div>
 
 </div>
 		    </div>

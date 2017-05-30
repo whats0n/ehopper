@@ -1,0 +1,107 @@
+.main-keyboard
+	position: relative
+	padding: 0 0 1px 1px
+	width: 100%
+	background: $lightGray
+	font-size: 61px
+	&__sm
+		font-size: 65px
+		.main-keyboard
+			&__button,
+			&__discount-button
+				font-size: 20px
+	&__lg
+		font-size: 81px
+	&__container
+		position: relative
+		// overflow: hidden
+		margin-top: -1px
+		// border-radius: 0 0 4px 4px
+		width: 100%
+		+gpu
+		+clr
+	&__main
+		float: left
+		width: 100%
+		+clr
+	&__aside
+		position: absolute
+		top: 0
+		left: 100%
+		bottom: -1px
+		padding-bottom: 1px
+		width: 25%
+		background: $lightGray
+		+clr
+		&-item
+			padding: 1px 1px 0 0
+			height: 25%
+	&__item
+		float: left
+		padding: 1px 1px 0 0
+		width: (100%/3)
+		height: 1em
+	&__button
+		display: block
+		width: 100%
+		height: 100%
+		color: $darkGray
+		background: $white
+		// +rlight
+		+rreg
+		font-size: 30px
+		+nosel
+		transition: background 0.175s ease
+		+active
+			color: inherit
+			background: $eb
+		.icon
+			font-size: 30px
+	&__submit
+		color: $white
+		background: $green
+		+active
+			color: $white
+			background: $greenActive
+	&__col
+		padding-top: 1px
+		height: 1em
+		&[data-colspan*="3"]
+			height: 3em
+			line-height: 3em
+		&[data-colspan*="2"]
+			height: 2em
+			line-height: 2em
+	&__discount
+		+clr
+	&__discount-button
+		display: block
+		width: 100%
+		height: 100%
+		color: $blue
+		background: $azure
+		+rreg
+		font-size: 19px
+		+active
+			background: $azureActive
+		&[data-animation="ripple"]
+			.ripple-circle
+				background: rgba($blue, 0.1)
+	&__display
+		position: relative
+		padding: 1px 41px 1px 0
+	&__clear
+		position: absolute
+		top: 1px
+		right: 1px
+		bottom: 1px
+		width: 60px
+		background: $white
+		.icon
+			font-size: 30px
+	&__help
+		clear: both
+		+clr
+		&-item
+			width: 33.33%
+			height: 1em

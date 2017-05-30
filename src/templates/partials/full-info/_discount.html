@@ -1,6 +1,6 @@
 {% import '../components/_keyboard.html' as keyboard %}
-<div class="tabs__keyboard">
-	{{keyboard.display({
+<div class="tabs__main-keyboard">
+	{# {{keyboard.display({
 		field: {
 			switch: {
 				left: '$',
@@ -83,5 +83,23 @@
 				}
 			]
 		}
+	})}} #}
+
+	{{keyboard.call({
+		containerClassList: 'main-keyboard__sm',
+		display: {
+			switch: {
+				left: '$',
+				right: '%',
+				id: 'discount-switcher'
+			},
+			staticInput: true,
+			classList: 'field_static field_currency',
+			unitsLeft: '$',
+			unitsRight: '%',
+			id: 'item-discount',
+			value: '15'
+		},
+		discount: [ { content: '5%' }, { content: '10%' }, { content: '15%' }, { content: '20%' } ]
 	})}}
 </div>

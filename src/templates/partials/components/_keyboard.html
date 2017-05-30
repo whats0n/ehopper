@@ -165,3 +165,62 @@
 	{{default(props.keyboard)}}
 </div>
 {% endmacro %}
+
+{% macro call(props) %}
+<!-- begin keyboard -->
+<div class="main-keyboard numpad {{props.classList}}">
+	{% if props.display %}
+		<div class="main-keyboard__display">
+			<button class="main-keyboard__clear" data-numpad="numpad-clear"><i class="icon icon-clear"></i></button>
+			{{mixins.field(props.display)}}
+		</div>
+	{% endif %}
+	<div class="main-keyboard__container {{props.containerClassList}}">
+		{% if props.discount %}
+			<div class="main-keyboard__aside">
+				{% for key in props.discount %}
+					<div class="main-keyboard__aside-item"><button type="button" data-animation="ripple" class="main-keyboard__discount-button">{{key.content | safe}}</button></div>
+				{% endfor %}
+			</div>
+		{% endif %}
+		{% set main = [ 
+			{ content: '1' },
+			{ content: '2' },
+			{ content: '3' },
+			{ content: '4' },
+			{ content: '5' },
+			{ content: '6' },
+			{ content: '7' },
+			{ content: '8' },
+			{ content: '9' },
+			{ content: '0' },
+			{ content: '00' },
+			{
+				attrs: 'data-numpad="numpad-backspace"',
+				content: '<i class="icon icon-backspace"></i>'
+			}
+		] %}
+		<div class="main-keyboard__main">
+			{% for key in props.main or main %}
+				
+				{# check if button has some special classNames #}
+				{% if key.classList %}
+					{% set classList = ' ' + key.classList %}
+				{% else %}
+				    {% set classList = '' %}
+				{% endif %}
+
+				<div class="main-keyboard__item">
+					<button type="button" data-animation="ripple" class="main-keyboard__button {{classList}}" {{key.attrs | safe}}>{{key.content | safe}}</button>
+				</div>
+			{% endfor %}
+		</div>
+		{# <div class="main-keyboard__help">
+			{% for key in props.discount %}
+				<div class="main-keyboard__item"><button type="button" data-animation="ripple" class="main-keyboard__discount-button">{{key.content | safe}}</button></div>
+			{% endfor %}
+		</div> #}
+	</div>
+</div>
+<!-- end keyboard -->
+{% endmacro %}
