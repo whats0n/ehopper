@@ -26,7 +26,7 @@ export default (function() {
 		$item.append(circle);
 	};
 
-	$DOCUMENT.on(eventName, '[data-animation="ripple"]', function(e) { 
+	$DOCUMENT.on(eventName, '[data-animation*="ripple"]', function(e) { 
 		animation(e, $(this));
 	});
 
