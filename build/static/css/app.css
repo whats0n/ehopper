@@ -2875,10 +2875,6 @@ input.btn {
   font-size: 18px;
 }
 
-.checkbox-success input:checked + .icon {
-  background-color: #66BB6A;
-}
-
 .radio {
   position: relative;
   display: inline-block;
@@ -6180,6 +6176,11 @@ textarea.input {
 
 .refund-mode .order-item[data-animation="ripple"].is-active {
   background: #fce5e3;
+}
+
+.order-item_static .order-item__discount {
+  color: #333;
+  opacity: 0.5;
 }
 
 .order-item__container {
