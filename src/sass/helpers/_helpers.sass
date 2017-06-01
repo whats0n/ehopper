@@ -42,12 +42,18 @@
     @content
 
 //horizontal
+$hlg: 720
 $hsm: 650
 $hxs: 570
 =hsm
   +rh($hsm)
     @content
 
+=hmlg
+  +rhmin($hlg)
+    @content
+
+//states
 =refund
   .refund-mode &
     @content

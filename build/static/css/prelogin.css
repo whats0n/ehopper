@@ -4155,8 +4155,18 @@ textarea.input {
   background: #fff;
 }
 
+.main-keyboard__clear:active .icon {
+  opacity: 0.7;
+}
+
+.no-touch .main-keyboard__clear:active .icon {
+  opacity: 0.7;
+}
+
 .main-keyboard__clear .icon {
+  opacity: 0.5;
   font-size: 30px;
+  transition: opacity 0.1s ease-in-out;
 }
 
 .keyboard {
@@ -6150,6 +6160,13 @@ article.settings aside {
 
 article.settings main {
   width: calc(100% - 300px);
+}
+
+@media only screen and (min-height: 720px) {
+
+  .main-keyboard {
+    font-size: 80px;
+  }
 }
 
 @media only screen and (max-height: 650px) {
