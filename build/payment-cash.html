@@ -300,8 +300,8 @@
             </div>
           </aside>
           <div class="container container_right container_payments">
-            <div class="container__body">
-              <div class="section">
+            <div class="container__body step-body vertical-center">
+              <div class="step-body__section vertical-center__content">
                 <div class="form form_sm" id="payment-cash">
                   <div class="form__section">
                     <div class="info-price text-center">
@@ -309,44 +309,42 @@
                       <div class="info-price__value "> <small>$</small> <span>102.00</span> </div>
                     </div>
                   </div>
-                  <div class="fieldset fieldset_lg fieldset_bordered fieldset_keyboard">
-                    <div class="field ">
-                      <div class="field__inner"> <label class="field__label" for="amount-tendered">Amount Tendered:</label>
-                        <div class="field__box"> <input class="input field__input text-right input_xl" value="200.00" id="amount-tendered" type="text" placeholder="0" required readonly> </div>
-                      </div>
-                    </div>
-                    <!-- begin keyboard -->
-                    <div class="keyboard numpad ">
-                      <div class="keyboard__discount keyboard__lg">
-                        <div class="keyboard__discount-item"><button type="button" data-animation="ripple" class="keyboard__discount-button">Exact</button></div>
-                        <div class="keyboard__discount-item"><button type="button" data-animation="ripple" class="keyboard__discount-button">105</button></div>
-                        <div class="keyboard__discount-item"><button type="button" data-animation="ripple" class="keyboard__discount-button">110</button></div>
-                        <div class="keyboard__discount-item"><button type="button" data-animation="ripple" class="keyboard__discount-button">150</button></div>
-                      </div>
-                      <div class="keyboard__container keyboard__lg">
-                        <div class="keyboard__main">
-                          <div class="keyboard__item"> <button type="button" data-animation="ripple" class="keyboard__button">1</button> </div>
-                          <div class="keyboard__item"> <button type="button" data-animation="ripple" class="keyboard__button">2</button> </div>
-                          <div class="keyboard__item"> <button type="button" data-animation="ripple" class="keyboard__button">3</button> </div>
-                          <div class="keyboard__item"> <button type="button" data-animation="ripple" class="keyboard__button">4</button> </div>
-                          <div class="keyboard__item"> <button type="button" data-animation="ripple" class="keyboard__button">5</button> </div>
-                          <div class="keyboard__item"> <button type="button" data-animation="ripple" class="keyboard__button">6</button> </div>
-                          <div class="keyboard__item"> <button type="button" data-animation="ripple" class="keyboard__button">7</button> </div>
-                          <div class="keyboard__item"> <button type="button" data-animation="ripple" class="keyboard__button">8</button> </div>
-                          <div class="keyboard__item"> <button type="button" data-animation="ripple" class="keyboard__button">9</button> </div>
-                          <div class="keyboard__item"> <button type="button" data-animation="ripple" class="keyboard__button">0</button> </div>
-                          <div class="keyboard__item"> <button type="button" data-animation="ripple" class="keyboard__button">00</button> </div>
-                          <div class="keyboard__item"> <button type="button" data-animation="ripple" class="keyboard__button" data-numpad="numpad-clear"><i class="icon icon-text icon-clear"></i></button> </div>
-                        </div>
-                        <div class="keyboard__aside">
-                          <div class="keyboard__col"> <button type="button" data-animation="ripple" class="keyboard__button " data-numpad="numpad-backspace"><i class="icon icon-text icon-backspace"></i></button> </div>
-                          <div class="keyboard__col" data-colspan="3"> <button type="button" data-animation="ripple" class="keyboard__button keyboard__submit" value="numpad-submit">OK</button> </div>
+                  <!-- begin keyboard -->
+                  <div class="main-keyboard numpad ">
+                    <div class="main-keyboard__display"> <button class="main-keyboard__clear" data-numpad="numpad-clear"><i class="icon icon-clear"></i></button>
+                      <div class="field ">
+                        <div class="field__inner"> <label class="field__label" for="amount-tendered">Amount Tendered:</label>
+                          <div class="field__box"> <input class="input field__input text-right input_xl" value="200.00" id="amount-tendered" type="text" placeholder="0" required readonly> </div>
                         </div>
                       </div>
                     </div>
-                    <!-- end keyboard -->
+                    <div class="main-keyboard__container ">
+                      <div class="main-keyboard__shortcuts">
+                        <div class="main-keyboard__item"><button type="button" data-animation="ripple" class="main-keyboard__shortcuts-button">Exact</button></div>
+                        <div class="main-keyboard__item"><button type="button" data-animation="ripple" class="main-keyboard__shortcuts-button">105</button></div>
+                        <div class="main-keyboard__item"><button type="button" data-animation="ripple" class="main-keyboard__shortcuts-button">110</button></div>
+                      </div>
+                      <div class="main-keyboard__main">
+                        <div class="main-keyboard__item"> <button type="button" data-animation="ripple" class="main-keyboard__button ">1</button> </div>
+                        <div class="main-keyboard__item"> <button type="button" data-animation="ripple" class="main-keyboard__button ">2</button> </div>
+                        <div class="main-keyboard__item"> <button type="button" data-animation="ripple" class="main-keyboard__button ">3</button> </div>
+                        <div class="main-keyboard__item"> <button type="button" data-animation="ripple" class="main-keyboard__button ">4</button> </div>
+                        <div class="main-keyboard__item"> <button type="button" data-animation="ripple" class="main-keyboard__button ">5</button> </div>
+                        <div class="main-keyboard__item"> <button type="button" data-animation="ripple" class="main-keyboard__button ">6</button> </div>
+                        <div class="main-keyboard__item"> <button type="button" data-animation="ripple" class="main-keyboard__button ">7</button> </div>
+                        <div class="main-keyboard__item"> <button type="button" data-animation="ripple" class="main-keyboard__button ">8</button> </div>
+                        <div class="main-keyboard__item"> <button type="button" data-animation="ripple" class="main-keyboard__button ">9</button> </div>
+                        <div class="main-keyboard__item"> <button type="button" data-animation="ripple" class="main-keyboard__button ">0</button> </div>
+                        <div class="main-keyboard__item"> <button type="button" data-animation="ripple" class="main-keyboard__button ">00</button> </div>
+                        <div class="main-keyboard__item"> <button type="button" data-animation="ripple" class="main-keyboard__button " data-numpad="numpad-backspace"><i class="icon icon-backspace"></i></button> </div>
+                      </div>
+                    </div>
                   </div>
+                  <!-- end keyboard -->
                 </div>
+              </div>
+              <div class="step-body__footer section">
+                <div class="form form_sm"> <button class="btn btn_primary btn_lg btn_block text-uppercase" data-animation="ripple" value="Done">Done</button> </div>
               </div>
             </div>
           </div>

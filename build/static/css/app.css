@@ -488,6 +488,26 @@ hr {
   right: 10px;
 }
 
+.vertical-center {
+  text-align: center;
+  font-size: 0;
+}
+
+.vertical-center:before {
+  content: "";
+  display: inline-block;
+  vertical-align: middle;
+  width: 0;
+  height: 100%;
+}
+
+.vertical-center__content {
+  display: inline-block;
+  vertical-align: middle;
+  width: 100%;
+  text-align: left;
+}
+
 .is-hidden {
   display: none;
 }
@@ -1625,11 +1645,6 @@ a.shy {
   background: #eee;
 }
 
-.table-body_orders .table-body__tr:nth-child(even) {
-  background: #fff;
-  transition: background 0.1s ease-in-out;
-}
-
 .no-touch .table-body_orders .table-body__tr:hover {
   background: #ecf7fd;
   cursor: pointer;
@@ -1648,8 +1663,8 @@ a.shy {
   padding-bottom: 5px;
 }
 
-.table-body_order .table-body__tr:nth-child(even) {
-  background: #fff;
+.table-body__tr {
+  transition: background 0.1s ease-in-out;
 }
 
 .table-body__tr:not(:first-child) .table-body__td {
@@ -4676,8 +4691,16 @@ textarea.input {
   left: 0;
 }
 
+.fieldset__col_lg {
+  width: 66.8%;
+}
+
 .fieldset__col_md {
   width: 50%;
+}
+
+.fieldset__col_sm {
+  width: 33.2%;
 }
 
 .fieldset__col.is-active:before {
@@ -4701,6 +4724,10 @@ textarea.input {
 .fieldset__input {
   padding: 0 20px;
   width: 100%;
+}
+
+.fieldset__keyboard {
+  margin: -1px;
 }
 
 .fieldset_lg .fieldset__label-wrapper, .fieldset_lg .fieldset__units-wrapper {
@@ -4826,7 +4853,8 @@ textarea.input {
 }
 
 .field__label {
-  width: 33.5%;
+  width: 35%;
+  white-space: nowrap;
 }
 
 .field__switch {
@@ -5264,7 +5292,6 @@ textarea.input {
 .main-keyboard {
   position: relative;
   padding: 0 0 1px 1px;
-  width: 100%;
   background: #eee;
   font-size: 61px;
 }
@@ -5441,6 +5468,56 @@ textarea.input {
   opacity: 0.5;
   font-size: 30px;
   transition: opacity 0.1s ease-in-out;
+}
+
+.main-keyboard__card-row {
+  margin: 0 1px 0 -1px;
+  font-size: 0;
+  *zoom: 1;
+}
+
+.main-keyboard__card-row:after {
+  content: " ";
+  display: table;
+  clear: both;
+}
+
+.main-keyboard__card-col {
+  position: relative;
+  float: left;
+  padding-left: 1px;
+  width: 100%;
+}
+
+.main-keyboard__card-col_sm {
+  width: 33.2%;
+}
+
+.main-keyboard__card-col_lg {
+  width: 66.8%;
+}
+
+.main-keyboard__card-col.is-active:before {
+  opacity: 1;
+  visibility: visible;
+}
+
+.main-keyboard__card-col:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 1px;
+  right: 0;
+  bottom: 0;
+  opacity: 0;
+  visibility: hidden;
+  box-shadow: inset 0 0 0 2px #2e99db;
+  transition: opacity 0.2s ease-in-out, visibility 0.2s ease-in-out;
+}
+
+.main-keyboard__card-input {
+  padding: 0 20px;
+  width: 100%;
 }
 
 .keyboard {
@@ -6093,6 +6170,27 @@ textarea.input {
 
 .tabs__info {
   height: 100%;
+}
+
+.small-tabs {
+  overflow: hidden;
+  border-radius: 4px;
+  *zoom: 1;
+}
+
+.small-tabs:after {
+  content: " ";
+  display: table;
+  clear: both;
+}
+
+.small-tabs__col {
+  float: left;
+  width: 100%;
+}
+
+.small-tabs__col_md {
+  width: 50%;
 }
 
 .order-list {
@@ -7048,6 +7146,10 @@ textarea.input {
 
 .infoblock__dropdown {
   margin: 0 -20px;
+}
+
+.infoblock__dropdown .dropdown__value {
+  color: #2e99db;
 }
 
 .infotable {

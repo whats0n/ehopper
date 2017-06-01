@@ -21,8 +21,12 @@
       border-left: 1px solid $lightGray
       &:before
         left: 0
+    &_lg
+      width: 66.8%
     &_md
       width: 50%
+    &_sm
+      width: 33.2%
     &.is-active
       &:before
         opacity: 1
@@ -41,6 +45,8 @@
   &__input
     padding: 0 20px
     width: 100%
+  &__keyboard
+    margin: -1px
 
   //mods
   &_lg
@@ -130,7 +136,8 @@
     padding: 5px 10px 5px 20px
     font-size: 14px
   &__label
-    width: 33.5%
+    width: 35%
+    white-space: nowrap
   &__switch
     width: 140px
   &__units

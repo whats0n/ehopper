@@ -23,8 +23,8 @@ styles:
 			})}}
 			{% include 'partials/components/_payments-sidebar.html' %}
 			<div class="container container_right container_payments">
-				<div class="container__body">
-					<div class="section">
+				<div class="container__body step-body vertical-center">
+					<div class="step-body__section vertical-center__content">
 						<div class="form form_sm" id="payment-cash">
 							<div class="form__section">
 								{{mixins.infoPrice({
@@ -34,8 +34,8 @@ styles:
 									classList: 'text-center'
 								})}}
 							</div>
-							{{keyboard.display({
-								field: {
+							{{keyboard.call({
+								display: {
 									label: 'Amount Tendered:',
 									id: 'amount-tendered',
 									value: '200.00',
@@ -43,76 +43,13 @@ styles:
 									attrs: 'required readonly',
 									inputClassList: 'text-right input_xl'
 								},
-								dividerNone: true,
-								keyboard: {
-									size: 'keyboard__lg',
-									discount: [
-										{
-											content: 'Exact'
-										},
-										{
-											content: '105'
-										},
-										{
-											content: '110'
-										},
-										{
-											content: '150'
-										}
-									],
-									keyboardSide: [
-										{
-											attrs: 'data-numpad="numpad-backspace"',
-											content: '<i class="icon icon-text icon-backspace"></i>'
-										},
-										{
-											attrs: 'value="numpad-submit"',
-											content: 'OK',
-											classList: 'keyboard__submit',
-											colspan: '3'
-										}
-									],
-									keyboardMain: [
-										{
-											content: '1'
-										},
-										{
-											content: '2'
-										},
-										{
-											content: '3'
-										},
-										{
-											content: '4'
-										},
-										{
-											content: '5'
-										},
-										{
-											content: '6'
-										},
-										{
-											content: '7'
-										},
-										{
-											content: '8'
-										},
-										{
-											content: '9'
-										},
-										{
-											content: '0'
-										},
-										{
-											content: '00'
-										},
-										{
-											attrs: 'data-numpad="numpad-clear"',
-											content: '<i class="icon icon-text icon-clear"></i>'
-										}
-									]
-								}
+								shortcuts: [ { content: 'Exact' }, { content: '105' }, { content: '110' } ]
 							})}}
+						</div>
+					</div>
+					<div class="step-body__footer section">
+						<div class="form form_sm"> 
+							<button class="btn btn_primary btn_lg btn_block text-uppercase" data-animation="ripple" value="Done">Done</button> 
 						</div>
 					</div>
 				</div>

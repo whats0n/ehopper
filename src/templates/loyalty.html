@@ -23,13 +23,13 @@ bodyClasses: 'animated'
 			containerClassList: 'main-header__container_full',
 			title: 'LOYALTY PROGRAM'
 		})}}
-		<div class="container container-simple">
-			<div class="container__body">
-				<div class="section section_inner">
-					<div class="form-wrapper">
-						<div class="form form_sm">
-							{{keyboard.display({
-								field: {
+		<div class="container container_simple">
+			<div class="container__body step-body vertical-center">
+				<div class="section section_inner step-body__section vertical-center__content">
+					<div class="form form_sm">
+						<div class="form__section">
+							{{keyboard.call({
+								display: {
 									label: 'Mobile Phone',
 									id: 'item-quantity',
 									value: '555-123-4567',
@@ -37,19 +37,38 @@ bodyClasses: 'animated'
 									attrs: 'required readonly',
 									inputClassList: 'text-right input_xl'
 								},
-								keyboard: {
-									size: 'keyboard__lg'
-								}
+								main: [
+									{ content: '1' },
+									{ content: '2' },
+									{ content: '3' },
+									{ content: '4' },
+									{ content: '5' },
+									{ content: '6' },
+									{ content: '7' },
+									{ content: '8' },
+									{ content: '9' },
+									{ content: '&ndash;' },
+									{ content: '0' },
+									{
+										attrs: 'data-numpad="numpad-backspace"',
+										content: '<i class="icon icon-backspace"></i>'
+									}
+								]
 							})}}
-							<p class="fieldset fieldset_standalone">
-								{{mixins.checkbox({
-									classList: 'checkbox_green',
-									attrs: 'required',
-									content: 'I agree with'
-								})}}
-								<a href="#" class="form__link">Terms and Conditions</a>
-							</p>
 						</div>
+						<p class="fieldset fieldset_standalone">
+							{{mixins.checkbox({
+								classList: 'checkbox_green',
+								attrs: 'required',
+								content: 'I agree with'
+							})}}
+							<a href="#" class="form__link">Terms and Conditions</a>
+						</p>
+					</div>
+				</div>
+				<div class="step-body__footer section">
+					<div class="form form_sm"> 
+						<button class="btn btn_lg btn_block btn_primary text-uppercase" data-animation="ripple" value="Done">Done</button>
 					</div>
 				</div>
 			</div>

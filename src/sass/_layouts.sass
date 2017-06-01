@@ -446,9 +446,9 @@
   &_orders
     .table-body
       &__tr
-        &:nth-child(even)
-          background: $white
-          transition: background 0.1s ease-in-out
+        // &:nth-child(even)
+        //   background: $white
+        //   transition: background 0.1s ease-in-out
         +hover
           background: $azure
           cursor: pointer
@@ -460,9 +460,11 @@
   &_order
     .table-body
       &__tr
+        // background: $white
         &:nth-child(even)
-          background: $white
+          // background: $white
   &__tr
+    transition: background 0.1s ease-in-out
     &:not(:first-child)
       .table-body
         &__td

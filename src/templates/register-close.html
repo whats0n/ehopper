@@ -115,74 +115,22 @@ styles:
 				</div>
 			</aside>
 			<div class="container container_right container_poynt-register">
-				<div class="container__body step-body">
-					<div class="step-body__section">
+				<div class="container__body step-body vertical-center">
+					<div class="step-body__section vertical-center__content">
 						<div class="form form_sm">
-							{{keyboard.display({
-								sharp: true,
-								field: {
-									label: 'Opening Amount:',
-									id: 'item-quantity',
-									value: '200.00',
-									placeholder: '0',
-									attrs: 'required readonly',
-									inputClassList: 'text-right input_xl'
-								},
-								keyboard: {
-									size: 'keyboard__lg',
-									keyboardSide: [
-										{
-											attrs: 'data-numpad="numpad-backspace"',
-											content: '<i class="icon icon-text icon-backspace"></i>'
-										},
-										{
-											attrs: 'value="numpad-submit"',
-											content: 'Done',
-											classList: 'keyboard__submit',
-											colspan: '3'
-										}
-									],
-									keyboardMain: [
-										{
-											content: '1'
-										},
-										{
-											content: '2'
-										},
-										{
-											content: '3'
-										},
-										{
-											content: '4'
-										},
-										{
-											content: '5'
-										},
-										{
-											content: '6'
-										},
-										{
-											content: '7'
-										},
-										{
-											content: '8'
-										},
-										{
-											content: '9'
-										},
-										{
-											content: '0'
-										},
-										{
-											content: '00'
-										},
-										{
-											attrs: 'data-numpad="numpad-clear"',
-											content: '<i class="icon icon-text icon-clear"></i>'
-										}
-									]
-								}
-							})}}
+							<div class="fieldset fieldset_bordered">
+								{{keyboard.call({
+									classList: 'fieldset__keyboard',
+									display: {
+										label: 'Opening Amount:',
+										id: 'item-quantity',
+										value: '200.00',
+										placeholder: '0',
+										attrs: 'required readonly',
+										inputClassList: 'text-right input_xl'
+									}
+								})}}
+							</div>
 							<div class="fieldset fieldset_lg fieldset_bordered fieldset_standalone">
 								<textarea class="textarea textarea_block textarea_little" placeholder="Register Closing Note"></textarea>
 							</div>

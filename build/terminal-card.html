@@ -191,48 +191,56 @@
         </header>
         <!-- end header -->
         <div class="container container_simple">
-          <div class="container__body">
-            <div class="section section_inner">
+          <div class="container__body step-body">
+            <div class="section section_inner step-body__section">
               <div class="form form_sm">
-                <div class="form__columns">
-                  <div class="form__column form__column_md"> <button class="btn btn_lg btn_block btn_primary btn_rounded" data-animation="ripple">
+                <div class="small-tabs form__section">
+                  <div class="small-tabs__col small-tabs__col_md"> <button class="btn btn_lg btn_block btn_green" data-animation="ripple">
 									<i class="icon icon-cc"></i>
 									Credit Card
 								</button> </div>
-                  <div class="form__column form__column_md"> <button class="btn btn_lg btn_block btn_default btn_rounded" data-animation="ripple">
+                  <div class="small-tabs__col small-tabs__col_md"> <button class="btn btn_lg btn_block" data-animation="ripple">
 									<i class="icon icon-cash"></i>
 									Cash
 								</button> </div>
                 </div>
                 <div class="form__section">
                   <div class="field-box">
-                    <div class="field-box__switch"> <label class="field-box__label" for="terminal-card-enter-card-manually">Enter Card Manually</label>
+                    <div class="field-box__switch"> <label class="field-box__label" for="enter-card-manually">Enter Card Manually</label>
                       <div class="field-box__switcher"> <label class="switcher ">
-	<input type="checkbox" id="terminal-card-enter-card-manually" >
+	<input type="checkbox" id="enter-card-manually" checked>
 	<i class="switcher__icon"></i>
 </label> </div>
                     </div>
                   </div>
-                </div>
-                <div class="form__section">
-                  <div class="card-field">
-                    <div class="card-field__lg">
-                      <div class="form-box is-focus">
-                        <div class="field ">
-                          <div class="field__inner">
-                            <div class="field__box"> <input class="input field__input input_lg" type="text" placeholder="# Card Credit" readonly> </div>
+                  <div class="payment-fieldset">
+                    <div class="fieldset fieldset_lg fieldset_bordered">
+                      <div class="fieldset__container">
+                        <div class="fieldset__row">
+                          <div class="fieldset__col fieldset__col_lg is-active"> <input type="text" class="input input_lg fieldset__input" placeholder="Card Number" readonly> </div>
+                          <div class="fieldset__col fieldset__col_sm"> <input type="text" class="input input_lg fieldset__input" placeholder="Expiration" readonly> </div>
+                        </div>
+                      </div>
+                      <!-- begin keyboard -->
+                      <div class="main-keyboard numpad fieldset__keyboard">
+                        <div class="main-keyboard__container ">
+                          <div class="main-keyboard__main">
+                            <div class="main-keyboard__item"> <button type="button" data-animation="ripple" class="main-keyboard__button ">1</button> </div>
+                            <div class="main-keyboard__item"> <button type="button" data-animation="ripple" class="main-keyboard__button ">2</button> </div>
+                            <div class="main-keyboard__item"> <button type="button" data-animation="ripple" class="main-keyboard__button ">3</button> </div>
+                            <div class="main-keyboard__item"> <button type="button" data-animation="ripple" class="main-keyboard__button ">4</button> </div>
+                            <div class="main-keyboard__item"> <button type="button" data-animation="ripple" class="main-keyboard__button ">5</button> </div>
+                            <div class="main-keyboard__item"> <button type="button" data-animation="ripple" class="main-keyboard__button ">6</button> </div>
+                            <div class="main-keyboard__item"> <button type="button" data-animation="ripple" class="main-keyboard__button ">7</button> </div>
+                            <div class="main-keyboard__item"> <button type="button" data-animation="ripple" class="main-keyboard__button ">8</button> </div>
+                            <div class="main-keyboard__item"> <button type="button" data-animation="ripple" class="main-keyboard__button ">9</button> </div>
+                            <div class="main-keyboard__item"> <button type="button" data-animation="ripple" class="main-keyboard__button ">0</button> </div>
+                            <div class="main-keyboard__item"> <button type="button" data-animation="ripple" class="main-keyboard__button ">00</button> </div>
+                            <div class="main-keyboard__item"> <button type="button" data-animation="ripple" class="main-keyboard__button " data-numpad="numpad-backspace"><i class="icon icon-backspace"></i></button> </div>
                           </div>
                         </div>
                       </div>
-                    </div>
-                    <div class="card-field__sm">
-                      <div class="form-box">
-                        <div class="field ">
-                          <div class="field__inner">
-                            <div class="field__box"> <input class="input field__input input_lg" type="text" placeholder="Exp" readonly> </div>
-                          </div>
-                        </div>
-                      </div>
+                      <!-- end keyboard -->
                     </div>
                   </div>
                 </div>
@@ -246,38 +254,10 @@
                     </ul>
                   </div>
                 </div>
-                <div class="fieldset fieldset_lg fieldset_bordered fieldset_keyboard">
-                  <div class="field ">
-                    <div class="field__inner"> <label class="field__label" for="terminal-card-amount-due">Amount Due:</label>
-                      <div class="field__box"> <input class="input field__input text-right input_xl" id="terminal-card-amount-due" type="text" placeholder="0.00" required readonly> </div>
-                    </div>
-                  </div>
-                  <!-- begin keyboard -->
-                  <div class="keyboard numpad ">
-                    <div class="keyboard__container keyboard__lg">
-                      <div class="keyboard__main">
-                        <div class="keyboard__item"> <button type="button" data-animation="ripple" class="keyboard__button">1</button> </div>
-                        <div class="keyboard__item"> <button type="button" data-animation="ripple" class="keyboard__button">2</button> </div>
-                        <div class="keyboard__item"> <button type="button" data-animation="ripple" class="keyboard__button">3</button> </div>
-                        <div class="keyboard__item"> <button type="button" data-animation="ripple" class="keyboard__button">4</button> </div>
-                        <div class="keyboard__item"> <button type="button" data-animation="ripple" class="keyboard__button">5</button> </div>
-                        <div class="keyboard__item"> <button type="button" data-animation="ripple" class="keyboard__button">6</button> </div>
-                        <div class="keyboard__item"> <button type="button" data-animation="ripple" class="keyboard__button">7</button> </div>
-                        <div class="keyboard__item"> <button type="button" data-animation="ripple" class="keyboard__button">8</button> </div>
-                        <div class="keyboard__item"> <button type="button" data-animation="ripple" class="keyboard__button">9</button> </div>
-                        <div class="keyboard__item"> <button type="button" data-animation="ripple" class="keyboard__button">0</button> </div>
-                        <div class="keyboard__item"> <button type="button" data-animation="ripple" class="keyboard__button">00</button> </div>
-                        <div class="keyboard__item"> <button type="button" data-animation="ripple" class="keyboard__button" data-numpad="numpad-clear"><i class="icon icon-text icon-clear"></i></button> </div>
-                      </div>
-                      <div class="keyboard__aside">
-                        <div class="keyboard__col"> <button type="button" data-animation="ripple" class="keyboard__button " data-numpad="numpad-backspace"><i class="icon icon-text icon-backspace"></i></button> </div>
-                        <div class="keyboard__col" data-colspan="3"> <button type="button" data-animation="ripple" class="keyboard__button keyboard__submit" data-modal-open="payment-terminal" value="numpad-submit">Pay</button> </div>
-                      </div>
-                    </div>
-                  </div>
-                  <!-- end keyboard -->
-                </div>
               </div>
+            </div>
+            <div class="step-body__footer section">
+              <div class="form form_sm"> <button class="btn btn_primary btn_lg btn_block" data-animation="ripple" value="Done" data-modal-open="payment-terminal">Pay</button> </div>
             </div>
           </div>
         </div>

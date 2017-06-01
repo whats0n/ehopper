@@ -1,7 +1,7 @@
 .main-keyboard
 	position: relative
 	padding: 0 0 1px 1px
-	width: 100%
+	// width: 100%
 	background: $lightGray
 	font-size: 61px
 	+hsm
@@ -102,6 +102,38 @@
 			opacity: 0.5
 			font-size: 30px
 			transition: opacity 0.1s ease-in-out
+	&__card
+		&-row
+			margin: 0 1px 0 -1px
+			font-size: 0
+			+clr
+		&-col
+			position: relative
+			float: left
+			padding-left: 1px
+			width: 100%
+			&_sm
+				width: 33.2%
+			&_lg
+				width: 66.8%
+			&.is-active
+				&:before
+					opacity: 1
+					visibility: visible
+			&:before
+				content: ''
+				position: absolute
+				top: 0
+				left: 1px
+				right: 0
+				bottom: 0
+				opacity: 0
+				visibility: hidden
+				box-shadow: inset 0 0 0 2px $blue
+				transition: opacity 0.2s ease-in-out, visibility 0.2s ease-in-out
+		&-input
+			padding: 0 20px
+			width: 100%
 	.field_static
 		.field
 			&__static

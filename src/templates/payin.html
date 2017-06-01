@@ -22,8 +22,8 @@ styles:
 			title: 'Payins — Register #4'
 		})}}
 		<div class="container container_simple">
-			<div class="container__body step-body">
-				<div class="section section_inner step-body__section">
+			<div class="container__body step-body vertical-center">
+				<div class="section section_inner step-body__section vertical-center__content">
 					<div class="form form_sm">
 
 						<div class="form__section">
@@ -31,32 +31,22 @@ styles:
 								label: 'Cash in Drawer:',
 								price: '102.00',
 								currency: '$',
-								classList: 'text-right'
+								classList: 'text-center'
 							})}}
 						</div>
 
 						<div class="form__section">
-							<div class="form-box">
-								<ul class="form-box__payment">
-									<li>
-										{{mixins.radio({
-											content: 'Payin',
-											name: 'payins-payouts',
-											attrs: 'checked'
-										})}}
-									</li>
-									<li>
-										{{mixins.radio({
-											content: 'Payout',
-											name: 'payins-payouts'
-										})}}
-									</li>
-								</ul>
-							</div>
+							{{mixins.fieldBox({
+								colSize: 'md',
+								content: [
+									'<button class="btn btn_block btn_lg btn_default is-active" data-animation="ripple">Payin</button>',
+									'<button class="btn btn_block btn_lg btn_default" data-animation="ripple">Payout</button>'
+								]
+							})}}
 						</div>
 						
 						<div class="form__section">
-							{{keyboard.display({
+							{# {{keyboard.display({
 								field: {
 									label: 'Amount Tendered:',
 									id: 'amount-tendered',
@@ -116,6 +106,16 @@ styles:
 											content: '<i class="icon icon-text icon-clear"></i>'
 										}
 									]
+								}
+							})}} #}
+
+							{{keyboard.call({
+								display: {
+									label: 'Amount Tendered:',
+									id: 'amount-tendered',
+									placeholder: '0.00',
+									attrs: 'required readonly',
+									inputClassList: 'text-right input_lg'
 								}
 							})}}
 						</div>

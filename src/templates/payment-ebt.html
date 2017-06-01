@@ -23,8 +23,8 @@ styles:
 			})}}
 			{% include 'partials/components/_payments-sidebar.html' %}
 			<div class="container container_right container_payments">
-				<div class="container__body step-body">
-					<div class="step-body__section">
+				<div class="container__body step-body vertical-center">
+					<div class="step-body__section vertical-center__content">
 						<div class="form form_sm">
 							<div class="form__section"> 
 								{{mixins.infoPrice({
@@ -44,81 +44,6 @@ styles:
 									]
 								})}}
 							</div>
-							{#<div class="form__section">
-								{{mixins.fieldBox({
-									switcher: true,
-									label: 'Enter Card Manually',
-									id: 'enter-card-manually'
-								})}}
-								<div class="payment-fieldset">
-									<div class="fieldset fieldset_lg fieldset_bordered">
-										<div class="fieldset__container">
-											<div class="fieldset__row">
-												<div class="fieldset__col fieldset__col_md is-active">
-													<input type="text" class="input input_lg fieldset__input" placeholder="Card Number" readonly>
-												</div>
-												<div class="fieldset__col fieldset__col_md">
-													<input type="text" class="input input_lg fieldset__input" placeholder="Expiration" readonly>
-												</div>
-											</div>
-										</div>
-										{{keyboard.default({
-											size: 'keyboard__sm',
-											keyboardSide: [
-												{
-													content: '<i class="icon icon-text icon-backspace"></i>'
-												},
-												{
-													content: '<i class="icon icon-text icon-undo"></i>'
-												},
-												{
-													content: 'Done',
-													classList: 'keyboard__submit',
-													colspan: '2'
-												}
-											],
-											keyboardMain: [
-												{
-													content: '1'
-												},
-												{
-													content: '2'
-												},
-												{
-													content: '3'
-												},
-												{
-													content: '4'
-												},
-												{
-													content: '5'
-												},
-												{
-													content: '6'
-												},
-												{
-													content: '7'
-												},
-												{
-													content: '8'
-												},
-												{
-													content: '9'
-												},
-												{
-													content: '0'
-												},
-												{
-													content: '00'
-												},
-												{
-													content: '<i class="icon icon-text icon-clear"></i>'
-												}
-											]
-										})}}
-									</div>
-								</div>
-							</div>#}
 						</div>
 					</div>
 					<div class="step-body__footer section">
