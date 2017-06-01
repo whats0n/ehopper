@@ -4,14 +4,10 @@
 	width: 100%
 	background: $lightGray
 	font-size: 61px
-	&__sm
-		font-size: 65px
-		.main-keyboard
-			&__button,
-			&__discount-button
-				font-size: 20px
-	&__lg
-		font-size: 81px
+	+hsm
+		font-size: 57px
+	// &__lg
+	// 	font-size: 81px
 	&__container
 		position: relative
 		// overflow: hidden
@@ -49,7 +45,7 @@
 		background: $white
 		// +rlight
 		+rreg
-		font-size: 30px
+		font-size: 20px
 		+nosel
 		transition: background 0.175s ease
 		+active
@@ -72,16 +68,16 @@
 		&[data-colspan*="2"]
 			height: 2em
 			line-height: 2em
-	&__discount
+	&__shortcuts
 		+clr
-	&__discount-button
+	&__shortcuts-button
 		display: block
 		width: 100%
 		height: 100%
 		color: $blue
 		background: $azure
 		+rreg
-		font-size: 19px
+		font-size: 20px
 		+active
 			background: $azureActive
 		&[data-animation="ripple"]
@@ -99,9 +95,9 @@
 		background: $white
 		.icon
 			font-size: 30px
-	&__help
-		clear: both
-		+clr
-		&-item
-			width: 33.33%
-			height: 1em
+	.field_static
+		.field
+			&__static
+				+hsm
+					height: 60px
+					line-height: 60px

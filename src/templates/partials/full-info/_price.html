@@ -1,6 +1,6 @@
 {% import '../components/_keyboard.html' as keyboard %}
 <div class="tabs__keyboard">
-	{{keyboard.display({
+	{# {{keyboard.display({
 		field: {
 			label: 'Custom Price:',
 			units: '$',
@@ -62,6 +62,16 @@
 					content: '<i class="icon icon-text icon-clear"></i>'
 				}
 			]
+		}
+	})}} #}
+	{{keyboard.call({
+		display: {
+			label: 'Custom Price:',
+			units: '$',
+			id: 'item-custom-price',
+			value: '49.95',
+			static: true,
+			classList: 'field_static'
 		}
 	})}}
 </div>

@@ -1,6 +1,6 @@
 {% import '../components/_keyboard.html' as keyboard %}
 <div class="tabs__keyboard">
-	{{keyboard.display({
+	{# {{keyboard.display({
 		field: {
 			label: 'Quantity:',
 			units: 'kg',
@@ -63,6 +63,18 @@
 					content: '<i class="icon icon-text icon-clear"></i>'
 				}
 			]
+		}
+	})}} #}
+	
+	{{keyboard.call({
+		display: {
+			label: 'Quantity:',
+			units: 'kg',
+			id: 'item-quantity',
+			value: '0',
+			placeholder: '0',
+			attrs: 'required readonly',
+			inputClassList: 'text-right input_xl'
 		}
 	})}}
 </div>

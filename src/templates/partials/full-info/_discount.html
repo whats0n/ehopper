@@ -1,5 +1,5 @@
 {% import '../components/_keyboard.html' as keyboard %}
-<div class="tabs__main-keyboard">
+<div class="tabs__keyboard">
 	{# {{keyboard.display({
 		field: {
 			switch: {
@@ -86,7 +86,6 @@
 	})}} #}
 
 	{{keyboard.call({
-		containerClassList: 'main-keyboard__sm',
 		display: {
 			switch: {
 				left: '$',
@@ -100,6 +99,6 @@
 			id: 'item-discount',
 			value: '15'
 		},
-		discount: [ { content: '5%' }, { content: '10%' }, { content: '15%' }, { content: '20%' } ]
+		shortcuts: [ { content: '5%' }, { content: '10%' }, { content: '15%' } ]
 	})}}
 </div>

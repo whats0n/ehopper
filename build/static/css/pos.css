@@ -5121,18 +5121,6 @@ textarea.input {
   font-size: 61px;
 }
 
-.main-keyboard__sm {
-  font-size: 65px;
-}
-
-.main-keyboard__sm .main-keyboard__button, .main-keyboard__sm .main-keyboard__discount-button {
-  font-size: 20px;
-}
-
-.main-keyboard__lg {
-  font-size: 81px;
-}
-
 .main-keyboard__container {
   position: relative;
   margin-top: -1px;
@@ -5195,7 +5183,7 @@ textarea.input {
   color: #333;
   background: #fff;
   font-family: 'Roboto Regular', Arial, sans-serif;
-  font-size: 30px;
+  font-size: 20px;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
@@ -5247,35 +5235,35 @@ textarea.input {
   line-height: 2em;
 }
 
-.main-keyboard__discount {
+.main-keyboard__shortcuts {
   *zoom: 1;
 }
 
-.main-keyboard__discount:after {
+.main-keyboard__shortcuts:after {
   content: " ";
   display: table;
   clear: both;
 }
 
-.main-keyboard__discount-button {
+.main-keyboard__shortcuts-button {
   display: block;
   width: 100%;
   height: 100%;
   color: #2e99db;
   background: #ecf7fd;
   font-family: 'Roboto Regular', Arial, sans-serif;
-  font-size: 19px;
+  font-size: 20px;
 }
 
-.main-keyboard__discount-button:active {
+.main-keyboard__shortcuts-button:active {
   background: #c7e7f9;
 }
 
-.no-touch .main-keyboard__discount-button:active {
+.no-touch .main-keyboard__shortcuts-button:active {
   background: #c7e7f9;
 }
 
-.main-keyboard__discount-button[data-animation="ripple"] .ripple-circle {
+.main-keyboard__shortcuts-button[data-animation="ripple"] .ripple-circle {
   background: rgba(46, 153, 219, 0.1);
 }
 
@@ -5295,22 +5283,6 @@ textarea.input {
 
 .main-keyboard__clear .icon {
   font-size: 30px;
-}
-
-.main-keyboard__help {
-  clear: both;
-  *zoom: 1;
-}
-
-.main-keyboard__help:after {
-  content: " ";
-  display: table;
-  clear: both;
-}
-
-.main-keyboard__help-item {
-  width: 33.33%;
-  height: 1em;
 }
 
 .keyboard {
@@ -5932,7 +5904,17 @@ textarea.input {
 .tabs__content {
   display: none;
   overflow: auto;
-  padding: 20px;
+  padding: 20px 20px 0;
+  height: 100%;
+  text-align: center;
+  font-size: 0;
+}
+
+.tabs__content:before {
+  content: "";
+  display: inline-block;
+  vertical-align: middle;
+  width: 0;
   height: 100%;
 }
 
@@ -5940,24 +5922,19 @@ textarea.input {
   display: block;
 }
 
-.tabs__keyboard, .tabs__notes {
-  padding-top: 10px;
-  margin: 0 auto;
-  max-width: 460px;
+.tabs__keyboard, .tabs__notes, .tabs__info {
+  display: inline-block;
+  vertical-align: middle;
+  width: 100%;
+  text-align: left;
 }
 
-.tabs__main-keyboard {
-  padding-top: 10px;
-  margin: 0 auto;
-  max-width: 360px;
+.tabs__keyboard, .tabs__notes {
+  max-width: 460px;
 }
 
 .tabs__info {
   height: 100%;
-}
-
-.tabs__notes .fieldset {
-  margin-bottom: 20px;
 }
 
 .order-list {
@@ -9275,7 +9252,32 @@ article.settings main {
   width: calc(100% - 300px);
 }
 
+@media only screen and (max-width: 1280px) {
+
+  .order__done {
+    float: right;
+    width: 100%;
+  }
+}
+
 @media only screen and (max-height: 650px) {
+
+  .main-keyboard {
+    font-size: 57px;
+  }
+
+  .main-keyboard .field_static .field__static {
+    height: 60px;
+    line-height: 60px;
+  }
+
+  .tabs {
+    padding-top: 50px;
+  }
+
+  .tabs__btn {
+    padding: 15px 10px;
+  }
 
   .create-customer .section {
     padding: 10px;
@@ -9283,14 +9285,6 @@ article.settings main {
 
   .create-customer .form__column {
     padding: 8px;
-  }
-}
-
-@media only screen and (max-width: 1280px) {
-
-  .order__done {
-    float: right;
-    width: 100%;
   }
 }
 

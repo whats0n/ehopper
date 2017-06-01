@@ -176,13 +176,21 @@
 		</div>
 	{% endif %}
 	<div class="main-keyboard__container {{props.containerClassList}}">
-		{% if props.discount %}
+		{# {% if props.discount %}
 			<div class="main-keyboard__aside">
 				{% for key in props.discount %}
 					<div class="main-keyboard__aside-item"><button type="button" data-animation="ripple" class="main-keyboard__discount-button">{{key.content | safe}}</button></div>
 				{% endfor %}
 			</div>
+		{% endif %} #}
+		{% if props.shortcuts %}
+		<div class="main-keyboard__shortcuts">
+			{% for key in props.shortcuts %}
+				<div class="main-keyboard__item"><button type="button" data-animation="ripple" class="main-keyboard__shortcuts-button">{{key.content | safe}}</button></div>
+			{% endfor %}
+		</div>
 		{% endif %}
+
 		{% set main = [ 
 			{ content: '1' },
 			{ content: '2' },
@@ -215,11 +223,6 @@
 				</div>
 			{% endfor %}
 		</div>
-		{# <div class="main-keyboard__help">
-			{% for key in props.discount %}
-				<div class="main-keyboard__item"><button type="button" data-animation="ripple" class="main-keyboard__discount-button">{{key.content | safe}}</button></div>
-			{% endfor %}
-		</div> #}
 	</div>
 </div>
 <!-- end keyboard -->
