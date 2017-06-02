@@ -1,0 +1,169 @@
+//Where should the 'help' icon be:
+	-activate.html
+	-signup.html
+	-loyalty.html
+	-order-note.html
+	-order-save.html
+	-order-taxes.html
+	-order.html
+	-orders.html
+	-payin.html
+	-payments.html
+	-payment-cash.html
+	-payment-credit.html
+	-payment-debit.html
+	-payment-ebt.html
+	-payment-external.html
+	-payment-receipt.html
+	-payment-split.html
+	-pin.html
+	-refund.html
+	-register-close.html
+	-register-open.html
+	-settings.html
+	-terminal-card.html
+	-terminal-cash.html
+	-tips.html
+
+==================================================================
+==================================================================
+
+//HEADER
+loading +
+	activate (не надо)
+	deactivate (не надо)
+	sync (не надо)
+	pin (не надо)
+	pos +
+	pos-empty +
+	register-open +
+	register-close +
+	settings +
+	cash-drawer +
+	printer-setup +
+	payments +
+	payment-credit +
+	payment-ebt +
+	payment-debit +
+	payment-external +
+	payment-split +
+	payment-cash +
+	payment-receip +
+	orders +
+	orders-loading +
+	order +
+	order-taxes +
+	order-save +
+	order-note +
+	signature +
+	tips +
+	terminal-card +
+	terminal-cash +
+	payin +
+	loyalty +
+	help (не надо)
+	signup (не надо)
+	create-customer +
+	refund +
+
+==================================================================
+==================================================================
+//KEYBOARDS
+1. Add 3 shortcut-buttons: 
+	- Shopping Cart (discount, price, quantity) + DONE;
+2. сделать clear button серой + DONE;
+
+//SHOPPING CART
+1. центрировать контент внутри табов (keyboards & notes) + DONE;
+
+//PAYNS
+1. Отцентрировать cash in drawer + DONE;
+2. Заменить radio на кнопки + DONE;
+3. Отцентрировать контент + DONE;
+4. Поставить keyboard как и везде + DONE;
+
+//ORDER
+1. Значение кликабельного Fulfillment сделать голубым цветом + DONE;
+
+//ORDERS
+1. Убрать gradeout (серый цвет) + DONE;
+2. Добавить скролл внутри фильтров + DONE;
+
+//Payment Credit Card
+1. Поле Card Number сделать в 66%, а поле Expiration 33% + DONE;
+2. Отцентрировать + DONE;
+
+//REGISTER (OPEN/CLOSE)
+1. Отцентрировать + DONE;
+2. Заменить keyboard + DONE;
+
+==================================================================
+==================================================================
+//Дизайн 1.5 POS: (in new design)
+- Переделать Order, чтобы не было скрола горизонтального 
+	https://monosnap.com/file/Dh4H584rBIJc2l6WxIJN37zGaMwCru
+	DONE +;
+- Order tips - сделать так, чтобы небыло скрола горизонтального:
+	уменьшить размер шрифтов
+	убрать колонки REF NUM, TYPE
+	DONE +;
+- В калькуляторе Terminal заменить Pay на Charge
+	DONE +;
+==================================================================
+==================================================================
+//Дизайн 1.5 POS: (version: 10 may)
+- Переделать Order, чтобы не было скрола горизонтального - там уже есть скрин
+- Order tips - сделать так, чтобы небыло скрола горизонтального:
+	уменьшить размер шрифтов
+	убрать колонки REF NUM, TYPE,
+- Add discount tag
+- Quicksale dropdown - все элементы должны помещаться в список
+- Изменить контрол Walkin как в последнем дизайне и добавить скрол
+- Разобраться, что за кнопка Refresh на калькуляторе?
+- В калькуляторе Terminal заменить Pay на Charge
+- на Open и Close register также сделать чек серым
+- Quick sale и Walk in внизу
+
+- Total amount на всех страницах по центру (над калькулятором)
+- В рецепте сменить шрифты и фон должен быть серым
+- Header на одну колонку + кнопка Back
+- Растояние в shopping card между quantity и стоимостью в каждом продукте
+- Изменить текст в поле Search на shopping card
+- Добавить текст Sync и анимацию круга в Header
+ 
+ 
+- Увеличить Padding между калькулятором и вкладками продукта (увеличить до 50px)
+- Для всех Settings? где справа вверху только колесико, сделать как в последнем дизайне (слова добавить)
+==================================================================
+==================================================================
+
+
+//--------- дизайн 10 мая, апдейт
+- Отцентрировать info-price на всех страничках
+- Сделать странички: 
+	login (с полями username, password)
+	forget-password 
+- Добавить ссылку username (имя пользователя) в header справа.
+- Взять navigation и header с POS'a.
+- Header: кнопку меню вешаем слева, заголовок центрируем
+- Странички с таблицами: -таблицы берем с POS'a
+- Фильтры сделать как в старом дизайне
+- Product mix reports - календарь берем с текущего дизайна, но стилизируем под новый.
+- Orders page все тоже самое, новый стайл таблицы и подровнять фильтры
+- Order - такое же как на POS. без actions кнопок снизу
+- Department - layout такой же как и был, а так же inline editing 
+- Таблицы - везде где мы переходим кликая на строку - добавить стрелочку, а так же убрать крестики с таблиц
+- Categories - тоже самое как и было, inline editing
+	первый филд чекбокс, дальше contenteditable филд, департмент - селект, колонку статус поменять на active и под ним checkbox, удаляем делит и ставим иконки одна карандаш, а вторая A-Z - детальное рассмотрение
+
+ToDo: https://projects.invisionapp.com/share/4Z79QGTD9#/screens/157601058
+(header/navigation from POS)
+(login) User name/password page 
+Forget password page
+Dashboard (верхнюю часть, взять из письма от Влада - UI)
+Orders
+Order
+
+
+//в старом дизайне в виртуальном чеке был перечень модифайров и их стоимость, одной сущностью, сейчас этого нет - будет ли оно?
+//в старом дизайне в виртуальном чеке был перечень серийников, одной сущностью, сейчас этого нет - будет ли оно?
