@@ -1454,6 +1454,11 @@ a.shy {
   height: 51px;
 }
 
+.table-wrapper_header-lg .table-header__th {
+  vertical-align: middle;
+  height: 50px;
+}
+
 .table-wrapper__header {
   position: absolute;
   z-index: 2;
@@ -1503,7 +1508,7 @@ a.shy {
 
 .table-wrapper[data-table="order"] [data-table-fake],
 .table-wrapper[data-table="order"] [data-table-scrollable] > div {
-  min-width: 1200px;
+  min-width: 100%;
 }
 
 .is-poynt .table-wrapper[data-table="orders"] [data-table-fake], .is-poynt
@@ -1575,11 +1580,9 @@ a.shy {
   width: 110px;
 }
 
-.table-header__th[data-column="orders-action"], .table-header__th[data-column="orders-tips-price"], .table-header__td[data-column="orders-action"], .table-header__td[data-column="orders-tips-price"],
+.table-header__th[data-column="orders-action"], .table-header__td[data-column="orders-action"],
 .table-body__th[data-column="orders-action"],
-.table-body__th[data-column="orders-tips-price"],
-.table-body__td[data-column="orders-action"],
-.table-body__td[data-column="orders-tips-price"] {
+.table-body__td[data-column="orders-action"] {
   text-align: right;
 }
 
@@ -1633,6 +1636,28 @@ a.shy {
 .table-body__th[data-column="orders-tips-order"],
 .table-body__td[data-column="orders-tips-order"] {
   width: 15%;
+}
+
+.table-header__th[data-column*="order-item"], .table-header__td[data-column*="order-item"],
+.table-body__th[data-column*="order-item"],
+.table-body__td[data-column*="order-item"] {
+  width: 27%;
+}
+
+.table-header__th[data-column*="order-quantity"], .table-header__td[data-column*="order-quantity"],
+.table-body__th[data-column*="order-quantity"],
+.table-body__td[data-column*="order-quantity"] {
+  width: 14%;
+}
+
+.table-header__th[data-column*="order-price"], .table-header__th[data-column*="order-discount"], .table-header__th[data-column*="order-total"], .table-header__td[data-column*="order-price"], .table-header__td[data-column*="order-discount"], .table-header__td[data-column*="order-total"],
+.table-body__th[data-column*="order-price"],
+.table-body__th[data-column*="order-discount"],
+.table-body__th[data-column*="order-total"],
+.table-body__td[data-column*="order-price"],
+.table-body__td[data-column*="order-discount"],
+.table-body__td[data-column*="order-total"] {
+  width: 16%;
 }
 
 .table-header__th,
@@ -8087,6 +8112,10 @@ textarea.input {
   min-width: 80px;
 }
 
+.order__action {
+  font-size: 0;
+}
+
 .order-totals {
   height: 110px;
   *zoom: 1;
@@ -8474,6 +8503,11 @@ textarea.input {
   .table-wrapper[data-table="orders"] .table-header__th {
     padding-top: 10px;
     padding-bottom: 10px;
+  }
+
+  .table-header,
+  .table-body {
+    font-size: 12px;
   }
 
   .table-header__th, .table-header__td,

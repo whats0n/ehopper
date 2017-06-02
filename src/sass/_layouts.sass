@@ -304,6 +304,10 @@
     .table-wrapper
       &__header 
         height: 51px
+    .table-header
+      &__th
+        vertical-align: middle
+        height: 50px
   &__header
     position: absolute
     z-index: 2
@@ -353,7 +357,8 @@
   &[data-table="order"]
     [data-table-fake],
     [data-table-scrollable] > div
-      min-width: 1200px
+      // min-width: 1200px
+      min-width: 100%
   &[data-table="orders"]
     [data-table-fake],
     [data-table-scrollable] > div
@@ -383,6 +388,8 @@
   table-layout: fixed
   width: 100%
   font-size: 14px
+  +lg
+    font-size: 12px
   &__tr
     display: table-row
     &.is-disabled
@@ -408,8 +415,7 @@
       width: 110px
       +lg
         width: 90px
-    &[data-column="orders-action"],
-    &[data-column="orders-tips-price"]
+    &[data-column="orders-action"]
       text-align: right
     &[data-column="orders-id"]
       width: 11%
@@ -435,6 +441,16 @@
       width: 10%
     &[data-column="orders-tips-order"]
       width: 15%
+
+    //order page
+    &[data-column*="order-item"]
+      width: 27%
+    &[data-column*="order-quantity"]
+      width: 14%
+    &[data-column*="order-price"],
+    &[data-column*="order-discount"],
+    &[data-column*="order-total"]
+      width: 16%
   &__th
     +rmed
 

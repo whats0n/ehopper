@@ -204,7 +204,7 @@ settingsActive: 2
 										{% for th in table.header %}
 											<li class="table-header__th" data-column="{{th.column}}">
 												{% if th.checkbox %}
-													<div class="orders__action">
+													<div class="order__action">
 														{{mixins.checkbox()}}
 													</div>
 												{% else %}
@@ -223,7 +223,7 @@ settingsActive: 2
 												{% for td in tr %}
 													<div class="table-body__td" data-column="{{td.column}}">
 														{% if td.checkbox %}
-															<div class="orders__action">
+															<div class="order__action">
 																{{mixins.checkbox()}}
 															</div>
 														{% else %}
