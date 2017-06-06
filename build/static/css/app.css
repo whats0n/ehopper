@@ -6288,9 +6288,17 @@ textarea.input {
   background: #fce5e3;
 }
 
+.order-item_static {
+  padding: 13px 0;
+}
+
 .order-item_static .order-item__discount {
   color: #333;
   opacity: 0.5;
+}
+
+.order-item_static .order-item__quantity, .order-item_static .order-item__price, .order-item_static .order-item__total, .order-item_static .order-item__discount, .order-item_static .order-item__info, .order-item_static .order-item__meta {
+  padding: 3px 0;
 }
 
 .order-item__container {
@@ -6382,6 +6390,22 @@ textarea.input {
 
 .order-item__meta {
   clear: both;
+  *zoom: 1;
+}
+
+.order-item__meta:after {
+  content: " ";
+  display: table;
+  clear: both;
+}
+
+.order-item__meta-content, .order-item__meta-price {
+  float: left;
+  width: 50%;
+}
+
+.order-item__meta-price {
+  text-align: right;
 }
 
 .order-item__meta, .order-item__price {

@@ -29,10 +29,18 @@
 			+refund
 				background: lighten(#ec4a41, 35%)
 	&_static
+		padding: 13px 0
 		.order-item
 			&__discount
 				color: $darkGray
 				opacity: 0.5
+			&__quantity,
+			&__price,
+			&__total,
+			&__discount,
+			&__info,
+			&__meta
+				padding: 3px 0
 	&__container
 		position: relative
 		+gpu
@@ -100,6 +108,13 @@
 	&__meta
 		clear: both
 		// padding-top: 5px
+		+clr
+		&-content,
+		&-price
+			float: left
+			width: 50%
+		&-price 
+			text-align: right
 	&__meta,
 	&__price
 		opacity: 0.5

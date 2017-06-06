@@ -14,7 +14,7 @@
 			{% set orderList = [
 				{
 					title: 'Hot Dog XL',
-					meta: '<strong>Note</strong> Click to duplicate in cart',
+					notes: '<strong>Note</strong> Click to duplicate in cart',
 					quantity: '1',
 					price: '3.00',
 					total: '3.00',
@@ -22,7 +22,11 @@
 				},
 				{
 					title: 'T-Shirt with Print 23',
-					meta: 'Long Sleeves, XL size, Black color',
+					notes: '<strong>Note</strong> Click to duplicate in cart',
+					modifiers: { 
+						content: 'Long Sleeves, XL size, Black color',
+						price: '12.00'
+					},
 					quantity: '2',
 					price: '644.00',
 					total: '1288.00',
@@ -31,7 +35,6 @@
 				},
 				{
 					title: 'Honey',
-					meta: '<strong>Note</strong> ...',
 					quantity: '1',
 					price: '8.00',
 					total: '8.00',
@@ -47,7 +50,6 @@
 									<div class="order-item__info">
 										<div class="order-item__title">{{item.title | safe}}</div>
 									</div>
-									<div class="order-item__meta">{{item.meta | safe}}</div>
 								</div>
 								<div class="order-item__row">
 									<div class="order-item__col">
@@ -61,6 +63,15 @@
 										{% endif %}
 									</div>
 								</div>
+								{% if item.notes %}
+									<div class="order-item__meta">{{item.notes | safe}}</div>
+								{% endif %}
+								{% if item.modifiers %}
+									<div class="order-item__meta">
+										<div class="order-item__meta-content">{{item.modifiers.content | safe}}</div>
+										<div class="order-item__meta-price">{{item.modifiers.price | safe}}</div>
+									</div>
+								{% endif %}
 							</div>
 						</div>
 					</li>

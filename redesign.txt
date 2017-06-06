@@ -156,10 +156,18 @@ loading +
 - Categories - тоже самое как и было, inline editing
 	первый филд чекбокс, дальше contenteditable филд, департмент - селект, колонку статус поменять на active и под ним checkbox, удаляем делит и ставим иконки одна карандаш, а вторая A-Z - детальное рассмотрение
 
+//================================================================================
+//BO REDESIGN:
+
+- Page login (login.html): DONE +;
+- Page forget password (reset-password.html): DONE +;
+- Components:
+	-- Header
+	-- Navigation menu
+
+
 ToDo: https://projects.invisionapp.com/share/4Z79QGTD9#/screens/157601058
 (header/navigation from POS)
-(login) User name/password page 
-Forget password page
 Dashboard (верхнюю часть, взять из письма от Влада - UI)
 Orders
 Order
