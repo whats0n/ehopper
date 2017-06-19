@@ -161,10 +161,10 @@ loading +
 
 - Page login (login.html): DONE +;
 - Page forget password (reset-password.html): DONE +;
+- Page pin (pin-login.html): DONE +;
 - Components:
-	-- Header
+	-- Header (color: indigo 600)
 	-- Navigation menu
-
 
 ToDo: https://projects.invisionapp.com/share/4Z79QGTD9#/screens/157601058
 (header/navigation from POS)

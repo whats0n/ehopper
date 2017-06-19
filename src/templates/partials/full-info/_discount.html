@@ -1,3 +1,4 @@
+{% import '../_mixins.html' as mixins %}
 {% import '../components/_keyboard.html' as keyboard %}
 <div class="tabs__keyboard">
 	{# {{keyboard.display({
@@ -84,21 +85,25 @@
 			]
 		}
 	})}} #}
-
-	{{keyboard.call({
-		display: {
-			switch: {
-				left: '$',
-				right: '%',
-				id: 'discount-switcher'
-			},
-			staticInput: true,
-			classList: 'field_static field_currency',
-			unitsLeft: '$',
-			unitsRight: '%',
-			id: 'item-discount',
-			value: '15'
-		},
-		shortcuts: [ { content: '5%' }, { content: '10%' }, { content: '15%' } ]
-	})}}
+	<div class="fieldset fieldset_bordered">
+		<div class="main-display">
+			<button class="main-display__clear" data-numpad="numpad-clear"><i class="icon icon-clear"></i></button>
+			{{mixins.field({
+				switch: {
+					left: '$',
+					right: '%',
+					id: 'discount-switcher'
+				},
+				staticInput: true,
+				classList: 'field_static field_currency',
+				unitsLeft: '$',
+				unitsRight: '%',
+				id: 'item-discount',
+				value: '15'
+			})}}
+		</div>
+		{{keyboard.call({
+			shortcuts: [ { content: '5%' }, { content: '10%' }, { content: '15%' } ]
+		})}}
+	</div>
 </div>

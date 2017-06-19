@@ -1,6 +1,7 @@
 .main-keyboard
 	position: relative
 	padding: 0 0 1px 1px
+	margin: -1px 0 -1px -1px
 	// width: 100%
 	background: $lightGray
 	font-size: 61px
@@ -13,7 +14,7 @@
 	&__container
 		position: relative
 		// overflow: hidden
-		margin-top: -1px
+		// margin-top: -1px
 		// border-radius: 0 0 4px 4px
 		width: 100%
 		+gpu
@@ -52,7 +53,7 @@
 		transition: background 0.175s ease
 		+active
 			color: inherit
-			background: $eb
+			//background: $eb
 		.icon
 			font-size: 30px
 	&__submit
@@ -80,11 +81,14 @@
 		background: $azure
 		+rreg
 		font-size: 20px
-		+active
-			background: $azureActive
-		&[data-animation="ripple"]
+		// +active
+		// 	background: $azureActive
+		&[data-animation*="ripple"]
 			.ripple-circle
 				background: rgba($blue, 0.1)
+	[data-animation*="ripple"]
+		.ripple-circle
+			animation-duration: 0.5s
 	&__display
 		position: relative
 		padding: 1px 41px 1px 0

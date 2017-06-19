@@ -169,12 +169,12 @@
 {% macro call(props) %}
 <!-- begin keyboard -->
 <div class="main-keyboard numpad {{props.classList}}">
-	{% if props.display %}
+	{# {% if props.display %}
 		<div class="main-keyboard__display">
 			<button class="main-keyboard__clear" data-numpad="numpad-clear"><i class="icon icon-clear"></i></button>
 			{{mixins.field(props.display)}}
 		</div>
-	{% endif %}
+	{% endif %} #}
 	<div class="main-keyboard__container {{props.containerClassList}}">
 		{# {% if props.discount %}
 			<div class="main-keyboard__aside">

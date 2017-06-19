@@ -1,3 +1,4 @@
+{% import '../_mixins.html' as mixins %}
 {% import '../components/_keyboard.html' as keyboard %}
 <div class="tabs__keyboard">
 	{# {{keyboard.display({
@@ -64,14 +65,18 @@
 			]
 		}
 	})}} #}
-	{{keyboard.call({
-		display: {
-			label: 'Custom Price:',
-			units: '$',
-			id: 'item-custom-price',
-			value: '49.95',
-			static: true,
-			classList: 'field_static'
-		}
-	})}}
+	<div class="fieldset fieldset_bordered">
+		<div class="main-display">
+			<button class="main-display__clear" data-numpad="numpad-clear"><i class="icon icon-clear"></i></button>
+			{{mixins.field({
+				label: 'Custom Price:',
+				units: '$',
+				id: 'item-custom-price',
+				value: '49.95',
+				static: true,
+				classList: 'field_static'
+			})}}
+		</div>
+		{{keyboard.call()}}
+	</div>
 </div>

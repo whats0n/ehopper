@@ -660,6 +660,7 @@ body {
 }
 
 body {
+  min-height: 570px;
   color: #333;
   background: #f8f8f8;
   font-family: 'Roboto Light', Arial, sans-serif;
@@ -2757,6 +2758,11 @@ textarea.input {
   margin: 10px;
 }
 
+.snackbar a {
+  color: inherit;
+  text-decoration: underline;
+}
+
 .sm-search {
   position: relative;
   padding-right: 50px;
@@ -3913,14 +3919,10 @@ textarea.input {
 }
 
 .horizontal-menu__link:active {
-  color: #fff;
-  background: #2e99db;
   box-shadow: inset 2px 2px 4px rgba(0, 0, 0, 0.2);
 }
 
 .no-touch .horizontal-menu__link:active {
-  color: #fff;
-  background: #2e99db;
   box-shadow: inset 2px 2px 4px rgba(0, 0, 0, 0.2);
 }
 
@@ -3940,6 +3942,10 @@ textarea.input {
 
 .horizontal-menu__link.is-disabled[data-animation="ripple"] .ripple-circle {
   visibility: hidden;
+}
+
+.horizontal-menu__link[data-animation="ripple"] {
+  animation-duration: 0.5s;
 }
 
 .horizontal-menu__link .icon {
@@ -4023,13 +4029,13 @@ textarea.input {
 .main-keyboard {
   position: relative;
   padding: 0 0 1px 1px;
+  margin: -1px 0 -1px -1px;
   background: #eee;
   font-size: 61px;
 }
 
 .main-keyboard__container {
   position: relative;
-  margin-top: -1px;
   width: 100%;
   transform: translate3d(0, 0, 0);
   *zoom: 1;
@@ -4099,12 +4105,10 @@ textarea.input {
 
 .main-keyboard__button:active {
   color: inherit;
-  background: #ebebeb;
 }
 
 .no-touch .main-keyboard__button:active {
   color: inherit;
-  background: #ebebeb;
 }
 
 .main-keyboard__button .icon {
@@ -4161,16 +4165,12 @@ textarea.input {
   font-size: 20px;
 }
 
-.main-keyboard__shortcuts-button:active {
-  background: #c7e7f9;
-}
-
-.no-touch .main-keyboard__shortcuts-button:active {
-  background: #c7e7f9;
-}
-
-.main-keyboard__shortcuts-button[data-animation="ripple"] .ripple-circle {
+.main-keyboard__shortcuts-button[data-animation*="ripple"] .ripple-circle {
   background: rgba(46, 153, 219, 0.1);
+}
+
+.main-keyboard [data-animation*="ripple"] .ripple-circle {
+  animation-duration: 0.5s;
 }
 
 .main-keyboard__display {
@@ -4249,6 +4249,34 @@ textarea.input {
 .main-keyboard__card-input {
   padding: 0 20px;
   width: 100%;
+}
+
+.main-display {
+  position: relative;
+  padding: 1px 41px 1px 0;
+}
+
+.main-display__clear {
+  position: absolute;
+  top: 1px;
+  right: 1px;
+  bottom: 1px;
+  width: 60px;
+  background: #fff;
+}
+
+.main-display__clear:active .icon {
+  opacity: 0.7;
+}
+
+.no-touch .main-display__clear:active .icon {
+  opacity: 0.7;
+}
+
+.main-display__clear .icon {
+  opacity: 0.5;
+  font-size: 30px;
+  transition: opacity 0.1s ease-in-out;
 }
 
 .keyboard {
@@ -4615,6 +4643,9 @@ textarea.input {
 
 .menu__title {
   padding: 12px 20px 12px 50px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 .menu__container {
@@ -6309,6 +6340,15 @@ article.settings main {
   .main-keyboard .field_static .field__static {
     height: 60px;
     line-height: 60px;
+  }
+
+  .main-display .field_static .field__static {
+    height: 60px;
+    line-height: 60px;
+  }
+
+  .main-display .field__input {
+    height: 60px;
   }
 
   .tabs {

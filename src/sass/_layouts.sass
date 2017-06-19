@@ -189,6 +189,8 @@
     flex: 1
     background: $white
   &__toolbar
+    padding-bottom: 15px
+    border-bottom: 1px solid rgba($black, 0.1)
     .toolbar
       &__col
         &:not(:last-child)
@@ -452,7 +454,10 @@
     &[data-column*="order-total"]
       width: 16%
   &__th
+    height: 36px
     +rmed
+    vertical-align: middle
+    
 
 .table-header
   border-bottom: 1px solid $silverGray

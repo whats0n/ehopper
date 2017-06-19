@@ -121,6 +121,8 @@ $menuButtonIndex: 50
 		+active
 			color: $white
 			background: darken(#cae9f4, 10%)
+		+touch
+			width: 80px
 		+poynt 
 			position: fixed
 			top: 0
@@ -128,6 +130,8 @@ $menuButtonIndex: 50
 			z-index: ($poyntContainerIndex + 1)
 		~ .main-header__toolbar
 			padding-left: 60px
+			+touch
+				padding-left: 80px
 			+poynt
 				padding-left: 0
 	&__help,
@@ -220,10 +224,10 @@ $menuButtonIndex: 50
 				+poynt
 					border-right: 1px solid rgba($black, 0.2)
 	&__title
-		font-size: 20px
-		margin: 0
 		padding-top: 13px
 		padding-bottom: 13px
+		margin: 0
+		font-size: 20px
 	&__back
 		position: absolute
 		z-index: 10
