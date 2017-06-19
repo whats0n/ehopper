@@ -34,17 +34,22 @@ styles:
 									classList: 'text-center'
 								})}}
 							</div>
-							{{keyboard.call({
-								display: {
-									label: 'Amount Tendered:',
-									id: 'amount-tendered',
-									value: '200.00',
-									placeholder: '0',
-									attrs: 'required readonly',
-									inputClassList: 'text-right input_xl'
-								},
-								shortcuts: [ { content: 'Exact' }, { content: '105' }, { content: '110' } ]
-							})}}
+							<div class="fieldset fieldset_bordered">
+								<div class="main-display">
+									<button class="main-display__clear" data-numpad="numpad-clear"><i class="icon icon-clear"></i></button>
+									{{mixins.field({
+										label: 'Amount Tendered:',
+										id: 'amount-tendered',
+										value: '200.00',
+										placeholder: '0',
+										attrs: 'required readonly',
+										inputClassList: 'text-right input_xl'
+									})}}
+								</div>
+								{{keyboard.call({
+									shortcuts: [ { content: 'Exact' }, { content: '105' }, { content: '110' } ]
+								})}}
+							</div>
 						</div>
 					</div>
 					<div class="step-body__footer section">

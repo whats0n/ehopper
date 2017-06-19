@@ -108,16 +108,19 @@ styles:
 									]
 								}
 							})}} #}
-
-							{{keyboard.call({
-								display: {
-									label: 'Amount Tendered:',
-									id: 'amount-tendered',
-									placeholder: '0.00',
-									attrs: 'required readonly',
-									inputClassList: 'text-right input_lg'
-								}
-							})}}
+							<div class="fieldset fieldset_bordered">
+								<div class="main-display">
+									<button class="main-display__clear" data-numpad="numpad-clear"><i class="icon icon-clear"></i></button>
+									{{mixins.field({
+										label: 'Amount Tendered:',
+										id: 'amount-tendered',
+										placeholder: '0.00',
+										attrs: 'required readonly',
+										inputClassList: 'text-right input_lg'
+									})}}
+								</div>
+								{{keyboard.call()}}
+							</div>
 						</div>
 
 						<div class="form__section">

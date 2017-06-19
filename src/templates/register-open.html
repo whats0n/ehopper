@@ -21,18 +21,6 @@ styles:
 				containerClassList: 'main-header__container_full',
 				title: 'Open Register'
 			})}}
-			{# {{header.double({
-				classList: 'header_container-upper header_poynt-sm',
-				sidebar: {
-					back: true,
-					backText: 'Back'
-				},
-				container: {
-					help: true,
-					title: 'Open Register',
-					titleClassList: 'header__title_vertical'
-				}
-			})}} #}
 			<aside class="sidebar sidebar_left sidebar_white">
 				<div class="infoblock infoblock_collapsed">
 					<div class="infoblock__row">
@@ -118,17 +106,18 @@ styles:
 					<div class="step-body__section vertical-center__content">
 						<div class="form form_sm">
 							<div class="fieldset fieldset_bordered">
-								{{keyboard.call({
-									classList: 'fieldset__keyboard',
-									display: {
+								<div class="main-display">
+									<button class="main-display__clear" data-numpad="numpad-clear"><i class="icon icon-clear"></i></button>
+									{{mixins.field({
 										label: 'Opening Amount:',
 										id: 'item-quantity',
 										value: '200.00',
 										placeholder: '0',
 										attrs: 'required readonly',
 										inputClassList: 'text-right input_xl'
-									}
-								})}}
+									})}}
+								</div>
+								{{keyboard.call()}}
 							</div>
 							<div class="fieldset fieldset_lg fieldset_bordered fieldset_standalone">
 								<textarea class="textarea textarea_block textarea_little" placeholder="Register Opening Note"></textarea>
