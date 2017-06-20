@@ -26,27 +26,36 @@ styles:
 				<div class="container__body">
 					{% set payments = [
 						{
+							title: 'Cash',
+							icon: 'payment-cash',
+							attrs: 'style="background-color: #66bb6a; color: #fff;"',
+							color: '#66bb6a'
+						},
+						{
 							title: 'Credit Card',
-							icon: 'cc',
+							icon: 'payment-card',
+							attrs: 'style="background-color: khaki;"',
 							color: 'khaki'
 						},
 						{
 							title: 'Debit Card',
-							icon: 'cc',
-							color: 'khaki'
+							icon: 'payment-card',
+							attrs: 'style="background-color: khaki;"'
 						},
 						{
 							title: 'External Payment',
-							icon: 'print'
+							icon: 'payment-terminal'
 						},
 						{
 							title: 'Split Payment',
-							icon: 'split',
+							icon: 'payment-split',
+							attrs: 'style="background-color: lightblue;"',
 							color: 'lightblue'
 						},
 						{
 							title: 'EBT Card',
 							iconText: 'EBT',
+							attrs: 'style="background-color: khaki;"',
 							color: 'khaki'
 						}
 					] %}
@@ -55,7 +64,7 @@ styles:
 							<div class="sm-grid__body">
 								<div class="sm-grid__row">
 									{% for props in payments %}
-										<div class="sm-grid__col sm-grid__col_md">
+										<div class="sm-grid__col sm-grid__col_sm">
 											{{card.payment(props)}}
 										</div>
 									{% endfor %}

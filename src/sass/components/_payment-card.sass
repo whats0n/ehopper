@@ -1,6 +1,7 @@
 .payment-card
 	display: block
 	overflow: hidden
+	padding-bottom: 20px
 	border-radius: 2px
 	color: $darkGray
 	background: $lightGray
@@ -15,7 +16,8 @@
 	+active
 		box-shadow: none
 	&__icon
-		height: 120px
+		// height: 120px
+		height: 48px
 		+vertical
 		.icon
 			display: inline-block
@@ -23,11 +25,31 @@
 			width: auto
 			height: auto
 			font-size: 48px
+			&-payment-card,
+			&-payment-cash
+				font-size: 36px
+			&-payment-terminal,
+			&-payment-split
+				font-size: 48px
 	&__icon-text
 		display: inline-block
 		vertical-align: middle
 		+rbold
-		font-size: 28px
+		// font-size: 28px
+		font-size: 32px
 	&__title
-		padding: 10px 20px
-		background: $white
+		// padding: 10px 20px
+		// background: $white
+		// padding: 0 15px
+		height: 65px
+		+vertical
+		span
+			display: inline-block
+			vertical-align: middle
+			width: 100%
+			font-size: 20px
+			text-transform: uppercase
+			+lg
+				font-size: 16px
+
+		
