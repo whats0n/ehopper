@@ -1,5 +1,6 @@
 {% macro smBox(props) %}
 <div class="sm-box {{props.classList}}" data-animation="ripple" {% if props.background %}style="background-color: {{props.background}};"{% endif %} >
+	<i class="icon icon-check sm-box__icon"></i>
 	<div class="sm-box__title">{{props.title}}</div>
 	<div class="sm-box__description">{{props.description}}</div>
 </div>

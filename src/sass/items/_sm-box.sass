@@ -16,6 +16,11 @@
 	&.is-active
 		color: $white
 		background: $blue !important
+		.sm-box
+			&__icon 
+				opacity: 1
+			&__title
+				padding-right: 25px
 	&__title,
 	&__description
 		+text-overflow
@@ -24,3 +29,9 @@
 	&__description
 		opacity: 0.5
 		font-size: 13px
+	&__icon
+		position: absolute
+		top: 0
+		right: 0
+		opacity: 0
+		transition: opacity 0.17s ease-in-out

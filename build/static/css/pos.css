@@ -7401,6 +7401,14 @@ textarea.input {
   background: #2e99db !important;
 }
 
+.sm-box.is-active .sm-box__icon {
+  opacity: 1;
+}
+
+.sm-box.is-active .sm-box__title {
+  padding-right: 25px;
+}
+
 .sm-box__title, .sm-box__description {
   overflow: hidden;
   text-overflow: ellipsis;
@@ -7414,6 +7422,14 @@ textarea.input {
 .sm-box__description {
   opacity: 0.5;
   font-size: 13px;
+}
+
+.sm-box__icon {
+  position: absolute;
+  top: 0;
+  right: 0;
+  opacity: 0;
+  transition: opacity 0.17s ease-in-out;
 }
 
 .item {
