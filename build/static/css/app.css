@@ -296,6 +296,7 @@ hr {
   color: rgba(0, 0, 0, 0.1);
   border: none;
   height: 2px;
+  width: 100%;
   clear: both;
 }
 
@@ -5761,8 +5762,15 @@ textarea.input {
   position: relative;
   z-index: 5;
   overflow: auto;
-  padding-top: 70px;
+  padding-top: 50px;
   height: 100%;
+}
+
+.menu__account {
+  padding: 20px 15px;
+  border-bottom: 1px solid #4C5560;
+  color: #fff;
+  font-size: 18px;
 }
 
 .nav__item {

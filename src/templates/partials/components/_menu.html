@@ -27,6 +27,7 @@
 		<div class="title-xlg menu__title">Acme Inc.</div>
 	</header>
 	<div class="menu__container">
+		<div class="menu__account">Account ID: 123321</div>
 		<ul class="nav">
 			{% for item in props.nav or nav %}
 			    <li class="nav__item" {% if item.list %}data-nav-submenu="nav-settings"{% endif %}>
