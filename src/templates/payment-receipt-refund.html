@@ -31,19 +31,19 @@ styles:
 								<div class="form__row">
 									<div class="form__col">
 										{{mixins.infoPrice({
-											label: 'Amount Tendered:',
+											label: 'Amount Due:',
 											price: '200.00',
 											currency: '$',
-											classList: 'text-right'
+											classList: 'text-right',
+											valueClassList: 'color-red'
 										})}}
 									</div>
 									<div class="form__col">
 										{{mixins.infoPrice({
-											label: 'Change Due:',
+											label: 'Change Owed:',
 											price: '98.00',
 											currency: '$',
-											classList: 'text-left',
-											valueClassList: 'color-red'
+											classList: 'text-left'
 										})}}
 									</div>
 								</div>
@@ -77,14 +77,6 @@ styles:
 									<div class="form-box__field">
 										<label for="state-tax" class="form-box__label">Print Bill</label>
 										{{mixins.switcher({ id: 'print-bill', classList: 'form-box__switcher' })}}
-									</div>
-								</div>
-							</div>
-							<div class="form__section">
-								<div class="form-box">
-									<div class="form-box__field">
-										<label for="state-tax" class="form-box__label">Loyalty Checkin</label>
-										{{mixins.switcher({ id: 'print-bill', classList: 'form-box__switcher switcher_green' })}}
 									</div>
 								</div>
 							</div>

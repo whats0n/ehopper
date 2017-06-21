@@ -3,7 +3,7 @@
 
   <head>
     <meta charset="utf-8">
-    <title>Cash Method &bull; eHopper POS</title>
+    <title>Receipt &bull; eHopper POS</title>
     <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <meta name="theme-color" content="#fff">
@@ -22,7 +22,7 @@
         <div class="inner">
           <!-- begin header -->
           <header class="main-header ">
-            <!-- begin button 'back' --><button class="main-header__back btn-back ">
+            <!-- begin button 'back' --><button class="main-header__back btn-back is-hidden">
 		<i class="icon icon-back btn-back__icon"></i>
 		<span class="btn-back__title">Back</span>
 	</button>
@@ -31,7 +31,7 @@
             <div class="main-header__container main-header__container_full"> <button class="btn-icon main-header__help is-hidden" title="Help" data-modal-open="help">
 			<i class="icon icon-help"></i>
 		</button>
-              <h2 class="title-xlg main-header__title ">Cash Payment</h2>
+              <h2 class="title-xlg main-header__title ">Receipt #001234</h2>
               <div class="main-header__searchbox is-hidden">
                 <!-- begin search -->
                 <div class="search" data-modal="search">
@@ -305,51 +305,71 @@
           <div class="container container_right container_payments">
             <div class="container__body step-body vertical-center">
               <div class="step-body__section vertical-center__content">
-                <div class="form form_sm" id="payment-cash">
+                <div class="form form_sm">
                   <div class="form__section">
-                    <div class="info-price text-center">
-                      <div class="info-price__label">Amount Due:</div>
-                      <div class="info-price__value "> <small>$</small> <span>102.00</span> </div>
+                    <div class="form__row">
+                      <div class="form__col">
+                        <div class="info-price text-right">
+                          <div class="info-price__label">Amount Tendered:</div>
+                          <div class="info-price__value "> <small>$</small> <span>200.00</span> </div>
+                        </div>
+                      </div>
+                      <div class="form__col">
+                        <div class="info-price text-left">
+                          <div class="info-price__label">Change Due:</div>
+                          <div class="info-price__value color-red"> <small>$</small> <span>98.00</span> </div>
+                        </div>
+                      </div>
                     </div>
                   </div>
-                  <div class="fieldset fieldset_bordered">
-                    <div class="main-display"> <button class="main-display__clear" data-numpad="numpad-clear"><i class="icon icon-clear"></i></button>
-                      <div class="field ">
-                        <div class="field__inner"> <label class="field__label" for="amount-tendered">Amount Tendered:</label>
-                          <div class="field__box"> <input class="input field__input text-right input_xl" value="200.00" id="amount-tendered" type="text" placeholder="0" required readonly> </div>
+                  <div class="form__section">
+                    <div class="form-box">
+                      <div class="form-box__field">
+                        <div class="field ">
+                          <div class="field__inner"> <label class="field__label" for="bill-language">Bill Language:</label>
+                            <div class="field__box">
+                              <div class="select select_lg field__select"> <select id="bill-language">
+		
+			<option value="English"  >English</option>
+		
+			<option value="French"  >French</option>
+		
+			<option value="Russian"  >Russian</option>
+		
+	</select> </div>
+                            </div>
+                          </div>
                         </div>
                       </div>
-                    </div>
-                    <!-- begin keyboard -->
-                    <div class="main-keyboard numpad ">
-                      <div class="main-keyboard__container ">
-                        <div class="main-keyboard__shortcuts">
-                          <div class="main-keyboard__item"><button type="button" data-animation="ripple" class="main-keyboard__shortcuts-button ">Exact</button></div>
-                          <div class="main-keyboard__item"><button type="button" data-animation="ripple" class="main-keyboard__shortcuts-button ">$10</button></div>
-                          <div class="main-keyboard__item"><button type="button" data-animation="ripple" class="main-keyboard__shortcuts-button ">$20</button></div>
-                        </div>
-                        <div class="main-keyboard__main">
-                          <div class="main-keyboard__item"> <button type="button" data-animation="ripple" class="main-keyboard__button ">1</button> </div>
-                          <div class="main-keyboard__item"> <button type="button" data-animation="ripple" class="main-keyboard__button ">2</button> </div>
-                          <div class="main-keyboard__item"> <button type="button" data-animation="ripple" class="main-keyboard__button ">3</button> </div>
-                          <div class="main-keyboard__item"> <button type="button" data-animation="ripple" class="main-keyboard__button ">4</button> </div>
-                          <div class="main-keyboard__item"> <button type="button" data-animation="ripple" class="main-keyboard__button ">5</button> </div>
-                          <div class="main-keyboard__item"> <button type="button" data-animation="ripple" class="main-keyboard__button ">6</button> </div>
-                          <div class="main-keyboard__item"> <button type="button" data-animation="ripple" class="main-keyboard__button ">7</button> </div>
-                          <div class="main-keyboard__item"> <button type="button" data-animation="ripple" class="main-keyboard__button ">8</button> </div>
-                          <div class="main-keyboard__item"> <button type="button" data-animation="ripple" class="main-keyboard__button ">9</button> </div>
-                          <div class="main-keyboard__item"> <button type="button" data-animation="ripple" class="main-keyboard__button ">0</button> </div>
-                          <div class="main-keyboard__item"> <button type="button" data-animation="ripple" class="main-keyboard__button ">00</button> </div>
-                          <div class="main-keyboard__item"> <button type="button" data-animation="ripple" class="main-keyboard__button " data-numpad="numpad-backspace"><i class="icon icon-backspace"></i></button> </div>
+                      <div class="form-box__field"> <label for="federal-tax" class="form-box__label">Email Bill</label> <label class="switcher form-box__switcher">
+	<input type="checkbox" id="email-bill" >
+	<i class="switcher__icon"></i>
+</label> </div>
+                      <div class="form-box__field">
+                        <div class="field ">
+                          <div class="field__inner"> <label class="field__label" for="order-email-address">Email address:</label>
+                            <div class="field__box"> <input class="input field__input input_lg text-right" id="order-email-address" type="text" placeholder="user@domain.com"> </div>
+                          </div>
                         </div>
                       </div>
+                      <div class="form-box__field"> <label for="state-tax" class="form-box__label">Print Bill</label> <label class="switcher form-box__switcher">
+	<input type="checkbox" id="print-bill" >
+	<i class="switcher__icon"></i>
+</label> </div>
                     </div>
-                    <!-- end keyboard -->
+                  </div>
+                  <div class="form__section">
+                    <div class="form-box">
+                      <div class="form-box__field"> <label for="state-tax" class="form-box__label">Loyalty Checkin</label> <label class="switcher form-box__switcher switcher_green">
+	<input type="checkbox" id="print-bill" >
+	<i class="switcher__icon"></i>
+</label> </div>
+                    </div>
                   </div>
                 </div>
               </div>
               <div class="step-body__footer section">
-                <div class="form form_sm"> <button class="btn btn_primary btn_lg btn_block text-uppercase" data-animation="ripple" value="Done">Process</button> </div>
+                <div class="form form_sm"> <button class="btn btn_primary btn_lg btn_block text-uppercase" data-animation="ripple" value="Done">Done</button> </div>
               </div>
             </div>
           </div>

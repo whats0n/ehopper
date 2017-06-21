@@ -184,11 +184,11 @@
 			</div>
 		{% endif %} #}
 		{% if props.shortcuts %}
-		<div class="main-keyboard__shortcuts">
-			{% for key in props.shortcuts %}
-				<div class="main-keyboard__item"><button type="button" data-animation="ripple" class="main-keyboard__shortcuts-button">{{key.content | safe}}</button></div>
-			{% endfor %}
-		</div>
+			<div class="main-keyboard__shortcuts">
+				{% for key in props.shortcuts %}
+					<div class="main-keyboard__item"><button type="button" data-animation="ripple" class="main-keyboard__shortcuts-button {% if props.shortcutsColor %}main-keyboard__shortcuts-button_{{props.shortcutsColor}}{% endif %}">{{key.content | safe}}</button></div>
+				{% endfor %}
+			</div>
 		{% endif %}
 
 		{% set main = [ 

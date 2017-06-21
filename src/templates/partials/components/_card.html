@@ -49,11 +49,13 @@
 	</div>
 	<div class="payment-card__title">{{props.title}}</div>
 </div> #}
-<div class="payment-card" data-animation="ripple" {{props.attrs | safe}}>
+<div class="payment-card" data-animation="ripple">
 	<div class="payment-card__title"><span>{{props.title}}</span></div>
 	<div class="payment-card__icon">
 		{% if props.icon %}
 			<i class="icon icon-{{props.icon}}"></i>
+		{% elif props.awesome %}
+			<i class="fa fa-{{props.awesome}}"></i>
 		{% elif props.iconText %}
 			<span class="payment-card__icon-text">{{props.iconText}}</span>
 		{% endif %}

@@ -2,6 +2,7 @@
 title: 'Cash Method &bull; eHopper POS'
 styles: 
 	- 'pos'
+orderItemClassList: 'color-red'
 ---
 {% extends "layouts/_layout.html" %}
 
@@ -30,6 +31,7 @@ styles:
 								{{mixins.infoPrice({
 									label: 'Amount Due:',
 									price: '102.00',
+									priceClassList: 'color-red',
 									currency: '$',
 									classList: 'text-center'
 								})}}
@@ -47,14 +49,15 @@ styles:
 									})}}
 								</div>
 								{{keyboard.call({
-									shortcuts: [ { content: 'Exact' }, { content: '$10' }, { content: '$20' } ]
+									shortcuts: [ { content: 'Exact' }, { content: '$10' }, { content: '$20' } ],
+									shortcutsColor: 'red'
 								})}}
 							</div>
 						</div>
 					</div>
 					<div class="step-body__footer section">
 						<div class="form form_sm"> 
-							<button class="btn btn_primary btn_lg btn_block text-uppercase" data-animation="ripple" value="Done">Process</button> 
+							<button class="btn btn_red btn_lg btn_block text-uppercase" data-animation="ripple" value="Done">Process</button> 
 						</div>
 					</div>
 				</div>

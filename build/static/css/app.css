@@ -5279,6 +5279,15 @@ textarea.input {
   background: rgba(46, 153, 219, 0.1);
 }
 
+.main-keyboard__shortcuts-button_red {
+  color: #fff;
+  background: #fd8e8c;
+}
+
+.main-keyboard__shortcuts-button_red[data-animation*="ripple"] .ripple-circle {
+  background: rgba(0, 0, 0, 0.1);
+}
+
 .main-keyboard [data-animation*="ripple"] .ripple-circle {
   animation-duration: 0.5s;
 }
@@ -6270,6 +6279,12 @@ textarea.input {
   font-size: 14px;
 }
 
+.order-item__meta a, .order-item__price a, .order-item__discount a {
+  display: inline-block;
+  font-family: 'Roboto Regular', Arial, sans-serif;
+  text-decoration: none;
+}
+
 .order-item__discount {
   color: #ec4a41;
 }
@@ -6282,6 +6297,13 @@ textarea.input {
   opacity: 0.3;
   background: url(../img/tag.svg) no-repeat center center;
   background-size: 20px;
+}
+
+.order-item__notes {
+  display: block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 .order-empty {
@@ -6894,8 +6916,8 @@ textarea.input {
   overflow: hidden;
   padding-bottom: 20px;
   border-radius: 2px;
-  color: #333;
-  background: #eee;
+  color: #656565;
+  background: lightblue;
   box-shadow: 0 0px 1px rgba(0, 0, 0, 0.2), 0 2px 4px rgba(0, 0, 0, 0.1);
   font-size: 14px;
   text-align: left;
@@ -6933,7 +6955,7 @@ textarea.input {
   height: 100%;
 }
 
-.payment-card__icon .icon {
+.payment-card__icon i {
   display: inline-block;
   vertical-align: middle;
   width: auto;
