@@ -7974,8 +7974,8 @@ textarea.input {
 
 .field-box__counter-input {
   width: 80px;
-  height: 80px;
-  font-size: 30px;
+  height: 60px;
+  font-size: 20px;
 }
 
 .field-box__controls {
@@ -12648,11 +12648,6 @@ article.settings main {
 
   .form__section_sm {
     margin-bottom: 2px;
-  }
-
-  .field-box__counter-input {
-    height: 60px;
-    font-size: 20px;
   }
 
   .main-keyboard {

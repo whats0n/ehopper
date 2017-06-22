@@ -3568,8 +3568,8 @@ textarea.input {
 
 .field-box__counter-input {
   width: 80px;
-  height: 80px;
-  font-size: 30px;
+  height: 60px;
+  font-size: 20px;
 }
 
 .field-box__controls {
@@ -6229,11 +6229,6 @@ article.settings main {
 }
 
 @media only screen and (max-height: 650px) {
-
-  .field-box__counter-input {
-    height: 60px;
-    font-size: 20px;
-  }
 
   .main-keyboard {
     font-size: 57px;
