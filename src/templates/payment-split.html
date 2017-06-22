@@ -23,52 +23,41 @@ styles:
 			})}}
 			{% include 'partials/components/_payments-sidebar.html' %}
 			<div class="container container_right container_payments">
-				<div class="container__body step-body vertical-center">
-					<div class="step-body__section vertical-center__content">
+				<div class="container__body step-body">
+					<div class="step-body__section">
 						<div class="form form_sm">
-							<br>
-							<div class="form__section">
+							<div class="form__section form__section_sm">
 								{{mixins.fieldBox({
 									counter: true,
-									value: '3',
+									value: '5',
 									label: 'Payments'
 								})}}
 							</div>
-							<div class="form__section">
-								{{mixins.fieldBox({
-									select: {
-										selected: 0,
-										classList: 'select_lg',
-										options: [
-											'Cash',
-											'Credit Card',
-											'Debit Card',
-											'External Payment'
-										]
-									},
-									value: '100.00',
-									button: 'Charge',
-									number: 1
-								})}}
-							</div>
-							<div class="form__section">
-								{{mixins.fieldBox({
-									select: {
-										selected: 1,
-										classList: 'select_lg',
-										options: [
-											'Cash',
-											'Credit Card',
-											'Debit Card',
-											'External Payment'
-										]
-									},
-									value: '100.00',
-									button: 'Charge',
-									number: 2
-								})}}
-							</div>
-							<div class="form__section">
+							{% for dd in range(0,4) %}
+								{% if loop.index >= 3 %}
+									{% set direction = ' dropdown-menu_up' %}
+								{% else %}
+									{% set direction = '' %}
+								{% endif %}
+								<div class="form__section form__section_sm">
+									{{mixins.fieldBox({
+										select: {
+											dropdownMenuClassList: 'dropdown-menu_no-scroll' + direction,
+											value: 'Cash',
+											list: [ { text: 'Cash', value: 'Cash' }, { text: 'Credit Card', value: 'Credit Card' }, { text: 'Debit Card', value: 'Debit Card' }, { text: 'External Payment', value: 'External Payment' } ],
+											listOnly: true,
+											activeItem: 0,
+											name: 'split-payment' + loop.index,
+											menuAttrs: 'data-scrollbar="default"'
+										},
+										value: '100.00',
+										button: 'Charge',
+										number: 1,
+										delete: true
+									})}}
+								</div>
+							{% endfor %}
+							<div class="form__section form__section_sm">
 								{{mixins.fieldBox({
 									select: true,
 									selectStatic: true,
@@ -77,7 +66,9 @@ styles:
 									number: 3,
 									selected: 'Cash',
 									colMuted: 'muted',
-									inputAttrs: 'readonly'
+									inputAttrs: 'readonly',
+									delete: true,
+									buttonClassList: 'btn_red'
 								})}}
 							</div>
 						</div>

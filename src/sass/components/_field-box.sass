@@ -68,6 +68,11 @@
 				width: 35%
 		&-input
 			width: 80px
+			height: 80px
+			font-size: 30px
+			+hsm
+				height: 60px
+				font-size: 20px
 	&__controls
 		display: inline-block
 		vertical-align: middle
@@ -82,15 +87,19 @@
 	&__control
 		position: absolute
 		top: 0
+		bottom: 0
 		&_left
 			left: 0
 		&_right
 			right: 0
-
+		.btn
+			height: 100%
+			line-height: normal
 	//select-set
 	&__select-set
 		position: relative
-		padding: 0 90px 0 35px
+		// padding: 0 90px 0 35px
+		padding-right: 90px
 		margin: -13px -20px
 		min-height: 60px
 		+clr
@@ -102,15 +111,18 @@
 		padding: 0 10px
 		text-align: right
 	&__select-static
+		padding-left: 20px
 		i
-			float: left
+			float: right
 			margin: 10px 0
 			color: $green
 		span
 			display: block
 			overflow: hidden
-			+rreg
-			font-size: 20px
+			// +rreg
+			// font-size: 20px
+			+rlight
+			font-size: 14px
 			line-height: 60px
 			+nosel
 	&__number
@@ -123,8 +135,22 @@
 		+nosel
 	&__button
 		position: absolute
-		top: 0
-		right: 0
+		top: -2px
+		right: -2px
+		bottom: -2px
 		width: 90px
-
-	
+		.btn
+			padding: 0
+			height: 100%
+			line-height: normal
+	&__clear
+		position: absolute
+		top: 0
+		left: 100%
+		bottom: 0
+		width: 60px
+		color: $red
+		background: none
+	.dropdown
+		&__value
+			font-size: 14px

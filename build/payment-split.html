@@ -303,74 +303,137 @@
             </div>
           </aside>
           <div class="container container_right container_payments">
-            <div class="container__body step-body vertical-center">
-              <div class="step-body__section vertical-center__content">
-                <div class="form form_sm"> <br>
-                  <div class="form__section">
+            <div class="container__body step-body">
+              <div class="step-body__section">
+                <div class="form form_sm">
+                  <div class="form__section form__section_sm">
                     <div class="field-box">
                       <div class="field-box__counter">
                         <div class="field-box__label">Payments</div>
                         <div class="field-box__controls">
                           <div class="field-box__controls-in">
                             <div class="field-box__control field-box__control_left"> <button class="btn btn_xl btn_secondary" data-animation="ripple">&#8211;</button> </div>
-                            <div class="field-box__control field-box__control_right"> <button class="btn btn_xl btn_secondary" data-animation="ripple">+</button> </div> <input type="text" class="input input_xl text-center field-box__counter-input" value="3" readonly> </div>
+                            <div class="field-box__control field-box__control_right"> <button class="btn btn_xl btn_secondary" data-animation="ripple">+</button> </div> <input type="text" class="input text-center field-box__counter-input" value="5" readonly> </div>
                         </div>
                       </div>
                     </div>
                   </div>
-                  <div class="form__section">
+                  <div class="form__section form__section_sm">
                     <div class="field-box">
-                      <div class="field-box__select-set">
-                        <div class="field-box__number">1</div>
+                      <div class="field-box__select-set"> <button class="field-box__clear"><i class="icon icon-close"></i></button>
                         <div class="field-box__select-col">
-                          <div class="select select_lg"> <select>
-		
-			<option value="Cash" selected >Cash</option>
-		
-			<option value="Credit Card"  >Credit Card</option>
-		
-			<option value="Debit Card"  >Debit Card</option>
-		
-			<option value="External Payment"  >External Payment</option>
-		
-	</select> </div>
+                          <!-- begin dropdown -->
+                          <div class="dropdown " data-dropdown="split-payment1">
+                            <div class="dropdown__header" data-dropdown-open="split-payment1" data-animation="ripple"> <i class="dropdown__arrow icon icon-expand"></i>
+                              <div class="dropdown__value" data-dropdown-value="split-payment1">Cash</div>
+                            </div>
+                            <div class="dropdown-menu dropdown-menu_no-scroll" data-dropdown-menu="split-payment1">
+                              <ul class="dropdown-menu__list" data-scrollbar="default">
+                                <li class="dropdown-menu__item is-active" data-animation="ripple" data-dropdown-item="split-payment1" data-value="Cash"> Cash </li>
+                                <li class="dropdown-menu__item" data-animation="ripple" data-dropdown-item="split-payment1" data-value="Credit Card"> Credit Card </li>
+                                <li class="dropdown-menu__item" data-animation="ripple" data-dropdown-item="split-payment1" data-value="Debit Card"> Debit Card </li>
+                                <li class="dropdown-menu__item" data-animation="ripple" data-dropdown-item="split-payment1" data-value="External Payment"> External Payment </li>
+                              </ul>
+                            </div>
+                            <!-- begin overlay --><button type="button" class="overlay " data-color="dark-gray" data-overlay="overlay" data-dropdown-overlay="split-payment1"></button>
+                            <!-- end overlay -->
+                          </div>
+                          <!-- end dropdown -->
                         </div>
                         <div class="field-box__select-col"> <input type="text" class="input input_lg input_block field-box__select-input " value="100.00"> </div>
-                        <div class="field-box__button"> <button class="btn btn_lg btn_default btn_block" data-animation="ripple">Charge</button> </div>
+                        <div class="field-box__button"> <button class="btn btn_lg btn_block " data-animation="ripple">Charge</button> </div>
                       </div>
                     </div>
                   </div>
-                  <div class="form__section">
+                  <div class="form__section form__section_sm">
                     <div class="field-box">
-                      <div class="field-box__select-set">
-                        <div class="field-box__number">2</div>
+                      <div class="field-box__select-set"> <button class="field-box__clear"><i class="icon icon-close"></i></button>
                         <div class="field-box__select-col">
-                          <div class="select select_lg"> <select>
-		
-			<option value="Cash"  >Cash</option>
-		
-			<option value="Credit Card" selected >Credit Card</option>
-		
-			<option value="Debit Card"  >Debit Card</option>
-		
-			<option value="External Payment"  >External Payment</option>
-		
-	</select> </div>
+                          <!-- begin dropdown -->
+                          <div class="dropdown " data-dropdown="split-payment2">
+                            <div class="dropdown__header" data-dropdown-open="split-payment2" data-animation="ripple"> <i class="dropdown__arrow icon icon-expand"></i>
+                              <div class="dropdown__value" data-dropdown-value="split-payment2">Cash</div>
+                            </div>
+                            <div class="dropdown-menu dropdown-menu_no-scroll" data-dropdown-menu="split-payment2">
+                              <ul class="dropdown-menu__list" data-scrollbar="default">
+                                <li class="dropdown-menu__item is-active" data-animation="ripple" data-dropdown-item="split-payment2" data-value="Cash"> Cash </li>
+                                <li class="dropdown-menu__item" data-animation="ripple" data-dropdown-item="split-payment2" data-value="Credit Card"> Credit Card </li>
+                                <li class="dropdown-menu__item" data-animation="ripple" data-dropdown-item="split-payment2" data-value="Debit Card"> Debit Card </li>
+                                <li class="dropdown-menu__item" data-animation="ripple" data-dropdown-item="split-payment2" data-value="External Payment"> External Payment </li>
+                              </ul>
+                            </div>
+                            <!-- begin overlay --><button type="button" class="overlay " data-color="dark-gray" data-overlay="overlay" data-dropdown-overlay="split-payment2"></button>
+                            <!-- end overlay -->
+                          </div>
+                          <!-- end dropdown -->
                         </div>
                         <div class="field-box__select-col"> <input type="text" class="input input_lg input_block field-box__select-input " value="100.00"> </div>
-                        <div class="field-box__button"> <button class="btn btn_lg btn_default btn_block" data-animation="ripple">Charge</button> </div>
+                        <div class="field-box__button"> <button class="btn btn_lg btn_block " data-animation="ripple">Charge</button> </div>
                       </div>
                     </div>
                   </div>
-                  <div class="form__section">
+                  <div class="form__section form__section_sm">
                     <div class="field-box">
-                      <div class="field-box__select-set">
-                        <div class="field-box__number">3</div>
+                      <div class="field-box__select-set"> <button class="field-box__clear"><i class="icon icon-close"></i></button>
+                        <div class="field-box__select-col">
+                          <!-- begin dropdown -->
+                          <div class="dropdown " data-dropdown="split-payment3">
+                            <div class="dropdown__header" data-dropdown-open="split-payment3" data-animation="ripple"> <i class="dropdown__arrow icon icon-expand"></i>
+                              <div class="dropdown__value" data-dropdown-value="split-payment3">Cash</div>
+                            </div>
+                            <div class="dropdown-menu dropdown-menu_no-scroll dropdown-menu_up" data-dropdown-menu="split-payment3">
+                              <ul class="dropdown-menu__list" data-scrollbar="default">
+                                <li class="dropdown-menu__item is-active" data-animation="ripple" data-dropdown-item="split-payment3" data-value="Cash"> Cash </li>
+                                <li class="dropdown-menu__item" data-animation="ripple" data-dropdown-item="split-payment3" data-value="Credit Card"> Credit Card </li>
+                                <li class="dropdown-menu__item" data-animation="ripple" data-dropdown-item="split-payment3" data-value="Debit Card"> Debit Card </li>
+                                <li class="dropdown-menu__item" data-animation="ripple" data-dropdown-item="split-payment3" data-value="External Payment"> External Payment </li>
+                              </ul>
+                            </div>
+                            <!-- begin overlay --><button type="button" class="overlay " data-color="dark-gray" data-overlay="overlay" data-dropdown-overlay="split-payment3"></button>
+                            <!-- end overlay -->
+                          </div>
+                          <!-- end dropdown -->
+                        </div>
+                        <div class="field-box__select-col"> <input type="text" class="input input_lg input_block field-box__select-input " value="100.00"> </div>
+                        <div class="field-box__button"> <button class="btn btn_lg btn_block " data-animation="ripple">Charge</button> </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="form__section form__section_sm">
+                    <div class="field-box">
+                      <div class="field-box__select-set"> <button class="field-box__clear"><i class="icon icon-close"></i></button>
+                        <div class="field-box__select-col">
+                          <!-- begin dropdown -->
+                          <div class="dropdown " data-dropdown="split-payment4">
+                            <div class="dropdown__header" data-dropdown-open="split-payment4" data-animation="ripple"> <i class="dropdown__arrow icon icon-expand"></i>
+                              <div class="dropdown__value" data-dropdown-value="split-payment4">Cash</div>
+                            </div>
+                            <div class="dropdown-menu dropdown-menu_no-scroll dropdown-menu_up" data-dropdown-menu="split-payment4">
+                              <ul class="dropdown-menu__list" data-scrollbar="default">
+                                <li class="dropdown-menu__item is-active" data-animation="ripple" data-dropdown-item="split-payment4" data-value="Cash"> Cash </li>
+                                <li class="dropdown-menu__item" data-animation="ripple" data-dropdown-item="split-payment4" data-value="Credit Card"> Credit Card </li>
+                                <li class="dropdown-menu__item" data-animation="ripple" data-dropdown-item="split-payment4" data-value="Debit Card"> Debit Card </li>
+                                <li class="dropdown-menu__item" data-animation="ripple" data-dropdown-item="split-payment4" data-value="External Payment"> External Payment </li>
+                              </ul>
+                            </div>
+                            <!-- begin overlay --><button type="button" class="overlay " data-color="dark-gray" data-overlay="overlay" data-dropdown-overlay="split-payment4"></button>
+                            <!-- end overlay -->
+                          </div>
+                          <!-- end dropdown -->
+                        </div>
+                        <div class="field-box__select-col"> <input type="text" class="input input_lg input_block field-box__select-input " value="100.00"> </div>
+                        <div class="field-box__button"> <button class="btn btn_lg btn_block " data-animation="ripple">Charge</button> </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="form__section form__section_sm">
+                    <div class="field-box">
+                      <div class="field-box__select-set"> <button class="field-box__clear"><i class="icon icon-close"></i></button>
                         <div class="field-box__select-col">
                           <div class="field-box__select-static"> <i class="icon icon-checked"></i> <span class="muted">Cash</span> </div>
                         </div>
                         <div class="field-box__select-col"> <input type="text" class="input input_lg input_block field-box__select-input muted" value="100.00" readonly> </div>
-                        <div class="field-box__button"> <button class="btn btn_lg btn_default btn_block" data-animation="ripple">Void</button> </div>
+                        <div class="field-box__button"> <button class="btn btn_lg btn_block btn_red" data-animation="ripple">Void</button> </div>
                       </div>
                     </div>
                   </div>

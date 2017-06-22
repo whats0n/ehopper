@@ -27,7 +27,6 @@ export default (function() {
 		const $this = $(this);
 		const target = $this.data('dropdown-open');
 		const parentName = $this.data('dropdown-parent-name');
-		console.log(parentName);
 		const $components = getDropdownComponents(target, parentName); 
 		if ($components.menu.hasClass(OPEN)) {
 			toggleDropdown($components, removeClass);

@@ -185,13 +185,16 @@
 					<div class="field-box__control field-box__control_right">
 						<button class="btn btn_xl btn_secondary" data-animation="ripple">+</button>
 					</div>
-					<input type="text" class="input input_xl text-center field-box__counter-input" value="{{props.value or '0'}}" readonly>
+					<input type="text" class="input text-center field-box__counter-input" value="{{props.value or '0'}}" readonly>
 				</div>
 			</div>
 		</div>
 	{% elif props.select %}
 		<div class="field-box__select-set">
-			<div class="field-box__number">{{props.number}}</div>
+			{% if props.delete %}
+				<button class="field-box__clear"><i class="icon icon-close"></i></button>
+			{% endif %}
+			{# <div class="field-box__number">{{props.number}}</div> #}
 			<div class="field-box__select-col">
 				{% if props.selectStatic %}
 					<div class="field-box__select-static">
@@ -199,14 +202,41 @@
 						<span class="{{props.colMuted}}">{{props.selected}}</span>
 					</div>
 				{% else %}
-					{{select(props.select)}}
+					{# {{select(props.select)}} #}
+					<!-- begin dropdown -->
+					<div class="dropdown {{props.select.dropdownClassList}}" data-dropdown="{{props.select.name}}">
+						<div class="dropdown__header" data-dropdown-open="{{props.select.name}}" {{props.select.openAttrs | safe}} data-animation="ripple">
+							<i class="dropdown__arrow icon icon-expand"></i>
+							{% if props.select.customIcon %}{{props.select.customIcon | safe}}{% endif %}
+							{% if props.select.label %}
+								<div class="dropdown__label">{{props.select.label}}</div>
+							{% endif %}
+							<div class="dropdown__value" data-dropdown-value="{{props.select.name}}">{{props.select.value}}</div>
+						</div>
+						<div class="dropdown-menu {{props.select.dropdownMenuClassList}}" data-dropdown-menu="{{props.select.name}}" {{props.select.attrs | safe}}>
+							<ul class="dropdown-menu__list" {{props.select.menuAttrs | safe}}>
+								{% for item in props.select.list %}
+									<li class="dropdown-menu__item {%- if loop.index0 === props.select.activeItem %} is-active {%- endif -%} {%- if loop.index0 === props.select.special %} dropdown-menu__item_special {%- endif -%}" 
+										data-animation="ripple" 
+										{% if props.select.links !== true %} data-dropdown-item="{{props.select.name}}" {% endif %} 
+										{% if item.value %} data-value="{{item.value}}" {% endif %} >
+										{{item.text | safe}}
+									</li>
+								{% endfor %}
+							</ul>
+						</div>
+						{{overlay({ 
+							attrs: 'data-dropdown-overlay="' + props.select.name  + '"' 
+						})}}
+					</div>
+					<!-- end dropdown -->
 				{% endif %}
 			</div>
 			<div class="field-box__select-col">
 				<input type="text" class="input input_lg input_block field-box__select-input {{props.colMuted}}" value="{{props.value}}" {{props.inputAttrs}}>
 			</div>
 			<div class="field-box__button">
-				<button class="btn btn_lg btn_default btn_block" data-animation="ripple">{{props.button}}</button>
+				<button class="btn btn_lg btn_block {{props.buttonClassList}}" data-animation="ripple">{{props.button}}</button>
 			</div>
 		</div>
 	{% elif props.content %}

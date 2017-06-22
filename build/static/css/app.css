@@ -4869,6 +4869,8 @@ textarea.input {
 
 .field-box__counter-input {
   width: 80px;
+  height: 80px;
+  font-size: 30px;
 }
 
 .field-box__controls {
@@ -4895,6 +4897,7 @@ textarea.input {
 .field-box__control {
   position: absolute;
   top: 0;
+  bottom: 0;
 }
 
 .field-box__control_left {
@@ -4905,9 +4908,14 @@ textarea.input {
   right: 0;
 }
 
+.field-box__control .btn {
+  height: 100%;
+  line-height: normal;
+}
+
 .field-box__select-set {
   position: relative;
-  padding: 0 90px 0 35px;
+  padding-right: 90px;
   margin: -13px -20px;
   min-height: 60px;
   *zoom: 1;
@@ -4936,8 +4944,12 @@ textarea.input {
   text-align: right;
 }
 
+.field-box__select-static {
+  padding-left: 20px;
+}
+
 .field-box__select-static i {
-  float: left;
+  float: right;
   margin: 10px 0;
   color: #22B745;
 }
@@ -4945,8 +4957,8 @@ textarea.input {
 .field-box__select-static span {
   display: block;
   overflow: hidden;
-  font-family: 'Roboto Regular', Arial, sans-serif;
-  font-size: 20px;
+  font-family: 'Roboto Light', Arial, sans-serif;
+  font-size: 14px;
   line-height: 60px;
   -webkit-user-select: none;
   -moz-user-select: none;
@@ -4969,9 +4981,30 @@ textarea.input {
 
 .field-box__button {
   position: absolute;
-  top: 0;
-  right: 0;
+  top: -2px;
+  right: -2px;
+  bottom: -2px;
   width: 90px;
+}
+
+.field-box__button .btn {
+  padding: 0;
+  height: 100%;
+  line-height: normal;
+}
+
+.field-box__clear {
+  position: absolute;
+  top: 0;
+  left: 100%;
+  bottom: 0;
+  width: 60px;
+  color: #ec4a41;
+  background: none;
+}
+
+.field-box .dropdown__value {
+  font-size: 14px;
 }
 
 .horizontal-menu {
@@ -8408,6 +8441,11 @@ textarea.input {
 }
 
 @media only screen and (max-height: 650px) {
+
+  .field-box__counter-input {
+    height: 60px;
+    font-size: 20px;
+  }
 
   .main-keyboard {
     font-size: 57px;
