@@ -4357,6 +4357,11 @@ a.shy {
   font-size: 20px;
 }
 
+.sidebar_disabled .order-item__close, .sidebar_disabled .order-item__discount {
+  color: #333;
+  opacity: 0.5;
+}
+
 .sidebar__header {
   border-bottom: 2px solid rgba(0, 0, 0, 0.1);
 }
@@ -5920,6 +5925,91 @@ input.btn {
   padding: 8px 0 8px 40px;
   font-size: 14px;
   line-height: 1;
+}
+
+.fake-radio {
+  position: relative;
+  display: inline-block;
+  vertical-align: top;
+  font-size: 0;
+  cursor: pointer;
+}
+
+.fake-radio_block {
+  width: 100%;
+}
+
+.fake-radio:active .fake-radio__content {
+  color: #333;
+  background: #dadada;
+  box-shadow: inset 2px 2px 6px rgba(0, 0, 0, 0.2);
+}
+
+.fake-radio:active input:checked + .fake-radio__content {
+  color: #fff;
+  background: #2e99db;
+  box-shadow: none;
+}
+
+.no-touch .fake-radio:active .fake-radio__content {
+  color: #333;
+  background: #dadada;
+  box-shadow: inset 2px 2px 6px rgba(0, 0, 0, 0.2);
+}
+
+.no-touch .fake-radio:active input:checked + .fake-radio__content {
+  color: #fff;
+  background: #2e99db;
+  box-shadow: none;
+}
+
+.fake-radio input {
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  visibility: hidden;
+}
+
+.fake-radio input:checked + .fake-radio__content {
+  color: #fff;
+  background: #2e99db;
+}
+
+.fake-radio__content {
+  display: block;
+  padding: 0 10px;
+  border: none;
+  min-width: 40px;
+  height: 40px;
+  color: #333;
+  background: #eee;
+  font-family: 'Roboto Light', Arial, sans-serif;
+  font-size: 16px;
+  line-height: 40px;
+  text-align: center;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: color 0.175s ease, background 0.175s ease, box-shadow 0.175s ease;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.fake-radio_md .fake-radio__content {
+  height: 50px;
+  font-size: 18px;
+  line-height: 50px;
+}
+
+.fake-radio_lg .fake-radio__content {
+  padding: 0 15px;
+  min-width: 60px;
+  height: 60px;
+  font-size: 19px;
+  line-height: 60px;
 }
 
 .input,

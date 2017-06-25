@@ -30,6 +30,13 @@
 </label>
 {% endmacro %}
 
+{% macro fakeRadio(props) %}
+<label class="fake-radio {{props.classList}}">
+	<input type="radio" name="{{props.name}}" {{props.attrs | safe}}>
+	<span class="fake-radio__content">{{props.content}}</span>
+</label>
+{% endmacro %}
+
 {% macro overlay(props) %}
 {% set overlayColor = props.color or 'dark-gray' %}
 <!-- begin overlay -->
@@ -156,8 +163,8 @@
 		<ul class="field-box__list">
 			{% for options in props.list %}
 				<li class="field-box__col field-box__col_{{props.colSize}} field-box__radio">
-					{#{{radio(options)}}#}
-					<button class="btn btn_default btn_block btn_lg" data-animation="ripple">{{options.content}}</button>
+					{{fakeRadio(options)}}
+					{# <button class="btn btn_default btn_block btn_lg" data-animation="ripple">{{options.content}}</button> #}
 				</li>
 			{% endfor %}
 		</ul>
