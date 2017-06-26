@@ -4776,6 +4776,10 @@ textarea.input {
   box-shadow: 0 0 0 1px #ec4a41;
 }
 
+.field.is-focus .field__inner {
+  box-shadow: inset 0 0 0 2px #2e99db;
+}
+
 .field__inner {
   display: table-row;
   background: #fff;
