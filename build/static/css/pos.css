@@ -4054,6 +4054,14 @@ a.shy {
   color: #2e99db;
 }
 
+.color-gray {
+  color: #a9a9a9;
+}
+
+.color-lightgray {
+  color: #d3d3d3;
+}
+
 .small {
   font-size: 70%;
 }
@@ -5005,6 +5013,31 @@ article aside.left {
 
 .no-touch .form__link:hover {
   text-decoration: none;
+}
+
+.form_terminal {
+  max-width: 680px;
+  *zoom: 1;
+}
+
+.form_terminal:after {
+  content: " ";
+  display: table;
+  clear: both;
+}
+
+.form__aside {
+  float: right;
+  width: 30%;
+}
+
+.form__body {
+  width: 70%;
+  float: left;
+}
+
+.form__aside, .form__body {
+  padding: 0 10px;
 }
 
 .simple-input {
@@ -12731,6 +12764,10 @@ article.settings main {
 
   .main-keyboard {
     font-size: 80px;
+  }
+
+  .payment-fieldset .main-keyboard {
+    font-size: 61px;
   }
 }
 

@@ -134,7 +134,7 @@ styles:
 								],
 								body: [
 									[
-										{ column: 'orders-status', content: '<i class="icon icon-check"></i>' },
+										{ column: 'orders-status', content: '<i class="fa fa-check fa-lg color-green"></i>' },
 										{ column: 'orders-id', content: '<div class="table-wrapper__value">040660174749</div>' },
 										{ column: 'orders-name', content: '&nbsp;' },
 										{ column: 'orders-store', content: 'Main Store' },
@@ -148,7 +148,7 @@ styles:
 										{ column: 'orders-action', action: true }
 									],
 									[
-										{ column: 'orders-status', content: '<i class="icon icon-checked color-green"></i>' },
+										{ column: 'orders-status', content: '<i class="fa fa-check-circle fa-lg color-gray"></i>' },
 										{ column: 'orders-id', content: '<div class="table-wrapper__value">040660174750</div> <div class="table-wrapper__meta">Saved order name</div>' },
 										{ column: 'orders-name', content: '&nbsp;' },
 										{ column: 'orders-store', content: 'Second Store' },
@@ -162,7 +162,21 @@ styles:
 										{ column: 'orders-action', action: 'cart' }
 									],
 									[
-										{ column: 'orders-status', content: '<i class="icon icon-close"></i>' },
+										{ column: 'orders-status', content: '<i class="fa fa-check-circle fa-lg color-green"></i>' },
+										{ column: 'orders-id', content: '<div class="table-wrapper__value">040660174750</div> <div class="table-wrapper__meta">Saved order name</div>' },
+										{ column: 'orders-name', content: '&nbsp;' },
+										{ column: 'orders-store', content: 'Second Store' },
+										{ column: 'orders-register', content: '4' },
+										{ column: 'orders-type', content: 'Quick Sale' },
+										{ column: 'orders-fulfillment', content: 'Done' },
+										{ column: 'orders-total', content: '$56.33' },
+										{ column: 'orders-date', date: { day: '03/07/2017', time: '12:59:00' } },
+										{ column: 'orders-employee', content: 'Mr. John Snow' },
+										{ column: 'orders-customer', content: 'Walk In' },
+										{ column: 'orders-action', action: 'cart' }
+									],
+									[
+										{ column: 'orders-status', content: '<i class="fa fa-arrow-circle-o-left fa-lg color-red"></i>' },
 										{ column: 'orders-id', content: '<div class="table-wrapper__value">040660174000</div>' },
 										{ column: 'orders-name', content: '&nbsp;' },
 										{ column: 'orders-store', content: 'Main Store' },
@@ -176,7 +190,35 @@ styles:
 										{ column: 'orders-action', action: true }
 									],
 									[
-										{ column: 'orders-status', content: '<i class="icon icon-clear color-red"></i>' },
+										{ column: 'orders-status', content: '<i class="fa fa-arrow-left fa-lg color-red"></i>' },
+										{ column: 'orders-id', content: '<div class="table-wrapper__value">040660174001</div>' },
+										{ column: 'orders-name', content: '&nbsp;' },
+										{ column: 'orders-store', content: 'Main Store' },
+										{ column: 'orders-register', content: '1' },
+										{ column: 'orders-type', content: 'Quick Sale' },
+										{ column: 'orders-fulfillment', content: 'Voided' },
+										{ column: 'orders-total', content: '$56.33' },
+										{ column: 'orders-date', date: { day: '12/12/2016', time: '9:00:00' } },
+										{ column: 'orders-employee', content: 'Samantha Fox' },
+										{ column: 'orders-customer', content: 'Walk In' },
+										{ column: 'orders-action', action: true }
+									],
+									[
+										{ column: 'orders-status', content: '<i class="fa fa-ban fa-lg color-lightgray"></i>' },
+										{ column: 'orders-id', content: '<div class="table-wrapper__value">040660174001</div>' },
+										{ column: 'orders-name', content: '&nbsp;' },
+										{ column: 'orders-store', content: 'Main Store' },
+										{ column: 'orders-register', content: '1' },
+										{ column: 'orders-type', content: 'Quick Sale' },
+										{ column: 'orders-fulfillment', content: 'Voided' },
+										{ column: 'orders-total', content: '$56.33' },
+										{ column: 'orders-date', date: { day: '12/12/2016', time: '9:00:00' } },
+										{ column: 'orders-employee', content: 'Samantha Fox' },
+										{ column: 'orders-customer', content: 'Walk In' },
+										{ column: 'orders-action', action: true }
+									],
+									[
+										{ column: 'orders-status', content: '<i class="fa fa-check-circle-o fa-lg color-lightgray"></i>' },
 										{ column: 'orders-id', content: '<div class="table-wrapper__value">040660174001</div>' },
 										{ column: 'orders-name', content: '&nbsp;' },
 										{ column: 'orders-store', content: 'Main Store' },
@@ -204,7 +246,7 @@ styles:
 								<div class="table-body table-body_orders table-wrapper__table" data-table-main="orders">
 									{% for item in range(0,5) %}
 										{% for tr in table.body %}
-											<div class="table-body__tr {% if loop.first %}is-disabled{% endif %}">
+											<div class="table-body__tr">
 												{% for td in tr %}
 													<div class="table-body__td" data-column="{{td.column}}">
 														{% if td.date %}

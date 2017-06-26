@@ -805,6 +805,14 @@ a.shy {
   color: #2e99db;
 }
 
+.color-gray {
+  color: #a9a9a9;
+}
+
+.color-lightgray {
+  color: #d3d3d3;
+}
+
 .small {
   font-size: 70%;
 }
@@ -8527,6 +8535,10 @@ textarea.input {
 
   .main-keyboard {
     font-size: 80px;
+  }
+
+  .payment-fieldset .main-keyboard {
+    font-size: 61px;
   }
 }
 

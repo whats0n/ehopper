@@ -23,7 +23,7 @@ styles:
 		})}}
 		<div class="container container_simple">
 			<div class="container__body step-body">
-				<div class="section section_inner step-body__section">
+				<div class="step-body__section">
 					<div class="form form_sm">
 						<div class="small-tabs form__section">
 							<div class="small-tabs__col small-tabs__col_md">
@@ -59,6 +59,13 @@ styles:
 											</div>
 										</div>
 									</div>
+									{{mixins.field({
+										label: 'Amount Due:',
+										id: 'terminal-card-amount-due',
+										placeholder: '0.00',
+										inputClassList: 'input_lg text-right',
+										attrs: 'readonly'
+									})}}
 									{{keyboard.call()}}
 								</div>
 							</div>
@@ -90,6 +97,88 @@ styles:
 							})}}
 						</div>
 					</div>
+					{# <div class="form form_sm">
+						<div class="small-tabs form__section">
+							<div class="small-tabs__col small-tabs__col_md">
+								<button class="btn btn_lg btn_block btn_green" data-animation="ripple">
+									<i class="icon icon-cc"></i>
+									Credit Card
+								</button>
+							</div>
+							<div class="small-tabs__col small-tabs__col_md">
+								<button class="btn btn_lg btn_block" data-animation="ripple">
+									<i class="icon icon-cash"></i>
+									Cash
+								</button>
+							</div>
+						</div>
+					</div>
+
+					<div class="form form_terminal">
+						<div class="form__aside">
+							<div class="form__section">
+								{{mixins.fieldBox({
+									switcher: true,
+									label: 'Enter Card Manually',
+									id: 'enter-card-manually',
+									switcherAttrs: 'checked'
+								})}}
+							</div>
+							<div class="form__section">
+								{{mixins.fieldBox({
+									radios: true,
+									label: 'Collect Signature',
+									colSize: 'lg',
+									list: [
+										{
+											classList: 'fake-radio_block fake-radio_lg',
+											content: 'On Screen',
+											name: 'terminal-card-and-signature'
+										},
+										{
+											classList: 'fake-radio_block fake-radio_lg',
+											content: 'On Receipt',
+											attrs: 'checked',
+											name: 'terminal-card-and-signature'
+										},
+										{
+											classList: 'fake-radio_block fake-radio_lg',
+											content: 'On Terminal',
+											name: 'terminal-card-and-signature'
+										}
+									]
+								})}}
+							</div>
+						</div>
+						<div class="form__body">
+							<div class="payment-fieldset">
+								<div class="fieldset fieldset_lg fieldset_bordered">
+									<div class="fieldset__container">
+										<div class="fieldset__row">
+											<div class="fieldset__col fieldset__col_lg is-active">
+												<input type="text" class="input input_lg fieldset__input" placeholder="Card Number" readonly>
+											</div>
+											<div class="fieldset__col fieldset__col_sm">
+												<input type="text" class="input input_lg fieldset__input" placeholder="Expiration" readonly>
+											</div>
+										</div>
+									</div>
+									<div class="form-box">
+										{{mixins.field({
+											label: 'Amount Due:',
+											id: 'terminal-card-amount-due',
+											placeholder: '0.00',
+											inputClassList: 'input_lg text-right',
+											attrs: 'readonly'
+										})}}
+									</div>
+									{{keyboard.call()}}
+								</div>
+							</div>
+						</div>
+
+					</div> #}
+
 				</div>
 				<div class="step-body__footer section">
 					<div class="form form_sm">

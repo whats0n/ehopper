@@ -382,6 +382,14 @@ a.shy {
   color: #2e99db;
 }
 
+.color-gray {
+  color: #a9a9a9;
+}
+
+.color-lightgray {
+  color: #d3d3d3;
+}
+
 .small {
   font-size: 70%;
 }
