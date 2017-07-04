@@ -359,7 +359,7 @@ hr {
 
 .footnote {
   color: #aaa;
-  font-weight: 700;
+  font-family: 'Roboto Bold', Arial, sans-serif;
   font-size: 14px;
   text-align: center;
 }
@@ -6335,6 +6335,7 @@ textarea.input {
   text-overflow: ellipsis;
   white-space: nowrap;
   -webkit-appearance: none;
+  -moz-appearance: none;
 }
 
 .select_lg select {
@@ -8638,6 +8639,7 @@ textarea.input {
 .main-display {
   position: relative;
   padding: 1px 41px 1px 0;
+  font-family: 'Roboto Regular', Arial, sans-serif;
 }
 
 .main-display__clear {

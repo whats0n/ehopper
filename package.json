@@ -4,8 +4,7 @@
   "scripts": {
     "ghpages": "git subtree push --prefix build origin gh-pages",
     "build": "gulp build --production",
-    "start": "gulp",
-    "precommit": "gulp lint"
+    "start": "gulp"
   },
   "authors": "Coderiver <html@coderiver.com.ua>",
   "devDependencies": {
@@ -41,7 +40,7 @@
     "gulp-postcss": "^6.2.0",
     "gulp-prettify": "^0.4.0",
     "gulp-rename": "^1.2.2",
-    "gulp-sass": "^2.1.1",
+    "gulp-sass": "^2.3.2",
     "gulp-sass-lint": "^1.3.2",
     "gulp-sourcemaps": "^1.6.0",
     "gulp-svgmin": "^1.2.0",
