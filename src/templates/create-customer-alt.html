@@ -1,0 +1,355 @@
+---
+title: 'Customer &bull; eHopper POS'
+styles: 
+  - 'pos'
+---
+{% extends "layouts/_layout.html" %}
+
+{% block content %}
+
+{% set fieldsPersonalGeneral = [
+  [
+    { label: 'First Name', inputAttrs: 'required', required: true },
+    { label: 'Last Name', inputAttrs: 'required', required: true, errorMessage: 'This field is required' }
+  ],
+  [
+    { label: 'MI' },
+    { 
+      label: 'Date of Birth', 
+      placeholder: 'mm/dd/yyyy' 
+    }
+  ],
+  [
+    { label: 'Phone' },
+    { label: 'Email' }
+  ],
+  [
+    { label: 'Mobile Phone' }
+  ],
+  [
+    { label: 'Address line 1', inputAttrs: 'required', required: true },
+    { label: 'Address line 2' }
+  ],
+  [
+    { label: 'City', inputAttrs: 'required', required: true },
+    { label: 'State' }
+  ],
+  [
+    { select: { 
+      label: 'Country', 
+      placeholder: '- Select -', 
+      options: [ 
+        'option 1', 
+        'option 2', 
+        'option 3', 
+        'option 4' 
+      ], 
+      required: true
+    } },
+    { label: 'Zip' }
+  ]
+] %}
+
+{% set fieldsPersonalAdvanced = [
+  [
+    { select: { 
+      label: 'Driver License State', 
+      placeholder: '- Select -', 
+      options: [ 
+        'option 1', 
+        'option 2', 
+        'option 3', 
+        'option 4' 
+      ], 
+      required: true
+    } },
+    { label: 'Driver License No' }
+  ],
+  [
+    { textarea: { 
+      label: 'Notes'
+    } }
+  ],
+  [
+    { select: { 
+      label: 'Home Store', 
+      placeholder: '- Select -', 
+      options: [ 
+        'option 1', 
+        'option 2', 
+        'option 3', 
+        'option 4' 
+      ]
+    } },
+    { select: { 
+      label: 'Sales Rep', 
+      placeholder: '- Select -', 
+      options: [ 
+        'option 1', 
+        'option 2', 
+        'option 3', 
+        'option 4' 
+      ]
+    } }
+  ]
+] %}
+
+{% set fieldsBusinessGeneral = [
+  [
+    { label: 'Company Name', inputAttrs: 'required', required: true }
+  ],
+  [
+    { label: 'Contact First Name' },
+    { label: 'Contact Last Name' }
+  ],
+  [
+    { label: 'MI' }
+  ],
+  [
+    { label: 'Phone' },
+    { label: 'Email' }
+  ],
+  [
+    { label: 'Mobile Phone' }
+  ],
+  [
+    { label: 'Address line 1', inputAttrs: 'required', required: true },
+    { label: 'Address line 2' }
+  ],
+  [
+    { label: 'City', inputAttrs: 'required', required: true },
+    { label: 'State' }
+  ],
+  [
+    { select: { 
+      label: 'Country', 
+      placeholder: '- Select -', 
+      options: [ 
+        'option 1', 
+        'option 2', 
+        'option 3', 
+        'option 4' 
+      ], 
+      required: true
+    } },
+    { label: 'Zip' }
+  ]
+] %}
+
+{% set fieldsBusinessAdvanced = [
+  [
+    { label: 'Tax Id' },
+    { label: 'D&B Number' }
+  ],
+  [
+    { textarea: { 
+      label: 'Notes'
+    } }
+  ],
+  [
+    { select: { 
+      label: 'Home Store', 
+      placeholder: '- Select -', 
+      options: [ 
+        'option 1', 
+        'option 2', 
+        'option 3', 
+        'option 4' 
+      ]
+    } },
+    { select: { 
+      label: 'Sales Rep', 
+      placeholder: '- Select -', 
+      options: [ 
+        'option 1', 
+        'option 2', 
+        'option 3', 
+        'option 4' 
+      ]
+    } }
+  ]
+] %}
+  
+  <main class="main">
+    {{header.call({
+      sidebarClassList: 'is-hidden',
+      fullinfoClassList: 'is-hidden',
+      menuBtnClassList: 'is-hidden',
+      helpBtnClassList: 'is-hidden',
+      searchClassList: 'is-hidden',
+      syncBtnClassList: 'is-hidden',
+      searchBtnClassList: 'is-hidden',
+      syncClassList: 'is-hidden',
+      scanBtnClassList: 'is-hidden',
+      containerClassList: 'main-header__container_full',
+      title: 'New Customer'
+    })}}
+    <div class="container container_simple">
+      <div class="container__body" data-scrollbar="default">
+        <div class="form form_md">
+          <div class="section section_form">
+            
+            <!-- radio tabs wrapper -->
+            <div data-tab="radio-tabs">
+              <!-- radio tabs -->
+              <ul class="field-box__list">
+                <li class="field-box__col field-box__col_md field-box__radio">
+                  <label class="fake-radio fake-radio_block">
+                    <span class="fake-radio__content is-active" data-tab-open="personal" data-tab-collection="personal-business" data-animation="ripple">Personal</span>
+                  </label>
+                </li>
+                <li class="field-box__col field-box__col_md field-box__radio">
+                  <label class="fake-radio fake-radio_block">
+                    <span class="fake-radio__content" data-tab-open="business" data-tab-collection="personal-business" data-animation="ripple">Business</span>
+                  </label>
+                </li>
+              </ul>
+              <!-- /radio tabs -->
+              
+              <!-- radio tabs content -->
+              <div class="tabs__content is-open" data-tab-container="personal" data-tab-collection="personal-business">
+                <div class="step-body_inner-body">
+                  <div class="tabs">
+                    <div class="tabs__controls">
+                      <ul class="tabs__list">
+                        <li class="tabs__item">
+                          <a href="#" class="tabs__btn is-active" data-tab-open="general" data-animation="ripple" data-tab-collection="personal">General</a>
+                        </li>
+
+                        <li class="tabs__item">
+                          <a href="#" class="tabs__btn" data-tab-open="advanced" data-animation="ripple" data-tab-collection="personal">Advanced</a>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+
+                  <div class="tabs__container">
+                    <div class="tabs__content is-open" data-tab-container="general" data-tab-collection="personal">
+                      {% for row in fieldsPersonalGeneral %}
+                        <div class="form__columns">
+                          {% for field in row %}
+                            <div class="form__column form__column_{{field.colSize or 'md'}}">
+                              {% if field.select %}
+                                {{form.selectSimple.call(field.select)}}
+                              {% else %}
+                                {{form.inputSimple.call(field)}}
+                              {% endif %}
+                            </div>
+                          {% endfor %}
+                        </div>
+                      {% endfor %}
+                      <div class="form__columns">
+                        <div class="form__column form__column_md">
+                          {{mixins.checkbox({ content: 'Marketing', classList: 'checkbox_lg' })}}
+                        </div>
+                        <div class="form__column form__column_md">
+                          {{mixins.checkbox({ content: 'Tax Exempt', classList: 'checkbox_lg' })}}
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="tabs__content" data-tab-container="advanced" data-tab-collection="personal">
+                      {% for row in fieldsPersonalAdvanced %}
+                        <div class="form__columns">
+                          {% for field in row %}
+                            <div class="form__column form__column_{{field.colSize or 'md'}}">
+                              {% if field.textarea %}
+                                {{form.textareaSimple.call(field.textarea)}}
+                              {% elseif field.select %}
+                                {{form.selectSimple.call(field.select)}}
+                              {% else %}
+                                {{form.inputSimple.call(field)}}
+                              {% endif %}
+                            </div>
+                          {% endfor %}
+                        </div>
+                      {% endfor %}
+                    </div>
+                  </div>
+                  <div class="step-body__footer section">
+                    <div class="wrapper-btn-center">
+                      <button class="btn btn_primary btn_lg btn_block text-uppercase" data-animation="ripple" value="Done">Done</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- /radio tabs content -->
+
+              <!-- radio tabs content -->
+              <div class="tabs__content" data-tab-container="business" data-tab-collection="personal-business">
+                <div class="step-body_inner-body">
+                  <div class="tabs">
+                    <div class="tabs__controls">
+                      <ul class="tabs__list">
+                        <li class="tabs__item">
+                          <a href="#" class="tabs__btn is-active" data-tab-open="general" data-animation="ripple" data-tab-collection="business">General</a>
+                        </li>
+
+                        <li class="tabs__item">
+                          <a href="#" class="tabs__btn" data-tab-open="advanced" data-animation="ripple" data-tab-collection="business">Advanced</a>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+
+                  <div class="tabs__container">
+                    <div class="tabs__content is-open" data-tab-container="general" data-tab-collection="business">
+                      {% for row in fieldsBusinessGeneral %}
+                        <div class="form__columns">
+                          {% for field in row %}
+                            <div class="form__column form__column_{{field.colSize or 'md'}}">
+                              {% if field.select %}
+                                {{form.selectSimple.call(field.select)}}
+                              {% else %}
+                                {{form.inputSimple.call(field)}}
+                              {% endif %}
+                            </div>
+                          {% endfor %}
+                        </div>
+                      {% endfor %}
+                      <div class="form__columns">
+                        <div class="form__column form__column_md">
+                          {{mixins.checkbox({ content: 'Marketing', classList: 'checkbox_lg' })}}
+                        </div>
+                        <div class="form__column form__column_md">
+                          {{mixins.checkbox({ content: 'Tax Exempt', classList: 'checkbox_lg' })}}
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="tabs__content" data-tab-container="advanced" data-tab-collection="business">
+                      {% for row in fieldsBusinessAdvanced %}
+                        <div class="form__columns">
+                          {% for field in row %}
+                            <div class="form__column form__column_{{field.colSize or 'md'}}">
+                              {% if field.textarea %}
+                                {{form.textareaSimple.call(field.textarea)}}
+                              {% elseif field.select %}
+                                {{form.selectSimple.call(field.select)}}
+                              {% else %}
+                                {{form.inputSimple.call(field)}}
+                              {% endif %}
+                            </div>
+                          {% endfor %}
+                        </div>
+                      {% endfor %}
+                    </div>
+                  </div>
+                  <div class="step-body__footer section">
+                    <div class="wrapper-btn-center">
+                      <button class="btn btn_primary btn_lg btn_block text-uppercase" data-animation="ripple" value="Done">Done</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- /radio tabs content -->
+            </div>
+            <!-- /radio tabs wrapper -->
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+{% endblock %}

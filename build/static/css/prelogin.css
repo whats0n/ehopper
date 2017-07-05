@@ -1532,6 +1532,11 @@ input.btn {
   cursor: pointer;
 }
 
+.fake-radio .is-active {
+  color: #fff;
+  background: #2e99db;
+}
+
 .fake-radio_block {
   width: 100%;
 }
@@ -1622,11 +1627,6 @@ input.btn {
 
 .input::-webkit-input-placeholder,
 .textarea::-webkit-input-placeholder {
-  opacity: 1;
-}
-
-.input::-moz-placeholder,
-.textarea::-moz-placeholder {
   opacity: 1;
 }
 
@@ -2741,11 +2741,6 @@ textarea.input {
 }
 
 .search__input::-webkit-input-placeholder {
-  color: #fff;
-  opacity: .7;
-}
-
-.search__input::-moz-placeholder {
   color: #fff;
   opacity: .7;
 }

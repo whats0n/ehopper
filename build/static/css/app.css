@@ -1790,10 +1790,6 @@ article aside.left {
   color: #333;
 }
 
-.is-poynt .header__container .search__input::-moz-placeholder {
-  color: #333;
-}
-
 .is-poynt .header__container .search__input:-ms-input-placeholder {
   color: #333;
 }
@@ -2838,6 +2834,11 @@ input.btn {
   cursor: pointer;
 }
 
+.fake-radio .is-active {
+  color: #fff;
+  background: #2e99db;
+}
+
 .fake-radio_block {
   width: 100%;
 }
@@ -2928,11 +2929,6 @@ input.btn {
 
 .input::-webkit-input-placeholder,
 .textarea::-webkit-input-placeholder {
-  opacity: 1;
-}
-
-.input::-moz-placeholder,
-.textarea::-moz-placeholder {
   opacity: 1;
 }
 
@@ -4047,11 +4043,6 @@ textarea.input {
 }
 
 .search__input::-webkit-input-placeholder {
-  color: #fff;
-  opacity: .7;
-}
-
-.search__input::-moz-placeholder {
   color: #fff;
   opacity: .7;
 }
@@ -8528,6 +8519,21 @@ textarea.input {
 
 .printer-setup__radio {
   padding: 10px 0;
+}
+
+.step-body_inner-body {
+  position: relative;
+  padding-bottom: 100px;
+}
+
+.step-body_inner-body .step-body__footer {
+  position: fixed;
+  bottom: 0;
+  background: #f8f8f8;
+}
+
+.step-body_inner-body .tabs__content {
+  text-align: left;
 }
 
 @media only screen and (max-width: 1280px) {

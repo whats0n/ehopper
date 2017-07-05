@@ -1,0 +1,28 @@
+{% macro call(props) %}
+<div class="simple-field {{props.classList}}">
+	<label class="simple-field__label">
+		{{props.label}}
+		{% if props.required %}
+			<span class="color-red">*</span>
+		{% endif %}
+	</label>
+	<div class="select-box {{props.classList}} {% if props.errorMessage %}is-error{% endif %}">
+		<select {{props.selectAttrs}}>
+			{% if props.placeholder  %}
+				<option value="{{props.placeholder}}" disabled selected>{{props.placeholder}}</option>
+			{% endif %}
+			{% for option in props.options %}
+				{% if props.selected == loop.index0 and not props.placeholder %}
+					<option value="{{option}}" selected>{{option}}</option>
+				{% else %}
+					<option value="{{option}}">{{option}}</option>
+				{% endif %}
+			{% endfor %}
+		</select>
+
+		{% if props.errorMessage %}
+			<div class="error-message select-box__error-message">{{props.errorMessage}}</div>
+		{% endif %}
+	</div>
+</div>
+{% endmacro %}

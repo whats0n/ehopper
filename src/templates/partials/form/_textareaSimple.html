@@ -1,0 +1,16 @@
+{% macro call(props) %}
+<div class="simple-field {{props.classList}}">
+	<label class="simple-field__label">
+		{{props.label}}
+		{% if props.required %}
+			<span class="color-red">*</span>
+		{% endif %}
+	</label>
+	<div class="fieldset {% if props.errorMessage %}is-error{% endif %}">
+		<textarea class="textarea textarea_block {{props.textareaClassList}}" placeholder="{{props.placeholder}}"></textarea>
+		{% if props.errorMessage %}
+			<div class="error-message select-box__error-message">{{props.errorMessage}}</div>
+		{% endif %}
+	</div>
+</div>
+{% endmacro %}
