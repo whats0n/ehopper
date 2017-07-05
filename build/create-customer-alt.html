@@ -191,24 +191,18 @@
         </header>
         <!-- end header -->
         <div class="container container_simple">
-          <div class="container__body" data-scrollbar="default">
+          <div class="container__body step-body_inner-body" data-scrollbar="default">
             <div class="form form_md">
-              <div class="section section_form">
-                <!-- radio tabs wrapper -->
-                <div data-tab="radio-tabs">
-                  <!-- radio tabs -->
-                  <ul class="field-box__list">
-                    <li class="field-box__col field-box__col_md field-box__radio"> <label class="fake-radio fake-radio_block">
-                    <span class="fake-radio__content is-active" data-tab-open="personal" data-tab-collection="personal-business" data-animation="ripple">Personal</span>
-                  </label> </li>
-                    <li class="field-box__col field-box__col_md field-box__radio"> <label class="fake-radio fake-radio_block">
-                    <span class="fake-radio__content" data-tab-open="business" data-tab-collection="personal-business" data-animation="ripple">Business</span>
-                  </label> </li>
-                  </ul>
-                  <!-- /radio tabs -->
-                  <!-- radio tabs content -->
-                  <div class="tabs__content is-open" data-tab-container="personal" data-tab-collection="personal-business">
-                    <div class="step-body_inner-body">
+              <div class="section">
+                <div class="tabs" data-tab="radio">
+                  <div class="tabs__controls">
+                    <div class="form__columns">
+                      <div class="form__column form__column_md"> <button class="btn btn_lg btn_block is-active" data-tab-open="personal" data-tab-collection="personal-business" data-animation="ripple">Personal</button> </div>
+                      <div class="form__column form__column_md"> <button class="btn btn_lg btn_block" data-tab-open="business" data-tab-collection="personal-business" data-animation="ripple">Personal</button> </div>
+                    </div>
+                  </div>
+                  <div class="tabs__container">
+                    <div class="tabs__content is-open" data-tab-container="personal" data-tab-collection="personal-business">
                       <div class="tabs">
                         <div class="tabs__controls">
                           <ul class="tabs__list">
@@ -216,322 +210,279 @@
                             <li class="tabs__item"> <a href="#" class="tabs__btn" data-tab-open="advanced" data-animation="ripple" data-tab-collection="personal">Advanced</a> </li>
                           </ul>
                         </div>
-                      </div>
-                      <div class="tabs__container">
-                        <div class="tabs__content is-open" data-tab-container="general" data-tab-collection="personal">
-                          <div class="form__columns">
-                            <div class="form__column form__column_md">
-                              <div class="simple-field "> <label class="simple-field__label">
-		First Name
-		
-			<span class="color-red">*</span>
-		
-	</label>
+                        <div class="tabs__container">
+                          <div class="tabs__content is-open" data-tab-container="general" data-tab-collection="personal">
+                            <div class="form__columns">
+                              <div class="form__column form__column_md"> <label class="form-label">
+	First Name
+	
+		<span class="color-red">*</span>
+	
+</label>
                                 <div class="input-box simple-field__input  "> <input type="text" class="simple-input input-box__input " required placeholder=> <button class="input-box__clear">
-			<i class="icon icon-close"></i>
-		</button> </div>
+		<i class="icon icon-close"></i>
+	</button> </div>
                               </div>
-                            </div>
-                            <div class="form__column form__column_md">
-                              <div class="simple-field "> <label class="simple-field__label">
-		Last Name
-		
-			<span class="color-red">*</span>
-		
-	</label>
+                              <div class="form__column form__column_md"> <label class="form-label">
+	Last Name
+	
+		<span class="color-red">*</span>
+	
+</label>
                                 <div class="input-box simple-field__input  is-error"> <input type="text" class="simple-input input-box__input " required placeholder=> <button class="input-box__clear">
-			<i class="icon icon-close"></i>
-		</button>
+		<i class="icon icon-close"></i>
+	</button>
                                   <div class="error-message input-box__error-message">This field is required</div>
                                 </div>
                               </div>
                             </div>
-                          </div>
-                          <div class="form__columns">
-                            <div class="form__column form__column_md">
-                              <div class="simple-field "> <label class="simple-field__label">
-		MI
-		
-	</label>
+                            <div class="form__columns">
+                              <div class="form__column form__column_md"> <label class="form-label">
+	MI
+	
+</label>
                                 <div class="input-box simple-field__input  "> <input type="text" class="simple-input input-box__input " placeholder=> <button class="input-box__clear">
-			<i class="icon icon-close"></i>
-		</button> </div>
+		<i class="icon icon-close"></i>
+	</button> </div>
                               </div>
-                            </div>
-                            <div class="form__column form__column_md">
-                              <div class="simple-field "> <label class="simple-field__label">
-		Date of Birth
-		
-	</label>
+                              <div class="form__column form__column_md"> <label class="form-label">
+	Date of Birth
+	
+</label>
                                 <div class="input-box simple-field__input  "> <input type="text" class="simple-input input-box__input " placeholder=mm/dd/yyyy> <button class="input-box__clear">
-			<i class="icon icon-close"></i>
-		</button> </div>
+		<i class="icon icon-close"></i>
+	</button> </div>
                               </div>
                             </div>
-                          </div>
-                          <div class="form__columns">
-                            <div class="form__column form__column_md">
-                              <div class="simple-field "> <label class="simple-field__label">
-		Phone
-		
-	</label>
+                            <div class="form__columns">
+                              <div class="form__column form__column_md"> <label class="form-label">
+	Phone
+	
+</label>
                                 <div class="input-box simple-field__input  "> <input type="text" class="simple-input input-box__input " placeholder=> <button class="input-box__clear">
-			<i class="icon icon-close"></i>
-		</button> </div>
+		<i class="icon icon-close"></i>
+	</button> </div>
                               </div>
-                            </div>
-                            <div class="form__column form__column_md">
-                              <div class="simple-field "> <label class="simple-field__label">
-		Email
-		
-	</label>
+                              <div class="form__column form__column_md"> <label class="form-label">
+	Email
+	
+</label>
                                 <div class="input-box simple-field__input  "> <input type="text" class="simple-input input-box__input " placeholder=> <button class="input-box__clear">
-			<i class="icon icon-close"></i>
-		</button> </div>
+		<i class="icon icon-close"></i>
+	</button> </div>
                               </div>
                             </div>
-                          </div>
-                          <div class="form__columns">
-                            <div class="form__column form__column_md">
-                              <div class="simple-field "> <label class="simple-field__label">
-		Mobile Phone
-		
-	</label>
+                            <div class="form__columns">
+                              <div class="form__column form__column_md"> <label class="form-label">
+	Mobile Phone
+	
+</label>
                                 <div class="input-box simple-field__input  "> <input type="text" class="simple-input input-box__input " placeholder=> <button class="input-box__clear">
-			<i class="icon icon-close"></i>
-		</button> </div>
+		<i class="icon icon-close"></i>
+	</button> </div>
                               </div>
                             </div>
-                          </div>
-                          <div class="form__columns">
-                            <div class="form__column form__column_md">
-                              <div class="simple-field "> <label class="simple-field__label">
-		Address line 1
-		
-			<span class="color-red">*</span>
-		
-	</label>
+                            <div class="form__columns">
+                              <div class="form__column form__column_md"> <label class="form-label">
+	Address line 1
+	
+		<span class="color-red">*</span>
+	
+</label>
                                 <div class="input-box simple-field__input  "> <input type="text" class="simple-input input-box__input " required placeholder=> <button class="input-box__clear">
-			<i class="icon icon-close"></i>
-		</button> </div>
+		<i class="icon icon-close"></i>
+	</button> </div>
                               </div>
-                            </div>
-                            <div class="form__column form__column_md">
-                              <div class="simple-field "> <label class="simple-field__label">
-		Address line 2
-		
-	</label>
+                              <div class="form__column form__column_md"> <label class="form-label">
+	Address line 2
+	
+</label>
                                 <div class="input-box simple-field__input  "> <input type="text" class="simple-input input-box__input " placeholder=> <button class="input-box__clear">
-			<i class="icon icon-close"></i>
-		</button> </div>
+		<i class="icon icon-close"></i>
+	</button> </div>
                               </div>
                             </div>
-                          </div>
-                          <div class="form__columns">
-                            <div class="form__column form__column_md">
-                              <div class="simple-field "> <label class="simple-field__label">
-		City
-		
-			<span class="color-red">*</span>
-		
-	</label>
+                            <div class="form__columns">
+                              <div class="form__column form__column_md"> <label class="form-label">
+	City
+	
+		<span class="color-red">*</span>
+	
+</label>
                                 <div class="input-box simple-field__input  "> <input type="text" class="simple-input input-box__input " required placeholder=> <button class="input-box__clear">
-			<i class="icon icon-close"></i>
-		</button> </div>
+		<i class="icon icon-close"></i>
+	</button> </div>
                               </div>
-                            </div>
-                            <div class="form__column form__column_md">
-                              <div class="simple-field "> <label class="simple-field__label">
-		State
-		
-	</label>
+                              <div class="form__column form__column_md"> <label class="form-label">
+	State
+	
+</label>
                                 <div class="input-box simple-field__input  "> <input type="text" class="simple-input input-box__input " placeholder=> <button class="input-box__clear">
-			<i class="icon icon-close"></i>
-		</button> </div>
+		<i class="icon icon-close"></i>
+	</button> </div>
                               </div>
                             </div>
-                          </div>
-                          <div class="form__columns">
-                            <div class="form__column form__column_md">
-                              <div class="simple-field "> <label class="simple-field__label">
-		Country
-		
-			<span class="color-red">*</span>
-		
-	</label>
+                            <div class="form__columns">
+                              <div class="form__column form__column_md"> <label class="form-label">
+	Country
+	
+		<span class="color-red">*</span>
+	
+</label>
                                 <div class="select-box  "> <select>
-			
-				<option value="- Select -" disabled selected>- Select -</option>
-			
-			
-				
-					<option value="option 1">option 1</option>
-				
-			
-				
-					<option value="option 2">option 2</option>
-				
-			
-				
-					<option value="option 3">option 3</option>
-				
-			
-				
-					<option value="option 4">option 4</option>
-				
-			
-		</select> </div>
-                              </div>
-                            </div>
-                            <div class="form__column form__column_md">
-                              <div class="simple-field "> <label class="simple-field__label">
-		Zip
 		
-	</label>
+			<option value="- Select -" disabled selected>- Select -</option>
+		
+		
+			
+				<option value="option 1">option 1</option>
+			
+		
+			
+				<option value="option 2">option 2</option>
+			
+		
+			
+				<option value="option 3">option 3</option>
+			
+		
+			
+				<option value="option 4">option 4</option>
+			
+		
+	</select> </div>
+                              </div>
+                              <div class="form__column form__column_md"> <label class="form-label">
+	Zip
+	
+</label>
                                 <div class="input-box simple-field__input  "> <input type="text" class="simple-input input-box__input " placeholder=> <button class="input-box__clear">
-			<i class="icon icon-close"></i>
-		</button> </div>
+		<i class="icon icon-close"></i>
+	</button> </div>
                               </div>
                             </div>
-                          </div>
-                          <div class="form__columns">
-                            <div class="form__column form__column_md"> <label class="checkbox checkbox_lg">
+                            <div class="form__columns">
+                              <div class="form__column form__column_md"> <label class="checkbox checkbox_lg">
 	<input type="checkbox" >
 	<i class="icon icon-check"></i>
 	<span>Marketing</span>
 </label> </div>
-                            <div class="form__column form__column_md"> <label class="checkbox checkbox_lg">
+                              <div class="form__column form__column_md"> <label class="checkbox checkbox_lg">
 	<input type="checkbox" >
 	<i class="icon icon-check"></i>
 	<span>Tax Exempt</span>
 </label> </div>
+                            </div>
                           </div>
-                        </div>
-                        <div class="tabs__content" data-tab-container="advanced" data-tab-collection="personal">
-                          <div class="form__columns">
-                            <div class="form__column form__column_md">
-                              <div class="simple-field "> <label class="simple-field__label">
-		Driver License State
-		
-			<span class="color-red">*</span>
-		
-	</label>
+                          <div class="tabs__content" data-tab-container="advanced" data-tab-collection="personal">
+                            <div class="form__columns">
+                              <div class="form__column form__column_md"> <label class="form-label">
+	Driver License State
+	
+		<span class="color-red">*</span>
+	
+</label>
                                 <div class="select-box  "> <select>
-			
-				<option value="- Select -" disabled selected>- Select -</option>
-			
-			
-				
-					<option value="option 1">option 1</option>
-				
-			
-				
-					<option value="option 2">option 2</option>
-				
-			
-				
-					<option value="option 3">option 3</option>
-				
-			
-				
-					<option value="option 4">option 4</option>
-				
-			
-		</select> </div>
-                              </div>
-                            </div>
-                            <div class="form__column form__column_md">
-                              <div class="simple-field "> <label class="simple-field__label">
-		Driver License No
 		
-	</label>
+			<option value="- Select -" disabled selected>- Select -</option>
+		
+		
+			
+				<option value="option 1">option 1</option>
+			
+		
+			
+				<option value="option 2">option 2</option>
+			
+		
+			
+				<option value="option 3">option 3</option>
+			
+		
+			
+				<option value="option 4">option 4</option>
+			
+		
+	</select> </div>
+                              </div>
+                              <div class="form__column form__column_md"> <label class="form-label">
+	Driver License No
+	
+</label>
                                 <div class="input-box simple-field__input  "> <input type="text" class="simple-input input-box__input " placeholder=> <button class="input-box__clear">
-			<i class="icon icon-close"></i>
-		</button> </div>
+		<i class="icon icon-close"></i>
+	</button> </div>
                               </div>
                             </div>
-                          </div>
-                          <div class="form__columns">
-                            <div class="form__column form__column_md">
-                              <div class="simple-field "> <label class="simple-field__label">
-		Notes
-		
-	</label>
+                            <div class="form__columns">
+                              <div class="form__column form__column_lg"> <label class="form-label">
+	Notes
+	
+</label>
                                 <div class="fieldset "> <textarea class="textarea textarea_block " placeholder=""></textarea> </div>
                               </div>
                             </div>
-                          </div>
-                          <div class="form__columns">
-                            <div class="form__column form__column_md">
-                              <div class="simple-field "> <label class="simple-field__label">
-		Home Store
-		
-	</label>
+                            <div class="form__columns">
+                              <div class="form__column form__column_md"> <label class="form-label">
+	Home Store
+	
+</label>
                                 <div class="select-box  "> <select>
+		
+			<option value="- Select -" disabled selected>- Select -</option>
+		
+		
 			
-				<option value="- Select -" disabled selected>- Select -</option>
+				<option value="option 1">option 1</option>
 			
+		
 			
-				
-					<option value="option 1">option 1</option>
-				
+				<option value="option 2">option 2</option>
 			
-				
-					<option value="option 2">option 2</option>
-				
+		
 			
-				
-					<option value="option 3">option 3</option>
-				
+				<option value="option 3">option 3</option>
 			
-				
-					<option value="option 4">option 4</option>
-				
+		
 			
-		</select> </div>
+				<option value="option 4">option 4</option>
+			
+		
+	</select> </div>
                               </div>
-                            </div>
-                            <div class="form__column form__column_md">
-                              <div class="simple-field "> <label class="simple-field__label">
-		Sales Rep
-		
-	</label>
+                              <div class="form__column form__column_md"> <label class="form-label">
+	Sales Rep
+	
+</label>
                                 <div class="select-box  "> <select>
+		
+			<option value="- Select -" disabled selected>- Select -</option>
+		
+		
 			
-				<option value="- Select -" disabled selected>- Select -</option>
+				<option value="option 1">option 1</option>
 			
+		
 			
-				
-					<option value="option 1">option 1</option>
-				
+				<option value="option 2">option 2</option>
 			
-				
-					<option value="option 2">option 2</option>
-				
+		
 			
-				
-					<option value="option 3">option 3</option>
-				
+				<option value="option 3">option 3</option>
 			
-				
-					<option value="option 4">option 4</option>
-				
+		
 			
-		</select> </div>
+				<option value="option 4">option 4</option>
+			
+		
+	</select> </div>
                               </div>
                             </div>
                           </div>
                         </div>
                       </div>
-                      <div class="step-body__footer section">
-                        <div class="wrapper-btn-center"> <button class="btn btn_primary btn_lg btn_block text-uppercase" data-animation="ripple" value="Done">Done</button> </div>
-                      </div>
                     </div>
-                  </div>
-                  <!-- /radio tabs content -->
-                  <!-- radio tabs content -->
-                  <div class="tabs__content" data-tab-container="business" data-tab-collection="personal-business">
-                    <div class="step-body_inner-body">
+                    <div class="tabs__content" data-tab-container="business" data-tab-collection="personal-business">
                       <div class="tabs">
                         <div class="tabs__controls">
                           <ul class="tabs__list">
@@ -543,176 +494,150 @@
                       <div class="tabs__container">
                         <div class="tabs__content is-open" data-tab-container="general" data-tab-collection="business">
                           <div class="form__columns">
-                            <div class="form__column form__column_md">
-                              <div class="simple-field "> <label class="simple-field__label">
-		Company Name
-		
-			<span class="color-red">*</span>
-		
-	</label>
-                                <div class="input-box simple-field__input  "> <input type="text" class="simple-input input-box__input " required placeholder=> <button class="input-box__clear">
-			<i class="icon icon-close"></i>
-		</button> </div>
-                              </div>
+                            <div class="form__column form__column_md"> <label class="form-label">
+	Company Name
+	
+		<span class="color-red">*</span>
+	
+</label>
+                              <div class="input-box simple-field__input  "> <input type="text" class="simple-input input-box__input " required placeholder=> <button class="input-box__clear">
+		<i class="icon icon-close"></i>
+	</button> </div>
                             </div>
                           </div>
                           <div class="form__columns">
-                            <div class="form__column form__column_md">
-                              <div class="simple-field "> <label class="simple-field__label">
-		Contact First Name
-		
-	</label>
-                                <div class="input-box simple-field__input  "> <input type="text" class="simple-input input-box__input " placeholder=> <button class="input-box__clear">
-			<i class="icon icon-close"></i>
-		</button> </div>
-                              </div>
+                            <div class="form__column form__column_md"> <label class="form-label">
+	Contact First Name
+	
+</label>
+                              <div class="input-box simple-field__input  "> <input type="text" class="simple-input input-box__input " placeholder=> <button class="input-box__clear">
+		<i class="icon icon-close"></i>
+	</button> </div>
                             </div>
-                            <div class="form__column form__column_md">
-                              <div class="simple-field "> <label class="simple-field__label">
-		Contact Last Name
-		
-	</label>
-                                <div class="input-box simple-field__input  "> <input type="text" class="simple-input input-box__input " placeholder=> <button class="input-box__clear">
-			<i class="icon icon-close"></i>
-		</button> </div>
-                              </div>
+                            <div class="form__column form__column_md"> <label class="form-label">
+	Contact Last Name
+	
+</label>
+                              <div class="input-box simple-field__input  "> <input type="text" class="simple-input input-box__input " placeholder=> <button class="input-box__clear">
+		<i class="icon icon-close"></i>
+	</button> </div>
                             </div>
                           </div>
                           <div class="form__columns">
-                            <div class="form__column form__column_md">
-                              <div class="simple-field "> <label class="simple-field__label">
-		MI
-		
-	</label>
-                                <div class="input-box simple-field__input  "> <input type="text" class="simple-input input-box__input " placeholder=> <button class="input-box__clear">
-			<i class="icon icon-close"></i>
-		</button> </div>
-                              </div>
+                            <div class="form__column form__column_md"> <label class="form-label">
+	MI
+	
+</label>
+                              <div class="input-box simple-field__input  "> <input type="text" class="simple-input input-box__input " placeholder=> <button class="input-box__clear">
+		<i class="icon icon-close"></i>
+	</button> </div>
                             </div>
                           </div>
                           <div class="form__columns">
-                            <div class="form__column form__column_md">
-                              <div class="simple-field "> <label class="simple-field__label">
-		Phone
-		
-	</label>
-                                <div class="input-box simple-field__input  "> <input type="text" class="simple-input input-box__input " placeholder=> <button class="input-box__clear">
-			<i class="icon icon-close"></i>
-		</button> </div>
-                              </div>
+                            <div class="form__column form__column_md"> <label class="form-label">
+	Phone
+	
+</label>
+                              <div class="input-box simple-field__input  "> <input type="text" class="simple-input input-box__input " placeholder=> <button class="input-box__clear">
+		<i class="icon icon-close"></i>
+	</button> </div>
                             </div>
-                            <div class="form__column form__column_md">
-                              <div class="simple-field "> <label class="simple-field__label">
-		Email
-		
-	</label>
-                                <div class="input-box simple-field__input  "> <input type="text" class="simple-input input-box__input " placeholder=> <button class="input-box__clear">
-			<i class="icon icon-close"></i>
-		</button> </div>
-                              </div>
+                            <div class="form__column form__column_md"> <label class="form-label">
+	Email
+	
+</label>
+                              <div class="input-box simple-field__input  "> <input type="text" class="simple-input input-box__input " placeholder=> <button class="input-box__clear">
+		<i class="icon icon-close"></i>
+	</button> </div>
                             </div>
                           </div>
                           <div class="form__columns">
-                            <div class="form__column form__column_md">
-                              <div class="simple-field "> <label class="simple-field__label">
-		Mobile Phone
-		
-	</label>
-                                <div class="input-box simple-field__input  "> <input type="text" class="simple-input input-box__input " placeholder=> <button class="input-box__clear">
-			<i class="icon icon-close"></i>
-		</button> </div>
-                              </div>
+                            <div class="form__column form__column_md"> <label class="form-label">
+	Mobile Phone
+	
+</label>
+                              <div class="input-box simple-field__input  "> <input type="text" class="simple-input input-box__input " placeholder=> <button class="input-box__clear">
+		<i class="icon icon-close"></i>
+	</button> </div>
                             </div>
                           </div>
                           <div class="form__columns">
-                            <div class="form__column form__column_md">
-                              <div class="simple-field "> <label class="simple-field__label">
-		Address line 1
-		
-			<span class="color-red">*</span>
-		
-	</label>
-                                <div class="input-box simple-field__input  "> <input type="text" class="simple-input input-box__input " required placeholder=> <button class="input-box__clear">
-			<i class="icon icon-close"></i>
-		</button> </div>
-                              </div>
+                            <div class="form__column form__column_md"> <label class="form-label">
+	Address line 1
+	
+		<span class="color-red">*</span>
+	
+</label>
+                              <div class="input-box simple-field__input  "> <input type="text" class="simple-input input-box__input " required placeholder=> <button class="input-box__clear">
+		<i class="icon icon-close"></i>
+	</button> </div>
                             </div>
-                            <div class="form__column form__column_md">
-                              <div class="simple-field "> <label class="simple-field__label">
-		Address line 2
-		
-	</label>
-                                <div class="input-box simple-field__input  "> <input type="text" class="simple-input input-box__input " placeholder=> <button class="input-box__clear">
-			<i class="icon icon-close"></i>
-		</button> </div>
-                              </div>
+                            <div class="form__column form__column_md"> <label class="form-label">
+	Address line 2
+	
+</label>
+                              <div class="input-box simple-field__input  "> <input type="text" class="simple-input input-box__input " placeholder=> <button class="input-box__clear">
+		<i class="icon icon-close"></i>
+	</button> </div>
                             </div>
                           </div>
                           <div class="form__columns">
-                            <div class="form__column form__column_md">
-                              <div class="simple-field "> <label class="simple-field__label">
-		City
-		
-			<span class="color-red">*</span>
-		
-	</label>
-                                <div class="input-box simple-field__input  "> <input type="text" class="simple-input input-box__input " required placeholder=> <button class="input-box__clear">
-			<i class="icon icon-close"></i>
-		</button> </div>
-                              </div>
+                            <div class="form__column form__column_md"> <label class="form-label">
+	City
+	
+		<span class="color-red">*</span>
+	
+</label>
+                              <div class="input-box simple-field__input  "> <input type="text" class="simple-input input-box__input " required placeholder=> <button class="input-box__clear">
+		<i class="icon icon-close"></i>
+	</button> </div>
                             </div>
-                            <div class="form__column form__column_md">
-                              <div class="simple-field "> <label class="simple-field__label">
-		State
-		
-	</label>
-                                <div class="input-box simple-field__input  "> <input type="text" class="simple-input input-box__input " placeholder=> <button class="input-box__clear">
-			<i class="icon icon-close"></i>
-		</button> </div>
-                              </div>
+                            <div class="form__column form__column_md"> <label class="form-label">
+	State
+	
+</label>
+                              <div class="input-box simple-field__input  "> <input type="text" class="simple-input input-box__input " placeholder=> <button class="input-box__clear">
+		<i class="icon icon-close"></i>
+	</button> </div>
                             </div>
                           </div>
                           <div class="form__columns">
-                            <div class="form__column form__column_md">
-                              <div class="simple-field "> <label class="simple-field__label">
-		Country
+                            <div class="form__column form__column_md"> <label class="form-label">
+	Country
+	
+		<span class="color-red">*</span>
+	
+</label>
+                              <div class="select-box  "> <select>
 		
-			<span class="color-red">*</span>
+			<option value="- Select -" disabled selected>- Select -</option>
 		
-	</label>
-                                <div class="select-box  "> <select>
+		
 			
-				<option value="- Select -" disabled selected>- Select -</option>
+				<option value="option 1">option 1</option>
 			
+		
 			
-				
-					<option value="option 1">option 1</option>
-				
+				<option value="option 2">option 2</option>
 			
-				
-					<option value="option 2">option 2</option>
-				
+		
 			
-				
-					<option value="option 3">option 3</option>
-				
+				<option value="option 3">option 3</option>
 			
-				
-					<option value="option 4">option 4</option>
-				
+		
 			
-		</select> </div>
-                              </div>
+				<option value="option 4">option 4</option>
+			
+		
+	</select> </div>
                             </div>
-                            <div class="form__column form__column_md">
-                              <div class="simple-field "> <label class="simple-field__label">
-		Zip
-		
-	</label>
-                                <div class="input-box simple-field__input  "> <input type="text" class="simple-input input-box__input " placeholder=> <button class="input-box__clear">
-			<i class="icon icon-close"></i>
-		</button> </div>
-                              </div>
+                            <div class="form__column form__column_md"> <label class="form-label">
+	Zip
+	
+</label>
+                              <div class="input-box simple-field__input  "> <input type="text" class="simple-input input-box__input " placeholder=> <button class="input-box__clear">
+		<i class="icon icon-close"></i>
+	</button> </div>
                             </div>
                           </div>
                           <div class="form__columns">
@@ -730,101 +655,88 @@
                         </div>
                         <div class="tabs__content" data-tab-container="advanced" data-tab-collection="business">
                           <div class="form__columns">
-                            <div class="form__column form__column_md">
-                              <div class="simple-field "> <label class="simple-field__label">
-		Tax Id
-		
-	</label>
-                                <div class="input-box simple-field__input  "> <input type="text" class="simple-input input-box__input " placeholder=> <button class="input-box__clear">
-			<i class="icon icon-close"></i>
-		</button> </div>
-                              </div>
+                            <div class="form__column form__column_md"> <label class="form-label">
+	Tax Id
+	
+</label>
+                              <div class="input-box simple-field__input  "> <input type="text" class="simple-input input-box__input " placeholder=> <button class="input-box__clear">
+		<i class="icon icon-close"></i>
+	</button> </div>
                             </div>
-                            <div class="form__column form__column_md">
-                              <div class="simple-field "> <label class="simple-field__label">
-		D&amp;B Number
-		
-	</label>
-                                <div class="input-box simple-field__input  "> <input type="text" class="simple-input input-box__input " placeholder=> <button class="input-box__clear">
-			<i class="icon icon-close"></i>
-		</button> </div>
-                              </div>
+                            <div class="form__column form__column_md"> <label class="form-label">
+	D&amp;B Number
+	
+</label>
+                              <div class="input-box simple-field__input  "> <input type="text" class="simple-input input-box__input " placeholder=> <button class="input-box__clear">
+		<i class="icon icon-close"></i>
+	</button> </div>
                             </div>
                           </div>
                           <div class="form__columns">
-                            <div class="form__column form__column_md">
-                              <div class="simple-field "> <label class="simple-field__label">
-		Notes
-		
-	</label>
-                                <div class="fieldset "> <textarea class="textarea textarea_block " placeholder=""></textarea> </div>
-                              </div>
+                            <div class="form__column form__column_md"> <label class="form-label">
+	Notes
+	
+</label>
+                              <div class="fieldset "> <textarea class="textarea textarea_block " placeholder=""></textarea> </div>
                             </div>
                           </div>
                           <div class="form__columns">
-                            <div class="form__column form__column_md">
-                              <div class="simple-field "> <label class="simple-field__label">
-		Home Store
+                            <div class="form__column form__column_md"> <label class="form-label">
+	Home Store
+	
+</label>
+                              <div class="select-box  "> <select>
 		
-	</label>
-                                <div class="select-box  "> <select>
+			<option value="- Select -" disabled selected>- Select -</option>
+		
+		
 			
-				<option value="- Select -" disabled selected>- Select -</option>
+				<option value="option 1">option 1</option>
 			
+		
 			
-				
-					<option value="option 1">option 1</option>
-				
+				<option value="option 2">option 2</option>
 			
-				
-					<option value="option 2">option 2</option>
-				
+		
 			
-				
-					<option value="option 3">option 3</option>
-				
+				<option value="option 3">option 3</option>
 			
-				
-					<option value="option 4">option 4</option>
-				
+		
 			
-		</select> </div>
-                              </div>
+				<option value="option 4">option 4</option>
+			
+		
+	</select> </div>
                             </div>
-                            <div class="form__column form__column_md">
-                              <div class="simple-field "> <label class="simple-field__label">
-		Sales Rep
+                            <div class="form__column form__column_md"> <label class="form-label">
+	Sales Rep
+	
+</label>
+                              <div class="select-box  "> <select>
 		
-	</label>
-                                <div class="select-box  "> <select>
+			<option value="- Select -" disabled selected>- Select -</option>
+		
+		
 			
-				<option value="- Select -" disabled selected>- Select -</option>
+				<option value="option 1">option 1</option>
 			
+		
 			
-				
-					<option value="option 1">option 1</option>
-				
+				<option value="option 2">option 2</option>
 			
-				
-					<option value="option 2">option 2</option>
-				
+		
 			
-				
-					<option value="option 3">option 3</option>
-				
+				<option value="option 3">option 3</option>
 			
-				
-					<option value="option 4">option 4</option>
-				
+		
 			
-		</select> </div>
-                              </div>
+				<option value="option 4">option 4</option>
+			
+		
+	</select> </div>
                             </div>
                           </div>
                         </div>
-                      </div>
-                      <div class="step-body__footer section">
-                        <div class="wrapper-btn-center"> <button class="btn btn_primary btn_lg btn_block text-uppercase" data-animation="ripple" value="Done">Done</button> </div>
                       </div>
                     </div>
                   </div>
@@ -833,7 +745,11 @@
                 <!-- /radio tabs wrapper -->
               </div>
             </div>
+            <div class="step-body__footer section">
+              <div class="wrapper-btn-center"> <button class="btn btn_primary btn_lg btn_block text-uppercase" data-animation="ripple" value="Done">Done</button> </div>
+            </div>
           </div>
+          <!-- /step-body_inner-body -->
         </div>
       </main>
       <!-- END content -->

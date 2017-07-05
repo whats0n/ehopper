@@ -1,22 +1,20 @@
 {% macro call(props) %}
-<div class="simple-field {{props.classList}}">
-	<label class="simple-field__label">
-		{{props.label}}
-		{% if props.required %}
-			<span class="color-red">*</span>
-		{% endif %}
-	</label>
-	<div class="input-box simple-field__input {{props.inputClassList}} {% if props.errorMessage %}is-error{% endif %}">
-		<input type="{{props.type or 'text'}}" 
-			class="simple-input input-box__input {{props.inputClassList}}" 
-			{{props.inputAttrs | safe}}
-			placeholder={{props.placeholder}}>
-		<button class="input-box__clear">
-			<i class="icon icon-close"></i>
-		</button>
-		{% if props.errorMessage %}
-			<div class="error-message input-box__error-message">{{props.errorMessage}}</div>
-		{% endif %}
-	</div>
+<label class="form-label">
+	{{props.label}}
+	{% if props.required %}
+		<span class="color-red">*</span>
+	{% endif %}
+</label>
+<div class="input-box simple-field__input {{props.inputClassList}} {% if props.errorMessage %}is-error{% endif %}">
+	<input type="{{props.type or 'text'}}" 
+		class="simple-input input-box__input {{props.inputClassList}}" 
+		{{props.inputAttrs | safe}}
+		placeholder={{props.placeholder}}>
+	<button class="input-box__clear">
+		<i class="icon icon-close"></i>
+	</button>
+	{% if props.errorMessage %}
+		<div class="error-message input-box__error-message">{{props.errorMessage}}</div>
+	{% endif %}
 </div>
 {% endmacro %}

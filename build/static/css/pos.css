@@ -5185,6 +5185,13 @@ article aside.left {
   visibility: visible;
 }
 
+.form-label {
+  display: block;
+  padding-bottom: 8px;
+  color: #333;
+  font-size: 16px;
+}
+
 .loading {
   position: relative;
   display: inline-block;
