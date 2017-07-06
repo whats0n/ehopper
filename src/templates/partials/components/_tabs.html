@@ -5,7 +5,7 @@
 	<div class="tabs__controls">
 		<ul class="tabs__list">
 			{% for item in props.list %}
-			    <li class="tabs__item"><a href="#" class="tabs__btn {%- if loop.index0 === 0 %} is-active {%- endif -%}" data-tab-open="{{item.name}}" data-animation="ripple">{{item.text | safe}}</a></li>
+			    <li class="tabs__item"><a href="#" class="tabs__btn {%- if loop.index0 === 0 %} is-active {%- endif -%}" data-tab-open="{{item.name}}" data-tab-collection="{{props.name}}" data-animation="ripple">{{item.text | safe}}</a></li>
 			{% endfor %}
 		</ul>
 	</div>
@@ -14,7 +14,7 @@
 	<!-- begin tabs container -->
 	<div class="tabs__container">
 		{% for item in props.list %}
-		    <div class="tabs__content {%- if loop.index0 === 0 %} is-open {%- endif -%}" data-tab-container="{{item.name}}">
+		    <div class="tabs__content {{item.contentClass}} {%- if loop.index0 === 0 %} is-open {%- endif -%}" data-tab-container="{{item.name}}" data-tab-collection="{{props.name}}">
 	    		{% include item.content %}
 		    </div>
 		{% endfor %}
