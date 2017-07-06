@@ -4855,16 +4855,6 @@ textarea.input {
   overflow: auto;
   padding: 20px 20px 0;
   height: 100%;
-  text-align: center;
-  font-size: 0;
-}
-
-.tabs__content:before {
-  content: "";
-  display: inline-block;
-  vertical-align: middle;
-  width: 0;
-  height: 100%;
 }
 
 .tabs__content.is-open {

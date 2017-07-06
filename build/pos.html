@@ -635,19 +635,19 @@
                 <!-- begin tabs controls -->
                 <div class="tabs__controls">
                   <ul class="tabs__list">
-                    <li class="tabs__item"><a href="#" class="tabs__btn is-active" data-tab-open="quantity" data-animation="ripple">Quantity</a></li>
-                    <li class="tabs__item"><a href="#" class="tabs__btn" data-tab-open="price" data-animation="ripple">Price</a></li>
-                    <li class="tabs__item"><a href="#" class="tabs__btn" data-tab-open="discount" data-animation="ripple">Discount</a></li>
-                    <li class="tabs__item"><a href="#" class="tabs__btn" data-tab-open="modifiers" data-animation="ripple">Modifiers</a></li>
-                    <li class="tabs__item"><a href="#" class="tabs__btn" data-tab-open="matrix" data-animation="ripple">Matrix</a></li>
-                    <li class="tabs__item"><a href="#" class="tabs__btn" data-tab-open="serials" data-animation="ripple">Serials</a></li>
-                    <li class="tabs__item"><a href="#" class="tabs__btn" data-tab-open="notes" data-animation="ripple">Notes</a></li>
+                    <li class="tabs__item"><a href="#" class="tabs__btn is-active" data-tab-open="quantity" data-tab-collection="item-info" data-animation="ripple">Quantity</a></li>
+                    <li class="tabs__item"><a href="#" class="tabs__btn" data-tab-open="price" data-tab-collection="item-info" data-animation="ripple">Price</a></li>
+                    <li class="tabs__item"><a href="#" class="tabs__btn" data-tab-open="discount" data-tab-collection="item-info" data-animation="ripple">Discount</a></li>
+                    <li class="tabs__item"><a href="#" class="tabs__btn" data-tab-open="modifiers" data-tab-collection="item-info" data-animation="ripple">Modifiers</a></li>
+                    <li class="tabs__item"><a href="#" class="tabs__btn" data-tab-open="matrix" data-tab-collection="item-info" data-animation="ripple">Matrix</a></li>
+                    <li class="tabs__item"><a href="#" class="tabs__btn" data-tab-open="serials" data-tab-collection="item-info" data-animation="ripple">Serials</a></li>
+                    <li class="tabs__item"><a href="#" class="tabs__btn" data-tab-open="notes" data-tab-collection="item-info" data-animation="ripple">Notes</a></li>
                   </ul>
                 </div>
                 <!-- end tabs controls -->
                 <!-- begin tabs container -->
                 <div class="tabs__container">
-                  <div class="tabs__content is-open" data-tab-container="quantity">
+                  <div class="tabs__content vertical-center is-open" data-tab-container="quantity" data-tab-collection="item-info">
                     <div class="tabs__keyboard">
                       <div class="fieldset fieldset_bordered">
                         <div class="main-display"> <button class="main-display__clear" data-numpad="numpad-clear"><i class="icon icon-clear"></i></button>
@@ -679,7 +679,7 @@
                       </div>
                     </div>
                   </div>
-                  <div class="tabs__content" data-tab-container="price">
+                  <div class="tabs__content vertical-center" data-tab-container="price" data-tab-collection="item-info">
                     <div class="tabs__keyboard">
                       <div class="fieldset fieldset_bordered">
                         <div class="main-display"> <button class="main-display__clear" data-numpad="numpad-clear"><i class="icon icon-clear"></i></button>
@@ -713,7 +713,7 @@
                       </div>
                     </div>
                   </div>
-                  <div class="tabs__content" data-tab-container="discount">
+                  <div class="tabs__content vertical-center" data-tab-container="discount" data-tab-collection="item-info">
                     <div class="tabs__keyboard">
                       <div class="fieldset fieldset_bordered">
                         <div class="main-display"> <button class="main-display__clear" data-numpad="numpad-clear"><i class="icon icon-clear"></i></button>
@@ -758,7 +758,7 @@
                       </div>
                     </div>
                   </div>
-                  <div class="tabs__content" data-tab-container="modifiers">
+                  <div class="tabs__content " data-tab-container="modifiers" data-tab-collection="item-info">
                     <div class="sm-grid sm-grid_full tabs__info">
                       <div class="sm-grid__body">
                         <div class="sm-grid__row">
@@ -824,7 +824,7 @@
 		<button class="btn btn_lg btn_primary btn_block sm-grid__btn" data-animation="ripple">Done</button>
 	</div> --></div>
                   </div>
-                  <div class="tabs__content" data-tab-container="matrix">
+                  <div class="tabs__content " data-tab-container="matrix" data-tab-collection="item-info">
                     <div class="sm-grid sm-grid_full tabs__info">
                       <div class="sm-grid__body">
                         <div class="sm-grid__row sm-grid__row_steps">
@@ -922,7 +922,7 @@
 		<button class="btn btn_lg btn_primary btn_block sm-grid__btn" data-animation="ripple">Done</button>
 	</div> --></div>
                   </div>
-                  <div class="tabs__content" data-tab-container="serials">
+                  <div class="tabs__content " data-tab-container="serials" data-tab-collection="item-info">
                     <div class="sm-grid sm-grid_full tabs__info">
                       <div class="sm-grid__body">
                         <div class="sm-grid__row">
@@ -967,7 +967,7 @@
 		<button class="btn btn_lg btn_primary btn_block sm-grid__btn" data-animation="ripple">Done</button>
 	</div> --></div>
                   </div>
-                  <div class="tabs__content" data-tab-container="notes">
+                  <div class="tabs__content vertical-center" data-tab-container="notes" data-tab-collection="item-info">
                     <div class="tabs__notes">
                       <div class="fieldset fieldset_bordered"> <textarea class="textarea textarea_block" placeholder="Type here Item-specific note"></textarea> </div>
                       <!-- <button class="btn btn_lg btn_primary btn_block text-uppercase" data-animation="ripple">Done</button> --></div>
