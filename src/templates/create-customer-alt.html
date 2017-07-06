@@ -144,7 +144,7 @@ styles:
   [
     { textarea: { 
       label: 'Notes'
-    } }
+    }, colSize: 'lg' }
   ],
   [
     { select: { 
@@ -197,7 +197,7 @@ styles:
                   </div>
 
                   <div class="form__column form__column_md">
-                    <button class="btn btn_lg btn_block" data-tab-open="business" data-tab-collection="personal-business" data-animation="ripple">Personal</button>
+                    <button class="btn btn_lg btn_block" data-tab-open="business" data-tab-collection="personal-business" data-animation="ripple">Business</button>
                   </div>
                 </div>
               </div>
@@ -276,49 +276,49 @@ styles:
                         </li>
                       </ul>
                     </div>
-                  </div>
 
-                  <div class="tabs__container">
-                    <div class="tabs__content is-open" data-tab-container="general" data-tab-collection="business">
-                      {% for row in fieldsBusinessGeneral %}
+                    <div class="tabs__container">
+                      <div class="tabs__content is-open" data-tab-container="general" data-tab-collection="business">
+                        {% for row in fieldsBusinessGeneral %}
+                          <div class="form__columns">
+                            {% for field in row %}
+                              <div class="form__column form__column_{{field.colSize or 'md'}}">
+                                {% if field.select %}
+                                  {{form.selectSimple.call(field.select)}}
+                                {% else %}
+                                  {{form.inputSimple.call(field)}}
+                                {% endif %}
+                              </div>
+                            {% endfor %}
+                          </div>
+                        {% endfor %}
                         <div class="form__columns">
-                          {% for field in row %}
-                            <div class="form__column form__column_{{field.colSize or 'md'}}">
-                              {% if field.select %}
-                                {{form.selectSimple.call(field.select)}}
-                              {% else %}
-                                {{form.inputSimple.call(field)}}
-                              {% endif %}
-                            </div>
-                          {% endfor %}
-                        </div>
-                      {% endfor %}
-                      <div class="form__columns">
-                        <div class="form__column form__column_md">
-                          {{mixins.checkbox({ content: 'Marketing', classList: 'checkbox_lg' })}}
-                        </div>
-                        <div class="form__column form__column_md">
-                          {{mixins.checkbox({ content: 'Tax Exempt', classList: 'checkbox_lg' })}}
+                          <div class="form__column form__column_md">
+                            {{mixins.checkbox({ content: 'Marketing', classList: 'checkbox_lg' })}}
+                          </div>
+                          <div class="form__column form__column_md">
+                            {{mixins.checkbox({ content: 'Tax Exempt', classList: 'checkbox_lg' })}}
+                          </div>
                         </div>
                       </div>
-                    </div>
 
-                    <div class="tabs__content" data-tab-container="advanced" data-tab-collection="business">
-                      {% for row in fieldsBusinessAdvanced %}
-                        <div class="form__columns">
-                          {% for field in row %}
-                            <div class="form__column form__column_{{field.colSize or 'md'}}">
-                              {% if field.textarea %}
-                                {{form.textareaSimple.call(field.textarea)}}
-                              {% elseif field.select %}
-                                {{form.selectSimple.call(field.select)}}
-                              {% else %}
-                                {{form.inputSimple.call(field)}}
-                              {% endif %}
-                            </div>
-                          {% endfor %}
-                        </div>
-                      {% endfor %}
+                      <div class="tabs__content" data-tab-container="advanced" data-tab-collection="business">
+                        {% for row in fieldsBusinessAdvanced %}
+                          <div class="form__columns">
+                            {% for field in row %}
+                              <div class="form__column form__column_{{field.colSize or 'md'}}">
+                                {% if field.textarea %}
+                                  {{form.textareaSimple.call(field.textarea)}}
+                                {% elseif field.select %}
+                                  {{form.selectSimple.call(field.select)}}
+                                {% else %}
+                                  {{form.inputSimple.call(field)}}
+                                {% endif %}
+                              </div>
+                            {% endfor %}
+                          </div>
+                        {% endfor %}
+                      </div>
                     </div>
                   </div>
                 </div>
