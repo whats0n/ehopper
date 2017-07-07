@@ -6189,13 +6189,15 @@ textarea.input {
 }
 
 .tabs__btn_alt {
+  text-transform: uppercase;
   border-color: rgba(0, 0, 0, 0.1);
   border-width: 0 0 1px 0;
   border-style: solid;
 }
 
 .tabs__btn_alt.is-active {
-  border-width: 1px 1px 0 1px;
+  border-width: 2px 1px 0 1px;
+  border-top-color: #999;
 }
 
 .small-tabs {
