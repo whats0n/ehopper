@@ -13,7 +13,7 @@ styles:
     { label: 'Last Name', inputAttrs: 'required', required: true, errorMessage: 'This field is required' }
   ],
   [
-    { label: 'MI' },
+    { label: 'Middle Name' },
     { 
       label: 'Date of Birth', 
       placeholder: 'mm/dd/yyyy' 
@@ -52,6 +52,7 @@ styles:
 
 {% set fieldsPersonalAdvanced = [
   [
+    { label: 'Driver License No' },
     { select: { 
       label: 'Driver License State', 
       placeholder: '- Select -', 
@@ -60,10 +61,8 @@ styles:
         'option 2', 
         'option 3', 
         'option 4' 
-      ], 
-      required: true
-    } },
-    { label: 'Driver License No' }
+      ]
+    } }
   ],
   [
     { textarea: { 
@@ -72,7 +71,7 @@ styles:
   ],
   [
     { select: { 
-      label: 'Home Store', 
+      label: 'Store Name', 
       placeholder: '- Select -', 
       options: [ 
         'option 1', 
@@ -82,7 +81,7 @@ styles:
       ]
     } },
     { select: { 
-      label: 'Sales Rep', 
+      label: 'Sales Person', 
       placeholder: '- Select -', 
       options: [ 
         'option 1', 
@@ -103,7 +102,7 @@ styles:
     { label: 'Contact Last Name' }
   ],
   [
-    { label: 'MI' }
+    { label: 'Middle Name' }
   ],
   [
     { label: 'Phone' },
@@ -148,7 +147,7 @@ styles:
   ],
   [
     { select: { 
-      label: 'Home Store', 
+      label: 'Store Name', 
       placeholder: '- Select -', 
       options: [ 
         'option 1', 
@@ -158,7 +157,7 @@ styles:
       ]
     } },
     { select: { 
-      label: 'Sales Rep', 
+      label: 'Sales Person', 
       placeholder: '- Select -', 
       options: [ 
         'option 1', 
