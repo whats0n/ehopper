@@ -52,24 +52,6 @@ styles:
 
 {% set fieldsPersonalAdvanced = [
   [
-    { label: 'Driver License No' },
-    { select: { 
-      label: 'Driver License State', 
-      placeholder: '- Select -', 
-      options: [ 
-        'option 1', 
-        'option 2', 
-        'option 3', 
-        'option 4' 
-      ]
-    } }
-  ],
-  [
-    { textarea: { 
-      label: 'Notes'
-    }, colSize: 'lg' }
-  ],
-  [
     { select: { 
       label: 'Store Name', 
       placeholder: '- Select -', 
@@ -90,6 +72,24 @@ styles:
         'option 4' 
       ]
     } }
+  ],
+  [
+    { label: 'Driver License No' },
+    { select: { 
+      label: 'Driver License State', 
+      placeholder: '- Select -', 
+      options: [ 
+        'option 1', 
+        'option 2', 
+        'option 3', 
+        'option 4' 
+      ]
+    } }
+  ],
+  [
+    { textarea: { 
+      label: 'Notes'
+    }, colSize: 'lg' }
   ]
 ] %}
 
@@ -137,15 +137,6 @@ styles:
 
 {% set fieldsBusinessAdvanced = [
   [
-    { label: 'Tax Id' },
-    { label: 'D&B Number' }
-  ],
-  [
-    { textarea: { 
-      label: 'Notes'
-    }, colSize: 'lg' }
-  ],
-  [
     { select: { 
       label: 'Store Name', 
       placeholder: '- Select -', 
@@ -166,6 +157,15 @@ styles:
         'option 4' 
       ]
     } }
+  ],
+  [
+    { label: 'Tax Id' },
+    { label: 'D&B Number' }
+  ],
+  [
+    { textarea: { 
+      label: 'Notes'
+    }, colSize: 'lg' }
   ]
 ] %}
   
