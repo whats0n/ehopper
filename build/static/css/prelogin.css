@@ -1634,6 +1634,11 @@ input.btn {
   opacity: 1;
 }
 
+.input::-moz-placeholder,
+.textarea::-moz-placeholder {
+  opacity: 1;
+}
+
 .input:-ms-input-placeholder,
 .textarea:-ms-input-placeholder {
   opacity: 1;
@@ -2745,6 +2750,11 @@ textarea.input {
 }
 
 .search__input::-webkit-input-placeholder {
+  color: #fff;
+  opacity: .7;
+}
+
+.search__input::-moz-placeholder {
   color: #fff;
   opacity: .7;
 }
@@ -5424,6 +5434,15 @@ textarea.input {
   padding: 10px;
 }
 
+.sm-grid_tabs .sm-grid__body {
+  display: none;
+  height: auto;
+}
+
+.sm-grid_tabs .sm-grid__body.is-open {
+  display: block;
+}
+
 .sm-grid__body {
   overflow: auto;
   padding: 5px 20px 10px;
@@ -5516,6 +5535,21 @@ textarea.input {
 .sm-grid p {
   padding: 0 5px;
   font-size: 14px;
+}
+
+.sm-grid__tabs {
+  padding: 0 10px;
+  font-size: 0;
+}
+
+.sm-grid__tabs li {
+  display: inline-block;
+  vertical-align: top;
+  padding: 10px;
+}
+
+.sm-grid__tabs .btn {
+  min-width: 120px;
 }
 
 .sm-card {

@@ -1,0 +1,62 @@
+{% import "partials/components/_card.html" as card %}
+<div class="sm-grid sm-grid_full sm-grid_tabs tabs__info">
+	{% set modifiers = {
+		collection: 'modifiers',
+		sections: [
+			{
+				name: 'toppings',
+				btn: 'Toppings',
+				title: 'Add-Ons',
+				items: [
+					{ title: 'Cheese', sticker: '$1.00' },
+					{ title: 'Bun', sticker: '$3.00' },
+					{ title: 'Patty', sticker: '$1.50' },
+					{ title: 'Tomato', sticker: '$0.50' }
+				]
+			},
+			{
+				name: 'size',
+				btn: 'Size',
+				title: 'Size',
+				items: [
+					{ title: 'Cheese', sticker: '$1.00' },
+					{ title: 'Bun', sticker: '$3.00' },
+					{ title: 'Patty', sticker: '$1.50' },
+					{ title: 'Tomato', sticker: '$0.50' }
+				]
+			},
+			{
+				name: 'color',
+				btn: 'Color',
+				title: 'Color',
+				items: [
+					{ title: 'Cheese', sticker: '$1.00' },
+					{ title: 'Bun', sticker: '$3.00' },
+					{ title: 'Patty', sticker: '$1.50' },
+					{ title: 'Tomato', sticker: '$0.50' }
+				]
+			}
+		]
+	} %}
+	<ul class="sm-grid__tabs">
+		{% for section in modifiers.sections %}
+			<li>
+				<a href="#" class="btn btn_lg {% if loop.index == 1 %}is-active{% endif %}" data-tab-open="{{section.name}}" data-tab-collection="{{modifiers.collection}}" data-animation="ripple">{{section.btn | safe}}</a>
+			</li>
+		{% endfor %}
+	</ul>
+	{% for section in modifiers.sections %}
+		<div class="sm-grid__body {% if loop.index == 1 %}is-open{% endif %}" data-tab-container="{{section.name}}" data-tab-collection="{{modifiers.collection}}">
+			<div class="sm-grid__row">
+				<div class="title-lg sm-grid__col sm-grid__title">{{section.title}}</div>
+			</div>
+			<div class="sm-grid__row">
+				{% for item in section.items %}
+					<div class="sm-grid__col sm-grid__col_xs">
+						{{card.checkbox(item)}}
+					</div>
+				{% endfor %}
+			</div>
+		</div>
+	{% endfor %}
+</div>

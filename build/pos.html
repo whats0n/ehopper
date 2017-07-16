@@ -759,10 +759,15 @@
                     </div>
                   </div>
                   <div class="tabs__content " data-tab-container="modifiers" data-tab-collection="item-info">
-                    <div class="sm-grid sm-grid_full tabs__info">
-                      <div class="sm-grid__body">
+                    <div class="sm-grid sm-grid_full sm-grid_tabs tabs__info">
+                      <ul class="sm-grid__tabs">
+                        <li> <a href="#" class="btn btn_lg is-active" data-tab-open="toppings" data-tab-collection="modifiers" data-animation="ripple">Toppings</a> </li>
+                        <li> <a href="#" class="btn btn_lg " data-tab-open="size" data-tab-collection="modifiers" data-animation="ripple">Size</a> </li>
+                        <li> <a href="#" class="btn btn_lg " data-tab-open="color" data-tab-collection="modifiers" data-animation="ripple">Color</a> </li>
+                      </ul>
+                      <div class="sm-grid__body is-open" data-tab-container="toppings" data-tab-collection="modifiers">
                         <div class="sm-grid__row">
-                          <h2 class="title-lg sm-grid__col sm-grid__title">Add-Ons</h2>
+                          <div class="title-lg sm-grid__col sm-grid__title">Add-Ons</div>
                         </div>
                         <div class="sm-grid__row">
                           <div class="sm-grid__col sm-grid__col_xs">
@@ -770,59 +775,162 @@
 		<input type="checkbox" >
 		<span class="sm-card__content" data-animation="ripple">
 			<i class="sm-card__icon icon icon-checked"></i>
-			<span class="sm-card__title">Double Cheese Topping</span>
+			<span class="sm-card__title">Cheese</span>
 			
-				<span class="sm-card__sticker">+$2.00</span>
-			
-		</span>
-	</label> </div>
-                          </div>
-                          <div class="sm-grid__col sm-grid__col_xs">
-                            <div class="sm-card "> <label class="sm-card__label">
-		<input type="checkbox" checked>
-		<span class="sm-card__content" data-animation="ripple">
-			<i class="sm-card__icon icon icon-checked"></i>
-			<span class="sm-card__title">Salami</span>
-			
-				<span class="sm-card__sticker">+$3.00</span>
+				<span class="sm-card__sticker">$1.00</span>
 			
 		</span>
 	</label> </div>
                           </div>
-                          <div class="sm-grid__col sm-grid__col_xs">
-                            <div class="sm-card "> <label class="sm-card__label">
-		<input type="checkbox" checked>
-		<span class="sm-card__content" data-animation="ripple">
-			<i class="sm-card__icon icon icon-checked"></i>
-			<span class="sm-card__title">Tomatos</span>
-			
-				<span class="sm-card__sticker">+$3.00</span>
-			
-		</span>
-	</label> </div>
-                          </div>
-                        </div>
-                        <div class="sm-grid__row">
-                          <h2 class="title-lg sm-grid__col sm-grid__title">Exceptions</h2>
-                        </div>
-                        <div class="sm-grid__row">
                           <div class="sm-grid__col sm-grid__col_xs">
                             <div class="sm-card "> <label class="sm-card__label">
 		<input type="checkbox" >
 		<span class="sm-card__content" data-animation="ripple">
 			<i class="sm-card__icon icon icon-checked"></i>
-			<span class="sm-card__title">No Box Packaging</span>
+			<span class="sm-card__title">Bun</span>
 			
-				<span class="sm-card__sticker">-$1.00</span>
+				<span class="sm-card__sticker">$3.00</span>
+			
+		</span>
+	</label> </div>
+                          </div>
+                          <div class="sm-grid__col sm-grid__col_xs">
+                            <div class="sm-card "> <label class="sm-card__label">
+		<input type="checkbox" >
+		<span class="sm-card__content" data-animation="ripple">
+			<i class="sm-card__icon icon icon-checked"></i>
+			<span class="sm-card__title">Patty</span>
+			
+				<span class="sm-card__sticker">$1.50</span>
+			
+		</span>
+	</label> </div>
+                          </div>
+                          <div class="sm-grid__col sm-grid__col_xs">
+                            <div class="sm-card "> <label class="sm-card__label">
+		<input type="checkbox" >
+		<span class="sm-card__content" data-animation="ripple">
+			<i class="sm-card__icon icon icon-checked"></i>
+			<span class="sm-card__title">Tomato</span>
+			
+				<span class="sm-card__sticker">$0.50</span>
 			
 		</span>
 	</label> </div>
                           </div>
                         </div>
                       </div>
-                      <!-- <div class="sm-grid__footer">
-		<button class="btn btn_lg btn_primary btn_block sm-grid__btn" data-animation="ripple">Done</button>
-	</div> --></div>
+                      <div class="sm-grid__body " data-tab-container="size" data-tab-collection="modifiers">
+                        <div class="sm-grid__row">
+                          <div class="title-lg sm-grid__col sm-grid__title">Size</div>
+                        </div>
+                        <div class="sm-grid__row">
+                          <div class="sm-grid__col sm-grid__col_xs">
+                            <div class="sm-card "> <label class="sm-card__label">
+		<input type="checkbox" >
+		<span class="sm-card__content" data-animation="ripple">
+			<i class="sm-card__icon icon icon-checked"></i>
+			<span class="sm-card__title">Cheese</span>
+			
+				<span class="sm-card__sticker">$1.00</span>
+			
+		</span>
+	</label> </div>
+                          </div>
+                          <div class="sm-grid__col sm-grid__col_xs">
+                            <div class="sm-card "> <label class="sm-card__label">
+		<input type="checkbox" >
+		<span class="sm-card__content" data-animation="ripple">
+			<i class="sm-card__icon icon icon-checked"></i>
+			<span class="sm-card__title">Bun</span>
+			
+				<span class="sm-card__sticker">$3.00</span>
+			
+		</span>
+	</label> </div>
+                          </div>
+                          <div class="sm-grid__col sm-grid__col_xs">
+                            <div class="sm-card "> <label class="sm-card__label">
+		<input type="checkbox" >
+		<span class="sm-card__content" data-animation="ripple">
+			<i class="sm-card__icon icon icon-checked"></i>
+			<span class="sm-card__title">Patty</span>
+			
+				<span class="sm-card__sticker">$1.50</span>
+			
+		</span>
+	</label> </div>
+                          </div>
+                          <div class="sm-grid__col sm-grid__col_xs">
+                            <div class="sm-card "> <label class="sm-card__label">
+		<input type="checkbox" >
+		<span class="sm-card__content" data-animation="ripple">
+			<i class="sm-card__icon icon icon-checked"></i>
+			<span class="sm-card__title">Tomato</span>
+			
+				<span class="sm-card__sticker">$0.50</span>
+			
+		</span>
+	</label> </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="sm-grid__body " data-tab-container="color" data-tab-collection="modifiers">
+                        <div class="sm-grid__row">
+                          <div class="title-lg sm-grid__col sm-grid__title">Color</div>
+                        </div>
+                        <div class="sm-grid__row">
+                          <div class="sm-grid__col sm-grid__col_xs">
+                            <div class="sm-card "> <label class="sm-card__label">
+		<input type="checkbox" >
+		<span class="sm-card__content" data-animation="ripple">
+			<i class="sm-card__icon icon icon-checked"></i>
+			<span class="sm-card__title">Cheese</span>
+			
+				<span class="sm-card__sticker">$1.00</span>
+			
+		</span>
+	</label> </div>
+                          </div>
+                          <div class="sm-grid__col sm-grid__col_xs">
+                            <div class="sm-card "> <label class="sm-card__label">
+		<input type="checkbox" >
+		<span class="sm-card__content" data-animation="ripple">
+			<i class="sm-card__icon icon icon-checked"></i>
+			<span class="sm-card__title">Bun</span>
+			
+				<span class="sm-card__sticker">$3.00</span>
+			
+		</span>
+	</label> </div>
+                          </div>
+                          <div class="sm-grid__col sm-grid__col_xs">
+                            <div class="sm-card "> <label class="sm-card__label">
+		<input type="checkbox" >
+		<span class="sm-card__content" data-animation="ripple">
+			<i class="sm-card__icon icon icon-checked"></i>
+			<span class="sm-card__title">Patty</span>
+			
+				<span class="sm-card__sticker">$1.50</span>
+			
+		</span>
+	</label> </div>
+                          </div>
+                          <div class="sm-grid__col sm-grid__col_xs">
+                            <div class="sm-card "> <label class="sm-card__label">
+		<input type="checkbox" >
+		<span class="sm-card__content" data-animation="ripple">
+			<i class="sm-card__icon icon icon-checked"></i>
+			<span class="sm-card__title">Tomato</span>
+			
+				<span class="sm-card__sticker">$0.50</span>
+			
+		</span>
+	</label> </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
                   </div>
                   <div class="tabs__content " data-tab-container="matrix" data-tab-collection="item-info">
                     <div class="sm-grid sm-grid_full tabs__info">
