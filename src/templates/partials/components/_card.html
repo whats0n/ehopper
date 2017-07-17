@@ -1,7 +1,7 @@
 {% macro checkbox(props) %}
 <div class="sm-card {{props.classList}}">
 	<label class="sm-card__label">
-		<input type="checkbox" {{props.attrs | safe}}>
+		<input type="{{props.type or 'checkbox'}}" {{props.attrs | safe}}>
 		<span class="sm-card__content" data-animation="ripple">
 			<i class="sm-card__icon icon icon-checked"></i>
 			<span class="sm-card__title">{{props.title}}</span>

@@ -42,7 +42,7 @@ styles:
 						{% set orderList = [
 							{
 								title: 'Hot Dog XL',
-								meta: 'Click to duplicate in cart <a href="#" data-fullinfo-target="notes">Add note</a>',
+								meta: 'Click to duplicate in cart <a href="#">Add note</a>',
 								quantity: '1',
 								price: '3.00',
 								total: '3.00',
@@ -59,7 +59,7 @@ styles:
 							},
 							{
 								title: 'Honey',
-								meta: 'Long Sleeves, XL size, Black color <div class="order-item__notes"><a href="#" data-fullinfo-target="notes">Note: </a>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nobis, animi?</div>',
+								meta: 'Long Sleeves, XL size, Black color <div class="order-item__notes"><a href="#">Note: </a>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nobis, animi?</div>',
 								quantity: '1',
 								price: '8.00',
 								total: '8.00',
@@ -99,19 +99,19 @@ styles:
 												<div class="order-item__info">
 													<div class="order-item__title">{{item.title | safe}}</div>
 												</div>
-												<div class="order-item__meta" data-fullinfo-target="modifiers">{{item.meta | safe}}</div>
+												<div class="order-item__meta">{{item.meta | safe}}</div>
 											</div>
 											<div class="order-item__row">
 												<div class="order-item__col">
-													<div class="order-item__quantity" data-fullinfo-target="quantity">{{item.quantity | safe}}&times;</div>
-													<div class="order-item__price" data-fullinfo-target="price">{{item.price | safe}}</div>
+													<div class="order-item__quantity">{{item.quantity | safe}}&times;</div>
+													<div class="order-item__price">{{item.price | safe}}</div>
 												</div>
 												<div class="order-item__col">
-													<div class="order-item__total" data-fullinfo-target="price">{{item.total | safe}}</div>
+													<div class="order-item__total">{{item.total | safe}}</div>
 													{% if item.discount %}
-														<div class="order-item__discount" data-fullinfo-target="discount">{{item.discount | safe}}</div>
+														<div class="order-item__discount">{{item.discount | safe}}</div>
 													{% else %}
-														<div class="order-item__tag" data-fullinfo-target="discount"></div>
+														<div class="order-item__tag"></div>
 													{% endif %}
 												</div>
 											</div>
