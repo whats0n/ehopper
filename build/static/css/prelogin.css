@@ -738,7 +738,7 @@ hr {
   width: 112px;
   height: 112px;
   background: rgba(0, 0, 0, 0.1);
-  animation: ripple 1s ease-in-out forwards;
+  animation: ripple 0.5s linear forwards;
   pointer-events: none;
 }
 
@@ -2598,6 +2598,14 @@ textarea.input {
 
 .toolbar__col:not(:last-child) {
   border-right: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.toolbar__col_lg {
+  width: 60%;
+}
+
+.toolbar__col_sm {
+  width: 40%;
 }
 
 .toolbar__col_refresh {
@@ -5068,6 +5076,7 @@ textarea.input {
   float: left;
   width: 50%;
   *zoom: 1;
+  font-size: 0;
 }
 
 .order-item__row:after {
@@ -5077,14 +5086,14 @@ textarea.input {
 }
 
 .order-item__col {
-  float: left;
+  display: inline-block;
+  vertical-align: top;
   padding: 0 0 0 20px;
   width: 50%;
-  text-align: right;
 }
 
-.order-item__col:first-child {
-  text-align: left;
+.order-item__total {
+  word-wrap: break-word;
 }
 
 .order-item__quantity, .order-item__price, .order-item__total, .order-item__discount, .order-item__info, .order-item__meta {

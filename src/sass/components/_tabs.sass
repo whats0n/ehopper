@@ -1,80 +1,80 @@
 .tabs
-  position: relative
-  padding-top: 60px
-  height: 100%
-  color: $darkGray
-  background: $alabaster
-  +hsm
-    padding-top: 50px
-  &_lg
-    .tabs__btn
-      font-size: 16px
-  &__controls
-    position: absolute
-    top: 0
-    left: 0
-    right: 0
-    display: table
-    table-layout: fixed
-    width: 100%
-  &__list
-    display: table-row
-  &__item
-    display: table-cell
-    vertical-align: top
-    &:not(:last-child)
-      border-right: 2px solid rgba($black, 0.1)
-  &__btn
-    display: block
-    padding: 20px 10px
-    color: inherit
-    background: $lightGray
-    font-size: 14px
-    line-height: 20px
-    text-align: center
-    text-decoration: none
-    +nosel
-    &.is-active
-      background: $alabaster
-    &.is-disabled
-      color: rgba($black, 0.3)
-      pointer-events: none
-    +hsm
-      padding: 15px 10px
-  &__container
-    height: 100%
-    background: $alabaster
-  &__content
-    display: none
-    overflow: auto
-    padding: 20px 20px 0
-    height: 100%
-    &.is-open
-      display: block
-  &__keyboard,
-  &__notes,
-  &__info
-    display: inline-block
-    vertical-align: middle
-    width: 100%
-    text-align: left
-  &__keyboard,
-  &__notes
-    max-width: 460px
-  &__info
-    height: 100%
-  &__item_alt
-    border-right: none;
-    display: table-cell;
-    vertical-align: top;
-  &__btn_alt
-    text-transform: uppercase
-    border-color: rgba(0, 0, 0, 0.1);
-    border-width: 0 0 1px 0
-    border-style: solid
-    &.is-active
-      border-width: 2px 1px 0 1px
-      border-top-color: $mediumGray
+	position: relative
+	padding-top: 60px
+	height: 100%
+	color: $darkGray
+	background: $alabaster
+	+hsm
+		padding-top: 50px
+	&_lg
+		.tabs__btn
+			font-size: 16px
+	&__controls
+		position: absolute
+		top: 0
+		left: 0
+		right: 0
+		display: table
+		table-layout: fixed
+		width: 100%
+	&__list
+		display: table-row
+	&__item
+		display: table-cell
+		vertical-align: top
+		&:not(:last-child)
+			border-right: 2px solid rgba($black, 0.1)
+	&__btn
+		display: block
+		padding: 20px 10px
+		color: inherit
+		background: $lightGray
+		font-size: 14px
+		line-height: 20px
+		text-align: center
+		text-decoration: none
+		+nosel
+		&.is-active
+			background: $alabaster
+		&.is-disabled
+			color: rgba($black, 0.3)
+			pointer-events: none
+		+hsm
+			padding: 15px 10px
+	&__container
+		height: 100%
+		background: $alabaster
+	&__content
+		display: none
+		overflow: auto
+		padding: 20px 20px 0
+		height: 100%
+		&.is-open
+			display: block
+	&__keyboard,
+	&__notes,
+	&__info
+		display: inline-block
+		vertical-align: middle
+		width: 100%
+		text-align: left
+	&__keyboard,
+	&__notes
+		max-width: 460px
+	&__info
+		height: 100%
+	&__item_alt
+		border-right: none;
+		display: table-cell;
+		vertical-align: top;
+	&__btn_alt
+		text-transform: uppercase
+		border-color: rgba(0, 0, 0, 0.1);
+		border-width: 0 0 1px 0
+		border-style: solid
+		&.is-active
+			border-width: 2px 1px 0 1px
+			border-top-color: $mediumGray
 
 
 

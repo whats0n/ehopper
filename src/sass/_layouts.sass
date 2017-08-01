@@ -412,42 +412,42 @@
       padding: 10px 4px
     &:first-child
       padding-left: 20px
-    &[data-column="icon"]
+    &[data-column*="icon"]
       width: 60px
-    &[data-column="orders-tips-tips"]
+    &[data-column*="orders-tips-tips"]
       width: 7%
-    &[data-column="orders-status"],
-    &[data-column="orders-tips-status"]
+    &[data-column*="orders-status"],
+    &[data-column*="orders-tips-status"]
       width: 70px
-    &[data-column="orders-action"]
+    &[data-column*="orders-action"]
       width: 110px
       +lg
         width: 90px
-    &[data-column="orders-action"]
+    &[data-column*="orders-action"]
       text-align: right
-    &[data-column="orders-id"]
+    &[data-column*="orders-id"]
       width: 11%
-    &[data-column="orders-register"],
-    &[data-column="orders-type"],
-    &[data-column="orders-fulfillment"],
-    &[data-column="orders-date"],
+    &[data-column*="orders-register"],
+    &[data-column*="orders-type"],
+    &[data-column*="orders-fulfillment"],
+    &[data-column*="orders-date"],
 
-    &[data-column="orders-name"],
-    &[data-column="orders-tips-register"],
-    &[data-column="orders-tips-refnum"],
-    &[data-column="orders-tips-type"],
-    &[data-column="orders-tips-price"],
-    &[data-column="orders-tips-date"],
-    &[data-column="orders-total"],
-    &[data-column="orders-customer"]
+    &[data-column*="orders-name"],
+    &[data-column*="orders-tips-register"],
+    &[data-column*="orders-tips-refnum"],
+    &[data-column*="orders-tips-type"],
+    &[data-column*="orders-tips-price"],
+    &[data-column*="orders-tips-date"],
+    &[data-column*="orders-total"],
+    &[data-column*="orders-customer"]
       width: 8%
-    &[data-column="orders-store"],
-    &[data-column="orders-employee"],
+    &[data-column*="orders-store"],
+    &[data-column*="orders-employee"],
 
-    &[data-column="orders-tips-store"],
-    &[data-column="orders-tips-employee"]
+    &[data-column*="orders-tips-store"],
+    &[data-column*="orders-tips-employee"]
       width: 10%
-    &[data-column="orders-tips-order"]
+    &[data-column*="orders-tips-order"]
       width: 15%
 
     //order page
@@ -459,6 +459,10 @@
     &[data-column*="order-discount"],
     &[data-column*="order-total"]
       width: 16%
+    &[data-column*="orders-total"],
+    &[data-column*="orders-tips-price"]
+      word-wrap: break-word
+      
   &__th
     height: 36px
     +rmed

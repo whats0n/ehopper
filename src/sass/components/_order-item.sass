@@ -80,13 +80,18 @@
 		float: left
 		width: 50%
 		+clr
+		font-size: 0
 	&__col
-		float: left
+		// float: left
+		display: inline-block
+		vertical-align: top
 		padding: 0 0 0 20px
 		width: 50%
-		text-align: right
-		&:first-child
-			text-align: left
+		// text-align: right
+		// &:first-child
+		// 	text-align: left
+	&__total
+		word-wrap: break-word
 	&__quantity,
 	&__price,
 	&__total,

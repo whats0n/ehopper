@@ -536,7 +536,7 @@ hr {
   width: 112px;
   height: 112px;
   background: rgba(0, 0, 0, 0.1);
-  animation: ripple 1s ease-in-out forwards;
+  animation: ripple 0.5s linear forwards;
   pointer-events: none;
 }
 
@@ -1386,87 +1386,87 @@ a.shy {
   padding-left: 20px;
 }
 
-.table-header__th[data-column="icon"], .table-header__td[data-column="icon"],
-.table-body__th[data-column="icon"],
-.table-body__td[data-column="icon"] {
+.table-header__th[data-column*="icon"], .table-header__td[data-column*="icon"],
+.table-body__th[data-column*="icon"],
+.table-body__td[data-column*="icon"] {
   width: 60px;
 }
 
-.table-header__th[data-column="orders-tips-tips"], .table-header__td[data-column="orders-tips-tips"],
-.table-body__th[data-column="orders-tips-tips"],
-.table-body__td[data-column="orders-tips-tips"] {
+.table-header__th[data-column*="orders-tips-tips"], .table-header__td[data-column*="orders-tips-tips"],
+.table-body__th[data-column*="orders-tips-tips"],
+.table-body__td[data-column*="orders-tips-tips"] {
   width: 7%;
 }
 
-.table-header__th[data-column="orders-status"], .table-header__th[data-column="orders-tips-status"], .table-header__td[data-column="orders-status"], .table-header__td[data-column="orders-tips-status"],
-.table-body__th[data-column="orders-status"],
-.table-body__th[data-column="orders-tips-status"],
-.table-body__td[data-column="orders-status"],
-.table-body__td[data-column="orders-tips-status"] {
+.table-header__th[data-column*="orders-status"], .table-header__th[data-column*="orders-tips-status"], .table-header__td[data-column*="orders-status"], .table-header__td[data-column*="orders-tips-status"],
+.table-body__th[data-column*="orders-status"],
+.table-body__th[data-column*="orders-tips-status"],
+.table-body__td[data-column*="orders-status"],
+.table-body__td[data-column*="orders-tips-status"] {
   width: 70px;
 }
 
-.table-header__th[data-column="orders-action"], .table-header__td[data-column="orders-action"],
-.table-body__th[data-column="orders-action"],
-.table-body__td[data-column="orders-action"] {
+.table-header__th[data-column*="orders-action"], .table-header__td[data-column*="orders-action"],
+.table-body__th[data-column*="orders-action"],
+.table-body__td[data-column*="orders-action"] {
   width: 110px;
 }
 
-.table-header__th[data-column="orders-action"], .table-header__td[data-column="orders-action"],
-.table-body__th[data-column="orders-action"],
-.table-body__td[data-column="orders-action"] {
+.table-header__th[data-column*="orders-action"], .table-header__td[data-column*="orders-action"],
+.table-body__th[data-column*="orders-action"],
+.table-body__td[data-column*="orders-action"] {
   text-align: right;
 }
 
-.table-header__th[data-column="orders-id"], .table-header__td[data-column="orders-id"],
-.table-body__th[data-column="orders-id"],
-.table-body__td[data-column="orders-id"] {
+.table-header__th[data-column*="orders-id"], .table-header__td[data-column*="orders-id"],
+.table-body__th[data-column*="orders-id"],
+.table-body__td[data-column*="orders-id"] {
   width: 11%;
 }
 
-.table-header__th[data-column="orders-register"], .table-header__th[data-column="orders-type"], .table-header__th[data-column="orders-fulfillment"], .table-header__th[data-column="orders-date"], .table-header__th[data-column="orders-name"], .table-header__th[data-column="orders-tips-register"], .table-header__th[data-column="orders-tips-refnum"], .table-header__th[data-column="orders-tips-type"], .table-header__th[data-column="orders-tips-price"], .table-header__th[data-column="orders-tips-date"], .table-header__th[data-column="orders-total"], .table-header__th[data-column="orders-customer"], .table-header__td[data-column="orders-register"], .table-header__td[data-column="orders-type"], .table-header__td[data-column="orders-fulfillment"], .table-header__td[data-column="orders-date"], .table-header__td[data-column="orders-name"], .table-header__td[data-column="orders-tips-register"], .table-header__td[data-column="orders-tips-refnum"], .table-header__td[data-column="orders-tips-type"], .table-header__td[data-column="orders-tips-price"], .table-header__td[data-column="orders-tips-date"], .table-header__td[data-column="orders-total"], .table-header__td[data-column="orders-customer"],
-.table-body__th[data-column="orders-register"],
-.table-body__th[data-column="orders-type"],
-.table-body__th[data-column="orders-fulfillment"],
-.table-body__th[data-column="orders-date"],
-.table-body__th[data-column="orders-name"],
-.table-body__th[data-column="orders-tips-register"],
-.table-body__th[data-column="orders-tips-refnum"],
-.table-body__th[data-column="orders-tips-type"],
-.table-body__th[data-column="orders-tips-price"],
-.table-body__th[data-column="orders-tips-date"],
-.table-body__th[data-column="orders-total"],
-.table-body__th[data-column="orders-customer"],
-.table-body__td[data-column="orders-register"],
-.table-body__td[data-column="orders-type"],
-.table-body__td[data-column="orders-fulfillment"],
-.table-body__td[data-column="orders-date"],
-.table-body__td[data-column="orders-name"],
-.table-body__td[data-column="orders-tips-register"],
-.table-body__td[data-column="orders-tips-refnum"],
-.table-body__td[data-column="orders-tips-type"],
-.table-body__td[data-column="orders-tips-price"],
-.table-body__td[data-column="orders-tips-date"],
-.table-body__td[data-column="orders-total"],
-.table-body__td[data-column="orders-customer"] {
+.table-header__th[data-column*="orders-register"], .table-header__th[data-column*="orders-type"], .table-header__th[data-column*="orders-fulfillment"], .table-header__th[data-column*="orders-date"], .table-header__th[data-column*="orders-name"], .table-header__th[data-column*="orders-tips-register"], .table-header__th[data-column*="orders-tips-refnum"], .table-header__th[data-column*="orders-tips-type"], .table-header__th[data-column*="orders-tips-price"], .table-header__th[data-column*="orders-tips-date"], .table-header__th[data-column*="orders-total"], .table-header__th[data-column*="orders-customer"], .table-header__td[data-column*="orders-register"], .table-header__td[data-column*="orders-type"], .table-header__td[data-column*="orders-fulfillment"], .table-header__td[data-column*="orders-date"], .table-header__td[data-column*="orders-name"], .table-header__td[data-column*="orders-tips-register"], .table-header__td[data-column*="orders-tips-refnum"], .table-header__td[data-column*="orders-tips-type"], .table-header__td[data-column*="orders-tips-price"], .table-header__td[data-column*="orders-tips-date"], .table-header__td[data-column*="orders-total"], .table-header__td[data-column*="orders-customer"],
+.table-body__th[data-column*="orders-register"],
+.table-body__th[data-column*="orders-type"],
+.table-body__th[data-column*="orders-fulfillment"],
+.table-body__th[data-column*="orders-date"],
+.table-body__th[data-column*="orders-name"],
+.table-body__th[data-column*="orders-tips-register"],
+.table-body__th[data-column*="orders-tips-refnum"],
+.table-body__th[data-column*="orders-tips-type"],
+.table-body__th[data-column*="orders-tips-price"],
+.table-body__th[data-column*="orders-tips-date"],
+.table-body__th[data-column*="orders-total"],
+.table-body__th[data-column*="orders-customer"],
+.table-body__td[data-column*="orders-register"],
+.table-body__td[data-column*="orders-type"],
+.table-body__td[data-column*="orders-fulfillment"],
+.table-body__td[data-column*="orders-date"],
+.table-body__td[data-column*="orders-name"],
+.table-body__td[data-column*="orders-tips-register"],
+.table-body__td[data-column*="orders-tips-refnum"],
+.table-body__td[data-column*="orders-tips-type"],
+.table-body__td[data-column*="orders-tips-price"],
+.table-body__td[data-column*="orders-tips-date"],
+.table-body__td[data-column*="orders-total"],
+.table-body__td[data-column*="orders-customer"] {
   width: 8%;
 }
 
-.table-header__th[data-column="orders-store"], .table-header__th[data-column="orders-employee"], .table-header__th[data-column="orders-tips-store"], .table-header__th[data-column="orders-tips-employee"], .table-header__td[data-column="orders-store"], .table-header__td[data-column="orders-employee"], .table-header__td[data-column="orders-tips-store"], .table-header__td[data-column="orders-tips-employee"],
-.table-body__th[data-column="orders-store"],
-.table-body__th[data-column="orders-employee"],
-.table-body__th[data-column="orders-tips-store"],
-.table-body__th[data-column="orders-tips-employee"],
-.table-body__td[data-column="orders-store"],
-.table-body__td[data-column="orders-employee"],
-.table-body__td[data-column="orders-tips-store"],
-.table-body__td[data-column="orders-tips-employee"] {
+.table-header__th[data-column*="orders-store"], .table-header__th[data-column*="orders-employee"], .table-header__th[data-column*="orders-tips-store"], .table-header__th[data-column*="orders-tips-employee"], .table-header__td[data-column*="orders-store"], .table-header__td[data-column*="orders-employee"], .table-header__td[data-column*="orders-tips-store"], .table-header__td[data-column*="orders-tips-employee"],
+.table-body__th[data-column*="orders-store"],
+.table-body__th[data-column*="orders-employee"],
+.table-body__th[data-column*="orders-tips-store"],
+.table-body__th[data-column*="orders-tips-employee"],
+.table-body__td[data-column*="orders-store"],
+.table-body__td[data-column*="orders-employee"],
+.table-body__td[data-column*="orders-tips-store"],
+.table-body__td[data-column*="orders-tips-employee"] {
   width: 10%;
 }
 
-.table-header__th[data-column="orders-tips-order"], .table-header__td[data-column="orders-tips-order"],
-.table-body__th[data-column="orders-tips-order"],
-.table-body__td[data-column="orders-tips-order"] {
+.table-header__th[data-column*="orders-tips-order"], .table-header__td[data-column*="orders-tips-order"],
+.table-body__th[data-column*="orders-tips-order"],
+.table-body__td[data-column*="orders-tips-order"] {
   width: 15%;
 }
 
@@ -1490,6 +1490,14 @@ a.shy {
 .table-body__td[data-column*="order-discount"],
 .table-body__td[data-column*="order-total"] {
   width: 16%;
+}
+
+.table-header__th[data-column*="orders-total"], .table-header__th[data-column*="orders-tips-price"], .table-header__td[data-column*="orders-total"], .table-header__td[data-column*="orders-tips-price"],
+.table-body__th[data-column*="orders-total"],
+.table-body__th[data-column*="orders-tips-price"],
+.table-body__td[data-column*="orders-total"],
+.table-body__td[data-column*="orders-tips-price"] {
+  word-wrap: break-word;
 }
 
 .table-header__th,
@@ -3904,6 +3912,14 @@ textarea.input {
 
 .toolbar__col:not(:last-child) {
   border-right: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.toolbar__col_lg {
+  width: 60%;
+}
+
+.toolbar__col_sm {
+  width: 40%;
 }
 
 .toolbar__col_refresh {
@@ -6374,6 +6390,7 @@ textarea.input {
   float: left;
   width: 50%;
   *zoom: 1;
+  font-size: 0;
 }
 
 .order-item__row:after {
@@ -6383,14 +6400,14 @@ textarea.input {
 }
 
 .order-item__col {
-  float: left;
+  display: inline-block;
+  vertical-align: top;
   padding: 0 0 0 20px;
   width: 50%;
-  text-align: right;
 }
 
-.order-item__col:first-child {
-  text-align: left;
+.order-item__total {
+  word-wrap: break-word;
 }
 
 .order-item__quantity, .order-item__price, .order-item__total, .order-item__discount, .order-item__info, .order-item__meta {
@@ -8650,9 +8667,9 @@ textarea.input {
     padding: 10px 4px;
   }
 
-  .table-header__th[data-column="orders-action"], .table-header__td[data-column="orders-action"],
-  .table-body__th[data-column="orders-action"],
-  .table-body__td[data-column="orders-action"] {
+  .table-header__th[data-column*="orders-action"], .table-header__td[data-column*="orders-action"],
+  .table-body__th[data-column*="orders-action"],
+  .table-body__td[data-column*="orders-action"] {
     width: 90px;
   }
 
