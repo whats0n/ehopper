@@ -3914,14 +3914,6 @@ textarea.input {
   border-right: 1px solid rgba(0, 0, 0, 0.1);
 }
 
-.toolbar__col_lg {
-  width: 60%;
-}
-
-.toolbar__col_sm {
-  width: 40%;
-}
-
 .toolbar__col_refresh {
   width: 150px;
 }
@@ -6583,6 +6575,10 @@ textarea.input {
 
 .totals-list__item a {
   color: #2e99db;
+}
+
+.totals-list__item_total {
+  font-family: 'Roboto Medium', Arial, sans-serif;
 }
 
 .totals-list__label, .totals-list__value {

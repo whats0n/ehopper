@@ -44,8 +44,8 @@ styles:
 								title: 'Hot Dog XL',
 								meta: 'Click to duplicate in cart <a href="#">Add note</a>',
 								quantity: '9999',
-								price: '12345678.12',
-								total: '123444435521.88',
+								price: '123456789.12',
+								total: '1234444434410.8801',
 								state: 'default'
 							},
 							{
@@ -154,22 +154,22 @@ styles:
 							<ul class="totals-list totals-list_main">
 								{% for item in totalsListMain %}
 									<li class="totals-list__item">
-										{# <div class="totals-list__row"> #}
-											<div class="totals-list__label">{{item.label}}</div>
-											<div class="totals-list__value">${{item.value}}</div>
-										{# </div> #}
+										<div class="totals-list__label">{{item.label | safe}}</div>
+										<div class="totals-list__value">${{item.value | safe}}</div>
 									</li>
 								{% endfor %}
 							</ul>
 							<ul class="totals-list totals-list_scroll">
 								{% for item in totalsListScroll %}
 									<li class="totals-list__item">
-										{# <a href="#" class="totals-list__row"> #}
-											<div class="totals-list__label">{{item.label}}</div>
-											<div class="totals-list__value">${{item.value}}</div>
-										{# </a> #}
+										<div class="totals-list__label">{{item.label | safe}}</div>
+										<div class="totals-list__value">${{item.value | safe}}</div>
 									</li>
 								{% endfor %}
+								<li class="totals-list__item totals-list__item_total">
+									<div class="totals-list__label">Total</div>
+									<div class="totals-list__value">123456789012345.12</div>
+								</li>
 							</ul>
 						</div>
 					</div>
@@ -189,7 +189,7 @@ styles:
 										tagName: 'a',
 										classList: 'btn btn_green btn_lg btn_block toolbar__button',
 										attrs: 'data-animation="ripple" href="payment-cash.html" id="cart-cash-button"',
-										content: 'Cash: <strong>$12345678912.12</strong>'
+										content: 'Cash'
 									})}}
 									{#$1299.00#}
 								</div>

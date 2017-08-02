@@ -1,11 +1,8 @@
 .totals
 	padding: 10px 0
 	border-top: 1px solid rgba($black, 0.1)
-	// background: $alabaster
-	// background: #f2f2f2
 	background: #d2edf6
 	&_static
-		// background: $alabaster
 		border-top: 2px solid rgba($black, 0.1)
 		background: none
 		.totals-list 
@@ -16,74 +13,41 @@
 					&:before
 						border-top-color: darken($alabaster, 15%)
 	&__container
-		// float: right
 		padding-top: 5px
 
 .totals-list
-	// display: table
-	// table-layout: fixed
-	// width: 100%
-	// max-width: 100%
-	// min-width: 100%
-	// padding: 5px 0
-	// font-size: 16px
 	font-size: 14px
-	// line-height: 20px
 	line-height: 16px
-	// &_main
-	// 	position: relative
-	// 	box-shadow: 0 2px 5px 0px rgba(0,0,0,0.1)	
 	+clr
 	&_scroll
 		overflow: auto
 		padding-bottom: 5px
-		// border-top: 1px solid $lightGray
 		border-top: 1px solid darken(#d2edf6, 5%)
-		// max-height: 103px
-		// max-height: 72px
-		// max-height: 60px
 		max-height: 120px
 	&__item
-		// display: table-row
 		position: relative
-		// float: right
 		clear: both
-		// padding: 3px 20px
-		// width: 50%
-		// color: #7d7d7d
 		color: $darkGray
 		+clr
 		&:not(:first-child)
-			// padding-top: 4px
 			padding-top: 1px
 			&:before
 				content: ''
 				position: absolute
 				right: 0
 				top: 0
-				// border-top: 1px dashed $lightGray
 				border-top: 1px dashed darken(#d2edf6, 15%)
 				width: 100%
 				opacity: 0.3
 		a 
 			color: $blue
-	// &__row
-		// display: block
-		// padding: 5px 20px
-		// padding: 3px 20px
-		// +clr
+		&_total
+			+rmed
 	&__label,
 	&__value
 		float: left
 		padding: 3px 20px
 		width: 50%
-		// display: table-cell
-		// padding: 3px 20px
 		+text-overflow
-	&__label
-		// width: 60%
-		// text-align: left
 	&__value
-		// width: 40%
-		// +rmed
 		text-align: right
