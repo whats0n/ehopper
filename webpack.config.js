@@ -19,7 +19,8 @@ function createConfig(env) {
         context: path.join(__dirname, config.src.js),
         entry: {
             // vendor: ['jquery'],
-            app: './app.js'
+            app: './app.js',
+            ripple: './ripple.js'
         },
         output: {
             path: path.join(__dirname, config.dest.js),

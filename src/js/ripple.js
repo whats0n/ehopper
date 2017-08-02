@@ -1,0 +1,1 @@
+import rippleEffect from './components/_ripple-effect';
