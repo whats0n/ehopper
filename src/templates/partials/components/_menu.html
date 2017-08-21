@@ -1,54 +1,86 @@
 {% import '../_mixins.html' as mixins %}
 {% macro call(props) %}
-{% set active = props.active or 0 %}
-{% set nav = [
-	{ href: 'pos.html', icon: 'pos', text: 'Point of Sale' },
-	{ href: 'orders.html', icon: 'orders', text: 'Orders' },
-	{ href: 'pos.html', icon: 'undo', text: 'Manual Refund', attrs: 'data-toggle-class-target="main-container" data-toggle-class-add="refund-mode"' },
-	{ href: 'register-close.html', icon: 'close', text: 'Close Register' },
-	{ href: 'payin.html', icon: 'cc', text: 'Payins / Payouts' },
-	{ href: 'tips.html', icon: 'tips', text: 'Tips' },
-	{ href: 'loyalty.html', icon: 'loyalty', text: 'Loyalty' },
-	{ href: '#', icon: 'cog', text: 'Settings', attrs: 'data-nav-submenu-open="nav-settings"', list: [ 
-		{ icon: 'print', href: 'printer-setup.html', text: 'Printer Setup' },
-		{ icon: 'cash', href: 'cash-drawer.html', text: 'Cash Drawer' },
-		{ icon: 'cc', href: 'settings.html', text: 'Terminal Setup' }
-	] },
-	{ href: 'sync.html', icon: 'sync', text: 'Synchronize', disabled: true },
-	{ href: 'deactivate.html', icon: 'offline', text: 'Deactivate', disabled: true },
-	{ href: 'ui-kit.html', icon: 'bo', text: 'Back Office &bull; UI-Kit', disabled: true },
-	{ href: 'pos.html', icon: 'help', text: 'Help', disabled: true },
-	{ href: 'index.html', icon: 'exit', text: 'Logout', disabled: true }
-] %}
-<!-- begin menu -->
-<nav class="menu" data-menu-container="menu">
-	<header class="menu__header" data-menu-close="menu" data-animation="ripple">
-		<i class="icon icon-back menu__icon"></i>
-		<div class="title-xlg menu__title">Acme Inc.</div>
-	</header>
-	<div class="menu__container">
-		<div class="menu__account">Account ID: 123321</div>
-		<ul class="nav">
-			{% for item in props.nav or nav %}
-			    <li class="nav__item" {% if item.list %}data-nav-submenu="nav-settings"{% endif %}>
-			    	<a href="{{item.href}}" class="nav__link {% if loop.index0 === active %}is-active{%- endif -%} {% if item.disabled %}is-disabled{% endif %}" {{item.attrs | safe}}>
-			    		<i class="nav__icon icon icon-{{item.icon}}"></i>{{item.text | safe}}
-			    		{%- if item.list -%}<i class="nav__arrow icon icon-caret"></i>{%- endif -%}
-			    	</a>
-			    	{% if item.list %}
-						<ul class="nav__submenu">
-							{% for item in item.list %}
-								<li class="nav__item"><a href="{{item.href}}" class="nav__link"><i class="nav__icon icon icon-{{item.icon}}"></i>{{item.text}}</a></li>
-							{% endfor %}
-						</ul>
-			    	{% endif %}
-			    </li>
-			{% endfor %}
-		</ul>
-	</div>
-</nav>
-<!-- end menu -->
-{{mixins.overlay({
-	attrs: 'data-menu-overlay="menu"'
-})}}
+	{% set active = props.active or 0 %}
+	{% set nav = [
+		{ href: 'pos.html', icon: 'pos', text: 'Point of Sale', disabled: true },
+		{ href: 'orders.html', icon: 'orders', text: 'Orders', disabled: true },
+		{ href: 'pos.html', icon: 'undo', text: 'Manual Refund', attrs: 'data-toggle-class-target="main-container" data-toggle-class-add="refund-mode"', disabled: true },
+		{ href: 'register-open.html', icon: 'plus', text: 'Open Register', closed: true },
+		{ href: 'register-close.html', icon: 'close', text: 'Close Register', opened: true },
+		{ href: 'payin.html', icon: 'cc', text: 'Payins / Payouts', disabled: true },
+		{ href: 'tips.html', icon: 'tips', text: 'Tips', disabled: true },
+		{ href: 'loyalty.html', icon: 'loyalty', text: 'Loyalty', disabled: true },
+		{ href: '#', icon: 'cog', text: 'Settings', attrs: 'data-nav-submenu-open="nav-settings"', list: [ 
+			{ icon: 'print', href: 'printer-setup.html', text: 'Printer Setup' },
+			{ icon: 'cash', href: 'cash-drawer.html', text: 'Cash Drawer' },
+			{ icon: 'cc', href: 'settings.html', text: 'Terminal Setup' }
+		] },
+		{ href: 'sync.html', icon: 'sync', text: 'Synchronize' },
+		{ href: 'deactivate.html', icon: 'offline', text: 'Deactivate', disabled: true },
+		{ href: 'ui-kit.html', icon: 'bo', text: 'Back Office &bull; UI-Kit' },
+		{ href: 'pos.html', icon: 'help', text: 'Help', disabled: true },
+		{ href: 'index.html', icon: 'exit', text: 'Logout' }
+	] %}
+	<!-- begin menu -->
+	<nav class="menu {{props.open}}" data-menu-container="menu">
+		{% if props.open %}
+			<header class="menu__header" data-animation="ripple">
+				<i class="icon icon-back menu__icon"></i>
+				<div class="title-xlg menu__title">Acme Inc.</div>
+			</header>
+		{% else %}
+			<header class="menu__header" data-menu-close="menu" data-animation="ripple">
+				<i class="icon icon-back menu__icon"></i>
+				<div class="title-xlg menu__title">Acme Inc.</div>
+			</header>
+		{% endif %}
+		<div class="menu__container">
+			<div class="menu__account">Account ID: 123321</div>
+			<ul class="nav">
+				{% for item in props.nav or nav %}
+					<li class="nav__item" {% if item.list %}data-nav-submenu="nav-settings"{% endif %}>
+						{% if props.disabled %}
+							{% if item.opened != true %}
+								<a href="{{item.href}}" class="nav__link {% if loop.index0 === active %}is-active{% endif %} {% if item.disabled %}is-disabled{% endif %}" {{item.attrs | safe}}>
+									<i class="nav__icon icon icon-{{item.icon}}"></i>{{item.text | safe}}
+									{%- if item.list -%}<i class="nav__arrow icon icon-caret"></i>{%- endif -%}
+								</a>
+								{% if item.list %}
+									<ul class="nav__submenu">
+										{% for item in item.list %}
+											<li class="nav__item"><a href="{{item.href}}" class="nav__link"><i class="nav__icon icon icon-{{item.icon}}"></i>{{item.text}}</a></li>
+										{% endfor %}
+									</ul>
+								{% endif %}
+							{% endif %}
+						{% else %}
+							{% if item.closed != true %}
+								<a href="{{item.href}}" class="nav__link {% if loop.index0 === active %}is-active{%- endif -%}" {{item.attrs | safe}}>
+									<i class="nav__icon icon icon-{{item.icon}}"></i>{{item.text | safe}}
+									{%- if item.list -%}<i class="nav__arrow icon icon-caret"></i>{%- endif -%}
+								</a>
+								{% if item.list %}
+									<ul class="nav__submenu">
+										{% for item in item.list %}
+											<li class="nav__item"><a href="{{item.href}}" class="nav__link"><i class="nav__icon icon icon-{{item.icon}}"></i>{{item.text}}</a></li>
+										{% endfor %}
+									</ul>
+								{% endif %}
+							{% endif %}
+						{% endif %}
+					</li>
+				{% endfor %}
+			</ul>
+		</div>
+	</nav>
+	<!-- end menu -->
+	{% if props.open %}
+		{{mixins.overlay({
+			classList: props.open
+		})}}
+	{% else %}
+		{{mixins.overlay({
+			attrs: 'data-menu-overlay="menu"'
+		})}}
+	{% endif %}
 {% endmacro %}

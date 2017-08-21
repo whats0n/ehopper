@@ -5965,7 +5965,9 @@ textarea.input {
 }
 
 .nav__link.is-disabled {
+  color: inherit;
   opacity: 0.5;
+  background: none;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;

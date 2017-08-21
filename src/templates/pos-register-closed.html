@@ -1,0 +1,412 @@
+---
+title: 'eHopper POS'
+styles: 
+	- 'pos'
+---
+{% extends "layouts/_layout.html" %}
+
+{% block content %}
+	<main class="main" data-toggle-class-container="main-container">
+		<div class="inner">
+			{{header.call({
+				backBtnClassList: 'is-hidden',
+				titleClassList: 'is-hidden',
+				helpBtnClassList: 'is-hidden',
+				searchBtnClassList: 'is-hidden',
+				fullinfoBackBtnAttrs: 'data-fullinfo-close="fullinfo" data-toggle-class-target="sidebar-header" data-toggle-class-remove="is-disabled" id="cart-item-details-back"'
+			})}}
+			<div class="cart cart_poynt">
+				<div class="cart__inner">
+					<div class="cart-total">
+						<i class="icon icon-pos"></i>
+						<div class="cart-total__quantity">4</div>
+						<div class="cart-total__content">
+							<div class="cart-total__content-in">
+								<div class="cart-total__title">Total</div>
+								<div class="cart-total__price">$ 400000000.00</div>
+							</div>
+						</div>
+					</div>
+					<button class="cart-toggle" data-animation="ripple" onclick="(function() { 
+						document.querySelector('.sidebar').classList.toggle('is-open'); 
+						event.currentTarget.classList.toggle('is-active'); 
+					}());">
+						<span class="cart-toggle__title">Cart</span>
+						<i class="icon icon-caret"></i>
+					</button>
+				</div>
+			</div>
+			<aside class="sidebar sidebar_left sidebar_adaptive-poynt sidebar_disabled" data-toggle-class-container="sidebar-header" data-dropdown-parent="sidebar">
+				<div class="sidebar__body" data-order-scroll="order">
+					<div class="sidebar__content">
+						{% set orderList = [
+							{
+								title: 'Hot Dog XL',
+								meta: 'Click to duplicate in cart <a href="#">Add note</a>',
+								quantity: '9999',
+								price: '123456789.12',
+								total: '1234444434410.8801',
+								state: 'default'
+							},
+							{
+								title: 'T-Shirt with Print 23',
+								meta: 'Long Sleeves, XL size, Black color',
+								quantity: '2',
+								price: '644.00',
+								total: '1288.00',
+								discount: '-0.00',
+								state: 'default'
+							},
+							{
+								title: 'Honey',
+								meta: 'Long Sleeves, XL size, Black color <div class="order-item__notes"><a href="#">Note: </a>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nobis, animi?</div>',
+								quantity: '1',
+								price: '8.00',
+								total: '8.00',
+								state: 'default'
+							}
+						] %}
+						<!-- data-state - item state (can be default or active) -->
+						<!-- data-swipe - add class to himself -->
+						<!-- data-swipe-threshold - threshold that we have to swipe from the start point -->
+						<!-- data-fullinfo-open - open item tabs -->
+						<!-- data-toggle-class-target:
+							add/remove/toggle class (data-toggle-class-add/data-toggle-class-remove/data-toggle-class-toggle) 
+							to all current containers ('data-toggle-class-container') -->
+						<!-- data-fullinfo-target - open current tab in the fullinfo container -->
+						<!-- data-fullinfo-close - close item tabs -->
+						<!-- data-order-delete-item - delete item -->
+						<ul class="order-list" data-order-visible="order" data-order-list="order">
+							{% for item in orderList %}
+								<li class="order-item" 
+									data-order-added="item" 
+									data-animation="ripple" 
+									data-swipe="is-open"
+									data-swipe-threshold="50">
+									<div class="order-item__container">
+										<button class="order-item__close" 
+											data-fullinfo-close="fullinfo" 
+											data-toggle-class-target="sidebar-header" 
+											data-toggle-class-remove="is-disabled"
+											data-order-delete-item="delete">
+											<i class="icon icon-close"></i>
+										</button>
+										<div class="order-item__content"
+											data-fullinfo-open="fullinfo"
+											data-toggle-class-target="sidebar-header"
+											data-toggle-class-add="is-disabled">
+											<div class="order-item__row">
+												<div class="order-item__info">
+													<div class="order-item__title">{{item.title | safe}}</div>
+												</div>
+												<div class="order-item__meta">{{item.meta | safe}}</div>
+											</div>
+											<div class="order-item__row">
+												<div class="order-item__col text-left">
+													<div class="order-item__quantity">{{item.quantity | safe}}&times;</div>
+												</div>
+												<div class="order-item__col text-right">
+													<div class="order-item__total">{{item.total | safe}}</div>
+												</div>
+												<div class="order-item__col text-left">
+													<div class="order-item__price">{{item.price | safe}}</div>
+												</div>
+												<div class="order-item__col text-right">
+													{% if item.discount %}
+														<div class="order-item__discount">{{item.discount | safe}}</div>
+													{% else %}
+														<div class="order-item__tag"></div>
+													{% endif %}
+												</div>
+											</div>
+										</div>
+									</div>
+								</li>
+							{% endfor %}
+						</ul>
+						<div class="order-empty is-hidden" data-order-empty="order">
+							<div class="order-empty__center">
+								<h5>Order is empty</h5>
+								<p>Add items from catalog</p>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="sidebar__footer">
+					<div class="totals sidebar__totals" data-order-visible="order">
+						{% set totalsListMain = [
+							{
+								label: 'Sub',
+								value: '1299.00'
+							},
+							{
+								label: 'Discount',
+								value: '0.00'
+							}
+						] %}
+						{% set totalsListScroll = [
+							{
+								label: 'Tax',
+								value: '6.75'
+							}
+						] %}
+						<div class="totals__container">
+							<ul class="totals-list totals-list_main">
+								{% for item in totalsListMain %}
+									<li class="totals-list__item">
+										<div class="totals-list__label">{{item.label | safe}}</div>
+										<div class="totals-list__value">${{item.value | safe}}</div>
+									</li>
+								{% endfor %}
+							</ul>
+							<ul class="totals-list totals-list_scroll">
+								{% for item in totalsListScroll %}
+									<li class="totals-list__item">
+										<div class="totals-list__label">{{item.label | safe}}</div>
+										<div class="totals-list__value">${{item.value | safe}}</div>
+									</li>
+								{% endfor %}
+								<li class="totals-list__item totals-list__item_total">
+									<div class="totals-list__label">Total</div>
+									<div class="totals-list__value">$123456789012345.12</div>
+								</li>
+							</ul>
+						</div>
+					</div>
+					<div class="toolbar sidebar__toolbar">
+						<div class="toolbar__container">
+							<div class="toolbar__row">
+								<div class="toolbar__col toolbar__col_sm">
+									{{mixins.button({
+										tagName: 'a',
+										classList: 'btn btn_green btn_lg btn_block toolbar__button',
+										attrs: 'data-animation="ripple" href="payments.html"',
+										content: 'All Payments'
+									})}}
+								</div>
+								<div class="toolbar__col toolbar__col_lg">
+									{{mixins.button({
+										tagName: 'a',
+										classList: 'btn btn_green btn_lg btn_block toolbar__button',
+										attrs: 'data-animation="ripple" href="payment-cash.html" id="cart-cash-button"',
+										content: 'Cash'
+									})}}
+									{#$1299.00#}
+								</div>
+							</div>
+						</div>
+					</div>
+					{{horizontalMenu.call({
+						classList: 'sidebar__menu',
+						items: [
+							{
+								text: 'Save',
+								href: 'order-save.html'
+							},
+							{
+								text: 'Notes',
+								href: 'order-note.html'
+							},
+							{
+								text: 'Terminal',
+								href: 'terminal-cash.html'
+							},
+							{
+								text: 'Drawer',
+								href: '#',
+								linkClassList: 'is-disabled'
+							},
+							{
+								text: 'Discount',
+								href: '#'
+							},
+							{
+								text: 'More <i class="icon icon-more-v"></i>',
+								attrs: 'data-dropdown-parent-name="sidebar" id="more-menu-btn"',
+								href: '#',
+								dropdown: {
+									upper: 'sidebar',
+									name: 'more',
+									classList: 'dropdown-menu_up dropdown-menu_no-scroll',
+									attrs: 'id="more-menu-dropdown"',
+									links: true,
+									list: [ 
+										{ text: '<a href="#">Tax exempt</a>' }, 
+										{ text: '<a href="#">Revert tax</a>' }, 
+										{ text: '<a href="#">Drawer</a>' }, 
+										{ text: '<a href="#">Reprint</a>' }, 
+										{ text: '<a href="#">Refund</a>' }
+									]
+								}
+							}
+						]
+					})}}
+				</div>
+			</aside>
+			<div class="container container_right container_poynt-pos">
+				<div class="items container__body">
+					<div class="items__top">
+						<div class="categories" data-slider-wrapper="default">
+							<div class="categories__slider slider" data-slider="default">
+								{% set categories = [
+									{
+										title: 'DEF',
+										description: 'Default Category'
+									},
+									{
+										title: 'CUR',
+										description: 'Currently Selected Category',
+										classList: 'is-active'
+									},
+									{
+										title: 'KH',
+										description: 'Colored Category',
+										background: 'khaki'
+									},
+									{
+										title: '4',
+										description: 'Category #4'
+									},
+									{
+										title: '5',
+										description: 'Category #5'
+									}
+								] %}
+								{% for slide in range(0,3) %}
+									<div class="categories__container">
+										{% for category in categories %}
+											<div class="categories__item">
+												{{items.smBox(category)}}
+											</div>
+										{% endfor %}
+									</div>
+								{% endfor %}
+							</div>
+							<div class="categories__pagination" data-slider-pagination="default"></div>
+						</div>
+					</div>
+					<div class="items__body">
+						<div class="products" data-slider-wrapper="default">
+							<div class="products__slider slider" data-slider="default">
+								{% set products = [
+									{
+										title: 'Hot Dog XL',
+										price: '4.00',
+										code: 'HDXL',
+										attrs: 'data-order-item="order"'
+									},
+									{
+										title: 'Colored Item',
+										price: '4,853.00',
+										background: 'khaki',
+										attrs: 'data-order-item="order"'
+									},
+									{
+										title: 'Jack Daniels',
+										price: '37.99',
+										image: 'jack-daniels.jpg',
+										attrs: 'data-order-item="order"'
+									},
+									{
+										title: 'Tennessee Honey Whiskey',
+										price: '25.95',
+										image: 'whiskey.jpg',
+										attrs: 'data-order-item="order"'
+									},
+									{
+										title: 'Sushi',
+										price: '33.00',
+										image: 'sushi280x250.jpeg',
+										attrs: 'data-order-item="order"'
+									},
+									{
+										title: 'Roll',
+										price: '21.00',
+										image: 'roll.jpg',
+										attrs: 'data-order-item="order"'
+									},
+									{
+										title: 'Shrimps',
+										price: '12.00',
+										image: 'shrimps.jpg',
+										attrs: 'data-order-item="order"'
+									}
+								] %}
+								{% for slide in range(0,3) %}
+									<div class="products__container">
+										{% for product in products %}
+											<div class="products__item">
+												{{items.item(product)}}
+											</div>
+										{% endfor %}
+									</div>
+								{% endfor %}
+							</div>
+							<div class="products__pagination" data-slider-pagination="default"></div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="container container_overlay container_poynt-pos" data-fullinfo-container="fullinfo">
+				<div class="container__body">
+					{{tabs.call({
+						classList: 'tabs_lg container__content',
+						name: 'item-info',
+						list: [
+							{
+								name: 'quantity',
+								text: 'Quantity',
+								content: 'partials/full-info/_quantity.html',
+								contentClass: 'vertical-center'
+							},
+							{
+								name: 'price',
+								text: 'Price',
+								content: 'partials/full-info/_price.html',
+								contentClass: 'vertical-center'
+							},
+							{
+								name: 'discount',
+								text: 'Discount',
+								content: 'partials/full-info/_discount.html',
+								contentClass: 'vertical-center'
+							},
+							{
+								name: 'modifiers',
+								text: 'Modifiers',
+								content: 'partials/full-info/_modifiers-new.html'
+							},
+							{
+								name: 'matrix',
+								text: 'Matrix',
+								content: 'partials/full-info/_matrix.html'
+							},
+							{
+								name: 'serials',
+								text: 'Serials',
+								content: 'partials/full-info/_serials.html'
+							},
+							{
+								name: 'notes',
+								text: 'Notes',
+								content: 'partials/full-info/_notes.html',
+								contentClass: 'vertical-center'
+							}
+						]
+					})}}
+					<div class="container__submit">
+						<div class="form form_sm">
+							<button class="btn btn_lg btn_blue btn_block text-uppercase" data-animation="ripple" value="Done">Done</button>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</main>
+
+	{{modal.help()}}
+{% endblock %}
+
+{% block navigation %}
+	{{menu.call({ active: 0, disabled: true, open: 'is-open' })}}
+{% endblock %}
