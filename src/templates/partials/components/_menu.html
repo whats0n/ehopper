@@ -14,11 +14,11 @@
 		{ icon: 'cash', href: 'cash-drawer.html', text: 'Cash Drawer' },
 		{ icon: 'cc', href: 'settings.html', text: 'Terminal Setup' }
 	] },
-	{ href: 'sync.html', icon: 'sync', text: 'Synchronize' },
-	{ href: 'deactivate.html', icon: 'offline', text: 'Deactivate' },
-	{ href: 'ui-kit.html', icon: 'bo', text: 'Back Office &bull; UI-Kit' },
-	{ href: 'pos.html', icon: 'help', text: 'Help' },
-	{ href: 'index.html', icon: 'exit', text: 'Logout' }
+	{ href: 'sync.html', icon: 'sync', text: 'Synchronize', disabled: true },
+	{ href: 'deactivate.html', icon: 'offline', text: 'Deactivate', disabled: true },
+	{ href: 'ui-kit.html', icon: 'bo', text: 'Back Office &bull; UI-Kit', disabled: true },
+	{ href: 'pos.html', icon: 'help', text: 'Help', disabled: true },
+	{ href: 'index.html', icon: 'exit', text: 'Logout', disabled: true }
 ] %}
 <!-- begin menu -->
 <nav class="menu" data-menu-container="menu">
@@ -31,7 +31,7 @@
 		<ul class="nav">
 			{% for item in props.nav or nav %}
 			    <li class="nav__item" {% if item.list %}data-nav-submenu="nav-settings"{% endif %}>
-			    	<a href="{{item.href}}" class="nav__link {% if loop.index0 === active %}is-active{%- endif -%}" {{item.attrs | safe}}>
+			    	<a href="{{item.href}}" class="nav__link {% if loop.index0 === active %}is-active{%- endif -%} {% if item.disabled %}is-disabled{% endif %}" {{item.attrs | safe}}>
 			    		<i class="nav__icon icon icon-{{item.icon}}"></i>{{item.text | safe}}
 			    		{%- if item.list -%}<i class="nav__arrow icon icon-caret"></i>{%- endif -%}
 			    	</a>

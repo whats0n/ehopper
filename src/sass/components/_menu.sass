@@ -72,6 +72,10 @@
     &.is-active
       color: $white
       background: #4C5560
+    &.is-disabled
+      opacity: 0.5
+      +nosel
+      pointer-events: none
   &__icon
     position: absolute
     top: 5px
