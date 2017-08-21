@@ -9068,7 +9068,7 @@ textarea.input {
 
 .nav__item {
   border-bottom: 1px solid #4C5560;
-  color: #7D838B;
+  color: #b3b6bb;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
@@ -9111,7 +9111,7 @@ textarea.input {
 
 .nav__link.is-disabled {
   color: inherit;
-  opacity: 0.5;
+  opacity: 0.3;
   background: none;
   -webkit-user-select: none;
   -moz-user-select: none;
