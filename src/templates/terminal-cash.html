@@ -43,7 +43,8 @@ styles:
 						<div class="form__section">
 							<div class="form-box is-focus">
 								{{mixins.field({
-									label: 'Amount Due:',
+									label: 'Amount <br>Due:',
+									labelClassList: 'field__label_sm',
 									id: 'ternimal-cash-amount-due',
 									placeholder: '0.00',
 									inputClassList: 'input_lg text-right',
@@ -56,6 +57,7 @@ styles:
 							<div class="form-box">
 								{{mixins.field({
 									label: 'Amount Tendered:',
+									labelClassList: 'field__label_sm',
 									id: 'terminal-cash-amount-tendered',
 									placeholder: '0.00',
 									inputClassList: 'input_lg text-right',

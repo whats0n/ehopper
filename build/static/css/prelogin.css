@@ -3499,6 +3499,11 @@ textarea.input {
   white-space: nowrap;
 }
 
+.field__label_sm {
+  width: 25%;
+  white-space: normal;
+}
+
 .field__switch {
   width: 140px;
 }
