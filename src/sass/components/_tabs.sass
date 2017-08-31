@@ -54,8 +54,9 @@
 	&__keyboard,
 	&__notes,
 	&__info
-		display: inline-block
-		vertical-align: middle
+		// display: inline-block
+		// vertical-align: middle
+		margin: 0 auto
 		width: 100%
 		text-align: left
 	&__keyboard,
@@ -75,6 +76,9 @@
 		&.is-active
 			border-width: 2px 1px 0 1px
 			border-top-color: $mediumGray
-
+	&__meta
+		padding: 0 0 20px
+		+rreg
+		font-size: 16px
 
 

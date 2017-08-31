@@ -139,18 +139,20 @@
 				<div class="simple-keyboard__item"><button type="button" class="simple-keyboard__button" data-animation="ripple" {{key.attrs | safe}}>{{key.content | safe}}</button></div>
 			{% endfor %}
 		</div>
-		<div class="simple-keyboard__actions">
-			<div class="simple-keyboard__item">
-				<button type="button" class="simple-keyboard__button simple-keyboard__action" data-animation="ripple" data-numpad="numpad-clockin">Clock In</button>
+		{% if props.noFooter != true %}
+			<div class="simple-keyboard__actions">
+				<div class="simple-keyboard__item">
+					<button type="button" class="simple-keyboard__button simple-keyboard__action" data-animation="ripple" data-numpad="numpad-clockin">Clock In</button>
+				</div>
+				<div class="simple-keyboard__item">
+					<button type="button" class="simple-keyboard__button simple-keyboard__action" data-animation="ripple" data-numpad="numpad-clockout">Clock Out</button>
+				</div>
+				<div class="simple-keyboard__item">
+					<button type="submit" class="simple-keyboard__button simple-keyboard__submit" data-animation="ripple" value="numpad-submit">Login<i class="icon icon-next"></i></button>
+				</div>
+				<!-- Add the class 'simple-keyboard__item_lg' to 'simple-keyboard__item', this will make the width 100% -->
 			</div>
-			<div class="simple-keyboard__item">
-				<button type="button" class="simple-keyboard__button simple-keyboard__action" data-animation="ripple" data-numpad="numpad-clockout">Clock Out</button>
-			</div>
-			<div class="simple-keyboard__item">
-				<button type="submit" class="simple-keyboard__button simple-keyboard__submit" data-animation="ripple" value="numpad-submit">Login<i class="icon icon-next"></i></button>
-			</div>
-			<!-- Add the class 'simple-keyboard__item_lg' to 'simple-keyboard__item', this will make the width 100% -->
-		</div>
+		{% endif %}
 	</div>
 </div>
 <!-- end simple-keyboard -->

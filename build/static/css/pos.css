@@ -6934,12 +6934,12 @@ textarea.input {
 
 .display {
   position: relative;
-  min-height: 60px;
+  min-height: 62px;
   background: #fff;
 }
 
 .display__list {
-  padding: 18px 0;
+  padding: 19px 0;
   font-size: 0;
   text-align: center;
 }
@@ -9336,8 +9336,7 @@ textarea.input {
 }
 
 .tabs__keyboard, .tabs__notes, .tabs__info {
-  display: inline-block;
-  vertical-align: middle;
+  margin: 0 auto;
   width: 100%;
   text-align: left;
 }
@@ -9366,6 +9365,12 @@ textarea.input {
 .tabs__btn_alt.is-active {
   border-width: 2px 1px 0 1px;
   border-top-color: #999;
+}
+
+.tabs__meta {
+  padding: 0 0 20px;
+  font-family: 'Roboto Regular', Arial, sans-serif;
+  font-size: 16px;
 }
 
 .small-tabs {
