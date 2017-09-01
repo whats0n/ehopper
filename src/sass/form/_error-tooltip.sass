@@ -1,0 +1,65 @@
+.error-tooltip
+	position: absolute
+	top: 50%
+	right: 100%
+	padding: 10px 0
+	margin-right: 8px
+	border: 1px solid $lightGray
+	width: 220px
+	color: $red
+	background: #fdfdfd
+	transform: translate3d(0,-50%,0)
+	+xlg
+		width: 190px
+	+lg
+		width: 200px
+	+md
+		width: 180px
+	&:before,
+	&:after
+		content: ''
+		position: absolute
+		top: 50%
+		left: 100%
+	&:before
+		margin-top: -6px
+		+arr(6, 12, $lightGray, r)
+	&:after
+		margin-top: -5px
+		+arr(4, 10, #fdfdfd, r)
+	&_right
+		left: 100%
+		right: auto
+		margin-left: 8px
+		margin-right: 0
+		&:before,
+		&:after
+			left: auto
+			right: 100%
+		&:before
+			+arr(6, 12, $lightGray, l)
+		&:after
+			+arr(4, 10, #fdfdfd, l)
+	&__item
+		position: relative
+		padding: 2px 10px 2px 40px
+		&.is-success
+			color: $green
+			.error-tooltip
+				&__close
+					display: none
+				&__check
+					display: inline-block
+	&__icon
+		position: absolute
+		top: 1px
+		left: 0
+		width: 40px
+		text-align: center
+		.fa
+			vertical-align: top
+			font-size: 18px
+	&__check
+		display: none
+	&__text
+		font-size: 14px
