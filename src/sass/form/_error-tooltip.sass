@@ -3,18 +3,18 @@
 	top: 50%
 	right: 100%
 	padding: 10px 0
-	margin-right: 8px
+	margin-right: 14px
 	border: 1px solid $lightGray
-	width: 220px
+	width: 214px
 	color: $red
 	background: #fdfdfd
 	transform: translate3d(0,-50%,0)
 	+xlg
-		width: 190px
+		width: 184px
 	+lg
-		width: 200px
+		width: 194px
 	+md
-		width: 180px
+		width: 174px
 	&:before,
 	&:after
 		content: ''
@@ -22,24 +22,24 @@
 		top: 50%
 		left: 100%
 	&:before
-		margin-top: -6px
-		+arr(6, 12, $lightGray, r)
+		margin-top: -12px
+		+arr(12, 24, $lightGray, r)
 	&:after
-		margin-top: -5px
-		+arr(4, 10, #fdfdfd, r)
+		margin-top: -11px
+		+arr(10, 22, #fdfdfd, r)
 	&_right
 		left: 100%
 		right: auto
-		margin-left: 8px
+		margin-left: 14px
 		margin-right: 0
 		&:before,
 		&:after
 			left: auto
 			right: 100%
 		&:before
-			+arr(6, 12, $lightGray, l)
+			+arr(12, 24, $lightGray, l)
 		&:after
-			+arr(4, 10, #fdfdfd, l)
+			+arr(10, 22, #fdfdfd, l)
 	&__item
 		position: relative
 		padding: 2px 10px 2px 40px

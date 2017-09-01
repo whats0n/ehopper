@@ -5214,9 +5214,9 @@ article aside.left {
   top: 50%;
   right: 100%;
   padding: 10px 0;
-  margin-right: 8px;
+  margin-right: 14px;
   border: 1px solid #eee;
-  width: 220px;
+  width: 214px;
   color: #ec4a41;
   background: #fdfdfd;
   transform: translate3d(0, -50%, 0);
@@ -5230,27 +5230,27 @@ article aside.left {
 }
 
 .error-tooltip:before {
-  margin-top: -6px;
+  margin-top: -12px;
   width: 0px;
   height: 0px;
   border-style: solid;
-  border-width: 6px 0 6px 6px;
+  border-width: 12px 0 12px 12px;
   border-color: transparent transparent transparent #eee;
 }
 
 .error-tooltip:after {
-  margin-top: -5px;
+  margin-top: -11px;
   width: 0px;
   height: 0px;
   border-style: solid;
-  border-width: 5px 0 5px 4px;
+  border-width: 11px 0 11px 10px;
   border-color: transparent transparent transparent #fdfdfd;
 }
 
 .error-tooltip_right {
   left: 100%;
   right: auto;
-  margin-left: 8px;
+  margin-left: 14px;
   margin-right: 0;
 }
 
@@ -5263,7 +5263,7 @@ article aside.left {
   width: 0px;
   height: 0px;
   border-style: solid;
-  border-width: 6px 6px 6px 0;
+  border-width: 12px 12px 12px 0;
   border-color: transparent #eee transparent transparent;
 }
 
@@ -5271,7 +5271,7 @@ article aside.left {
   width: 0px;
   height: 0px;
   border-style: solid;
-  border-width: 5px 4px 5px 0;
+  border-width: 11px 10px 11px 0;
   border-color: transparent #fdfdfd transparent transparent;
 }
 
@@ -12949,7 +12949,7 @@ article.settings main {
 @media only screen and (max-width: 1280px) {
 
   .error-tooltip {
-    width: 190px;
+    width: 184px;
   }
 
   .order__done {
@@ -13033,7 +13033,7 @@ article.settings main {
   }
 
   .error-tooltip {
-    width: 200px;
+    width: 194px;
   }
 
   .toolbar__button strong {
@@ -13064,7 +13064,7 @@ article.settings main {
 @media only screen and (max-width: 1023px) {
 
   .error-tooltip {
-    width: 180px;
+    width: 174px;
   }
 
   .toolbar__button {
