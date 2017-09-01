@@ -1,0 +1,38 @@
+<div class="definition-list">
+	{% set help = [
+		{
+			title: 'Step 1:',
+			description: 'Login to Payment Center Application (<a href="https://paymentcenter.qpay123.com">https://paymentcenter.qpay123.com</a>) '
+		},
+		{
+			title: 'Step 2:',
+			description: 'Click on ‘Settings’ on top right corner of the application'
+		},
+		{
+			title: 'Step 3:',
+			description: 'Under Advanced Settings, type in your password and click ‘Unlock Settings’'
+		},
+		{
+			title: 'Step 4:',
+			description: 'Click ‘Manage Devices’ link and a new tab will open'
+		},
+		{
+			title: 'Step 5:',
+			description: 'To generate a request for a new certificate, click on ‘Add Branch Device’ button'
+		},
+		{
+			title: 'Step 6:',
+			description: 'Enter the email address, select the authentication option and click the ‘Add’ button'
+		},
+		{
+			title: 'Step 7:',
+			description: 'Open the email from the device where the certificate needs to be installed and copy/paste into mpos application'
+		}
+	] %}
+	<dl class="definition-list__item">
+		{% for item in help %}
+			<dt class="definition-list__title">{{item.title}}</dt>
+			<dd class="definition-list__description">{{item.description | safe}}</dd>
+		{% endfor %}
+	</dl>
+</div>

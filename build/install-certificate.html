@@ -3,7 +3,7 @@
 
   <head>
     <meta charset="utf-8">
-    <title>Loyalty &bull; eHopper POS</title>
+    <title>Install Certificate &bull; eHopper POS</title>
     <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <meta name="theme-color" content="#fff">
@@ -11,11 +11,10 @@
     <link rel="stylesheet" media="all" href="static/css/pos.css">
     <link rel="icon" href="https://ehopper.com/wp-content/uploads/2016/03/favicon-01.png" type="image/png">
     <!-- BEGIN scripts -->
-    <script type="text/javascript" src="static/js/demo.js"></script>
     <!-- END scripts -->
   </head>
 
-  <body class="animated">
+  <body class="">
     <!-- begin application -->
     <div class="application" id="application">
       <!-- BEGIN content -->
@@ -28,10 +27,10 @@
 	</button>
           <!-- end button 'back' -->
           <!-- begin main container -->
-          <div class="main-header__container main-header__container_full"> <button class="btn-icon main-header__help is-hidden" title="Help" data-modal-open="help">
+          <div class="main-header__container main-header__container_full"> <button class="btn-icon main-header__help " title="Help" data-modal-open="help">
 			<i class="icon icon-help"></i>
 		</button>
-            <h2 class="title-xlg main-header__title ">LOYALTY PROGRAM</h2>
+            <h2 class="title-xlg main-header__title ">Install New Certificate</h2>
             <div class="main-header__searchbox is-hidden">
               <!-- begin search -->
               <div class="search" data-modal="search">
@@ -192,49 +191,23 @@
         </header>
         <!-- end header -->
         <div class="container container_simple">
-          <div class="container__body step-body">
-            <div class="section section_inner step-body__section">
-              <div class="form form_sm">
+          <div class="container__body">
+            <div class="section section_form">
+              <div class="form form_md">
                 <div class="form__section">
-                  <div class="fieldset fieldset_bordered">
-                    <div class="main-display"> <button class="main-display__clear" data-numpad="numpad-clear"><i class="icon icon-clear"></i></button>
-                      <div class="field ">
-                        <div class="field__inner"> <label class="field__label " for="item-quantity">Mobile Phone</label>
-                          <div class="field__box"> <input class="input field__input text-right input_xl" value="555-123-4567" id="item-quantity" type="text" placeholder="000-000-0000" required readonly> </div>
-                        </div>
-                      </div>
-                    </div>
-                    <!-- begin keyboard -->
-                    <div class="main-keyboard numpad ">
-                      <div class="main-keyboard__container ">
-                        <div class="main-keyboard__main">
-                          <div class="main-keyboard__item"> <button type="button" data-animation="ripple" class="main-keyboard__button ">1</button> </div>
-                          <div class="main-keyboard__item"> <button type="button" data-animation="ripple" class="main-keyboard__button ">2</button> </div>
-                          <div class="main-keyboard__item"> <button type="button" data-animation="ripple" class="main-keyboard__button ">3</button> </div>
-                          <div class="main-keyboard__item"> <button type="button" data-animation="ripple" class="main-keyboard__button ">4</button> </div>
-                          <div class="main-keyboard__item"> <button type="button" data-animation="ripple" class="main-keyboard__button ">5</button> </div>
-                          <div class="main-keyboard__item"> <button type="button" data-animation="ripple" class="main-keyboard__button ">6</button> </div>
-                          <div class="main-keyboard__item"> <button type="button" data-animation="ripple" class="main-keyboard__button ">7</button> </div>
-                          <div class="main-keyboard__item"> <button type="button" data-animation="ripple" class="main-keyboard__button ">8</button> </div>
-                          <div class="main-keyboard__item"> <button type="button" data-animation="ripple" class="main-keyboard__button ">9</button> </div>
-                          <div class="main-keyboard__item"> <button type="button" data-animation="ripple" class="main-keyboard__button ">&ndash;</button> </div>
-                          <div class="main-keyboard__item"> <button type="button" data-animation="ripple" class="main-keyboard__button ">0</button> </div>
-                          <div class="main-keyboard__item"> <button type="button" data-animation="ripple" class="main-keyboard__button " data-numpad="numpad-backspace"><i class="icon icon-backspace"></i></button> </div>
-                        </div>
-                      </div>
-                    </div>
-                    <!-- end keyboard -->
-                  </div>
+                  <div class="form-label">Select the issuer of certificate</div> <label class="radio ">
+	<input type="radio"  name="">
+	<i></i>
+	<span>Incomm</span>
+</label> </div>
+                <div class="form__section">
+                  <div class="form-label">Enter URL to install a new Incomm certificate</div>
+                  <div class="input-box "> <input type="text" class="simple-input input-box__input " placeholder=""> <button class="input-box__clear">
+		<i class="icon icon-close"></i>
+	</button> </div>
                 </div>
-                <p class="fieldset fieldset_standalone"> <label class="checkbox checkbox_green">
-	<input type="checkbox" required>
-	<i class="icon icon-check"></i>
-	<span>I agree with</span>
-</label> <a href="#" class="form__link">Terms and Conditions</a> </p>
+                <div class="form__section text-center"> <button class="btn btn_success form__submit" data-animation="ripple">Install</button> </div>
               </div>
-            </div>
-            <div class="step-body__footer section">
-              <div class="form form_sm"> <button class="btn btn_lg btn_block btn_primary text-uppercase" data-animation="ripple" value="Done">Process</button> </div>
             </div>
           </div>
         </div>

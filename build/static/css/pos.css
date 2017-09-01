@@ -5057,6 +5057,10 @@ article aside.left {
   padding: 0 10px;
 }
 
+.form .form__submit {
+  min-width: 140px;
+}
+
 .simple-input {
   display: inline-block;
   vertical-align: top;
@@ -5125,6 +5129,9 @@ article aside.left {
   top: 100%;
   left: 0;
   right: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 .select-box {
@@ -5185,6 +5192,9 @@ article aside.left {
   top: 100%;
   left: 0;
   right: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 .error-message {
@@ -6613,9 +6623,9 @@ textarea.input {
   top: 0;
   right: 0;
   bottom: 0;
-  padding-top: 150px;
+  padding-top: 50px;
   width: 100%;
-  max-width: 300px;
+  max-width: 450px;
   background: #fff;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
   transform: translate3d(110%, 0, 0);
@@ -6630,6 +6640,10 @@ textarea.input {
   left: 0;
 }
 
+.help__header .title-xlg {
+  padding: 13px 50px;
+}
+
 .help__body {
   position: relative;
   overflow: auto;
@@ -6638,8 +6652,37 @@ textarea.input {
 }
 
 .help__close {
-  margin: 5px 5px 20px;
-  font-size: 16px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+.help-close {
+  display: block;
+  padding: 0 20px;
+  width: 100%;
+  height: 50px;
+  color: #fff;
+  background: #2e99db;
+  font-size: 0;
+  text-align: left;
+}
+
+.help-close__icon, .help-close__arrow {
+  display: inline-block;
+  vertical-align: top;
+  line-height: 50px;
+}
+
+.help-close__icon {
+  margin-right: 10px;
+  font-size: 24px;
+}
+
+.help-close__arrow {
+  font-size: 20px;
 }
 
 .modal {
@@ -10773,6 +10816,20 @@ textarea.input {
 
 .card-field .simple-input {
   border-width: 2px;
+}
+
+.definition-list {
+  color: #333;
+  font-size: 16px;
+}
+
+.definition-list__title {
+  font-family: 'Roboto Medium', Arial, sans-serif;
+}
+
+.definition-list__description {
+  padding: 5px 0 10px 10px;
+  font-family: 'Roboto Light', Arial, sans-serif;
 }
 
 .sm-box {
