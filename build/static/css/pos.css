@@ -5061,6 +5061,13 @@ article aside.left {
   min-width: 140px;
 }
 
+.form__error {
+  padding: 5px 0 4px;
+  color: #ec4a41;
+  font-size: 14px;
+  line-height: 1.2;
+}
+
 .simple-input {
   display: inline-block;
   vertical-align: top;
