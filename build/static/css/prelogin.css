@@ -558,6 +558,10 @@ hr {
   margin-bottom: 20px;
 }
 
+.box__meta {
+  margin: 30px 0;
+}
+
 .page-activate .intro {
   margin-top: 50px;
   margin-bottom: 28px;
