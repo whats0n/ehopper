@@ -1335,7 +1335,7 @@ a.shy {
 
 .table-wrapper[data-table="terminal"] [data-table-fake],
 .table-wrapper[data-table="terminal"] [data-table-scrollable] > div {
-  min-width: 980px;
+  min-width: 100%;
 }
 
 .table-wrapper[data-table="order"] [data-table-fake],
@@ -8635,6 +8635,24 @@ textarea.input {
 
 .printer-setup__radio {
   padding: 10px 0;
+}
+
+.certificates-choice {
+  height: 100%;
+}
+
+.certificates-choice__header {
+  padding: 20px;
+}
+
+.certificates-choice__text {
+  font-family: 'Roboto Medium', Arial, sans-serif;
+  font-size: 16px;
+  line-height: 20px;
+}
+
+.certificates-choice__body {
+  height: calc(100% - 60px);
 }
 
 @media only screen and (max-width: 1280px) {

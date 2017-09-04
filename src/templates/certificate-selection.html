@@ -1,0 +1,157 @@
+---
+title: 'Install Certificate &bull; eHopper POS'
+styles: 
+	- 'pos'
+settingsActive: 2
+---
+{% extends "layouts/_layout.html" %}
+
+{% block content %}
+	<main class="main">
+		{{header.call({
+			sidebarClassList: 'is-hidden',
+			fullinfoClassList: 'is-hidden',
+			menuBtnClassList: 'is-hidden',
+			helpBtnClassList: 'is-hidden',
+			searchClassList: 'is-hidden',
+			syncBtnClassList: 'is-hidden',
+			searchBtnClassList: 'is-hidden',
+			syncClassList: 'is-hidden',
+			scanBtnClassList: 'is-hidden',
+			containerClassList: 'main-header__container_full',
+			title: 'Incomm certificates'
+		})}}
+		<div class="container container_simple step-body">
+			<div class="container__body">
+				<div class="certificates-choice">
+					<div class="certificates-choice__header">
+						<div class="certificates-choice__text">Please, choice certificate to be used for Incomm authorization</div>
+					</div>
+					<div class="certificates-choice__body">
+						<div class="table-wrapper table-wrapper_no-footer" data-table="terminal">
+							{% set table = {
+								header: [
+									{ column: 'certificate-default', content: 'Name' },
+									{ column: 'certificate-default', content: 'Issued	by' },
+									{ column: 'certificate-default', content: 'Valid from' },
+									{ column: 'certificate-default', content: 'Valid till' },
+									{ column: 'icon', content: '&nbsp;' }
+								],
+								body: [
+									[
+										{ column: 'certificate-default', content: 'Qpay-60764-4089' },
+										{ column: 'certificate-default', content: 'Qpay Inc' },
+										{ column: 'certificate-default', content: '05/08/2017' },
+										{ column: 'certificate-default', content: '02/02/2018' },
+										{ 
+											column: 'icon', 
+											mixin: 'radio', 
+											options: { name: 'certificates-choice', attrs: 'checked' }
+										}
+									],
+									[
+										{ column: 'certificate-default', content: 'Qpay-60764-4089' },
+										{ column: 'certificate-default', content: 'Qpay Inc' },
+										{ column: 'certificate-default', content: '05/08/2017' },
+										{ column: 'certificate-default', content: '02/02/2018' },
+										{ 
+											column: 'icon', 
+											mixin: 'radio', 
+											options: { name: 'certificates-choice' }
+										}
+									],
+									[
+										{ column: 'certificate-default', content: 'Qpay-60764-4089' },
+										{ column: 'certificate-default', content: 'Qpay Inc' },
+										{ column: 'certificate-default', content: '05/08/2017' },
+										{ column: 'certificate-default', content: '02/02/2018' },
+										{ 
+											column: 'icon', 
+											mixin: 'radio', 
+											options: { name: 'certificates-choice' }
+										}
+									],
+									[
+										{ column: 'certificate-default', content: 'Qpay-60764-4089' },
+										{ column: 'certificate-default', content: 'Qpay Inc' },
+										{ column: 'certificate-default', content: '05/08/2017' },
+										{ column: 'certificate-default', content: '02/02/2018' },
+										{ 
+											column: 'icon', 
+											mixin: 'radio', 
+											options: { name: 'certificates-choice' }
+										}
+									],
+									[
+										{ column: 'certificate-default', content: 'Qpay-60764-4089' },
+										{ column: 'certificate-default', content: 'Qpay Inc' },
+										{ column: 'certificate-default', content: '05/08/2017' },
+										{ column: 'certificate-default', content: '02/02/2018' },
+										{ 
+											column: 'icon', 
+											mixin: 'radio', 
+											options: { name: 'certificates-choice' }
+										}
+									],
+									[
+										{ column: 'certificate-default', content: 'Qpay-60764-4089' },
+										{ column: 'certificate-default', content: 'Qpay Inc' },
+										{ column: 'certificate-default', content: '05/08/2017' },
+										{ column: 'certificate-default', content: '02/02/2018' },
+										{ 
+											column: 'icon', 
+											mixin: 'radio', 
+											options: { name: 'certificates-choice' }
+										}
+									],
+									[
+										{ column: 'certificate-default', content: 'Qpay-60764-4089' },
+										{ column: 'certificate-default', content: 'Qpay Inc' },
+										{ column: 'certificate-default', content: '05/08/2017' },
+										{ column: 'certificate-default', content: '02/02/2018' },
+										{ 
+											column: 'icon', 
+											mixin: 'radio', 
+											options: { name: 'certificates-choice' }
+										}
+									]
+								]
+							} %}
+							<div class="table-wrapper__header" data-table-fake="terminal">
+								<div class="table-header">
+									<ul class="table-header__tr">
+										{% for th in table.header %}
+											<li class="table-header__th" data-column="{{th.column}}">{{th.content | safe}}</li>
+										{% endfor %}
+									</ul>
+								</div>
+							</div>
+							<div class="table-wrapper__body" data-scrollbar="default" data-table-scrollable="terminal">
+								<div class="table-body table-wrapper__table" data-table-main="terminal">
+									{% for tr in table.body %}
+										<div class="table-body__tr">
+											{% for td in tr %}
+												<div class="table-body__td" data-column="{{td.column}}">
+													{% if td.mixin %}
+														{{mixins[td.mixin](td.options)}}
+													{% else %}
+														{{td.content | safe}}
+													{% endif %}
+												</div>
+											{% endfor %}
+										</div>
+									{% endfor %}
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="step-body__footer section">
+				<div class="wrapper-btn-center">
+					<button class="btn btn_primary btn_lg btn_block text-uppercase" data-animation="ripple" value="Done">Done</button>
+				</div>
+			</div>
+		</div>
+	</main>
+{% endblock %}

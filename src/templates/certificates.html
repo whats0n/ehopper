@@ -1,0 +1,92 @@
+---
+title: 'Terminal Setup &bull; eHopper POS'
+styles: 
+	- 'pos'
+settingsActive: 2
+---
+{% extends "layouts/_layout.html" %}
+
+{% block content %}
+	<main class="main">
+		<div class="inner settings">
+			{{header.call({
+				sidebarClassList: 'is-hidden',
+				fullinfoClassList: 'is-hidden',
+				menuBtnClassList: 'is-hidden',
+				searchClassList: 'is-hidden',
+				syncBtnClassList: 'is-hidden',
+				searchBtnClassList: 'is-hidden',
+				scanBtnClassList: 'is-hidden',
+				syncClassList: 'is-hidden',
+				containerClassList: 'main-header__container_full',
+				title: 'Certificates'
+			})}}
+			{% include 'partials/components/_settings-sidebar.html' %}
+			<div class="settings__container">
+				<div class="settings__body">
+					<div class="explanation settings__explanation is-error">
+						<i class="icon icon-cc explanation__icon"></i>
+						<div class="explanation__text">
+							<p>To process credit and debit cards, you need to configure one or multiple terminals.</p>
+							<p>To make so, you'll need to enter its Serial Number</p>
+						</div>
+						<div class="explanation__error error-message text-center">Lorem ipsum dolor sit amet, consectetur adipisicing.</div>
+					</div>
+					<div class="settings__content">
+						<div class="table-wrapper" data-table="terminal">
+							{% set table = {
+								header: [
+									{ column: 'certificate-default', content: 'Name' },
+									{ column: 'certificate-default', content: 'Issued	by' },
+									{ column: 'certificate-default', content: 'Valid from' },
+									{ column: 'certificate-default', content: 'Valid till' },
+									{ column: 'icon', content: '&nbsp;' }
+								],
+								body: [
+									[
+										{ column: 'certificate-default', content: 'Qpay-60764-4089' },
+										{ column: 'certificate-default', content: 'Qpay Inc' },
+										{ column: 'certificate-default', content: '05/08/2017' },
+										{ column: 'certificate-default', content: '02/02/2018' },
+										{ column: 'icon', content: '<button class="btn btn_icon"><i class="icon icon-close"></i></button>' }
+									]
+								]
+							} %}
+							<div class="table-wrapper__header" data-table-fake="terminal">
+								<div class="table-header">
+									<ul class="table-header__tr">
+										{% for th in table.header %}
+											<li class="table-header__th" data-column="{{th.column}}">{{th.content | safe}}</li>
+										{% endfor %}
+									</ul>
+								</div>
+							</div>
+							<div class="table-wrapper__body" data-scrollbar="default" data-table-scrollable="terminal">
+								<div class="table-body table-wrapper__table" data-table-main="terminal">
+									{% for tr in table.body %}
+										<div class="table-body__tr">
+											{% for td in tr %}
+												<div class="table-body__td" data-column="{{td.column}}">
+													{% if td.mixin %}
+														{{mixins[td.mixin](td.options)}}
+													{% else %}
+														{{td.content | safe}}
+													{% endif %}
+												</div>
+											{% endfor %}
+										</div>
+									{% endfor %}
+								</div>
+							</div>
+							<div class="table-wrapper__footer">
+								<div class="table-footer">
+									<button class="btn btn_success" data-modal-open="add-terminal" data-animation="ripple"><i class="icon icon-plus"></i>Install New Certificate</button>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</main>
+{% endblock %}
