@@ -153,6 +153,14 @@
 			<img src="static/img/logo-white.svg" alt="eHopper">
 		</div>
 	{% endif %}
+
+	{% if props.logos %}
+		<div class="header__logos">
+			{% for img in props.logos %}
+			    <img src="static/img/{{img}}" alt="/">
+			{% endfor %}
+		</div>
+	{% endif %}
 </header>
 <!-- end header -->
 {% endmacro %}

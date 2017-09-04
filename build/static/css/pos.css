@@ -12249,6 +12249,31 @@ textarea.input {
   max-height: 40px;
 }
 
+.header__logos {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin: -45px 0 0 -225px;
+  width: 450px;
+  background: rgba(255, 255, 255, 0.5);
+  font-size: 0.1px;
+  text-align: justify;
+}
+
+.header__logos:after {
+  content: '';
+  display: inline-block;
+  vertical-align: top;
+  width: 100%;
+}
+
+.header__logos img {
+  display: inline-block;
+  vertical-align: middle;
+  margin: 10px;
+  max-height: 70px;
+}
+
 .header__close {
   font-size: 16px;
 }
