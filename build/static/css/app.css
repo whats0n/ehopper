@@ -352,6 +352,10 @@ hr {
   margin-top: 30px;
 }
 
+.box__header {
+  margin-bottom: 20px;
+}
+
 .page-activate .intro {
   margin-top: 50px;
   margin-bottom: 28px;
@@ -1498,6 +1502,12 @@ a.shy {
 .table-body__td[data-column*="orders-total"],
 .table-body__td[data-column*="orders-tips-price"] {
   word-wrap: break-word;
+}
+
+.table-header__th[data-column*="certificate-active"], .table-header__td[data-column*="certificate-active"],
+.table-body__th[data-column*="certificate-active"],
+.table-body__td[data-column*="certificate-active"] {
+  width: 100px;
 }
 
 .table-header__th,
@@ -3413,16 +3423,12 @@ textarea.input {
 .help-close__icon, .help-close__arrow {
   display: inline-block;
   vertical-align: top;
+  font-size: 24px;
   line-height: 50px;
 }
 
 .help-close__icon {
   margin-right: 10px;
-  font-size: 24px;
-}
-
-.help-close__arrow {
-  font-size: 20px;
 }
 
 .modal {
@@ -8738,6 +8744,12 @@ textarea.input {
   .table-body__th[data-column*="orders-action"],
   .table-body__td[data-column*="orders-action"] {
     width: 90px;
+  }
+
+  .table-header__th[data-column*="certificate-active"], .table-header__td[data-column*="certificate-active"],
+  .table-body__th[data-column*="certificate-active"],
+  .table-body__td[data-column*="certificate-active"] {
+    width: 80px;
   }
 
   .toolbar__button strong {

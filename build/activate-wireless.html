@@ -24,22 +24,25 @@
           <div class="header__logo"> <img src="static/img/logo-white.svg" alt="eHopper"> </div>
         </header>
         <!-- end header -->
-        <div class="section section_form">
-          <div class="form form_sm">
-            <div class="form__section">
-              <div class="input-box is-error"> <input type="text" class="simple-input input-box__input " placeholder="Enterprise ID *" required> <button class="input-box__clear">
-		<i class="icon icon-close"></i>
-	</button>
-                <div class="error-message input-box__error-message">Lorem ipsum dolor sit amet, consectetur adipisicing.</div>
+        <div class="section section_inner">
+          <div class="box">
+            <div class="box__header intro muted">To activate this device as a POS terminal, enter the eHopper Account ID and License Key provided in your welcome email:</div>
+            <div>
+              <div class="fieldset fieldset_first">
+                <div class="field ">
+                  <div class="field__inner field__display"> <label class="field__label" for="account_id">Account ID</label>
+                    <div class="field__box"> <input class="input field__input input_lg" id="account_id" type="text" placeholder="required" required autofocus> </div>
+                  </div>
+                </div>
               </div>
-            </div>
-            <div class="form__section">
-              <div class="input-box "> <input type="text" class="simple-input input-box__input " placeholder="License Key *" required> <button class="input-box__clear">
-		<i class="icon icon-close"></i>
-	</button> </div>
-            </div>
-            <div class="form__section"> <button class="btn btn_lg btn_blue btn_block text-uppercase" data-animation="ripple" value="Done">Done</button> </div>
-            <div class="footnote footnote_lg">Not yet registered? <a href="signup.html">Create New Account</a></div>
+              <div class="fieldset">
+                <div class="field ">
+                  <div class="field__inner field__display"> <label class="field__label" for="license_key">License Key</label>
+                    <div class="field__box"> <input class="input field__input input_lg" id="license_key" type="text" placeholder="required" required> </div>
+                  </div>
+                </div>
+              </div> <button class="btn btn_lg btn_primary btn_block fieldset fieldset_last" data-animation="ripple"><span>Activate</span><i class="icon icon-next"></i></button> </div>
+            <div class="footnote box__footnote"> <span>Not yet registered?</span> <a href="#">Create new account</a> </div>
           </div>
         </div>
       </main>
