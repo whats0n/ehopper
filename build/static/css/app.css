@@ -1983,8 +1983,10 @@ article aside.left {
   position: absolute;
   top: 50%;
   left: 50%;
+  padding: 10px;
   margin: -45px 0 0 -225px;
   width: 450px;
+  height: 90px;
   background: rgba(255, 255, 255, 0.5);
   font-size: 0.1px;
   text-align: justify;
@@ -2000,7 +2002,7 @@ article aside.left {
 .header__logos img {
   display: inline-block;
   vertical-align: middle;
-  margin: 10px;
+  margin: 0 10px;
   max-height: 70px;
 }
 
