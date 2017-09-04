@@ -3,7 +3,7 @@
 
   <head>
     <meta charset="utf-8">
-    <title>Activate your POS &bull; eHopper</title>
+    <title>Sync...</title>
     <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <meta name="theme-color" content="#fff">
@@ -25,31 +25,16 @@
         </header>
         <!-- end header -->
         <div class="section section_sticky">
-          <div class="box">
-            <div>
-              <div class="fieldset fieldset_first">
-                <div class="field ">
-                  <div class="field__inner field__display"> <label class="field__label" for="account_id">Account ID</label>
-                    <div class="field__box"> <input class="input field__input input_lg" id="account_id" type="text" placeholder="required" required autofocus> </div>
-                  </div>
-                </div>
-              </div>
-              <div class="fieldset">
-                <div class="field ">
-                  <div class="field__inner field__display"> <label class="field__label" for="license_key">License Key</label>
-                    <div class="field__box"> <input class="input field__input input_lg" id="license_key" type="text" placeholder="required" required> </div>
-                  </div>
-                </div>
-              </div> <button class="btn btn_lg btn_primary btn_block fieldset fieldset_last" data-animation="ripple"><span>Activate</span><i class="icon icon-next"></i></button> </div>
-            <div class="box__meta intro muted">To activate this device as a POS terminal, enter the eHopper Account ID and License Key provided in your welcome email:</div>
-            <div class="footnote box__footnote"> <span>Not yet registered?</span> <a href="#">Create new account</a> </div>
-          </div>
+          <div class="figure box">
+            <div class="figure__sync">
+              <div class="loading figure__loading"></div>
+            </div> <button class="btn btn_lg btn_primary btn_block fieldset fieldset_last" data-animation="ripple">Login</button> </div>
         </div>
       </main>
       <!-- END content -->
       <!-- begin snackbar -->
-      <div class="snackbar " data-snackbar-container="snackbar" data-state="default">
-        <div class="snackbar__message" data-snackbar-content="snackbar"></div>
+      <div class="snackbar is-open" data-snackbar-container="snackbar" data-state="error">
+        <div class="snackbar__message" data-snackbar-content="snackbar">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Optio, sint.</div>
       </div>
       <!-- end snackbar -->
       <!-- begin help -->

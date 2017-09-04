@@ -1,0 +1,32 @@
+---
+title: 'Sync...'
+styles: 
+	- 'pos'
+snackbarOptions: {
+	classList: 'is-open',
+	state: 'error',
+	content: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Optio, sint.'
+}
+---
+{% extends "layouts/_layout.html" %}
+
+{% block content %}
+	
+	<main class="main">
+		{{header.large({
+			logos: [
+				'b2b-logo.png',
+				'wireless-logo.png'
+			]
+		})}}
+		<div class="section section_sticky">
+			<div class="figure box">
+				<div class="figure__sync">
+					<div class="loading figure__loading"></div>
+				</div>
+				<button class="btn btn_lg btn_primary btn_block fieldset fieldset_last" data-animation="ripple">Login</button>
+			</div>
+		</div>
+	</main>
+
+{% endblock %}
