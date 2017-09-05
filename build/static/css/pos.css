@@ -12280,6 +12280,13 @@ textarea.input {
   text-align: justify;
 }
 
+.header__logos:before {
+  content: '';
+  display: inline-block;
+  vertical-align: middle;
+  height: 100%;
+}
+
 .header__logos:after {
   content: '';
   display: inline-block;
