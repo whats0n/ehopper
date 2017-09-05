@@ -1993,14 +1993,8 @@ article aside.left {
   height: 90px;
   background: rgba(255, 255, 255, 0.7);
   font-size: 0.1px;
+  line-height: 70px;
   text-align: justify;
-}
-
-.header__logos:before {
-  content: '';
-  display: inline-block;
-  vertical-align: middle;
-  height: 100%;
 }
 
 .header__logos:after {
