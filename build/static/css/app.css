@@ -3817,6 +3817,11 @@ textarea.input {
   width: 50%;
 }
 
+.figure_sm .figure__sync {
+  padding: 32px 20px;
+  height: 214px;
+}
+
 .figure__title {
   overflow: hidden;
   padding: 0 20px;
@@ -3835,6 +3840,7 @@ textarea.input {
 
 .figure__sync {
   padding: 80px 20px;
+  height: 310px;
   border-radius: 0 0 3px 3px;
   background: #fff;
   text-align: center;
@@ -3855,6 +3861,10 @@ textarea.input {
 .figure__text {
   padding: 20px;
   background: #f8f8f8;
+}
+
+.figure__btn {
+  font-size: 23px;
 }
 
 .display {
