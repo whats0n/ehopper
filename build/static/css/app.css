@@ -2007,6 +2007,7 @@ article aside.left {
   display: inline-block;
   vertical-align: middle;
   margin: 0 10px;
+  max-width: 50%;
   max-height: 70px;
 }
 
