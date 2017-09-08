@@ -1200,6 +1200,7 @@ a.shy {
 }
 
 .settings__sidebar {
+  z-index: 2;
   float: left;
   width: 300px;
 }

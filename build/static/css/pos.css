@@ -3758,6 +3758,10 @@ hr {
   -moz-osx-font-smoothing: grayscale;
 }
 
+.icon-seal:before {
+  content: "\e900";
+}
+
 .icon-diactivate:before {
   content: "\e900";
 }
@@ -4449,6 +4453,7 @@ a.shy {
 }
 
 .settings__sidebar {
+  z-index: 2;
   float: left;
   width: 300px;
 }

@@ -24,6 +24,9 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+.icon-seal:before {
+  content: "\e900";
+}
 .icon-diactivate:before {
   content: "\e900";
 }
