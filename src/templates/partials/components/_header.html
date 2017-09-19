@@ -141,7 +141,7 @@
 
 {% macro large(props) %}
 <!-- begin header -->
-<header class="header header_large">
+<header class="header header_large {{props.classList}}">
 	{% if props.help %}
 		{# <button class="btn-icon header__help" title="Help" data-modal-open="help">
 			<i class="icon icon-help"></i>

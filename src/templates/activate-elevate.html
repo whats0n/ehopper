@@ -1,0 +1,55 @@
+---
+title: 'Activate your POS &bull; eHopper'
+styles: 
+	- 'pos'
+---
+{% extends "layouts/_layout.html" %}
+
+{% block content %}
+	
+	<main class="main">
+		{{header.large({
+			classList: 'header_elevate',
+			logos: [
+				'b2b-white.svg',
+				'elevate-logo.png'
+			]
+		})}}
+		<div class="section section_sticky">
+			<div class="box">
+				<div>
+					<div class="fieldset fieldset_first">
+						<div class="field ">
+							<div class="field__inner field__display">
+								<label class="field__label" for="account_id">Account ID</label>
+								<div class="field__box">
+									<input class="input field__input input_lg" id="account_id" type="text" placeholder="required" required autofocus> 
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="fieldset">
+						<div class="field ">
+							<div class="field__inner field__display">
+								<label class="field__label" for="license_key">License Key</label>
+								<div class="field__box">
+									<input class="input field__input input_lg" id="license_key" type="text" placeholder="required" required> 
+								</div>
+							</div>
+						</div>
+					</div> 
+					<button class="btn btn_lg btn_orange btn_block fieldset fieldset_last" data-animation="ripple">
+						<span>Activate</span>
+						<i class="icon icon-next"></i>
+					</button>
+				</div>
+				<div class="box__meta intro muted">To activate this device as a POS terminal, enter the eHopper Account ID and License Key provided in your welcome email:</div>
+				<div class="footnote box__footnote">
+					<span>Not yet registered?</span>
+					<a href="#">Create new account</a>
+				</div>
+			</div>
+		</div>
+	</main>
+
+{% endblock %}

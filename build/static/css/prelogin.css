@@ -980,6 +980,21 @@ hr {
   background: transparent;
 }
 
+.btn_orange {
+  color: #fff;
+  background: #EF902D;
+}
+
+.btn_orange:active {
+  color: #fff;
+  background: #ed8315;
+}
+
+.no-touch .btn_orange:active {
+  color: #fff;
+  background: #ed8315;
+}
+
 button:disabled, button.is-disabled,
 .btn:disabled,
 .btn.is-disabled {

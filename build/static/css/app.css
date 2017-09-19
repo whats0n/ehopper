@@ -1744,6 +1744,20 @@ article aside.left {
   text-align: center;
 }
 
+.header_elevate {
+  border-bottom: 7px solid #EF902D;
+  background: #2e2e2e;
+}
+
+.header_elevate .header__logos {
+  bottom: -7px;
+  background: rgba(255, 255, 255, 0.3);
+}
+
+.header_elevate .header__logos img {
+  max-height: 100%;
+}
+
 .header__sidebar {
   z-index: 20;
   float: left;
@@ -2324,6 +2338,21 @@ article aside.left {
 .no-touch .btn_transparent:active {
   color: #2e99db;
   background: transparent;
+}
+
+.btn_orange {
+  color: #fff;
+  background: #EF902D;
+}
+
+.btn_orange:active {
+  color: #fff;
+  background: #ed8315;
+}
+
+.no-touch .btn_orange:active {
+  color: #fff;
+  background: #ed8315;
 }
 
 button:disabled, button.is-disabled,
