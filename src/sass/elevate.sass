@@ -1,0 +1,33 @@
+@import helpers/_colors
+@import helpers/_helpers
+@import helpers/_mixins
+
+
+.main-header
+	&_elevate
+		.main-header
+			&__sidebar,
+			&__container,
+			&__fullinfo
+				background: #2e2e2e
+			&__menu
+				color: $white
+				background: #EF902D
+				+active
+					color: $white
+					background: #ed8315
+
+.header 
+	&_elevate
+		border-bottom: 7px solid #EF902D
+		background: #2e2e2e
+		.header__logos
+			bottom: -7px
+			background: rgba($white, 0.3)
+			img
+				max-height: 100%
+
+.toolbar
+  &_default
+    .toolbar__col:not(:last-child)
+      border-right-color: rgba($white, 0.4) !important

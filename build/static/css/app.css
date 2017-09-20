@@ -1744,20 +1744,6 @@ article aside.left {
   text-align: center;
 }
 
-.header_elevate {
-  border-bottom: 7px solid #EF902D;
-  background: #2e2e2e;
-}
-
-.header_elevate .header__logos {
-  bottom: -7px;
-  background: rgba(255, 255, 255, 0.3);
-}
-
-.header_elevate .header__logos img {
-  max-height: 100%;
-}
-
 .header__sidebar {
   z-index: 20;
   float: left;
@@ -3995,10 +3981,6 @@ textarea.input {
 
 .toolbar_delimited {
   border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-}
-
-.toolbar_default .toolbar__col:not(:last-child) {
-  border-right-color: rgba(255, 255, 255, 0.4) !important;
 }
 
 .toolbar__container {

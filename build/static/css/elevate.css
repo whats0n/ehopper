@@ -1,0 +1,38 @@
+.main-header_elevate .main-header__sidebar, .main-header_elevate .main-header__container, .main-header_elevate .main-header__fullinfo {
+  background: #2e2e2e;
+}
+
+.main-header_elevate .main-header__menu {
+  color: #fff;
+  background: #EF902D;
+}
+
+.main-header_elevate .main-header__menu:active {
+  color: #fff;
+  background: #ed8315;
+}
+
+.no-touch .main-header_elevate .main-header__menu:active {
+  color: #fff;
+  background: #ed8315;
+}
+
+.header_elevate {
+  border-bottom: 7px solid #EF902D;
+  background: #2e2e2e;
+}
+
+.header_elevate .header__logos {
+  bottom: -7px;
+  background: rgba(255, 255, 255, 0.3);
+}
+
+.header_elevate .header__logos img {
+  max-height: 100%;
+}
+
+.toolbar_default .toolbar__col:not(:last-child) {
+  border-right-color: rgba(255, 255, 255, 0.4) !important;
+}
+
+/*# sourceMappingURL=elevate.css.map */
