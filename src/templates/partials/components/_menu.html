@@ -22,7 +22,7 @@
 		{ href: 'index.html', icon: 'exit', text: 'Logout' }
 	] %}
 	<!-- begin menu -->
-	<nav class="menu {{props.open}}" data-menu-container="menu">
+	<nav class="menu {{props.open}} {{props.classList}}" data-menu-container="menu">
 		{% if props.open %}
 			<header class="menu__header" data-animation="ripple">
 				<i class="icon icon-back menu__icon"></i>

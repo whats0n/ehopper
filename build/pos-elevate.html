@@ -21,7 +21,7 @@
       <main class="main" data-toggle-class-container="main-container">
         <div class="inner">
           <!-- begin header -->
-          <header class="main-header ">
+          <header class="main-header main-header_elevate">
             <!-- begin button 'back' --><button class="main-header__back btn-back is-hidden">
 		<i class="icon icon-back btn-back__icon"></i>
 		<span class="btn-back__title">Back</span>
@@ -343,11 +343,11 @@
                   </ul>
                 </div>
               </div>
-              <div class="toolbar sidebar__toolbar">
+              <div class="toolbar toolbar_default sidebar__toolbar">
                 <div class="toolbar__container">
                   <div class="toolbar__row">
-                    <div class="toolbar__col toolbar__col_sm"> <a class="btn btn_green btn_lg btn_block toolbar__button" data-animation="ripple" href="payments.html">All Payments</a> </div>
-                    <div class="toolbar__col toolbar__col_lg"> <a class="btn btn_green btn_lg btn_block toolbar__button" data-animation="ripple" href="payment-cash.html" id="cart-cash-button">Cash</a> </div>
+                    <div class="toolbar__col toolbar__col_sm"> <a class="btn btn_orange btn_lg btn_block toolbar__button" data-animation="ripple" href="payments.html">All Payments</a> </div>
+                    <div class="toolbar__col toolbar__col_lg"> <a class="btn btn_orange btn_lg btn_block toolbar__button" data-animation="ripple" href="payment-cash.html" id="cart-cash-button">Cash</a> </div>
                   </div>
                 </div>
               </div>
@@ -697,41 +697,35 @@
                   </div>
                   <div class="tabs__content " data-tab-container="price" data-tab-collection="item-info">
                     <div class="tabs__keyboard">
-                      <div class="tabs__meta text-center">Enter manager's PIN to edit a product price</div>
                       <div class="fieldset fieldset_bordered">
-                        <div class="figure">
-                          <div class="figure__display display">
-                            <ul class="display__list">
-                              <li class="display__item" data-state="active"></li>
-                              <li class="display__item" data-state="active"></li>
-                              <li class="display__item" data-state="default"></li>
-                              <li class="display__item" data-state="default"></li>
-                              <li class="display__item" data-state="default"></li>
-                            </ul>
-                          </div>
-                          <div class="figure__keyboard">
-                            <!-- begin keyboard -->
-                            <div class="main-keyboard numpad ">
-                              <div class="main-keyboard__container ">
-                                <div class="main-keyboard__main">
-                                  <div class="main-keyboard__item"> <button type="button" data-animation="ripple" class="main-keyboard__button ">1</button> </div>
-                                  <div class="main-keyboard__item"> <button type="button" data-animation="ripple" class="main-keyboard__button ">2</button> </div>
-                                  <div class="main-keyboard__item"> <button type="button" data-animation="ripple" class="main-keyboard__button ">3</button> </div>
-                                  <div class="main-keyboard__item"> <button type="button" data-animation="ripple" class="main-keyboard__button ">4</button> </div>
-                                  <div class="main-keyboard__item"> <button type="button" data-animation="ripple" class="main-keyboard__button ">5</button> </div>
-                                  <div class="main-keyboard__item"> <button type="button" data-animation="ripple" class="main-keyboard__button ">6</button> </div>
-                                  <div class="main-keyboard__item"> <button type="button" data-animation="ripple" class="main-keyboard__button ">7</button> </div>
-                                  <div class="main-keyboard__item"> <button type="button" data-animation="ripple" class="main-keyboard__button ">8</button> </div>
-                                  <div class="main-keyboard__item"> <button type="button" data-animation="ripple" class="main-keyboard__button ">9</button> </div>
-                                  <div class="main-keyboard__item"> <button type="button" data-animation="ripple" class="main-keyboard__button " data-numpad="numpad-clear"><i class="icon icon-text icon-clear"></i></button> </div>
-                                  <div class="main-keyboard__item"> <button type="button" data-animation="ripple" class="main-keyboard__button ">0</button> </div>
-                                  <div class="main-keyboard__item"> <button type="button" data-animation="ripple" class="main-keyboard__button " data-numpad="numpad-backspace"><i class="icon icon-text icon-backspace"></i></button> </div>
-                                </div>
-                              </div>
+                        <div class="main-display"> <button class="main-display__clear" data-numpad="numpad-clear"><i class="icon icon-clear"></i></button>
+                          <div class="field field_static">
+                            <div class="field__inner"> <label class="field__label " for="item-custom-price">Custom Price:</label>
+                              <div class="field__box">
+                                <div class="field__units" for="item-custom-price"><span>$</span></div> <span class="field__static">49.95</span> </div>
                             </div>
-                            <!-- end keyboard -->
                           </div>
                         </div>
+                        <!-- begin keyboard -->
+                        <div class="main-keyboard numpad ">
+                          <div class="main-keyboard__container ">
+                            <div class="main-keyboard__main">
+                              <div class="main-keyboard__item"> <button type="button" data-animation="ripple" class="main-keyboard__button ">1</button> </div>
+                              <div class="main-keyboard__item"> <button type="button" data-animation="ripple" class="main-keyboard__button ">2</button> </div>
+                              <div class="main-keyboard__item"> <button type="button" data-animation="ripple" class="main-keyboard__button ">3</button> </div>
+                              <div class="main-keyboard__item"> <button type="button" data-animation="ripple" class="main-keyboard__button ">4</button> </div>
+                              <div class="main-keyboard__item"> <button type="button" data-animation="ripple" class="main-keyboard__button ">5</button> </div>
+                              <div class="main-keyboard__item"> <button type="button" data-animation="ripple" class="main-keyboard__button ">6</button> </div>
+                              <div class="main-keyboard__item"> <button type="button" data-animation="ripple" class="main-keyboard__button ">7</button> </div>
+                              <div class="main-keyboard__item"> <button type="button" data-animation="ripple" class="main-keyboard__button ">8</button> </div>
+                              <div class="main-keyboard__item"> <button type="button" data-animation="ripple" class="main-keyboard__button ">9</button> </div>
+                              <div class="main-keyboard__item"> <button type="button" data-animation="ripple" class="main-keyboard__button ">0</button> </div>
+                              <div class="main-keyboard__item"> <button type="button" data-animation="ripple" class="main-keyboard__button ">00</button> </div>
+                              <div class="main-keyboard__item"> <button type="button" data-animation="ripple" class="main-keyboard__button " data-numpad="numpad-backspace"><i class="icon icon-backspace"></i></button> </div>
+                            </div>
+                          </div>
+                        </div>
+                        <!-- end keyboard -->
                       </div>
                     </div>
                   </div>
@@ -1113,7 +1107,7 @@
       <!-- end help -->
       <!-- END content -->
       <!-- begin menu -->
-      <nav class="menu  " data-menu-container="menu">
+      <nav class="menu  menu_elevate" data-menu-container="menu">
         <header class="menu__header" data-menu-close="menu" data-animation="ripple"> <i class="icon icon-back menu__icon"></i>
           <div class="title-xlg menu__title">Acme Inc.</div>
         </header>

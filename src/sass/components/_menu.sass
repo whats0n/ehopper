@@ -13,6 +13,14 @@
   transition: transform 0.3s ease-in-out
   &.is-open
     +gpu
+  &_elevate
+    .menu
+      &__header
+        color: $white
+        background: #EF902D
+        +active
+          color: $white
+          background: #ed8315
   &__header
     position: absolute
     z-index: 10

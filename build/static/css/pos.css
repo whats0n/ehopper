@@ -7229,6 +7229,10 @@ textarea.input {
   border-bottom: 1px solid rgba(0, 0, 0, 0.1);
 }
 
+.toolbar_default .toolbar__col:not(:last-child) {
+  border-right-color: rgba(255, 255, 255, 0.4) !important;
+}
+
 .toolbar__container {
   display: table;
   table-layout: fixed;
@@ -9224,6 +9228,21 @@ textarea.input {
 
 .menu.is-open {
   transform: translate3d(0, 0, 0);
+}
+
+.menu_elevate .menu__header {
+  color: #fff;
+  background: #EF902D;
+}
+
+.menu_elevate .menu__header:active {
+  color: #fff;
+  background: #ed8315;
+}
+
+.no-touch .menu_elevate .menu__header:active {
+  color: #fff;
+  background: #ed8315;
 }
 
 .menu__header {
@@ -12441,6 +12460,25 @@ textarea.input {
 .is-poynt .main-header_simple-search .main-header__title {
   padding-right: 300px;
   padding-left: 130px;
+}
+
+.main-header_elevate .main-header__sidebar, .main-header_elevate .main-header__container, .main-header_elevate .main-header__fullinfo {
+  background: #2e2e2e;
+}
+
+.main-header_elevate .main-header__menu {
+  color: #fff;
+  background: #EF902D;
+}
+
+.main-header_elevate .main-header__menu:active {
+  color: #fff;
+  background: #ed8315;
+}
+
+.no-touch .main-header_elevate .main-header__menu:active {
+  color: #fff;
+  background: #ed8315;
 }
 
 .main-header__sidebar {
