@@ -34,7 +34,8 @@
 			color: $white
 			background: #ed8315
 
-.btn.fieldset_last
+.btn.fieldset_last,
+.modal-terms__submit
 	color: $white
 	background: #EF902D
 	+active
@@ -48,3 +49,23 @@
 		+active
 			color: $white
 			background: #ed8315
+
+//scrollbar
+[data-scrollbar="rounded"]
+	&::-webkit-scrollbar
+		display: initial !important
+	&::-webkit-scrollbar-thumb
+		background: #EF902D
+		+hover
+			background: #ed8315
+
+[data-scrollbar="rounded"]
+	&::-webkit-scrollbar
+		&:vertical
+			width: 12px
+			background: linear-gradient(to right, transparent 5px, #EF902D 5px, #EF902D 6px, transparent 6px)
+		&:horizontal
+			height: 12px
+			background: linear-gradient(to bottom, transparent 5px, #EF902D 5px, #EF902D 6px, transparent 6px)
+	&::-webkit-scrollbar-thumb
+		border-radius: 6px

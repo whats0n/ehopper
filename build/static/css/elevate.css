@@ -50,17 +50,20 @@
   background: #ed8315;
 }
 
-.btn.fieldset_last {
+.btn.fieldset_last,
+.modal-terms__submit {
   color: #fff;
   background: #EF902D;
 }
 
-.btn.fieldset_last:active {
+.btn.fieldset_last:active,
+.modal-terms__submit:active {
   color: #fff;
   background: #ed8315;
 }
 
-.no-touch .btn.fieldset_last:active {
+.no-touch .btn.fieldset_last:active, .no-touch
+.modal-terms__submit:active {
   color: #fff;
   background: #ed8315;
 }
@@ -78,6 +81,32 @@
 .no-touch .menu__header:active {
   color: #fff;
   background: #ed8315;
+}
+
+[data-scrollbar="rounded"]::-webkit-scrollbar {
+  display: initial !important;
+}
+
+[data-scrollbar="rounded"]::-webkit-scrollbar-thumb {
+  background: #EF902D;
+}
+
+.no-touch [data-scrollbar="rounded"]::-webkit-scrollbar-thumb:hover {
+  background: #ed8315;
+}
+
+[data-scrollbar="rounded"]::-webkit-scrollbar:vertical {
+  width: 12px;
+  background: linear-gradient(to right, transparent 5px, #EF902D 5px, #EF902D 6px, transparent 6px);
+}
+
+[data-scrollbar="rounded"]::-webkit-scrollbar:horizontal {
+  height: 12px;
+  background: linear-gradient(to bottom, transparent 5px, #EF902D 5px, #EF902D 6px, transparent 6px);
+}
+
+[data-scrollbar="rounded"]::-webkit-scrollbar-thumb {
+  border-radius: 6px;
 }
 
 /*# sourceMappingURL=elevate.css.map */
