@@ -4634,21 +4634,6 @@ textarea.input {
   transform: translate3d(0, 0, 0);
 }
 
-.menu_elevate .menu__header {
-  color: #fff;
-  background: #EF902D;
-}
-
-.menu_elevate .menu__header:active {
-  color: #fff;
-  background: #ed8315;
-}
-
-.no-touch .menu_elevate .menu__header:active {
-  color: #fff;
-  background: #ed8315;
-}
-
 .menu__header {
   position: absolute;
   z-index: 10;

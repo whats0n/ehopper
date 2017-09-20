@@ -11,7 +11,6 @@ styles: [
 	<main class="main" data-toggle-class-container="main-container">
 		<div class="inner">
 			{{header.call({
-				classList: 'main-header_elevate',
 				backBtnClassList: 'is-hidden',
 				titleClassList: 'is-hidden',
 				helpBtnClassList: 'is-hidden',
@@ -176,13 +175,13 @@ styles: [
 							</ul>
 						</div>
 					</div>
-					<div class="toolbar toolbar_default sidebar__toolbar">
+					<div class="toolbar sidebar__toolbar">
 						<div class="toolbar__container">
 							<div class="toolbar__row">
 								<div class="toolbar__col toolbar__col_sm">
 									{{mixins.button({
 										tagName: 'a',
-										classList: 'btn btn_orange btn_lg btn_block toolbar__button',
+										classList: 'btn btn_green btn_lg btn_block toolbar__button',
 										attrs: 'data-animation="ripple" href="payments.html"',
 										content: 'All Payments'
 									})}}
@@ -190,7 +189,7 @@ styles: [
 								<div class="toolbar__col toolbar__col_lg">
 									{{mixins.button({
 										tagName: 'a',
-										classList: 'btn btn_orange btn_lg btn_block toolbar__button',
+										classList: 'btn btn_green btn_lg btn_block toolbar__button',
 										attrs: 'data-animation="ripple" href="payment-cash.html" id="cart-cash-button"',
 										content: 'Cash'
 									})}}
@@ -408,7 +407,6 @@ styles: [
 
 {% block navigation %}
 	{{menu.call({ 
-		classList: 'menu_elevate',
 		active: 0 
 	})}}
 {% endblock %}
