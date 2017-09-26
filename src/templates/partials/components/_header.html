@@ -26,7 +26,7 @@
 
 	{% if props.smLogo %}
 		<div class="header__logo header__logo_sm">
-			<img src="static/img/logo-white.svg" alt="eHopper">
+			<img src="static/img/{{props.smLogoSrc or 'logo-white.svg'}}" alt="eHopper">
 		</div>
 	{% endif %}
 
