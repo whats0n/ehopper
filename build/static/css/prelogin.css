@@ -2162,11 +2162,42 @@ textarea.input {
   visibility: visible;
 }
 
+.modal_sm .modal__container {
+  max-width: 300px;
+  background: #fff;
+}
+
 .modal__container {
   display: inline-block;
   vertical-align: middle;
   width: 100%;
   box-shadow: 0 0 6px 2px rgba(0, 0, 0, 0.2);
+}
+
+.modal__header {
+  padding: 20px;
+  color: #fff;
+  background: #2e99db;
+}
+
+.modal__body {
+  padding: 10px 20px 5px;
+  font-size: 14px;
+  text-align: left;
+}
+
+.modal__footer {
+  padding: 20px;
+  border-top: 1px solid #bdc3c7;
+}
+
+.modal__footer .btn {
+  min-width: 125px;
+}
+
+.modal__title {
+  font-size: 24px;
+  font-family: 'Roboto Bold', Arial, sans-serif;
 }
 
 .modal-terms {

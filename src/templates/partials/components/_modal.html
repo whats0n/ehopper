@@ -123,3 +123,21 @@
 </div>
 <!-- end confirm -->
 {% endmacro %}
+
+{% macro modalSM(props) %}
+<!-- begin modalSM -->
+<div class="modal modal_sm {{props.classList}}" data-modal="{{props.name}}">
+	<div class="modal__container" data-modal-container="{{props.name}}">
+		<div class="modal__header">
+			<div class="modal__title">{{props.title | safe}}</div>
+		</div>
+		<div class="modal__body">
+			{{props.content | safe}}
+		</div>
+		<div class="modal__footer {{props.footerClassList}}">
+			<button class="btn btn_blue text-uppercase">{{props.btn or 'OK'}}</button>
+		</div>
+	</div>
+</div>
+<!-- end modalSM -->
+{% endmacro %}
