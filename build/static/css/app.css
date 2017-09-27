@@ -1987,7 +1987,7 @@ article aside.left {
 }
 
 .header__logo_multiple {
-  padding: 40px 20px 10px;
+  padding: 35px 20px 5px;
   height: 90px;
   font-size: 0.1px;
   line-height: 1;
@@ -1999,6 +1999,10 @@ article aside.left {
   display: inline-block;
   vertical-align: top;
   width: 100%;
+}
+
+.header__logo_multiple img {
+  max-height: 50px;
 }
 
 .header__logos {
