@@ -14,7 +14,7 @@
 	<!-- begin tabs container -->
 	<div class="tabs__container">
 		{% for item in props.list %}
-		    <div class="tabs__content {{item.contentClass}} {%- if loop.index0 === 0 %} is-open {%- endif -%}" data-tab-container="{{item.name}}" data-tab-collection="{{props.name}}">
+		    <div class="tabs__content {{item.contentClass}} {%- if loop.index0 === 0 %} is-open {%- endif -%}" data-tab-container="{{item.name}}" data-tab-collection="{{props.name}}" data-scrollbar="default">
 	    		{% include item.content %}
 		    </div>
 		{% endfor %}
