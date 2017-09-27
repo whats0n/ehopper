@@ -10914,6 +10914,17 @@ textarea.input {
   font-family: 'Roboto Light', Arial, sans-serif;
 }
 
+.iframe-wrapper {
+  width: 100%;
+}
+
+.iframe-wrapper iframe,
+.iframe-wrapper img {
+  display: block;
+  margin: 0 auto 20px;
+  max-width: 100%;
+}
+
 .sm-box {
   position: relative;
   padding: 10px;
@@ -12315,7 +12326,24 @@ textarea.input {
 }
 
 .header__logo_sm img {
+  display: inline-block;
+  vertical-align: middle;
   max-height: 40px;
+}
+
+.header__logo_multiple {
+  padding: 40px 20px 10px;
+  height: 90px;
+  font-size: 0.1px;
+  line-height: 1;
+  text-align: justify;
+}
+
+.header__logo_multiple:after {
+  content: '';
+  display: inline-block;
+  vertical-align: top;
+  width: 100%;
 }
 
 .header__logos {

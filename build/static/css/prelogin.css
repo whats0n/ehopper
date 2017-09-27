@@ -6322,6 +6322,17 @@ textarea.input {
   font-family: 'Roboto Light', Arial, sans-serif;
 }
 
+.iframe-wrapper {
+  width: 100%;
+}
+
+.iframe-wrapper iframe,
+.iframe-wrapper img {
+  display: block;
+  margin: 0 auto 20px;
+  max-width: 100%;
+}
+
 .prelogin {
   background: #eee;
 }

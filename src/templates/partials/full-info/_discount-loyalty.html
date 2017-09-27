@@ -1,0 +1,110 @@
+{% import '../_mixins.html' as mixins %}
+{% import '../components/_keyboard.html' as keyboard %}
+<div class="tabs__keyboard">
+	{% include 'partials/components/_loyalty-iframe.html' %}
+	{# {{keyboard.display({
+		field: {
+			switch: {
+				left: '$',
+				right: '%',
+				id: 'discount-switcher'
+			},
+			staticInput: true,
+			classList: 'field_static field_currency',
+			unitsLeft: '$',
+			unitsRight: '%',
+			id: 'item-discount',
+			value: '15'
+		},
+		dividerNone: true,
+		keyboard: {
+			size: 'keyboard__sm',
+			discount: [
+				{
+					content: '5%'
+				},
+				{
+					content: '10%'
+				},
+				{
+					content: '15%'
+				},
+				{
+					content: '20%'
+				}
+			],
+			keyboardSide: [
+				{
+					attrs: 'data-numpad="numpad-backspace"',
+					content: '<i class="icon icon-text icon-backspace"></i>'
+				},
+				{
+					content: 'Done',
+					attrs: 'value="numpad-submit"',
+					classList: 'keyboard__submit',
+					colspan: '3'
+				}
+			],
+			keyboardMain: [
+				{
+					content: '1'
+				},
+				{
+					content: '2'
+				},
+				{
+					content: '3'
+				},
+				{
+					content: '4'
+				},
+				{
+					content: '5'
+				},
+				{
+					content: '6'
+				},
+				{
+					content: '7'
+				},
+				{
+					content: '8'
+				},
+				{
+					content: '9'
+				},
+				{
+					content: '0'
+				},
+				{
+					content: '00'
+				},
+				{
+					attrs: 'data-numpad="numpad-clear"',
+					content: '<i class="icon icon-text icon-clear"></i>'
+				}
+			]
+		}
+	})}} #}
+	<div class="fieldset fieldset_bordered">
+		<div class="main-display">
+			<button class="main-display__clear" data-numpad="numpad-clear"><i class="icon icon-clear"></i></button>
+			{{mixins.field({
+				switch: {
+					left: '$',
+					right: '%',
+					id: 'discount-switcher'
+				},
+				staticInput: true,
+				classList: 'field_static field_currency',
+				unitsLeft: '$',
+				unitsRight: '%',
+				id: 'item-discount',
+				value: '15'
+			})}}
+		</div>
+		{{keyboard.call({
+			shortcuts: [ { content: '5%' }, { content: '10%' }, { content: '15%' } ]
+		})}}
+	</div>
+</div>

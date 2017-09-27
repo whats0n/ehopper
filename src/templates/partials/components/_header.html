@@ -30,6 +30,14 @@
 		</div>
 	{% endif %}
 
+	{% if props.smLogos %}
+		<div class="header__logo header__logo_sm header__logo_multiple">
+			{% for img in props.smLogos %}
+			    <img src="static/img/{{img}}" alt="/">
+			{% endfor %}
+		</div>
+	{% endif %}
+
 	{% if props.logos %}
 		<div class="header__logos">
 			{% for img in props.logos %}
