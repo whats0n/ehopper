@@ -8,11 +8,21 @@ bodyClasses: 'body-darkgray'
 
 {% block content %}
 	<main class="main">
-		{{header.simple({
+		{# {{header.simple({
 			help: true,
 			smLogo: true,
-			smLogoSrc: 'logo-white-byb2bsoft.svg',
+			logos: [
+				'b2b-logo.png',
+				'logo-white.svg'
+			],
 			headerClassList: 'header_medium'
+		})}} #}
+		{{header.large({
+			help: true,
+			logos: [
+				'logo-white.svg',
+				'b2b-logo.png'
+			]
 		})}}
 		<div class="content">
 			<div class="figure box">

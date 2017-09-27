@@ -30,6 +30,14 @@
 		</div>
 	{% endif %}
 
+	{% if props.logos %}
+		<div class="header__logos">
+			{% for img in props.logos %}
+			    <img src="static/img/{{img}}" alt="/">
+			{% endfor %}
+		</div>
+	{% endif %}
+
 	{% if props.delete %}
 		<button class="header__delete btn-icon icon icon-delete" 
 			type="button" 
