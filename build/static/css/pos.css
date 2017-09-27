@@ -5249,6 +5249,10 @@ article aside.left {
   font-size: 16px;
 }
 
+.form-label_bold {
+  font-family: 'Roboto Medium', Arial, sans-serif;
+}
+
 .error-tooltip {
   position: absolute;
   top: 50%;
