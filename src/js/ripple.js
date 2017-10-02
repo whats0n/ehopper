@@ -14,13 +14,23 @@
 		const y = pageY - offset.top;
 		
 		const circle = document.createElement('span');
+		
 		circle.classList.add('ripple-circle');
 		circle.style.top = `${y - size/2}px`;
 		circle.style.left = `${x - size/2}px`;
 		circle.style.width = `${size}px`;
 		circle.style.height = `${size}px`;
-		circle.addEventListener('animationend', e => circle.remove(), false);
-		circle.addEventListener('webkitAnimationEnd', e => circle.remove(), false);
+
+		const deleteCircle = setTimeout(() => circle.remove(), 30);
+
+		circle.addEventListener('animationend', e => {
+			circle.remove();
+			clearTimeout(deleteCircle);
+		}, false);
+		circle.addEventListener('webkitAnimationEnd', e => {
+			circle.remove();
+			clearTimeout(deleteCircle);
+		}, false);
 
 		target.appendChild(circle);
 	};

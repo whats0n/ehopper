@@ -3980,10 +3980,6 @@ textarea.input {
   visibility: hidden;
 }
 
-.horizontal-menu__link[data-animation="ripple"] {
-  animation-duration: 0.5s;
-}
-
 .horizontal-menu__link .icon {
   vertical-align: top;
   width: 16px;
