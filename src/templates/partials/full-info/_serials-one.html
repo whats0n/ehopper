@@ -1,0 +1,25 @@
+{% import "partials/components/_card.html" as card %}
+{% import "partials/form/_build.html" as form %}
+<div class="sm-grid sm-grid_full tabs__info">
+	{% set sections = [
+		{
+			text: "Input serial number of product you're selling:"
+		}
+	] %}
+	<div class="sm-grid__body">
+		{% for section in sections %}
+			{% if section.text %}
+				<div class="sm-grid__row">
+					<p>{{section.text}}</p>
+				</div>
+			{% endif %}
+			<div class="sm-grid__row">
+				<div class="sm-grid__col">
+					<div class="sm-grid__field">
+						{{form.inputBox.call()}}
+					</div>
+				</div>
+			</div>
+		{% endfor %}
+	</div>
+</div>

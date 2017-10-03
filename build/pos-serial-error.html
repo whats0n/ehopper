@@ -656,7 +656,7 @@
                     <li class="tabs__item "> <a href="#" class="tabs__btn" data-tab-open="discount" data-tab-collection="item-info" data-animation="ripple">Discount</a> </li>
                     <li class="tabs__item "> <a href="#" class="tabs__btn" data-tab-open="modifiers" data-tab-collection="item-info" data-animation="ripple">Modifiers</a> </li>
                     <li class="tabs__item "> <a href="#" class="tabs__btn" data-tab-open="matrix" data-tab-collection="item-info" data-animation="ripple">Matrix</a> </li>
-                    <li class="tabs__item "> <a href="#" class="tabs__btn" data-tab-open="serials" data-tab-collection="item-info" data-animation="ripple">Serials</a> </li>
+                    <li class="tabs__item is-error"> <a href="#" class="tabs__btn" data-tab-open="serials" data-tab-collection="item-info" data-animation="ripple">Serials</a> </li>
                     <li class="tabs__item "> <a href="#" class="tabs__btn" data-tab-open="notes" data-tab-collection="item-info" data-animation="ripple">Notes</a> </li>
                   </ul>
                 </div>
@@ -731,7 +731,6 @@
                   </div>
                   <div class="tabs__content " data-tab-container="discount" data-tab-collection="item-info" data-scrollbar="default">
                     <div class="tabs__keyboard">
-                      <div class="iframe-wrapper"> <iframe data-bind="visible: marketingAndLoyalty, attr: { src: widgetUrl }" id="marketingAndLoyaltyFrame" src="https://login.clearlinemobile.com/coupons/default.asp?guid={289F62EA-5309-466C-A279-CB3219999120}" style="display: none;"></iframe>                        <img src="static/img/loyalty-iframe.jpg" alt=""> </div>
                       <div class="fieldset fieldset_bordered">
                         <div class="main-display"> <button class="main-display__clear" data-numpad="numpad-clear"><i class="icon icon-clear"></i></button>
                           <div class="field field_static field_currency">
@@ -1027,46 +1026,21 @@
                     <div class="sm-grid sm-grid_full tabs__info">
                       <div class="sm-grid__body">
                         <div class="sm-grid__row">
-                          <p>Select serial number of product you&#39;re selling:</p>
+                          <p>Input serial number of product you&#39;re selling:</p>
                         </div>
                         <div class="sm-grid__row">
-                          <div class="sm-grid__col sm-grid__col_sm">
-                            <div class="card-serial "> <label class="card-serial__label">
-		<input type="checkbox" >
-		<span class="card-serial__content" data-animation="ripple">
-			<span class="card-serial__title">79049XXXA4S</span>
-		</span>
-	</label> </div>
-                          </div>
-                          <div class="sm-grid__col sm-grid__col_sm">
-                            <div class="card-serial "> <label class="card-serial__label">
-		<input type="checkbox" >
-		<span class="card-serial__content" data-animation="ripple">
-			<span class="card-serial__title">30384XXX991</span>
-		</span>
-	</label> </div>
-                          </div>
-                          <div class="sm-grid__col sm-grid__col_sm">
-                            <div class="card-serial "> <label class="card-serial__label">
-		<input type="checkbox" >
-		<span class="card-serial__content" data-animation="ripple">
-			<span class="card-serial__title">ULTRALONG-003233XX991-003233XX991</span>
-		</span>
-	</label> </div>
-                          </div>
-                          <div class="sm-grid__col sm-grid__col_sm">
-                            <div class="card-serial "> <label class="card-serial__label">
-		<input type="checkbox" >
-		<span class="card-serial__content" data-animation="ripple">
-			<span class="card-serial__title">TST0012345</span>
-		</span>
-	</label> </div>
+                          <div class="sm-grid__col">
+                            <div class="sm-grid__field">
+                              <div class="input-box is-error"> <input type="text" class="simple-input input-box__input " placeholder="" value="Hasd1032-asdX0321-lo0992"> <button class="input-box__clear">
+		<i class="icon icon-close"></i>
+	</button>
+                                <div class="error-message input-box__error-message">Serial number must be unique</div>
+                              </div>
+                            </div>
                           </div>
                         </div>
                       </div>
-                      <!-- <div class="sm-grid__footer">
-		<button class="btn btn_lg btn_primary btn_block sm-grid__btn" data-animation="ripple">Done</button>
-	</div> --></div>
+                    </div>
                   </div>
                   <div class="tabs__content " data-tab-container="notes" data-tab-collection="item-info" data-scrollbar="default">
                     <div class="tabs__notes">

@@ -9525,7 +9525,17 @@ textarea.input {
   border-right: 2px solid rgba(0, 0, 0, 0.1);
 }
 
+.tabs__item.is-hidden {
+  visibility: hidden;
+}
+
+.tabs__item.is-error .tabs__btn {
+  color: #ec4a41;
+  background: rgba(236, 74, 65, 0.3);
+}
+
 .tabs__btn {
+  position: relative;
   display: block;
   padding: 20px 10px;
   color: inherit;
@@ -10250,6 +10260,10 @@ textarea.input {
 
 .sm-grid__tabs .btn {
   min-width: 120px;
+}
+
+.sm-grid__field {
+  max-width: 400px;
 }
 
 .sm-card {

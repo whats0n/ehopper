@@ -24,7 +24,14 @@
 		vertical-align: top
 		&:not(:last-child)
 			border-right: 2px solid rgba($black, 0.1)
+		&.is-hidden
+			visibility: hidden
+		&.is-error
+			.tabs__btn
+				color: $red
+				background: rgba($red, 0.3)
 	&__btn
+		position: relative
 		display: block
 		padding: 20px 10px
 		color: inherit
