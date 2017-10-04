@@ -9,46 +9,6 @@ bodyClasses: 'animated'
 {% extends "layouts/_layout.html" %}
 
 {% block content %}
-	{#
-		poynt adaptive:
-		======================
-		loading +
-		activate +
-		deactivate +
-		sync +
-		pin +
-		pos +
-		register-open +
-		register-close +
-		settings +
-		cash-drawer +
-		printer-setup +
-		payments +
-		payment-credit +
-		payment-ebt +
-		payment-debit +
-		payment-external +
-		payment-split +
-		payment-cash +
-		payment-receip +
-		orders +
-		orders-loading +
-		order +
-		order-taxes +
-		order-save +
-		order-note +
-		signature -
-		tips + 
-		terminal-card +
-		terminal-cash +
-		payin +
-		loyalty +
-		help +
-		signup +
-		create-customer +
-		refund +
-		create-customer-alt +
-	#}
 	{% set pages = [
 		'loading',
 		'activate',
@@ -59,6 +19,7 @@ bodyClasses: 'animated'
 		'pos',
 		'pos-serial',
 		'pos-serial-error',
+		'pos-serial-error-order',
 		'pos-loyalty',
 		'pos-price-pin',
 		'pos-register-closed',
@@ -109,6 +70,7 @@ bodyClasses: 'animated'
 	] %}
 	<ul style="padding: 30px; font-size: 16px; max-height: 100%; overflow: auto;">
 		<li style="padding-bottom: 30px; font-size: 24px; "><a href="ui-components.html" target="_blank" style="padding: 10px; display: inline-block;">ui-components</a></li>
+		<li style="padding-bottom: 30px; font-size: 24px; "><a href="ui-gide.html" target="_blank" style="padding: 10px; display: inline-block;">ui-gide</a></li>
 		{% for page in pages %}
 		    <li>{% if loop.index < 10 %}0{% endif %}{{loop.index}}. <a href="{{page}}.html" target="_blank" style="padding: 10px; display: inline-block;">{{page}}</a></li>
 		{% endfor %}

@@ -4050,15 +4050,12 @@ a.shy {
   font-size: 70%;
 }
 
-.error-message {
-  color: #ec4a41;
-}
-
 .muted {
   opacity: 0.5;
 }
 
-.color-red {
+.color-red,
+.error-message {
   color: #ec4a41;
 }
 
@@ -4078,54 +4075,6 @@ a.shy {
   color: #d3d3d3;
 }
 
-.small {
-  font-size: 70%;
-}
-
-.big {
-  font-size: 120%;
-}
-
-.xl {
-  font-size: 150%;
-}
-
-.text-success {
-  color: #66BB6A;
-}
-
-.text-primary {
-  color: #2e99db;
-}
-
-.text-danger {
-  color: #FF6431;
-}
-
-.bg-silver {
-  background: #eeeeee;
-}
-
-.bg-success {
-  background: #66BB6A !important;
-}
-
-.bg-primary {
-  background: #2e99db !important;
-}
-
-.bg-danger {
-  background: #FF6431 !important;
-}
-
-.pull-right {
-  float: right !important;
-}
-
-.pull-left {
-  float: left !important;
-}
-
 .text-uppercase {
   text-transform: uppercase;
 }
@@ -4140,21 +4089,6 @@ a.shy {
 
 .text-right {
   text-align: right !important;
-}
-
-.bg-white {
-  background: #fff;
-}
-
-.labeled-info {
-  font-size: 16px;
-}
-
-.labeled-info__label,
-.labeled-info label {
-  display: block;
-  color: #aaa;
-  font-size: 12px;
 }
 
 .main,
@@ -6806,7 +6740,7 @@ textarea.input {
   padding: 30px 0;
   color: #4b5262;
   background: rgba(0, 0, 0, 0.3);
-  font-family: 'OpenSans Regular', 'Roboto', Arial, sans-serif;
+  font-family: 'OpenSans Regular', 'Roboto Regular', Arial, sans-serif;
 }
 
 .modal-terms__container {
@@ -7129,7 +7063,7 @@ textarea.input {
   height: 60px;
   color: #fff;
   background: rgba(255, 255, 255, 0.1);
-  font-weight: 700;
+  font-family: 'Roboto Bold', Arial, sans-serif;
   font-size: 20px;
   line-height: 60px;
   text-overflow: ellipsis;
@@ -10263,7 +10197,20 @@ textarea.input {
 }
 
 .sm-grid__field {
+  float: left;
   max-width: 400px;
+}
+
+.sm-grid__field + .sm-grid__button {
+  padding-left: 20px;
+}
+
+.sm-grid__button {
+  float: left;
+}
+
+.sm-grid__button .btn {
+  min-width: 140px;
 }
 
 .sm-card {
@@ -13049,10 +12996,9 @@ textarea.input {
   display: none;
 }
 
-.ui-title {
-  font-family: 'Roboto Bold', Arial, sans-serif;
-  font-size: 28px;
-  padding: 10px;
+.ui-wrapper {
+  overflow: auto;
+  height: 100%;
 }
 
 .ui-container {
@@ -13061,12 +13007,12 @@ textarea.input {
 }
 
 .ui-container:not(:first-child) {
-  border-top: 5px solid #333;
+  border-top: 10px solid #333;
 }
 
-.ui-label {
-  padding-bottom: 5px;
-  font-size: 14px;
+.ui-section {
+  margin: 10px 0;
+  border-top: 2px solid #333;
 }
 
 .ui-col {
@@ -13075,10 +13021,42 @@ textarea.input {
   padding: 10px;
   border-bottom: 1px solid #eee;
   width: 100%;
+  font-size: 14px;
 }
 
 .ui-col_md {
   width: 50%;
+}
+
+.ui-component {
+  padding-top: 20px;
+}
+
+.ui-label {
+  padding-bottom: 5px;
+  font-family: 'Roboto Bold', Arial, sans-serif;
+  font-size: 14px;
+  text-transform: uppercase;
+}
+
+.ui-title {
+  font-family: 'Roboto Bold', Arial, sans-serif;
+  font-size: 28px;
+  padding: 10px;
+}
+
+.ui-subtitle {
+  font-family: 'Roboto Medium', Arial, sans-serif;
+  font-size: 24px;
+  padding: 10px;
+}
+
+.ui-list {
+  font-size: 14px;
+}
+
+.ui-list li {
+  padding: 3px 10px;
 }
 
 article.pos main {

@@ -362,15 +362,12 @@ a.shy {
   font-size: 70%;
 }
 
-.error-message {
-  color: #ec4a41;
-}
-
 .muted {
   opacity: 0.5;
 }
 
-.color-red {
+.color-red,
+.error-message {
   color: #ec4a41;
 }
 
@@ -390,54 +387,6 @@ a.shy {
   color: #d3d3d3;
 }
 
-.small {
-  font-size: 70%;
-}
-
-.big {
-  font-size: 120%;
-}
-
-.xl {
-  font-size: 150%;
-}
-
-.text-success {
-  color: #66BB6A;
-}
-
-.text-primary {
-  color: #2e99db;
-}
-
-.text-danger {
-  color: #FF6431;
-}
-
-.bg-silver {
-  background: #eeeeee;
-}
-
-.bg-success {
-  background: #66BB6A !important;
-}
-
-.bg-primary {
-  background: #2e99db !important;
-}
-
-.bg-danger {
-  background: #FF6431 !important;
-}
-
-.pull-right {
-  float: right !important;
-}
-
-.pull-left {
-  float: left !important;
-}
-
 .text-uppercase {
   text-transform: uppercase;
 }
@@ -452,21 +401,6 @@ a.shy {
 
 .text-right {
   text-align: right !important;
-}
-
-.bg-white {
-  background: #fff;
-}
-
-.labeled-info {
-  font-size: 16px;
-}
-
-.labeled-info__label,
-.labeled-info label {
-  display: block;
-  color: #aaa;
-  font-size: 12px;
 }
 
 html,
@@ -2210,7 +2144,7 @@ textarea.input {
   padding: 30px 0;
   color: #4b5262;
   background: rgba(0, 0, 0, 0.3);
-  font-family: 'OpenSans Regular', 'Roboto', Arial, sans-serif;
+  font-family: 'OpenSans Regular', 'Roboto Regular', Arial, sans-serif;
 }
 
 .modal-terms__container {
@@ -2533,7 +2467,7 @@ textarea.input {
   height: 60px;
   color: #fff;
   background: rgba(255, 255, 255, 0.1);
-  font-weight: 700;
+  font-family: 'Roboto Bold', Arial, sans-serif;
   font-size: 20px;
   line-height: 60px;
   text-overflow: ellipsis;
@@ -5667,7 +5601,20 @@ textarea.input {
 }
 
 .sm-grid__field {
+  float: left;
   max-width: 400px;
+}
+
+.sm-grid__field + .sm-grid__button {
+  padding-left: 20px;
+}
+
+.sm-grid__button {
+  float: left;
+}
+
+.sm-grid__button .btn {
+  min-width: 140px;
 }
 
 .sm-card {
@@ -6381,7 +6328,7 @@ textarea.input {
   max-width: 450px;
   height: 60px;
   background: rgba(255, 255, 255, 0.1);
-  font-weight: 700;
+  font-family: 'Roboto Bold', Arial, sans-serif;
   font-size: 20px;
   line-height: 60px;
   text-overflow: ellipsis;
@@ -6400,7 +6347,7 @@ textarea.input {
 .footer {
   margin-top: 30px;
   color: #aaa;
-  font-weight: 700;
+  font-family: 'Roboto Bold', Arial, sans-serif;
   text-align: center;
 }
 

@@ -1,0 +1,112 @@
+---
+title: 'UI Components &bull; eHopper POS'
+oldStyles: [
+	'font-awesome.min',
+	'durandal',
+	'toastr.min',
+	'jquery-ui.min',
+	'app',
+	'ui-update',
+	'gide'
+]
+styles: [
+	'ui-gide'
+]
+---
+{% extends "layouts/_layout.html" %}
+
+{% import 'data/_ui-gide.html' as gide %}
+
+{% block content %}
+	{% set labels = {
+		code: 'html code:',
+		component: 'component view:'
+	} %}
+	<main class="main">
+		<div class="inner ui-wrapper">
+			<!-- begin STYLES -->
+			<div class="ui-container">
+				<div class="ui-title">Styles:</div>
+				<ul class="ui-list">
+					{% for item in oldStyles %}
+						<li>
+							<a href="static/old-css/{{item}}.css" target="_blank">{{item}}.css</a>
+						</li>
+					{% endfor %}
+				</ul>
+			</div>
+			<!-- end STYLES -->
+			<!-- begin FONTS -->
+			<div class="ui-container">
+				<div class="ui-title">Fonts:</div>
+				<ul class="ui-list">
+					{% for item in gide.fonts %}
+						<li>{{item | safe}}</li>
+					{% endfor %}
+				</ul>
+			</div>
+			<!-- end FONTS -->
+			<!-- begin TYPOGRAPHY -->
+			<div class="ui-container">
+				<div class="ui-title">Typography:</div>
+				<div class="ui-section">
+					<div class="ui-subtitle">Titles:</div>
+					{% for item in gide.headers %}
+						<div class="ui-col ui-col_md">
+							<div class="ui-label">{{labels.code}}</div>
+							<div class="ui-code">{{item.code}}</div>
+							<div class="ui-component">
+								<div class="ui-label">{{labels.component}}</div>
+								{{item.code | safe}}
+							</div>
+						</div>
+					{% endfor %}
+				</div>
+				<div class="ui-section">
+					<div class="ui-subtitle">Text modificators: color & align</div>
+					{% for item in gide.modificators %}
+						<div class="ui-col ui-col_md">
+							<div class="ui-label">{{labels.code}}</div>
+							<div class="ui-code">{{item.code}}</div>
+							<div class="ui-component">
+								<div class="ui-label">{{labels.component}}</div>
+								{{item.code | safe}}
+							</div>
+						</div>
+					{% endfor %}
+				</div>
+			</div>
+			<!-- end TYPOGRAPHY -->
+			<!-- begin BUTTONS -->
+			<div class="ui-container">
+				<div class="ui-title">Buttons:</div>
+				{% for item in gide.buttons %}
+					<div class="ui-col ui-col_md">
+						<div class="ui-label">{{labels.code}}</div>
+						<div class="ui-code">{{item.code}}</div>
+						<div class="ui-component">
+							<div class="ui-label">{{labels.component}}</div>
+							{{item.code | safe}}
+						</div>
+					</div>
+				{% endfor %}
+			</div>
+			<!-- end BUTTONS -->
+			<!-- begin SWITCHERS/CHECKBOXES/RADIOS -->
+			<div class="ui-container">
+				<div class="ui-title">Switcher (+)/Checkbox (+)/Radio (deprecated):</div>
+				{% for item in gide.fields %}
+					<div class="ui-col ui-col_md">
+						<div class="ui-label">{{labels.code}}</div>
+						<div class="ui-code">{{item.code}}</div>
+						<div class="ui-component">
+							<div class="ui-label">{{labels.component}}</div>
+							{{item.code | safe}}
+						</div>
+					</div>
+				{% endfor %}
+			</div>
+			<!-- end SWITCHERS/CHECKBOXES/RADIOS -->
+		</div>
+	</main>
+{% endblock %}

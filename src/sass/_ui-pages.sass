@@ -1,17 +1,16 @@
-.ui-title
-	+rbold
-	font-size: 28px
-	padding: 10px
+.ui-wrapper
+	overflow: auto
+	height: 100%
 
 .ui-container
 	padding: 10px 5px
 	font-size: 0
 	&:not(:first-child)
-		border-top: 5px solid $darkGray
+		border-top: 10px solid $darkGray
 
-.ui-label
-	padding-bottom: 5px
-	font-size: 14px
+.ui-section
+	margin: 10px 0
+	border-top: 2px solid $darkGray
 
 .ui-col
 	display: inline-block
@@ -19,5 +18,32 @@
 	padding: 10px
 	border-bottom: 1px solid $lightGray
 	width: 100%
+	font-size: 14px
 	&_md
 		width: 50%
+
+.ui-component
+	padding-top: 20px
+
+.ui-label
+	padding-bottom: 5px
+	+rbold
+	font-size: 14px
+	text-transform: uppercase
+
+.ui-title
+	+rbold
+	font-size: 28px
+	padding: 10px
+
+.ui-subtitle
+	+rmed
+	font-size: 24px
+	padding: 10px
+
+
+.ui-list
+	font-size: 14px
+	li
+		padding: 3px 10px
+

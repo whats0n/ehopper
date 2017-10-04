@@ -23,6 +23,9 @@
     {% for styleLink in styles %}
       <link rel="stylesheet" media="all" href="static/css/{{styleLink}}.css">
     {% endfor %}
+    {% for styleLink in oldStyles %}
+      <link rel="stylesheet" media="all" href="static/old-css/{{styleLink}}.css">
+    {% endfor %}
     <link rel="icon" href="https://ehopper.com/wp-content/uploads/2016/03/favicon-01.png" type="image/png">
     {# {% include "../partials/_media-tags.html" %} #}
 

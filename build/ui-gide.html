@@ -1,0 +1,667 @@
+<!doctype html>
+<html>
+
+  <head>
+    <meta charset="utf-8">
+    <title>UI Components &bull; eHopper POS</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="theme-color" content="#fff">
+    <meta name="format-detection" content="telephone=no">
+    <link rel="stylesheet" media="all" href="static/css/ui-gide.css">
+    <link rel="stylesheet" media="all" href="static/old-css/font-awesome.min.css">
+    <link rel="stylesheet" media="all" href="static/old-css/durandal.css">
+    <link rel="stylesheet" media="all" href="static/old-css/toastr.min.css">
+    <link rel="stylesheet" media="all" href="static/old-css/jquery-ui.min.css">
+    <link rel="stylesheet" media="all" href="static/old-css/app.css">
+    <link rel="stylesheet" media="all" href="static/old-css/ui-update.css">
+    <link rel="stylesheet" media="all" href="static/old-css/gide.css">
+    <link rel="icon" href="https://ehopper.com/wp-content/uploads/2016/03/favicon-01.png" type="image/png">
+    <!-- BEGIN scripts -->
+    <!-- END scripts -->
+  </head>
+
+  <body class="">
+    <!-- begin application -->
+    <div class="application" id="application">
+      <!-- BEGIN content -->
+      <main class="main">
+        <div class="inner ui-wrapper">
+          <!-- begin STYLES -->
+          <div class="ui-container">
+            <div class="ui-title">Styles:</div>
+            <ul class="ui-list">
+              <li> <a href="static/old-css/font-awesome.min.css" target="_blank">font-awesome.min.css</a> </li>
+              <li> <a href="static/old-css/durandal.css" target="_blank">durandal.css</a> </li>
+              <li> <a href="static/old-css/toastr.min.css" target="_blank">toastr.min.css</a> </li>
+              <li> <a href="static/old-css/jquery-ui.min.css" target="_blank">jquery-ui.min.css</a> </li>
+              <li> <a href="static/old-css/app.css" target="_blank">app.css</a> </li>
+              <li> <a href="static/old-css/ui-update.css" target="_blank">ui-update.css</a> </li>
+              <li> <a href="static/old-css/gide.css" target="_blank">gide.css</a> </li>
+            </ul>
+          </div>
+          <!-- end STYLES -->
+          <!-- begin FONTS -->
+          <div class="ui-container">
+            <div class="ui-title">Fonts:</div>
+            <ul class="ui-list">
+              <li>font-family: 'Roboto Light', Arial, sans-serif</li>
+              <li>font-family: 'Roboto Light Italic', Arial, sans-serif</li>
+              <li>font-family: 'Roboto Regular', Arial, sans-serif</li>
+              <li>font-family: 'Roboto Italic', Arial, sans-serif</li>
+              <li>font-family: 'Roboto Medium', Arial, sans-serif</li>
+              <li>font-family: 'Roboto Medium Italic', Arial, sans-serif</li>
+              <li>font-family: 'Roboto Bold', Arial, sans-serif</li>
+              <li>font-family: 'Roboto Bold Italic', Arial, sans-serif</li>
+              <li>font-family: 'OpenSans Regular', 'Roboto Regular', Arial, sans-serif</li>
+              <li>font-family: 'OpenSans Italic', 'Roboto Italic', Arial, sans-serif</li>
+              <li>font-family: 'OpenSans Bold', 'Roboto Bold', Arial, sans-serif</li>
+              <li>font-family: 'OpenSans Bold Italic', 'Roboto Bold Italic', Arial, sans-serif</li>
+            </ul>
+          </div>
+          <!-- end FONTS -->
+          <!-- begin TYPOGRAPHY -->
+          <div class="ui-container">
+            <div class="ui-title">Typography:</div>
+            <div class="ui-section">
+              <div class="ui-subtitle">Titles:</div>
+              <div class="ui-col ui-col_md">
+                <div class="ui-label">html code:</div>
+                <div class="ui-code">&lt;h1 class=&quot;title-xlg&quot;&gt;Title h1&lt;/h1&gt;</div>
+                <div class="ui-component">
+                  <div class="ui-label">component view:</div>
+                  <h1 class="title-xlg">Title h1</h1>
+                </div>
+              </div>
+              <div class="ui-col ui-col_md">
+                <div class="ui-label">html code:</div>
+                <div class="ui-code">&lt;h2 class=&quot;title-lg&quot;&gt;Title h2&lt;/h2&gt;</div>
+                <div class="ui-component">
+                  <div class="ui-label">component view:</div>
+                  <h2 class="title-lg">Title h2</h2>
+                </div>
+              </div>
+              <div class="ui-col ui-col_md">
+                <div class="ui-label">html code:</div>
+                <div class="ui-code">&lt;h3 class=&quot;title-md&quot;&gt;Title h3&lt;/h3&gt;</div>
+                <div class="ui-component">
+                  <div class="ui-label">component view:</div>
+                  <h3 class="title-md">Title h3</h3>
+                </div>
+              </div>
+              <div class="ui-col ui-col_md">
+                <div class="ui-label">html code:</div>
+                <div class="ui-code">&lt;h4 class=&quot;title-sm&quot;&gt;Title h4&lt;/h4&gt;</div>
+                <div class="ui-component">
+                  <div class="ui-label">component view:</div>
+                  <h4 class="title-sm">Title h4</h4>
+                </div>
+              </div>
+              <div class="ui-col ui-col_md">
+                <div class="ui-label">html code:</div>
+                <div class="ui-code">&lt;h5 class=&quot;title-xs&quot;&gt;Title h5&lt;/h5&gt;</div>
+                <div class="ui-component">
+                  <div class="ui-label">component view:</div>
+                  <h5 class="title-xs">Title h5</h5>
+                </div>
+              </div>
+            </div>
+            <div class="ui-section">
+              <div class="ui-subtitle">Text modificators: color & align</div>
+              <div class="ui-col ui-col_md">
+                <div class="ui-label">html code:</div>
+                <div class="ui-code">&lt;div class=&quot;color-red&quot;&gt; &lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rerum, non.&lt;/p&gt; &lt;/div&gt;</div>
+                <div class="ui-component">
+                  <div class="ui-label">component view:</div>
+                  <div class="color-red">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rerum, non.</p>
+                  </div>
+                </div>
+              </div>
+              <div class="ui-col ui-col_md">
+                <div class="ui-label">html code:</div>
+                <div class="ui-code">&lt;div class=&quot;color-green&quot;&gt; &lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rerum, non.&lt;/p&gt; &lt;/div&gt;</div>
+                <div class="ui-component">
+                  <div class="ui-label">component view:</div>
+                  <div class="color-green">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rerum, non.</p>
+                  </div>
+                </div>
+              </div>
+              <div class="ui-col ui-col_md">
+                <div class="ui-label">html code:</div>
+                <div class="ui-code">&lt;div class=&quot;color-gray&quot;&gt; &lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rerum, non.&lt;/p&gt; &lt;/div&gt;</div>
+                <div class="ui-component">
+                  <div class="ui-label">component view:</div>
+                  <div class="color-gray">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rerum, non.</p>
+                  </div>
+                </div>
+              </div>
+              <div class="ui-col ui-col_md">
+                <div class="ui-label">html code:</div>
+                <div class="ui-code">&lt;div class=&quot;text-uppercase&quot;&gt; &lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rerum, non.&lt;/p&gt; &lt;/div&gt;</div>
+                <div class="ui-component">
+                  <div class="ui-label">component view:</div>
+                  <div class="text-uppercase">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rerum, non.</p>
+                  </div>
+                </div>
+              </div>
+              <div class="ui-col ui-col_md">
+                <div class="ui-label">html code:</div>
+                <div class="ui-code">&lt;div class=&quot;text-left&quot;&gt; &lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rerum, non.&lt;/p&gt; &lt;/div&gt;</div>
+                <div class="ui-component">
+                  <div class="ui-label">component view:</div>
+                  <div class="text-left">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rerum, non.</p>
+                  </div>
+                </div>
+              </div>
+              <div class="ui-col ui-col_md">
+                <div class="ui-label">html code:</div>
+                <div class="ui-code">&lt;div class=&quot;text-center&quot;&gt; &lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rerum, non.&lt;/p&gt; &lt;/div&gt;</div>
+                <div class="ui-component">
+                  <div class="ui-label">component view:</div>
+                  <div class="text-center">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rerum, non.</p>
+                  </div>
+                </div>
+              </div>
+              <div class="ui-col ui-col_md">
+                <div class="ui-label">html code:</div>
+                <div class="ui-code">&lt;div class=&quot;text-right&quot;&gt; &lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rerum, non.&lt;/p&gt; &lt;/div&gt;</div>
+                <div class="ui-component">
+                  <div class="ui-label">component view:</div>
+                  <div class="text-right">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rerum, non.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- end TYPOGRAPHY -->
+          <!-- begin BUTTONS -->
+          <div class="ui-container">
+            <div class="ui-title">Buttons:</div>
+            <div class="ui-col ui-col_md">
+              <div class="ui-label">html code:</div>
+              <div class="ui-code">&lt;button class=&quot;btn&quot; data-animation=&quot;ripple&quot;&gt;Button&lt;/button&gt;</div>
+              <div class="ui-component">
+                <div class="ui-label">component view:</div> <button class="btn" data-animation="ripple">Button</button> </div>
+            </div>
+            <div class="ui-col ui-col_md">
+              <div class="ui-label">html code:</div>
+              <div class="ui-code">&lt;button class=&quot;btn btn_lg&quot; data-animation=&quot;ripple&quot;&gt;Button&lt;/button&gt;</div>
+              <div class="ui-component">
+                <div class="ui-label">component view:</div> <button class="btn btn_lg" data-animation="ripple">Button</button> </div>
+            </div>
+            <div class="ui-col ui-col_md">
+              <div class="ui-label">html code:</div>
+              <div class="ui-code">&lt;button class=&quot;btn btn_xl&quot; data-animation=&quot;ripple&quot;&gt;Button&lt;/button&gt;</div>
+              <div class="ui-component">
+                <div class="ui-label">component view:</div> <button class="btn btn_xl" data-animation="ripple">Button</button> </div>
+            </div>
+            <div class="ui-col ui-col_md">
+              <div class="ui-label">html code:</div>
+              <div class="ui-code">&lt;button class=&quot;btn btn_xl&quot; data-animation=&quot;ripple&quot;&gt;Button&lt;/button&gt;</div>
+              <div class="ui-component">
+                <div class="ui-label">component view:</div> <button class="btn btn_xl" data-animation="ripple">Button</button> </div>
+            </div>
+            <div class="ui-col ui-col_md">
+              <div class="ui-label">html code:</div>
+              <div class="ui-code">&lt;button class=&quot;btn btn_block&quot; data-animation=&quot;ripple&quot;&gt;Button&lt;/button&gt;</div>
+              <div class="ui-component">
+                <div class="ui-label">component view:</div> <button class="btn btn_block" data-animation="ripple">Button</button> </div>
+            </div>
+            <div class="ui-col ui-col_md">
+              <div class="ui-label">html code:</div>
+              <div class="ui-code">&lt;button class=&quot;btn btn_rounded&quot; data-animation=&quot;ripple&quot;&gt;Button&lt;/button&gt;</div>
+              <div class="ui-component">
+                <div class="ui-label">component view:</div> <button class="btn btn_rounded" data-animation="ripple">Button</button> </div>
+            </div>
+            <div class="ui-col ui-col_md">
+              <div class="ui-label">html code:</div>
+              <div class="ui-code">&lt;button class=&quot;btn btn_green&quot; data-animation=&quot;ripple&quot;&gt;Button&lt;/button&gt;</div>
+              <div class="ui-component">
+                <div class="ui-label">component view:</div> <button class="btn btn_green" data-animation="ripple">Button</button> </div>
+            </div>
+            <div class="ui-col ui-col_md">
+              <div class="ui-label">html code:</div>
+              <div class="ui-code">&lt;button class=&quot;btn btn_success&quot; data-animation=&quot;ripple&quot;&gt;Button&lt;/button&gt;</div>
+              <div class="ui-component">
+                <div class="ui-label">component view:</div> <button class="btn btn_success" data-animation="ripple">Button</button> </div>
+            </div>
+            <div class="ui-col ui-col_md">
+              <div class="ui-label">html code:</div>
+              <div class="ui-code">&lt;button class=&quot;btn btn_red&quot; data-animation=&quot;ripple&quot;&gt;Button&lt;/button&gt;</div>
+              <div class="ui-component">
+                <div class="ui-label">component view:</div> <button class="btn btn_red" data-animation="ripple">Button</button> </div>
+            </div>
+            <div class="ui-col ui-col_md">
+              <div class="ui-label">html code:</div>
+              <div class="ui-code">&lt;button class=&quot;btn btn_error&quot; data-animation=&quot;ripple&quot;&gt;Button&lt;/button&gt;</div>
+              <div class="ui-component">
+                <div class="ui-label">component view:</div> <button class="btn btn_error" data-animation="ripple">Button</button> </div>
+            </div>
+            <div class="ui-col ui-col_md">
+              <div class="ui-label">html code:</div>
+              <div class="ui-code">&lt;button class=&quot;btn btn_primary&quot; data-animation=&quot;ripple&quot;&gt;Button&lt;/button&gt;</div>
+              <div class="ui-component">
+                <div class="ui-label">component view:</div> <button class="btn btn_primary" data-animation="ripple">Button</button> </div>
+            </div>
+            <div class="ui-col ui-col_md">
+              <div class="ui-label">html code:</div>
+              <div class="ui-code">&lt;button class=&quot;btn is-active&quot; data-animation=&quot;ripple&quot;&gt;Button&lt;/button&gt;</div>
+              <div class="ui-component">
+                <div class="ui-label">component view:</div> <button class="btn is-active" data-animation="ripple">Button</button> </div>
+            </div>
+            <div class="ui-col ui-col_md">
+              <div class="ui-label">html code:</div>
+              <div class="ui-code">&lt;button class=&quot;btn btn_secondary&quot; data-animation=&quot;ripple&quot;&gt;Button&lt;/button&gt;</div>
+              <div class="ui-component">
+                <div class="ui-label">component view:</div> <button class="btn btn_secondary" data-animation="ripple">Button</button> </div>
+            </div>
+            <div class="ui-col ui-col_md">
+              <div class="ui-label">html code:</div>
+              <div class="ui-code">&lt;button class=&quot;btn btn_white&quot; data-animation=&quot;ripple&quot;&gt;Button&lt;/button&gt;</div>
+              <div class="ui-component">
+                <div class="ui-label">component view:</div> <button class="btn btn_white" data-animation="ripple">Button</button> </div>
+            </div>
+            <div class="ui-col ui-col_md">
+              <div class="ui-label">html code:</div>
+              <div class="ui-code">&lt;button class=&quot;btn&quot; data-animation=&quot;ripple&quot;&gt;Button&lt;i class=&quot;icon icon-more-v&quot;&gt;&lt;/i&gt;&lt;/button&gt;</div>
+              <div class="ui-component">
+                <div class="ui-label">component view:</div> <button class="btn" data-animation="ripple">Button<i class="icon icon-more-v"></i></button> </div>
+            </div>
+            <div class="ui-col ui-col_md">
+              <div class="ui-label">html code:</div>
+              <div class="ui-code">&lt;button class=&quot;btn btn_lg&quot; data-animation=&quot;ripple&quot;&gt;Button&lt;i class=&quot;icon icon-next&quot;&gt;&lt;/i&gt;&lt;/button&gt;</div>
+              <div class="ui-component">
+                <div class="ui-label">component view:</div> <button class="btn btn_lg" data-animation="ripple">Button<i class="icon icon-next"></i></button> </div>
+            </div>
+          </div>
+          <!-- end BUTTONS -->
+          <!-- begin SWITCHERS/CHECKBOXES/RADIOS -->
+          <div class="ui-container">
+            <div class="ui-title">Switcher (+)/Checkbox (+)/Radio (deprecated):</div>
+            <div class="ui-col ui-col_md">
+              <div class="ui-label">html code:</div>
+              <div class="ui-code">&lt;div class=&quot;field-box field-box_switch&quot;&gt; &lt;label class=&quot;field-box__label&quot; for=&quot;ui-switcher-field&quot;&gt;Label&lt;/label&gt; &lt;div class=&quot;field-box__switcher&quot;&gt; &lt;label class=&quot;switcher&quot;&gt;
+                &lt;input type=&quot;checkbox&quot; id=&quot;ui-switcher-field&quot;&gt; &lt;i class=&quot;switcher__icon&quot;&gt;&lt;/i&gt; &lt;/label&gt; &lt;/div&gt; &lt;/div&gt;</div>
+              <div class="ui-component">
+                <div class="ui-label">component view:</div>
+                <div class="field-box field-box_switch"> <label class="field-box__label" for="ui-switcher-field">Label</label>
+                  <div class="field-box__switcher"> <label class="switcher">
+					<input type="checkbox" id="ui-switcher-field">
+					<i class="switcher__icon"></i>
+				</label> </div>
+                </div>
+              </div>
+            </div>
+            <div class="ui-col ui-col_md">
+              <div class="ui-label">html code:</div>
+              <div class="ui-code">&lt;div class=&quot;field-box field-box_btns&quot;&gt; &lt;div class=&quot;field-box__label&quot;&gt;Label&lt;/div&gt; &lt;ul class=&quot;field-box__list&quot;&gt; &lt;li class=&quot;field-box__col field-box__col_sm field-box__btn&quot;&gt;
+                &lt;button class=&quot;btn btn_default btn_block btn_lg&quot; data-animation=&quot;ripple&quot;&gt;Button&lt;/button&gt; &lt;/li&gt; &lt;li class=&quot;field-box__col field-box__col_sm field-box__btn&quot;&gt; &lt;button class=&quot;btn
+                btn_default btn_block btn_lg&quot; data-animation=&quot;ripple&quot;&gt;Button&lt;/button&gt; &lt;/li&gt; &lt;li class=&quot;field-box__col field-box__col_sm field-box__btn&quot;&gt; &lt;button class=&quot;btn btn_default btn_block btn_lg&quot;
+                data-animation=&quot;ripple&quot;&gt;Button&lt;/button&gt; &lt;/li&gt; &lt;/ul&gt; &lt;/div&gt;</div>
+              <div class="ui-component">
+                <div class="ui-label">component view:</div>
+                <div class="field-box field-box_btns">
+                  <div class="field-box__label">Label</div>
+                  <ul class="field-box__list">
+                    <li class="field-box__col field-box__col_sm field-box__btn"> <button class="btn btn_default btn_block btn_lg" data-animation="ripple">Button</button> </li>
+                    <li class="field-box__col field-box__col_sm field-box__btn"> <button class="btn btn_default btn_block btn_lg" data-animation="ripple">Button</button> </li>
+                    <li class="field-box__col field-box__col_sm field-box__btn"> <button class="btn btn_default btn_block btn_lg" data-animation="ripple">Button</button> </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div class="ui-col ui-col_md">
+              <div class="ui-label">html code:</div>
+              <div class="ui-code">&lt;div class=&quot;field-box field-box_btns&quot;&gt; &lt;ul class=&quot;field-box__list&quot;&gt; &lt;li class=&quot;field-box__col field-box__col_md field-box__btn&quot;&gt; &lt;button class=&quot;btn btn_default btn_block btn_lg&quot;
+                data-animation=&quot;ripple&quot;&gt;Button&lt;/button&gt; &lt;/li&gt; &lt;li class=&quot;field-box__col field-box__col_md field-box__btn&quot;&gt; &lt;button class=&quot;btn btn_default btn_block btn_lg&quot; data-animation=&quot;ripple&quot;&gt;Button&lt;/button&gt;
+                &lt;/li&gt; &lt;/ul&gt; &lt;/div&gt;</div>
+              <div class="ui-component">
+                <div class="ui-label">component view:</div>
+                <div class="field-box field-box_btns">
+                  <ul class="field-box__list">
+                    <li class="field-box__col field-box__col_md field-box__btn"> <button class="btn btn_default btn_block btn_lg" data-animation="ripple">Button</button> </li>
+                    <li class="field-box__col field-box__col_md field-box__btn"> <button class="btn btn_default btn_block btn_lg" data-animation="ripple">Button</button> </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div class="ui-col ui-col_md">
+              <div class="ui-label">html code:</div>
+              <div class="ui-code">&lt;div class=&quot;field-box field-box_checkbox&quot;&gt; &lt;div class=&quot;field-box__label&quot;&gt;Label&lt;/div&gt; &lt;ul class=&quot;field-box__list&quot;&gt; &lt;li class=&quot;field-box__col field-box__col_sm field-box__checkbox&quot;&gt;
+                &lt;label class=&quot;checkbox&quot;&gt; &lt;input type=&quot;checkbox&quot;&gt; &lt;i class=&quot;icon icon-check&quot;&gt;&lt;/i&gt; &lt;span&gt;Lorem ipsum.&lt;/span&gt; &lt;/label&gt; &lt;/li&gt; &lt;li class=&quot;field-box__col field-box__col_sm
+                field-box__checkbox&quot;&gt; &lt;label class=&quot;checkbox&quot;&gt; &lt;input type=&quot;checkbox&quot;&gt; &lt;i class=&quot;icon icon-check&quot;&gt;&lt;/i&gt; &lt;span&gt;Lorem ipsum.&lt;/span&gt; &lt;/label&gt; &lt;/li&gt; &lt;li
+                class=&quot;field-box__col field-box__col_sm field-box__checkbox&quot;&gt; &lt;label class=&quot;checkbox&quot;&gt; &lt;input type=&quot;checkbox&quot;&gt; &lt;i class=&quot;icon icon-check&quot;&gt;&lt;/i&gt; &lt;span&gt;Lorem ipsum.&lt;/span&gt;
+                &lt;/label&gt; &lt;/li&gt; &lt;/ul&gt; &lt;/div&gt;</div>
+              <div class="ui-component">
+                <div class="ui-label">component view:</div>
+                <div class="field-box field-box_checkbox">
+                  <div class="field-box__label">Label</div>
+                  <ul class="field-box__list">
+                    <li class="field-box__col field-box__col_sm field-box__checkbox"> <label class="checkbox">
+						<input type="checkbox">
+						<i class="icon icon-check"></i>
+						<span>Lorem ipsum.</span>
+					</label> </li>
+                    <li class="field-box__col field-box__col_sm field-box__checkbox"> <label class="checkbox">
+						<input type="checkbox">
+						<i class="icon icon-check"></i>
+						<span>Lorem ipsum.</span>
+					</label> </li>
+                    <li class="field-box__col field-box__col_sm field-box__checkbox"> <label class="checkbox">
+						<input type="checkbox">
+						<i class="icon icon-check"></i>
+						<span>Lorem ipsum.</span>
+					</label> </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div class="ui-col ui-col_md">
+              <div class="ui-label">html code:</div>
+              <div class="ui-code">&lt;div class=&quot;field-box&quot;&gt; &lt;div class=&quot;field-box__counter&quot;&gt; &lt;div class=&quot;field-box__label&quot;&gt;Label&lt;/div&gt; &lt;div class=&quot;field-box__controls&quot;&gt; &lt;div class=&quot;field-box__controls-in&quot;&gt;
+                &lt;div class=&quot;field-box__control field-box__control_left&quot;&gt; &lt;button class=&quot;btn btn_xl btn_secondary&quot; data-animation=&quot;ripple&quot;&gt;&amp;#8211;&lt;/button&gt; &lt;/div&gt; &lt;div class=&quot;field-box__control
+                field-box__control_right&quot;&gt; &lt;button class=&quot;btn btn_xl btn_secondary&quot; data-animation=&quot;ripple&quot;&gt;+&lt;/button&gt; &lt;/div&gt; &lt;input type=&quot;text&quot; class=&quot;input input_xl text-center field-box__counter-input&quot;
+                value=&quot;0&quot; readonly&gt; &lt;/div&gt; &lt;/div&gt; &lt;/div&gt; &lt;/div&gt;</div>
+              <div class="ui-component">
+                <div class="ui-label">component view:</div>
+                <div class="field-box">
+                  <div class="field-box__counter">
+                    <div class="field-box__label">Label</div>
+                    <div class="field-box__controls">
+                      <div class="field-box__controls-in">
+                        <div class="field-box__control field-box__control_left"> <button class="btn btn_xl btn_secondary" data-animation="ripple">&#8211;</button> </div>
+                        <div class="field-box__control field-box__control_right"> <button class="btn btn_xl btn_secondary" data-animation="ripple">+</button> </div> <input type="text" class="input input_xl text-center field-box__counter-input" value="0" readonly> </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="ui-col ui-col_md">
+              <div class="ui-label">html code:</div>
+              <div class="ui-code">&lt;div class=&quot;field-box&quot;&gt; &lt;div class=&quot;field-box__select-set&quot;&gt; &lt;div class=&quot;field-box__number&quot;&gt;1&lt;/div&gt; &lt;div class=&quot;field-box__select-col&quot;&gt; &lt;div class=&quot;select select_lg&quot;&gt;
+                &lt;select&gt; &lt;option value=&quot;option 1&quot;&gt;option 1&lt;/option&gt; &lt;option value=&quot;option 2&quot;&gt;option 2&lt;/option&gt; &lt;option value=&quot;option 3&quot;&gt;option 3&lt;/option&gt; &lt;/select&gt; &lt;/div&gt;
+                &lt;/div&gt; &lt;div class=&quot;field-box__select-col&quot;&gt; &lt;input type=&quot;text&quot; class=&quot;input input_lg input_block field-box__select-input&quot; value=&quot;0.00&quot;&gt; &lt;/div&gt; &lt;div class=&quot;field-box__button&quot;&gt;
+                &lt;button class=&quot;btn btn_lg btn_default btn_block&quot; data-animation=&quot;ripple&quot;&gt;Lorem.&lt;/button&gt; &lt;/div&gt; &lt;/div&gt; &lt;/div&gt;</div>
+              <div class="ui-component">
+                <div class="ui-label">component view:</div>
+                <div class="field-box">
+                  <div class="field-box__select-set">
+                    <div class="field-box__number">1</div>
+                    <div class="field-box__select-col">
+                      <div class="select select_lg"> <select>
+							<option value="option 1">option 1</option>
+							<option value="option 2">option 2</option>
+							<option value="option 3">option 3</option>
+						</select> </div>
+                    </div>
+                    <div class="field-box__select-col"> <input type="text" class="input input_lg input_block field-box__select-input" value="0.00"> </div>
+                    <div class="field-box__button"> <button class="btn btn_lg btn_default btn_block" data-animation="ripple">Lorem.</button> </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="ui-col ui-col_md">
+              <div class="ui-label">html code:</div>
+              <div class="ui-code">&lt;div class=&quot;field-box&quot;&gt; &lt;div class=&quot;field-box__select-set&quot;&gt; &lt;div class=&quot;field-box__number&quot;&gt;1&lt;/div&gt; &lt;div class=&quot;field-box__select-col&quot;&gt; &lt;div class=&quot;field-box__select-static&quot;&gt;
+                &lt;i class=&quot;icon icon-checked&quot;&gt;&lt;/i&gt; &lt;span class=&quot;muted&quot;&gt;option 1&lt;/span&gt; &lt;/div&gt; &lt;/div&gt; &lt;div class=&quot;field-box__select-col&quot;&gt; &lt;input type=&quot;text&quot; class=&quot;input
+                input_lg input_block field-box__select-input muted&quot; value=&quot;0.00&quot; readonly&gt; &lt;/div&gt; &lt;div class=&quot;field-box__button&quot;&gt; &lt;button class=&quot;btn btn_lg btn_default btn_block&quot; data-animation=&quot;ripple&quot;&gt;Lorem.&lt;/button&gt;
+                &lt;/div&gt; &lt;/div&gt; &lt;/div&gt;</div>
+              <div class="ui-component">
+                <div class="ui-label">component view:</div>
+                <div class="field-box">
+                  <div class="field-box__select-set">
+                    <div class="field-box__number">1</div>
+                    <div class="field-box__select-col">
+                      <div class="field-box__select-static"> <i class="icon icon-checked"></i> <span class="muted">option 1</span> </div>
+                    </div>
+                    <div class="field-box__select-col"> <input type="text" class="input input_lg input_block field-box__select-input muted" value="0.00" readonly> </div>
+                    <div class="field-box__button"> <button class="btn btn_lg btn_default btn_block" data-animation="ripple">Lorem.</button> </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="ui-col ui-col_md">
+              <div class="ui-label">html code:</div>
+              <div class="ui-code">&lt;div class=&quot;form-box&quot;&gt; &lt;div class=&quot;field form-box__field&quot;&gt; &lt;div class=&quot;field__inner&quot;&gt; &lt;label class=&quot;field__label&quot; for=&quot;ui-field-input-alone&quot;&gt;Label&lt;/label&gt; &lt;div
+                class=&quot;field__box&quot;&gt; &lt;input class=&quot;input field__input input_lg&quot; id=&quot;ui-field-input-alone&quot; type=&quot;text&quot; placeholder=&quot;placeholder&quot;&gt; &lt;/div&gt; &lt;/div&gt; &lt;/div&gt; &lt;/div&gt;</div>
+              <div class="ui-component">
+                <div class="ui-label">component view:</div>
+                <div class="form-box">
+                  <div class="field form-box__field">
+                    <div class="field__inner"> <label class="field__label" for="ui-field-input-alone">Label</label>
+                      <div class="field__box"> <input class="input field__input input_lg" id="ui-field-input-alone" type="text" placeholder="placeholder"> </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="ui-col ui-col_md">
+              <div class="ui-label">html code:</div>
+              <div class="ui-code">&lt;div class=&quot;form-box&quot;&gt; &lt;div class=&quot;field field_static form-box__field&quot;&gt; &lt;div class=&quot;field__inner&quot;&gt; &lt;div class=&quot;field__switch&quot;&gt; &lt;label class=&quot;field__switch-left&quot;
+                for=&quot;ui-field-currency-percent&quot;&gt;$&lt;/label&gt; &lt;label class=&quot;field__switch-box switcher&quot;&gt; &lt;input type=&quot;checkbox&quot; id=&quot;ui-field-currency-percent&quot; checked&gt; &lt;i class=&quot;switcher__icon&quot;&gt;&lt;/i&gt;
+                &lt;/label&gt; &lt;label class=&quot;field__switch-right&quot; for=&quot;ui-field-currency-percent&quot;&gt;%&lt;/label&gt; &lt;/div&gt; &lt;div class=&quot;field__box&quot;&gt; &lt;div class=&quot;field__units&quot; data-units=&quot;currency&quot;&gt;&lt;span&gt;$&lt;/span&gt;&lt;/div&gt;
+                &lt;span class=&quot;field__static&quot;&gt;0.00&lt;/span&gt; &lt;div class=&quot;field__units&quot; data-units=&quot;percent&quot;&gt;&lt;span&gt;%&lt;/span&gt;&lt;/div&gt; &lt;/div&gt; &lt;/div&gt; &lt;/div&gt; &lt;/div&gt;</div>
+              <div
+                class="ui-component">
+                <div class="ui-label">component view:</div>
+                <div class="form-box">
+                  <div class="field field_static form-box__field">
+                    <div class="field__inner">
+                      <div class="field__switch"> <label class="field__switch-left" for="ui-field-currency-percent">$</label> <label class="field__switch-box switcher">
+							<input type="checkbox" id="ui-field-currency-percent" checked>
+							<i class="switcher__icon"></i>
+						</label> <label class="field__switch-right" for="ui-field-currency-percent">%</label> </div>
+                      <div class="field__box">
+                        <div class="field__units" data-units="currency"><span>$</span></div> <span class="field__static">0.00</span>
+                        <div class="field__units" data-units="percent"><span>%</span></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+            </div>
+          </div>
+          <div class="ui-col ui-col_md">
+            <div class="ui-label">html code:</div>
+            <div class="ui-code">&lt;div class=&quot;form-box&quot;&gt; &lt;div class=&quot;field field_static field_currency form-box__field&quot;&gt; &lt;div class=&quot;field__inner&quot;&gt; &lt;div class=&quot;field__switch&quot;&gt; &lt;label class=&quot;field__switch-left&quot;
+              for=&quot;ui-field-currency-percent&quot;&gt;$&lt;/label&gt; &lt;label class=&quot;field__switch-box switcher&quot;&gt; &lt;input type=&quot;checkbox&quot; id=&quot;ui-field-currency-percent&quot;&gt; &lt;i class=&quot;switcher__icon&quot;&gt;&lt;/i&gt;
+              &lt;/label&gt; &lt;label class=&quot;field__switch-right&quot; for=&quot;ui-field-currency-percent&quot;&gt;%&lt;/label&gt; &lt;/div&gt; &lt;div class=&quot;field__box&quot;&gt; &lt;div class=&quot;field__units&quot; data-units=&quot;currency&quot;&gt;&lt;span&gt;$&lt;/span&gt;&lt;/div&gt;
+              &lt;span class=&quot;field__static&quot;&gt;0.00&lt;/span&gt; &lt;div class=&quot;field__units&quot; data-units=&quot;percent&quot;&gt;&lt;span&gt;%&lt;/span&gt;&lt;/div&gt; &lt;/div&gt; &lt;/div&gt; &lt;/div&gt; &lt;/div&gt;</div>
+            <div
+              class="ui-component">
+              <div class="ui-label">component view:</div>
+              <div class="form-box">
+                <div class="field field_static field_currency form-box__field">
+                  <div class="field__inner">
+                    <div class="field__switch"> <label class="field__switch-left" for="ui-field-currency-percent">$</label> <label class="field__switch-box switcher">
+							<input type="checkbox" id="ui-field-currency-percent">
+							<i class="switcher__icon"></i>
+						</label> <label class="field__switch-right" for="ui-field-currency-percent">%</label> </div>
+                    <div class="field__box">
+                      <div class="field__units" data-units="currency"><span>$</span></div> <span class="field__static">0.00</span>
+                      <div class="field__units" data-units="percent"><span>%</span></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+          </div>
+        </div>
+        <div class="ui-col ui-col_md">
+          <div class="ui-label">html code:</div>
+          <div class="ui-code">&lt;div class=&quot;form-box&quot;&gt; &lt;div class=&quot;field field_static form-box__field&quot;&gt; &lt;div class=&quot;field__inner&quot;&gt; &lt;div class=&quot;field__label&quot;&gt;Label&lt;/div&gt; &lt;div class=&quot;field__box&quot;&gt;
+            &lt;span class=&quot;field__static&quot;&gt;0.00&lt;/span&gt; &lt;div class=&quot;field__units&quot;&gt;&lt;span&gt;%&lt;/span&gt;&lt;/div&gt; &lt;/div&gt; &lt;/div&gt; &lt;/div&gt; &lt;/div&gt;</div>
+          <div class="ui-component">
+            <div class="ui-label">component view:</div>
+            <div class="form-box">
+              <div class="field field_static form-box__field">
+                <div class="field__inner">
+                  <div class="field__label">Label</div>
+                  <div class="field__box"> <span class="field__static">0.00</span>
+                    <div class="field__units"><span>%</span></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="ui-col ui-col_md">
+          <div class="ui-label">html code:</div>
+          <div class="ui-code">&lt;div class=&quot;form-box&quot;&gt; &lt;div class=&quot;field field_static form-box__field&quot;&gt; &lt;div class=&quot;field__inner&quot;&gt; &lt;div class=&quot;field__label&quot;&gt;Label&lt;/div&gt; &lt;div class=&quot;field__box&quot;&gt;
+            &lt;div class=&quot;field__units&quot;&gt;&lt;span&gt;$&lt;/span&gt;&lt;/div&gt; &lt;span class=&quot;field__static&quot;&gt;0.00&lt;/span&gt; &lt;/div&gt; &lt;/div&gt; &lt;/div&gt; &lt;/div&gt;</div>
+          <div class="ui-component">
+            <div class="ui-label">component view:</div>
+            <div class="form-box">
+              <div class="field field_static form-box__field">
+                <div class="field__inner">
+                  <div class="field__label">Label</div>
+                  <div class="field__box">
+                    <div class="field__units"><span>$</span></div> <span class="field__static">0.00</span> </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="ui-col ui-col_md">
+          <div class="ui-label">html code:</div>
+          <div class="ui-code">&lt;div class=&quot;form-box&quot;&gt; &lt;div class=&quot;field form-box__field&quot;&gt; &lt;div class=&quot;field__inner&quot;&gt; &lt;div class=&quot;field__label&quot;&gt;Label&lt;/div&gt; &lt;div class=&quot;field__box&quot;&gt; &lt;div
+            class=&quot;select select_lg&quot;&gt; &lt;select&gt; &lt;option value=&quot;option 1&quot;&gt;option 1&lt;/option&gt; &lt;option value=&quot;option 2&quot;&gt;option 2&lt;/option&gt; &lt;option value=&quot;option 3&quot;&gt;option 3&lt;/option&gt;
+            &lt;/select&gt; &lt;/div&gt; &lt;/div&gt; &lt;/div&gt; &lt;/div&gt; &lt;/div&gt;</div>
+          <div class="ui-component">
+            <div class="ui-label">component view:</div>
+            <div class="form-box">
+              <div class="field form-box__field">
+                <div class="field__inner">
+                  <div class="field__label">Label</div>
+                  <div class="field__box">
+                    <div class="select select_lg"> <select>
+								<option value="option 1">option 1</option>
+								<option value="option 2">option 2</option>
+								<option value="option 3">option 3</option>
+							</select> </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="ui-col ui-col_md">
+          <div class="ui-label">html code:</div>
+          <div class="ui-code">&lt;div class=&quot;select select_simple&quot;&gt; &lt;select&gt; &lt;option value=&quot;option 1&quot;&gt;option 1&lt;/option&gt; &lt;option value=&quot;option 2&quot;&gt;option 2&lt;/option&gt; &lt;option value=&quot;option 3&quot;&gt;option
+            3&lt;/option&gt; &lt;/select&gt; &lt;/div&gt;</div>
+          <div class="ui-component">
+            <div class="ui-label">component view:</div>
+            <div class="select select_simple"> <select>
+				<option value="option 1">option 1</option>
+				<option value="option 2">option 2</option>
+				<option value="option 3">option 3</option>
+			</select> </div>
+          </div>
+        </div>
+        <div class="ui-col ui-col_md">
+          <div class="ui-label">html code:</div>
+          <div class="ui-code">&lt;div class=&quot;form-box&quot;&gt; &lt;div class=&quot;field form-box__field&quot;&gt; &lt;div class=&quot;field__inner&quot;&gt; &lt;div class=&quot;field__label&quot;&gt;Label&lt;/div&gt; &lt;div class=&quot;field__box&quot;&gt; &lt;div
+            class=&quot;select select_md&quot;&gt; &lt;select&gt; &lt;option value=&quot;option 1&quot;&gt;option 1&lt;/option&gt; &lt;option value=&quot;option 2&quot;&gt;option 2&lt;/option&gt; &lt;option value=&quot;option 3&quot;&gt;option 3&lt;/option&gt;
+            &lt;/select&gt; &lt;/div&gt; &lt;/div&gt; &lt;/div&gt; &lt;/div&gt; &lt;/div&gt;</div>
+          <div class="ui-component">
+            <div class="ui-label">component view:</div>
+            <div class="form-box">
+              <div class="field form-box__field">
+                <div class="field__inner">
+                  <div class="field__label">Label</div>
+                  <div class="field__box">
+                    <div class="select select_md"> <select>
+								<option value="option 1">option 1</option>
+								<option value="option 2">option 2</option>
+								<option value="option 3">option 3</option>
+							</select> </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="ui-col ui-col_md">
+          <div class="ui-label">html code:</div>
+          <div class="ui-code">&lt;div class=&quot;form-box&quot;&gt; &lt;div class=&quot;form-box__field&quot;&gt; &lt;textarea class=&quot;textarea textarea_block textarea_little&quot; placeholder=&quot;placeholder&quot;&gt;&lt;/textarea&gt; &lt;/div&gt; &lt;/div&gt;</div>
+          <div class="ui-component">
+            <div class="ui-label">component view:</div>
+            <div class="form-box">
+              <div class="form-box__field"> <textarea class="textarea textarea_block textarea_little" placeholder="placeholder"></textarea> </div>
+            </div>
+          </div>
+        </div>
+        <div class="ui-col ui-col_md">
+          <div class="ui-label">html code:</div>
+          <div class="ui-code">&lt;div class=&quot;form-box&quot;&gt; &lt;div class=&quot;form-box__field&quot;&gt; &lt;textarea class=&quot;textarea textarea_block&quot; placeholder=&quot;placeholder&quot;&gt;&lt;/textarea&gt; &lt;/div&gt; &lt;/div&gt;</div>
+          <div class="ui-component">
+            <div class="ui-label">component view:</div>
+            <div class="form-box">
+              <div class="form-box__field"> <textarea class="textarea textarea_block" placeholder="placeholder"></textarea> </div>
+            </div>
+          </div>
+        </div>
+        <div class="ui-col ui-col_md">
+          <div class="ui-label">html code:</div>
+          <div class="ui-code">&lt;textarea class=&quot;textarea textarea_block textarea_simple&quot; placeholder=&quot;placeholder&quot;&gt;&lt;/textarea&gt;</div>
+          <div class="ui-component">
+            <div class="ui-label">component view:</div> <textarea class="textarea textarea_block textarea_simple" placeholder="placeholder"></textarea> </div>
+        </div>
+        <div class="ui-col ui-col_md">
+          <div class="ui-label">html code:</div>
+          <div class="ui-code">&lt;div class=&quot;field&quot;&gt; &lt;div class=&quot;field__inner&quot;&gt; &lt;label for=&quot;ui-component-field-input1&quot; class=&quot;field__label&quot;&gt;Label&lt;/label&gt; &lt;div class=&quot;field__box&quot;&gt; &lt;input type=&quot;text&quot;
+            class=&quot;input input_lg field__input&quot; placeholder=&quot;placeholder&quot;&gt; &lt;/div&gt; &lt;/div&gt; &lt;/div&gt;</div>
+          <div class="ui-component">
+            <div class="ui-label">component view:</div>
+            <div class="field">
+              <div class="field__inner"> <label for="ui-component-field-input1" class="field__label">Label</label>
+                <div class="field__box"> <input type="text" class="input input_lg field__input" placeholder="placeholder"> </div>
+              </div>
+            </div>
+          </div>
+        </div>
+    </div>
+    <!-- end SWITCHERS/CHECKBOXES/RADIOS -->
+    </div>
+    </main>
+    <!-- END content -->
+    <!-- begin snackbar -->
+    <div class="snackbar " data-snackbar-container="snackbar" data-state="default">
+      <div class="snackbar__message" data-snackbar-content="snackbar"></div>
+    </div>
+    <!-- end snackbar -->
+    <!-- begin help -->
+    <div class="help" data-modal="help">
+      <div class="help__container" data-modal-container="help"> <button class="help-close help__close" data-animation="ripple" data-modal-close="help">
+			<i class="fa fa-question-circle-o help-close__icon"></i>
+			<i class="icon icon-next help-close__arrow"></i>
+		</button>
+        <div class="help__body" data-scrollbar="default">
+          <div class="definition-list">
+            <dl class="definition-list__item"> <dt class="definition-list__title">Step 1:</dt>
+              <dd class="definition-list__description">Login to Payment Center Application (<a href="https://paymentcenter.qpay123.com">https://paymentcenter.qpay123.com</a>) </dd> <dt class="definition-list__title">Step 2:</dt>
+              <dd class="definition-list__description">Click on ‘Settings’ on top right corner of the application</dd> <dt class="definition-list__title">Step 3:</dt>
+              <dd class="definition-list__description">Under Advanced Settings, type in your password and click ‘Unlock Settings’</dd> <dt class="definition-list__title">Step 4:</dt>
+              <dd class="definition-list__description">Click ‘Manage Devices’ link and a new tab will open</dd> <dt class="definition-list__title">Step 5:</dt>
+              <dd class="definition-list__description">To generate a request for a new certificate, click on ‘Add Branch Device’ button</dd> <dt class="definition-list__title">Step 6:</dt>
+              <dd class="definition-list__description">Enter the email address, select the authentication option and click the ‘Add’ button</dd> <dt class="definition-list__title">Step 7:</dt>
+              <dd class="definition-list__description">Open the email from the device where the certificate needs to be installed and copy/paste into mpos application</dd>
+            </dl>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- end help -->
+    </div>
+    <!-- end application -->
+    <!-- BEGIN scripts -->
+    <script type="text/javascript" src="static/js/app.js"></script>
+    <!-- END scripts -->
+  </body>
+
+</html>
