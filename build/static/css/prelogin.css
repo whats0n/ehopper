@@ -5602,6 +5602,7 @@ textarea.input {
 
 .sm-grid__field {
   float: left;
+  width: 60%;
   max-width: 400px;
 }
 
