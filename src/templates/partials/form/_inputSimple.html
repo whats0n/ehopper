@@ -5,7 +5,7 @@
 		<span class="color-red">*</span>
 	{% endif %}
 </label>
-<div class="input-box simple-field__input {{props.inputClassList}} {% if props.errorMessage %}is-error{% endif %}">
+<div class="input-box {{props.inputClassList}} {% if props.errorMessage %}is-error{% endif %}">
 	<input type="{{props.type or 'text'}}" 
 		class="simple-input input-box__input {{props.inputClassList}}" 
 		{{props.inputAttrs | safe}}

@@ -140,8 +140,21 @@ styles: [
 			<div class="ui-container">
 				<div class="ui-title">Fields:</div>
 				<div class="ui-section">
-					<div class="ui-subtitle">Switcher:</div>
-					{% for item in gide.fields %}
+					<div class="ui-subtitle">Textarea:</div>
+					{% for item in gide.textareas %}
+						<div class="ui-col ui-col_md">
+							<div class="ui-label">{{labels.code}}</div>
+							<div class="ui-code">{{item.code}}</div>
+							<div class="ui-component">
+								<div class="ui-label">{{labels.component}}</div>
+								{{item.code | safe}}
+							</div>
+						</div>
+					{% endfor %}
+				</div>
+				<div class="ui-section">
+					<div class="ui-subtitle">Input:</div>
+					{% for item in gide.inputs %}
 						<div class="ui-col ui-col_md">
 							<div class="ui-label">{{labels.code}}</div>
 							<div class="ui-code">{{item.code}}</div>

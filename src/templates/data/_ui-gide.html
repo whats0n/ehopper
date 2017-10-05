@@ -200,7 +200,7 @@
 <!-- end RADIOS -->
 
 <!-- begin FIELDS -->
-{% set fields = [
+{% set textareas = [
 	{
 		code: '<div class="form-box">
 			<div class="form-box__field">
@@ -209,13 +209,45 @@
 		</div>'
 	},
 	{
-		code: ''
+		code: '<div class="form-box">
+			<textarea class="textarea textarea_block textarea_little" placeholder="placeholder"></textarea>
+		</div>'
+	}
+] %}
+{% set inputs = [
+	{
+		code: '<div class="input-box">
+			<input type="text" 
+				class="simple-input input-box__input" 
+				placeholder="placeholder">
+			<button class="input-box__clear">
+				<i class="icon icon-close"></i>
+			</button>
+			<div class="error-message input-box__error-message">Error message</div>
+		</div>'
 	},
 	{
-		code: ''
+		code: '<div class="input-box is-error">
+			<input type="text" 
+				class="simple-input input-box__input" 
+				placeholder="placeholder">
+			<button class="input-box__clear">
+				<i class="icon icon-close"></i>
+			</button>
+			<div class="error-message input-box__error-message">Error message</div>
+		</div>'
 	},
 	{
-		code: ''
+		code: '<input type="text" class="simple-input" placeholder="placeholder">'
+	},
+	{
+		code: '<div class="select-box">
+			<select>
+				<option value="option 1">option 1</option>
+				<option value="option 2">option 2</option>
+				<option value="option 3">option 3</option>
+			</select>
+		</div>'
 	}
 ] %}
 <!-- end FIELDS -->
