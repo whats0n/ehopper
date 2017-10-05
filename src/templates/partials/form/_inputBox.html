@@ -7,7 +7,7 @@
 		<i class="icon icon-close"></i>
 	</button>
 	{% if props.errorMessage %}
-		<div class="error-message input-box__error-message">{{props.errorMessage}}</div>
+		<div class="error-message input-box__error-message {{props.errorClassList}}">{{props.errorMessage}}</div>
 	{% endif %}
 </div>
 {% endmacro %}

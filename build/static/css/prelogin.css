@@ -403,6 +403,10 @@ a.shy {
   text-align: right !important;
 }
 
+.white-space-normal {
+  white-space: normal !important;
+}
+
 html,
 body {
   height: 100%;
@@ -5628,7 +5632,7 @@ textarea.input {
 .sm-grid__field {
   float: left;
   width: 60%;
-  max-width: 400px;
+  max-width: 500px;
 }
 
 .sm-grid__field + .sm-grid__button {
