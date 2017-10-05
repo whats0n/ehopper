@@ -6094,10 +6094,6 @@ input.btn {
   background: #2e99db;
 }
 
-.fake-radio_block {
-  width: 100%;
-}
-
 .fake-radio:active .fake-radio__content {
   color: #333;
   background: #dadada;
@@ -6135,6 +6131,11 @@ input.btn {
   background: #2e99db;
 }
 
+.fake-radio input:disabled ~ .fake-radio__content {
+  opacity: 0.5;
+  pointer-events: none;
+}
+
 .fake-radio__content {
   display: block;
   padding: 0 10px;
@@ -6155,6 +6156,10 @@ input.btn {
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
+}
+
+.fake-radio_block {
+  width: 100%;
 }
 
 .fake-radio_md .fake-radio__content {
@@ -8189,6 +8194,26 @@ textarea.input {
 
 .field__select_md:before, .field__select_md:after {
   right: 20px;
+}
+
+.field__row {
+  *zoom: 1;
+}
+
+.field__row:after {
+  content: " ";
+  display: table;
+  clear: both;
+}
+
+.field__col {
+  float: left;
+  padding: 15px 20px;
+  width: 100%;
+}
+
+.field__col_50 {
+  width: 50%;
 }
 
 .field-box {

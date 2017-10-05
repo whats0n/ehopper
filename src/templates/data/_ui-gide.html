@@ -89,31 +89,16 @@
 		code: '<button class="btn btn_xl" data-animation="ripple">Button</button>'
 	},
 	{
-		code: '<button class="btn btn_xl" data-animation="ripple">Button</button>'
-	},
-	{
 		code: '<button class="btn btn_block" data-animation="ripple">Button</button>'
-	},
-	{
-		code: '<button class="btn btn_rounded" data-animation="ripple">Button</button>'
 	},
 	{
 		code: '<button class="btn btn_green" data-animation="ripple">Button</button>'
 	},
 	{
-		code: '<button class="btn btn_success" data-animation="ripple">Button</button>'
-	},
-	{
 		code: '<button class="btn btn_red" data-animation="ripple">Button</button>'
 	},
 	{
-		code: '<button class="btn btn_error" data-animation="ripple">Button</button>'
-	},
-	{
-		code: '<button class="btn btn_primary" data-animation="ripple">Button</button>'
-	},
-	{
-		code: '<button class="btn is-active" data-animation="ripple">Button</button>'
+		code: '<button class="btn btn_blue" data-animation="ripple">Button</button>'
 	},
 	{
 		code: '<button class="btn btn_secondary" data-animation="ripple">Button</button>'
@@ -130,269 +115,92 @@
 ] %}
 <!-- end BUTTONS -->
 
+<!-- begin SWITCHERS -->
+{% set switchers = [
+	{
+		code: '<label class="switcher">
+			<input type="checkbox">
+			<i class="switcher__icon"></i>
+		</label>'
+	},
+	{
+		code: '<label class="switcher">
+			<input type="checkbox" checked>
+			<i class="switcher__icon"></i>
+		</label>'
+	},
+	{
+		code: '<label class="switcher switcher_green">
+			<input type="checkbox" checked>
+			<i class="switcher__icon"></i>
+		</label>'
+	}
+] %}
+<!-- end SWITCHERS -->
+
+<!-- begin CHECKBOXES -->
+{% set checkboxes = [
+	{
+		code: '<label class="checkbox">
+			<input type="checkbox" checked>
+			<i class="icon icon-check"></i>
+			<span>Lorem ipsum.</span>
+		</label>'
+	},
+	{
+		code: '<label class="checkbox checkbox_green">
+			<input type="checkbox" checked>
+			<i class="icon icon-check"></i>
+			<span>Lorem ipsum.</span>
+		</label>'
+	},
+	{
+		code: '<label class="checkbox">
+			<input type="checkbox" disabled>
+			<i class="icon icon-check"></i>
+			<span>Lorem ipsum.</span>
+		</label>'
+	}
+] %}
+<!-- end CHECKBOXES -->
+
+<!-- begin RADIOS -->
+{% set radios = [
+	{
+		code: '<label class="fake-radio">
+			<input type="radio" name="ui-gide-radio-group">
+			<span class="fake-radio__content">Lorem ipsum.</span>
+		</label>'
+	},
+	{
+		code: '<label class="fake-radio">
+			<input type="radio" name="ui-gide-radio-group" checked>
+			<span class="fake-radio__content">Lorem ipsum.</span>
+		</label>'
+	},
+	{
+		code: '<label class="fake-radio fake-radio_block">
+			<input type="radio" name="ui-gide-radio-group">
+			<span class="fake-radio__content">Lorem ipsum.</span>
+		</label>'
+	},
+	{
+		code: '<label class="fake-radio fake-radio_lg">
+			<input type="radio" name="ui-gide-radio-group">
+			<span class="fake-radio__content">Lorem ipsum.</span>
+		</label>'
+	},
+	{
+		code: '<label class="fake-radio">
+			<input type="radio" name="ui-gide-radio-group" disabled>
+			<span class="fake-radio__content">Lorem ipsum.</span>
+		</label>'
+	}
+] %}
+<!-- end RADIOS -->
+
 <!-- begin FIELDS -->
 {% set fields = [
-	{
-		code: '<div class="field-box field-box_switch">
-			<label class="field-box__label" for="ui-switcher-field">Label</label>
-			<div class="field-box__switcher">
-				<label class="switcher">
-					<input type="checkbox" id="ui-switcher-field">
-					<i class="switcher__icon"></i>
-				</label>
-			</div>
-		</div>'
-	},
-	{
-		code: '<div class="field-box field-box_btns">
-			<div class="field-box__label">Label</div>
-			<ul class="field-box__list">
-				<li class="field-box__col field-box__col_sm field-box__btn">
-					<button class="btn btn_default btn_block btn_lg" data-animation="ripple">Button</button>
-				</li>
-				<li class="field-box__col field-box__col_sm field-box__btn">
-					<button class="btn btn_default btn_block btn_lg" data-animation="ripple">Button</button>
-				</li>
-				<li class="field-box__col field-box__col_sm field-box__btn">
-					<button class="btn btn_default btn_block btn_lg" data-animation="ripple">Button</button>
-				</li>
-			</ul>
-		</div>'
-	},
-	{
-		code: '<div class="field-box field-box_btns">
-			<ul class="field-box__list">
-				<li class="field-box__col field-box__col_md field-box__btn">
-					<button class="btn btn_default btn_block btn_lg" data-animation="ripple">Button</button>
-				</li>
-				<li class="field-box__col field-box__col_md field-box__btn">
-					<button class="btn btn_default btn_block btn_lg" data-animation="ripple">Button</button>
-				</li>
-			</ul>
-		</div>'
-	},
-	{
-		code: '<div class="field-box field-box_checkbox">
-			<div class="field-box__label">Label</div>
-			<ul class="field-box__list">
-				<li class="field-box__col field-box__col_sm field-box__checkbox">
-					<label class="checkbox">
-						<input type="checkbox">
-						<i class="icon icon-check"></i>
-						<span>Lorem ipsum.</span>
-					</label>
-				</li>
-				<li class="field-box__col field-box__col_sm field-box__checkbox">
-					<label class="checkbox">
-						<input type="checkbox">
-						<i class="icon icon-check"></i>
-						<span>Lorem ipsum.</span>
-					</label>
-				</li>
-				<li class="field-box__col field-box__col_sm field-box__checkbox">
-					<label class="checkbox">
-						<input type="checkbox">
-						<i class="icon icon-check"></i>
-						<span>Lorem ipsum.</span>
-					</label>
-				</li>
-			</ul>
-		</div>'
-	},
-	{
-		code: '<div class="field-box">
-			<div class="field-box__counter">
-				<div class="field-box__label">Label</div>
-				<div class="field-box__controls">
-					<div class="field-box__controls-in">
-						<div class="field-box__control field-box__control_left">
-							<button class="btn btn_xl btn_secondary" data-animation="ripple">&#8211;</button>
-						</div>
-						<div class="field-box__control field-box__control_right">
-							<button class="btn btn_xl btn_secondary" data-animation="ripple">+</button>
-						</div>
-						<input type="text" class="input input_xl text-center field-box__counter-input" value="0" readonly>
-					</div>
-				</div>
-			</div>
-		</div>'
-	},
-	{
-		code: '<div class="field-box">
-			<div class="field-box__select-set">
-				<div class="field-box__number">1</div>
-				<div class="field-box__select-col">
-					<div class="select select_lg">
-						<select>
-							<option value="option 1">option 1</option>
-							<option value="option 2">option 2</option>
-							<option value="option 3">option 3</option>
-						</select>
-					</div>
-				</div>
-				<div class="field-box__select-col">
-					<input type="text" class="input input_lg input_block field-box__select-input" value="0.00">
-				</div>
-				<div class="field-box__button">
-					<button class="btn btn_lg btn_default btn_block" data-animation="ripple">Lorem.</button>
-				</div>
-			</div>
-		</div>'
-	},
-	{
-		code: '<div class="field-box">
-			<div class="field-box__select-set">
-				<div class="field-box__number">1</div>
-				<div class="field-box__select-col">
-					<div class="field-box__select-static">
-						<i class="icon icon-checked"></i>
-						<span class="muted">option 1</span>
-					</div>
-				</div>
-				<div class="field-box__select-col">
-					<input type="text" class="input input_lg input_block field-box__select-input muted" value="0.00" readonly>
-				</div>
-				<div class="field-box__button">
-					<button class="btn btn_lg btn_default btn_block" data-animation="ripple">Lorem.</button>
-				</div>
-			</div>
-		</div>'
-	},
-	{
-		code: '<div class="form-box">
-			<div class="field form-box__field">
-				<div class="field__inner">
-					<label class="field__label" for="ui-field-input-alone">Label</label>
-					<div class="field__box">
-						<input class="input field__input input_lg" 
-							id="ui-field-input-alone"
-							type="text"
-							placeholder="placeholder">
-					</div>
-				</div>
-			</div>
-		</div>'
-	},
-	{
-		code: '<div class="form-box">
-			<div class="field field_static form-box__field">
-				<div class="field__inner">
-					<div class="field__switch">
-						<label class="field__switch-left" for="ui-field-currency-percent">$</label>
-						<label class="field__switch-box switcher">
-							<input type="checkbox" id="ui-field-currency-percent" checked>
-							<i class="switcher__icon"></i>
-						</label>
-						<label class="field__switch-right" for="ui-field-currency-percent">%</label>
-					</div>
-					<div class="field__box">
-						<div class="field__units" data-units="currency"><span>$</span></div>
-						<span class="field__static">0.00</span>
-						<div class="field__units" data-units="percent"><span>%</span></div>
-					</div>
-				</div>
-			</div>
-		</div>'
-	},
-	{
-		code: '<div class="form-box">
-			<div class="field field_static field_currency form-box__field">
-				<div class="field__inner">
-					<div class="field__switch">
-						<label class="field__switch-left" for="ui-field-currency-percent">$</label>
-						<label class="field__switch-box switcher">
-							<input type="checkbox" id="ui-field-currency-percent">
-							<i class="switcher__icon"></i>
-						</label>
-						<label class="field__switch-right" for="ui-field-currency-percent">%</label>
-					</div>
-					<div class="field__box">
-						<div class="field__units" data-units="currency"><span>$</span></div>
-						<span class="field__static">0.00</span>
-						<div class="field__units" data-units="percent"><span>%</span></div>
-					</div>
-				</div>
-			</div>
-		</div>'
-	},
-	{
-		code: '<div class="form-box">
-			<div class="field field_static form-box__field">
-				<div class="field__inner">
-					<div class="field__label">Label</div>
-					<div class="field__box">
-						<span class="field__static">0.00</span>
-						<div class="field__units"><span>%</span></div>
-					</div>
-				</div>
-			</div>
-		</div>'
-	},
-	{
-		code: '<div class="form-box">
-			<div class="field field_static form-box__field">
-				<div class="field__inner">
-					<div class="field__label">Label</div>
-					<div class="field__box">
-						<div class="field__units"><span>$</span></div>
-						<span class="field__static">0.00</span>
-					</div>
-				</div>
-			</div>
-		</div>'
-	},
-	{
-		code: '<div class="form-box">
-			<div class="field form-box__field">
-				<div class="field__inner">
-					<div class="field__label">Label</div>
-					<div class="field__box">
-						<div class="select select_lg">
-							<select>
-								<option value="option 1">option 1</option>
-								<option value="option 2">option 2</option>
-								<option value="option 3">option 3</option>
-							</select>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>'
-	},
-	{
-		code: '<div class="select select_simple">
-			<select>
-				<option value="option 1">option 1</option>
-				<option value="option 2">option 2</option>
-				<option value="option 3">option 3</option>
-			</select>
-		</div>'
-	},
-	{
-		code: '<div class="form-box">
-			<div class="field form-box__field">
-				<div class="field__inner">
-					<div class="field__label">Label</div>
-					<div class="field__box">
-						<div class="select select_md">
-							<select>
-								<option value="option 1">option 1</option>
-								<option value="option 2">option 2</option>
-								<option value="option 3">option 3</option>
-							</select>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>'
-	},
-	{
-		code: '<div class="form-box">
-			<div class="form-box__field">
-				<textarea class="textarea textarea_block textarea_little" placeholder="placeholder"></textarea>
-			</div>
-		</div>'
-	},
 	{
 		code: '<div class="form-box">
 			<div class="form-box__field">
@@ -401,17 +209,13 @@
 		</div>'
 	},
 	{
-		code: '<textarea class="textarea textarea_block textarea_simple" placeholder="placeholder"></textarea>'
+		code: ''
 	},
 	{
-		code: '<div class="field">
-			<div class="field__inner">
-				<label for="ui-component-field-input1" class="field__label">Label</label>
-				<div class="field__box">
-					<input type="text" class="input input_lg field__input" placeholder="placeholder">
-				</div>
-			</div>
-		</div>'
+		code: ''
+	},
+	{
+		code: ''
 	}
 ] %}
 <!-- end FIELDS -->

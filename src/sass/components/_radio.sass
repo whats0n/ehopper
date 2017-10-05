@@ -63,8 +63,6 @@
 	.is-active 
       color: $white
       background: $blue
-	&_block
-		width: 100%
 	+active 
 		.fake-radio__content
 			color: $darkGray
@@ -83,6 +81,9 @@
 		&:checked + .fake-radio__content 
 			color: $white
 			background: $blue
+		&:disabled ~ .fake-radio__content
+			opacity: 0.5
+			pointer-events: none
 	&__content
 		display: block
 
@@ -107,6 +108,8 @@
 		cursor: pointer
 		user-select: none
 	//mods
+	&_block
+		width: 100%
 	&_md
 		.fake-radio__content
 			height: 50px

@@ -1,5 +1,5 @@
 ---
-title: 'UI Components &bull; eHopper POS'
+title: 'UI Gide'
 oldStyles: [
 	'font-awesome.min',
 	'durandal',
@@ -95,18 +95,65 @@ styles: [
 			<!-- begin SWITCHERS/CHECKBOXES/RADIOS -->
 			<div class="ui-container">
 				<div class="ui-title">Switcher (+)/Checkbox (+)/Radio (deprecated):</div>
-				{% for item in gide.fields %}
-					<div class="ui-col ui-col_md">
-						<div class="ui-label">{{labels.code}}</div>
-						<div class="ui-code">{{item.code}}</div>
-						<div class="ui-component">
-							<div class="ui-label">{{labels.component}}</div>
-							{{item.code | safe}}
+				<div class="ui-section">
+					<div class="ui-subtitle">Switcher:</div>
+					{% for item in gide.switchers %}
+						<div class="ui-col ui-col_md">
+							<div class="ui-label">{{labels.code}}</div>
+							<div class="ui-code">{{item.code}}</div>
+							<div class="ui-component">
+								<div class="ui-label">{{labels.component}}</div>
+								{{item.code | safe}}
+							</div>
 						</div>
-					</div>
-				{% endfor %}
+					{% endfor %}
+				</div>
+				<div class="ui-section">
+					<div class="ui-subtitle">Checkbox:</div>
+					{% for item in gide.checkboxes %}
+						<div class="ui-col ui-col_md">
+							<div class="ui-label">{{labels.code}}</div>
+							<div class="ui-code">{{item.code}}</div>
+							<div class="ui-component">
+								<div class="ui-label">{{labels.component}}</div>
+								{{item.code | safe}}
+							</div>
+						</div>
+					{% endfor %}
+				</div>
+				<div class="ui-section">
+					<div class="ui-subtitle">Radio:</div>
+					{% for item in gide.radios %}
+						<div class="ui-col ui-col_md">
+							<div class="ui-label">{{labels.code}}</div>
+							<div class="ui-code">{{item.code}}</div>
+							<div class="ui-component">
+								<div class="ui-label">{{labels.component}}</div>
+								{{item.code | safe}}
+							</div>
+						</div>
+					{% endfor %}
+				</div>
 			</div>
 			<!-- end SWITCHERS/CHECKBOXES/RADIOS -->
+			<!-- begin FIELDS -->
+			<div class="ui-container">
+				<div class="ui-title">Fields:</div>
+				<div class="ui-section">
+					<div class="ui-subtitle">Switcher:</div>
+					{% for item in gide.fields %}
+						<div class="ui-col ui-col_md">
+							<div class="ui-label">{{labels.code}}</div>
+							<div class="ui-code">{{item.code}}</div>
+							<div class="ui-component">
+								<div class="ui-label">{{labels.component}}</div>
+								{{item.code | safe}}
+							</div>
+						</div>
+					{% endfor %}
+				</div>
+			</div>
+			<!-- end FIELDS -->
 		</div>
 	</main>
 {% endblock %}

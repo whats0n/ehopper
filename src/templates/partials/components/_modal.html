@@ -91,6 +91,29 @@
 					<div class="order-receipt__checkbox">
 						{{mixins.checkbox(item.checkbox)}}
 					</div>
+				{% elif item.radio %}
+					<div class="order-receipt__radio">
+						<div class="field">
+							<div class="field__inner">
+								<div class="field__label">Receipt format</div>
+								<div class="field__row field__box">
+									<div class="field__col field__col_50">
+										{{mixins.radio({
+											name: item.radio.name,
+											content: 'POS'
+										})}}
+									</div>
+									<div class="field__col field__col_50">
+										{{mixins.radio({
+											name: item.radio.name,
+											attrs: 'checked',
+											content: 'A4'
+										})}}
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
 				{% endif %}
 			{% endfor %}
 		</div>
