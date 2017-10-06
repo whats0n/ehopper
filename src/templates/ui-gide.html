@@ -165,8 +165,66 @@ styles: [
 						</div>
 					{% endfor %}
 				</div>
+				<div class="ui-section">
+					<div class="ui-subtitle">Packs:</div>
+					{% for item in gide.fields %}
+						<div class="ui-col ui-col_md">
+							<div class="ui-label">{{labels.code}}</div>
+							<div class="ui-code">{{item.code}}</div>
+							<div class="ui-component">
+								<div class="ui-label">{{labels.component}}</div>
+								{{item.code | safe}}
+							</div>
+						</div>
+					{% endfor %}
+				</div>
 			</div>
 			<!-- end FIELDS -->
+			<!-- begin LOADER -->
+			<div class="ui-container">
+				<div class="ui-title">LOADER:</div>
+				{% for item in gide.loader %}
+					<div class="ui-col ui-col_md">
+						<div class="ui-label">{{labels.code}}</div>
+						<div class="ui-code">{{item.code}}</div>
+						<div class="ui-component">
+							<div class="ui-label">{{labels.component}}</div>
+							{{item.code | safe}}
+						</div>
+					</div>
+				{% endfor %}
+			</div>
+			<!-- end LOADER -->
+			<!-- begin CARDS -->
+			<div class="ui-container">
+				<div class="ui-title">CARDS:</div>
+				{% for item in gide.cards %}
+					<div class="ui-col ui-col_md">
+						<div class="ui-label">{{labels.code}}</div>
+						<div class="ui-code">{{item.code}}</div>
+						<div class="ui-component">
+							<div class="ui-label">{{labels.component}}</div>
+							{{item.code | safe}}
+						</div>
+					</div>
+				{% endfor %}
+			</div>
+			<!-- end CARDS -->
+			<!-- begin PAYMENTS -->
+			<div class="ui-container">
+				<div class="ui-title">PAYMENTS:</div>
+				{% for item in gide.payments %}
+					<div class="ui-col ui-col_md">
+						<div class="ui-label">{{labels.code}}</div>
+						<div class="ui-code">{{item.code}}</div>
+						<div class="ui-component">
+							<div class="ui-label">{{labels.component}}</div>
+							{{item.code | safe}}
+						</div>
+					</div>
+				{% endfor %}
+			</div>
+			<!-- end PAYMENTS -->
 		</div>
 	</main>
 {% endblock %}

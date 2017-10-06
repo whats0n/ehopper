@@ -13049,13 +13049,23 @@ textarea.input {
   display: inline-block;
   vertical-align: bottom;
   padding: 10px;
-  border-bottom: 1px solid #eee;
+  margin-bottom: 2%;
+  border: 2px solid #eee;
   width: 100%;
+  background: #fff;
   font-size: 14px;
 }
 
 .ui-col_md {
-  width: 50%;
+  width: 49%;
+}
+
+.ui-col_md:nth-child(even) {
+  margin-right: 1%;
+}
+
+.ui-col_md:nth-child(odd) {
+  margin-left: 1%;
 }
 
 .ui-component {

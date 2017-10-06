@@ -16,11 +16,18 @@
 	display: inline-block
 	vertical-align: bottom
 	padding: 10px
-	border-bottom: 1px solid $lightGray
+	margin-bottom: 2%
+	border: 2px solid $lightGray
 	width: 100%
+	background: $white
 	font-size: 14px
 	&_md
-		width: 50%
+		// width: 50%
+		width: 49%
+		&:nth-child(even)
+			margin-right: 1%
+		&:nth-child(odd)
+			margin-left: 1%
 
 .ui-component
 	padding-top: 20px

@@ -250,4 +250,357 @@
 		</div>'
 	}
 ] %}
+{% set fields = [
+	{
+		code: '<div class="field-box field-box_switch">
+			<label class="field-box__label" for="ui-switcher-field">Label</label>
+			<div class="field-box__switcher">
+				<label class="switcher">
+					<input type="checkbox" id="ui-switcher-field">
+					<i class="switcher__icon"></i>
+				</label>
+			</div>
+		</div>'
+	},
+	{
+		code: '<div class="field-box field-box_btns">
+			<div class="field-box__label">Label</div>
+			<ul class="field-box__list">
+				<li class="field-box__col field-box__col_sm field-box__btn">
+					<button class="btn btn_default btn_block btn_lg" data-animation="ripple">Button</button>
+				</li>
+				<li class="field-box__col field-box__col_sm field-box__btn">
+					<button class="btn btn_default btn_block btn_lg" data-animation="ripple">Button</button>
+				</li>
+				<li class="field-box__col field-box__col_sm field-box__btn">
+					<button class="btn btn_default btn_block btn_lg" data-animation="ripple">Button</button>
+				</li>
+			</ul>
+		</div>'
+	},
+	{
+		code: '<div class="field-box field-box_btns">
+			<ul class="field-box__list">
+				<li class="field-box__col field-box__col_md field-box__btn">
+					<button class="btn btn_default btn_block btn_lg" data-animation="ripple">Button</button>
+				</li>
+				<li class="field-box__col field-box__col_md field-box__btn">
+					<button class="btn btn_default btn_block btn_lg" data-animation="ripple">Button</button>
+				</li>
+			</ul>
+		</div>'
+	},
+	{
+		code: '<div class="field-box field-box_checkbox">
+			<div class="field-box__label">Label</div>
+			<ul class="field-box__list">
+				<li class="field-box__col field-box__col_sm field-box__checkbox">
+					<label class="checkbox">
+						<input type="checkbox">
+						<i class="icon icon-check"></i>
+						<span>Lorem ipsum.</span>
+					</label>
+				</li>
+				<li class="field-box__col field-box__col_sm field-box__checkbox">
+					<label class="checkbox">
+						<input type="checkbox">
+						<i class="icon icon-check"></i>
+						<span>Lorem ipsum.</span>
+					</label>
+				</li>
+				<li class="field-box__col field-box__col_sm field-box__checkbox">
+					<label class="checkbox">
+						<input type="checkbox">
+						<i class="icon icon-check"></i>
+						<span>Lorem ipsum.</span>
+					</label>
+				</li>
+			</ul>
+		</div>'
+	},
+	{
+		code: '<div class="field-box">
+			<div class="field-box__counter">
+				<div class="field-box__label">Label</div>
+				<div class="field-box__controls">
+					<div class="field-box__controls-in">
+						<div class="field-box__control field-box__control_left">
+							<button class="btn btn_xl btn_secondary" data-animation="ripple">&#8211;</button>
+						</div>
+						<div class="field-box__control field-box__control_right">
+							<button class="btn btn_xl btn_secondary" data-animation="ripple">+</button>
+						</div>
+						<input type="text" class="input input_xl text-center field-box__counter-input" value="0" readonly>
+					</div>
+				</div>
+			</div>
+		</div>'
+	},
+	{
+		code: '<div class="field-box">
+			<div class="field-box__select-set">
+				<div class="field-box__select-col">
+					<!-- begin dropdown -->
+					<div class="dropdown" data-dropdown="split-payment-1">
+						<div class="dropdown__header" data-dropdown-open="split-payment-1" data-animation="ripple">
+							<i class="dropdown__arrow icon icon-expand"></i>
+							<div class="dropdown__value" data-dropdown-value="split-payment-1">Cash</div>
+						</div>
+						<div class="dropdown-menu dropdown-menu_no-scroll" data-dropdown-menu="split-payment-1">
+							<ul class="dropdown-menu__list" data-scrollbar="default">
+								<li class="dropdown-menu__item is-active"
+									data-animation="ripple" 
+									data-dropdown-item="split-payment-1" 
+									data-value="Cash">
+									Cash
+								</li>
+								<li class="dropdown-menu__item"
+									data-animation="ripple" 
+									data-dropdown-item="split-payment-1" 
+									data-value="Credit Card">
+									Credit Card
+								</li>
+								<li class="dropdown-menu__item"
+									data-animation="ripple" 
+									data-dropdown-item="split-payment-1" 
+									data-value="Debit Card">
+									Debit Card
+								</li>
+								<li class="dropdown-menu__item"
+									data-animation="ripple" 
+									data-dropdown-item="split-payment-1" 
+									data-value="External Payment">
+									External Payment
+								</li>
+							</ul>
+						</div>
+						<button type="button" 
+							class="overlay" 
+							data-color="dark-gray" 
+							data-overlay="overlay" 
+							data-dropdown-overlay="split-payment-1"></button>
+					</div>
+					<!-- end dropdown -->
+				</div>
+				<div class="field-box__select-col">
+					<input type="text" class="input input_lg input_block field-box__select-input" value="100.00">
+				</div>
+				<div class="field-box__button">
+					<button class="btn btn_lg btn_block" data-animation="ripple">Charge</button>
+				</div>
+			</div>
+		</div>'
+	},
+	{
+		code: '<div class="field-box">
+			<div class="field-box__select-set">
+				<div class="field-box__select-col">
+					<div class="field-box__select-static">
+						<i class="icon icon-checked"></i>
+						<span class="muted">External Payment</span>
+					</div>
+				</div>
+				<div class="field-box__select-col">
+					<input type="text" class="input input_lg input_block field-box__select-input muted" value="100.00" readonly>
+				</div>
+				<div class="field-box__button">
+					<button class="btn btn_lg btn_block btn_red" data-animation="ripple">Void</button>
+				</div>
+			</div>
+		</div>'
+	},
+	{
+		code: '<div class="form-box">
+			<div class="field form-box__field">
+				<div class="field__inner">
+					<label class="field__label" for="ui-field-input-alone">Label</label>
+					<div class="field__box">
+						<input class="input field__input input_lg" 
+							id="ui-field-input-alone"
+							type="text"
+							placeholder="placeholder">
+					</div>
+				</div>
+			</div>
+		</div>'
+	},
+	{
+		code: '<div class="form-box">
+			<div class="field field_static form-box__field">
+				<div class="field__inner">
+					<div class="field__switch">
+						<label class="field__switch-left" for="ui-field-currency-percent">$</label>
+						<label class="field__switch-box switcher">
+							<input type="checkbox" id="ui-field-currency-percent" checked>
+							<i class="switcher__icon"></i>
+						</label>
+						<label class="field__switch-right" for="ui-field-currency-percent">%</label>
+					</div>
+					<div class="field__box">
+						<div class="field__units" data-units="currency"><span>$</span></div>
+						<span class="field__static">0.00</span>
+						<div class="field__units" data-units="percent"><span>%</span></div>
+					</div>
+				</div>
+			</div>
+		</div>'
+	},
+	{
+		code: '<div class="form-box">
+			<div class="field field_static field_currency form-box__field">
+				<div class="field__inner">
+					<div class="field__switch">
+						<label class="field__switch-left" for="ui-field-currency-percent">$</label>
+						<label class="field__switch-box switcher">
+							<input type="checkbox" id="ui-field-currency-percent">
+							<i class="switcher__icon"></i>
+						</label>
+						<label class="field__switch-right" for="ui-field-currency-percent">%</label>
+					</div>
+					<div class="field__box">
+						<div class="field__units" data-units="currency"><span>$</span></div>
+						<span class="field__static">0.00</span>
+						<div class="field__units" data-units="percent"><span>%</span></div>
+					</div>
+				</div>
+			</div>
+		</div>'
+	},
+	{
+		code: '<div class="form-box">
+			<div class="field field_static form-box__field">
+				<div class="field__inner">
+					<div class="field__label">Label</div>
+					<div class="field__box">
+						<span class="field__static">0.00</span>
+						<div class="field__units"><span>%</span></div>
+					</div>
+				</div>
+			</div>
+		</div>'
+	},
+	{
+		code: '<div class="form-box">
+			<div class="field field_static form-box__field">
+				<div class="field__inner">
+					<div class="field__label">Label</div>
+					<div class="field__box">
+						<div class="field__units"><span>$</span></div>
+						<span class="field__static">0.00</span>
+					</div>
+				</div>
+			</div>
+		</div>'
+	}
+] %}
 <!-- end FIELDS -->
+
+<!-- begin LOADER -->
+{% set loader = [
+	{
+		code: '<div class="loading"></div>'
+	}
+] %}
+<!-- end LOADER -->
+
+<!-- begin CARDS -->
+{% set cards = [
+	{
+		code: '<div class="sm-card">
+			<label class="sm-card__label">
+				<input type="checkbox">
+				<span class="sm-card__content" data-animation="ripple">
+					<i class="sm-card__icon icon icon-checked"></i>
+					<span class="sm-card__title">Lorem ipsum.</span>
+					<span class="sm-card__sticker">0.00</span>
+				</span>
+			</label>
+		</div>'
+	},
+	{
+		code: '<div class="simple-card">
+			<label class="simple-card__label">
+				<input type="checkbox">
+				<span class="simple-card__content" data-animation="ripple">
+					<span class="simple-card__title">Lorem ipsum.</span>
+					<span class="simple-card__description">Lorem ipsum dolor.</span>
+				</span>
+			</label>
+		</div>'
+	},
+	{
+		code: '<div class="card-serial">
+			<label class="card-serial__label">
+				<input type="checkbox">
+				<span class="card-serial__content" data-animation="ripple">
+					<span class="card-serial__title">Lorem ipsum.</span>
+				</span>
+			</label>
+		</div>'
+	}
+] %}
+<!-- end CARDS -->
+<!-- begin PAYMENTS -->
+{% set payments = [
+	{
+		code: '<div class="payment-card" data-animation="ripple">
+			<div class="payment-card__title">
+				<span>Cash</span>
+			</div>
+			<div class="payment-card__icon">
+				<i class="fa fa-money"></i>
+			</div>
+		</div>'
+	},
+	{
+		code: '<div class="payment-card" data-animation="ripple">
+			<div class="payment-card__title">
+				<span>Credit Card</span>
+			</div>
+			<div class="payment-card__icon">
+				<i class="icon icon-payment-card"></i>
+			</div>
+		</div>'
+	},
+	{
+		code: '<div class="payment-card" data-animation="ripple">
+			<div class="payment-card__title">
+				<span>Debit Card</span>
+			</div>
+			<div class="payment-card__icon">
+				<i class="icon icon-payment-card"></i>
+			</div>
+		</div>'
+	},
+	{
+		code: '<div class="payment-card" data-animation="ripple">
+			<div class="payment-card__title">
+				<span>EBT Card</span>
+			</div>
+			<div class="payment-card__icon">
+				<span class="payment-card__icon-text">EBT</span>
+			</div>
+		</div>'
+	},
+	{
+		code: '<div class="payment-card" data-animation="ripple">
+			<div class="payment-card__title">
+				<span>External Payment</span>
+			</div>
+			<div class="payment-card__icon">
+				<i class="icon icon-payment-terminal"></i>
+			</div>
+		</div>'
+	},
+	{
+		code: '<div class="payment-card" data-animation="ripple">
+			<div class="payment-card__title">
+				<span>Split Payment</span>
+			</div>
+			<div class="payment-card__icon">
+				<i class="icon icon-payment-split"></i>
+			</div>
+		</div>'
+	}
+] %}
+<!-- end PAYMENTS -->
