@@ -188,6 +188,9 @@ html {
   padding: 15px 10px;
   border-bottom: 1px solid rgba(0, 0, 0, 0.1);
   cursor: pointer;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 .ui-menu__item.is-active {

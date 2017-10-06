@@ -35,7 +35,7 @@ styles: [
 			<div class="ui-menu">
 				<ul class="ui-menu__list">
 					{% for item in uiMenu %}
-						<li class="ui-menu__item {{item.active}}" data-tab-open="{{item.id}}" data-tab-collection="ui-gide">{{item.title}}</li>
+						<li class="ui-menu__item {{item.active}}" data-tab-open="{{item.id}}" data-tab-collection="ui-gide" title="{{item.title}}">{{item.title}}</li>
 					{% endfor %}
 				</ul>
 			</div>
