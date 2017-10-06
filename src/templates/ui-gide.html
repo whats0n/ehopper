@@ -6,8 +6,7 @@ oldStyles: [
 	'toastr.min',
 	'jquery-ui.min',
 	'app',
-	'ui-update',
-	'gide'
+	'ui-update'
 ]
 styles: [
 	'ui-gide'
@@ -23,208 +22,238 @@ styles: [
 		component: 'component view:'
 	} %}
 	<main class="main">
-		<div class="inner ui-wrapper">
-			<!-- begin STYLES -->
-			<div class="ui-container">
-				<div class="ui-title">Styles:</div>
-				<ul class="ui-list">
-					{% for item in oldStyles %}
-						<li>
-							<a href="static/old-css/{{item}}.css" target="_blank">{{item}}.css</a>
-						</li>
+		<div class="inner ui-wrapper" data-tab="ui-gide">
+			{% set uiMenu = [
+				{ id: 'styles', title: 'styles', active: 'is-active' },
+				{ id: 'typography', title: 'typography' },
+				{ id: 'buttons', title: 'buttons' },
+				{ id: 'switch/checkbox/radio', title: 'switch/checkbox/radio' },
+				{ id: 'fields', title: 'fields' },
+				{ id: 'cards', title: 'cards' },
+				{ id: 'loader', title: 'loader' }
+			] %}
+			<div class="ui-menu">
+				<ul class="ui-menu__list">
+					{% for item in uiMenu %}
+						<li class="ui-menu__item {{item.active}}" data-tab-open="{{item.id}}" data-tab-collection="ui-gide">{{item.title}}</li>
 					{% endfor %}
 				</ul>
 			</div>
-			<!-- end STYLES -->
-			<!-- begin FONTS -->
-			<div class="ui-container">
-				<div class="ui-title">Fonts:</div>
-				<ul class="ui-list">
-					{% for item in gide.fonts %}
-						<li>{{item | safe}}</li>
-					{% endfor %}
-				</ul>
-			</div>
-			<!-- end FONTS -->
-			<!-- begin TYPOGRAPHY -->
-			<div class="ui-container">
-				<div class="ui-title">Typography:</div>
-				<div class="ui-section">
-					<div class="ui-subtitle">Titles:</div>
-					{% for item in gide.headers %}
-						<div class="ui-col ui-col_md">
-							<div class="ui-label">{{labels.code}}</div>
-							<div class="ui-code">{{item.code}}</div>
-							<div class="ui-component">
-								<div class="ui-label">{{labels.component}}</div>
-								{{item.code | safe}}
-							</div>
-						</div>
-					{% endfor %}
+			<div class="ui-content is-open" data-tab-container="styles" data-tab-collection="ui-gide">
+				<!-- begin STYLES -->
+				<div class="ui-container">
+					<div class="ui-title">Styles:</div>
+					<ul class="ui-list">
+						{% for item in oldStyles %}
+							<li>
+								<a href="static/old-css/{{item}}.css" target="_blank">{{item}}.css</a>
+							</li>
+						{% endfor %}
+					</ul>
 				</div>
-				<div class="ui-section">
-					<div class="ui-subtitle">Text modificators: color & align</div>
-					{% for item in gide.modificators %}
-						<div class="ui-col ui-col_md">
-							<div class="ui-label">{{labels.code}}</div>
-							<div class="ui-code">{{item.code}}</div>
-							<div class="ui-component">
-								<div class="ui-label">{{labels.component}}</div>
-								{{item.code | safe}}
-							</div>
-						</div>
-					{% endfor %}
-				</div>
+				<!-- end STYLES -->
 			</div>
-			<!-- end TYPOGRAPHY -->
-			<!-- begin BUTTONS -->
-			<div class="ui-container">
-				<div class="ui-title">Buttons:</div>
-				{% for item in gide.buttons %}
-					<div class="ui-col ui-col_md">
-						<div class="ui-label">{{labels.code}}</div>
-						<div class="ui-code">{{item.code}}</div>
-						<div class="ui-component">
-							<div class="ui-label">{{labels.component}}</div>
-							{{item.code | safe}}
-						</div>
+			<div class="ui-content" data-tab-container="typography" data-tab-collection="ui-gide">
+				<!-- begin FONTS -->
+				<div class="ui-container">
+					<div class="ui-title">Fonts:</div>
+					<ul class="ui-list">
+						{% for item in gide.fonts %}
+							<li>{{item | safe}}</li>
+						{% endfor %}
+					</ul>
+				</div>
+				<!-- end FONTS -->
+				<!-- begin TYPOGRAPHY -->
+				<div class="ui-container">
+					<div class="ui-title">Typography:</div>
+					<div class="ui-section">
+						<div class="ui-subtitle">Titles:</div>
+						{% for item in gide.headers %}
+							<div class="ui-col ui-col_md">
+								<div class="ui-label">{{labels.code}}</div>
+								<div class="ui-code">{{item.code}}</div>
+								<div class="ui-component">
+									<div class="ui-label">{{labels.component}}</div>
+									{{item.code | safe}}
+								</div>
+							</div>
+						{% endfor %}
 					</div>
-				{% endfor %}
-			</div>
-			<!-- end BUTTONS -->
-			<!-- begin SWITCHERS/CHECKBOXES/RADIOS -->
-			<div class="ui-container">
-				<div class="ui-title">Switcher (+)/Checkbox (+)/Radio (deprecated):</div>
-				<div class="ui-section">
-					<div class="ui-subtitle">Switcher:</div>
-					{% for item in gide.switchers %}
-						<div class="ui-col ui-col_md">
-							<div class="ui-label">{{labels.code}}</div>
-							<div class="ui-code">{{item.code}}</div>
-							<div class="ui-component">
-								<div class="ui-label">{{labels.component}}</div>
-								{{item.code | safe}}
+					<div class="ui-section">
+						<div class="ui-subtitle">Text modificators: color & align</div>
+						{% for item in gide.modificators %}
+							<div class="ui-col ui-col_md">
+								<div class="ui-label">{{labels.code}}</div>
+								<div class="ui-code">{{item.code}}</div>
+								<div class="ui-component">
+									<div class="ui-label">{{labels.component}}</div>
+									{{item.code | safe}}
+								</div>
 							</div>
-						</div>
-					{% endfor %}
-				</div>
-				<div class="ui-section">
-					<div class="ui-subtitle">Checkbox:</div>
-					{% for item in gide.checkboxes %}
-						<div class="ui-col ui-col_md">
-							<div class="ui-label">{{labels.code}}</div>
-							<div class="ui-code">{{item.code}}</div>
-							<div class="ui-component">
-								<div class="ui-label">{{labels.component}}</div>
-								{{item.code | safe}}
-							</div>
-						</div>
-					{% endfor %}
-				</div>
-				<div class="ui-section">
-					<div class="ui-subtitle">Radio:</div>
-					{% for item in gide.radios %}
-						<div class="ui-col ui-col_md">
-							<div class="ui-label">{{labels.code}}</div>
-							<div class="ui-code">{{item.code}}</div>
-							<div class="ui-component">
-								<div class="ui-label">{{labels.component}}</div>
-								{{item.code | safe}}
-							</div>
-						</div>
-					{% endfor %}
-				</div>
-			</div>
-			<!-- end SWITCHERS/CHECKBOXES/RADIOS -->
-			<!-- begin FIELDS -->
-			<div class="ui-container">
-				<div class="ui-title">Fields:</div>
-				<div class="ui-section">
-					<div class="ui-subtitle">Textarea:</div>
-					{% for item in gide.textareas %}
-						<div class="ui-col ui-col_md">
-							<div class="ui-label">{{labels.code}}</div>
-							<div class="ui-code">{{item.code}}</div>
-							<div class="ui-component">
-								<div class="ui-label">{{labels.component}}</div>
-								{{item.code | safe}}
-							</div>
-						</div>
-					{% endfor %}
-				</div>
-				<div class="ui-section">
-					<div class="ui-subtitle">Input:</div>
-					{% for item in gide.inputs %}
-						<div class="ui-col ui-col_md">
-							<div class="ui-label">{{labels.code}}</div>
-							<div class="ui-code">{{item.code}}</div>
-							<div class="ui-component">
-								<div class="ui-label">{{labels.component}}</div>
-								{{item.code | safe}}
-							</div>
-						</div>
-					{% endfor %}
-				</div>
-				<div class="ui-section">
-					<div class="ui-subtitle">Packs:</div>
-					{% for item in gide.fields %}
-						<div class="ui-col ui-col_md">
-							<div class="ui-label">{{labels.code}}</div>
-							<div class="ui-code">{{item.code}}</div>
-							<div class="ui-component">
-								<div class="ui-label">{{labels.component}}</div>
-								{{item.code | safe}}
-							</div>
-						</div>
-					{% endfor %}
-				</div>
-			</div>
-			<!-- end FIELDS -->
-			<!-- begin LOADER -->
-			<div class="ui-container">
-				<div class="ui-title">LOADER:</div>
-				{% for item in gide.loader %}
-					<div class="ui-col ui-col_md">
-						<div class="ui-label">{{labels.code}}</div>
-						<div class="ui-code">{{item.code}}</div>
-						<div class="ui-component">
-							<div class="ui-label">{{labels.component}}</div>
-							{{item.code | safe}}
-						</div>
+						{% endfor %}
 					</div>
-				{% endfor %}
+				</div>
+				<!-- end TYPOGRAPHY -->
 			</div>
-			<!-- end LOADER -->
-			<!-- begin CARDS -->
-			<div class="ui-container">
-				<div class="ui-title">CARDS:</div>
-				{% for item in gide.cards %}
-					<div class="ui-col ui-col_md">
-						<div class="ui-label">{{labels.code}}</div>
-						<div class="ui-code">{{item.code}}</div>
-						<div class="ui-component">
-							<div class="ui-label">{{labels.component}}</div>
-							{{item.code | safe}}
+			<div class="ui-content" data-tab-container="buttons" data-tab-collection="ui-gide">
+				<!-- begin BUTTONS -->
+				<div class="ui-container">
+					<div class="ui-title">Buttons:</div>
+					{% for item in gide.buttons %}
+						<div class="ui-col ui-col_md">
+							<div class="ui-label">{{labels.code}}</div>
+							<div class="ui-code">{{item.code}}</div>
+							<div class="ui-component">
+								<div class="ui-label">{{labels.component}}</div>
+								{{item.code | safe}}
+							</div>
 						</div>
-					</div>
-				{% endfor %}
+					{% endfor %}
+				</div>
+				<!-- end BUTTONS -->
 			</div>
-			<!-- end CARDS -->
-			<!-- begin PAYMENTS -->
-			<div class="ui-container">
-				<div class="ui-title">PAYMENTS:</div>
-				{% for item in gide.payments %}
-					<div class="ui-col ui-col_md">
-						<div class="ui-label">{{labels.code}}</div>
-						<div class="ui-code">{{item.code}}</div>
-						<div class="ui-component">
-							<div class="ui-label">{{labels.component}}</div>
-							{{item.code | safe}}
+			<div class="ui-content" data-tab-container="switch/checkbox/radio" data-tab-collection="ui-gide">
+				<!-- begin SWITCHERS/CHECKBOXES/RADIOS -->
+				<div class="ui-container">
+					<div class="ui-title">Switcher (+)/Checkbox (+)/Radio:</div>
+					<div class="ui-section">
+						<div class="ui-subtitle">Switcher:</div>
+						{% for item in gide.switchers %}
+							<div class="ui-col ui-col_md">
+								<div class="ui-label">{{labels.code}}</div>
+								<div class="ui-code">{{item.code}}</div>
+								<div class="ui-component">
+									<div class="ui-label">{{labels.component}}</div>
+									{{item.code | safe}}
+								</div>
+							</div>
+						{% endfor %}
+					</div>
+					<div class="ui-section">
+						<div class="ui-subtitle">Checkbox:</div>
+						{% for item in gide.checkboxes %}
+							<div class="ui-col ui-col_md">
+								<div class="ui-label">{{labels.code}}</div>
+								<div class="ui-code">{{item.code}}</div>
+								<div class="ui-component">
+									<div class="ui-label">{{labels.component}}</div>
+									{{item.code | safe}}
+								</div>
+							</div>
+						{% endfor %}
+					</div>
+					<div class="ui-section">
+						<div class="ui-subtitle">Radio:</div>
+						{% for item in gide.radios %}
+							<div class="ui-col ui-col_md">
+								<div class="ui-label">{{labels.code}}</div>
+								<div class="ui-code">{{item.code}}</div>
+								<div class="ui-component">
+									<div class="ui-label">{{labels.component}}</div>
+									{{item.code | safe}}
+								</div>
+							</div>
+						{% endfor %}
+					</div>
+				</div>
+				<!-- end SWITCHERS/CHECKBOXES/RADIOS -->
+			</div>
+			<div class="ui-content" data-tab-container="fields" data-tab-collection="ui-gide">
+				<!-- begin FIELDS -->
+				<div class="ui-container">
+					<div class="ui-title">Fields:</div>
+					<div class="ui-section">
+						<div class="ui-subtitle">Textarea:</div>
+						{% for item in gide.textareas %}
+							<div class="ui-col ui-col_md">
+								<div class="ui-label">{{labels.code}}</div>
+								<div class="ui-code">{{item.code}}</div>
+								<div class="ui-component">
+									<div class="ui-label">{{labels.component}}</div>
+									{{item.code | safe}}
+								</div>
+							</div>
+						{% endfor %}
+					</div>
+					<div class="ui-section">
+						<div class="ui-subtitle">Input:</div>
+						{% for item in gide.inputs %}
+							<div class="ui-col ui-col_md">
+								<div class="ui-label">{{labels.code}}</div>
+								<div class="ui-code">{{item.code}}</div>
+								<div class="ui-component">
+									<div class="ui-label">{{labels.component}}</div>
+									{{item.code | safe}}
+								</div>
+							</div>
+						{% endfor %}
+					</div>
+					<div class="ui-section">
+						<div class="ui-subtitle">Packs:</div>
+						{% for item in gide.fields %}
+							<div class="ui-col ui-col_md">
+								<div class="ui-label">{{labels.code}}</div>
+								<div class="ui-code">{{item.code}}</div>
+								<div class="ui-component">
+									<div class="ui-label">{{labels.component}}</div>
+									{{item.code | safe}}
+								</div>
+							</div>
+						{% endfor %}
+					</div>
+				</div>
+				<!-- end FIELDS -->
+			</div>
+			<div class="ui-content" data-tab-container="cards" data-tab-collection="ui-gide">
+				<!-- begin CARDS -->
+				<div class="ui-container">
+					<div class="ui-title">CARDS:</div>
+					{% for item in gide.cards %}
+						<div class="ui-col ui-col_md">
+							<div class="ui-label">{{labels.code}}</div>
+							<div class="ui-code">{{item.code}}</div>
+							<div class="ui-component">
+								<div class="ui-label">{{labels.component}}</div>
+								{{item.code | safe}}
+							</div>
 						</div>
-					</div>
-				{% endfor %}
+					{% endfor %}
+				</div>
+				<!-- end CARDS -->
+				<!-- begin PAYMENTS -->
+				<div class="ui-container">
+					<div class="ui-title">PAYMENTS:</div>
+					{% for item in gide.payments %}
+						<div class="ui-col ui-col_md">
+							<div class="ui-label">{{labels.code}}</div>
+							<div class="ui-code">{{item.code}}</div>
+							<div class="ui-component">
+								<div class="ui-label">{{labels.component}}</div>
+								{{item.code | safe}}
+							</div>
+						</div>
+					{% endfor %}
+				</div>
+				<!-- end PAYMENTS -->
 			</div>
-			<!-- end PAYMENTS -->
+			<div class="ui-content" data-tab-container="loader" data-tab-collection="ui-gide">
+				<!-- begin LOADER -->
+				<div class="ui-container">
+					<div class="ui-title">LOADER:</div>
+					{% for item in gide.loader %}
+						<div class="ui-col ui-col_md">
+							<div class="ui-label">{{labels.code}}</div>
+							<div class="ui-code">{{item.code}}</div>
+							<div class="ui-component">
+								<div class="ui-label">{{labels.component}}</div>
+								{{item.code | safe}}
+							</div>
+						</div>
+					{% endfor %}
+				</div>
+				<!-- end LOADER -->
+			</div>
 		</div>
 	</main>
 {% endblock %}

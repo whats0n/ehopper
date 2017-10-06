@@ -13027,8 +13027,42 @@ textarea.input {
 }
 
 .ui-wrapper {
+  position: relative;
+  padding-left: 200px;
+  height: 100%;
+}
+
+.ui-menu {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  overflow: auto;
+  width: 200px;
+  color: #fff;
+  background: #2e99db;
+  font-size: 14px;
+  text-transform: uppercase;
+}
+
+.ui-menu__item {
+  padding: 15px 10px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+}
+
+.ui-menu__item.is-active {
+  background: rgba(0, 0, 0, 0.1);
+}
+
+.ui-content {
+  display: none;
   overflow: auto;
   height: 100%;
+}
+
+.ui-content.is-open {
+  display: block;
 }
 
 .ui-container {

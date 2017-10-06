@@ -19,13 +19,13 @@ export default (function() {
 	    	$buttons = $buttons.filter(`[data-tab-collection="${collection}"]`);
 	    }
 	    
-			const $activeSection = $sections.filter(`[data-tab-container="${target}"]`);
+		const $activeSection = $sections.filter(`[data-tab-container="${target}"]`);
 
-			$buttons.removeClass(ACTIVE);
-			$this.addClass(ACTIVE);
+		$buttons.removeClass(ACTIVE);
+		$this.addClass(ACTIVE);
 
-			$sections.removeClass(OPEN);
-			$activeSection.addClass(OPEN);
+		$sections.removeClass(OPEN);
+		$activeSection.addClass(OPEN);
 	});
 
 })();
