@@ -92,7 +92,7 @@
 
 @font-face {
     font-family: "Icons";
-    src: url(../fonts/icomoon.woff) format("woff");
+    src: url(icomoon.woff) format("woff");
     font-weight: normal;
     font-style: normal;
 }

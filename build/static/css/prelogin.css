@@ -3162,7 +3162,7 @@ textarea.input {
 
 .dropdown-menu__list {
   overflow: auto;
-  max-height: 175px;
+  max-height: 200px;
 }
 
 .dropdown-menu__list a {
@@ -4657,20 +4657,20 @@ textarea.input {
   position: relative;
   z-index: 5;
   overflow: auto;
-  padding-top: 50px;
+  padding-top: 70px;
   height: 100%;
 }
 
 .menu__account {
-  padding: 20px 15px;
+  padding: 5px 15px 20px 15px;
   border-bottom: 1px solid #4C5560;
   color: #fff;
-  font-size: 18px;
+  font-size: 16px;
 }
 
 .nav__item {
   border-bottom: 1px solid #4C5560;
-  color: #b3b6bb;
+  color: #7D838B;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
@@ -4689,6 +4689,11 @@ textarea.input {
 .nav__item.is-open > .nav__link .nav__arrow {
   -ms-transform: rotate(180deg);
   transform: rotate(180deg);
+}
+
+.nav__item.is-active {
+  color: #fff;
+  background: #4C5560;
 }
 
 .nav__link {

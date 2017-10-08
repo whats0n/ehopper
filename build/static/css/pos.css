@@ -4402,6 +4402,10 @@ a.shy {
   height: auto;
 }
 
+.settings__container {
+  margin-left: 300px;
+}
+
 .is-poynt .settings__container {
   padding-top: 50px;
   margin: 0;
@@ -4670,26 +4674,16 @@ a.shy {
   width: 15%;
 }
 
-.table-header__th[data-column*="order-item"], .table-header__td[data-column*="order-item"],
-.table-body__th[data-column*="order-item"],
-.table-body__td[data-column*="order-item"] {
-  width: 27%;
+.table-header__th[data-column="orders-name"], .table-header__td[data-column="orders-name"],
+.table-body__th[data-column="orders-name"],
+.table-body__td[data-column="orders-name"] {
+  width: 9%;
 }
 
-.table-header__th[data-column*="order-quantity"], .table-header__td[data-column*="order-quantity"],
-.table-body__th[data-column*="order-quantity"],
-.table-body__td[data-column*="order-quantity"] {
-  width: 14%;
-}
-
-.table-header__th[data-column*="order-price"], .table-header__th[data-column*="order-discount"], .table-header__th[data-column*="order-total"], .table-header__td[data-column*="order-price"], .table-header__td[data-column*="order-discount"], .table-header__td[data-column*="order-total"],
-.table-body__th[data-column*="order-price"],
-.table-body__th[data-column*="order-discount"],
-.table-body__th[data-column*="order-total"],
-.table-body__td[data-column*="order-price"],
-.table-body__td[data-column*="order-discount"],
-.table-body__td[data-column*="order-total"] {
-  width: 16%;
+.table-header__th[data-column="orders-register"], .table-header__td[data-column="orders-register"],
+.table-body__th[data-column="orders-register"],
+.table-body__td[data-column="orders-register"] {
+  width: 7%;
 }
 
 .table-header__th[data-column*="orders-total"], .table-header__th[data-column*="orders-tips-price"], .table-header__td[data-column*="orders-total"], .table-header__td[data-column*="orders-tips-price"],
@@ -7758,7 +7752,7 @@ textarea.input {
 
 .dropdown-menu__list {
   overflow: auto;
-  max-height: 175px;
+  max-height: 200px;
 }
 
 .dropdown-menu__list a {
@@ -9253,20 +9247,20 @@ textarea.input {
   position: relative;
   z-index: 5;
   overflow: auto;
-  padding-top: 50px;
+  padding-top: 70px;
   height: 100%;
 }
 
 .menu__account {
-  padding: 20px 15px;
+  padding: 5px 15px 20px 15px;
   border-bottom: 1px solid #4C5560;
   color: #fff;
-  font-size: 18px;
+  font-size: 16px;
 }
 
 .nav__item {
   border-bottom: 1px solid #4C5560;
-  color: #b3b6bb;
+  color: #7D838B;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
@@ -9285,6 +9279,11 @@ textarea.input {
 .nav__item.is-open > .nav__link .nav__arrow {
   -ms-transform: rotate(180deg);
   transform: rotate(180deg);
+}
+
+.nav__item.is-active {
+  color: #fff;
+  background: #4C5560;
 }
 
 .nav__link {
@@ -11428,7 +11427,7 @@ textarea.input {
 
 .orders__body {
   position: relative;
-  padding: 80px 0;
+  padding: 60px 0 80px;
   height: 100%;
 }
 

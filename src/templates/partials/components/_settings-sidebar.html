@@ -1,5 +1,14 @@
-<aside class="settings__sidebar">
+{# <aside class="settings__sidebar">
 	<div class="settings__nav">
+	</div>
+</aside> #}
+<div class="menu is-open submenu">
+	<header class="menu__header" data-menu-close="menu" data-animation="ripple">
+		<i class="icon icon-back menu__icon" id="fat-close-main-menu"></i>
+		<div class="title-xlg menu__title submenu">Settings</div>
+	</header>
+	<div class="menu__container">
+		<div class="menu__account">Account ID: 0</div>
 		{% set settingsNav = [
 			{
 				text: 'Printer Setup',
@@ -30,4 +39,4 @@
 			{% endfor %}
 		</ul>
 	</div>
-</aside>
+</div>

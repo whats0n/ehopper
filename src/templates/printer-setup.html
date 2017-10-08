@@ -18,24 +18,10 @@ settingsActive: 0
 				syncBtnClassList: 'is-hidden',
 				scanBtnClassList: 'is-hidden',
 				containerClassList: 'main-header__container_full',
-				title: 'Printer Settings',
-				searchFor: 'Search for Printers'
+				title: 'Printer Setup',
+				searchFor: 'Search for printer'
 			})}}
-			{# {{header.double({
-				classList: 'header_container-upper header_poynt-sm header_settings',
-				sync: true,
-				syncIndicatorOnly: true,
-				searchFor: 'Search for Printers',
-				sidebar: {
-					back: true,
-					backText: 'Settings'
-				},
-				container: {
-					title: 'Printer Settings',
-					titleClassList: 'header__title_vertical',
-					headerClassList: 'settings__header'
-				}
-			})}} #}
+			{% include 'partials/components/_settings-sidebar.html' %}
 			<div class="settings__container step-body">
 				<div class="settings__body settings__body_default step-body__section">
 					<div class="form form_sm">

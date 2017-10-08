@@ -250,7 +250,7 @@
       width: 100%
       height: auto
   &__container
-    // margin-left: 300px
+    margin-left: 300px
     // box-shadow: 3px 0 4px 5px rgba(0, 0, 0, 0.2)
     +poynt
       // padding-top: 152px
@@ -451,16 +451,20 @@
       width: 10%
     &[data-column*="orders-tips-order"]
       width: 15%
+    &[data-column="orders-name"]
+      width: 9%
+    &[data-column="orders-register"]
+      width: 7%
 
     //order page
-    &[data-column*="order-item"]
-      width: 27%
-    &[data-column*="order-quantity"]
-      width: 14%
-    &[data-column*="order-price"],
-    &[data-column*="order-discount"],
-    &[data-column*="order-total"]
-      width: 16%
+    // &[data-column*="order-item"]
+    //   width: 27%
+    // &[data-column*="order-quantity"]
+    //   width: 14%
+    // &[data-column*="order-price"],
+    // &[data-column*="order-discount"],
+    // &[data-column*="order-total"]
+    //   width: 16%
     &[data-column*="orders-total"],
     &[data-column*="orders-tips-price"]
       word-wrap: break-word
