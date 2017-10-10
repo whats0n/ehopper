@@ -19,7 +19,8 @@ styles: [
 {% block content %}
 	{% set labels = {
 		code: 'html code:',
-		component: 'component view:'
+		component: 'component view:',
+		description: 'description:'
 	} %}
 	<main class="main">
 		<div class="inner ui-wrapper" data-tab="ui-gide">
@@ -30,7 +31,8 @@ styles: [
 				{ id: 'switch/checkbox/radio', title: 'switch/checkbox/radio' },
 				{ id: 'fields', title: 'fields' },
 				{ id: 'cards', title: 'cards' },
-				{ id: 'loader', title: 'loader' }
+				{ id: 'loader', title: 'loader' },
+				{ id: 'scrollbar', title: 'scrollbar' }
 			] %}
 			<div class="ui-menu">
 				<ul class="ui-menu__list">
@@ -67,25 +69,41 @@ styles: [
 				<!-- begin TYPOGRAPHY -->
 				<div class="ui-container">
 					<div class="ui-title">Typography:</div>
-					<div class="ui-section">
+					{# <div class="ui-section">
 						<div class="ui-subtitle">Titles:</div>
 						{% for item in gide.headers %}
 							<div class="ui-col ui-col_md">
-								<div class="ui-label">{{labels.code}}</div>
-								<div class="ui-code">{{item.code}}</div>
+								{% if item.description %}
+									<div class="ui-description">
+										<div class="ui-label">{{labels.description}}</div>
+										{{item.description}}
+									</div>
+								{% endif %}
+								<div class="ui-code">
+									<div class="ui-label">{{labels.code}}</div>
+									{{item.code}}
+								</div>
 								<div class="ui-component">
 									<div class="ui-label">{{labels.component}}</div>
 									{{item.code | safe}}
 								</div>
 							</div>
 						{% endfor %}
-					</div>
+					</div> #}
 					<div class="ui-section">
 						<div class="ui-subtitle">Text modificators: color & align</div>
 						{% for item in gide.modificators %}
 							<div class="ui-col ui-col_md">
-								<div class="ui-label">{{labels.code}}</div>
-								<div class="ui-code">{{item.code}}</div>
+								{% if item.description %}
+									<div class="ui-description">
+										<div class="ui-label">{{labels.description}}</div>
+										{{item.description}}
+									</div>
+								{% endif %}
+								<div class="ui-code">
+									<div class="ui-label">{{labels.code}}</div>
+									{{item.code}}
+								</div>
 								<div class="ui-component">
 									<div class="ui-label">{{labels.component}}</div>
 									{{item.code | safe}}
@@ -100,16 +118,69 @@ styles: [
 				<!-- begin BUTTONS -->
 				<div class="ui-container">
 					<div class="ui-title">Buttons:</div>
-					{% for item in gide.buttons %}
-						<div class="ui-col ui-col_md">
-							<div class="ui-label">{{labels.code}}</div>
-							<div class="ui-code">{{item.code}}</div>
-							<div class="ui-component">
-								<div class="ui-label">{{labels.component}}</div>
-								{{item.code | safe}}
+					<div class="ui-section">
+						<div class="ui-subtitle">Sizes:</div>
+						{% for item in gide.buttons.sizes %}
+							<div class="ui-col ui-col_md">
+								{% if item.description %}
+									<div class="ui-description">
+										<div class="ui-label">{{labels.description}}</div>
+										{{item.description}}
+									</div>
+								{% endif %}
+								<div class="ui-code">
+									<div class="ui-label">{{labels.code}}</div>
+									{{item.code}}
+								</div>
+								<div class="ui-component">
+									<div class="ui-label">{{labels.component}}</div>
+									{{item.code | safe}}
+								</div>
 							</div>
-						</div>
-					{% endfor %}
+						{% endfor %}
+					</div>
+					<div class="ui-section">
+						<div class="ui-subtitle">Colors:</div>
+						{% for item in gide.buttons.colors %}
+							<div class="ui-col ui-col_md">
+								{% if item.description %}
+									<div class="ui-description">
+										<div class="ui-label">{{labels.description}}</div>
+										{{item.description}}
+									</div>
+								{% endif %}
+								<div class="ui-code">
+									<div class="ui-label">{{labels.code}}</div>
+									{{item.code}}
+								</div>
+								<div class="ui-component">
+									<div class="ui-label">{{labels.component}}</div>
+									{{item.code | safe}}
+								</div>
+							</div>
+						{% endfor %}
+					</div>
+					<div class="ui-section">
+						<div class="ui-subtitle">With icon:</div>
+						{% for item in gide.buttons.icons %}
+							<div class="ui-col ui-col_md">
+								{% if item.description %}
+									<div class="ui-description">
+										<div class="ui-label">{{labels.description}}</div>
+										{{item.description}}
+									</div>
+								{% endif %}
+								<div class="ui-code">
+									<div class="ui-label">{{labels.code}}</div>
+									{{item.code}}
+								</div>
+								<div class="ui-component">
+									<div class="ui-label">{{labels.component}}</div>
+									{{item.code | safe}}
+								</div>
+							</div>
+						{% endfor %}
+					</div>
 				</div>
 				<!-- end BUTTONS -->
 			</div>
@@ -121,8 +192,16 @@ styles: [
 						<div class="ui-subtitle">Switcher:</div>
 						{% for item in gide.switchers %}
 							<div class="ui-col ui-col_md">
-								<div class="ui-label">{{labels.code}}</div>
-								<div class="ui-code">{{item.code}}</div>
+								{% if item.description %}
+									<div class="ui-description">
+										<div class="ui-label">{{labels.description}}</div>
+										{{item.description}}
+									</div>
+								{% endif %}
+								<div class="ui-code">
+									<div class="ui-label">{{labels.code}}</div>
+									{{item.code}}
+								</div>
 								<div class="ui-component">
 									<div class="ui-label">{{labels.component}}</div>
 									{{item.code | safe}}
@@ -134,8 +213,16 @@ styles: [
 						<div class="ui-subtitle">Checkbox:</div>
 						{% for item in gide.checkboxes %}
 							<div class="ui-col ui-col_md">
-								<div class="ui-label">{{labels.code}}</div>
-								<div class="ui-code">{{item.code}}</div>
+								{% if item.description %}
+									<div class="ui-description">
+										<div class="ui-label">{{labels.description}}</div>
+										{{item.description}}
+									</div>
+								{% endif %}
+								<div class="ui-code">
+									<div class="ui-label">{{labels.code}}</div>
+									{{item.code}}
+								</div>
 								<div class="ui-component">
 									<div class="ui-label">{{labels.component}}</div>
 									{{item.code | safe}}
@@ -147,8 +234,16 @@ styles: [
 						<div class="ui-subtitle">Radio:</div>
 						{% for item in gide.radios %}
 							<div class="ui-col ui-col_md">
-								<div class="ui-label">{{labels.code}}</div>
-								<div class="ui-code">{{item.code}}</div>
+								{% if item.description %}
+									<div class="ui-description">
+										<div class="ui-label">{{labels.description}}</div>
+										{{item.description}}
+									</div>
+								{% endif %}
+								<div class="ui-code">
+									<div class="ui-label">{{labels.code}}</div>
+									{{item.code}}
+								</div>
 								<div class="ui-component">
 									<div class="ui-label">{{labels.component}}</div>
 									{{item.code | safe}}
@@ -167,8 +262,16 @@ styles: [
 						<div class="ui-subtitle">Textarea:</div>
 						{% for item in gide.textareas %}
 							<div class="ui-col ui-col_md">
-								<div class="ui-label">{{labels.code}}</div>
-								<div class="ui-code">{{item.code}}</div>
+								{% if item.description %}
+									<div class="ui-description">
+										<div class="ui-label">{{labels.description}}</div>
+										{{item.description}}
+									</div>
+								{% endif %}
+								<div class="ui-code">
+									<div class="ui-label">{{labels.code}}</div>
+									{{item.code}}
+								</div>
 								<div class="ui-component">
 									<div class="ui-label">{{labels.component}}</div>
 									{{item.code | safe}}
@@ -180,8 +283,16 @@ styles: [
 						<div class="ui-subtitle">Input:</div>
 						{% for item in gide.inputs %}
 							<div class="ui-col ui-col_md">
-								<div class="ui-label">{{labels.code}}</div>
-								<div class="ui-code">{{item.code}}</div>
+								{% if item.description %}
+									<div class="ui-description">
+										<div class="ui-label">{{labels.description}}</div>
+										{{item.description}}
+									</div>
+								{% endif %}
+								<div class="ui-code">
+									<div class="ui-label">{{labels.code}}</div>
+									{{item.code}}
+								</div>
 								<div class="ui-component">
 									<div class="ui-label">{{labels.component}}</div>
 									{{item.code | safe}}
@@ -190,11 +301,19 @@ styles: [
 						{% endfor %}
 					</div>
 					<div class="ui-section">
-						<div class="ui-subtitle">Packs:</div>
+						<div class="ui-subtitle">Packs (examples of combining elements):</div>
 						{% for item in gide.fields %}
 							<div class="ui-col ui-col_md">
-								<div class="ui-label">{{labels.code}}</div>
-								<div class="ui-code">{{item.code}}</div>
+								{% if item.description %}
+									<div class="ui-description">
+										<div class="ui-label">{{labels.description}}</div>
+										{{item.description}}
+									</div>
+								{% endif %}
+								<div class="ui-code">
+									<div class="ui-label">{{labels.code}}</div>
+									{{item.code}}
+								</div>
 								<div class="ui-component">
 									<div class="ui-label">{{labels.component}}</div>
 									{{item.code | safe}}
@@ -211,8 +330,16 @@ styles: [
 					<div class="ui-title">CARDS:</div>
 					{% for item in gide.cards %}
 						<div class="ui-col ui-col_md">
-							<div class="ui-label">{{labels.code}}</div>
-							<div class="ui-code">{{item.code}}</div>
+							{% if item.description %}
+								<div class="ui-description">
+									<div class="ui-label">{{labels.description}}</div>
+									{{item.description}}
+								</div>
+							{% endif %}
+							<div class="ui-code">
+								<div class="ui-label">{{labels.code}}</div>
+								{{item.code}}
+							</div>
 							<div class="ui-component">
 								<div class="ui-label">{{labels.component}}</div>
 								{{item.code | safe}}
@@ -226,8 +353,16 @@ styles: [
 					<div class="ui-title">PAYMENTS:</div>
 					{% for item in gide.payments %}
 						<div class="ui-col ui-col_md">
-							<div class="ui-label">{{labels.code}}</div>
-							<div class="ui-code">{{item.code}}</div>
+							{% if item.description %}
+								<div class="ui-description">
+									<div class="ui-label">{{labels.description}}</div>
+									{{item.description}}
+								</div>
+							{% endif %}
+							<div class="ui-code">
+								<div class="ui-label">{{labels.code}}</div>
+								{{item.code}}
+							</div>
 							<div class="ui-component">
 								<div class="ui-label">{{labels.component}}</div>
 								{{item.code | safe}}
@@ -243,8 +378,16 @@ styles: [
 					<div class="ui-title">LOADER:</div>
 					{% for item in gide.loader %}
 						<div class="ui-col ui-col_md">
-							<div class="ui-label">{{labels.code}}</div>
-							<div class="ui-code">{{item.code}}</div>
+							{% if item.description %}
+								<div class="ui-description">
+									<div class="ui-label">{{labels.description}}</div>
+									{{item.description}}
+								</div>
+							{% endif %}
+							<div class="ui-code">
+								<div class="ui-label">{{labels.code}}</div>
+								{{item.code}}
+							</div>
 							<div class="ui-component">
 								<div class="ui-label">{{labels.component}}</div>
 								{{item.code | safe}}
@@ -253,6 +396,37 @@ styles: [
 					{% endfor %}
 				</div>
 				<!-- end LOADER -->
+			</div>
+			<div class="ui-content" data-tab-container="scrollbar" data-tab-collection="ui-gide">
+				<!-- begin SCROLLBAR -->
+				<div class="ui-container">
+					<div class="ui-title">SCROLLBARS:</div>
+					<div class="ui-col ui-col_md">
+						<div class="ui-description">
+							<div class="ui-label">{{labels.description}}</div>
+							Use [data-scrollbar="default"] for the default scrollbar view:
+						</div>
+						<div class="ui-component">
+							<div class="ui-label">{{labels.component}}</div>
+							<div data-scrollbar="default" style="height: 200px;">
+								<div style="height: 400px"></div>
+							</div>
+						</div>
+					</div>
+					<div class="ui-col ui-col_md">
+						<div class="ui-description">
+							<div class="ui-label">{{labels.description}}</div>
+							Use [data-scrollbar="rounded"] for the rouded scrollbar view (used on the terms & conditions):
+						</div>
+						<div class="ui-component">
+							<div class="ui-label">{{labels.component}}</div>
+							<div data-scrollbar="rounded" style="height: 200px;">
+								<div style="height: 400px"></div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- end SCROLLBAR -->
 			</div>
 		</div>
 	</main>

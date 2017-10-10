@@ -13106,6 +13106,24 @@ textarea.input {
 
 .ui-component {
   padding-top: 20px;
+  border-top: 1px solid #eee;
+}
+
+.ui-description {
+  padding-top: 10px;
+  padding-bottom: 20px;
+  font-family: 'Roboto Regular', Arial, sans-serif;
+  font-size: 16px;
+}
+
+.ui-description + .ui-code {
+  padding-top: 20px;
+  border-top: 1px solid #eee;
+}
+
+.ui-code {
+  padding-top: 10px;
+  padding-bottom: 20px;
 }
 
 .ui-label {

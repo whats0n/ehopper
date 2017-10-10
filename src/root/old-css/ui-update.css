@@ -6741,6 +6741,10 @@ textarea.input {
     padding: 10px 20px;
     border-top: 1px solid #eee;
 }
+[data-scrollbar="rounded"],
+[data-scrollbar="default"] {
+  overflow: auto;
+}
 
 [data-scrollbar="rounded"]::-webkit-scrollbar,
 [data-scrollbar="default"]::-webkit-scrollbar {

@@ -42,12 +42,8 @@
 	{ 
 		code: '<div class="color-red">
 			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rerum, non.</p>
-		</div>'
-	},
-	{ 
-		code: '<div class="color-green">
-			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rerum, non.</p>
-		</div>'
+		</div>',
+		description: 'Message in such style show when connection to Device Center or Terminal connection is absent.'
 	},
 	{ 
 		code: '<div class="color-gray">
@@ -78,58 +74,60 @@
 <!-- end TYPOGRAPHY -->
 
 <!-- begin BUTTONS -->
-{% set buttons = [
-	{
-		code: '<button class="btn" data-animation="ripple">Button</button>'
-	},
-	{
-		code: '<button class="btn btn_lg" data-animation="ripple">Button</button>'
-	},
-	{
-		code: '<button class="btn btn_xl" data-animation="ripple">Button</button>'
-	},
-	{
-		code: '<button class="btn btn_block" data-animation="ripple">Button</button>'
-	},
-	{
-		code: '<button class="btn btn_green" data-animation="ripple">Button</button>'
-	},
-	{
-		code: '<button class="btn btn_red" data-animation="ripple">Button</button>'
-	},
-	{
-		code: '<button class="btn btn_blue" data-animation="ripple">Button</button>'
-	},
-	{
-		code: '<button class="btn btn_secondary" data-animation="ripple">Button</button>'
-	},
-	{
-		code: '<button class="btn btn_white" data-animation="ripple">Button</button>'
-	},
-	{
-		code: '<button class="btn" data-animation="ripple">Button<i class="icon icon-more-v"></i></button>'
-	},
-	{
-		code: '<button class="btn btn_lg" data-animation="ripple">Button<i class="icon icon-next"></i></button>'
-	}
-] %}
+{% set buttons = {
+	sizes: [
+		{
+			code: '<button class="btn" data-animation="ripple">Button</button>'
+		},
+		{
+			description: 'actually default size',
+			code: '<button class="btn btn_lg" data-animation="ripple">Button</button>'
+		},
+		{
+			description: 'Used in conjunction with the keyboard to confirm actions or to occupy the entire allotted width',
+			code: '<button class="btn btn_block" data-animation="ripple">Button</button>'
+		}
+	],
+	colors: [
+		{
+			description: 'initialize or add something (example terminal setup)',
+			code: '<button class="btn btn_green" data-animation="ripple">Button</button>'
+		},
+		{
+			description: 'confirmation of negative action (cancel / refund)',
+			code: '<button class="btn btn_red" data-animation="ripple">Button</button>'
+		},
+		{
+			description: 'confirmation of positive action',
+			code: '<button class="btn btn_blue" data-animation="ripple">Button</button>'
+		}
+	],
+	icons: [
+		{
+			code: '<button class="btn" data-animation="ripple"><i class="icon icon-expand"></i>Show more</button>'
+		}
+	]
+} %}
 <!-- end BUTTONS -->
 
 <!-- begin SWITCHERS -->
 {% set switchers = [
 	{
+		description: 'inactive state',
 		code: '<label class="switcher">
 			<input type="checkbox">
 			<i class="switcher__icon"></i>
 		</label>'
 	},
 	{
+		description: 'active states (to enable options in entity number 1)',
 		code: '<label class="switcher">
 			<input type="checkbox" checked>
 			<i class="switcher__icon"></i>
 		</label>'
 	},
 	{
+		description: 'active states (to enable similar options but in another entity on the current screen, different from entity # 1)',
 		code: '<label class="switcher switcher_green">
 			<input type="checkbox" checked>
 			<i class="switcher__icon"></i>
@@ -141,6 +139,7 @@
 <!-- begin CHECKBOXES -->
 {% set checkboxes = [
 	{
+		description: 'inactive state',
 		code: '<label class="checkbox">
 			<input type="checkbox" checked>
 			<i class="icon icon-check"></i>
@@ -148,6 +147,7 @@
 		</label>'
 	},
 	{
+		description: 'standard view of the active state',
 		code: '<label class="checkbox checkbox_green">
 			<input type="checkbox" checked>
 			<i class="icon icon-check"></i>
@@ -155,6 +155,7 @@
 		</label>'
 	},
 	{
+		description: 'view of active state wherever we confirm terms & conditions',
 		code: '<label class="checkbox">
 			<input type="checkbox" disabled>
 			<i class="icon icon-check"></i>
@@ -167,30 +168,35 @@
 <!-- begin RADIOS -->
 {% set radios = [
 	{
+		description: 'inactive state',
 		code: '<label class="fake-radio">
 			<input type="radio" name="ui-gide-radio-group">
 			<span class="fake-radio__content">Lorem ipsum.</span>
 		</label>'
 	},
 	{
+		description: 'active state',
 		code: '<label class="fake-radio">
 			<input type="radio" name="ui-gide-radio-group" checked>
 			<span class="fake-radio__content">Lorem ipsum.</span>
 		</label>'
 	},
 	{
+		description: 'use for occupy the entire allotted width',
 		code: '<label class="fake-radio fake-radio_block">
 			<input type="radio" name="ui-gide-radio-group">
 			<span class="fake-radio__content">Lorem ipsum.</span>
 		</label>'
 	},
 	{
+		description: 'actually default size',
 		code: '<label class="fake-radio fake-radio_lg">
 			<input type="radio" name="ui-gide-radio-group">
 			<span class="fake-radio__content">Lorem ipsum.</span>
 		</label>'
 	},
 	{
+		description: 'disabled state (locked)',
 		code: '<label class="fake-radio">
 			<input type="radio" name="ui-gide-radio-group" disabled>
 			<span class="fake-radio__content">Lorem ipsum.</span>
@@ -202,6 +208,7 @@
 <!-- begin FIELDS -->
 {% set textareas = [
 	{
+		description: 'Used for notes and for the introduction of a large amount of text',
 		code: '<div class="form-box">
 			<div class="form-box__field">
 				<textarea class="textarea textarea_block" placeholder="placeholder"></textarea>
@@ -209,6 +216,7 @@
 		</div>'
 	},
 	{
+		description: 'Used to enter a small amount of text',
 		code: '<div class="form-box">
 			<textarea class="textarea textarea_block textarea_little" placeholder="placeholder"></textarea>
 		</div>'
@@ -216,6 +224,7 @@
 ] %}
 {% set inputs = [
 	{
+		description: 'field with the possibility of quick cleaning',
 		code: '<div class="input-box">
 			<input type="text" 
 				class="simple-input input-box__input" 
@@ -227,6 +236,7 @@
 		</div>'
 	},
 	{
+		description: 'field with the error state and visible error message',
 		code: '<div class="input-box is-error">
 			<input type="text" 
 				class="simple-input input-box__input" 
@@ -238,9 +248,11 @@
 		</div>'
 	},
 	{
+		description: 'field without the possibility of quick cleaning',
 		code: '<input type="text" class="simple-input" placeholder="placeholder">'
 	},
 	{
+		description: 'choice of one of the options',
 		code: '<div class="select-box">
 			<select>
 				<option value="option 1">option 1</option>
@@ -506,6 +518,7 @@
 <!-- begin CARDS -->
 {% set cards = [
 	{
+		description: 'used for modifers',
 		code: '<div class="sm-card">
 			<label class="sm-card__label">
 				<input type="checkbox">
@@ -518,6 +531,7 @@
 		</div>'
 	},
 	{
+		description: 'used for matrix variants',
 		code: '<div class="simple-card">
 			<label class="simple-card__label">
 				<input type="checkbox">
@@ -529,6 +543,7 @@
 		</div>'
 	},
 	{
+		description: 'used for serial numbers',
 		code: '<div class="card-serial">
 			<label class="card-serial__label">
 				<input type="checkbox">
