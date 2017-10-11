@@ -36,6 +36,7 @@
               <li class="ui-menu__item " data-tab-open="cards" data-tab-collection="ui-gide" title="cards">cards</li>
               <li class="ui-menu__item " data-tab-open="loader" data-tab-collection="ui-gide" title="loader">loader</li>
               <li class="ui-menu__item " data-tab-open="scrollbar" data-tab-collection="ui-gide" title="scrollbar">scrollbar</li>
+              <li class="ui-menu__item " data-tab-open="pages" data-tab-collection="ui-gide" title="pages">pages</li>
             </ul>
           </div>
           <div class="ui-content is-open" data-tab-container="styles" data-tab-collection="ui-gide">
@@ -881,10 +882,42 @@
           </div>
           <div class="ui-content" data-tab-container="pages" data-tab-collection="ui-gide">
             <!-- begin SCROLLBAR -->
-            <div class="ui-container">
-              <div class="ui-title">Pages:</div>
-              <div class="ui-select"> <select></select> </div>
-              <div class="ui-iframe"> <iframe src="" frameborder="0"></iframe> </div>
+            <div class="ui-container ui-pages js-pages">
+              <div class="ui-title ui-pages__title">Pages:</div>
+              <div class="ui-pages__select">
+                <div class="select-box "> <select class="js-pages-select">
+								
+									<option value="orders.html">orders</option>
+								
+									<option value="order.html">order</option>
+								
+									<option value="printer-setup.html">printer-setup</option>
+								
+									<option value="cash-drawer.html">cash-drawer</option>
+								
+									<option value="settings.html">settings</option>
+								
+									<option value="deactivate.html">deactivate</option>
+								
+							</select> </div>
+              </div>
+              <div class="ui-pages__iframe"> <iframe src="orders" frameborder="0" class="js-pages-iframe"></iframe> </div>
+              <script>
+                (function()
+                {
+                  const pages = document.querySelectorAll('.js-pages');
+                  Array.from(pages).forEach(container =>
+                  {
+                    const select = container.querySelector('.js-pages-select');
+                    const iframe = container.querySelector('.js-pages-iframe');
+                    select.addEventListener('change', function()
+                    {
+                      iframe.setAttribute('src', this.value);
+                    });
+                  });
+                })();
+
+              </script>
             </div>
             <!-- end SCROLLBAR -->
           </div>

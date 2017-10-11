@@ -32,7 +32,8 @@ styles: [
 				{ id: 'fields', title: 'fields' },
 				{ id: 'cards', title: 'cards' },
 				{ id: 'loader', title: 'loader' },
-				{ id: 'scrollbar', title: 'scrollbar' }
+				{ id: 'scrollbar', title: 'scrollbar' },
+				{ id: 'pages', title: 'pages' }
 			] %}
 			<div class="ui-menu">
 				<ul class="ui-menu__list">
@@ -430,14 +431,48 @@ styles: [
 			</div>
 			<div class="ui-content" data-tab-container="pages" data-tab-collection="ui-gide">
 				<!-- begin SCROLLBAR -->
-				<div class="ui-container">
-					<div class="ui-title">Pages:</div>
-					<div class="ui-select">
-						<select></select>
+				<div class="ui-container ui-pages js-pages">
+					<div class="ui-title ui-pages__title">Pages:</div>
+					{% set pages = [
+						'orders',
+						'order',
+						'printer-setup',
+						'cash-drawer',
+						'settings',
+						'deactivate'
+					] %}
+					<div class="ui-pages__select">
+						<div class="select-box ">
+							<select class="js-pages-select">
+								{% for item in pages %}
+									<option value="{{item}}.html">{{item}}</option>
+								{% endfor %}
+							</select>
+						</div>
 					</div>
-					<div class="ui-iframe">
-						<iframe src="" frameborder="0"></iframe>
+					<div class="ui-pages__iframe">
+						<iframe src="{{pages[0]}}" frameborder="0" class="js-pages-iframe"></iframe>
 					</div>
+					<script>
+						(function() {
+
+							const pages = document.querySelectorAll('.js-pages');
+
+							Array
+								.from(pages)
+								.forEach(container => {
+
+									const select = container.querySelector('.js-pages-select');
+									const iframe = container.querySelector('.js-pages-iframe');
+
+									select.addEventListener('change', function() {
+										iframe.setAttribute('src', this.value);
+									});
+
+								});
+
+						})();
+					</script>
 				</div>
 				<!-- end SCROLLBAR -->
 			</div>
