@@ -432,22 +432,24 @@ styles: [
 			<div class="ui-content" data-tab-container="pages" data-tab-collection="ui-gide">
 				<!-- begin SCROLLBAR -->
 				<div class="ui-container ui-pages js-pages">
-					<div class="ui-title ui-pages__title">Pages:</div>
-					{% set pages = [
-						'orders',
-						'order',
-						'printer-setup',
-						'cash-drawer',
-						'settings',
-						'deactivate'
-					] %}
-					<div class="ui-pages__select">
-						<div class="select-box ">
-							<select class="js-pages-select">
-								{% for item in pages %}
-									<option value="{{item}}.html">{{item}}</option>
-								{% endfor %}
-							</select>
+					<div class="ui-pages__header">
+						<div class="ui-title ui-pages__title">Pages:</div>
+						{% set pages = [
+							'orders',
+							'order',
+							'printer-setup',
+							'cash-drawer',
+							'settings',
+							'deactivate'
+						] %}
+						<div class="ui-pages__select">
+							<div class="select-box ">
+								<select class="js-pages-select">
+									{% for item in pages %}
+										<option value="{{item}}.html">{{item}}</option>
+									{% endfor %}
+								</select>
+							</div>
 						</div>
 					</div>
 					<div class="ui-pages__iframe">
