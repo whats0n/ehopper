@@ -401,6 +401,13 @@ styles:
 	</main>
 
 	{{modal.help()}}
+	{{modal.modalSM({
+		classList: 'is-open',
+		footerClassList: 'text-right',
+		name: 'ws-error',
+		title: 'Open App',
+		content: '<p>App is allowed to use only with connection to the internet</p>'
+	})}}
 {% endblock %}
 
 {% block navigation %}
