@@ -6146,6 +6146,10 @@ textarea.input {
   color: #2e99db;
 }
 
+.info-price_small .info-price__value span {
+  font-size: 20px;
+}
+
 [data-scrollbar="rounded"]::-webkit-scrollbar,
 [data-scrollbar="default"]::-webkit-scrollbar {
   display: initial !important;
