@@ -1,5 +1,5 @@
 ---
-title: 'UI Gide'
+title: 'UI guide'
 oldStyles: [
 	'font-awesome.min',
 	'durandal',
@@ -9,12 +9,12 @@ oldStyles: [
 	'ui-update'
 ]
 styles: [
-	'ui-gide'
+	'ui-guide'
 ]
 ---
 {% extends "layouts/_layout.html" %}
 
-{% import 'data/_ui-guide.html' as gide %}
+{% import 'data/_ui-guide.html' as guide %}
 
 {% block content %}
 	{% set labels = {
@@ -23,7 +23,7 @@ styles: [
 		description: 'description:'
 	} %}
 	<main class="main">
-		<div class="inner ui-wrapper" data-tab="ui-gide">
+		<div class="inner ui-wrapper" data-tab="ui-guide">
 			{% set uiMenu = [
 				{ id: 'styles', title: 'styles', active: 'is-active' },
 				{ id: 'typography', title: 'typography' },
@@ -33,16 +33,17 @@ styles: [
 				{ id: 'cards', title: 'cards' },
 				{ id: 'loader', title: 'loader' },
 				{ id: 'scrollbar', title: 'scrollbar' },
-				{ id: 'pages', title: 'pages' }
+				{ id: 'pages', title: 'pages' },
+				{ id: 'icons', title: 'icons' }
 			] %}
 			<div class="ui-menu">
 				<ul class="ui-menu__list">
 					{% for item in uiMenu %}
-						<li class="ui-menu__item {{item.active}}" data-tab-open="{{item.id}}" data-tab-collection="ui-gide" title="{{item.title}}">{{item.title}}</li>
+						<li class="ui-menu__item {{item.active}}" data-tab-open="{{item.id}}" data-tab-collection="ui-guide" title="{{item.title}}">{{item.title}}</li>
 					{% endfor %}
 				</ul>
 			</div>
-			<div class="ui-content is-open" data-tab-container="styles" data-tab-collection="ui-gide">
+			<div class="ui-content is-open" data-tab-container="styles" data-tab-collection="ui-guide">
 				<!-- begin STYLES -->
 				<div class="ui-container">
 					<div class="ui-title">Styles:</div>
@@ -56,12 +57,12 @@ styles: [
 				</div>
 				<!-- end STYLES -->
 			</div>
-			<div class="ui-content" data-tab-container="typography" data-tab-collection="ui-gide">
+			<div class="ui-content" data-tab-container="typography" data-tab-collection="ui-guide">
 				<!-- begin FONTS -->
 				<div class="ui-container">
 					<div class="ui-title">Fonts:</div>
 					<ul class="ui-list">
-						{% for item in gide.fonts %}
+						{% for item in guide.fonts %}
 							<li>{{item | safe}}</li>
 						{% endfor %}
 					</ul>
@@ -72,7 +73,7 @@ styles: [
 					<div class="ui-title">Typography:</div>
 					{# <div class="ui-section">
 						<div class="ui-subtitle">Titles:</div>
-						{% for item in gide.headers %}
+						{% for item in guide.headers %}
 							<div class="ui-col ui-col_md">
 								{% if item.description %}
 									<div class="ui-description">
@@ -93,7 +94,7 @@ styles: [
 					</div> #}
 					<div class="ui-section">
 						<div class="ui-subtitle">Text modificators: color & align</div>
-						{% for item in gide.modificators %}
+						{% for item in guide.modificators %}
 							<div class="ui-col ui-col_md">
 								{% if item.description %}
 									<div class="ui-description">
@@ -115,13 +116,13 @@ styles: [
 				</div>
 				<!-- end TYPOGRAPHY -->
 			</div>
-			<div class="ui-content" data-tab-container="buttons" data-tab-collection="ui-gide">
+			<div class="ui-content" data-tab-container="buttons" data-tab-collection="ui-guide">
 				<!-- begin BUTTONS -->
 				<div class="ui-container">
 					<div class="ui-title">Buttons:</div>
 					<div class="ui-section">
 						<div class="ui-subtitle">Sizes:</div>
-						{% for item in gide.buttons.sizes %}
+						{% for item in guide.buttons.sizes %}
 							<div class="ui-col ui-col_md">
 								{% if item.description %}
 									<div class="ui-description">
@@ -142,7 +143,7 @@ styles: [
 					</div>
 					<div class="ui-section">
 						<div class="ui-subtitle">Colors:</div>
-						{% for item in gide.buttons.colors %}
+						{% for item in guide.buttons.colors %}
 							<div class="ui-col ui-col_md">
 								{% if item.description %}
 									<div class="ui-description">
@@ -163,7 +164,7 @@ styles: [
 					</div>
 					<div class="ui-section">
 						<div class="ui-subtitle">With icon:</div>
-						{% for item in gide.buttons.icons %}
+						{% for item in guide.buttons.icons %}
 							<div class="ui-col ui-col_md">
 								{% if item.description %}
 									<div class="ui-description">
@@ -185,13 +186,13 @@ styles: [
 				</div>
 				<!-- end BUTTONS -->
 			</div>
-			<div class="ui-content" data-tab-container="switch/checkbox/radio" data-tab-collection="ui-gide">
+			<div class="ui-content" data-tab-container="switch/checkbox/radio" data-tab-collection="ui-guide">
 				<!-- begin SWITCHERS/CHECKBOXES/RADIOS -->
 				<div class="ui-container">
 					<div class="ui-title">Switcher (+)/Checkbox (+)/Radio:</div>
 					<div class="ui-section">
 						<div class="ui-subtitle">Switcher:</div>
-						{% for item in gide.switchers %}
+						{% for item in guide.switchers %}
 							<div class="ui-col ui-col_md">
 								{% if item.description %}
 									<div class="ui-description">
@@ -212,7 +213,7 @@ styles: [
 					</div>
 					<div class="ui-section">
 						<div class="ui-subtitle">Checkbox:</div>
-						{% for item in gide.checkboxes %}
+						{% for item in guide.checkboxes %}
 							<div class="ui-col ui-col_md">
 								{% if item.description %}
 									<div class="ui-description">
@@ -233,7 +234,7 @@ styles: [
 					</div>
 					<div class="ui-section">
 						<div class="ui-subtitle">Radio:</div>
-						{% for item in gide.radios %}
+						{% for item in guide.radios %}
 							<div class="ui-col ui-col_md">
 								{% if item.description %}
 									<div class="ui-description">
@@ -255,13 +256,13 @@ styles: [
 				</div>
 				<!-- end SWITCHERS/CHECKBOXES/RADIOS -->
 			</div>
-			<div class="ui-content" data-tab-container="fields" data-tab-collection="ui-gide">
+			<div class="ui-content" data-tab-container="fields" data-tab-collection="ui-guide">
 				<!-- begin FIELDS -->
 				<div class="ui-container">
 					<div class="ui-title">Fields:</div>
 					<div class="ui-section">
 						<div class="ui-subtitle">Textarea:</div>
-						{% for item in gide.textareas %}
+						{% for item in guide.textareas %}
 							<div class="ui-col ui-col_md">
 								{% if item.description %}
 									<div class="ui-description">
@@ -282,7 +283,7 @@ styles: [
 					</div>
 					<div class="ui-section">
 						<div class="ui-subtitle">Input:</div>
-						{% for item in gide.inputs %}
+						{% for item in guide.inputs %}
 							<div class="ui-col ui-col_md">
 								{% if item.description %}
 									<div class="ui-description">
@@ -303,7 +304,7 @@ styles: [
 					</div>
 					<div class="ui-section">
 						<div class="ui-subtitle">Packs (examples of combining elements):</div>
-						{% for item in gide.fields %}
+						{% for item in guide.fields %}
 							<div class="ui-col ui-col_md">
 								{% if item.description %}
 									<div class="ui-description">
@@ -325,11 +326,11 @@ styles: [
 				</div>
 				<!-- end FIELDS -->
 			</div>
-			<div class="ui-content" data-tab-container="cards" data-tab-collection="ui-gide">
+			<div class="ui-content" data-tab-container="cards" data-tab-collection="ui-guide">
 				<!-- begin CARDS -->
 				<div class="ui-container">
 					<div class="ui-title">CARDS:</div>
-					{% for item in gide.cards %}
+					{% for item in guide.cards %}
 						<div class="ui-col ui-col_md">
 							{% if item.description %}
 								<div class="ui-description">
@@ -352,7 +353,7 @@ styles: [
 				<!-- begin PAYMENTS -->
 				<div class="ui-container">
 					<div class="ui-title">PAYMENTS:</div>
-					{% for item in gide.payments %}
+					{% for item in guide.payments %}
 						<div class="ui-col ui-col_md">
 							{% if item.description %}
 								<div class="ui-description">
@@ -373,11 +374,11 @@ styles: [
 				</div>
 				<!-- end PAYMENTS -->
 			</div>
-			<div class="ui-content" data-tab-container="loader" data-tab-collection="ui-gide">
+			<div class="ui-content" data-tab-container="loader" data-tab-collection="ui-guide">
 				<!-- begin LOADER -->
 				<div class="ui-container">
 					<div class="ui-title">LOADER:</div>
-					{% for item in gide.loader %}
+					{% for item in guide.loader %}
 						<div class="ui-col ui-col_md">
 							{% if item.description %}
 								<div class="ui-description">
@@ -398,7 +399,7 @@ styles: [
 				</div>
 				<!-- end LOADER -->
 			</div>
-			<div class="ui-content" data-tab-container="scrollbar" data-tab-collection="ui-gide">
+			<div class="ui-content" data-tab-container="scrollbar" data-tab-collection="ui-guide">
 				<!-- begin SCROLLBAR -->
 				<div class="ui-container">
 					<div class="ui-title">SCROLLBARS:</div>
@@ -429,8 +430,8 @@ styles: [
 				</div>
 				<!-- end SCROLLBAR -->
 			</div>
-			<div class="ui-content" data-tab-container="pages" data-tab-collection="ui-gide">
-				<!-- begin SCROLLBAR -->
+			<div class="ui-content" data-tab-container="pages" data-tab-collection="ui-guide">
+				<!-- begin PAGES -->
 				<div class="ui-container ui-pages js-pages">
 					<div class="ui-pages__header">
 						<div class="ui-title ui-pages__title">Pages:</div>
@@ -476,7 +477,56 @@ styles: [
 						})();
 					</script>
 				</div>
-				<!-- end SCROLLBAR -->
+				<!-- end PAGES -->
+			</div>
+			<div class="ui-content" data-tab-container="icons" data-tab-collection="ui-guide">
+				<!-- begin ICONS -->
+				<div class="ui-container">
+					<div class="ui-title">ICONS:</div>
+					<div class="ui-section">
+						<div class="ui-subtitle">{{guide.icons.custom.title}}:</div>
+						{% for item in guide.icons.custom.items %}
+							<div class="ui-col ui-col_sm">
+								{% if item.description %}
+									<div class="ui-description">
+										<div class="ui-label">{{labels.description}}</div>
+										{{item.description}}
+									</div>
+								{% endif %}
+								<div class="ui-code">
+									<div class="ui-label">{{labels.code}}</div>
+									{{item.code}}
+								</div>
+								<div class="ui-component">
+									<div class="ui-label">{{labels.component}}</div>
+									{{item.code | safe}}
+								</div>
+							</div>
+						{% endfor %}
+					</div>
+					<div class="ui-section">
+						<div class="ui-subtitle">{{guide.icons.fa.title}} (<a href="{{guide.icons.fa.link}}">{{guide.icons.fa.link}}</a>):</div>
+						{% for item in guide.icons.fa.items %}
+							<div class="ui-col ui-col_sm">
+								{% if item.description %}
+									<div class="ui-description">
+										<div class="ui-label">{{labels.description}}</div>
+										{{item.description}}
+									</div>
+								{% endif %}
+								<div class="ui-code">
+									<div class="ui-label">{{labels.code}}</div>
+									{{item.code}}
+								</div>
+								<div class="ui-component">
+									<div class="ui-label">{{labels.component}}</div>
+									{{item.code | safe}}
+								</div>
+							</div>
+						{% endfor %}
+					</div>
+				</div>
+				<!-- end ICONS -->
 			</div>
 		</div>
 	</main>

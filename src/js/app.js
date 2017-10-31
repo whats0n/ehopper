@@ -17,5 +17,7 @@ import toggleClass from './components/_toggle-class';
 import nav from './components/_nav';
 import simpleSwipe from './components/_simple-swipe';
 import table from './components/_table';
+import field from './components/_field';
+import toggleOnChange from './components/_toggle-onchange';
 
 import common from './_common';

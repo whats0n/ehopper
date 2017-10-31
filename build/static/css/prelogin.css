@@ -1837,6 +1837,11 @@ textarea.input {
   font-size: 0;
 }
 
+.switcher-box_lg .switcher-box__label {
+  padding: 6px 10px;
+  font-size: 18px;
+}
+
 .switcher-box__label {
   display: inline-block;
   vertical-align: top;
@@ -4874,6 +4879,46 @@ textarea.input {
   font-size: 16px;
 }
 
+.tabs_box .tabs__item {
+  border: none !important;
+}
+
+.tabs_box .tabs__btn {
+  position: relative;
+  background: none;
+  text-transform: uppercase;
+}
+
+.tabs_box .tabs__btn.is-active {
+  background: #fcfcfc;
+}
+
+.tabs_box .tabs__btn.is-active:before {
+  border-width: 1px 1px 0 1px;
+}
+
+.tabs_box .tabs__btn:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-width: 0 0 1px 0;
+  border-style: solid;
+  border-color: #eee;
+}
+
+.tabs_box .tabs__container {
+  border: 1px solid #eee;
+  border-top: none;
+  background: #fcfcfc;
+}
+
+.tabs_box .tabs__content {
+  padding: 40px 40px 15px;
+}
+
 .tabs__controls {
   position: absolute;
   top: 0;
@@ -4983,6 +5028,13 @@ textarea.input {
   padding: 0 0 20px;
   font-family: 'Roboto Regular', Arial, sans-serif;
   font-size: 16px;
+}
+
+.tabs-box {
+  padding: 20px 0 0;
+  margin: 0 auto;
+  max-width: 800px;
+  height: 100%;
 }
 
 .small-tabs {

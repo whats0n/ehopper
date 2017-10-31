@@ -7,7 +7,7 @@
 			{% for item in props.list %}
 			    <li class="tabs__item {{item.btnClassList}}">
 			    	<a href="#" 
-			    		class="tabs__btn {%- if loop.index0 === 0 %} is-active {%- endif -%}" 
+			    		class="tabs__btn {{props.btnClassList}} {%- if loop.index0 === 0 %} is-active {%- endif -%}" 
 			    		data-tab-open="{{item.name}}" 
 			    		data-tab-collection="{{props.name}}" 
 			    		data-animation="ripple">{{item.text | safe}}</a>

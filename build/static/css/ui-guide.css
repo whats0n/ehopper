@@ -244,6 +244,11 @@ html {
   margin-left: 1%;
 }
 
+.ui-col_sm {
+  width: 32.33%;
+  margin-right: 1%;
+}
+
 .ui-component {
   padding-top: 20px;
   border-top: 1px solid #eee;
@@ -326,4 +331,4 @@ html {
   height: 100%;
 }
 
-/*# sourceMappingURL=ui-gide.css.map */
+/*# sourceMappingURL=ui-guide.css.map */

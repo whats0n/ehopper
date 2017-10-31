@@ -9,6 +9,33 @@
 	&_lg
 		.tabs__btn
 			font-size: 16px
+	&_box
+		.tabs__item
+			border: none !important
+		.tabs__btn
+			position: relative
+			background: none
+			text-transform: uppercase
+			&.is-active
+				background: #fcfcfc
+				&:before
+					border-width: 1px 1px 0 1px
+			&:before
+				content: ''
+				position: absolute
+				top: 0
+				left: 0
+				right: 0
+				bottom: 0
+				border-width: 0 0 1px 0
+				border-style: solid
+				border-color: #eee
+		.tabs__container
+			border: 1px solid #eee
+			border-top: none
+			background: #fcfcfc
+		.tabs__content
+			padding: 40px 40px 15px
 	&__controls
 		position: absolute
 		top: 0
@@ -77,7 +104,7 @@
 		vertical-align: top;
 	&__btn_alt
 		text-transform: uppercase
-		border-color: rgba(0, 0, 0, 0.1);
+		border-color: rgba(0, 0, 0, 0.1)
 		border-width: 0 0 1px 0
 		border-style: solid
 		&.is-active
@@ -89,3 +116,8 @@
 		font-size: 16px
 
 
+.tabs-box
+	padding: 20px 0 0
+	margin: 0 auto
+	max-width: 800px
+	height: 100%

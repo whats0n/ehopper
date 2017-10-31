@@ -1,0 +1,209 @@
+{% import "partials/form/_build.html" as form %}
+{% import "partials/_mixins.html" as mixins %}
+{% set business = {
+	general: [
+		[
+			{
+				mixin: 'prettyField',
+				classList: 'form__column_wide',
+				options: {
+					placeholder: 'Company Name <span>*</span>'
+				}
+			}
+		],
+		[
+			{
+				mixin: 'prettyField',
+				options: {
+					placeholder: 'Contact First Name'
+				}
+			},
+			{
+				mixin: 'prettyField',
+				options: {
+					placeholder: 'Contact Last Name'
+				}
+			}
+		],
+		[
+			{
+				mixin: 'prettyField',
+				classList: 'form__column_wide',
+				options: {
+					placeholder: 'Middle Name'
+				}
+			}
+		],
+		[
+			{
+				mixin: 'prettyField',
+				options: {
+					placeholder: 'Phone'
+				}
+			},
+			{
+				mixin: 'prettyField',
+				options: {
+					placeholder: 'Email'
+				}
+			}
+		],
+		[
+			{
+				mixin: 'prettyField',
+				classList: 'form__column_wide',
+				options: {
+					placeholder: 'Mobile Phone'
+				}
+			}
+		],
+		[
+			{
+				mixin: 'prettyField',
+				options: {
+					placeholder: 'Address line 1 <span>*</span>'
+				}
+			},
+			{
+				mixin: 'prettyField',
+				options: {
+					placeholder: 'Address line 2'
+				}
+			}
+		],
+		[
+			{
+				mixin: 'prettyField',
+				options: {
+					placeholder: 'City <span>*</span>'
+				}
+			},
+			{
+				mixin: 'prettyField',
+				options: {
+					placeholder: 'State'
+				}
+			}
+		],
+		[
+			{
+				mixin: 'prettyField',
+				options: {
+					noClear: true,
+					placeholder: 'Country <span>*</span>',
+					select: [ 'option 1', 'option 2', 'option 3', 'option 4' ]
+				}
+			},
+			{
+				mixin: 'prettyField',
+				options: {
+					placeholder: 'Zip'
+				}
+			}
+		],
+		[
+			{
+				mixins: 'checkbox',
+				options: {
+					classList: 'checkbox_lg',
+					content: 'Marketing'
+				}
+			},
+			{
+				mixins: 'checkbox',
+				options: {
+					classList: 'checkbox_lg',
+					content: 'Tax Exempt'
+				}
+			}
+		]
+	],
+	advanced: [
+		[
+			{
+				mixin: 'prettyField',
+				options: {
+					noClear: true,
+					placeholder: 'Store Name',
+					select: [ 'option 1', 'option 2', 'option 3', 'option 4' ]
+				}
+			},
+			{
+				mixin: 'prettyField',
+				options: {
+					noClear: true,
+					placeholder: 'Sales Person',
+					select: [ 'option 1', 'option 2', 'option 3', 'option 4' ]
+				}
+			}
+		],
+		[
+			{
+				mixin: 'prettyField',
+				options: {
+					placeholder: 'Tax Id'
+				}
+			},
+			{
+				mixin: 'prettyField',
+				options: {
+					placeholder: 'D&B Number'
+				}
+			}
+		],
+		[
+			{
+				mixin: 'prettyField',
+				classList: 'form__column_wide',
+				options: {
+					noClear: true,
+					textarea: true,
+					placeholder: 'Notes'
+				}
+			}
+		]
+	]
+} %}
+<div class="form form_block">
+	{% for item in business.general %}
+		<div class="form__columns">
+			{% for item in item %}
+				<div class="form__column {{item.classList or 'form__column_md'}}">
+					{% if item.mixin %}
+						{{form[item.mixin].call(item.options)}}
+					{% endif %}
+					{% if item.mixins %}
+						{{mixins[item.mixins](item.options)}}
+					{% endif %}
+				</div>
+			{% endfor %}
+		</div>
+	{% endfor %}
+	<div class="form__columns">
+		<div class="form__column">
+			<div class="switcher-box switcher-box_lg form__switcher-box text-center">
+				{{mixins.switcher({
+					id: 'create-customer-business-advanced-settings',
+					attrs: 'data-toggle-onchange-checkbox="create-customer-business-advanced-settings"'
+				})}}
+				<label for="create-customer-business-advanced-settings" class="switcher-box__label">Advanced Settings</label>
+			</div>
+		</div>
+	</div>
+	<div class="form__hidden" data-toggle-onchange-container="create-customer-business-advanced-settings">
+		{% for item in business.advanced %}
+			<div class="form__columns">
+				{% for item in item %}
+					<div class="form__column {{item.classList or 'form__column_md'}}">
+						{% if item.mixin %}
+							{{form[item.mixin].call(item.options)}}
+						{% endif %}
+						{% if item.mixins %}
+							{{mixins[item.mixins](item.options)}}
+						{% endif %}
+					</div>
+				{% endfor %}
+			</div>
+		{% endfor %}
+	</div>
+</div>

@@ -1,0 +1,66 @@
+.pretty-field
+	position: relative
+	&.is-error
+		.pretty-field
+			&__input
+				border-color: $red
+	&.is-active
+		.pretty-field
+			&__placeholder
+				transform: translate3d(0,10px,0) scale(0.73)
+	&:not(.is-disabled)
+		+hover
+			.pretty-field__clear
+				opacity: 1
+				visibility: visible
+	input:not(:disabled):focus + .input-box__clear
+		opacity: 1
+		visibility: visible
+	&__container
+		position: relative
+	&__clear
+		position: absolute
+		top: 0
+		right: 0
+		width: 60px
+		height: 100%
+		color: $darkGray
+		opacity: 0
+		visibility: hidden
+		background: none
+		transition: opacity 0.2s ease-in-out, visibility 0.2s ease-in-out
+		~ .pretty-field
+			&__input,
+			&__placeholder
+				padding-right: 75px
+	&__input,
+	&__select
+		padding-top: 15px !important
+		line-height: normal !important
+	&__textarea
+		padding: 30px 15px 15px !important
+		border-width: 1px !important
+	&__placeholder
+		position: absolute
+		z-index: 1
+		top: 0
+		left: 15px
+		right: 15px
+		color: rgba($darkGray, 0.7)
+		+rreg
+		font-size: 18px
+		line-height: 20px
+		+text-overflow
+		transform: translate3d(0,20px,0)
+		transform-origin: top left
+		transition: transform 0.15s ease-in-out
+		+nosel
+		pointer-events: none
+		span 
+			color: $red
+	&__error-message
+		position: absolute
+		top: 100%
+		left: 0
+		right: 0
+		+text-overflow

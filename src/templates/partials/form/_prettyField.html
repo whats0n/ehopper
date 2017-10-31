@@ -1,0 +1,31 @@
+{% macro call(props) %}
+<!-- begin pretty-field -->
+<div class="pretty-field {{props.classList}} {% if props.errorMessage %}is-error{% endif %} js-field">
+	<div class="pretty-field__container">
+		{% if props.noClear != true %}
+			<button class="pretty-field__clear">
+				<i class="icon icon-close"></i>
+			</button>
+		{% endif %}
+		<div class="pretty-field__placeholder">{{props.placeholder | safe}}</div>
+		{% if props.select %}
+			<div class="select-box">
+				<select class="pretty-field__select js-field-select">
+					<option value=""></option>
+					{% for item in props.select %}
+						<option value="{{item}}">{{item}}</option>
+					{% endfor %}
+				</select>
+			</div>
+		{% elif props.textarea %}
+			<textarea class="textarea textarea_simple textarea_block pretty-field__textarea js-field-input"></textarea>
+		{% else %}
+			<input type="{{props.type or 'text'}}" class="simple-input pretty-field__input js-field-input">
+		{% endif %}
+	</div>
+	{% if props.errorMessage %}
+		<div class="error-message pretty-field__error-message">Lorem ipsum dolor sit amet, consectetur adipisicing.</div>
+	{% endif %}
+</div>
+<!-- end pretty-field -->
+{% endmacro %}
