@@ -21,9 +21,11 @@
 	+clr
 	&_scroll
 		overflow: auto
-		padding-bottom: 5px
+		// padding-bottom: 5px
 		border-top: 1px solid darken(#d2edf6, 5%)
 		max-height: 120px
+		+poynt 
+			padding-bottom: 5px
 	&__item
 		position: relative
 		clear: both
@@ -42,9 +44,11 @@
 		a 
 			color: $blue
 		&_total
+			padding-top: 5px !important
 			+rmed
 			font-size: 20px
 			+poynt
+				padding-top: 1px !important
 				font-size: 14px
 			.totals-list
 				&__label
