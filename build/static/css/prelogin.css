@@ -5394,6 +5394,19 @@ textarea.input {
 
 .totals-list__item_total {
   font-family: 'Roboto Medium', Arial, sans-serif;
+  font-size: 20px;
+}
+
+.is-poynt .totals-list__item_total {
+  font-size: 14px;
+}
+
+.totals-list__item_total .totals-list__label {
+  width: 30%;
+}
+
+.totals-list__item_total .totals-list__value {
+  width: 70%;
 }
 
 .totals-list__label, .totals-list__value {
