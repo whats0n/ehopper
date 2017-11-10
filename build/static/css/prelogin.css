@@ -699,6 +699,14 @@ hr {
   }
 }
 
+.version {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  font-size: 14px;
+  white-space: nowrap;
+}
+
 .loading {
   position: relative;
   display: inline-block;

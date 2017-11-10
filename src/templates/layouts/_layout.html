@@ -46,6 +46,9 @@
       {% block navigation %}{% endblock %}
       {{mixins.snackbar(snackbarOptions)}}
       {{modal.help(helpContent)}}
+      {% if version %}
+        <div class="version">Version 0.16.1</div>
+      {% endif %}
     </div>
     <!-- end application -->
 
