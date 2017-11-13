@@ -3191,7 +3191,7 @@ textarea.input {
 
 .dropdown-menu__item {
   position: relative;
-  padding: 0 50px 0 20px;
+  padding: 0 20px;
   line-height: 50px;
   text-align: left;
   overflow: hidden;
@@ -3254,6 +3254,64 @@ textarea.input {
 
 .dropdown-menu .btn_transparent {
   border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.dropdown-menu__arrow {
+  display: block;
+  margin: 0 -20px;
+  padding: 0 30px 0 20px;
+  height: 50px;
+}
+
+.dropdown-menu__arrow.is-active:before {
+  -ms-transform: rotate(180deg);
+  transform: rotate(180deg);
+}
+
+.dropdown-menu__arrow:before {
+  content: '';
+  position: absolute;
+  top: 22px;
+  right: 10px;
+  width: 0px;
+  height: 0px;
+  border-style: solid;
+  border-width: 6px 5px 0 5px;
+  border-color: #333 transparent transparent transparent;
+  transition: transform 0.3s ease-in-out;
+}
+
+.dropdown-menu__submenu {
+  display: none;
+}
+
+.dropdown-menu__submenu.is-open {
+  display: block;
+}
+
+.dropdown-menu__submenu-link {
+  position: relative;
+  display: block;
+  padding: 10px 25px;
+  margin: 0 -20px;
+  line-height: 20px;
+}
+
+.no-touch .dropdown-menu__submenu-link:hover {
+  background: rgba(0, 0, 0, 0.1);
+}
+
+.dropdown-menu__submenu-link.is-active .fa {
+  opacity: 1;
+}
+
+.dropdown-menu__submenu-link .fa {
+  position: absolute;
+  top: 50%;
+  left: 5px;
+  margin-top: -8px;
+  opacity: 0;
+  font-size: 16px;
 }
 
 .dropdown-checkbox {

@@ -114,7 +114,7 @@
     +text-overflow
   &__item
     position: relative
-    padding: 0 50px 0 20px
+    padding: 0 20px
     line-height: 50px
     text-align: left
     +text-overflow
@@ -149,6 +149,43 @@
         +text-overflow
   .btn_transparent
     border-top: 1px solid rgba($black, 0.1)
+  &__arrow
+    display: block
+    margin: 0 -20px
+    padding: 0 30px 0 20px 
+    height: 50px
+    &.is-active
+      &:before
+        transform: rotate(180deg)
+    &:before
+      content: ''
+      position: absolute
+      top: 22px
+      right: 10px
+      +arr(10, 6, $darkGray, b)
+      transition: transform 0.3s ease-in-out
+  &__submenu
+    display: none
+    &.is-open
+      display: block
+    &-link
+      position: relative
+      display: block
+      padding: 10px 25px
+      margin: 0 -20px
+      line-height: 20px
+      +hover
+        background: rgba($black, 0.1)
+      &.is-active
+        .fa
+          opacity: 1
+      .fa
+        position: absolute
+        top: 50%
+        left: 5px
+        margin-top: -8px
+        opacity: 0
+        font-size: 16px
 
 .dropdown-checkbox
   position: relative

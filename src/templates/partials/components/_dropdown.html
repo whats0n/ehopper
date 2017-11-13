@@ -30,6 +30,26 @@
 					{% if props.links !== true %} data-dropdown-item="{{props.name}}" {% endif %} 
 					{% if item.value %} data-value="{{item.value}}" {% endif %} >
 					{{item.text | safe}}
+					{% if item.list %}
+						<div class="dropdown-menu__submenu js-submenu">
+							<ul class="dropdown-menu__submenu-list">
+								{% for item in item.list %}
+									<li class="dropdown-menu__submenu-item">
+										<a href="#" class="dropdown-menu__submenu-link {{item.active}}"><i class="fa fa-check-circle-o"></i>{{item.text | safe}}</a>
+									</li>
+								{% endfor %}
+							</ul>
+						</div>
+						<script>
+							function showSubmenu(e) {
+								e.preventDefault();
+								var $target = $(e.target);
+								var $list = $target.siblings('.js-submenu');
+								$target.toggleClass('is-active');
+								$list.toggleClass('is-open');
+							}
+						</script>
+					{% endif %}
 				</li>
 			{% endif %}
 		{% endfor %}
