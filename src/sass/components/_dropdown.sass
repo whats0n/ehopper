@@ -164,18 +164,51 @@
       right: 10px
       +arr(10, 6, $darkGray, b)
       transition: transform 0.3s ease-in-out
+    &_right
+      &:before
+        top: 20px
+        +arr(6, 10, $darkGray, r)
   &__submenu
     display: none
     &.is-open
       display: block
+    &_overlay
+      position: absolute
+      top: 0
+      left: 0
+      right: 0
+      bottom: 0
+      display: block
+      padding-top: 50px
+      background: $white
+      transform: translate3d(100%,0,0)
+      transition: transform 0.3s ease-in-out
+      .dropdown-menu.is-active &
+        +gpu
+      .dropdown-menu__submenu
+        &-link
+          margin: 0
+          .fa
+            top: 11px
+            margin: 0
+        &-list
+          height: 100%
+          overflow: auto
     &-link
       position: relative
       display: block
-      padding: 10px 25px
+      padding: 12px 10px 12px 25px
       margin: 0 -20px
-      line-height: 20px
+      color: $darkGray
+      line-height: 1.2
+      text-align: left
+      text-decoration: none
+      white-space: normal
       +hover
         background: rgba($black, 0.1)
+      +active
+        color: $white
+        background: $blue
       &.is-active
         .fa
           opacity: 1
@@ -186,6 +219,35 @@
         margin-top: -8px
         opacity: 0
         font-size: 16px
+    &-title
+      position: absolute
+      top: 0
+      left: 0
+      right: 0
+      padding: 16px 20px
+      color: $darkGray
+      font-size: 18px
+      line-height: 1
+      text-decoration: none
+      +hover
+        background: $lightGray
+      +active
+        color: $white
+        background: $blue
+      &:before
+        content: ''
+        position: absolute
+        top: 50%
+        left: 10px
+        margin-top: -5px
+        +arr(6, 10, $darkGray, l)
+        transition: transform 0.3s ease-in-out
+  &_hidden
+    overflow: hidden
+  &__list
+    transition: transform 0.3s ease-in-out
+    .dropdown-menu.is-active &
+      transform: translate3d(-100%,0,0)
 
 .dropdown-checkbox
   position: relative
