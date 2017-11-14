@@ -7987,7 +7987,7 @@ textarea.input {
   right: 0;
   bottom: 0;
   display: block;
-  padding-top: 50px;
+  padding-top: 51px;
   background: #fff;
   transform: translate3d(100%, 0, 0);
   transition: transform 0.3s ease-in-out;
@@ -8014,13 +8014,14 @@ textarea.input {
 .dropdown-menu__submenu-link {
   position: relative;
   display: block;
-  padding: 12px 10px 12px 25px;
+  padding: 12px 10px 12px 30px;
   margin: 0 -20px;
   color: #333;
   line-height: 1.2;
   text-align: left;
   text-decoration: none;
   white-space: normal;
+  word-break: break-word;
 }
 
 .no-touch .dropdown-menu__submenu-link:hover {
@@ -8044,7 +8045,7 @@ textarea.input {
 .dropdown-menu__submenu-link .fa {
   position: absolute;
   top: 50%;
-  left: 5px;
+  left: 8px;
   margin-top: -7px;
   opacity: 0;
   font-size: 14px;
@@ -8055,11 +8056,12 @@ textarea.input {
   top: 0;
   left: 0;
   right: 0;
-  padding: 17px 20px 17px 25px;
+  padding: 17px 20px 17px 30px;
   color: #fff;
   background: #2e99db;
   font-size: 14px;
   line-height: 16px;
+  text-align: left;
   text-decoration: none;
 }
 
@@ -8076,7 +8078,7 @@ textarea.input {
 .dropdown-menu__submenu-title i {
   position: absolute;
   top: 50%;
-  left: 4px;
+  left: 7px;
   margin-top: -9px;
   width: auto;
   height: auto;
@@ -8802,6 +8804,10 @@ textarea.input {
   height: 100%;
   opacity: 0.5;
   line-height: inherit;
+}
+
+.horizontal-menu__dropdown-menu {
+  min-width: 150px;
 }
 
 .hmenu {
