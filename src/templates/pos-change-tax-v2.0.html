@@ -209,22 +209,30 @@ styles:
 									<a class="horizontal-menu__link " data-animation="ripple" href="#" data-dropdown-open="more" data-dropdown-parent-name="sidebar" id="more-menu-btn">More <i class="icon icon-more-v"></i></a>
 									<div class="dropdown-menu dropdown-menu_hidden dropdown-menu_up dropdown-menu_no-scroll js-menu" data-dropdown-menu="more" id="more-menu-dropdown">
 										<ul class="dropdown-menu__list">
+											<li class="dropdown-menu__item">
+												<a href="#" data-animation="ripple" class="dropdown-menu__arrow dropdown-menu__arrow_right" onclick="showSubmenu(event)">
+													<span>Change tax</span>
+													<i class="fa fa-angle-right"></i>
+												</a>
+											</li>
 											<li class="dropdown-menu__item"> <a href="#" data-animation="ripple">Tax exempt</a> </li>
 											<li class="dropdown-menu__item"> <a href="#" data-animation="ripple">Revert tax</a> </li>
-											<li class="dropdown-menu__item"> <a href="#" data-animation="ripple" class="dropdown-menu__arrow dropdown-menu__arrow_right" onclick="showSubmenu(event)">Change tax</a></li>
 											<li class="dropdown-menu__item"> <a href="#" data-animation="ripple">Reprint</a> </li>
 											<li class="dropdown-menu__item"> <a href="#" data-animation="ripple">Refund</a> </li>
 										</ul>
 										<div class="dropdown-menu__submenu dropdown-menu__submenu_overlay">
-											<a href="#" data-animation="ripple" class="dropdown-menu__submenu-title" onclick="showSubmenu(event)">Change tax</a>
+											<a href="#" data-animation="ripple" class="dropdown-menu__submenu-title" onclick="showSubmenu(event)">
+												<span>Change tax</span>
+												<i class="icon icon-back"></i>
+											</a>
 											<ul class="dropdown-menu__submenu-list" data-scrollbar="default">
-												<li class="dropdown-menu__submenu-item"> <a href="#" class="dropdown-menu__submenu-link is-active"><i class="fa fa-check-circle-o"></i>California tax</a> </li>
-												<li class="dropdown-menu__submenu-item"> <a href="#" class="dropdown-menu__submenu-link "><i class="fa fa-check-circle-o"></i>Oregon tax</a> </li>
-												<li class="dropdown-menu__submenu-item"> <a href="#" class="dropdown-menu__submenu-link "><i class="fa fa-check-circle-o"></i>Nevada tax</a> </li>
-												<li class="dropdown-menu__submenu-item"> <a href="#" class="dropdown-menu__submenu-link "><i class="fa fa-check-circle-o"></i>Oregon tax</a> </li>
-												<li class="dropdown-menu__submenu-item"> <a href="#" class="dropdown-menu__submenu-link "><i class="fa fa-check-circle-o"></i>Nevada tax</a> </li>
-												<li class="dropdown-menu__submenu-item"> <a href="#" class="dropdown-menu__submenu-link "><i class="fa fa-check-circle-o"></i>Oregon tax</a> </li>
-												<li class="dropdown-menu__submenu-item"> <a href="#" class="dropdown-menu__submenu-link "><i class="fa fa-check-circle-o"></i>Nevada tax</a> </li>
+												<li class="dropdown-menu__submenu-item"> <a href="#" class="dropdown-menu__submenu-link is-active"><i class="fa fa-check"></i>California tax</a> </li>
+												<li class="dropdown-menu__submenu-item"> <a href="#" class="dropdown-menu__submenu-link "><i class="fa fa-check"></i>Oregon tax</a> </li>
+												<li class="dropdown-menu__submenu-item"> <a href="#" class="dropdown-menu__submenu-link "><i class="fa fa-check"></i>Nevada tax</a> </li>
+												<li class="dropdown-menu__submenu-item"> <a href="#" class="dropdown-menu__submenu-link "><i class="fa fa-check"></i>Oregon tax</a> </li>
+												<li class="dropdown-menu__submenu-item"> <a href="#" class="dropdown-menu__submenu-link "><i class="fa fa-check"></i>Nevada tax</a> </li>
+												<li class="dropdown-menu__submenu-item"> <a href="#" class="dropdown-menu__submenu-link "><i class="fa fa-check"></i>Oregon tax</a> </li>
+												<li class="dropdown-menu__submenu-item"> <a href="#" class="dropdown-menu__submenu-link "><i class="fa fa-check"></i>Nevada tax</a> </li>
 											</ul>
 										</div>
 										<script>

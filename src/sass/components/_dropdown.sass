@@ -154,20 +154,26 @@
     margin: 0 -20px
     padding: 0 30px 0 20px 
     height: 50px
-    &.is-active
-      &:before
-        transform: rotate(180deg)
-    &:before
-      content: ''
+    // &.is-active
+    //   &:before
+    //     transform: rotate(180deg)
+    // &:before
+    //   content: ''
+    //   position: absolute
+    //   top: 22px
+    //   right: 10px
+    //   +arr(10, 6, $darkGray, b)
+    //   transition: transform 0.3s ease-in-out
+    // &_right
+    //   &:before
+    //     top: 20px
+    //     +arr(6, 10, $darkGray, r)
+    .fa
       position: absolute
-      top: 22px
+      top: 50%
       right: 10px
-      +arr(10, 6, $darkGray, b)
-      transition: transform 0.3s ease-in-out
-    &_right
-      &:before
-        top: 20px
-        +arr(6, 10, $darkGray, r)
+      margin-top: -10px
+      font-size: 20px
   &__submenu
     display: none
     &.is-open
@@ -216,32 +222,32 @@
         position: absolute
         top: 50%
         left: 5px
-        margin-top: -8px
+        margin-top: -7px
         opacity: 0
-        font-size: 16px
+        font-size: 14px
     &-title
       position: absolute
       top: 0
       left: 0
       right: 0
-      padding: 16px 20px
-      color: $darkGray
-      font-size: 18px
-      line-height: 1
+      padding: 17px 20px 17px 25px
+      color: $white
+      background: $blue
+      font-size: 14px
+      line-height: 16px
       text-decoration: none
-      +hover
-        background: $lightGray
       +active
         color: $white
         background: $blue
-      &:before
-        content: ''
+      i
         position: absolute
         top: 50%
-        left: 10px
-        margin-top: -5px
-        +arr(6, 10, $darkGray, l)
-        transition: transform 0.3s ease-in-out
+        left: 4px
+        margin-top: -9px
+        width: auto
+        height: auto
+        font-size: 18px
+        line-height: 1
   &_hidden
     overflow: hidden
   &__list
