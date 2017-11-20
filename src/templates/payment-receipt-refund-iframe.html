@@ -1,0 +1,103 @@
+---
+title: 'Receipt &bull; eHopper POS'
+styles: 
+	- 'pos'
+---
+{% extends "layouts/_layout.html" %}
+
+{% block content %}
+	<main class="main">
+		<div class="inner">
+			{{header.call({
+				backBtnClassList: 'is-hidden',
+				sidebarClassList: 'is-hidden',
+				fullinfoClassList: 'is-hidden',
+				menuBtnClassList: 'is-hidden',
+				helpBtnClassList: 'is-hidden',
+				searchClassList: 'is-hidden',
+				syncBtnClassList: 'is-hidden',
+				searchBtnClassList: 'is-hidden',
+				syncClassList: 'is-hidden',
+				scanBtnClassList: 'is-hidden',
+				containerClassList: 'main-header__container_full',
+				title: 'Receipt #001234'
+			})}}
+			{% include 'partials/components/_payments-sidebar.html' %}
+			<div class="container container_right container_payments">
+				<div class="container__body step-body">
+					<div class="step-body__section">
+						<div class="form form_sm">
+							<div class="form__section">
+								<div class="form__row">
+									<div class="form__col form__col_poynt-50">
+										{{mixins.infoPrice({
+											label: 'Amount Due:',
+											price: '200.00',
+											currency: '$',
+											classList: 'text-right',
+											valueClassList: 'color-red'
+										})}}
+									</div>
+									<div class="form__col form__col_poynt-50">
+										{{mixins.infoPrice({
+											label: 'Change Owed:',
+											price: '98.00',
+											currency: '$',
+											classList: 'text-left'
+										})}}
+									</div>
+								</div>
+							</div>
+							<div class="form__section">
+								<div class="form-box">
+									<div class="form-box__field">
+										{{mixins.field({
+											label: 'Bill Language:',
+											select: true,
+											id: 'bill-language',
+											selectOptions: {
+												id: 'bill-language',
+												classList: 'select_lg field__select',
+												options: [ 'English', 'French', 'Russian' ]
+											}
+										})}}
+									</div>
+									<div class="form-box__field">
+										<label for="federal-tax" class="form-box__label">Email Bill</label>
+										{{mixins.switcher({ id: 'email-bill', classList: 'form-box__switcher' })}}
+									</div>
+									<div class="form-box__field">
+										{{mixins.field({
+											label: 'Email address:',
+											id: 'order-email-address',
+											placeholder: 'user@domain.com',
+											inputClassList: 'input_lg text-right'
+										})}}
+									</div>
+									<div class="form-box__field">
+										<label for="state-tax" class="form-box__label">Print Bill</label>
+										{{mixins.switcher({ id: 'print-bill', classList: 'form-box__switcher' })}}
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="step-body__footer section">
+						<div class="form form_sm">
+							<button class="btn btn_primary btn_lg btn_block text-uppercase" data-animation="ripple" value="Done">Done</button>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		{% set iframe = {
+			classList: 'is-error',
+			url: 'iframes/iframe.html'
+		} %}
+		{% include 'partials/_iframe-confirmation.html' %}
+	</main>
+
+	{{modal.help()}}
+	{{modal.paymentTerminal()}}
+{% endblock %}
