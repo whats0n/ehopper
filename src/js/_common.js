@@ -1,9 +1,9 @@
 import {$DOCUMENT, $BODY, isTouch, touchClass, noTouchClass} from './_constants';
 
 export default (function() {
-	$DOCUMENT.ready(function() {
-		isTouch() && $BODY.addClass(touchClass);
-		!isTouch() && $BODY.addClass(noTouchClass);
-		// true && $BODY.addClass('is-poynt');
-	});
+  $DOCUMENT.ready(function() {
+    isTouch() && $BODY.addClass(touchClass);
+    !isTouch() && $BODY.addClass(noTouchClass);
+    // true && $BODY.addClass('is-poynt');
+  });
 })();

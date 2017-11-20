@@ -4,15 +4,14 @@ var config      = require('../../config');
 require('require-yaml');
 
 gulp.task('list-pages', function() {
-	// delete require.cache[require.resolve('../../../' + config.src.pagelist)]
- //    var pages = require('../../../' + config.src.pagelist);
- //    return gulp
- //        .src(__dirname + '/index.html')
- //        .pipe(consolidate('lodash', {
- //            pages: pages
- //        }))
- //        .pipe(gulp.dest(config.dest.html));
- 	console.log('a')
+	delete require.cache[require.resolve('../../../' + config.src.pagelist)]
+    var pages = require('../../../' + config.src.pagelist);
+    return gulp
+        .src(__dirname + '/index.html')
+        .pipe(consolidate('lodash', {
+            pages: pages
+        }))
+        .pipe(gulp.dest(config.dest.html));
 });
 
 gulp.task('list-pages:watch', function() {
