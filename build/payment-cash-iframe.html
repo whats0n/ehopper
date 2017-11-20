@@ -3,7 +3,7 @@
 
   <head>
     <meta charset="utf-8">
-    <title>Credit Card &bull; eHopper POS</title>
+    <title>Cash Method &bull; eHopper POS</title>
     <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <meta name="theme-color" content="#fff">
@@ -31,7 +31,7 @@
             <div class="main-header__container main-header__container_full"> <button class="btn-icon main-header__help is-hidden" title="Help" data-modal-open="help">
 			<i class="icon icon-help"></i>
 		</button>
-              <h2 class="title-xlg main-header__title ">Credit Card Payment</h2>
+              <h2 class="title-xlg main-header__title ">Cash Payment</h2>
               <div class="main-header__searchbox is-hidden">
                 <!-- begin search -->
                 <div class="search" data-modal="search">
@@ -281,33 +281,21 @@
                   <ul class="totals-list totals-list_main">
                     <li class="totals-list__item">
                       <div class="totals-list__label">Sub</div>
-                      <div class="totals-list__value">$25.25</div>
+                      <div class="totals-list__value">$1299.00</div>
                     </li>
                     <li class="totals-list__item">
                       <div class="totals-list__label">Discount</div>
-                      <div class="totals-list__value">(3.79)</div>
+                      <div class="totals-list__value">$0.00</div>
                     </li>
                   </ul>
                   <ul class="totals-list totals-list_scroll">
                     <li class="totals-list__item">
-                      <div class="totals-list__label">Tax 1</div>
-                      <div class="totals-list__value">$0.21</div>
-                    </li>
-                    <li class="totals-list__item">
-                      <div class="totals-list__label">Tax 2</div>
-                      <div class="totals-list__value">$2.58</div>
-                    </li>
-                    <li class="totals-list__item">
-                      <div class="totals-list__label">Convenience Fee</div>
-                      <div class="totals-list__value">$1.30</div>
-                    </li>
-                    <li class="totals-list__item">
-                      <div class="totals-list__label">Fee Discount</div>
-                      <div class="totals-list__value">$0.00</div>
+                      <div class="totals-list__label">Tax</div>
+                      <div class="totals-list__value">$6.75</div>
                     </li>
                     <li class="totals-list__item">
                       <div class="totals-list__label">Total</div>
-                      <div class="totals-list__value">$25.55</div>
+                      <div class="totals-list__value">$1299.00</div>
                     </li>
                   </ul>
                 </div>
@@ -317,79 +305,62 @@
           <div class="container container_right container_payments">
             <div class="container__body step-body">
               <div class="step-body__section">
-                <div class="form form_sm">
+                <div class="form form_sm" id="payment-cash">
                   <div class="form__section">
                     <div class="info-price text-center">
-                      <div class="info-price__label">Total Due:</div>
+                      <div class="info-price__label">Amount Due:</div>
                       <div class="info-price__value "> <small>$</small> <span>102.00</span> </div>
                     </div>
                   </div>
-                  <div class="form__section">
-                    <div class="field-box">
-                      <div class="field-box__switch"> <label class="field-box__label" for="enter-card-manually">Enter Card Manually</label>
-                        <div class="field-box__switcher"> <label class="switcher ">
-	<input type="checkbox" id="enter-card-manually" checked>
-	<i class="switcher__icon"></i>
-</label> </div>
+                  <div class="fieldset fieldset_bordered">
+                    <div class="main-display"> <button class="main-display__clear" data-numpad="numpad-clear"><i class="icon icon-clear"></i></button>
+                      <div class="field ">
+                        <div class="field__inner"> <label class="field__label field__label_sm" for="amount-tendered">Amount Tendered:</label>
+                          <div class="field__box"> <input class="input field__input text-right input_xl" value="200.00" id="amount-tendered" type="text" placeholder="0" required readonly> </div>
+                        </div>
                       </div>
                     </div>
-                    <div class="payment-fieldset">
-                      <div class="fieldset fieldset_lg fieldset_bordered">
-                        <div class="fieldset__container">
-                          <div class="fieldset__row">
-                            <div class="fieldset__col fieldset__col_lg is-active"> <input type="text" class="input input_lg fieldset__input" placeholder="Card Number" readonly> </div>
-                            <div class="fieldset__col fieldset__col_sm"> <input type="text" class="input input_lg fieldset__input" placeholder="Expiration" readonly> </div>
-                          </div>
+                    <!-- begin keyboard -->
+                    <div class="main-keyboard numpad ">
+                      <div class="main-keyboard__container ">
+                        <div class="main-keyboard__shortcuts">
+                          <div class="main-keyboard__item"><button type="button" data-animation="ripple" class="main-keyboard__shortcuts-button ">Exact</button></div>
+                          <div class="main-keyboard__item"><button type="button" data-animation="ripple" class="main-keyboard__shortcuts-button ">$10</button></div>
+                          <div class="main-keyboard__item"><button type="button" data-animation="ripple" class="main-keyboard__shortcuts-button ">$20</button></div>
                         </div>
-                        <!-- begin keyboard -->
-                        <div class="main-keyboard numpad fieldset__keyboard">
-                          <div class="main-keyboard__container ">
-                            <div class="main-keyboard__main">
-                              <div class="main-keyboard__item"> <button type="button" data-animation="ripple" class="main-keyboard__button ">1</button> </div>
-                              <div class="main-keyboard__item"> <button type="button" data-animation="ripple" class="main-keyboard__button ">2</button> </div>
-                              <div class="main-keyboard__item"> <button type="button" data-animation="ripple" class="main-keyboard__button ">3</button> </div>
-                              <div class="main-keyboard__item"> <button type="button" data-animation="ripple" class="main-keyboard__button ">4</button> </div>
-                              <div class="main-keyboard__item"> <button type="button" data-animation="ripple" class="main-keyboard__button ">5</button> </div>
-                              <div class="main-keyboard__item"> <button type="button" data-animation="ripple" class="main-keyboard__button ">6</button> </div>
-                              <div class="main-keyboard__item"> <button type="button" data-animation="ripple" class="main-keyboard__button ">7</button> </div>
-                              <div class="main-keyboard__item"> <button type="button" data-animation="ripple" class="main-keyboard__button ">8</button> </div>
-                              <div class="main-keyboard__item"> <button type="button" data-animation="ripple" class="main-keyboard__button ">9</button> </div>
-                              <div class="main-keyboard__item"> <button type="button" data-animation="ripple" class="main-keyboard__button ">0</button> </div>
-                              <div class="main-keyboard__item"> <button type="button" data-animation="ripple" class="main-keyboard__button ">00</button> </div>
-                              <div class="main-keyboard__item"> <button type="button" data-animation="ripple" class="main-keyboard__button " data-numpad="numpad-backspace"><i class="icon icon-backspace"></i></button> </div>
-                            </div>
-                          </div>
+                        <div class="main-keyboard__main">
+                          <div class="main-keyboard__item"> <button type="button" data-animation="ripple" class="main-keyboard__button ">1</button> </div>
+                          <div class="main-keyboard__item"> <button type="button" data-animation="ripple" class="main-keyboard__button ">2</button> </div>
+                          <div class="main-keyboard__item"> <button type="button" data-animation="ripple" class="main-keyboard__button ">3</button> </div>
+                          <div class="main-keyboard__item"> <button type="button" data-animation="ripple" class="main-keyboard__button ">4</button> </div>
+                          <div class="main-keyboard__item"> <button type="button" data-animation="ripple" class="main-keyboard__button ">5</button> </div>
+                          <div class="main-keyboard__item"> <button type="button" data-animation="ripple" class="main-keyboard__button ">6</button> </div>
+                          <div class="main-keyboard__item"> <button type="button" data-animation="ripple" class="main-keyboard__button ">7</button> </div>
+                          <div class="main-keyboard__item"> <button type="button" data-animation="ripple" class="main-keyboard__button ">8</button> </div>
+                          <div class="main-keyboard__item"> <button type="button" data-animation="ripple" class="main-keyboard__button ">9</button> </div>
+                          <div class="main-keyboard__item"> <button type="button" data-animation="ripple" class="main-keyboard__button ">0</button> </div>
+                          <div class="main-keyboard__item"> <button type="button" data-animation="ripple" class="main-keyboard__button ">00</button> </div>
+                          <div class="main-keyboard__item"> <button type="button" data-animation="ripple" class="main-keyboard__button " data-numpad="numpad-backspace"><i class="icon icon-backspace"></i></button> </div>
                         </div>
-                        <!-- end keyboard -->
                       </div>
                     </div>
-                  </div>
-                  <div class="form__section">
-                    <div class="field-box">
-                      <div class="field-box__label">Tips and Signature</div>
-                      <ul class="field-box__list">
-                        <li class="field-box__col field-box__col_sm field-box__radio"> <label class="fake-radio fake-radio_block fake-radio_lg">
-	<input type="radio" name="tips-and-signature" >
-	<span class="fake-radio__content">On Screen</span>
-</label> </li>
-                        <li class="field-box__col field-box__col_sm field-box__radio"> <label class="fake-radio fake-radio_block fake-radio_lg">
-	<input type="radio" name="tips-and-signature" checked>
-	<span class="fake-radio__content">On Receipt</span>
-</label> </li>
-                        <li class="field-box__col field-box__col_sm field-box__radio"> <label class="fake-radio fake-radio_block fake-radio_lg">
-	<input type="radio" name="tips-and-signature" >
-	<span class="fake-radio__content">On Terminal</span>
-</label> </li>
-                      </ul>
-                    </div>
+                    <!-- end keyboard -->
                   </div>
                 </div>
               </div>
               <div class="step-body__footer section">
-                <div class="form form_sm"> <button class="btn btn_primary btn_lg btn_block" data-animation="ripple" value="Done">Continue</button> </div>
+                <div class="form form_sm"> <button class="btn btn_primary btn_lg btn_block text-uppercase" data-animation="ripple" value="Done">Process</button> </div>
               </div>
             </div>
+            <div class="loader" data-bind="visible: loading" style="">
+              <div class="loading loader__icon"></div>
+            </div>
           </div>
+        </div>
+        <div data-bind="compose: 'controls/iframeConfirmation.html'">
+          <div class="iframe-confirmation is-open is-error"> <button class="iframe-confirmation__close">
+			<i class="icon icon-close"></i>
+		</button> <iframe style="display: block; width:100%; height: 120px;" src="iframes/iframe.html"></iframe> </div>
         </div>
       </main>
       <!-- begin help -->

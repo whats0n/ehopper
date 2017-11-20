@@ -15,8 +15,8 @@ gulp.task('copy:lib', function() {
 
 gulp.task('copy:oldCss', function() {
     return gulp
-        .src(config.src.root + '/root/old-css/*.*')
-        .pipe(gulp.dest(config.dest.root + '/static/old-css/'));
+        .src(config.src.root + '/root/**/*.*')
+        .pipe(gulp.dest(config.dest.root + '/static/'));
 });
 
 gulp.task('copy:img', function() {

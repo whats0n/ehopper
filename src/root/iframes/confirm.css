@@ -1,0 +1,46 @@
+﻿
+#error-page, 
+#info-page,
+#full-page-spinner
+ {
+    color: #fff;
+    height: 100%;
+    width: 100%;
+    text-align: left;
+    bottom: 0;
+    left: 20%;
+    right: 20%;
+    padding: 20px;   
+}
+
+#info-page {
+    background: #22B745;
+}
+
+#error-page {
+    background: #ec4a41;
+}
+#full-page-spinner{
+    background: #434c55;
+}
+.confirm-msg {
+    overflow: hidden;
+    margin: 10px;
+    font-family: 'Roboto Regular', Arial, sans-serif;
+    font-size: 16px;
+}
+
+
+.spinner-overlay.confirm:after {
+    background: rgba(33, 38, 42, 0.8);
+}
+
+.spinner-overlay.with-text {
+    margin: -70px 0 0 -200px;
+    text-align: center;
+}
+
+.content {
+    width: 400px;
+    margin: 0 auto;
+}

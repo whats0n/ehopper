@@ -1,0 +1,10 @@
+<div data-bind="compose: 'controls/iframeConfirmation.html'">
+	<div class="iframe-confirmation is-open {{iframe.classList}}">
+		<button class="iframe-confirmation__close">
+			<i class="icon icon-close"></i>
+		</button>
+		<iframe 
+			style="display: block; width:100%; height: 120px;" 
+			src="{{iframe.url}}"></iframe>
+	</div>
+</div>
