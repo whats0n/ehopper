@@ -3,7 +3,7 @@
 
   <head>
     <meta charset="utf-8">
-    <title>Cash Method &bull; eHopper POS</title>
+    <title>Split Payment &bull; eHopper POS</title>
     <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <meta name="theme-color" content="#fff">
@@ -31,7 +31,7 @@
             <div class="main-header__container main-header__container_full"> <button class="btn-icon main-header__help is-hidden" title="Help" data-modal-open="help">
 			<i class="icon icon-help"></i>
 		</button>
-              <h2 class="title-xlg main-header__title ">Cash Payment</h2>
+              <h2 class="title-xlg main-header__title ">Split Payment</h2>
               <div class="main-header__searchbox is-hidden">
                 <!-- begin search -->
                 <div class="search" data-modal="search">
@@ -305,55 +305,143 @@
           <div class="container container_right container_payments">
             <div class="container__body step-body">
               <div class="step-body__section">
-                <div class="form form_sm" id="payment-cash">
-                  <div class="form__section">
-                    <div class="info-price text-center">
-                      <div class="info-price__label">Amount Due:</div>
-                      <div class="info-price__value "> <small>$</small> <span>102.00</span> </div>
+                <div class="form form_sm">
+                  <div class="form__section form__section_sm">
+                    <div class="field-box">
+                      <div class="field-box__counter">
+                        <div class="field-box__label">Payments</div>
+                        <div class="field-box__controls">
+                          <div class="field-box__controls-in">
+                            <div class="field-box__control field-box__control_left"> <button class="btn btn_xl btn_secondary" data-animation="ripple">&#8211;</button> </div>
+                            <div class="field-box__control field-box__control_right"> <button class="btn btn_xl btn_secondary" data-animation="ripple">+</button> </div> <input type="text" class="input text-center field-box__counter-input" value="5" readonly> </div>
+                        </div>
+                      </div>
                     </div>
                   </div>
-                  <div class="fieldset fieldset_bordered">
-                    <div class="main-display"> <button class="main-display__clear" data-numpad="numpad-clear"><i class="icon icon-clear"></i></button>
-                      <div class="field ">
-                        <div class="field__inner"> <label class="field__label field__label_sm" for="amount-tendered">Amount Tendered:</label>
-                          <div class="field__box"> <input class="input field__input text-right input_xl" value="200.00" id="amount-tendered" type="text" placeholder="0" required readonly> </div>
+                  <div class="form__section form__section_sm">
+                    <div class="field-box">
+                      <div class="field-box__select-set"> <button class="field-box__clear"><i class="icon icon-close"></i></button>
+                        <div class="field-box__select-col">
+                          <!-- begin dropdown -->
+                          <div class="dropdown " data-dropdown="split-payment1">
+                            <div class="dropdown__header" data-dropdown-open="split-payment1" data-animation="ripple"> <i class="dropdown__arrow icon icon-expand"></i>
+                              <div class="dropdown__value" data-dropdown-value="split-payment1">Cash</div>
+                            </div>
+                            <div class="dropdown-menu dropdown-menu_no-scroll" data-dropdown-menu="split-payment1">
+                              <ul class="dropdown-menu__list" data-scrollbar="default">
+                                <li class="dropdown-menu__item is-active" data-animation="ripple" data-dropdown-item="split-payment1" data-value="Cash"> Cash </li>
+                                <li class="dropdown-menu__item" data-animation="ripple" data-dropdown-item="split-payment1" data-value="Credit Card"> Credit Card </li>
+                                <li class="dropdown-menu__item" data-animation="ripple" data-dropdown-item="split-payment1" data-value="Debit Card"> Debit Card </li>
+                                <li class="dropdown-menu__item" data-animation="ripple" data-dropdown-item="split-payment1" data-value="External Payment"> External Payment </li>
+                              </ul>
+                            </div>
+                            <!-- begin overlay --><button type="button" class="overlay " data-color="dark-gray" data-overlay="overlay" data-dropdown-overlay="split-payment1"></button>
+                            <!-- end overlay -->
+                          </div>
+                          <!-- end dropdown -->
                         </div>
+                        <div class="field-box__select-col"> <input type="text" class="input input_lg input_block field-box__select-input " value="100.00"> </div>
+                        <div class="field-box__button"> <button class="btn btn_lg btn_block " data-animation="ripple">Charge</button> </div>
                       </div>
                     </div>
-                    <!-- begin keyboard -->
-                    <div class="main-keyboard numpad ">
-                      <div class="main-keyboard__container ">
-                        <div class="main-keyboard__shortcuts">
-                          <div class="main-keyboard__item"><button type="button" data-animation="ripple" class="main-keyboard__shortcuts-button ">Exact</button></div>
-                          <div class="main-keyboard__item"><button type="button" data-animation="ripple" class="main-keyboard__shortcuts-button ">$10</button></div>
-                          <div class="main-keyboard__item"><button type="button" data-animation="ripple" class="main-keyboard__shortcuts-button ">$20</button></div>
+                  </div>
+                  <div class="form__section form__section_sm">
+                    <div class="field-box">
+                      <div class="field-box__select-set"> <button class="field-box__clear"><i class="icon icon-close"></i></button>
+                        <div class="field-box__select-col">
+                          <!-- begin dropdown -->
+                          <div class="dropdown " data-dropdown="split-payment2">
+                            <div class="dropdown__header" data-dropdown-open="split-payment2" data-animation="ripple"> <i class="dropdown__arrow icon icon-expand"></i>
+                              <div class="dropdown__value" data-dropdown-value="split-payment2">Cash</div>
+                            </div>
+                            <div class="dropdown-menu dropdown-menu_no-scroll" data-dropdown-menu="split-payment2">
+                              <ul class="dropdown-menu__list" data-scrollbar="default">
+                                <li class="dropdown-menu__item is-active" data-animation="ripple" data-dropdown-item="split-payment2" data-value="Cash"> Cash </li>
+                                <li class="dropdown-menu__item" data-animation="ripple" data-dropdown-item="split-payment2" data-value="Credit Card"> Credit Card </li>
+                                <li class="dropdown-menu__item" data-animation="ripple" data-dropdown-item="split-payment2" data-value="Debit Card"> Debit Card </li>
+                                <li class="dropdown-menu__item" data-animation="ripple" data-dropdown-item="split-payment2" data-value="External Payment"> External Payment </li>
+                              </ul>
+                            </div>
+                            <!-- begin overlay --><button type="button" class="overlay " data-color="dark-gray" data-overlay="overlay" data-dropdown-overlay="split-payment2"></button>
+                            <!-- end overlay -->
+                          </div>
+                          <!-- end dropdown -->
                         </div>
-                        <div class="main-keyboard__main">
-                          <div class="main-keyboard__item"> <button type="button" data-animation="ripple" class="main-keyboard__button ">1</button> </div>
-                          <div class="main-keyboard__item"> <button type="button" data-animation="ripple" class="main-keyboard__button ">2</button> </div>
-                          <div class="main-keyboard__item"> <button type="button" data-animation="ripple" class="main-keyboard__button ">3</button> </div>
-                          <div class="main-keyboard__item"> <button type="button" data-animation="ripple" class="main-keyboard__button ">4</button> </div>
-                          <div class="main-keyboard__item"> <button type="button" data-animation="ripple" class="main-keyboard__button ">5</button> </div>
-                          <div class="main-keyboard__item"> <button type="button" data-animation="ripple" class="main-keyboard__button ">6</button> </div>
-                          <div class="main-keyboard__item"> <button type="button" data-animation="ripple" class="main-keyboard__button ">7</button> </div>
-                          <div class="main-keyboard__item"> <button type="button" data-animation="ripple" class="main-keyboard__button ">8</button> </div>
-                          <div class="main-keyboard__item"> <button type="button" data-animation="ripple" class="main-keyboard__button ">9</button> </div>
-                          <div class="main-keyboard__item"> <button type="button" data-animation="ripple" class="main-keyboard__button ">0</button> </div>
-                          <div class="main-keyboard__item"> <button type="button" data-animation="ripple" class="main-keyboard__button ">00</button> </div>
-                          <div class="main-keyboard__item"> <button type="button" data-animation="ripple" class="main-keyboard__button " data-numpad="numpad-backspace"><i class="icon icon-backspace"></i></button> </div>
-                        </div>
+                        <div class="field-box__select-col"> <input type="text" class="input input_lg input_block field-box__select-input " value="100.00"> </div>
+                        <div class="field-box__button"> <button class="btn btn_lg btn_block " data-animation="ripple">Charge</button> </div>
                       </div>
                     </div>
-                    <!-- end keyboard -->
+                  </div>
+                  <div class="form__section form__section_sm">
+                    <div class="field-box">
+                      <div class="field-box__select-set"> <button class="field-box__clear"><i class="icon icon-close"></i></button>
+                        <div class="field-box__select-col">
+                          <!-- begin dropdown -->
+                          <div class="dropdown " data-dropdown="split-payment3">
+                            <div class="dropdown__header" data-dropdown-open="split-payment3" data-animation="ripple"> <i class="dropdown__arrow icon icon-expand"></i>
+                              <div class="dropdown__value" data-dropdown-value="split-payment3">Cash</div>
+                            </div>
+                            <div class="dropdown-menu dropdown-menu_no-scroll dropdown-menu_up" data-dropdown-menu="split-payment3">
+                              <ul class="dropdown-menu__list" data-scrollbar="default">
+                                <li class="dropdown-menu__item is-active" data-animation="ripple" data-dropdown-item="split-payment3" data-value="Cash"> Cash </li>
+                                <li class="dropdown-menu__item" data-animation="ripple" data-dropdown-item="split-payment3" data-value="Credit Card"> Credit Card </li>
+                                <li class="dropdown-menu__item" data-animation="ripple" data-dropdown-item="split-payment3" data-value="Debit Card"> Debit Card </li>
+                                <li class="dropdown-menu__item" data-animation="ripple" data-dropdown-item="split-payment3" data-value="External Payment"> External Payment </li>
+                              </ul>
+                            </div>
+                            <!-- begin overlay --><button type="button" class="overlay " data-color="dark-gray" data-overlay="overlay" data-dropdown-overlay="split-payment3"></button>
+                            <!-- end overlay -->
+                          </div>
+                          <!-- end dropdown -->
+                        </div>
+                        <div class="field-box__select-col"> <input type="text" class="input input_lg input_block field-box__select-input " value="100.00"> </div>
+                        <div class="field-box__button"> <button class="btn btn_lg btn_block " data-animation="ripple">Charge</button> </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="form__section form__section_sm">
+                    <div class="field-box">
+                      <div class="field-box__select-set"> <button class="field-box__clear"><i class="icon icon-close"></i></button>
+                        <div class="field-box__select-col">
+                          <!-- begin dropdown -->
+                          <div class="dropdown " data-dropdown="split-payment4">
+                            <div class="dropdown__header" data-dropdown-open="split-payment4" data-animation="ripple"> <i class="dropdown__arrow icon icon-expand"></i>
+                              <div class="dropdown__value" data-dropdown-value="split-payment4">Cash</div>
+                            </div>
+                            <div class="dropdown-menu dropdown-menu_no-scroll dropdown-menu_up" data-dropdown-menu="split-payment4">
+                              <ul class="dropdown-menu__list" data-scrollbar="default">
+                                <li class="dropdown-menu__item is-active" data-animation="ripple" data-dropdown-item="split-payment4" data-value="Cash"> Cash </li>
+                                <li class="dropdown-menu__item" data-animation="ripple" data-dropdown-item="split-payment4" data-value="Credit Card"> Credit Card </li>
+                                <li class="dropdown-menu__item" data-animation="ripple" data-dropdown-item="split-payment4" data-value="Debit Card"> Debit Card </li>
+                                <li class="dropdown-menu__item" data-animation="ripple" data-dropdown-item="split-payment4" data-value="External Payment"> External Payment </li>
+                              </ul>
+                            </div>
+                            <!-- begin overlay --><button type="button" class="overlay " data-color="dark-gray" data-overlay="overlay" data-dropdown-overlay="split-payment4"></button>
+                            <!-- end overlay -->
+                          </div>
+                          <!-- end dropdown -->
+                        </div>
+                        <div class="field-box__select-col"> <input type="text" class="input input_lg input_block field-box__select-input " value="100.00"> </div>
+                        <div class="field-box__button"> <button class="btn btn_lg btn_block " data-animation="ripple">Charge</button> </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="form__section form__section_sm">
+                    <div class="field-box">
+                      <div class="field-box__select-set"> <button class="field-box__clear"><i class="icon icon-close"></i></button>
+                        <div class="field-box__select-col">
+                          <div class="field-box__select-static"> <i class="icon icon-checked"></i> <span class="muted">Cash</span> </div>
+                        </div>
+                        <div class="field-box__select-col"> <input type="text" class="input input_lg input_block field-box__select-input muted" value="100.00" readonly> </div>
+                        <div class="field-box__button"> <button class="btn btn_lg btn_block btn_red" data-animation="ripple">Void</button> </div>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
               <div class="step-body__footer section">
-                <div class="form form_sm"> <button class="btn btn_primary btn_lg btn_block text-uppercase" data-animation="ripple" value="Done">Process</button> </div>
+                <div class="form form_sm"> <button class="btn btn_primary btn_lg btn_block" data-animation="ripple" value="Done">Done</button> </div>
               </div>
-            </div>
-            <div class="loader" data-bind="visible: loading" style="">
-              <div class="loading loader__icon"></div>
             </div>
           </div>
         </div>
@@ -363,6 +451,22 @@
 		</button> <iframe style="display: block; width:100%; height: 120px;" src="iframes/iframe.html"></iframe> </div>
         </div>
       </main>
+      <div class="modal payment-terminal is-open" data-bind="css: { 'is-open': isProcessing() }" data-view="views/processing" data-active-view="true" style="">
+        <div class="modal__container payment-terminal__container">
+          <div class="payment-terminal__body">
+            <div class="payment-terminal__vertical">
+              <div class="payment-terminal__center">
+                <div class="loading payment-terminal__icon"></div>
+                <p data-bind="visible: !processingEnd(), local: processingMsg ">The payment is being processed</p>
+                <p data-bind="visible: processingEnd() &amp;&amp; !processingError(), local: paymentSuccessfullMsg" style="display: none;">Payment has been processed successfully</p>
+                <p data-bind="visible: processingEnd() &amp;&amp; processingError()" style="display: none;"> <span class="error" data-bind="local: 'processing.processingError'">Error occurred while processing the payment</span><br> <span data-bind="html: processingError"></span> </p>
+              </div>
+            </div>
+          </div>
+          <div class="payment-terminal__footer"> <button class="btn btn_lg btn_block btn_primary" data-bind="visible: processingEnd(), smartClick: $data.processEnd, css: { 'btn_error': processingError(), 'btn_primary' : !processingError() }, local: 'processing.ok'" data-animation="ripple"
+              style="display: none;">OK</button> </div>
+        </div>
+      </div>
       <!-- END content -->
       <!-- begin snackbar -->
       <div class="snackbar " data-snackbar-container="snackbar" data-state="default">
