@@ -212,45 +212,7 @@
           <aside class="sidebar sidebar_left sidebar_adaptive-poynt sidebar_disabled" data-toggle-class-container="sidebar-header" data-dropdown-parent="sidebar">
             <div class="sidebar__body" data-order-scroll="order">
               <div class="sidebar__content">
-                <!-- data-state - item state (can be default or active) -->
-                <!-- data-swipe - add class to himself -->
-                <!-- data-swipe-threshold - threshold that we have to swipe from the start point -->
-                <!-- data-fullinfo-open - open item tabs -->
-                <!-- data-toggle-class-target:
-							add/remove/toggle class (data-toggle-class-add/data-toggle-class-remove/data-toggle-class-toggle) 
-							to all current containers ('data-toggle-class-container') -->
-                <!-- data-fullinfo-target - open current tab in the fullinfo container -->
-                <!-- data-fullinfo-close - close item tabs -->
-                <!-- data-order-delete-item - delete item -->
                 <ul class="order-list" data-order-visible="order" data-order-list="order">
-                  <li class="order-item" data-order-added="item" data-animation="ripple" data-swipe="is-open" data-swipe-threshold="50">
-                    <div class="order-item__container"> <button class="order-item__close" data-fullinfo-close="fullinfo" data-toggle-class-target="sidebar-header" data-toggle-class-remove="is-disabled" data-order-delete-item="delete">
-											<i class="icon icon-close"></i>
-										</button>
-                      <div class="order-item__content" data-fullinfo-open="fullinfo" data-toggle-class-target="sidebar-header" data-toggle-class-add="is-disabled">
-                        <div class="order-item__row">
-                          <div class="order-item__info">
-                            <div class="order-item__title">Hot Dog XL</div>
-                          </div>
-                          <div class="order-item__meta">Click to duplicate in cart <a href="#">Add note</a></div>
-                        </div>
-                        <div class="order-item__row">
-                          <div class="order-item__col text-left">
-                            <div class="order-item__quantity">9999&times;</div>
-                          </div>
-                          <div class="order-item__col text-right">
-                            <div class="order-item__total">1234444434410.8801</div>
-                          </div>
-                          <div class="order-item__col text-left">
-                            <div class="order-item__price">123456789.12</div>
-                          </div>
-                          <div class="order-item__col text-right">
-                            <div class="order-item__tag"></div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </li>
                   <li class="order-item" data-order-added="item" data-animation="ripple" data-swipe="is-open" data-swipe-threshold="50">
                     <div class="order-item__container"> <button class="order-item__close" data-fullinfo-close="fullinfo" data-toggle-class-target="sidebar-header" data-toggle-class-remove="is-disabled" data-order-delete-item="delete">
 											<i class="icon icon-close"></i>
@@ -323,30 +285,34 @@
                 <div class="totals__container">
                   <ul class="totals-list totals-list_main">
                     <li class="totals-list__item">
-                      <div class="totals-list__label">Sub</div>
-                      <div class="totals-list__value">$1299.00</div>
+                      <div class="totals-list__label">Subtotal</div>
+                      <div class="totals-list__value">$1296.00</div>
                     </li>
                     <li class="totals-list__item">
                       <div class="totals-list__label">Discount</div>
-                      <div class="totals-list__value">$0.00</div>
+                      <div class="totals-list__value">(0.00)</div>
                     </li>
                   </ul>
                   <ul class="totals-list totals-list_scroll">
                     <li class="totals-list__item">
-                      <div class="totals-list__label">Tax</div>
+                      <div class="totals-list__label">Tax 1</div>
                       <div class="totals-list__value">$6.75</div>
                     </li>
                     <li class="totals-list__item">
-                      <div class="totals-list__label">Convenience Fee</div>
-                      <div class="totals-list__value">$2.25</div>
+                      <div class="totals-list__label">Tax 2</div>
+                      <div class="totals-list__value">$2.58</div>
                     </li>
                     <li class="totals-list__item">
-                      <div class="totals-list__label">Fee Discount</div>
-                      <div class="totals-list__value">($2.25)</div>
+                      <div class="totals-list__label">SVC (NY)</div>
+                      <div class="totals-list__value">$143.59</div>
+                    </li>
+                    <li class="totals-list__item">
+                      <div class="totals-list__label">SVC (NY) Discount</div>
+                      <div class="totals-list__value">(0.00)</div>
                     </li>
                     <li class="totals-list__item totals-list__item_total">
                       <div class="totals-list__label">Total</div>
-                      <div class="totals-list__value">$123456789012345.12</div>
+                      <div class="totals-list__value">$1448.92</div>
                     </li>
                   </ul>
                 </div>
@@ -372,8 +338,9 @@
                       <div class="dropdown-menu dropdown-menu_up dropdown-menu_no-scroll"
                         data-dropdown-menu="more" id="more-menu-dropdown">
                         <ul class="dropdown-menu__list">
-                          <li class="dropdown-menu__item" data-animation="ripple"> <a href="#">Tax exempt</a> </li>
+                          <li class="dropdown-menu__item" data-animation="ripple"> <a href="#">Remove Tax</a> </li>
                           <li class="dropdown-menu__item" data-animation="ripple"> <a href="#">Revert tax</a> </li>
+                          <li class="dropdown-menu__item" data-animation="ripple"> <a href="#">Exclude Convenience Fee</a> </li>
                           <li class="dropdown-menu__item" data-animation="ripple"> <a href="#">Drawer</a> </li>
                           <li class="dropdown-menu__item" data-animation="ripple"> <a href="#">Reprint</a> </li>
                           <li class="dropdown-menu__item" data-animation="ripple"> <a href="#">Refund</a> </li>

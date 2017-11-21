@@ -41,14 +41,6 @@ styles:
 					<div class="sidebar__content">
 						{% set orderList = [
 							{
-								title: 'Hot Dog XL',
-								meta: 'Click to duplicate in cart <a href="#">Add note</a>',
-								quantity: '9999',
-								price: '123456789.12',
-								total: '1234444434410.8801',
-								state: 'default'
-							},
-							{
 								title: 'T-Shirt with Print 23',
 								meta: 'Long Sleeves, XL size, Black color',
 								quantity: '2',
@@ -66,16 +58,6 @@ styles:
 								state: 'default'
 							}
 						] %}
-						<!-- data-state - item state (can be default or active) -->
-						<!-- data-swipe - add class to himself -->
-						<!-- data-swipe-threshold - threshold that we have to swipe from the start point -->
-						<!-- data-fullinfo-open - open item tabs -->
-						<!-- data-toggle-class-target:
-							add/remove/toggle class (data-toggle-class-add/data-toggle-class-remove/data-toggle-class-toggle) 
-							to all current containers ('data-toggle-class-container') -->
-						<!-- data-fullinfo-target - open current tab in the fullinfo container -->
-						<!-- data-fullinfo-close - close item tabs -->
-						<!-- data-order-delete-item - delete item -->
 						<ul class="order-list" data-order-visible="order" data-order-list="order">
 							{% for item in orderList %}
 								<li class="order-item" 
@@ -136,26 +118,31 @@ styles:
 					<div class="totals sidebar__totals" data-order-visible="order">
 						{% set totalsListMain = [
 							{
-								label: 'Sub',
-								value: '1299.00'
+								label: 'Subtotal',
+								value: '1296.00'
 							},
 							{
 								label: 'Discount',
-								value: '0.00'
+								value: '(0.00)',
+								nodollar: true
 							}
 						] %}
 						{% set totalsListScroll = [
 							{
-								label: 'Tax',
+								label: 'Tax 1',
 								value: '6.75'
 							},
 							{
-								label: 'Convenience Fee',
-								value: '2.25'
+								label: 'Tax 2',
+								value: '2.58'
 							},
 							{
-								label: 'Fee Discount',
-								value: '($2.25)',
+								label: 'SVC (NY)',
+								value: '143.59'
+							},
+							{
+								label: 'SVC (NY) Discount',
+								value: '(0.00)',
 								nodollar: true
 							}
 						] %}
@@ -164,7 +151,7 @@ styles:
 								{% for item in totalsListMain %}
 									<li class="totals-list__item">
 										<div class="totals-list__label">{{item.label | safe}}</div>
-										<div class="totals-list__value">${{item.value | safe}}</div>
+										<div class="totals-list__value">{% if not item.nodollar %}${% endif %}{{item.value | safe}}</div>
 									</li>
 								{% endfor %}
 							</ul>
@@ -177,7 +164,7 @@ styles:
 								{% endfor %}
 								<li class="totals-list__item totals-list__item_total">
 									<div class="totals-list__label">Total</div>
-									<div class="totals-list__value">$123456789012345.12</div>
+									<div class="totals-list__value">$1448.92</div>
 								</li>
 							</ul>
 						</div>
@@ -200,7 +187,6 @@ styles:
 										attrs: 'data-animation="ripple" href="payment-cash.html" id="cart-cash-button"',
 										content: 'Cash'
 									})}}
-									{#$1299.00#}
 								</div>
 							</div>
 						</div>
@@ -240,8 +226,9 @@ styles:
 									attrs: 'id="more-menu-dropdown"',
 									links: true,
 									list: [ 
-										{ text: '<a href="#">Tax exempt</a>' }, 
+										{ text: '<a href="#">Remove Tax</a>' }, 
 										{ text: '<a href="#">Revert tax</a>' }, 
+										{ text: '<a href="#">Exclude Convenience Fee</a>' }, 
 										{ text: '<a href="#">Drawer</a>' }, 
 										{ text: '<a href="#">Reprint</a>' }, 
 										{ text: '<a href="#">Refund</a>' }

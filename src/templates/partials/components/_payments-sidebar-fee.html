@@ -13,14 +13,6 @@
 		<div class="sidebar__content">
 			{% set orderList = [
 				{
-					title: 'Hot Dog XL',
-					notes: '<strong>Note</strong> Click to duplicate in cart',
-					quantity: '1',
-					price: '3.00',
-					total: '3.00',
-					state: 'default'
-				},
-				{
 					title: 'T-Shirt with Print 23',
 					notes: '<strong>Note</strong> Click to duplicate in cart',
 					modifiers: { 
@@ -83,7 +75,7 @@
 		<div class="totals totals_static sidebar__totals">
 			{% set totalsListMain = [
 				{
-					label: 'Sub',
+					label: 'Subtotal',
 					value: '1299.00'
 				},
 				{
@@ -97,11 +89,11 @@
 					value: '6.75'
 				},
 				{
-					label: 'Convenience Fee',
+					label: 'SVC (NY)',
 					value: '2.25'
 				},
 				{
-					label: 'Fee Discount',
+					label: 'SVC (NY) Discount',
 					value: '($2.25)',
 					nodollar: true
 				},
@@ -114,20 +106,16 @@
 				<ul class="totals-list totals-list_main">
 					{% for item in totalsListMainCustom or totalsListMain %}
 						<li class="totals-list__item">
-							{# <div class="totals-list__row"> #}
-								<div class="totals-list__label">{{item.label}}</div>
-								<div class="totals-list__value">{% if not item.nodollar %}${% endif %}{{item.value | safe}}</div>
-							{# </div> #}
+							<div class="totals-list__label">{{item.label}}</div>
+							<div class="totals-list__value">{% if not item.nodollar %}${% endif %}{{item.value | safe}}</div>
 						</li>
 					{% endfor %}
 				</ul>
 				<ul class="totals-list totals-list_scroll">
 					{% for item in totalsListScrollCustom or totalsListScroll %}
 						<li class="totals-list__item">
-							{# <a href="#" class="totals-list__row"> #}
-								<div class="totals-list__label">{{item.label}}</div>
-								<div class="totals-list__value">{% if not item.nodollar %}${% endif %}{{item.value | safe}}</div>
-							{# </a> #}
+							<div class="totals-list__label">{{item.label}}</div>
+							<div class="totals-list__value">{% if not item.nodollar %}${% endif %}{{item.value | safe}}</div>
 						</li>
 					{% endfor %}
 				</ul>
