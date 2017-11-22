@@ -17,19 +17,19 @@
 					notes: '<strong>Note</strong> Click to duplicate in cart',
 					modifiers: { 
 						content: 'Long Sleeves, XL size, Black color',
-						price: '12.00'
+						price: '$12.00'
 					},
 					quantity: '2',
-					price: '644.00',
-					total: '1288.00',
-					discount: '-0.00',
+					price: '$20.00',
+					total: '$40.00',
+					discount: '($5.00)',
 					state: 'default'
 				},
 				{
 					title: 'Honey',
 					quantity: '1',
-					price: '8.00',
-					total: '8.00',
+					price: '$8.00',
+					total: '$8.00',
 					state: 'default'
 				}
 			] %}
@@ -76,11 +76,12 @@
 			{% set totalsListMain = [
 				{
 					label: 'Subtotal',
-					value: '1299.00'
+					value: '48.00'
 				},
 				{
 					label: 'Discount',
-					value: '0.00'
+					value: '($5.00)',
+					nodollar: true
 				}
 			] %}
 			{% set totalsListScroll = [
@@ -90,16 +91,16 @@
 				},
 				{
 					label: 'SVC (NY)',
-					value: '2.25'
+					value: '1.92'
 				},
 				{
 					label: 'SVC (NY) Discount',
-					value: '($2.25)',
+					value: '0.00',
 					nodollar: true
 				},
 				{
 					label: 'Total',
-					value: '1299.00'
+					value: '54.25'
 				}
 			] %}
 			<div class="totals__container">

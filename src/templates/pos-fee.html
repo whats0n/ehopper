@@ -44,17 +44,17 @@ styles:
 								title: 'T-Shirt with Print 23',
 								meta: 'Long Sleeves, XL size, Black color',
 								quantity: '2',
-								price: '644.00',
-								total: '1288.00',
-								discount: '-0.00',
+								price: '$20.00',
+								total: '$40.00',
+								discount: '($5.00)',
 								state: 'default'
 							},
 							{
 								title: 'Honey',
 								meta: 'Long Sleeves, XL size, Black color <div class="order-item__notes"><a href="#">Note: </a>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nobis, animi?</div>',
 								quantity: '1',
-								price: '8.00',
-								total: '8.00',
+								price: '$8.00',
+								total: '$8.00',
 								state: 'default'
 							}
 						] %}
@@ -119,11 +119,11 @@ styles:
 						{% set totalsListMain = [
 							{
 								label: 'Subtotal',
-								value: '1296.00'
+								value: '48.00'
 							},
 							{
 								label: 'Discount',
-								value: '(0.00)',
+								value: '($5.00)',
 								nodollar: true
 							}
 						] %}
@@ -138,11 +138,11 @@ styles:
 							},
 							{
 								label: 'SVC (NY)',
-								value: '143.59'
+								value: '1.92'
 							},
 							{
 								label: 'SVC (NY) Discount',
-								value: '(0.00)',
+								value: '0.00',
 								nodollar: true
 							}
 						] %}
@@ -164,7 +164,7 @@ styles:
 								{% endfor %}
 								<li class="totals-list__item totals-list__item_total">
 									<div class="totals-list__label">Total</div>
-									<div class="totals-list__value">$1448.92</div>
+									<div class="totals-list__value">$54.25</div>
 								</li>
 							</ul>
 						</div>

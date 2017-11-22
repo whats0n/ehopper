@@ -21,17 +21,6 @@ styles:
 				containerClassList: 'main-header__container_full',
 				title: 'Cash Payment'
 			})}}
-			{% set totalsListMainCustom = [
-				{
-					label: 'Subtotal',
-					value: '1296.00'
-				},
-				{
-					label: 'Discount',
-					value: '(0.00)',
-					nodollar: true
-				}
-			] %}
 			{% set totalsListScrollCustom = [
 				{
 					label: 'Tax 1',
@@ -43,16 +32,16 @@ styles:
 				},
 				{
 					label: 'SVC (NY)',
-					value: '143.59'
+					value: '1.92'
 				},
 				{
 					label: 'SVC (NY) Discount',
-					value: '(143.59)',
+					value: '($1.92)',
 					nodollar: true
 				},
 				{
 					label: 'Total',
-					value: '1305.33'
+					value: '52.33'
 				}
 			] %}
 			{% include 'partials/components/_payments-sidebar-fee.html' %}
