@@ -43,6 +43,8 @@
 	&__body
 		// padding-bottom: 210px
 		padding-bottom: 100px
+		&_update
+			padding-bottom: 136px
 	&__footer
 		// height: 210px
 		box-shadow: inset 0 6px 4px -5px rgba(0, 0, 0, 0.2)
@@ -75,12 +77,21 @@
 	&__action
 		font-size: 0
 	&__disclaimer
-		display: inline-block
-		vertical-align: middle
-		padding: 0 4px
-		max-width: 210px
+		position: relative
+		padding: 10px 10px 10px 45px
+		color: $white
+		background: $red
 		font-size: 14px
 		text-align: left
+		i
+			position: absolute
+			top: 50%
+			left: 20px
+			margin-top: -10px
+			font-size: 20px
+		p 
+			margin: 0
+			+text-overflow
 
 .order-totals
 	height: 110px
