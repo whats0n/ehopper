@@ -182,15 +182,17 @@ settingsActive: 2
 								<div class="table-header">
 									<ul class="table-header__tr">
 										{% for th in table.header %}
-											<li class="table-header__th" data-column="{{th.column}}">
-												{% if th.checkbox %}
-													<div class="order__action">
-														{{mixins.checkbox()}}
-													</div>
-												{% else %}
-													{{th.content | safe}}
-												{% endif %}
-											</li>
+											{% if not th.checkbox %}
+												<li class="table-header__th" data-column="{{th.column}}">
+													{% if th.checkbox %}
+														<div class="order__action">
+															{{mixins.checkbox()}}
+														</div>
+													{% else %}
+														{{th.content | safe}}
+													{% endif %}
+												</li>
+											{% endif %}
 										{% endfor %}
 									</ul>
 								</div>
@@ -201,15 +203,17 @@ settingsActive: 2
 										{% for tr in table.body %}
 											<div class="table-body__tr">
 												{% for td in tr %}
-													<div class="table-body__td" data-column="{{td.column}}">
-														{% if td.checkbox %}
-															<div class="order__action">
-																{{mixins.checkbox()}}
-															</div>
-														{% else %}
-															{{td.content | safe}}
-														{% endif %}
-													</div>
+													{% if not td.checkbox %}
+														<div class="table-body__td" data-column="{{td.column}}">
+															{% if td.checkbox %}
+																<div class="order__action">
+																	{{mixins.checkbox()}}
+																</div>
+															{% else %}
+																{{td.content | safe}}
+															{% endif %}
+														</div>
+													{% endif %}
 												{% endfor %}
 											</div>
 										{% endfor %}
