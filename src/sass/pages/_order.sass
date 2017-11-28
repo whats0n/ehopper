@@ -1,26 +1,4 @@
 .order
-	// .order-header
-	// 	position: absolute
-	// 	top: 0
-	// 	left: 0
-	// 	right: 0
-	// 	&__sidebar
-	// 		z-index: 10
-	// 		width: 300px
-	// 		box-shadow: none
-	// 		+poynt
-	// 			width: 0
-	// 			height: auto
-	// 			min-height: 0
-	// 	&__container
-	// 		z-index: 20
-	// 		float: none
-	// 		margin-left: 300px
-	// 		width: auto
-	// 		box-shadow: 3px -5px 4px 5px rgba(0, 0, 0, 0.2)
-	// 		+poynt
-	// 			margin-left: 0
-	// 			text-align: center
 	&__sidebar,
 	&__container
 		position: relative
@@ -74,6 +52,7 @@
 		font-size: 0
 		text-align: center
 		.btn
+			vertical-align: middle
 			padding-left: 20px
 			padding-right: 20px
 			margin: 0 4px
@@ -95,6 +74,13 @@
 			min-width: 80px
 	&__action
 		font-size: 0
+	&__disclaimer
+		display: inline-block
+		vertical-align: middle
+		padding: 0 4px
+		max-width: 210px
+		font-size: 14px
+		text-align: left
 
 .order-totals
 	height: 110px
