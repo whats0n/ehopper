@@ -129,12 +129,8 @@ styles:
 						] %}
 						{% set totalsListScroll = [
 							{
-								label: 'Tax 1',
-								value: '6.75'
-							},
-							{
-								label: 'Tax 2',
-								value: '2.58'
+								label: 'Service Fee',
+								value: '0.00'
 							},
 							{
 								label: 'SVC (NY)',
@@ -144,6 +140,19 @@ styles:
 								label: 'SVC (NY) Discount',
 								value: '0.00',
 								nodollar: true
+							},
+							{
+								label: 'Tips',
+								value: '0.00',
+								nodollar: true
+							},
+							{
+								label: 'Tax 1',
+								value: '6.75'
+							},
+							{
+								label: 'Tax 2',
+								value: '2.58'
 							}
 						] %}
 						<div class="totals__container">
@@ -162,6 +171,8 @@ styles:
 										<div class="totals-list__value">{% if not item.nodollar %}${% endif %}{{item.value | safe}}</div>
 									</li>
 								{% endfor %}
+							</ul>
+							<ul class="totals-list totals-list_scroll">
 								<li class="totals-list__item totals-list__item_total">
 									<div class="totals-list__label">Total</div>
 									<div class="totals-list__value">$54.42</div>

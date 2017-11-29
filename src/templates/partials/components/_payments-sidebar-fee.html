@@ -82,12 +82,8 @@
 			] %}
 			{% set totalsListScroll = [
 				{
-					label: 'Tax 1',
-					value: '6.75'
-				},
-				{
-					label: 'Tax 2',
-					value: '2.58'
+					label: 'Service Fee',
+					value: '0.00'
 				},
 				{
 					label: 'SVC (NY)',
@@ -97,6 +93,19 @@
 					label: 'SVC (NY) Discount',
 					value: '0.00',
 					nodollar: true
+				},
+				{
+					label: 'Tips',
+					value: '0.00',
+					nodollar: true
+				},
+				{
+					label: 'Tax 1',
+					value: '6.75'
+				},
+				{
+					label: 'Tax 2',
+					value: '2.58'
 				},
 				{
 					label: 'Total',
@@ -114,10 +123,22 @@
 				</ul>
 				<ul class="totals-list totals-list_scroll">
 					{% for item in totalsListScrollCustom or totalsListScroll %}
-						<li class="totals-list__item">
-							<div class="totals-list__label">{{item.label}}</div>
-							<div class="totals-list__value">{% if not item.nodollar %}${% endif %}{{item.value | safe}}</div>
-						</li>
+						{% if not loop.last %}
+							<li class="totals-list__item">
+								<div class="totals-list__label">{{item.label}}</div>
+								<div class="totals-list__value">{% if not item.nodollar %}${% endif %}{{item.value | safe}}</div>
+							</li>
+						{% endif %}
+					{% endfor %}
+				</ul>
+				<ul class="totals-list totals-list_main">
+					{% for item in totalsListScrollCustom or totalsListScroll %}
+						{% if loop.last %}
+							<li class="totals-list__item">
+								<div class="totals-list__label">{{item.label}}</div>
+								<div class="totals-list__value">${{item.value | safe}}</div>
+							</li>
+						{% endif %}
 					{% endfor %}
 				</ul>
 			</div>
