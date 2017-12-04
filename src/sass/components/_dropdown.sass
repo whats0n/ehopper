@@ -200,6 +200,19 @@
         &-list
           height: 100%
           overflow: auto
+      &.is-active 
+        z-index: 2
+      .checkbox
+        padding: 5px 10px
+        width: 100%
+        text-align: left
+        white-space: normal
+        +active 
+          color: $white
+          background: $blue
+        .icon
+          top: 5px
+          left: 10px
     &-link
       position: relative
       display: block

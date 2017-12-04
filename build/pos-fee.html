@@ -295,16 +295,16 @@
                   </ul>
                   <ul class="totals-list totals-list_scroll">
                     <li class="totals-list__item">
-                      <div class="totals-list__label">Service Fee</div>
-                      <div class="totals-list__value">$0.00</div>
+                      <div class="totals-list__label">Packing Fee</div>
+                      <div class="totals-list__value">$2.40</div>
                     </li>
                     <li class="totals-list__item">
-                      <div class="totals-list__label">Service Fee 1</div>
-                      <div class="totals-list__value">$0.00</div>
+                      <div class="totals-list__label">Take Out Fee</div>
+                      <div class="totals-list__value">$2.50</div>
                     </li>
                     <li class="totals-list__item">
-                      <div class="totals-list__label">Service Fee 2</div>
-                      <div class="totals-list__value">$0.00</div>
+                      <div class="totals-list__label">Delivery Fee</div>
+                      <div class="totals-list__value">$5.00</div>
                     </li>
                     <li class="totals-list__item">
                       <div class="totals-list__label">SVC (NY)</div>
@@ -326,7 +326,7 @@
                   <ul class="totals-list totals-list_scroll">
                     <li class="totals-list__item totals-list__item_total">
                       <div class="totals-list__label">Total</div>
-                      <div class="totals-list__value">$54.42</div>
+                      <div class="totals-list__value">$64.32</div>
                     </li>
                   </ul>
                 </div>
@@ -349,18 +349,77 @@
                     <li class="horizontal-menu__item"> <a class="horizontal-menu__link is-disabled" data-animation="ripple" href="#">Drawer</a> </li>
                     <li class="horizontal-menu__item"> <a class="horizontal-menu__link " data-animation="ripple" href="#">Discount</a> </li>
                     <li class="horizontal-menu__item"> <a class="horizontal-menu__link " data-animation="ripple" href="#" data-dropdown-open="more" data-dropdown-parent-name="sidebar" id="more-menu-btn">More <i class="icon icon-more-v"></i></a>
-                      <div class="dropdown-menu dropdown-menu_up dropdown-menu_no-scroll"
+                      <div class="dropdown-menu dropdown-menu_hidden dropdown-menu_up dropdown-menu_no-scroll horizontal-menu__dropdown-menu js-menu"
                         data-dropdown-menu="more" id="more-menu-dropdown">
                         <ul class="dropdown-menu__list">
-                          <li class="dropdown-menu__item" data-animation="ripple"> <a href="#">Remove Tax</a> </li>
-                          <li class="dropdown-menu__item" data-animation="ripple"> <a href="#">Revert tax</a> </li>
-                          <li class="dropdown-menu__item" data-animation="ripple"> <a href="#">Exclude Convenience Fee</a> </li>
-                          <li class="dropdown-menu__item" data-animation="ripple"> <a href="#">Drawer</a> </li>
-                          <li class="dropdown-menu__item" data-animation="ripple"> <a href="#">Reprint</a> </li>
-                          <li class="dropdown-menu__item" data-animation="ripple"> <a href="#">Refund</a> </li>
+                          <li class="dropdown-menu__item"> <a href="#" data-animation="ripple" class="dropdown-menu__arrow dropdown-menu__arrow_right" onclick="showSubmenu(event)" data-submenu-target="change-tax">
+													<span>Change tax</span>
+													<i class="fa fa-angle-right"></i>
+												</a> </li>
+                          <li class="dropdown-menu__item"> <a href="#" data-animation="ripple">Tax exempt</a> </li>
+                          <li class="dropdown-menu__item"> <a href="#" data-animation="ripple">Revert tax</a> </li>
+                          <li class="dropdown-menu__item"> <a href="#" data-animation="ripple">Exclude Convenience Fee</a> </li>
+                          <li class="dropdown-menu__item"> <a href="#" data-animation="ripple" class="dropdown-menu__arrow dropdown-menu__arrow_right" onclick="showSubmenu(event)" data-submenu-target="service-fees">
+													<span>Service Fees</span>
+													<i class="fa fa-angle-right"></i>
+												</a> </li>
+                          <li class="dropdown-menu__item"> <a href="#" data-animation="ripple">Reprint</a> </li>
+                          <li class="dropdown-menu__item"> <a href="#" data-animation="ripple">Refund</a> </li>
                         </ul>
+                        <div class="dropdown-menu__submenu dropdown-menu__submenu_overlay" data-submenu-container="change-tax"> <a href="#" data-animation="ripple" class="dropdown-menu__submenu-title" onclick="showSubmenu(event)">
+												<span>Change tax</span>
+												<i class="icon icon-back"></i>
+											</a>
+                          <ul class="dropdown-menu__submenu-list" data-scrollbar="default">
+                            <li class="dropdown-menu__submenu-item"> <a href="#" class="dropdown-menu__submenu-link is-active"><i class="fa fa-check"></i>California tax</a> </li>
+                            <li class="dropdown-menu__submenu-item"> <a href="#" class="dropdown-menu__submenu-link "><i class="fa fa-check"></i>Oregon tax</a> </li>
+                            <li class="dropdown-menu__submenu-item"> <a href="#" class="dropdown-menu__submenu-link "><i class="fa fa-check"></i>Nevada tax</a> </li>
+                            <li class="dropdown-menu__submenu-item"> <a href="#" class="dropdown-menu__submenu-link "><i class="fa fa-check"></i>Standard Tax 11 LONG NAME1LONG NAME2LONG NAME3LONG NAME4LONG NAME5LONG NAME6LONG NAME7</a> </li>
+                            <li class="dropdown-menu__submenu-item"> <a href="#" class="dropdown-menu__submenu-link "><i class="fa fa-check"></i>TaxWithLongNameButWithoutSpaces</a> </li>
+                            <li class="dropdown-menu__submenu-item"> <a href="#" class="dropdown-menu__submenu-link "><i class="fa fa-check"></i>Oregon tax</a> </li>
+                            <li class="dropdown-menu__submenu-item"> <a href="#" class="dropdown-menu__submenu-link "><i class="fa fa-check"></i>Nevada tax</a> </li>
+                          </ul>
+                        </div>
+                        <div class="dropdown-menu__submenu dropdown-menu__submenu_overlay" data-submenu-container="service-fees"> <a href="#" data-animation="ripple" class="dropdown-menu__submenu-title" onclick="showSubmenu(event)">
+												<span>Service Fees</span>
+												<i class="icon icon-back"></i>
+											</a>
+                          <ul class="dropdown-menu__submenu-list" data-scrollbar="default">
+                            <li class="dropdown-menu__submenu-item"> <label class="checkbox ">
+	<input type="checkbox" >
+	<i class="icon icon-check"></i>
+	<span>All</span>
+</label> </li>
+                            <li class="dropdown-menu__submenu-item"> <label class="checkbox ">
+	<input type="checkbox" >
+	<i class="icon icon-check"></i>
+	<span>Packing Fee</span>
+</label> </li>
+                            <li class="dropdown-menu__submenu-item"> <label class="checkbox ">
+	<input type="checkbox" >
+	<i class="icon icon-check"></i>
+	<span>Take Out Fee</span>
+</label> </li>
+                            <li class="dropdown-menu__submenu-item"> <label class="checkbox ">
+	<input type="checkbox" >
+	<i class="icon icon-check"></i>
+	<span>Delivery Fee</span>
+</label> </li>
+                          </ul>
+                        </div>
+                        <script>
+                          function showSubmenu(e)
+                          {
+                            e.preventDefault();
+                            var target = $(e.currentTarget).data('submenu-target');
+                            $('.js-menu').toggleClass('is-active');
+                            if (!target.length) return;
+                            $('[data-submenu-container]').removeClass('is-active').filter('[data-submenu-container="' + target + '"]').addClass('is-active');
+                          }
+
+                        </script>
                       </div>
-                      <!-- begin overlay --><button type="button" class="overlay " data-color="dark-gray" data-overlay="overlay" data-dropdown-overlay="more"></button>
+                      <!-- begin overlay --><button type="button" class="overlay" data-color="dark-gray" data-overlay="overlay" data-dropdown-overlay="more"></button>
                       <!-- end overlay -->
                     </li>
                   </ul>
