@@ -256,18 +256,18 @@ styles:
 												<span>Service Fees</span>
 												<i class="icon icon-back"></i>
 											</a>
-											<ul class="dropdown-menu__submenu-list" data-scrollbar="default">
+											<ul class="dropdown-menu__submenu-list js-checkall-container" data-scrollbar="default">
 												<li class="dropdown-menu__submenu-item"> 
-													{{mixins.checkbox({ content: 'All' })}}
+													{{mixins.checkbox({ content: 'All', attrs: 'onchange="checkall(event)" data-checkall="true"' })}}
 												</li>
 												<li class="dropdown-menu__submenu-item"> 
-													{{mixins.checkbox({ content: 'Packing Fee' })}}
+													{{mixins.checkbox({ content: 'Packing Fee', attrs: 'onchange="check(event)"' })}}
 												</li>
 												<li class="dropdown-menu__submenu-item"> 
-													{{mixins.checkbox({ content: 'Take Out Fee' })}}
+													{{mixins.checkbox({ content: 'Take Out Fee', attrs: 'onchange="check(event)"' })}}
 												</li>
 												<li class="dropdown-menu__submenu-item"> 
-													{{mixins.checkbox({ content: 'Delivery Fee' })}}
+													{{mixins.checkbox({ content: 'Delivery Fee', attrs: 'onchange="check(event)"' })}}
 												</li>
 											</ul>
 										</div>
@@ -297,6 +297,25 @@ styles:
 												textValues.forEach(function(value) {
 													if (value != text) $target.text(value);
 												});
+											}
+											function checkall(e) {
+												var $target = $(e.target);
+												var $container = $target.closest('.js-checkall-container');
+												var $checkboxes = $container.find('[type="checkbox"]');
+												var checked = $target.prop('checked');
+												$checkboxes
+													.not($target)
+													.prop('checked', checked);
+											}
+											function check(e) {
+												var $target = $(e.target);
+												var $container = $target.closest('.js-checkall-container');
+												var $checkboxes = $container.find('[type="checkbox"]').not('[data-checkall]');
+												var checkedAll = true;
+												$checkboxes.each(function() {
+													if (!$(this).prop('checked')) checkedAll = false;
+												});
+												$('[data-checkall]').prop('checked', checkedAll);
 											}
 										</script>
 									</div>

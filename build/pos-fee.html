@@ -384,24 +384,24 @@
 												<span>Service Fees</span>
 												<i class="icon icon-back"></i>
 											</a>
-                          <ul class="dropdown-menu__submenu-list" data-scrollbar="default">
+                          <ul class="dropdown-menu__submenu-list js-checkall-container" data-scrollbar="default">
                             <li class="dropdown-menu__submenu-item"> <label class="checkbox ">
-	<input type="checkbox" >
+	<input type="checkbox" onchange="checkall(event)" data-checkall="true">
 	<i class="icon icon-check"></i>
 	<span>All</span>
 </label> </li>
                             <li class="dropdown-menu__submenu-item"> <label class="checkbox ">
-	<input type="checkbox" >
+	<input type="checkbox" onchange="check(event)">
 	<i class="icon icon-check"></i>
 	<span>Packing Fee</span>
 </label> </li>
                             <li class="dropdown-menu__submenu-item"> <label class="checkbox ">
-	<input type="checkbox" >
+	<input type="checkbox" onchange="check(event)">
 	<i class="icon icon-check"></i>
 	<span>Take Out Fee</span>
 </label> </li>
                             <li class="dropdown-menu__submenu-item"> <label class="checkbox ">
-	<input type="checkbox" >
+	<input type="checkbox" onchange="check(event)">
 	<i class="icon icon-check"></i>
 	<span>Delivery Fee</span>
 </label> </li>
@@ -432,6 +432,28 @@
                             {
                               if (value != text) $target.text(value);
                             });
+                          }
+
+                          function checkall(e)
+                          {
+                            var $target = $(e.target);
+                            var $container = $target.closest('.js-checkall-container');
+                            var $checkboxes = $container.find('[type="checkbox"]');
+                            var checked = $target.prop('checked');
+                            $checkboxes.not($target).prop('checked', checked);
+                          }
+
+                          function check(e)
+                          {
+                            var $target = $(e.target);
+                            var $container = $target.closest('.js-checkall-container');
+                            var $checkboxes = $container.find('[type="checkbox"]').not('[data-checkall]');
+                            var checkedAll = true;
+                            $checkboxes.each(function()
+                            {
+                              if (!$(this).prop('checked')) checkedAll = false;
+                            });
+                            $('[data-checkall]').prop('checked', checkedAll);
                           }
 
                         </script>
