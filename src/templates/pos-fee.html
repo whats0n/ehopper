@@ -219,20 +219,20 @@ styles:
 									<div class="dropdown-menu dropdown-menu_hidden dropdown-menu_up dropdown-menu_no-scroll horizontal-menu__dropdown-menu js-menu" data-dropdown-menu="more" id="more-menu-dropdown">
 										<ul class="dropdown-menu__list">
 											<li class="dropdown-menu__item">
-												<a href="#" data-animation="ripple" class="dropdown-menu__arrow dropdown-menu__arrow_right" onclick="showSubmenu(event)" data-submenu-target="change-tax">
-													<span>Change tax</span>
-													<i class="fa fa-angle-right"></i>
-												</a>
-											</li>
-											<li class="dropdown-menu__item"> <a href="#" data-animation="ripple">Tax exempt</a> </li>
-											<li class="dropdown-menu__item"> <a href="#" data-animation="ripple">Revert tax</a> </li>
-											<li class="dropdown-menu__item"> <a href="#" data-animation="ripple">Exclude Convenience Fee</a> </li>
-											<li class="dropdown-menu__item">
 												<a href="#" data-animation="ripple" class="dropdown-menu__arrow dropdown-menu__arrow_right" onclick="showSubmenu(event)" data-submenu-target="service-fees">
 													<span>Service Fees</span>
 													<i class="fa fa-angle-right"></i>
 												</a>
 											</li>
+											<li class="dropdown-menu__item">
+												<a href="#" data-animation="ripple" class="dropdown-menu__arrow dropdown-menu__arrow_right" onclick="showSubmenu(event)" data-submenu-target="change-tax">
+													<span>Change tax</span>
+													<i class="fa fa-angle-right"></i>
+												</a>
+											</li>
+											<li class="dropdown-menu__item"> <a href="#" data-animation="ripple" onclick="toggleText(event)" data-values="first">Add Tax</a> </li>
+											<li class="dropdown-menu__item"> <a href="#" data-animation="ripple" onclick="toggleText(event)" data-values="second">Include Tax</a> </li>
+											<li class="dropdown-menu__item"> <a href="#" data-animation="ripple" onclick="toggleText(event)" data-values="third">Include Convenience Fee</a> </li>
 											<li class="dropdown-menu__item"> <a href="#" data-animation="ripple">Reprint</a> </li>
 											<li class="dropdown-menu__item"> <a href="#" data-animation="ripple">Refund</a> </li>
 										</ul>
@@ -283,6 +283,20 @@ styles:
 													.removeClass('is-active')
 													.filter('[data-submenu-container="' + target + '"]')
 													.addClass('is-active');
+											}
+											function toggleText(e) {
+												e.preventDefault();
+												var $target = $(e.currentTarget);
+												var text = $target.text();
+												var values = {
+													first: ['Add Tax', 'Remove Tax'],
+													second: ['Include Tax', 'Exclude Tax'],
+													third: ['Include Convenience Fee', 'Exclude Convenience Fee']
+												};
+												var textValues = values[$target.data('values')];
+												textValues.forEach(function(value) {
+													if (value != text) $target.text(value);
+												});
 											}
 										</script>
 									</div>
