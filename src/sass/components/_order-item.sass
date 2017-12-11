@@ -41,6 +41,8 @@
 			&__info,
 			&__meta
 				padding: 3px 0
+	&_sub
+		color: lighten($darkGray, 50%)
 	&__container
 		position: relative
 		+gpu
@@ -90,6 +92,8 @@
 		// text-align: right
 		// &:first-child
 		// 	text-align: left
+		&_wide
+			width: 100%
 	&__total
 		word-wrap: break-word
 	&__quantity,
@@ -148,3 +152,6 @@
 	&__notes
 		display: block
 		+text-overflow
+	&__title
+		em
+			+italic

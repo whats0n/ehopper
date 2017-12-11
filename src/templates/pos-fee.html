@@ -105,6 +105,47 @@ styles:
 									</div>
 								</li>
 							{% endfor %}
+							{% for item in [
+								{
+									label: 'Packing Fee',
+									value: '2.40'
+								},
+								{
+									label: 'Take Out Fee',
+									value: '2.50'
+								},
+								{
+									label: 'Delivery Fee',
+									value: '5.00'
+								}
+							] %}
+								<li class="order-item order-item_sub" 
+									data-order-added="item" 
+									data-swipe="is-open"
+									data-swipe-threshold="50">
+									<div class="order-item__container">
+										<button class="order-item__close" 
+											data-fullinfo-close="fullinfo" 
+											data-toggle-class-target="sidebar-header" 
+											data-toggle-class-remove="is-disabled"
+											data-order-delete-item="delete">
+											<i class="icon icon-close"></i>
+										</button>
+										<div class="order-item__content">
+											<div class="order-item__row">
+												<div class="order-item__info">
+													<div class="order-item__title"><em>{{item.label | safe}}</em></div>
+												</div>
+											</div>
+											<div class="order-item__row">
+												<div class="order-item__col order-item__col_wide text-right">
+													<div class="order-item__total">{{item.value | safe}}</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</li>
+							{% endfor %}
 						</ul>
 						<div class="order-empty is-hidden" data-order-empty="order">
 							<div class="order-empty__center">
@@ -128,18 +169,6 @@ styles:
 							}
 						] %}
 						{% set totalsListScroll = [
-							{
-								label: 'Packing Fee',
-								value: '2.40'
-							},
-							{
-								label: 'Take Out Fee',
-								value: '2.50'
-							},
-							{
-								label: 'Delivery Fee',
-								value: '5.00'
-							},
 							{
 								label: 'SVC (NY)',
 								value: '2.09'
