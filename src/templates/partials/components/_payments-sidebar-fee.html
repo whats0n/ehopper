@@ -64,6 +64,37 @@
 						</div>
 					</li>
 				{% endfor %}
+				{% for item in [
+					{
+						label: 'Packing Fee',
+						value: '$2.40'
+					},
+					{
+						label: 'Take Out Fee',
+						value: '$2.50'
+					},
+					{
+						label: 'Delivery Fee',
+						value: '$5.00'
+					}
+				] %}
+					<li class="order-item order-item_static order-item_sub">
+						<div class="order-item__container">
+							<div class="order-item__content">
+								<div class="order-item__row">
+									<div class="order-item__info">
+										<div class="order-item__title"><em>{{item.label | safe}}</em></div>
+									</div>
+								</div>
+								<div class="order-item__row text-right">
+									<div class="order-item__col text-left">
+										<div class="order-item__total">{{item.value | safe}}</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</li>
+				{% endfor %}
 			</ul>
 		</div>
 	</div>
@@ -81,18 +112,6 @@
 				}
 			] %}
 			{% set totalsListScroll = [
-				{
-					label: 'Packing Fee',
-					value: '2.40'
-				},
-				{
-					label: 'Take Out Fee',
-					value: '2.50'
-				},
-				{
-					label: 'Delivery Fee',
-					value: '5.00'
-				},
 				{
 					label: 'SVC (NY)',
 					value: '2.09'
