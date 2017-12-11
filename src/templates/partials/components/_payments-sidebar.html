@@ -13,31 +13,19 @@
 		<div class="sidebar__content">
 			{% set orderList = [
 				{
-					title: 'Hot Dog XL',
-					notes: '<strong>Note</strong> Click to duplicate in cart',
-					quantity: '1',
-					price: '3.00',
-					total: '3.00',
-					state: 'default'
-				},
-				{
 					title: 'T-Shirt with Print 23',
-					notes: '<strong>Note</strong> Click to duplicate in cart',
-					modifiers: { 
-						content: 'Long Sleeves, XL size, Black color',
-						price: '12.00'
-					},
+					notes: 'Long Sleeves, XL size, Black color',
 					quantity: '2',
-					price: '644.00',
-					total: '1288.00',
-					discount: '-0.00',
+					price: '$20.00',
+					total: '$40.00',
+					discount: '($5.00)',
 					state: 'default'
 				},
 				{
 					title: 'Honey',
 					quantity: '1',
-					price: '8.00',
-					total: '8.00',
+					price: '$8.00',
+					total: '$8.00',
 					state: 'default'
 				}
 			] %}
@@ -83,43 +71,56 @@
 		<div class="totals totals_static sidebar__totals">
 			{% set totalsListMain = [
 				{
-					label: 'Sub',
-					value: '1299.00'
+					label: 'Subtotal',
+					value: '48.00'
 				},
 				{
 					label: 'Discount',
-					value: '0.00'
+					value: '($5.00)',
+					nodollar: true
 				}
 			] %}
 			{% set totalsListScroll = [
 				{
-					label: 'Tax',
+					label: 'Tax 1',
 					value: '6.75'
 				},
 				{
+					label: 'Tax 2',
+					value: '2.58'
+				},
+				{
 					label: 'Total',
-					value: '1299.00'
+					value: '52.33'
 				}
 			] %}
 			<div class="totals__container">
 				<ul class="totals-list totals-list_main">
-					{% for item in totalsListMain %}
+					{% for item in totalsListMainCustom or totalsListMain %}
 						<li class="totals-list__item">
-							{# <div class="totals-list__row"> #}
-								<div class="totals-list__label">{{item.label}}</div>
-								<div class="totals-list__value">${{item.value}}</div>
-							{# </div> #}
+							<div class="totals-list__label">{{item.label}}</div>
+							<div class="totals-list__value">{% if not item.nodollar %}${% endif %}{{item.value | safe}}</div>
 						</li>
 					{% endfor %}
 				</ul>
-				<ul class="totals-list totals-list_scroll">
-					{% for item in totalsListScroll %}
-						<li class="totals-list__item">
-							{# <a href="#" class="totals-list__row"> #}
+				<ul class="totals-list totals-list_scroll" data-scrollbar="default">
+					{% for item in totalsListScrollCustom or totalsListScroll %}
+						{% if not loop.last %}
+							<li class="totals-list__item">
 								<div class="totals-list__label">{{item.label}}</div>
-								<div class="totals-list__value">${{item.value}}</div>
-							{# </a> #}
-						</li>
+								<div class="totals-list__value">{% if not item.nodollar %}${% endif %}{{item.value | safe}}</div>
+							</li>
+						{% endif %}
+					{% endfor %}
+				</ul>
+				<ul class="totals-list totals-list_main">
+					{% for item in totalsListScrollCustom or totalsListScroll %}
+						{% if loop.last %}
+							<li class="totals-list__item">
+								<div class="totals-list__label">{{item.label}}</div>
+								<div class="totals-list__value">${{item.value | safe}}</div>
+							</li>
+						{% endif %}
 					{% endfor %}
 				</ul>
 			</div>
