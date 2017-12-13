@@ -286,7 +286,7 @@
                   <ul class="totals-list totals-list_main">
                     <li class="totals-list__item">
                       <div class="totals-list__label">Subtotal</div>
-                      <div class="totals-list__value">$43.00</div>
+                      <div class="totals-list__value">$48.00</div>
                     </li>
                     <li class="totals-list__item">
                       <div class="totals-list__label">Discount</div>
@@ -303,14 +303,14 @@
                       <div class="totals-list__value">($0.00)</div>
                     </li>
                     <li class="totals-list__item">
-                      <div class="totals-list__label">Tax</div>
-                      <div class="totals-list__value">$6.75</div>
+                      <div class="totals-list__label">TAX</div>
+                      <div class="totals-list__value">$4.30</div>
                     </li>
                   </ul>
                   <ul class="totals-list totals-list_scroll">
                     <li class="totals-list__item totals-list__item_total">
                       <div class="totals-list__label">Total</div>
-                      <div class="totals-list__value">$51.84</div>
+                      <div class="totals-list__value">$49.39</div>
                     </li>
                   </ul>
                 </div>
@@ -346,7 +346,7 @@
 												</a> </li>
                           <li class="dropdown-menu__item"> <a href="#" data-animation="ripple" onclick="toggleText(event)" data-values="first">Add Tax</a> </li>
                           <li class="dropdown-menu__item"> <a href="#" data-animation="ripple" onclick="toggleText(event)" data-values="second">Include Tax</a> </li>
-                          <li class="dropdown-menu__item"> <a href="#" data-animation="ripple" onclick="toggleText(event)" data-values="third">Add Convenience Fee</a> </li>
+                          <li class="dropdown-menu__item"> <a href="#" data-animation="ripple" onclick="toggleText(event)" data-values="third" data-dropdown-open="more" data-dropdown-parent-name="sidebar" data-fullinfo-open="fullinfo" data-toggle-class-target="sidebar-header" data-toggle-class-add="is-disabled">Add Convenience Fee</a>                            </li>
                           <li class="dropdown-menu__item"> <a href="#" data-animation="ripple">Reprint</a> </li>
                           <li class="dropdown-menu__item"> <a href="#" data-animation="ripple">Refund</a> </li>
                         </ul>
@@ -355,13 +355,34 @@
 												<i class="icon icon-back"></i>
 											</a>
                           <ul class="dropdown-menu__submenu-list" data-scrollbar="default">
-                            <li class="dropdown-menu__submenu-item"> <a href="#" class="dropdown-menu__submenu-link is-active"><i class="fa fa-check"></i>California tax</a> </li>
-                            <li class="dropdown-menu__submenu-item"> <a href="#" class="dropdown-menu__submenu-link "><i class="fa fa-check"></i>Oregon tax</a> </li>
-                            <li class="dropdown-menu__submenu-item"> <a href="#" class="dropdown-menu__submenu-link "><i class="fa fa-check"></i>Nevada tax</a> </li>
-                            <li class="dropdown-menu__submenu-item"> <a href="#" class="dropdown-menu__submenu-link "><i class="fa fa-check"></i>Standard Tax 11 LONG NAME1LONG NAME2LONG NAME3LONG NAME4LONG NAME5LONG NAME6LONG NAME7</a> </li>
-                            <li class="dropdown-menu__submenu-item"> <a href="#" class="dropdown-menu__submenu-link "><i class="fa fa-check"></i>TaxWithLongNameButWithoutSpaces</a> </li>
-                            <li class="dropdown-menu__submenu-item"> <a href="#" class="dropdown-menu__submenu-link "><i class="fa fa-check"></i>Oregon tax</a> </li>
-                            <li class="dropdown-menu__submenu-item"> <a href="#" class="dropdown-menu__submenu-link "><i class="fa fa-check"></i>Nevada tax</a> </li>
+                            <li class="dropdown-menu__submenu-item"> <a href="#" class="dropdown-menu__submenu-link is-active">
+															<i class="fa fa-check"></i>
+															California tax
+														</a> </li>
+                            <li class="dropdown-menu__submenu-item"> <a href="#" class="dropdown-menu__submenu-link ">
+															<i class="fa fa-check"></i>
+															Oregon tax
+														</a> </li>
+                            <li class="dropdown-menu__submenu-item"> <a href="#" class="dropdown-menu__submenu-link ">
+															<i class="fa fa-check"></i>
+															Nevada tax
+														</a> </li>
+                            <li class="dropdown-menu__submenu-item"> <a href="#" class="dropdown-menu__submenu-link ">
+															<i class="fa fa-check"></i>
+															Standard Tax 11 LONG NAME1LONG NAME2LONG NAME3LONG NAME4LONG NAME5LONG NAME6LONG NAME7
+														</a> </li>
+                            <li class="dropdown-menu__submenu-item"> <a href="#" class="dropdown-menu__submenu-link ">
+															<i class="fa fa-check"></i>
+															TaxWithLongNameButWithoutSpaces
+														</a> </li>
+                            <li class="dropdown-menu__submenu-item"> <a href="#" class="dropdown-menu__submenu-link ">
+															<i class="fa fa-check"></i>
+															Oregon tax
+														</a> </li>
+                            <li class="dropdown-menu__submenu-item"> <a href="#" class="dropdown-menu__submenu-link ">
+															<i class="fa fa-check"></i>
+															Nevada tax
+														</a> </li>
                           </ul>
                         </div>
                         <div class="dropdown-menu__submenu dropdown-menu__submenu_overlay" data-submenu-container="service-fees"> <a href="#" data-animation="ripple" class="dropdown-menu__submenu-title" onclick="showSubmenu(event)">
@@ -406,15 +427,23 @@
                             e.preventDefault();
                             var $target = $(e.currentTarget);
                             var text = $target.text();
+                            var id = $target.data('values');
                             var values = {
                               first: ['Add Tax', 'Remove Tax'],
                               second: ['Include Tax', 'Exclude Tax'],
                               third: ['Add Convenience Fee', 'Remove Convenience Fee']
                             };
-                            var textValues = values[$target.data('values')];
+                            var textValues = values[id];
                             textValues.forEach(function(value)
                             {
-                              if (value != text) $target.text(value);
+                              if (value != text)
+                              {
+                                $target.text(value);
+                                if (id === 'third')
+                                {
+                                  (value.toLowerCase().indexOf('remove') != -1) ? $('.js-pin-title').text("Enter manager's PIN to add convenience fee"): $('.js-pin-title').text("Enter manager's PIN to remove convenience fee");
+                                }
+                              }
                             });
                           }
 
@@ -719,429 +748,47 @@
             <div class="container__body">
               <!-- begin tabs -->
               <div class="tabs tabs_lg container__content" data-tab="item-info">
-                <!-- begin tabs controls -->
-                <div class="tabs__controls">
-                  <ul class="tabs__list">
-                    <li class="tabs__item "> <a href="#" class="tabs__btn  is-active" data-tab-open="quantity" data-tab-collection="item-info" data-animation="ripple">Quantity</a> </li>
-                    <li class="tabs__item "> <a href="#" class="tabs__btn " data-tab-open="price" data-tab-collection="item-info" data-animation="ripple">Price</a> </li>
-                    <li class="tabs__item "> <a href="#" class="tabs__btn " data-tab-open="discount" data-tab-collection="item-info" data-animation="ripple">Discount</a> </li>
-                    <li class="tabs__item "> <a href="#" class="tabs__btn " data-tab-open="modifiers" data-tab-collection="item-info" data-animation="ripple">Modifiers</a> </li>
-                    <li class="tabs__item "> <a href="#" class="tabs__btn " data-tab-open="matrix" data-tab-collection="item-info" data-animation="ripple">Matrix</a> </li>
-                    <li class="tabs__item "> <a href="#" class="tabs__btn " data-tab-open="serials" data-tab-collection="item-info" data-animation="ripple">Serials</a> </li>
-                    <li class="tabs__item "> <a href="#" class="tabs__btn " data-tab-open="notes" data-tab-collection="item-info" data-animation="ripple">Notes</a> </li>
-                  </ul>
-                </div>
-                <!-- end tabs controls -->
                 <!-- begin tabs container -->
                 <div class="tabs__container">
-                  <div class="tabs__content  is-open" data-tab-container="quantity" data-tab-collection="item-info" data-scrollbar="default">
+                  <div class="tabs__content  is-open" data-tab-container="" data-tab-collection="item-info" data-scrollbar="default">
                     <div class="tabs__keyboard">
+                      <div class="tabs__meta text-center js-pin-title">Enter manager's PIN to remove surcharge</div>
                       <div class="fieldset fieldset_bordered">
-                        <div class="main-display"> <button class="main-display__clear" data-numpad="numpad-clear"><i class="icon icon-clear"></i></button>
-                          <div class="field ">
-                            <div class="field__inner"> <label class="field__label " for="item-quantity">Quantity:</label>
-                              <div class="field__box"> <input class="input field__input text-right input_xl" value="0" id="item-quantity" type="text" placeholder="0" required readonly> </div> <label class="field__units" for="item-quantity"><span>kg</span></label> </div>
+                        <div class="figure">
+                          <div class="figure__display display">
+                            <ul class="display__list">
+                              <li class="display__item" data-state="active"></li>
+                              <li class="display__item" data-state="active"></li>
+                              <li class="display__item" data-state="default"></li>
+                              <li class="display__item" data-state="default"></li>
+                              <li class="display__item" data-state="default"></li>
+                            </ul>
                           </div>
-                        </div>
-                        <!-- begin keyboard -->
-                        <div class="main-keyboard numpad ">
-                          <div class="main-keyboard__container ">
-                            <div class="main-keyboard__main">
-                              <div class="main-keyboard__item"> <button type="button" data-animation="ripple" class="main-keyboard__button ">1</button> </div>
-                              <div class="main-keyboard__item"> <button type="button" data-animation="ripple" class="main-keyboard__button ">2</button> </div>
-                              <div class="main-keyboard__item"> <button type="button" data-animation="ripple" class="main-keyboard__button ">3</button> </div>
-                              <div class="main-keyboard__item"> <button type="button" data-animation="ripple" class="main-keyboard__button ">4</button> </div>
-                              <div class="main-keyboard__item"> <button type="button" data-animation="ripple" class="main-keyboard__button ">5</button> </div>
-                              <div class="main-keyboard__item"> <button type="button" data-animation="ripple" class="main-keyboard__button ">6</button> </div>
-                              <div class="main-keyboard__item"> <button type="button" data-animation="ripple" class="main-keyboard__button ">7</button> </div>
-                              <div class="main-keyboard__item"> <button type="button" data-animation="ripple" class="main-keyboard__button ">8</button> </div>
-                              <div class="main-keyboard__item"> <button type="button" data-animation="ripple" class="main-keyboard__button ">9</button> </div>
-                              <div class="main-keyboard__item"> <button type="button" data-animation="ripple" class="main-keyboard__button ">0</button> </div>
-                              <div class="main-keyboard__item"> <button type="button" data-animation="ripple" class="main-keyboard__button ">00</button> </div>
-                              <div class="main-keyboard__item"> <button type="button" data-animation="ripple" class="main-keyboard__button " data-numpad="numpad-backspace"><i class="icon icon-backspace"></i></button> </div>
-                            </div>
-                          </div>
-                        </div>
-                        <!-- end keyboard -->
-                      </div>
-                    </div>
-                  </div>
-                  <div class="tabs__content " data-tab-container="price" data-tab-collection="item-info" data-scrollbar="default">
-                    <div class="tabs__keyboard">
-                      <div class="fieldset fieldset_bordered">
-                        <div class="main-display"> <button class="main-display__clear" data-numpad="numpad-clear"><i class="icon icon-clear"></i></button>
-                          <div class="field field_static">
-                            <div class="field__inner"> <label class="field__label " for="item-custom-price">Custom Price:</label>
-                              <div class="field__box">
-                                <div class="field__units" for="item-custom-price"><span>$</span></div> <span class="field__static">49.95</span> </div>
-                            </div>
-                          </div>
-                        </div>
-                        <!-- begin keyboard -->
-                        <div class="main-keyboard numpad ">
-                          <div class="main-keyboard__container ">
-                            <div class="main-keyboard__main">
-                              <div class="main-keyboard__item"> <button type="button" data-animation="ripple" class="main-keyboard__button ">1</button> </div>
-                              <div class="main-keyboard__item"> <button type="button" data-animation="ripple" class="main-keyboard__button ">2</button> </div>
-                              <div class="main-keyboard__item"> <button type="button" data-animation="ripple" class="main-keyboard__button ">3</button> </div>
-                              <div class="main-keyboard__item"> <button type="button" data-animation="ripple" class="main-keyboard__button ">4</button> </div>
-                              <div class="main-keyboard__item"> <button type="button" data-animation="ripple" class="main-keyboard__button ">5</button> </div>
-                              <div class="main-keyboard__item"> <button type="button" data-animation="ripple" class="main-keyboard__button ">6</button> </div>
-                              <div class="main-keyboard__item"> <button type="button" data-animation="ripple" class="main-keyboard__button ">7</button> </div>
-                              <div class="main-keyboard__item"> <button type="button" data-animation="ripple" class="main-keyboard__button ">8</button> </div>
-                              <div class="main-keyboard__item"> <button type="button" data-animation="ripple" class="main-keyboard__button ">9</button> </div>
-                              <div class="main-keyboard__item"> <button type="button" data-animation="ripple" class="main-keyboard__button ">0</button> </div>
-                              <div class="main-keyboard__item"> <button type="button" data-animation="ripple" class="main-keyboard__button ">00</button> </div>
-                              <div class="main-keyboard__item"> <button type="button" data-animation="ripple" class="main-keyboard__button " data-numpad="numpad-backspace"><i class="icon icon-backspace"></i></button> </div>
-                            </div>
-                          </div>
-                        </div>
-                        <!-- end keyboard -->
-                      </div>
-                    </div>
-                  </div>
-                  <div class="tabs__content " data-tab-container="discount" data-tab-collection="item-info" data-scrollbar="default">
-                    <div class="tabs__keyboard">
-                      <div class="fieldset fieldset_bordered">
-                        <div class="main-display"> <button class="main-display__clear" data-numpad="numpad-clear"><i class="icon icon-clear"></i></button>
-                          <div class="field field_static field_currency">
-                            <div class="field__inner">
-                              <div class="field__switch"> <label class="field__switch-left" for="discount-switcher">$</label> <label class="field__switch-box switcher">
-					<input type="checkbox" id="discount-switcher">
-					<i class="switcher__icon"></i>
-				</label> <label class="field__switch-right" for="discount-switcher">%</label> </div>
-                              <div class="field__box">
-                                <div class="field__units" data-units="currency"><span>$</span></div> <span class="field__static">15</span>
-                                <div class="field__units" data-units="percent"><span>%</span></div>
+                          <div class="figure__keyboard">
+                            <!-- begin keyboard -->
+                            <div class="main-keyboard numpad ">
+                              <div class="main-keyboard__container ">
+                                <div class="main-keyboard__main">
+                                  <div class="main-keyboard__item"> <button type="button" data-animation="ripple" class="main-keyboard__button ">1</button> </div>
+                                  <div class="main-keyboard__item"> <button type="button" data-animation="ripple" class="main-keyboard__button ">2</button> </div>
+                                  <div class="main-keyboard__item"> <button type="button" data-animation="ripple" class="main-keyboard__button ">3</button> </div>
+                                  <div class="main-keyboard__item"> <button type="button" data-animation="ripple" class="main-keyboard__button ">4</button> </div>
+                                  <div class="main-keyboard__item"> <button type="button" data-animation="ripple" class="main-keyboard__button ">5</button> </div>
+                                  <div class="main-keyboard__item"> <button type="button" data-animation="ripple" class="main-keyboard__button ">6</button> </div>
+                                  <div class="main-keyboard__item"> <button type="button" data-animation="ripple" class="main-keyboard__button ">7</button> </div>
+                                  <div class="main-keyboard__item"> <button type="button" data-animation="ripple" class="main-keyboard__button ">8</button> </div>
+                                  <div class="main-keyboard__item"> <button type="button" data-animation="ripple" class="main-keyboard__button ">9</button> </div>
+                                  <div class="main-keyboard__item"> <button type="button" data-animation="ripple" class="main-keyboard__button " data-numpad="numpad-clear"><i class="icon icon-text icon-clear"></i></button> </div>
+                                  <div class="main-keyboard__item"> <button type="button" data-animation="ripple" class="main-keyboard__button ">0</button> </div>
+                                  <div class="main-keyboard__item"> <button type="button" data-animation="ripple" class="main-keyboard__button " data-numpad="numpad-backspace"><i class="icon icon-text icon-backspace"></i></button> </div>
+                                </div>
                               </div>
                             </div>
-                          </div>
-                        </div>
-                        <!-- begin keyboard -->
-                        <div class="main-keyboard numpad ">
-                          <div class="main-keyboard__container ">
-                            <div class="main-keyboard__shortcuts">
-                              <div class="main-keyboard__item"><button type="button" data-animation="ripple" class="main-keyboard__shortcuts-button ">5%</button></div>
-                              <div class="main-keyboard__item"><button type="button" data-animation="ripple" class="main-keyboard__shortcuts-button ">10%</button></div>
-                              <div class="main-keyboard__item"><button type="button" data-animation="ripple" class="main-keyboard__shortcuts-button ">15%</button></div>
-                            </div>
-                            <div class="main-keyboard__main">
-                              <div class="main-keyboard__item"> <button type="button" data-animation="ripple" class="main-keyboard__button ">1</button> </div>
-                              <div class="main-keyboard__item"> <button type="button" data-animation="ripple" class="main-keyboard__button ">2</button> </div>
-                              <div class="main-keyboard__item"> <button type="button" data-animation="ripple" class="main-keyboard__button ">3</button> </div>
-                              <div class="main-keyboard__item"> <button type="button" data-animation="ripple" class="main-keyboard__button ">4</button> </div>
-                              <div class="main-keyboard__item"> <button type="button" data-animation="ripple" class="main-keyboard__button ">5</button> </div>
-                              <div class="main-keyboard__item"> <button type="button" data-animation="ripple" class="main-keyboard__button ">6</button> </div>
-                              <div class="main-keyboard__item"> <button type="button" data-animation="ripple" class="main-keyboard__button ">7</button> </div>
-                              <div class="main-keyboard__item"> <button type="button" data-animation="ripple" class="main-keyboard__button ">8</button> </div>
-                              <div class="main-keyboard__item"> <button type="button" data-animation="ripple" class="main-keyboard__button ">9</button> </div>
-                              <div class="main-keyboard__item"> <button type="button" data-animation="ripple" class="main-keyboard__button ">0</button> </div>
-                              <div class="main-keyboard__item"> <button type="button" data-animation="ripple" class="main-keyboard__button ">00</button> </div>
-                              <div class="main-keyboard__item"> <button type="button" data-animation="ripple" class="main-keyboard__button " data-numpad="numpad-backspace"><i class="icon icon-backspace"></i></button> </div>
-                            </div>
-                          </div>
-                        </div>
-                        <!-- end keyboard -->
-                      </div>
-                    </div>
-                  </div>
-                  <div class="tabs__content " data-tab-container="modifiers" data-tab-collection="item-info" data-scrollbar="default">
-                    <div class="sm-grid sm-grid_full sm-grid_tabs tabs__info">
-                      <ul class="sm-grid__tabs">
-                        <li> <a href="#" class="btn btn_lg is-active" data-tab-open="toppings" data-tab-collection="modifiers" data-animation="ripple">Toppings</a> </li>
-                        <li> <a href="#" class="btn btn_lg " data-tab-open="size" data-tab-collection="modifiers" data-animation="ripple">Size</a> </li>
-                        <li> <a href="#" class="btn btn_lg " data-tab-open="icecream-flawors" data-tab-collection="modifiers" data-animation="ripple">Icecream Flavors</a> </li>
-                      </ul>
-                      <div class="sm-grid__body is-open" data-tab-container="toppings" data-tab-collection="modifiers">
-                        <div class="sm-grid__row">
-                          <div class="title-lg sm-grid__col sm-grid__title">Add-Ons</div>
-                        </div>
-                        <div class="sm-grid__row">
-                          <div class="sm-grid__col sm-grid__col_xs">
-                            <div class="sm-card "> <label class="sm-card__label">
-		<input type="checkbox" >
-		<span class="sm-card__content" data-animation="ripple">
-			<i class="sm-card__icon icon icon-checked"></i>
-			<span class="sm-card__title">Cheese</span>
-			
-				<span class="sm-card__sticker">$13.50</span>
-			
-		</span>
-	</label> </div>
-                          </div>
-                          <div class="sm-grid__col sm-grid__col_xs">
-                            <div class="sm-card "> <label class="sm-card__label">
-		<input type="checkbox" >
-		<span class="sm-card__content" data-animation="ripple">
-			<i class="sm-card__icon icon icon-checked"></i>
-			<span class="sm-card__title">Salami</span>
-			
-				<span class="sm-card__sticker">$26.00</span>
-			
-		</span>
-	</label> </div>
-                          </div>
-                          <div class="sm-grid__col sm-grid__col_xs">
-                            <div class="sm-card "> <label class="sm-card__label">
-		<input type="checkbox" >
-		<span class="sm-card__content" data-animation="ripple">
-			<i class="sm-card__icon icon icon-checked"></i>
-			<span class="sm-card__title">Chicken</span>
-			
-				<span class="sm-card__sticker">$14.00</span>
-			
-		</span>
-	</label> </div>
-                          </div>
-                          <div class="sm-grid__col sm-grid__col_xs">
-                            <div class="sm-card "> <label class="sm-card__label">
-		<input type="checkbox" >
-		<span class="sm-card__content" data-animation="ripple">
-			<i class="sm-card__icon icon icon-checked"></i>
-			<span class="sm-card__title">Bacon</span>
-			
-				<span class="sm-card__sticker">$16.00</span>
-			
-		</span>
-	</label> </div>
-                          </div>
-                          <div class="sm-grid__col sm-grid__col_xs">
-                            <div class="sm-card "> <label class="sm-card__label">
-		<input type="checkbox" >
-		<span class="sm-card__content" data-animation="ripple">
-			<i class="sm-card__icon icon icon-checked"></i>
-			<span class="sm-card__title">Papper</span>
-			
-				<span class="sm-card__sticker">$3.50</span>
-			
-		</span>
-	</label> </div>
-                          </div>
-                          <div class="sm-grid__col sm-grid__col_xs">
-                            <div class="sm-card "> <label class="sm-card__label">
-		<input type="checkbox" >
-		<span class="sm-card__content" data-animation="ripple">
-			<i class="sm-card__icon icon icon-checked"></i>
-			<span class="sm-card__title">Tomatoes</span>
-			
-				<span class="sm-card__sticker">$4.00</span>
-			
-		</span>
-	</label> </div>
-                          </div>
-                          <div class="sm-grid__col sm-grid__col_xs">
-                            <div class="sm-card "> <label class="sm-card__label">
-		<input type="checkbox" >
-		<span class="sm-card__content" data-animation="ripple">
-			<i class="sm-card__icon icon icon-checked"></i>
-			<span class="sm-card__title">Corn</span>
-			
-				<span class="sm-card__sticker">$4.00</span>
-			
-		</span>
-	</label> </div>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="sm-grid__body " data-tab-container="size" data-tab-collection="modifiers">
-                        <div class="sm-grid__row">
-                          <div class="title-lg sm-grid__col sm-grid__title">Size</div>
-                        </div>
-                        <div class="sm-grid__row">
-                          <div class="sm-grid__col sm-grid__col_xs">
-                            <div class="sm-card "> <label class="sm-card__label">
-		<input type="radio" name="modifier-size" checked>
-		<span class="sm-card__content" data-animation="ripple">
-			<i class="sm-card__icon icon icon-checked"></i>
-			<span class="sm-card__title">M</span>
-			
-				<span class="sm-card__sticker">$28.50</span>
-			
-		</span>
-	</label> </div>
-                          </div>
-                          <div class="sm-grid__col sm-grid__col_xs">
-                            <div class="sm-card "> <label class="sm-card__label">
-		<input type="radio" name="modifier-size">
-		<span class="sm-card__content" data-animation="ripple">
-			<i class="sm-card__icon icon icon-checked"></i>
-			<span class="sm-card__title">L</span>
-			
-				<span class="sm-card__sticker">$26.50</span>
-			
-		</span>
-	</label> </div>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="sm-grid__body " data-tab-container="icecream-flawors" data-tab-collection="modifiers">
-                        <div class="sm-grid__row">
-                          <div class="title-lg sm-grid__col sm-grid__title">Icecream Flavors</div>
-                        </div>
-                        <div class="sm-grid__row">
-                          <div class="sm-grid__col sm-grid__col_xs">
-                            <div class="sm-card "> <label class="sm-card__label">
-		<input type="checkbox" >
-		<span class="sm-card__content" data-animation="ripple">
-			<i class="sm-card__icon icon icon-checked"></i>
-			<span class="sm-card__title">Coockies</span>
-			
-				<span class="sm-card__sticker">$7.25</span>
-			
-		</span>
-	</label> </div>
+                            <!-- end keyboard -->
                           </div>
                         </div>
                       </div>
                     </div>
-                  </div>
-                  <div class="tabs__content " data-tab-container="matrix" data-tab-collection="item-info" data-scrollbar="default">
-                    <div class="sm-grid sm-grid_full tabs__info">
-                      <div class="sm-grid__body">
-                        <div class="sm-grid__row sm-grid__row_steps">
-                          <div class="sm-grid__col sm-grid__col_xs"> <i class="icon icon-next sm-grid__icon"></i>
-                            <div class="simple-card "> <label class="simple-card__label">
-		<input type="checkbox" >
-		<span class="simple-card__content" data-animation="ripple">
-			<span class="simple-card__title">Product Model</span>
-			
-				<span class="simple-card__description">Long Sleeves</span>
-			
-		</span>
-	</label> </div>
-                          </div>
-                          <div class="sm-grid__col sm-grid__col_xs"> <i class="icon icon-next sm-grid__icon"></i>
-                            <div class="simple-card "> <label class="simple-card__label">
-		<input type="checkbox" >
-		<span class="simple-card__content" data-animation="ripple">
-			<span class="simple-card__title">Size</span>
-			
-				<span class="simple-card__description">(select)</span>
-			
-		</span>
-	</label> </div>
-                          </div>
-                          <div class="sm-grid__col sm-grid__col_xs"> <i class="icon icon-next sm-grid__icon"></i>
-                            <div class="simple-card "> <label class="simple-card__label">
-		<input type="checkbox" disabled>
-		<span class="simple-card__content" data-animation="ripple">
-			<span class="simple-card__title">Color</span>
-			
-		</span>
-	</label> </div>
-                          </div>
-                        </div>
-                        <div class="sm-grid__row">
-                          <h2 class="title-lg sm-grid__col sm-grid__title">Size</h2>
-                        </div>
-                        <div class="sm-grid__row ">
-                          <div class="sm-grid__col sm-grid__col_xs">
-                            <div class="sm-card "> <label class="sm-card__label">
-		<input type="checkbox" >
-		<span class="sm-card__content" data-animation="ripple">
-			<i class="sm-card__icon icon icon-checked"></i>
-			<span class="sm-card__title">XS (Extra Small)</span>
-			
-		</span>
-	</label> </div>
-                          </div>
-                          <div class="sm-grid__col sm-grid__col_xs">
-                            <div class="sm-card "> <label class="sm-card__label">
-		<input type="checkbox" >
-		<span class="sm-card__content" data-animation="ripple">
-			<i class="sm-card__icon icon icon-checked"></i>
-			<span class="sm-card__title">S (Small)</span>
-			
-		</span>
-	</label> </div>
-                          </div>
-                          <div class="sm-grid__col sm-grid__col_xs">
-                            <div class="sm-card "> <label class="sm-card__label">
-		<input type="checkbox" checked>
-		<span class="sm-card__content" data-animation="ripple">
-			<i class="sm-card__icon icon icon-checked"></i>
-			<span class="sm-card__title">M (Medium)</span>
-			
-		</span>
-	</label> </div>
-                          </div>
-                          <div class="sm-grid__col sm-grid__col_xs">
-                            <div class="sm-card "> <label class="sm-card__label">
-		<input type="checkbox" >
-		<span class="sm-card__content" data-animation="ripple">
-			<i class="sm-card__icon icon icon-checked"></i>
-			<span class="sm-card__title">L (Large)</span>
-			
-		</span>
-	</label> </div>
-                          </div>
-                          <div class="sm-grid__col sm-grid__col_xs">
-                            <div class="sm-card "> <label class="sm-card__label">
-		<input type="checkbox" >
-		<span class="sm-card__content" data-animation="ripple">
-			<i class="sm-card__icon icon icon-checked"></i>
-			<span class="sm-card__title">XL (Extra Large)</span>
-			
-				<span class="sm-card__sticker">$23.00</span>
-			
-		</span>
-	</label> </div>
-                          </div>
-                        </div>
-                      </div>
-                      <!-- <div class="sm-grid__footer">
-		<button class="btn btn_lg btn_primary btn_block sm-grid__btn" data-animation="ripple">Done</button>
-	</div> --></div>
-                  </div>
-                  <div class="tabs__content " data-tab-container="serials" data-tab-collection="item-info" data-scrollbar="default">
-                    <div class="sm-grid sm-grid_full tabs__info">
-                      <div class="sm-grid__body">
-                        <div class="sm-grid__row">
-                          <p>Select serial number of product you&#39;re selling:</p>
-                        </div>
-                        <div class="sm-grid__row">
-                          <div class="sm-grid__col sm-grid__col_sm">
-                            <div class="card-serial "> <label class="card-serial__label">
-		<input type="checkbox" >
-		<span class="card-serial__content" data-animation="ripple">
-			<span class="card-serial__title">79049XXXA4S</span>
-		</span>
-	</label> </div>
-                          </div>
-                          <div class="sm-grid__col sm-grid__col_sm">
-                            <div class="card-serial "> <label class="card-serial__label">
-		<input type="checkbox" >
-		<span class="card-serial__content" data-animation="ripple">
-			<span class="card-serial__title">30384XXX991</span>
-		</span>
-	</label> </div>
-                          </div>
-                          <div class="sm-grid__col sm-grid__col_sm">
-                            <div class="card-serial "> <label class="card-serial__label">
-		<input type="checkbox" >
-		<span class="card-serial__content" data-animation="ripple">
-			<span class="card-serial__title">ULTRALONG-003233XX991-003233XX991</span>
-		</span>
-	</label> </div>
-                          </div>
-                          <div class="sm-grid__col sm-grid__col_sm">
-                            <div class="card-serial "> <label class="card-serial__label">
-		<input type="checkbox" >
-		<span class="card-serial__content" data-animation="ripple">
-			<span class="card-serial__title">TST0012345</span>
-		</span>
-	</label> </div>
-                          </div>
-                        </div>
-                      </div>
-                      <!-- <div class="sm-grid__footer">
-		<button class="btn btn_lg btn_primary btn_block sm-grid__btn" data-animation="ripple">Done</button>
-	</div> --></div>
-                  </div>
-                  <div class="tabs__content " data-tab-container="notes" data-tab-collection="item-info" data-scrollbar="default">
-                    <div class="tabs__notes">
-                      <div class="fieldset fieldset_bordered"> <textarea class="textarea textarea_block" placeholder="Type here Item-specific note"></textarea> </div>
-                      <!-- <button class="btn btn_lg btn_primary btn_block text-uppercase" data-animation="ripple">Done</button> --></div>
                   </div>
                 </div>
                 <!-- end tabs container -->

@@ -119,7 +119,7 @@ styles:
 						{% set totalsListMain = [
 							{
 								label: 'Subtotal',
-								value: '43.00'
+								value: '48.00'
 							},
 							{
 								label: 'Discount',
@@ -138,8 +138,8 @@ styles:
 								nodollar: true
 							},
 							{
-								label: 'Tax',
-								value: '6.75'
+								label: 'TAX',
+								value: '4.30'
 							}
 						] %}
 						<div class="totals__container">
@@ -162,7 +162,7 @@ styles:
 							<ul class="totals-list totals-list_scroll">
 								<li class="totals-list__item totals-list__item_total">
 									<div class="totals-list__label">Total</div>
-									<div class="totals-list__value">$51.84</div>
+									<div class="totals-list__value">$49.39</div>
 								</li>
 							</ul>
 						</div>
@@ -216,7 +216,19 @@ styles:
 											</li>
 											<li class="dropdown-menu__item"> <a href="#" data-animation="ripple" onclick="toggleText(event)" data-values="first">Add Tax</a> </li>
 											<li class="dropdown-menu__item"> <a href="#" data-animation="ripple" onclick="toggleText(event)" data-values="second">Include Tax</a> </li>
-											<li class="dropdown-menu__item"> <a href="#" data-animation="ripple" onclick="toggleText(event)" data-values="third">Add Convenience Fee</a> </li>
+											<li class="dropdown-menu__item"> 
+												<a href="#" data-animation="ripple" 
+													onclick="toggleText(event)" 
+													data-values="third" 
+
+													data-dropdown-open="more" 
+													data-dropdown-parent-name="sidebar"
+
+													data-fullinfo-open="fullinfo"
+													data-toggle-class-target="sidebar-header"
+													data-toggle-class-add="is-disabled"
+												>Add Convenience Fee</a> 
+											</li>
 											<li class="dropdown-menu__item"> <a href="#" data-animation="ripple">Reprint</a> </li>
 											<li class="dropdown-menu__item"> <a href="#" data-animation="ripple">Refund</a> </li>
 										</ul>
@@ -226,13 +238,22 @@ styles:
 												<i class="icon icon-back"></i>
 											</a>
 											<ul class="dropdown-menu__submenu-list" data-scrollbar="default">
-												<li class="dropdown-menu__submenu-item"> <a href="#" class="dropdown-menu__submenu-link is-active"><i class="fa fa-check"></i>California tax</a> </li>
-												<li class="dropdown-menu__submenu-item"> <a href="#" class="dropdown-menu__submenu-link "><i class="fa fa-check"></i>Oregon tax</a> </li>
-												<li class="dropdown-menu__submenu-item"> <a href="#" class="dropdown-menu__submenu-link "><i class="fa fa-check"></i>Nevada tax</a> </li>
-												<li class="dropdown-menu__submenu-item"> <a href="#" class="dropdown-menu__submenu-link "><i class="fa fa-check"></i>Standard Tax 11 LONG NAME1LONG NAME2LONG NAME3LONG NAME4LONG NAME5LONG NAME6LONG NAME7</a> </li>
-												<li class="dropdown-menu__submenu-item"> <a href="#" class="dropdown-menu__submenu-link "><i class="fa fa-check"></i>TaxWithLongNameButWithoutSpaces</a> </li>
-												<li class="dropdown-menu__submenu-item"> <a href="#" class="dropdown-menu__submenu-link "><i class="fa fa-check"></i>Oregon tax</a> </li>
-												<li class="dropdown-menu__submenu-item"> <a href="#" class="dropdown-menu__submenu-link "><i class="fa fa-check"></i>Nevada tax</a> </li>
+												{% for item in [
+													'California tax',
+													'Oregon tax',
+													'Nevada tax',
+													'Standard Tax 11 LONG NAME1LONG NAME2LONG NAME3LONG NAME4LONG NAME5LONG NAME6LONG NAME7',
+													'TaxWithLongNameButWithoutSpaces',
+													'Oregon tax',
+													'Nevada tax'
+												] %}
+													<li class="dropdown-menu__submenu-item"> 
+														<a href="#" class="dropdown-menu__submenu-link {% if loop.first %}is-active{% endif %}">
+															<i class="fa fa-check"></i>
+															{{item}}
+														</a> 
+													</li>
+												{% endfor %}
 											</ul>
 										</div>
 										<div class="dropdown-menu__submenu dropdown-menu__submenu_overlay" data-submenu-container="service-fees">
@@ -272,14 +293,24 @@ styles:
 												e.preventDefault();
 												var $target = $(e.currentTarget);
 												var text = $target.text();
+												var id = $target.data('values');
 												var values = {
 													first: ['Add Tax', 'Remove Tax'],
 													second: ['Include Tax', 'Exclude Tax'],
 													third: ['Add Convenience Fee', 'Remove Convenience Fee']
 												};
-												var textValues = values[$target.data('values')];
+												var textValues = values[id];
 												textValues.forEach(function(value) {
-													if (value != text) $target.text(value);
+													if (value != text) {
+
+														$target.text(value);
+
+														if (id === 'third') {
+															(value.toLowerCase().indexOf('remove') != -1)
+																? $('.js-pin-title').text("Enter manager's PIN to add convenience fee")
+																: $('.js-pin-title').text("Enter manager's PIN to remove convenience fee");
+														}
+													}
 												});
 											}
 											function checkall(e) {
@@ -422,41 +453,10 @@ styles:
 					{{tabs.call({
 						classList: 'tabs_lg container__content',
 						name: 'item-info',
+						noHeader: true,
 						list: [
 							{
-								name: 'quantity',
-								text: 'Quantity',
-								content: 'partials/full-info/_quantity.html'
-							},
-							{
-								name: 'price',
-								text: 'Price',
-								content: 'partials/full-info/_price.html'
-							},
-							{
-								name: 'discount',
-								text: 'Discount',
-								content: 'partials/full-info/_discount.html'
-							},
-							{
-								name: 'modifiers',
-								text: 'Modifiers',
-								content: 'partials/full-info/_modifiers-new.html'
-							},
-							{
-								name: 'matrix',
-								text: 'Matrix',
-								content: 'partials/full-info/_matrix.html'
-							},
-							{
-								name: 'serials',
-								text: 'Serials',
-								content: 'partials/full-info/_serials.html'
-							},
-							{
-								name: 'notes',
-								text: 'Notes',
-								content: 'partials/full-info/_notes.html'
+								content: 'partials/full-info/_pin.html'
 							}
 						]
 					})}}
