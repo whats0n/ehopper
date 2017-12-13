@@ -325,14 +325,24 @@ styles:
 												e.preventDefault();
 												var $target = $(e.currentTarget);
 												var text = $target.text();
+												var id = $target.data('values');
 												var values = {
 													first: ['Add Tax', 'Remove Tax'],
 													second: ['Include Tax', 'Exclude Tax'],
 													third: ['Add Surcharge', 'Remove Surcharge']
 												};
-												var textValues = values[$target.data('values')];
+												var textValues = values[id];
 												textValues.forEach(function(value) {
-													if (value != text) $target.text(value);
+													if (value != text) {
+
+														$target.text(value);
+
+														if (id === 'third') {
+															(value.toLowerCase().indexOf('remove') != -1)
+																? $('.js-pin-title').text("Enter manager's PIN to add surcharge")
+																: $('.js-pin-title').text("Enter manager's PIN to remove surcharge");
+														}
+													}
 												});
 											}
 											function checkall(e) {
@@ -475,9 +485,9 @@ styles:
 					{{tabs.call({
 						classList: 'tabs_lg container__content',
 						name: 'item-info',
+						noHeader: true,
 						list: [
 							{
-								noHeader: true,
 								content: 'partials/full-info/_pin.html'
 							}
 						]

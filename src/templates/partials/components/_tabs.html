@@ -1,7 +1,7 @@
 {% macro call(props) %}
 <!-- begin tabs -->
 <div class="tabs {{props.classList}}" data-tab="{{props.name}}">
-	{% if noHeader != true %}
+	{% if props.noHeader != true %}
 		<!-- begin tabs controls -->
 		<div class="tabs__controls">
 			<ul class="tabs__list">

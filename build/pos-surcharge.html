@@ -406,15 +406,23 @@
                             e.preventDefault();
                             var $target = $(e.currentTarget);
                             var text = $target.text();
+                            var id = $target.data('values');
                             var values = {
                               first: ['Add Tax', 'Remove Tax'],
                               second: ['Include Tax', 'Exclude Tax'],
                               third: ['Add Surcharge', 'Remove Surcharge']
                             };
-                            var textValues = values[$target.data('values')];
+                            var textValues = values[id];
                             textValues.forEach(function(value)
                             {
-                              if (value != text) $target.text(value);
+                              if (value != text)
+                              {
+                                $target.text(value);
+                                if (id === 'third')
+                                {
+                                  (value.toLowerCase().indexOf('remove') != -1) ? $('.js-pin-title').text("Enter manager's PIN to add surcharge"): $('.js-pin-title').text("Enter manager's PIN to remove surcharge");
+                                }
+                              }
                             });
                           }
 
@@ -719,18 +727,11 @@
             <div class="container__body">
               <!-- begin tabs -->
               <div class="tabs tabs_lg container__content" data-tab="item-info">
-                <!-- begin tabs controls -->
-                <div class="tabs__controls">
-                  <ul class="tabs__list">
-                    <li class="tabs__item "> <a href="#" class="tabs__btn  is-active" data-tab-open="" data-tab-collection="item-info" data-animation="ripple"></a> </li>
-                  </ul>
-                </div>
-                <!-- end tabs controls -->
                 <!-- begin tabs container -->
                 <div class="tabs__container">
                   <div class="tabs__content  is-open" data-tab-container="" data-tab-collection="item-info" data-scrollbar="default">
                     <div class="tabs__keyboard">
-                      <div class="tabs__meta text-center">Enter manager's PIN to remove surcharge</div>
+                      <div class="tabs__meta text-center js-pin-title">Enter manager's PIN to remove surcharge</div>
                       <div class="fieldset fieldset_bordered">
                         <div class="figure">
                           <div class="figure__display display">
