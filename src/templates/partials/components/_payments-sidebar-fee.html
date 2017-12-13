@@ -121,22 +121,27 @@
 						</li>
 					{% endfor %}
 				</ul>
+				{% set totalsListScroll = [
+					{
+						label: 'SVC (NY)',
+						value: '2.09'
+					},
+					{
+						label: 'SVC (NY) Discount',
+						value: '0.00',
+						nodollar: true
+					},
+					{
+						label: 'TAX',
+						value: '4.30'
+					},
+					{
+						label: 'Total',
+						value: '49.39'
+					}
+				] %}
 				<ul class="totals-list totals-list_scroll" data-scrollbar="default">
-					{% for item in totalsListScrollCustom or [
-						{
-							label: 'SVC (NY)',
-							value: '2.09'
-						},
-						{
-							label: 'SVC (NY) Discount',
-							value: '0.00',
-							nodollar: true
-						},
-						{
-							label: 'TAX',
-							value: '4.30'
-						}
-					] %}
+					{% for item in totalsListScrollCustom or totalsListScroll %}
 						{% if not loop.last %}
 							<li class="totals-list__item">
 								<div class="totals-list__label">{{item.label}}</div>
@@ -146,10 +151,7 @@
 					{% endfor %}
 				</ul>
 				<ul class="totals-list totals-list_main">
-					{% for item in totalsListScrollCustom or [ {
-						label: 'Total',
-						value: '49.39'
-					} ] %}
+					{% for item in totalsListScrollCustom or totalsListScroll %}
 						{% if loop.last %}
 							<li class="totals-list__item">
 								<div class="totals-list__label">{{item.label}}</div>

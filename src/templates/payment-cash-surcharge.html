@@ -23,16 +23,12 @@ styles:
 			})}}
 			{% set totalsListScrollCustom = [
 				{
-					label: 'Surcharge',
-					value: '2.09'
-				},
-				{
 					label: 'TAX',
 					value: '4.30'
 				},
 				{
 					label: 'Total',
-					value: '49.39'
+					value: '47.30'
 				}
 			] %}
 			{% include 'partials/components/_payments-sidebar-fee.html' %}
@@ -43,7 +39,7 @@ styles:
 							<div class="form__section">
 								{{mixins.infoPrice({
 									label: 'Amount Due:',
-									price: '49.39',
+									price: '47.30',
 									currency: '$',
 									classList: 'text-center'
 								})}}
@@ -55,7 +51,7 @@ styles:
 										label: 'Amount Tendered:',
 										labelClassList: 'field__label_sm',
 										id: 'amount-tendered',
-										value: '49.39',
+										value: '47.30',
 										placeholder: '0',
 										attrs: 'required readonly',
 										inputClassList: 'text-right input_xl'
