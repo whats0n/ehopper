@@ -1,0 +1,64 @@
+{% import '../_mixins.html' as mixins %}
+{% import '../components/_keyboard.html' as keyboard %}
+<div class="tabs__keyboard">
+	<div class="tabs__meta text-center">Enter administrator's PIN</div>
+	<div class="fieldset fieldset_bordered">
+		<div class="figure">
+			<div class="figure__display display">
+				<ul class="display__list">
+					{% for item in range(0, 5) %}
+						{% if loop.index0 < 2 %}
+							<li class="display__item" data-state="active"></li>
+						{% else %}
+							<li class="display__item" data-state="default"></li>
+						{% endif %}
+					{% endfor %}
+				</ul>
+			</div>
+			<div class="figure__keyboard">
+				{{keyboard.call({
+					main: [
+						{ 
+							content: '1'
+						},
+						{ 
+							content: '2'
+						},
+						{ 
+							content: '3'
+						},
+						{ 
+							content: '4'
+						},
+						{ 
+							content: '5'
+						},
+						{ 
+							content: '6'
+						},
+						{ 
+							content: '7'
+						},
+						{ 
+							content: '8'
+						},
+						{ 
+							content: '9'
+						},
+						{ 
+							attrs: 'data-numpad="numpad-clear"',
+							content: '<i class="icon icon-text icon-clear"></i>'
+						},
+						{ 
+							content: '0'
+						},
+						{ 
+							attrs: 'data-numpad="numpad-backspace"',
+							content: '<i class="icon icon-text icon-backspace"></i>'
+						}
+					] 
+				})}}
+			</div>
+		</div>
+	</div>
+</div>

@@ -179,6 +179,10 @@ styles:
 								nodollar: true
 							},
 							{
+								label: 'Surcharge',
+								value: '2.09'
+							},
+							{
 								label: 'Tax 1',
 								value: '6.75'
 							},
@@ -207,7 +211,7 @@ styles:
 							<ul class="totals-list totals-list_scroll">
 								<li class="totals-list__item totals-list__item_total">
 									<div class="totals-list__label">Total</div>
-									<div class="totals-list__value">$64.32</div>
+									<div class="totals-list__value">$66.41</div>
 								</li>
 							</ul>
 						</div>
@@ -249,7 +253,7 @@ styles:
 										<ul class="dropdown-menu__list">
 											<li class="dropdown-menu__item">
 												<a href="#" data-animation="ripple" class="dropdown-menu__arrow dropdown-menu__arrow_right" onclick="showSubmenu(event)" data-submenu-target="service-fees">
-													<span>Service Fees</span>
+													<span>Service Fee</span>
 													<i class="fa fa-angle-right"></i>
 												</a>
 											</li>
@@ -261,7 +265,20 @@ styles:
 											</li>
 											<li class="dropdown-menu__item"> <a href="#" data-animation="ripple" onclick="toggleText(event)" data-values="first">Add Tax</a> </li>
 											<li class="dropdown-menu__item"> <a href="#" data-animation="ripple" onclick="toggleText(event)" data-values="second">Include Tax</a> </li>
-											<li class="dropdown-menu__item"> <a href="#" data-animation="ripple" onclick="toggleText(event)" data-values="third">Add Convenience Fee</a> </li>
+											<li class="dropdown-menu__item"> 
+												<a href="#" 
+													data-animation="ripple" 
+													onclick="toggleText(event)" 
+													data-values="third" 
+
+													data-dropdown-open="more" 
+													data-dropdown-parent-name="sidebar"
+
+													data-fullinfo-open="fullinfo"
+													data-toggle-class-target="sidebar-header"
+													data-toggle-class-add="is-disabled"
+												>Add Surcharge</a> 
+											</li>
 											<li class="dropdown-menu__item"> <a href="#" data-animation="ripple">Reprint</a> </li>
 											<li class="dropdown-menu__item"> <a href="#" data-animation="ripple">Refund</a> </li>
 										</ul>
@@ -282,7 +299,7 @@ styles:
 										</div>
 										<div class="dropdown-menu__submenu dropdown-menu__submenu_overlay" data-submenu-container="service-fees">
 											<a href="#" data-animation="ripple" class="dropdown-menu__submenu-title" onclick="showSubmenu(event)">
-												<span>Service Fees</span>
+												<span>Service Fee</span>
 												<i class="icon icon-back"></i>
 											</a>
 											<ul class="dropdown-menu__submenu-list js-checkall-container" data-scrollbar="default">
@@ -320,7 +337,7 @@ styles:
 												var values = {
 													first: ['Add Tax', 'Remove Tax'],
 													second: ['Include Tax', 'Exclude Tax'],
-													third: ['Add Convenience Fee', 'Remove Convenience Fee']
+													third: ['Add Surcharge', 'Remove Surcharge']
 												};
 												var textValues = values[$target.data('values')];
 												textValues.forEach(function(value) {
@@ -469,39 +486,8 @@ styles:
 						name: 'item-info',
 						list: [
 							{
-								name: 'quantity',
-								text: 'Quantity',
-								content: 'partials/full-info/_quantity.html'
-							},
-							{
-								name: 'price',
-								text: 'Price',
-								content: 'partials/full-info/_price.html'
-							},
-							{
-								name: 'discount',
-								text: 'Discount',
-								content: 'partials/full-info/_discount.html'
-							},
-							{
-								name: 'modifiers',
-								text: 'Modifiers',
-								content: 'partials/full-info/_modifiers-new.html'
-							},
-							{
-								name: 'matrix',
-								text: 'Matrix',
-								content: 'partials/full-info/_matrix.html'
-							},
-							{
-								name: 'serials',
-								text: 'Serials',
-								content: 'partials/full-info/_serials.html'
-							},
-							{
-								name: 'notes',
-								text: 'Notes',
-								content: 'partials/full-info/_notes.html'
+								noHeader: true,
+								content: 'partials/full-info/_pin.html'
 							}
 						]
 					})}}
