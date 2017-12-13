@@ -340,7 +340,7 @@
                   <ul class="totals-list totals-list_main">
                     <li class="totals-list__item">
                       <div class="totals-list__label">Subtotal</div>
-                      <div class="totals-list__value">$57.90</div>
+                      <div class="totals-list__value">$48.00</div>
                     </li>
                     <li class="totals-list__item">
                       <div class="totals-list__label">Discount</div>
@@ -348,6 +348,10 @@
                     </li>
                   </ul>
                   <ul class="totals-list totals-list_scroll" data-scrollbar="default">
+                    <li class="totals-list__item">
+                      <div class="totals-list__label">Service Fee</div>
+                      <div class="totals-list__value">$9.90</div>
+                    </li>
                     <li class="totals-list__item">
                       <div class="totals-list__label">SVC (NY)</div>
                       <div class="totals-list__value">$2.09</div>
@@ -395,7 +399,7 @@
                         data-dropdown-menu="more" id="more-menu-dropdown">
                         <ul class="dropdown-menu__list">
                           <li class="dropdown-menu__item"> <a href="#" data-animation="ripple" class="dropdown-menu__arrow dropdown-menu__arrow_right" onclick="showSubmenu(event)" data-submenu-target="service-fees">
-													<span>Service Fees</span>
+													<span>Service Fee</span>
 													<i class="fa fa-angle-right"></i>
 												</a> </li>
                           <li class="dropdown-menu__item"> <a href="#" data-animation="ripple" class="dropdown-menu__arrow dropdown-menu__arrow_right" onclick="showSubmenu(event)" data-submenu-target="change-tax">
@@ -423,27 +427,27 @@
                           </ul>
                         </div>
                         <div class="dropdown-menu__submenu dropdown-menu__submenu_overlay" data-submenu-container="service-fees"> <a href="#" data-animation="ripple" class="dropdown-menu__submenu-title" onclick="showSubmenu(event)">
-												<span>Service Fees</span>
+												<span>Service Fee</span>
 												<i class="icon icon-back"></i>
 											</a>
                           <ul class="dropdown-menu__submenu-list js-checkall-container" data-scrollbar="default">
                             <li class="dropdown-menu__submenu-item"> <label class="checkbox ">
-	<input type="checkbox" onchange="checkall(event)" data-checkall="true">
+	<input type="checkbox" onchange="checkall(event)" data-checkall="true" disabled>
 	<i class="icon icon-check"></i>
 	<span>All</span>
 </label> </li>
                             <li class="dropdown-menu__submenu-item"> <label class="checkbox ">
-	<input type="checkbox" onchange="check(event)">
+	<input type="checkbox" onchange="check(event)" disabled>
 	<i class="icon icon-check"></i>
 	<span>Packing Fee</span>
 </label> </li>
                             <li class="dropdown-menu__submenu-item"> <label class="checkbox ">
-	<input type="checkbox" onchange="check(event)">
+	<input type="checkbox" onchange="check(event)" disabled>
 	<i class="icon icon-check"></i>
 	<span>Take Out Fee</span>
 </label> </li>
                             <li class="dropdown-menu__submenu-item"> <label class="checkbox ">
-	<input type="checkbox" onchange="check(event)">
+	<input type="checkbox" onchange="check(event)" disabled>
 	<i class="icon icon-check"></i>
 	<span>Delivery Fee</span>
 </label> </li>

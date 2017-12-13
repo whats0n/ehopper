@@ -160,7 +160,7 @@ styles:
 						{% set totalsListMain = [
 							{
 								label: 'Subtotal',
-								value: '57.90'
+								value: '48.00'
 							},
 							{
 								label: 'Discount',
@@ -169,6 +169,10 @@ styles:
 							}
 						] %}
 						{% set totalsListScroll = [
+							{
+								label: 'Service Fee',
+								value: '9.90'
+							},
 							{
 								label: 'SVC (NY)',
 								value: '2.09'
@@ -249,7 +253,7 @@ styles:
 										<ul class="dropdown-menu__list">
 											<li class="dropdown-menu__item">
 												<a href="#" data-animation="ripple" class="dropdown-menu__arrow dropdown-menu__arrow_right" onclick="showSubmenu(event)" data-submenu-target="service-fees">
-													<span>Service Fees</span>
+													<span>Service Fee</span>
 													<i class="fa fa-angle-right"></i>
 												</a>
 											</li>
@@ -282,21 +286,21 @@ styles:
 										</div>
 										<div class="dropdown-menu__submenu dropdown-menu__submenu_overlay" data-submenu-container="service-fees">
 											<a href="#" data-animation="ripple" class="dropdown-menu__submenu-title" onclick="showSubmenu(event)">
-												<span>Service Fees</span>
+												<span>Service Fee</span>
 												<i class="icon icon-back"></i>
 											</a>
 											<ul class="dropdown-menu__submenu-list js-checkall-container" data-scrollbar="default">
 												<li class="dropdown-menu__submenu-item"> 
-													{{mixins.checkbox({ content: 'All', attrs: 'onchange="checkall(event)" data-checkall="true"' })}}
+													{{mixins.checkbox({ content: 'All', attrs: 'onchange="checkall(event)" data-checkall="true" disabled' })}}
 												</li>
 												<li class="dropdown-menu__submenu-item"> 
-													{{mixins.checkbox({ content: 'Packing Fee', attrs: 'onchange="check(event)"' })}}
+													{{mixins.checkbox({ content: 'Packing Fee', attrs: 'onchange="check(event)" disabled' })}}
 												</li>
 												<li class="dropdown-menu__submenu-item"> 
-													{{mixins.checkbox({ content: 'Take Out Fee', attrs: 'onchange="check(event)"' })}}
+													{{mixins.checkbox({ content: 'Take Out Fee', attrs: 'onchange="check(event)" disabled' })}}
 												</li>
 												<li class="dropdown-menu__submenu-item"> 
-													{{mixins.checkbox({ content: 'Delivery Fee', attrs: 'onchange="check(event)"' })}}
+													{{mixins.checkbox({ content: 'Delivery Fee', attrs: 'onchange="check(event)" disabled' })}}
 												</li>
 											</ul>
 										</div>
