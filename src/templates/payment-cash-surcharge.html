@@ -21,7 +21,21 @@ styles:
 				containerClassList: 'main-header__container_full',
 				title: 'Cash Payment'
 			})}}
-			{% include 'partials/components/_payments-sidebar.html' %}
+			{% set totalsListScrollCustom = [
+				{
+					label: 'Surcharge',
+					value: '2.09'
+				},
+				{
+					label: 'TAX',
+					value: '4.30'
+				},
+				{
+					label: 'Total',
+					value: '49.39'
+				}
+			] %}
+			{% include 'partials/components/_payments-sidebar-fee.html' %}
 			<div class="container container_right container_payments">
 				<div class="container__body step-body">
 					<div class="step-body__section">
@@ -29,7 +43,7 @@ styles:
 							<div class="form__section">
 								{{mixins.infoPrice({
 									label: 'Amount Due:',
-									price: '47.30',
+									price: '49.39',
 									currency: '$',
 									classList: 'text-center'
 								})}}
@@ -41,7 +55,7 @@ styles:
 										label: 'Amount Tendered:',
 										labelClassList: 'field__label_sm',
 										id: 'amount-tendered',
-										value: '47.30',
+										value: '49.39',
 										placeholder: '0',
 										attrs: 'required readonly',
 										inputClassList: 'text-right input_xl'

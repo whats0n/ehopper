@@ -23,18 +23,18 @@ styles:
 			})}}
 			{% set totalsListScrollCustom = [
 				{
-					label: 'Surcharge',
-					value: '2.09'
+					label: 'Service Fee',
+					value: '9.90'
 				},
 				{
-					label: 'Tax 1',
+					label: 'TAX',
 					value: '4.30'
 				},
 				{
 					label: 'Total',
-					value: '49.39'
+					value: '57.20'
 				}
-			] %}	
+			] %}
 			{% include 'partials/components/_payments-sidebar-fee.html' %}
 			<div class="container container_right container_payments">
 				<div class="container__body step-body">
@@ -43,7 +43,7 @@ styles:
 							<div class="form__section">
 								{{mixins.infoPrice({
 									label: 'Total Due:',
-									price: '49.39',
+									price: '57.20',
 									currency: '$',
 									classList: 'text-center'
 								})}}

@@ -32,16 +32,12 @@ styles:
 					nodollar: true
 				},
 				{
-					label: 'Tax 1',
-					value: '6.75'
-				},
-				{
-					label: 'Tax 2',
-					value: '2.58'
+					label: 'TAX',
+					value: '4.30'
 				},
 				{
 					label: 'Total',
-					value: '62.23'
+					value: '47.30'
 				}
 			] %}
 			{% include 'partials/components/_payments-sidebar-fee.html' %}
@@ -52,7 +48,7 @@ styles:
 							<div class="form__section">
 								{{mixins.infoPrice({
 									label: 'Amount Due:',
-									price: '52.33',
+									price: '47.30',
 									currency: '$',
 									classList: 'text-center'
 								})}}
@@ -64,7 +60,7 @@ styles:
 										label: 'Amount Tendered:',
 										labelClassList: 'field__label_sm',
 										id: 'amount-tendered',
-										value: '200.00',
+										value: '47.30',
 										placeholder: '0',
 										attrs: 'required readonly',
 										inputClassList: 'text-right input_xl'

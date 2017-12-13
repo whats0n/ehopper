@@ -17,7 +17,7 @@
 					notes: 'Long Sleeves, XL size, Black color',
 					quantity: '2',
 					price: '$20.00',
-					total: '$40.00',
+					total: '$35.00',
 					discount: '($5.00)',
 					state: 'default'
 				},
@@ -64,79 +64,57 @@
 						</div>
 					</li>
 				{% endfor %}
-				{% for item in [
-					{
-						label: 'Packing Fee',
-						value: '$2.40'
-					},
-					{
-						label: 'Take Out Fee',
-						value: '$2.50'
-					},
-					{
-						label: 'Delivery Fee',
-						value: '$5.00'
-					}
-				] %}
-					<li class="order-item order-item_static order-item_sub">
-						<div class="order-item__container">
-							<div class="order-item__content">
-								<div class="order-item__row">
-									<div class="order-item__info">
-										<div class="order-item__title"><em>{{item.label | safe}}</em></div>
+				{% if serviceFeeItems %}
+					{% for item in [
+						{
+							label: 'Packing Fee',
+							value: '$2.40'
+						},
+						{
+							label: 'Take Out Fee',
+							value: '$2.50'
+						},
+						{
+							label: 'Delivery Fee',
+							value: '$5.00'
+						}
+					] %}
+						<li class="order-item order-item_static order-item_sub">
+							<div class="order-item__container">
+								<div class="order-item__content">
+									<div class="order-item__row">
+										<div class="order-item__info">
+											<div class="order-item__title"><em>{{item.label | safe}}</em></div>
+										</div>
 									</div>
-								</div>
-								<div class="order-item__row text-right">
-									<div class="order-item__col text-left">
-										<div class="order-item__total">{{item.value | safe}}</div>
+									<div class="order-item__row text-right">
+										<div class="order-item__col text-left">
+											<div class="order-item__total">{{item.value | safe}}</div>
+										</div>
 									</div>
 								</div>
 							</div>
-						</div>
-					</li>
-				{% endfor %}
+						</li>
+					{% endfor %}
+				{% endif %}
 			</ul>
 		</div>
 	</div>
 	<div class="sidebar__footer">
 		<div class="totals totals_static sidebar__totals">
-			{% set totalsListMain = [
-				{
-					label: 'Subtotal',
-					value: '48.00'
-				},
-				{
-					label: 'Discount',
-					value: '($5.00)',
-					nodollar: true
-				}
-			] %}
-			{% set totalsListScroll = [
-				{
-					label: 'SVC (NY)',
-					value: '2.09'
-				},
-				{
-					label: 'SVC (NY) Discount',
-					value: '0.00',
-					nodollar: true
-				},
-				{
-					label: 'Tax 1',
-					value: '6.75'
-				},
-				{
-					label: 'Tax 2',
-					value: '2.58'
-				},
-				{
-					label: 'Total',
-					value: '64.32'
-				}
-			] %}
 			<div class="totals__container">
 				<ul class="totals-list totals-list_main">
-					{% for item in totalsListMainCustom or totalsListMain %}
+					{% for item in totalsListMainCustom or [
+						{
+							label: 'Subtotal',
+							value: '48.00'
+						},
+						{
+							label: 'Discount',
+							value: '($5.00)',
+							nodollar: true
+						}
+					] %}
 						<li class="totals-list__item">
 							<div class="totals-list__label">{{item.label}}</div>
 							<div class="totals-list__value">{% if not item.nodollar %}${% endif %}{{item.value | safe}}</div>
@@ -144,7 +122,21 @@
 					{% endfor %}
 				</ul>
 				<ul class="totals-list totals-list_scroll" data-scrollbar="default">
-					{% for item in totalsListScrollCustom or totalsListScroll %}
+					{% for item in totalsListScrollCustom or [
+						{
+							label: 'SVC (NY)',
+							value: '2.09'
+						},
+						{
+							label: 'SVC (NY) Discount',
+							value: '0.00',
+							nodollar: true
+						},
+						{
+							label: 'TAX',
+							value: '4.30'
+						}
+					] %}
 						{% if not loop.last %}
 							<li class="totals-list__item">
 								<div class="totals-list__label">{{item.label}}</div>
@@ -154,7 +146,10 @@
 					{% endfor %}
 				</ul>
 				<ul class="totals-list totals-list_main">
-					{% for item in totalsListScrollCustom or totalsListScroll %}
+					{% for item in totalsListScrollCustom or [ {
+						label: 'Total',
+						value: '49.39'
+					} ] %}
 						{% if loop.last %}
 							<li class="totals-list__item">
 								<div class="totals-list__label">{{item.label}}</div>
