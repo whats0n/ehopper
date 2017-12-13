@@ -129,8 +129,13 @@ styles:
 						] %}
 						{% set totalsListScroll = [
 							{
-								label: 'Surcharge',
+								label: 'SVC (NY)',
 								value: '2.09'
+							},
+							{
+								label: 'SVC (NY) Discount',
+								value: '($0.00)',
+								nodollar: true
 							},
 							{
 								label: 'Tax',
@@ -211,20 +216,7 @@ styles:
 											</li>
 											<li class="dropdown-menu__item"> <a href="#" data-animation="ripple" onclick="toggleText(event)" data-values="first">Add Tax</a> </li>
 											<li class="dropdown-menu__item"> <a href="#" data-animation="ripple" onclick="toggleText(event)" data-values="second">Include Tax</a> </li>
-											<li class="dropdown-menu__item"> 
-												<a href="#" 
-													data-animation="ripple" 
-													onclick="toggleText(event)" 
-													data-values="third" 
-
-													data-dropdown-open="more" 
-													data-dropdown-parent-name="sidebar"
-
-													data-fullinfo-open="fullinfo"
-													data-toggle-class-target="sidebar-header"
-													data-toggle-class-add="is-disabled"
-												>Add Surcharge</a> 
-											</li>
+											<li class="dropdown-menu__item"> <a href="#" data-animation="ripple" onclick="toggleText(event)" data-values="third">Add Convenience Fee</a> </li>
 											<li class="dropdown-menu__item"> <a href="#" data-animation="ripple">Reprint</a> </li>
 											<li class="dropdown-menu__item"> <a href="#" data-animation="ripple">Refund</a> </li>
 										</ul>
@@ -250,16 +242,16 @@ styles:
 											</a>
 											<ul class="dropdown-menu__submenu-list js-checkall-container" data-scrollbar="default">
 												<li class="dropdown-menu__submenu-item"> 
-													{{mixins.checkbox({ content: 'All', attrs: 'onchange="checkall(event)" data-checkall="true"' })}}
+													{{mixins.checkbox({ content: 'All', attrs: 'onchange="checkall(event)" data-checkall="true" disabled' })}}
 												</li>
 												<li class="dropdown-menu__submenu-item"> 
-													{{mixins.checkbox({ content: 'Packing Fee', attrs: 'onchange="check(event)"' })}}
+													{{mixins.checkbox({ content: 'Packing Fee', attrs: 'onchange="check(event)" disabled' })}}
 												</li>
 												<li class="dropdown-menu__submenu-item"> 
-													{{mixins.checkbox({ content: 'Take Out Fee', attrs: 'onchange="check(event)"' })}}
+													{{mixins.checkbox({ content: 'Take Out Fee', attrs: 'onchange="check(event)" disabled' })}}
 												</li>
 												<li class="dropdown-menu__submenu-item"> 
-													{{mixins.checkbox({ content: 'Delivery Fee', attrs: 'onchange="check(event)"' })}}
+													{{mixins.checkbox({ content: 'Delivery Fee', attrs: 'onchange="check(event)" disabled' })}}
 												</li>
 											</ul>
 										</div>
@@ -280,24 +272,14 @@ styles:
 												e.preventDefault();
 												var $target = $(e.currentTarget);
 												var text = $target.text();
-												var id = $target.data('values');
 												var values = {
 													first: ['Add Tax', 'Remove Tax'],
 													second: ['Include Tax', 'Exclude Tax'],
-													third: ['Add Surcharge', 'Remove Surcharge']
+													third: ['Add Convenience Fee', 'Remove Convenience Fee']
 												};
-												var textValues = values[id];
+												var textValues = values[$target.data('values')];
 												textValues.forEach(function(value) {
-													if (value != text) {
-
-														$target.text(value);
-
-														if (id === 'third') {
-															(value.toLowerCase().indexOf('remove') != -1)
-																? $('.js-pin-title').text("Enter manager's PIN to add surcharge")
-																: $('.js-pin-title').text("Enter manager's PIN to remove surcharge");
-														}
-													}
+													if (value != text) $target.text(value);
 												});
 											}
 											function checkall(e) {
@@ -440,10 +422,41 @@ styles:
 					{{tabs.call({
 						classList: 'tabs_lg container__content',
 						name: 'item-info',
-						noHeader: true,
 						list: [
 							{
-								content: 'partials/full-info/_pin.html'
+								name: 'quantity',
+								text: 'Quantity',
+								content: 'partials/full-info/_quantity.html'
+							},
+							{
+								name: 'price',
+								text: 'Price',
+								content: 'partials/full-info/_price.html'
+							},
+							{
+								name: 'discount',
+								text: 'Discount',
+								content: 'partials/full-info/_discount.html'
+							},
+							{
+								name: 'modifiers',
+								text: 'Modifiers',
+								content: 'partials/full-info/_modifiers-new.html'
+							},
+							{
+								name: 'matrix',
+								text: 'Matrix',
+								content: 'partials/full-info/_matrix.html'
+							},
+							{
+								name: 'serials',
+								text: 'Serials',
+								content: 'partials/full-info/_serials.html'
+							},
+							{
+								name: 'notes',
+								text: 'Notes',
+								content: 'partials/full-info/_notes.html'
 							}
 						]
 					})}}

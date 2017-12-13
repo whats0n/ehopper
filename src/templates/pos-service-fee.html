@@ -45,7 +45,7 @@ styles:
 								meta: 'Long Sleeves, XL size, Black color',
 								quantity: '2',
 								price: '$20.00',
-								total: '$40.00',
+								total: '$35.00',
 								discount: '($5.00)',
 								state: 'default'
 							},
@@ -125,10 +125,9 @@ styles:
 									data-swipe-threshold="50">
 									<div class="order-item__container">
 										<button class="order-item__close" 
-											data-fullinfo-close="fullinfo" 
-											data-toggle-class-target="sidebar-header" 
-											data-toggle-class-remove="is-disabled"
-											data-order-delete-item="delete">
+											data-fullinfo-open="fullinfo"
+											data-toggle-class-target="sidebar-header"
+											data-toggle-class-add="is-disabled">
 											<i class="icon icon-close"></i>
 										</button>
 										<div class="order-item__content">
@@ -160,7 +159,7 @@ styles:
 						{% set totalsListMain = [
 							{
 								label: 'Subtotal',
-								value: '48.00'
+								value: '43.00'
 							},
 							{
 								label: 'Discount',
@@ -174,21 +173,8 @@ styles:
 								value: '9.90'
 							},
 							{
-								label: 'SVC (NY)',
-								value: '2.09'
-							},
-							{
-								label: 'SVC (NY) Discount',
-								value: '($0.00)',
-								nodollar: true
-							},
-							{
-								label: 'Tax 1',
+								label: 'Tax',
 								value: '6.75'
-							},
-							{
-								label: 'Tax 2',
-								value: '2.58'
 							}
 						] %}
 						<div class="totals__container">
@@ -211,7 +197,7 @@ styles:
 							<ul class="totals-list totals-list_scroll">
 								<li class="totals-list__item totals-list__item_total">
 									<div class="totals-list__label">Total</div>
-									<div class="totals-list__value">$64.32</div>
+									<div class="totals-list__value">$59.65</div>
 								</li>
 							</ul>
 						</div>
@@ -291,16 +277,16 @@ styles:
 											</a>
 											<ul class="dropdown-menu__submenu-list js-checkall-container" data-scrollbar="default">
 												<li class="dropdown-menu__submenu-item"> 
-													{{mixins.checkbox({ content: 'All', attrs: 'onchange="checkall(event)" data-checkall="true" disabled' })}}
+													{{mixins.checkbox({ content: 'All', attrs: 'onchange="checkall(event)" data-checkall="true"' })}}
 												</li>
 												<li class="dropdown-menu__submenu-item"> 
-													{{mixins.checkbox({ content: 'Packing Fee', attrs: 'onchange="check(event)" disabled' })}}
+													{{mixins.checkbox({ content: 'Packing Fee', attrs: 'onchange="check(event)"' })}}
 												</li>
 												<li class="dropdown-menu__submenu-item"> 
-													{{mixins.checkbox({ content: 'Take Out Fee', attrs: 'onchange="check(event)" disabled' })}}
+													{{mixins.checkbox({ content: 'Take Out Fee', attrs: 'onchange="check(event)"' })}}
 												</li>
 												<li class="dropdown-menu__submenu-item"> 
-													{{mixins.checkbox({ content: 'Delivery Fee', attrs: 'onchange="check(event)" disabled' })}}
+													{{mixins.checkbox({ content: 'Delivery Fee', attrs: 'onchange="check(event)"' })}}
 												</li>
 											</ul>
 										</div>
@@ -310,8 +296,7 @@ styles:
 
 												var target = $(e.currentTarget).data('submenu-target');
 												$('.js-menu').toggleClass('is-active');
-
-												if (!target.length) return;
+												if (!target || !target.length) return;
 												$('[data-submenu-container]')
 													.removeClass('is-active')
 													.filter('[data-submenu-container="' + target + '"]')
@@ -339,6 +324,11 @@ styles:
 												$checkboxes
 													.not($target)
 													.prop('checked', checked);
+
+												$('[data-fullinfo-container="fullinfo"]').addClass('is-open');
+												$('[data-toggle-class-container="sidebar-header"]').addClass('is-disabled');
+												$('.js-menu').removeClass('is-open').removeClass('is-active');
+												$('[data-dropdown-overlay="more"]').removeClass('is-open');
 											}
 											function check(e) {
 												var $target = $(e.target);
@@ -349,6 +339,11 @@ styles:
 													if (!$(this).prop('checked')) checkedAll = false;
 												});
 												$('[data-checkall]').prop('checked', checkedAll);
+												
+												$('[data-fullinfo-container="fullinfo"]').addClass('is-open');
+												$('[data-toggle-class-container="sidebar-header"]').addClass('is-disabled');
+												$('.js-menu').removeClass('is-open').removeClass('is-active');
+												$('[data-dropdown-overlay="more"]').removeClass('is-open');
 											}
 										</script>
 									</div>
@@ -471,41 +466,10 @@ styles:
 					{{tabs.call({
 						classList: 'tabs_lg container__content',
 						name: 'item-info',
+						noHeader: true,
 						list: [
 							{
-								name: 'quantity',
-								text: 'Quantity',
-								content: 'partials/full-info/_quantity.html'
-							},
-							{
-								name: 'price',
-								text: 'Price',
-								content: 'partials/full-info/_price.html'
-							},
-							{
-								name: 'discount',
-								text: 'Discount',
-								content: 'partials/full-info/_discount.html'
-							},
-							{
-								name: 'modifiers',
-								text: 'Modifiers',
-								content: 'partials/full-info/_modifiers-new.html'
-							},
-							{
-								name: 'matrix',
-								text: 'Matrix',
-								content: 'partials/full-info/_matrix.html'
-							},
-							{
-								name: 'serials',
-								text: 'Serials',
-								content: 'partials/full-info/_serials.html'
-							},
-							{
-								name: 'notes',
-								text: 'Notes',
-								content: 'partials/full-info/_notes.html'
+								content: 'partials/full-info/_pin.html'
 							}
 						]
 					})}}

@@ -271,6 +271,60 @@
                       </div>
                     </div>
                   </li>
+                  <li class="order-item order-item_sub" data-order-added="item" data-swipe="is-open" data-swipe-threshold="50">
+                    <div class="order-item__container"> <button class="order-item__close" data-fullinfo-open="fullinfo" data-toggle-class-target="sidebar-header" data-toggle-class-add="is-disabled">
+											<i class="icon icon-close"></i>
+										</button>
+                      <div class="order-item__content">
+                        <div class="order-item__row">
+                          <div class="order-item__info">
+                            <div class="order-item__title"><em>Packing Fee</em></div>
+                          </div>
+                        </div>
+                        <div class="order-item__row">
+                          <div class="order-item__col order-item__col_wide text-right">
+                            <div class="order-item__total">$2.40</div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </li>
+                  <li class="order-item order-item_sub" data-order-added="item" data-swipe="is-open" data-swipe-threshold="50">
+                    <div class="order-item__container"> <button class="order-item__close" data-fullinfo-open="fullinfo" data-toggle-class-target="sidebar-header" data-toggle-class-add="is-disabled">
+											<i class="icon icon-close"></i>
+										</button>
+                      <div class="order-item__content">
+                        <div class="order-item__row">
+                          <div class="order-item__info">
+                            <div class="order-item__title"><em>Take Out Fee</em></div>
+                          </div>
+                        </div>
+                        <div class="order-item__row">
+                          <div class="order-item__col order-item__col_wide text-right">
+                            <div class="order-item__total">$2.50</div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </li>
+                  <li class="order-item order-item_sub" data-order-added="item" data-swipe="is-open" data-swipe-threshold="50">
+                    <div class="order-item__container"> <button class="order-item__close" data-fullinfo-open="fullinfo" data-toggle-class-target="sidebar-header" data-toggle-class-add="is-disabled">
+											<i class="icon icon-close"></i>
+										</button>
+                      <div class="order-item__content">
+                        <div class="order-item__row">
+                          <div class="order-item__info">
+                            <div class="order-item__title"><em>Delivery Fee</em></div>
+                          </div>
+                        </div>
+                        <div class="order-item__row">
+                          <div class="order-item__col order-item__col_wide text-right">
+                            <div class="order-item__total">$5.00</div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </li>
                 </ul>
                 <div class="order-empty is-hidden" data-order-empty="order">
                   <div class="order-empty__center">
@@ -295,8 +349,8 @@
                   </ul>
                   <ul class="totals-list totals-list_scroll" data-scrollbar="default">
                     <li class="totals-list__item">
-                      <div class="totals-list__label">Surcharge</div>
-                      <div class="totals-list__value">$2.09</div>
+                      <div class="totals-list__label">Service Fee</div>
+                      <div class="totals-list__value">$9.90</div>
                     </li>
                     <li class="totals-list__item">
                       <div class="totals-list__label">Tax</div>
@@ -306,7 +360,7 @@
                   <ul class="totals-list totals-list_scroll">
                     <li class="totals-list__item totals-list__item_total">
                       <div class="totals-list__label">Total</div>
-                      <div class="totals-list__value">$51.84</div>
+                      <div class="totals-list__value">$59.65</div>
                     </li>
                   </ul>
                 </div>
@@ -342,7 +396,7 @@
 												</a> </li>
                           <li class="dropdown-menu__item"> <a href="#" data-animation="ripple" onclick="toggleText(event)" data-values="first">Add Tax</a> </li>
                           <li class="dropdown-menu__item"> <a href="#" data-animation="ripple" onclick="toggleText(event)" data-values="second">Include Tax</a> </li>
-                          <li class="dropdown-menu__item"> <a href="#" data-animation="ripple" onclick="toggleText(event)" data-values="third" data-dropdown-open="more" data-dropdown-parent-name="sidebar" data-fullinfo-open="fullinfo" data-toggle-class-target="sidebar-header" data-toggle-class-add="is-disabled">Add Surcharge</a>                            </li>
+                          <li class="dropdown-menu__item"> <a href="#" data-animation="ripple" onclick="toggleText(event)" data-values="third">Add Convenience Fee</a> </li>
                           <li class="dropdown-menu__item"> <a href="#" data-animation="ripple">Reprint</a> </li>
                           <li class="dropdown-menu__item"> <a href="#" data-animation="ripple">Refund</a> </li>
                         </ul>
@@ -402,23 +456,15 @@
                             e.preventDefault();
                             var $target = $(e.currentTarget);
                             var text = $target.text();
-                            var id = $target.data('values');
                             var values = {
                               first: ['Add Tax', 'Remove Tax'],
                               second: ['Include Tax', 'Exclude Tax'],
-                              third: ['Add Surcharge', 'Remove Surcharge']
+                              third: ['Add Convenience Fee', 'Remove Convenience Fee']
                             };
-                            var textValues = values[id];
+                            var textValues = values[$target.data('values')];
                             textValues.forEach(function(value)
                             {
-                              if (value != text)
-                              {
-                                $target.text(value);
-                                if (id === 'third')
-                                {
-                                  (value.toLowerCase().indexOf('remove') != -1) ? $('.js-pin-title').text("Enter manager's PIN to add surcharge"): $('.js-pin-title').text("Enter manager's PIN to remove surcharge");
-                                }
-                              }
+                              if (value != text) $target.text(value);
                             });
                           }
 
@@ -429,6 +475,10 @@
                             var $checkboxes = $container.find('[type="checkbox"]');
                             var checked = $target.prop('checked');
                             $checkboxes.not($target).prop('checked', checked);
+                            $('[data-fullinfo-container="fullinfo"]').addClass('is-open');
+                            $('[data-toggle-class-container="sidebar-header"]').addClass('is-disabled');
+                            $('.js-menu').removeClass('is-open').removeClass('is-active');
+                            $('[data-dropdown-overlay="more"]').removeClass('is-open');
                           }
 
                           function check(e)
@@ -442,6 +492,10 @@
                               if (!$(this).prop('checked')) checkedAll = false;
                             });
                             $('[data-checkall]').prop('checked', checkedAll);
+                            $('[data-fullinfo-container="fullinfo"]').addClass('is-open');
+                            $('[data-toggle-class-container="sidebar-header"]').addClass('is-disabled');
+                            $('.js-menu').removeClass('is-open').removeClass('is-active');
+                            $('[data-dropdown-overlay="more"]').removeClass('is-open');
                           }
 
                         </script>
