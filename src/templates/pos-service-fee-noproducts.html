@@ -39,111 +39,7 @@ styles:
 			<aside class="sidebar sidebar_left sidebar_adaptive-poynt sidebar_disabled" data-toggle-class-container="sidebar-header" data-dropdown-parent="sidebar">
 				<div class="sidebar__body" data-order-scroll="order">
 					<div class="sidebar__content">
-						{% set orderList = [
-							{
-								title: 'T-Shirt with Print 23',
-								meta: 'Long Sleeves, XL size, Black color',
-								quantity: '2',
-								price: '$20.00',
-								total: '$35.00',
-								discount: '($5.00)',
-								state: 'default'
-							},
-							{
-								title: 'Honey',
-								meta: 'Long Sleeves, XL size, Black color <div class="order-item__notes"><a href="#">Note: </a>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nobis, animi?</div>',
-								quantity: '1',
-								price: '$8.00',
-								total: '$8.00',
-								state: 'default'
-							}
-						] %}
-						<ul class="order-list" data-order-visible="order" data-order-list="order">
-							{% for item in orderList %}
-								<li class="order-item" 
-									data-order-added="item" 
-									data-animation="ripple" 
-									data-swipe="is-open"
-									data-swipe-threshold="50">
-									<div class="order-item__container">
-										<button class="order-item__close" 
-											data-fullinfo-close="fullinfo" 
-											data-toggle-class-target="sidebar-header" 
-											data-toggle-class-remove="is-disabled"
-											data-order-delete-item="delete">
-											<i class="icon icon-close"></i>
-										</button>
-										<div class="order-item__content"
-											data-fullinfo-open="fullinfo"
-											data-toggle-class-target="sidebar-header"
-											data-toggle-class-add="is-disabled">
-											<div class="order-item__row">
-												<div class="order-item__info">
-													<div class="order-item__title">{{item.title | safe}}</div>
-												</div>
-												<div class="order-item__meta">{{item.meta | safe}}</div>
-											</div>
-											<div class="order-item__row">
-												<div class="order-item__col text-left">
-													<div class="order-item__quantity">{{item.quantity | safe}}&times;</div>
-												</div>
-												<div class="order-item__col text-right">
-													<div class="order-item__total">{{item.total | safe}}</div>
-												</div>
-												<div class="order-item__col text-left">
-													<div class="order-item__price">{{item.price | safe}}</div>
-												</div>
-												<div class="order-item__col text-right">
-													{% if item.discount %}
-														<div class="order-item__discount">{{item.discount | safe}}</div>
-													{% else %}
-														<div class="order-item__tag"></div>
-													{% endif %}
-												</div>
-											</div>
-										</div>
-									</div>
-								</li>
-							{% endfor %}
-							{% for item in [
-								{
-									label: 'Packing Fee',
-									value: '$2.40'
-								},
-								{
-									label: 'Take Out Fee',
-									value: '$2.50'
-								},
-								{
-									label: 'Delivery Fee',
-									value: '$5.00'
-								}
-							] %}
-								<li class="order-item order-item_sub" 
-									data-order-added="item" 
-									data-swipe="is-open"
-									data-swipe-threshold="50">
-									<div class="order-item__container">
-										<button class="order-item__close" onclick="openPin(event)">
-											<i class="icon icon-close"></i>
-										</button>
-										<div class="order-item__content">
-											<div class="order-item__row">
-												<div class="order-item__info">
-													<div class="order-item__title"><em>{{item.label | safe}}</em></div>
-												</div>
-											</div>
-											<div class="order-item__row">
-												<div class="order-item__col order-item__col_wide text-right">
-													<div class="order-item__total">{{item.value | safe}}</div>
-												</div>
-											</div>
-										</div>
-									</div>
-								</li>
-							{% endfor %}
-						</ul>
-						<div class="order-empty is-hidden" data-order-empty="order">
+						<div class="order-empty" data-order-empty="order">
 							<div class="order-empty__center">
 								<h5>Order is empty</h5>
 								<p>Add items from catalog</p>
@@ -156,23 +52,14 @@ styles:
 						{% set totalsListMain = [
 							{
 								label: 'Subtotal',
-								value: '48.00'
+								value: '0.00'
 							},
 							{
 								label: 'Discount',
-								value: '($5.00)',
-								nodollar: true
+								value: '0.00'
 							}
 						] %}
 						{% set totalsListScroll = [
-							{
-								label: 'Service Fee',
-								value: '9.90'
-							},
-							{
-								label: 'TAX',
-								value: '4.30'
-							}
 						] %}
 						<div class="totals__container">
 							<ul class="totals-list totals-list_main">
@@ -194,7 +81,7 @@ styles:
 							<ul class="totals-list totals-list_scroll">
 								<li class="totals-list__item totals-list__item_total">
 									<div class="totals-list__label">Total</div>
-									<div class="totals-list__value">$57.20</div>
+									<div class="totals-list__value">$0.00</div>
 								</li>
 							</ul>
 						</div>
@@ -274,20 +161,20 @@ styles:
 											</a>
 											<ul class="dropdown-menu__submenu-list js-checkall-container" data-scrollbar="default">
 												<li class="dropdown-menu__submenu-item"> 
-													{{mixins.checkbox({ content: 'All', attrs: 'onchange="checkall(event)" data-checkall="true"' })}}
+													{{mixins.checkbox({ content: 'All', attrs: 'onchange="checkall(event)" data-checkall="true" disabled' })}}
 												</li>
 												<li class="dropdown-menu__submenu-item"> 
-													{{mixins.checkbox({ content: 'Packing Fee', attrs: 'onchange="check(event)"' })}}
+													{{mixins.checkbox({ content: 'Packing Fee', attrs: 'onchange="check(event)" disabled' })}}
 												</li>
 												<li class="dropdown-menu__submenu-item"> 
-													{{mixins.checkbox({ content: 'Take Out Fee', attrs: 'onchange="check(event)"' })}}
+													{{mixins.checkbox({ content: 'Take Out Fee', attrs: 'onchange="check(event)" disabled' })}}
 												</li>
 												<li class="dropdown-menu__submenu-item"> 
-													{{mixins.checkbox({ content: 'Delivery Fee', attrs: 'onchange="check(event)"' })}}
+													{{mixins.checkbox({ content: 'Delivery Fee', attrs: 'onchange="check(event)" disabled' })}}
 												</li>
 											</ul>
 											<div class="dropdown-menu__submenu-footer">
-												<button class="btn btn_blue btn_lg btn_block text-uppercase" onclick="openPin(event)">Done</button>
+												<button class="btn btn_blue btn_lg btn_block text-uppercase" disabled>Done</button>
 											</div>
 										</div>
 										<script>
@@ -324,7 +211,6 @@ styles:
 												$checkboxes
 													.not($target)
 													.prop('checked', checked);
-
 											}
 											function check(e) {
 												var $target = $(e.target);
@@ -335,13 +221,6 @@ styles:
 													if (!$(this).prop('checked')) checkedAll = false;
 												});
 												$('[data-checkall]').prop('checked', checkedAll);
-											}
-											function openPin(e) {
-												e.preventDefault();
-												$('[data-fullinfo-container="fullinfo"]').addClass('is-open');
-												$('[data-toggle-class-container="sidebar-header"]').addClass('is-disabled');
-												$('.js-menu').removeClass('is-open').removeClass('is-active');
-												$('[data-dropdown-overlay="more"]').removeClass('is-open');
 											}
 										</script>
 									</div>
