@@ -161,20 +161,20 @@ styles:
 											</a>
 											<ul class="dropdown-menu__submenu-list js-checkall-container" data-scrollbar="default">
 												<li class="dropdown-menu__submenu-item"> 
-													{{mixins.checkbox({ content: 'All', attrs: 'onchange="checkall(event)" data-checkall="true" disabled' })}}
+													{{mixins.checkbox({ content: 'All', classList: 'is-disabled', attrs: 'onchange="checkall(event)" data-checkall="true" disabled' })}}
 												</li>
 												<li class="dropdown-menu__submenu-item"> 
-													{{mixins.checkbox({ content: 'Packing Fee', attrs: 'onchange="check(event)" disabled' })}}
+													{{mixins.checkbox({ content: 'Packing Fee', classList: 'is-disabled', attrs: 'onchange="check(event)" disabled' })}}
 												</li>
 												<li class="dropdown-menu__submenu-item"> 
-													{{mixins.checkbox({ content: 'Take Out Fee', attrs: 'onchange="check(event)" disabled' })}}
+													{{mixins.checkbox({ content: 'Take Out Fee', classList: 'is-disabled', attrs: 'onchange="check(event)" disabled' })}}
 												</li>
 												<li class="dropdown-menu__submenu-item"> 
-													{{mixins.checkbox({ content: 'Delivery Fee', attrs: 'onchange="check(event)" disabled' })}}
+													{{mixins.checkbox({ content: 'Delivery Fee', classList: 'is-disabled', attrs: 'onchange="check(event)" disabled' })}}
 												</li>
 											</ul>
 											<div class="dropdown-menu__submenu-footer">
-												<button class="btn btn_blue btn_lg btn_block text-uppercase" disabled>Done</button>
+												<button class="btn btn_blue btn_lg btn_block text-uppercase" disabled data-animation="ripple">Done</button>
 											</div>
 										</div>
 										<script>

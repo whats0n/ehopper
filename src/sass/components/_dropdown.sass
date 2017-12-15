@@ -210,9 +210,12 @@
         width: 100%
         text-align: left
         white-space: normal
-        +active 
-          color: $white
-          background: $blue
+        &.is-disabled
+          cursor: not-allowed
+        &:not(.is-disabled)
+          +active 
+            color: $white
+            background: $blue
         .icon
           top: 5px
           left: 10px
