@@ -1,0 +1,39 @@
+.main-state-negative
+	.sidebar__toolbar
+		.toolbar__col
+			&:not(:last-child)
+				border-color: lighten($red, 10%)
+		.toolbar__button
+			background: $red
+
+.order-item
+	&.is-negative
+		.order-item
+			&__total
+				color: $red
+
+.totals-list
+	&__item
+		&.is-negative
+			.totals-list__value
+				color: $red
+
+//header
+.main-header
+	&__menu
+		~ .main-header__subtitle
+			padding-left: 80px
+	&__delete
+		~ .main-header__subtitle
+			padding-right: 50px
+	&__subtitle
+		overflow: hidden
+		margin: 4px 0
+		height: 42px
+		+rmed
+		+vertical
+		text-align: left
+		span
+			display: inline-block
+			vertical-align: middle
+			font-size: 18px

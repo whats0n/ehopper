@@ -408,6 +408,9 @@
 				</div>
 			</div>
 		</div>
+		{% if props.sidebarTitle %}
+			<div class="main-header__subtitle {{props.sidebarTitleClassList}}"><span>{{props.sidebarTitle}}</span></div>
+		{% endif %}
 	</div>
 	<!-- end sidebar for shopping cart -->
 
