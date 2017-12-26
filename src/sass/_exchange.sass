@@ -1,3 +1,4 @@
+//pos
 .main-state-negative
 	.sidebar__toolbar
 		.toolbar__col
@@ -37,3 +38,41 @@
 			display: inline-block
 			vertical-align: middle
 			font-size: 18px
+
+//order details
+.table-body
+	&__tr
+		&.is-negative
+			color: $red
+			.table-wrapper
+				&__value
+					text-decoration: underline
+					cursor: pointer
+					+nosel
+					&.is-active
+						&:after
+							transform: rotate(90deg)
+					&:after
+						content: ''
+						display: inline-block
+						vertical-align: middle
+						margin: 0 0 0 5px
+						+arr(6,8,$red,r)
+						transition: transform 0.2s
+				&__from
+					// display: none
+					opacity: 0
+					visibility: hidden
+					padding: 10px 0 0 20px
+					color: $darkGray
+					font-size: 12px
+					transition: opacity 0.2s, visibility 0.2s
+					&.is-open
+						opacity: 1
+						visibility: visible
+					a
+						display: inline-block
+						color: inherit
+			.order__action
+				visibility: hidden
+				pointer-events: none
