@@ -358,6 +358,11 @@
   &__meta
     opacity: 0.5
 
+  &__status-label
+    padding-top: 5px
+    // opacity: 0.5
+    font-size: 12px
+
   //min sizes
   &[data-table="terminal"]
     [data-table-fake],
@@ -421,6 +426,9 @@
     &[data-column*="orders-status"],
     &[data-column*="orders-tips-status"]
       width: 70px
+    &[data-column*="orders-status-text"],
+    &[data-column*="orders-tips-status-text"]
+      width: 80px
     &[data-column*="orders-action"]
       width: 110px
       +lg

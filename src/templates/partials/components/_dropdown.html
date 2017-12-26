@@ -80,7 +80,7 @@
 		{% if props.label %}
 			<div class="dropdown__label">{{props.label}}</div>
 		{% endif %}
-		<div class="dropdown__value" data-dropdown-value="{{props.name}}">{{props.value}}</div>
+		<div class="dropdown__value" data-dropdown-value="{{props.name}}">{{props.value | safe}}</div>
 	</div>
 	{{menu(props)}}
 </div>

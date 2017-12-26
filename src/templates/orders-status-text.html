@@ -1,0 +1,286 @@
+---
+title: 'Orders &bull; eHopper POS'
+styles: 
+	- 'pos'
+---
+{% extends "layouts/_layout.html" %}
+
+{% block content %}
+	<main class="main">
+		<div class="inner orders">
+			{{header.call({
+				classList: 'main-header_simple-search',
+				sidebarClassList: 'is-hidden',
+				fullinfoClassList: 'is-hidden',
+				menuBtnClassList: 'is-hidden',
+				helpBtnClassList: 'is-hidden',
+				searchClassList: 'main-header__searchbox_right',
+				syncBtnClassList: 'is-hidden',
+				searchBtnClassList: 'is-hidden',
+				syncClassList: 'is-hidden',
+				scanBtnClassList: 'is-hidden',
+				containerClassList: 'main-header__container_full',
+				title: 'Orders'
+			})}}
+			<div class="orders__container">
+				<div class="orders__body">
+					{% set ordersToolbar = [
+						{
+							dropdownSimple: {
+								multiple: true,
+								placeholder: 'Show all',
+								label: 'Stores:',
+								value: 'Show all',
+								list: [ { text: 'Store 1', value: 'Store 1' }, { text: 'Store 2', value: 'Store 2' }, { text: 'Store 3', value: 'Store 3' }, { text: 'Store 4', value: 'Store 4' }, { text: 'Store 5', value: 'Store 5' } ],
+								listOnly: true,
+								name: 'orders-stores',
+								menuAttrs: 'data-scrollbar="default"'
+							}
+						},
+						{
+							dropdownSimple: {
+								label: 'Register:',
+								value: 'All',
+								list: [ { text: 'All', value: 'All' }, { text: 'Register 1', value: 'Register 1' }, { text: 'Register 2', value: 'Register 2' }, { text: 'Register 3', value: 'Register 3' }, { text: 'Register 4', value: 'Register 4' }, { text: 'Register 5', value: 'Register 5' } ],
+								listOnly: true,
+								activeItem: 0,
+								name: 'orders-register',
+								menuAttrs: 'data-scrollbar="default"'
+							}
+						},
+						{
+							dropdownSimple: {
+								label: 'Order Type:',
+								value: 'All',
+								list: [ { text: 'All', value: 'All' }, { text: 'Quick Sale', value: 'Quick Sale' }, { text: 'Dine In', value: 'Dine In' }, { text: 'Take out', value: 'Take out' }, { text: 'Drive thru', value: 'Drive thru' }, { text: 'Delivery', value: 'Delivery' }, { text: 'Manual Sale', value: 'Manual Sale' } ],
+								listOnly: true,
+								activeItem: 0,
+								name: 'orders-order-type',
+								menuAttrs: 'data-scrollbar="default"'
+							}
+						},
+						{
+							dropdownSimple: {
+								label: 'Status:',
+								value: 'All',
+								list: [ 
+									{ text: 'All', value: 'All' }, 
+									{ text: 'Not Paid', value: 'Not Paid' }, 
+									{ text: 'Pending Payment', value: 'Pending Payment' }, 
+									{ text: 'Partially Paid', value: 'Partially Paid' }, 
+									{ text: 'Paid', value: 'Paid' }, 
+									{ text: 'Partially Refunded', value: 'Partially Refunded' }, 
+									{ text: 'Refunded', value: 'Refunded' }, 
+									{ text: 'Voided', value: 'Voided' }
+								],
+								listOnly: true,
+								activeItem: 0,
+								name: 'orders-status',
+								menuAttrs: 'data-scrollbar="default"'
+							}
+						},
+						{
+							dropdownSimple: {
+								label: 'Fulfillment:',
+								value: 'All',
+								list: [ { text: 'All', value: 'All' }, { text: 'New', value: 'New' }, { text: 'In Preparation', value: 'In Preparation' }, { text: 'Prepared', value: 'Prepared' }, { text: 'In Fulfillment', value: 'In Fulfillment' }, { text: 'Fulfilled', value: 'Fulfilled' } ],
+								listOnly: true,
+								activeItem: 0,
+								name: 'orders-fulfillment',
+								menuAttrs: 'data-scrollbar="default"'
+							}
+						}
+					] %}	
+					<div class="toolbar orders__toolbar">
+						<div class="toolbar__container">
+							<div class="toolbar__row">
+								{% for item in ordersToolbar %}
+									<div class="toolbar__col">
+										{% if item.dropdownSimple %}
+											{{dropdown.simple(item.dropdownSimple)}}
+										{% endif %}
+									</div>
+								{% endfor %}
+								<div class="toolbar__col toolbar__col_refresh">
+									<button class="btn btn_lg btn_white btn_block" data-animation="ripple">
+										<i class="icon icon-undo"></i>
+										Refresh
+									</button>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="orders__content">
+						<div class="table-wrapper table-wrapper_no-footer" data-table="orders">
+							{% set table = {
+								header: [
+									{ column: 'orders-status-text', content: 'Status' },
+									{ column: 'orders-id', content: 'Order ID' },
+									{ column: 'orders-name', content: 'Order Name' },
+									{ column: 'orders-store', content: 'Store' },
+									{ column: 'orders-register', content: 'Register' },
+									{ column: 'orders-type', content: 'Type' },
+									{ column: 'orders-fulfillment', content: 'Fulfillment' },
+									{ column: 'orders-total', content: 'Total' },
+									{ column: 'orders-date', content: 'Date' },
+									{ column: 'orders-employee', content: 'Employee' },
+									{ column: 'orders-customer', content: 'Customer' },
+									{ column: 'orders-action', content: 'Action' }
+								],
+								body: [
+									[
+										{ column: 'orders-status-text', content: '<div class="table-wrapper__status-label">Paid</div>' },
+										{ column: 'orders-id', content: '<div class="table-wrapper__value">040660174749</div>' },
+										{ column: 'orders-name', content: '&nbsp;' },
+										{ column: 'orders-store', content: 'Main Store' },
+										{ column: 'orders-register', content: '1' },
+										{ column: 'orders-type', content: 'Quick Sale' },
+										{ column: 'orders-fulfillment', content: 'Done' },
+										{ column: 'orders-total', content: '$123456789012345.12' },
+										{ column: 'orders-date', date: { day: '03/07/2017', time: '12:59:00' } },
+										{ column: 'orders-employee', content: 'Mr. John Snow' },
+										{ column: 'orders-customer', content: 'Walk In' },
+										{ column: 'orders-action', action: true }
+									],
+									[
+										{ column: 'orders-status-text', content: '<div class="table-wrapper__status-label">Not Paid</div>' },
+										{ column: 'orders-id', content: '<div class="table-wrapper__value">040660174750</div> <div class="table-wrapper__meta">Saved order name</div>' },
+										{ column: 'orders-name', content: '&nbsp;' },
+										{ column: 'orders-store', content: 'Second Store' },
+										{ column: 'orders-register', content: '4' },
+										{ column: 'orders-type', content: 'Quick Sale' },
+										{ column: 'orders-fulfillment', content: 'Done' },
+										{ column: 'orders-total', content: '$56.33' },
+										{ column: 'orders-date', date: { day: '03/07/2017', time: '12:59:00' } },
+										{ column: 'orders-employee', content: 'Mr. John Snow' },
+										{ column: 'orders-customer', content: 'Walk In' },
+										{ column: 'orders-action', action: 'cart' }
+									],
+									[
+										{ column: 'orders-status-text', content: '<div class="table-wrapper__status-label">Paid</div>' },
+										{ column: 'orders-id', content: '<div class="table-wrapper__value">040660174750</div> <div class="table-wrapper__meta">Saved order name</div>' },
+										{ column: 'orders-name', content: '&nbsp;' },
+										{ column: 'orders-store', content: 'Second Store' },
+										{ column: 'orders-register', content: '4' },
+										{ column: 'orders-type', content: 'Quick Sale' },
+										{ column: 'orders-fulfillment', content: 'Done' },
+										{ column: 'orders-total', content: '$56.33' },
+										{ column: 'orders-date', date: { day: '03/07/2017', time: '12:59:00' } },
+										{ column: 'orders-employee', content: 'Mr. John Snow' },
+										{ column: 'orders-customer', content: 'Walk In' },
+										{ column: 'orders-action', action: 'cart' }
+									],
+									[
+										{ column: 'orders-status-text', content: '<div class="table-wrapper__status-label">Partially Refunded</div>' },
+										{ column: 'orders-id', content: '<div class="table-wrapper__value">040660174000</div>' },
+										{ column: 'orders-name', content: '&nbsp;' },
+										{ column: 'orders-store', content: 'Main Store' },
+										{ column: 'orders-register', content: '2' },
+										{ column: 'orders-type', content: 'Delivery' },
+										{ column: 'orders-fulfillment', content: 'Done' },
+										{ column: 'orders-total', content: '$56.33' },
+										{ column: 'orders-date', date: { day: '03/07/2017', time: '12:59:00' } },
+										{ column: 'orders-employee', content: 'Mr. John Snow' },
+										{ column: 'orders-customer', content: 'VIP Mr. Donald Trump' },
+										{ column: 'orders-action', action: true }
+									],
+									[
+										{ column: 'orders-status-text', content: '<div class="table-wrapper__status-label">Refunded</div>' },
+										{ column: 'orders-id', content: '<div class="table-wrapper__value">040660174001</div>' },
+										{ column: 'orders-name', content: '&nbsp;' },
+										{ column: 'orders-store', content: 'Main Store' },
+										{ column: 'orders-register', content: '1' },
+										{ column: 'orders-type', content: 'Quick Sale' },
+										{ column: 'orders-fulfillment', content: 'Voided' },
+										{ column: 'orders-total', content: '$56.33' },
+										{ column: 'orders-date', date: { day: '12/12/2016', time: '9:00:00' } },
+										{ column: 'orders-employee', content: 'Samantha Fox' },
+										{ column: 'orders-customer', content: 'Walk In' },
+										{ column: 'orders-action', action: true }
+									],
+									[
+										{ column: 'orders-status-text', content: '<div class="table-wrapper__status-label">Voided</div>' },
+										{ column: 'orders-id', content: '<div class="table-wrapper__value">040660174001</div>' },
+										{ column: 'orders-name', content: '&nbsp;' },
+										{ column: 'orders-store', content: 'Main Store' },
+										{ column: 'orders-register', content: '1' },
+										{ column: 'orders-type', content: 'Quick Sale' },
+										{ column: 'orders-fulfillment', content: 'Voided' },
+										{ column: 'orders-total', content: '$56.33' },
+										{ column: 'orders-date', date: { day: '12/12/2016', time: '9:00:00' } },
+										{ column: 'orders-employee', content: 'Samantha Fox' },
+										{ column: 'orders-customer', content: 'Walk In' },
+										{ column: 'orders-action', action: true }
+									],
+									[
+										{ column: 'orders-status-text', content: '<div class="table-wrapper__status-label">Partially Paid</div>' },
+										{ column: 'orders-id', content: '<div class="table-wrapper__value">040660174001</div>' },
+										{ column: 'orders-name', content: '&nbsp;' },
+										{ column: 'orders-store', content: 'Main Store' },
+										{ column: 'orders-register', content: '1' },
+										{ column: 'orders-type', content: 'Quick Sale' },
+										{ column: 'orders-fulfillment', content: 'Voided' },
+										{ column: 'orders-total', content: '$56.33' },
+										{ column: 'orders-date', date: { day: '12/12/2016', time: '9:00:00' } },
+										{ column: 'orders-employee', content: 'Samantha Fox' },
+										{ column: 'orders-customer', content: 'Walk In' },
+										{ column: 'orders-action', action: true }
+									]
+								]
+							} %}
+							<div class="table-wrapper__header" data-table-fake="orders">
+								<div class="table-header">
+									<ul class="table-header__tr">
+										{% for th in table.header %}
+											<li class="table-header__th" data-column="{{th.column}}">{{th.content | safe}}</li>
+										{% endfor %}
+									</ul>
+								</div>
+							</div>
+							<div class="table-wrapper__body" data-scrollbar="default" data-table-scrollable="orders">
+								<div class="table-body table-body_orders table-wrapper__table" data-table-main="orders">
+									{% for item in range(0,5) %}
+										{% for tr in table.body %}
+											<div class="table-body__tr">
+												{% for td in tr %}
+													<div class="table-body__td" data-column="{{td.column}}">
+														{% if td.date %}
+															<div class="text-date">
+																<span>{{td.date.day}}</span>
+																<small>{{td.date.time}}</small>
+															</div>
+														{% elif td.action %}
+															<div class="orders__action">
+																{% if td.action === 'cart' %}
+																	<button class="btn btn_icon"><i class="icon icon-pos"></i></button>
+																{% endif %}
+																<button class="btn btn_icon"><i class="icon icon-next"></i></button>
+															</div>
+														{% else %}
+															{{td.content | safe}}
+														{% endif %}
+													</div>
+												{% endfor %}
+											</div>
+										{% endfor %}
+									{% endfor %}
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="orders__footer">
+						<button class="btn btn_default" data-animation="ripple">
+							<i class="icon icon-expand"></i>
+							Show more
+						</button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</main>
+
+	{{modal.help()}}
+	{{menu.call({
+		active: 1
+	})}}
+{% endblock %}
