@@ -55,7 +55,7 @@
 			<div class="field__switch">
 				<label class="field__switch-left" for="{{props.switch.id}}">{{props.switch.left}}</label>
 				<label class="field__switch-box switcher">
-					<input type="checkbox" id="{{props.switch.id}}">
+					<input type="checkbox" id="{{props.switch.id}}" {{props.switch.inputAttrs | safe}}>
 					<i class="switcher__icon"></i>
 				</label>
 				<label class="field__switch-right" for="{{props.switch.id}}">{{props.switch.right}}</label>

@@ -3,7 +3,7 @@
 
   <head>
     <meta charset="utf-8">
-    <title>Order Details &bull; eHopper POS</title>
+    <title>Cash Method &bull; eHopper POS</title>
     <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <meta name="theme-color" content="#fff">
@@ -19,7 +19,7 @@
     <div class="application" id="application">
       <!-- BEGIN content -->
       <main class="main">
-        <div class="inner order">
+        <div class="inner">
           <!-- begin header -->
           <header class="main-header ">
             <!-- begin button 'back' --><button class="main-header__back btn-back ">
@@ -31,7 +31,7 @@
             <div class="main-header__container main-header__container_full"> <button class="btn-icon main-header__help is-hidden" title="Help" data-modal-open="help">
 			<i class="icon icon-help"></i>
 		</button>
-              <h2 class="title-xlg main-header__title ">Order Details - Register #1 - Status: Paid</h2>
+              <h2 class="title-xlg main-header__title ">Cash Payment</h2>
               <div class="main-header__searchbox is-hidden">
                 <!-- begin search -->
                 <div class="search" data-modal="search">
@@ -191,143 +191,144 @@
             <!-- end container for fullinfo on the shopping cart -->
           </header>
           <!-- end header -->
-          <aside class="order__sidebar" data-dropdown-parent="sidebar">
-            <div class="order__info" data-scrollbar="default">
-              <div class="infoblock">
-                <div class="infoblock__row">
-                  <div class="infoblock__col"> <small class="infoblock__label">Store:</small> <em class="infoblock__value">WestGuestCafe</em> </div>
-                  <div class="infoblock__col"> <small class="infoblock__label">Order ID:</small> <em class="infoblock__value">0000123</em> </div>
-                  <div class="infoblock__col"> <small class="infoblock__label">Order Name:</small> <em class="infoblock__value"></em> </div>
-                  <div class="infoblock__col"> <small class="infoblock__label">Customer:</small> <em class="infoblock__value">Walk-In</em> </div>
-                  <div class="infoblock__col"> <small class="infoblock__label">Customer Phone:</small> <em class="infoblock__value"></em> </div>
-                  <div class="infoblock__col"> <small class="infoblock__label">Employee:</small> <em class="infoblock__value">Mr. Seller Name</em> </div>
-                  <div class="infoblock__col"> <small class="infoblock__label">Order Date:</small> <em class="infoblock__value">12/21/2016 14:19:28</em> </div>
-                </div>
-              </div>
-              <hr>
-              <div class="infoblock">
-                <div class="infoblock__row">
-                  <div class="infoblock__col"> <i class="icon icon-check infoblock__icon"></i> <small class="infoblock__label">Status:</small> <em class="infoblock__value">Paid</em> </div>
-                  <div class="infoblock__col"> <small class="infoblock__label">Tender Type:</small> <em class="infoblock__value">Cash</em> </div>
-                  <div class="infoblock__col"> <small class="infoblock__label">Fulfillment:</small> <em class="infoblock__value">Fulfilled</em> </div>
-                  <div class="infoblock__col"> <small class="infoblock__label">Refnum:</small> <em class="infoblock__value"></em> </div>
-                </div>
-              </div>
-              <hr>
-              <div class="poynt-divider"></div>
-              <div class="infoblock infoblock_inline">
-                <div class="infoblock__row">
-                  <div class="infoblock__col"> <small class="infoblock__label">Sub:</small> <em class="infoblock__value">$29.70</em> </div>
-                  <div class="infoblock__col"> <small class="infoblock__label">Discount:</small> <em class="infoblock__value">$0.00</em> </div>
-                  <div class="infoblock__col"> <small class="infoblock__label">Tax:</small> <em class="infoblock__value">$0.00</em> </div>
-                  <div class="infoblock__col"> <small class="infoblock__label">Tips:</small> <em class="infoblock__value">$0.00</em> </div>
-                  <div class="infoblock__col"> <small class="infoblock__label">Total:</small> <em class="infoblock__value">$29.70</em> </div>
-                </div>
-              </div>
-              <hr>
-              <div class="infoblock infoblock_inline">
-                <div class="infoblock__row">
-                  <div class="infoblock__col">
-                    <div class="order-notes"> <i class="icon icon-note order-notes__icon"></i>
-                      <div class="order-notes__content">Order Note text goes here (if present)</div>
-                    </div>
+          <aside class="sidebar sidebar_left sidebar_list is-poynt-hidden">
+            <div class="sidebar__header">
+              <div class="toolbar toolbar_static">
+                <div class="toolbar__container">
+                  <div class="toolbar__row">
+                    <div class="toolbar__col">Quick Sale</div>
+                    <div class="toolbar__col">Walk in</div>
                   </div>
                 </div>
               </div>
             </div>
+            <div class="sidebar__body">
+              <div class="sidebar__content">
+                <ul class="order-list">
+                  <li class="order-item order-item_static">
+                    <div class="order-item__container">
+                      <div class="order-item__content">
+                        <div class="order-item__row">
+                          <div class="order-item__info">
+                            <div class="order-item__title">T-Shirt with Print 23</div>
+                          </div>
+                        </div>
+                        <div class="order-item__row">
+                          <div class="order-item__col">
+                            <div class="order-item__quantity">2&times;</div>
+                            <div class="order-item__price">$20.00</div>
+                          </div>
+                          <div class="order-item__col">
+                            <div class="order-item__total">$35.00</div>
+                            <div class="order-item__discount">($5.00)</div>
+                          </div>
+                        </div>
+                        <div class="order-item__meta">Long Sleeves, XL size, Black color</div>
+                      </div>
+                    </div>
+                  </li>
+                  <li class="order-item order-item_static">
+                    <div class="order-item__container">
+                      <div class="order-item__content">
+                        <div class="order-item__row">
+                          <div class="order-item__info">
+                            <div class="order-item__title">Honey</div>
+                          </div>
+                        </div>
+                        <div class="order-item__row">
+                          <div class="order-item__col">
+                            <div class="order-item__quantity">1&times;</div>
+                            <div class="order-item__price">$8.00</div>
+                          </div>
+                          <div class="order-item__col">
+                            <div class="order-item__total">$8.00</div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div class="sidebar__footer">
+              <div class="totals totals_static sidebar__totals">
+                <div class="totals__container">
+                  <ul class="totals-list totals-list_main">
+                    <li class="totals-list__item">
+                      <div class="totals-list__label">Subtotal</div>
+                      <div class="totals-list__value">$48.00</div>
+                    </li>
+                    <li class="totals-list__item">
+                      <div class="totals-list__label">Discount</div>
+                      <div class="totals-list__value">($5.00)</div>
+                    </li>
+                  </ul>
+                  <ul class="totals-list totals-list_scroll" data-scrollbar="default">
+                    <li class="totals-list__item">
+                      <div class="totals-list__label">TAX</div>
+                      <div class="totals-list__value">$4.30</div>
+                    </li>
+                  </ul>
+                  <ul class="totals-list totals-list_main">
+                    <li class="totals-list__item">
+                      <div class="totals-list__label">Total</div>
+                      <div class="totals-list__value">$47.30</div>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
           </aside>
-          <div class="order__container">
-            <div class="order__body">
-              <div class="order__content">
-                <div class="table-wrapper table-wrapper_no-footer table-wrapper_header-lg" data-table="order">
-                  <div class="table-wrapper__header" data-table-fake="order">
-                    <div class="table-header">
-                      <ul class="table-header__tr">
-                        <li class="table-header__th" data-column="icon">
-                          <div class="order__action"> <label class="checkbox ">
-	<input type="checkbox" >
-	<i class="icon icon-check"></i>
-	
-</label> </div>
-                        </li>
-                        <li class="table-header__th" data-column="order-item"> Description </li>
-                        <li class="table-header__th" data-column="order-transaction-type"> Transaction Type </li>
-                        <li class="table-header__th" data-column="order-quantity"> Quantity </li>
-                        <li class="table-header__th" data-column="order-price"> Item Price </li>
-                        <li class="table-header__th" data-column="order-discount"> Discount </li>
-                        <li class="table-header__th" data-column="order-total"> Total </li>
-                      </ul>
+          <div class="container container_right container_payments">
+            <div class="container__body step-body">
+              <div class="step-body__section">
+                <div class="form form_sm" id="payment-cash-tips-3">
+                  <div class="form__section">
+                    <div class="info-price text-center">
+                      <div class="info-price__label">Amount Due:</div>
+                      <div class="info-price__value "> <small>$</small> <span>102.00</span> </div>
                     </div>
                   </div>
-                  <div class="table-wrapper__body" data-scrollbar="default" data-table-scrollable="order">
-                    <div class="table-body table-body_order table-wrapper__table" data-table-main="order">
-                      <div class="table-body__tr ">
-                        <div class="table-body__td" data-column="icon">
-                          <div class="order__action"> <label class="checkbox ">
-	<input type="checkbox" >
-	<i class="icon icon-check"></i>
-	
-</label> </div>
+                  <div class="form__section">
+                    <div class="fieldset fieldset_bordered">
+                      <div class="main-display"> <button class="main-display__clear" data-numpad="numpad-clear"><i class="icon icon-clear"></i></button>
+                        <div class="field ">
+                          <div class="field__inner"> <label class="field__label field__label_sm" for="amount-tendered">Amount Tendered:</label>
+                            <div class="field__box"> <input class="input field__input text-right input_xl" value="200.00" id="amount-tendered" type="text" placeholder="0" required readonly> </div>
+                          </div>
                         </div>
-                        <div class="table-body__td" data-column="order-item">
-                          <div class="table-wrapper__value">3 Stripe Chelsea Shorts Mens</div>
-                          <div class="table-wrapper__meta">M/Black</div>
-                        </div>
-                        <div class="table-body__td" data-column="order-transaction-type"> Sale </div>
-                        <div class="table-body__td" data-column="order-quantity"> 1 </div>
-                        <div class="table-body__td" data-column="order-price"> $21.60 </div>
-                        <div class="table-body__td" data-column="order-discount"> &nbsp; </div>
-                        <div class="table-body__td" data-column="order-total"> $21.60 </div>
                       </div>
-                      <div class="table-body__tr ">
-                        <div class="table-body__td" data-column="icon">
-                          <div class="order__action"> <label class="checkbox ">
-	<input type="checkbox" >
-	<i class="icon icon-check"></i>
-	
-</label> </div>
+                      <!-- begin keyboard -->
+                      <div class="main-keyboard numpad ">
+                        <div class="main-keyboard__container ">
+                          <div class="main-keyboard__shortcuts">
+                            <div class="main-keyboard__item"><button type="button" data-animation="ripple" class="main-keyboard__shortcuts-button ">Exact</button></div>
+                            <div class="main-keyboard__item"><button type="button" data-animation="ripple" class="main-keyboard__shortcuts-button ">$10</button></div>
+                            <div class="main-keyboard__item"><button type="button" data-animation="ripple" class="main-keyboard__shortcuts-button ">$20</button></div>
+                          </div>
+                          <div class="main-keyboard__main">
+                            <div class="main-keyboard__item"> <button type="button" data-animation="ripple" class="main-keyboard__button ">1</button> </div>
+                            <div class="main-keyboard__item"> <button type="button" data-animation="ripple" class="main-keyboard__button ">2</button> </div>
+                            <div class="main-keyboard__item"> <button type="button" data-animation="ripple" class="main-keyboard__button ">3</button> </div>
+                            <div class="main-keyboard__item"> <button type="button" data-animation="ripple" class="main-keyboard__button ">4</button> </div>
+                            <div class="main-keyboard__item"> <button type="button" data-animation="ripple" class="main-keyboard__button ">5</button> </div>
+                            <div class="main-keyboard__item"> <button type="button" data-animation="ripple" class="main-keyboard__button ">6</button> </div>
+                            <div class="main-keyboard__item"> <button type="button" data-animation="ripple" class="main-keyboard__button ">7</button> </div>
+                            <div class="main-keyboard__item"> <button type="button" data-animation="ripple" class="main-keyboard__button ">8</button> </div>
+                            <div class="main-keyboard__item"> <button type="button" data-animation="ripple" class="main-keyboard__button ">9</button> </div>
+                            <div class="main-keyboard__item"> <button type="button" data-animation="ripple" class="main-keyboard__button ">0</button> </div>
+                            <div class="main-keyboard__item"> <button type="button" data-animation="ripple" class="main-keyboard__button ">00</button> </div>
+                            <div class="main-keyboard__item"> <button type="button" data-animation="ripple" class="main-keyboard__button " data-numpad="numpad-backspace"><i class="icon icon-backspace"></i></button> </div>
+                          </div>
                         </div>
-                        <div class="table-body__td" data-column="order-item">
-                          <div class="table-wrapper__value">Woven Shorts Mens</div>
-                          <div class="table-wrapper__meta">M/Blue</div>
-                        </div>
-                        <div class="table-body__td" data-column="order-transaction-type"> Sale </div>
-                        <div class="table-body__td" data-column="order-quantity"> 1 </div>
-                        <div class="table-body__td" data-column="order-price"> $4.20 </div>
-                        <div class="table-body__td" data-column="order-discount"> &nbsp; </div>
-                        <div class="table-body__td" data-column="order-total"> $4.20 </div>
                       </div>
-                      <div class="table-body__tr ">
-                        <div class="table-body__td" data-column="icon">
-                          <div class="order__action"> <label class="checkbox ">
-	<input type="checkbox" >
-	<i class="icon icon-check"></i>
-	
-</label> </div>
-                        </div>
-                        <div class="table-body__td" data-column="order-item">
-                          <div class="table-wrapper__value">Jersey Short Mens</div>
-                          <div class="table-wrapper__meta">L/Navy</div>
-                        </div>
-                        <div class="table-body__td" data-column="order-transaction-type"> Sale </div>
-                        <div class="table-body__td" data-column="order-quantity"> 1 </div>
-                        <div class="table-body__td" data-column="order-price"> $3.90 </div>
-                        <div class="table-body__td" data-column="order-discount"> &nbsp; </div>
-                        <div class="table-body__td" data-column="order-total"> $3.90 </div>
-                      </div>
+                      <!-- end keyboard -->
                     </div>
-                    <script>
-                      function toggleExchangeInfo(e)
-                      {
-                        $(e.currentTarget).toggleClass('is-active').siblings('[data-exchange-from]').toggleClass('is-open');
-                      }
-
-                    </script>
                   </div>
                 </div>
               </div>
-              <div class="order__footer">
-                <div class="order__buttons"> <button class="btn btn_lg btn_primary" data-animation="ripple" data-modal-open="print-receipt">Print Receipt</button> <button class="btn btn_lg btn_default" data-animation="ripple" data-modal-open="email-receipt">Email Receipt</button>                  <button class="btn btn_lg btn_default" data-animation="ripple">Refund</button> <button class="btn btn_lg btn_default" data-animation="ripple">Exchange</button> </div>
+              <div class="step-body__footer section">
+                <div class="form form_sm"> <button class="btn btn_primary btn_lg btn_block text-uppercase" data-animation="ripple" value="Done">Process</button> </div>
               </div>
             </div>
           </div>
@@ -355,102 +356,20 @@
         </div>
       </div>
       <!-- end help -->
-      <!-- begin order-receipt -->
-      <div class="modal order-receipt" data-modal="email-receipt">
-        <div class="modal__container order-receipt__container" data-modal-container="email-receipt">
-          <div class="order-receipt__header"> <button class="btn-icon order-receipt__close" data-modal-close="email-receipt"><i class="icon icon-close"></i></button>
-            <div class="order-receipt__title">Email Receipt</div>
-          </div>
-          <div class="order-receipt__body">
-            <div class="order-receipt__field">
-              <div class="field ">
-                <div class="field__inner"> <label class="field__label " for="email-receipt-address">Email Address:</label>
-                  <div class="field__box"> <input class="input field__input input_lg" id="email-receipt-address" type="text" placeholder="user@domain.com"> </div>
-                </div>
+      <!-- begin payment-terminal -->
+      <div class="modal payment-terminal" data-modal="payment-terminal">
+        <div class="modal__container payment-terminal__container" data-modal-container="payment-terminal">
+          <div class="payment-terminal__body">
+            <div class="payment-terminal__vertical">
+              <div class="payment-terminal__center">
+                <div class="loading payment-terminal__icon"></div>
+                <p>Please process Payment on your Terminal</p>
               </div>
-            </div>
-            <div class="order-receipt__field">
-              <div class="field ">
-                <div class="field__inner"> <label class="field__label " for="email-receipt-lang">Receipt Language:</label>
-                  <div class="field__box">
-                    <div class="select select_lg field__select"> <select id="email-receipt-lang">
-		
-			<option value="English"  >English</option>
-		
-			<option value="Français"  >Français</option>
-		
-			<option value="Русский"  >Русский</option>
-		
-			<option value="Español"  >Español</option>
-		
-			<option value="Custom"  >Custom</option>
-		
-	</select> </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="order-receipt__footer"> <button class="btn btn_success btn_lg btn_block" data-animation="ripple">Send</button> </div>
-        </div>
-      </div>
-      <!-- end order-receipt -->
-      <!-- begin order-receipt -->
-      <div class="modal order-receipt" data-modal="print-receipt">
-        <div class="modal__container order-receipt__container" data-modal-container="print-receipt">
-          <div class="order-receipt__header"> <button class="btn-icon order-receipt__close" data-modal-close="print-receipt"><i class="icon icon-close"></i></button>
-            <div class="order-receipt__title">Email Receipt</div>
-          </div>
-          <div class="order-receipt__body">
-            <div class="order-receipt__field">
-              <div class="field ">
-                <div class="field__inner"> <label class="field__label " for="print-receipt-lang">Receipt Language:</label>
-                  <div class="field__box">
-                    <div class="select select_lg field__select"> <select id="print-receipt-lang">
-		
-			<option value="English"  >English</option>
-		
-			<option value="Français"  >Français</option>
-		
-			<option value="Русский"  >Русский</option>
-		
-			<option value="Español"  >Español</option>
-		
-			<option value="Custom"  >Custom</option>
-		
-	</select> </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="order-receipt__checkbox"> <label class="checkbox ">
-	<input type="checkbox" >
-	<i class="icon icon-check"></i>
-	<span>Include signature</span>
-</label> </div>
-          </div>
-          <div class="order-receipt__footer"> <button class="btn btn_success btn_lg btn_block" data-animation="ripple">Send</button> </div>
-        </div>
-      </div>
-      <!-- end order-receipt -->
-      <!-- begin confirm -->
-      <div class="modal confirm" data-modal="order-void">
-        <div class="modal__container confirm__container" data-modal-container="order-void">
-          <div class="confirm__header">
-            <div class="confirm__title">Void Confirmation</div>
-          </div>
-          <div class="confirm__body">
-            <p>Are you sure you want to void the order?</p>
-          </div>
-          <div class="confirm__footer">
-            <div class="confirm__row confirm__buttons">
-              <div class="confirm__col confirm__col_md"><button class="btn btn_block btn_success" data-animation="ripple">Yes</button></div>
-              <div class="confirm__col confirm__col_md"><button class="btn btn_block btn_success" data-animation="ripple">No</button></div>
             </div>
           </div>
         </div>
       </div>
-      <!-- end confirm -->
+      <!-- end payment-terminal -->
       <!-- END content -->
       <!-- begin snackbar -->
       <div class="snackbar " data-snackbar-container="snackbar" data-state="default">

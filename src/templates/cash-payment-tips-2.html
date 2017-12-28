@@ -1,0 +1,67 @@
+---
+title: 'Cash Method &bull; eHopper POS'
+styles: 
+	- 'pos'
+---
+{% extends "layouts/_layout.html" %}
+
+{% block content %}
+	<main class="main">
+		<div class="inner">
+			{{header.call({
+				sidebarClassList: 'is-hidden',
+				fullinfoClassList: 'is-hidden',
+				menuBtnClassList: 'is-hidden',
+				helpBtnClassList: 'is-hidden',
+				searchClassList: 'is-hidden',
+				syncBtnClassList: 'is-hidden',
+				searchBtnClassList: 'is-hidden',
+				syncClassList: 'is-hidden',
+				scanBtnClassList: 'is-hidden',
+				containerClassList: 'main-header__container_full',
+				title: 'Cash Payment'
+			})}}
+			{% include 'partials/components/_payments-sidebar.html' %}
+			<div class="container container_right container_payments">
+				<div class="container__body step-body">
+					<div class="step-body__section">
+						<div class="form form_sm" id="payment-cash-tips-2">
+							<div class="form__section">
+								<div class="fieldset fieldset_bordered">
+									<div class="main-display">
+										<button class="main-display__clear" data-numpad="numpad-clear"><i class="icon icon-clear"></i></button>
+										{{mixins.field({
+											switch: {
+												left: '$',
+												right: '%',
+												id: 'discount-switcher',
+												inputAttrs: 'checked'
+											},
+											staticInput: true,
+											classList: 'field_static field_currency',
+											unitsLeft: '$',
+											unitsRight: '%',
+											id: 'item-discount',
+											value: '0'
+										})}}
+									</div>
+									{{keyboard.call({
+										shortcuts: [ { content: '3%' }, { content: '15%' }, { content: '6%' } ]
+									})}}
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="step-body__footer section">
+						<div class="form form_sm"> 
+							<button class="btn btn_primary btn_lg btn_block text-uppercase" data-animation="ripple" value="Done">Process</button> 
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</main>
+
+	{{modal.help()}}
+	{{modal.paymentTerminal()}}
+{% endblock %}
