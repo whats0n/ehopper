@@ -28,8 +28,6 @@ styles:
 						<div class="form form_sm" id="payment-cash-tips-2">
 							<div class="form__section">
 								<div class="fieldset fieldset_bordered">
-									<div class="main-display">
-										<button class="main-display__clear" data-numpad="numpad-clear"><i class="icon icon-clear"></i></button>
 										{{mixins.field({
 											switch: {
 												left: '$',
@@ -38,13 +36,11 @@ styles:
 												inputAttrs: 'checked'
 											},
 											staticInput: true,
-											classList: 'field_static field_currency',
-											unitsLeft: '$',
+											classList: 'field_static field_percent',
 											unitsRight: '%',
 											id: 'item-discount',
 											value: '0'
 										})}}
-									</div>
 									{{keyboard.call({
 										shortcuts: [ { content: '3%' }, { content: '15%' }, { content: '6%' } ]
 									})}}
