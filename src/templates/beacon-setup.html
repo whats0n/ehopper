@@ -1,0 +1,94 @@
+---
+title: 'Beacon Setup &bull; eHopper POS'
+styles: 
+	- 'pos'
+settingsActive: 3
+---
+{% extends "layouts/_layout.html" %}
+
+{% block content %}
+	<main class="main">
+		<div class="inner settings">
+			{{header.call({
+				sidebarClassList: 'is-hidden',
+				fullinfoClassList: 'is-hidden',
+				menuBtnClassList: 'is-hidden',
+				helpBtnClassList: 'is-hidden',
+				searchClassList: 'is-hidden',
+				syncBtnClassList: 'is-hidden',
+				scanBtnClassList: 'is-hidden',
+				containerClassList: 'main-header__container_full',
+				title: 'Beacon Setup',
+				searchFor: 'Search for beacons'
+			})}}
+
+			{% set customSettingsNav = [
+				{
+					text: 'Printer Setup',
+					icon: 'print'
+				},
+				{
+					text: 'Cash Drawer',
+					icon: 'cash'
+				},
+				{
+					text: 'Terminal Setup',
+					icon: 'cc'
+				},
+				{
+					text: 'Beacon Setup',
+					icon: 'none'
+				},
+				{
+					text: 'Deactivate',
+					icon: 'exit'
+				},
+				{
+					text: 'Certificates',
+					icon: 'seal'
+				}
+			] %}
+			
+			{% include 'partials/components/_settings-sidebar.html' %}
+			<div class="settings__container step-body">
+				<div class="settings__beacon">
+					<div class="settings__beacon-title">
+						<h2 class="title-xlg">Geo-fencing Mode: Mobile devices: APPs mode</h2>
+					</div>
+					<div class="tabs-box tabs-box_wide">
+						{{tabs.call({
+						classList: 'tabs_lg tabs_box',
+						name: 'beacon-setup',
+							list: [
+								{
+									name: 'connected',
+									text: 'Connected',
+									content: 'partials/beacon-setup/_connected.html'
+								},
+								{
+									name: 'disconnected',
+									text: 'Disconnected',
+									content: 'partials/beacon-setup/_disconnected.html'
+								},
+								{
+									name: 'add-new',
+									text: 'Add new beacons',
+									content: 'partials/beacon-setup/_add-new.html'
+								}
+							]
+						})}}
+					</div>
+				</div>
+				<div class="step-body__footer section">
+					<div class="beacon-footer"> 
+						<button class="btn btn_lg btn_blue text-uppercase" data-animation="ripple" value="Done">Done</button> 
+						<button class="btn btn_lg btn_red text-uppercase" data-animation="ripple" value="Done">Cancel</button> 
+					</div>
+				</div>
+			</div>
+		</div>
+	</main>
+
+	{{modal.help()}}
+	{{modal.addTerminal()}}
+{% endblock %}

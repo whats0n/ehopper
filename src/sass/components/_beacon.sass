@@ -1,0 +1,35 @@
+.beacon
+	padding: 20px
+	border: 1px solid $lightGray
+	border-radius: 10px
+	&__item
+		position: relative
+		padding-right: 70px
+		min-height: 30px
+		&:not(:last-child)
+			margin-bottom: 15px
+	&__switcher,
+	&__close
+		position: absolute
+		top: 0
+		right: 0
+	&__close
+		color: $red
+		background: none
+	&__title
+		font-size: 16px
+	&__meta
+		font-size: 14px
+		opacity: 0.5
+	&__time
+		font-size: 14px
+
+.beacon-group
+	padding: 20px
+
+.beacon-footer
+	text-align: center
+	.btn
+		min-width: 200px
+		&:not(:last-child)
+			margin-right: 20px

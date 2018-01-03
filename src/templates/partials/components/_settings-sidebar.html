@@ -32,7 +32,7 @@
 			}
 		] %}
 		<ul class="nav">
-			{% for item in settingsNav %}
+			{% for item in customSettingsNav or settingsNav %}
 				<li class="nav__item {%- if loop.index0 == settingsActive %} is-active {% endif %}">
 					<a href="#" class="nav__link"><i class="nav__icon icon icon-{{item.icon}}"></i>{{item.text}}</a>
 				</li>

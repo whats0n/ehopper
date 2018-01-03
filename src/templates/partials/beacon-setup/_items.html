@@ -1,0 +1,21 @@
+{% import './../_mixins.html' as mixins %}
+<div class="beacon">
+	{% for item in items %}
+		<div class="beacon__item">
+			{% if item.close %}
+				<button class="beacon__close icon icon-close"></button>
+			{% else %}
+				{{mixins.switcher({
+					classList: 'beacon__switcher',
+					id: item.id,
+					attrs: item.attrs
+				})}}
+			{% endif %}
+			<div class="beacon__title">{{item.title}}</div>
+			{% if item.time %}
+				<div class="beacon__time">{{item.time}}</div>
+			{% endif %}
+			<div class="beacon__meta">{{item.id}}</div>
+		</div>
+	{% endfor %}
+</div>
