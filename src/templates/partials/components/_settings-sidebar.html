@@ -34,7 +34,14 @@
 		<ul class="nav">
 			{% for item in customSettingsNav or settingsNav %}
 				<li class="nav__item {%- if loop.index0 == settingsActive %} is-active {% endif %}">
-					<a href="#" class="nav__link"><i class="nav__icon icon icon-{{item.icon}}"></i>{{item.text}}</a>
+					<a href="#" class="nav__link">
+						{% if item.icon %}
+							<i class="nav__icon icon icon-{{item.icon}}"></i>
+						{% elif item.fa %}
+							<i class="nav__icon fa fa-{{item.fa}}" aria-hidden="true"></i>
+						{% endif %}
+						{{item.text}}
+					</a>
 				</li>
 			{% endfor %}
 		</ul>
