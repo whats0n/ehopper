@@ -2,6 +2,13 @@
 	padding: 10px 0
 	border-top: 1px solid rgba($black, 0.1)
 	background: #d2edf6
+	&_gray
+		background: #f2f2f2
+		.totals-list
+			&_scroll
+				border-top-color: #eee
+			&__item
+				color: #7d7d7d
 	&_static
 		border-top: 2px solid rgba($black, 0.1)
 		background: none
@@ -15,6 +22,12 @@
 						border-top-color: darken($alabaster, 15%)
 	&__container
 		padding-top: 5px
+	&__label
+		clear: both
+		padding: 0 20px
+		color: $blue
+		+italic
+		font-size: 13px
 
 .totals-list
 	font-size: 14px
