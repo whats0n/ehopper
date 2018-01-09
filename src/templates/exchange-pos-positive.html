@@ -10,12 +10,10 @@ styles:
 		<div class="inner">
 			{{header.call({
 				backBtnClassList: 'is-hidden',
-				toolbarClassList: 'is-hidden',
 				titleClassList: 'is-hidden',
 				helpBtnClassList: 'is-hidden',
 				searchBtnClassList: 'is-hidden',
-				fullinfoBackBtnAttrs: 'data-fullinfo-close="fullinfo" data-toggle-class-target="sidebar-header" data-toggle-class-remove="is-disabled" id="cart-item-details-back"',
-				sidebarTitle: 'Exchange from Order #013420398358'
+				fullinfoBackBtnAttrs: 'data-fullinfo-close="fullinfo" data-toggle-class-target="sidebar-header" data-toggle-class-remove="is-disabled" id="cart-item-details-back"'
 			})}}
 			<div class="cart cart_poynt">
 				<div class="cart__inner">
@@ -41,6 +39,7 @@ styles:
 			<aside class="sidebar sidebar_left sidebar_adaptive-poynt sidebar_disabled" data-toggle-class-container="sidebar-header" data-dropdown-parent="sidebar">
 				<div class="sidebar__body" data-order-scroll="order">
 					<div class="sidebar__content">
+						{# <div class="sidebar__title">Exchange from Order #013420398358</div> #}
 						{% set orderList = [
 							{
 								title: '3 Stripe Chelsea Shorts Mens',
@@ -118,6 +117,7 @@ styles:
 				</div>
 				<div class="sidebar__footer">
 					<div class="totals sidebar__totals" data-order-visible="order">
+						<div class="sidebar__title">Exchange from Order #013420398358</div> 
 						{% set totalsListMain = [
 							{
 								label: 'Subtotal',

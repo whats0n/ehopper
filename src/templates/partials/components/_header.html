@@ -387,22 +387,26 @@
 							})}}
 						</div>
 						<div class="toolbar__col">
-							{{dropdown.simple({
-								dropdownClassList: 'dropdown_header dropdown_fixed',
-								value: 'Walk In',
-								special: 0,
-								list: [ 
-									{ text: 'Walk In', value: 'Walk In' }, 
-									{ text: 'John Doe <i class="icon icon-next"></i>', value: 'John Doe' }, 
-									{ text: 'Charlie Sheen <i class="icon icon-next"></i>', value: 'Charlie Sheen' }, 
-									{ text: 'Wendy Williams <i class="icon icon-next"></i>', value: 'Wendy Williams' }
-								],
-								search: true,
-								btnAdd: 'New Customer',
-								activeItem: 0,
-								name: 'customer',
-								menuAttrs: 'data-scrollbar="default"'
-							})}}
+							{% if props.toolbarSecondTitle %}
+								<div class="main-header__subtitle {{props.toolbarSecondTitleClassList}}"><span>{{props.toolbarSecondTitle}}</span></div>
+							{% else %}
+								{{dropdown.simple({
+									dropdownClassList: 'dropdown_header dropdown_fixed',
+									value: 'Walk In',
+									special: 0,
+									list: [ 
+										{ text: 'Walk In', value: 'Walk In' }, 
+										{ text: 'John Doe <i class="icon icon-next"></i>', value: 'John Doe' }, 
+										{ text: 'Charlie Sheen <i class="icon icon-next"></i>', value: 'Charlie Sheen' }, 
+										{ text: 'Wendy Williams <i class="icon icon-next"></i>', value: 'Wendy Williams' }
+									],
+									search: true,
+									btnAdd: 'New Customer',
+									activeItem: 0,
+									name: 'customer',
+									menuAttrs: 'data-scrollbar="default"'
+								})}}
+							{% endif %}
 						</div>
 					</div>
 				</div>
