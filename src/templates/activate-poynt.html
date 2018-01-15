@@ -1,0 +1,43 @@
+---
+title: 'Activate your POS &bull; eHopper'
+styles: 
+	- 'pos'
+version: true
+---
+{% extends "layouts/_layout.html" %}
+
+{% block content %}
+	
+	<main class="main">
+		{{header.large({
+			help: true,
+			logo: true
+		})}}
+		<div class="section section_form">
+			<div class="form form_sm">
+				<div class="form__section">
+					{{form.inputBox.call({
+						placeholder: 'Enterprise ID *',
+						classList: 'is-error',
+						inputAttrs: 'required',
+						errorMessage: 'Lorem ipsum dolor sit amet, consectetur adipisicing.'
+					})}}
+				</div>
+				<div class="form__section">
+					{{form.inputBox.call({
+						placeholder: 'License Key *',
+						inputAttrs: 'required'
+					})}}
+				</div>
+				<div class="form__section">
+					<button class="btn btn_lg btn_blue btn_block text-uppercase" data-animation="ripple" value="Done">Done</button>
+				</div>
+				<div class="footnote footnote_lg">For any questions, call <a href="tel:2126518911">212-651-8911</a> or email <a href="mailto:support@ehopper.com">support@ehopper.com</a> for assistance.</div>
+			</div>
+		</div>
+	</main>
+
+	{{modal.help()}}
+
+
+{% endblock %}
