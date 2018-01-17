@@ -486,18 +486,16 @@
     &[data-column="orders-register"]
       width: 7%
 
-    //order page
-    // &[data-column*="order-item"]
-    //   width: 27%
-    // &[data-column*="order-quantity"]
-    //   width: 14%
-    // &[data-column*="order-price"],
-    // &[data-column*="order-discount"],
-    // &[data-column*="order-total"]
-    //   width: 16%
     &[data-column*="orders-total"],
     &[data-column*="orders-tips-price"]
-      word-wrap: break-word
+      word-break: break-all
+
+    //order
+    &[data-column*="order-price"],
+    &[data-column*="order-discount"],
+    &[data-column*="order-total"]
+      word-break: break-all
+
 
     //certificate
     &[data-column*="certificate-active"]
