@@ -1,0 +1,18 @@
+{% import 'partials/_mixins.html' as mixins %}
+{% import 'partials/components/_keyboard.html' as keyboard %}
+<div class="tabs__keyboard">
+	<div class="fieldset fieldset_bordered">
+		<div class="main-display">
+			<button class="main-display__clear" data-numpad="numpad-clear"><i class="icon icon-clear"></i></button>
+			{{mixins.field({
+				label: 'Custom Price:',
+				units: '$',
+				id: 'item-custom-price',
+				value: '999,999,999.99',
+				static: true,
+				classList: 'field_static'
+			})}}
+		</div>
+		{{keyboard.call()}}
+	</div>
+</div>
