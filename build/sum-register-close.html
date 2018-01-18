@@ -3,7 +3,7 @@
 
   <head>
     <meta charset="utf-8">
-    <title>Cash Method &bull; eHopper POS</title>
+    <title>Close Register &bull; eHopper POS</title>
     <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <meta name="theme-color" content="#fff">
@@ -31,7 +31,7 @@
             <div class="main-header__container main-header__container_full"> <button class="btn-icon main-header__help is-hidden" title="Help" data-modal-open="help">
 			<i class="icon icon-help"></i>
 		</button>
-              <h2 class="title-xlg main-header__title ">Cash Payment</h2>
+              <h2 class="title-xlg main-header__title ">Close Register</h2>
               <div class="main-header__searchbox is-hidden">
                 <!-- begin search -->
                 <div class="search" data-modal="search">
@@ -191,120 +191,77 @@
             <!-- end container for fullinfo on the shopping cart -->
           </header>
           <!-- end header -->
-          <aside class="sidebar sidebar_left sidebar_list is-poynt-hidden">
-            <div class="sidebar__header">
-              <div class="toolbar toolbar_static">
-                <div class="toolbar__container">
-                  <div class="toolbar__row">
-                    <div class="toolbar__col">Quick Sale</div>
-                    <div class="toolbar__col">Walk in</div>
-                  </div>
+          <aside class="sidebar sidebar_left sidebar_white">
+            <div class="infoblock infoblock_collapsed">
+              <div class="infoblock__row">
+                <div class="infoblock__col infoblock__col_md">
+                  <div class="infoblock__box"> <small class="infoblock__label">Opened:</small> <em class="infoblock__value">12/21/2016 14:19:28</em> </div>
+                  <div class="infoblock__box"> <small class="infoblock__label">By Employee:</small> <em class="infoblock__value">Mr. John Snow</em> </div>
                 </div>
-              </div>
-            </div>
-            <div class="sidebar__body">
-              <div class="sidebar__content">
-                <ul class="order-list">
-                  <li class="order-item order-item_static">
-                    <div class="order-item__container">
-                      <div class="order-item__content">
-                        <div class="order-item__row">
-                          <div class="order-item__info">
-                            <div class="order-item__title">T-Shirt with Print 23</div>
-                          </div>
-                        </div>
-                        <div class="order-item__row">
-                          <div class="order-item__col">
-                            <div class="order-item__quantity">2&times;</div>
-                            <div class="order-item__price">$999,999,999,999,999.99</div>
-                          </div>
-                          <div class="order-item__col">
-                            <div class="order-item__total">$999,999,999,999,999.99</div>
-                            <div class="order-item__discount">($5.00)</div>
-                          </div>
-                        </div>
-                        <div class="order-item__meta">Long Sleeves, XL size, Black color</div>
-                      </div>
-                    </div>
-                  </li>
-                  <li class="order-item order-item_static">
-                    <div class="order-item__container">
-                      <div class="order-item__content">
-                        <div class="order-item__row">
-                          <div class="order-item__info">
-                            <div class="order-item__title">Honey</div>
-                          </div>
-                        </div>
-                        <div class="order-item__row">
-                          <div class="order-item__col">
-                            <div class="order-item__quantity">1&times;</div>
-                            <div class="order-item__price">$8.00</div>
-                          </div>
-                          <div class="order-item__col">
-                            <div class="order-item__total">$8.00</div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </li>
-                </ul>
-              </div>
-            </div>
-            <div class="sidebar__footer">
-              <div class="totals totals_static sidebar__totals">
-                <div class="totals__container">
-                  <ul class="totals-list totals-list_main">
-                    <li class="totals-list__item">
-                      <div class="totals-list__label">Subtotal</div>
-                      <div class="totals-list__value">$999,999,999,999,999.99</div>
-                    </li>
-                    <li class="totals-list__item">
-                      <div class="totals-list__label">Discount</div>
-                      <div class="totals-list__value">($5.00)</div>
-                    </li>
-                  </ul>
-                  <ul class="totals-list totals-list_scroll" data-scrollbar="default">
-                    <li class="totals-list__item">
-                      <div class="totals-list__label">TAX</div>
-                      <div class="totals-list__value">$4.30</div>
-                    </li>
-                  </ul>
-                  <ul class="totals-list totals-list_main">
-                    <li class="totals-list__item">
-                      <div class="totals-list__label">Total</div>
-                      <div class="totals-list__value">$999,999,999,999,999.99</div>
-                    </li>
-                  </ul>
+                <div class="infoblock__col infoblock__col_md">
+                  <div class="infoblock__box"> <small class="infoblock__label">Closed:</small> <em class="infoblock__value">(not closed)</em> </div>
+                  <div class="infoblock__box"> <small class="infoblock__label">By Employee (you):</small> <em class="infoblock__value">Mr. John Snow</em> </div>
                 </div>
-              </div>
+              </div> <button class="btn-open infoblock__open" onclick="(function() { 
+						[].forEach.call(document.querySelectorAll('.sidebar__poynt-hidden'), function(element) {
+							element.classList.toggle('is-open'); 
+						});
+						event.currentTarget.classList.toggle('is-active'); 
+					}());">
+						<i class="icon icon-caret"></i>
+					</button> </div>
+            <hr />
+            <div class="sidebar__body sidebar__poynt-hidden">
+              <ul class="infotable">
+                <li class="infotable__row">
+                  <div class="infotable__label">Opening Amount</div>
+                  <div class="infotable__value"><small class="infotable__disabled">$0.00</small></div>
+                </li>
+                <li class="infotable__row">
+                  <div class="infotable__label">Cash Sale</div>
+                  <div class="infotable__value">$12,344.00</div>
+                </li>
+                <li class="infotable__row">
+                  <div class="infotable__label">Refunds</div>
+                  <div class="infotable__value">$44.20</div>
+                </li>
+                <li class="infotable__row">
+                  <div class="infotable__label">Payins</div>
+                  <div class="infotable__value">$10,000.00</div>
+                </li>
+                <li class="infotable__row">
+                  <div class="infotable__label">Payouts</div>
+                  <div class="infotable__value">$20,000.00</div>
+                </li>
+                <li class="infotable__row">
+                  <div class="infotable__label">Closing Amount</div>
+                  <div class="infotable__value">$8,200.00</div>
+                </li>
+                <li class="infotable__row">
+                  <div class="infotable__label"><strong>VARIANCE</strong></div>
+                  <div class="infotable__value"><strong class="infotable__big">$999,999,999,999,999.99</strong></div>
+                </li>
+              </ul>
+            </div>
+            <div class="sidebar__footer sidebar__poynt-hidden">
+              <div class="section wrapper-btn-center"> <button class="btn btn_secondary btn_lg btn_block" data-animation="ripple">Print X-Report</button> </div>
             </div>
           </aside>
-          <div class="container container_right container_payments">
+          <div class="container container_right container_poynt-register">
             <div class="container__body step-body">
               <div class="step-body__section">
-                <div class="form form_sm" id="payment-cash">
-                  <div class="form__section">
-                    <div class="info-price text-center">
-                      <div class="info-price__label">Amount Due:</div>
-                      <div class="info-price__value "> <small>$</small> <span>999,999,999,999,999.99</span> </div>
-                    </div>
-                  </div>
+                <div class="form form_sm">
                   <div class="fieldset fieldset_bordered">
                     <div class="main-display"> <button class="main-display__clear" data-numpad="numpad-clear"><i class="icon icon-clear"></i></button>
                       <div class="field ">
-                        <div class="field__inner"> <label class="field__label field__label_sm" for="amount-tendered">Amount Tendered:</label>
-                          <div class="field__box"> <input class="input field__input text-right input_xl" value="$999,999,999,999,999.99" id="amount-tendered" type="text" placeholder="0" required readonly> </div>
+                        <div class="field__inner"> <label class="field__label field__label_sm" for="item-quantity">Closing Amount:</label>
+                          <div class="field__box"> <input class="input field__input text-right input_xl" value="999,999,999,999,999.99" id="item-quantity" type="text" placeholder="0" required readonly> </div>
                         </div>
                       </div>
                     </div>
                     <!-- begin keyboard -->
                     <div class="main-keyboard numpad ">
                       <div class="main-keyboard__container ">
-                        <div class="main-keyboard__shortcuts">
-                          <div class="main-keyboard__item"><button type="button" data-animation="ripple" class="main-keyboard__shortcuts-button ">Exact</button></div>
-                          <div class="main-keyboard__item"><button type="button" data-animation="ripple" class="main-keyboard__shortcuts-button ">$10</button></div>
-                          <div class="main-keyboard__item"><button type="button" data-animation="ripple" class="main-keyboard__shortcuts-button ">$20</button></div>
-                        </div>
                         <div class="main-keyboard__main">
                           <div class="main-keyboard__item"> <button type="button" data-animation="ripple" class="main-keyboard__button ">1</button> </div>
                           <div class="main-keyboard__item"> <button type="button" data-animation="ripple" class="main-keyboard__button ">2</button> </div>
@@ -323,10 +280,11 @@
                     </div>
                     <!-- end keyboard -->
                   </div>
+                  <div class="fieldset fieldset_lg fieldset_bordered fieldset_standalone"> <textarea class="textarea textarea_block textarea_little" placeholder="Register Closing Note"></textarea> </div>
                 </div>
               </div>
               <div class="step-body__footer section">
-                <div class="form form_sm"> <button class="btn btn_primary btn_lg btn_block text-uppercase" data-animation="ripple" value="Done">Process</button> </div>
+                <div class="wrapper-btn-center"> <button class="btn btn_primary btn_lg btn_block text-uppercase" data-animation="ripple" value="Done">Close Register</button> </div>
               </div>
             </div>
           </div>
@@ -354,20 +312,6 @@
         </div>
       </div>
       <!-- end help -->
-      <!-- begin payment-terminal -->
-      <div class="modal payment-terminal" data-modal="payment-terminal">
-        <div class="modal__container payment-terminal__container" data-modal-container="payment-terminal">
-          <div class="payment-terminal__body">
-            <div class="payment-terminal__vertical">
-              <div class="payment-terminal__center">
-                <div class="loading payment-terminal__icon"></div>
-                <p>Please process Payment on your Terminal</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <!-- end payment-terminal -->
       <!-- END content -->
       <!-- begin snackbar -->
       <div class="snackbar " data-snackbar-container="snackbar" data-state="default">
