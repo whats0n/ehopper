@@ -1,0 +1,68 @@
+---
+title: Signature &bull; eHopper POS'
+styles: 
+	- 'pos'
+---
+{% extends "layouts/_layout.html" %}
+
+{% block content %}
+	<main class="main" data-toggle-class-container="main-container">
+		<div class="inner">
+			{{header.call({
+				sidebarClassList: 'is-hidden',
+				fullinfoClassList: 'is-hidden',
+				menuBtnClassList: 'is-hidden',
+				helpBtnClassList: 'is-hidden',
+				searchClassList: 'is-hidden',
+				syncBtnClassList: 'is-hidden',
+				searchBtnClassList: 'is-hidden',
+				syncClassList: 'is-hidden',
+				scanBtnClassList: 'is-hidden',
+				containerClassList: 'main-header__container_full',
+				title: 'Signature'
+			})}}
+			{% include 'partials/sum/_payments-sidebar.html' %}
+			<div class="container container_right container_order">
+				<div class="container__body step-body">
+					<div class="step-body__section">
+						<div class="form form_sm">
+							<div class="form__section">
+								{{mixins.infoPrice({
+									label: 'Total Due:',
+									price: '999,999,999,999,999.99',
+									currency: '$',
+									classList: 'text-center',
+									priceClassList: 'color-green'
+								})}}
+							</div>
+						</div>
+						<div class="signature-box">
+							<button class="btn-icon signature-box__close"><i class="icon icon-close"></i></button>
+						</div>
+						<div class="form form_sm">
+							{{mixins.fieldBox({
+								checkboxes: true,
+								colSize: 'md',
+								list: [
+									{
+										content: 'E-mail Receipt'
+									},
+									{
+										content: 'Print Receipt'
+									}
+								]
+							})}}
+						</div>
+					</div>
+					<div class="step-body__footer section">
+						<div class="wrapper-btn-center">
+							<button class="btn btn_lg btn_block btn_primary" data-animtaion="ripple" value="Done">Done</button>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</main>
+
+	{{modal.help()}}
+{% endblock %}
