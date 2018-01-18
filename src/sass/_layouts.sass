@@ -227,15 +227,35 @@
       display: none
 
 .items
+  &_fluid
+    .items
+      &__top
+        height: 37%
+        .slick-slide,
+        .slick-slide > div,
+        .categories,
+        .categories__slider,
+        .slick-list,
+        .slick-track,
+        .categories__container,
+        .sm-box 
+          height: 100%
+      &__body
+        height: 63%
+    .categories,
+    .products
+      padding-bottom: 50px
+    .categories__pagination
+      bottom: 5px
+    .categories__item
+      height: 50%
+    .products__pagination
+      bottom: 10px
   &__top
     height: 190px
+
   &__body
     height: calc(100% - 190px)
-    // position: absolute
-    // top: 180px
-    // left: 0
-    // right: 0
-    // bottom: 0
 
 
 .wrapper
