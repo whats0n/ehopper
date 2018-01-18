@@ -1,0 +1,87 @@
+---
+title: 'Terminal &bull; eHopper POS'
+styles: 
+	- 'pos'
+---
+{% extends "layouts/_layout.html" %}
+
+{% block content %}
+	
+	<main class="main">
+		{{header.call({
+			sidebarClassList: 'is-hidden',
+			fullinfoClassList: 'is-hidden',
+			menuBtnClassList: 'is-hidden',
+			helpBtnClassList: 'is-hidden',
+			searchClassList: 'is-hidden',
+			syncBtnClassList: 'is-hidden',
+			searchBtnClassList: 'is-hidden',
+			syncClassList: 'is-hidden',
+			scanBtnClassList: 'is-hidden',
+			containerClassList: 'main-header__container_full',
+			title: 'Terminal'
+		})}}
+		<div class="container container_simple">
+			<div class="container__body step-body">
+				<div class="section section_inner step-body__section">
+					<div class="form form_sm">
+						<div class="small-tabs form__section">
+							<div class="small-tabs__col small-tabs__col_md">
+								<button class="btn btn_lg btn_block" data-animation="ripple">
+									<i class="icon icon-cc"></i>
+									Credit Card
+								</button>
+							</div>
+							<div class="small-tabs__col small-tabs__col_md">
+								<button class="btn btn_lg btn_block btn_green" data-animation="ripple">
+									<i class="icon icon-cash"></i>
+									Cash
+								</button>
+							</div>
+						</div>
+
+						<div class="form__section">
+							<div class="form-box is-focus">
+								{{mixins.field({
+									label: 'Amount <br>Due:',
+									labelClassList: 'field__label_sm',
+									id: 'ternimal-cash-amount-due',
+									value: '999,999,999,999,999.99',
+									placeholder: '0.00',
+									inputClassList: 'input_lg text-right',
+									attrs: 'readonly'
+								})}}
+							</div>
+						</div>
+
+						<div class="form__section">
+							<div class="form-box">
+								{{mixins.field({
+									label: 'Amount Tendered:',
+									labelClassList: 'field__label_sm',
+									id: 'terminal-cash-amount-tendered',
+									value: '999,999,999,999,999.99',
+									placeholder: '0.00',
+									inputClassList: 'input_lg text-right',
+									attrs: 'readonly'
+								})}}
+							</div>
+						</div>
+						
+						<div class="fieldset fieldset_bordered">
+							{{keyboard.call()}}
+						</div>
+					</div>
+				</div>
+				<div class="step-body__footer section">
+					<div class="form form_sm">
+						<button class="btn btn_primary btn_lg btn_block" data-animation="ripple" value="Done">Charge</button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</main>
+
+	{{modal.help()}}
+
+{% endblock %}
