@@ -1,0 +1,114 @@
+---
+title: 'Terminal &bull; eHopper POS'
+styles: 
+	- 'pos'
+---
+{% extends "layouts/_layout.html" %}
+
+{% block content %}
+	
+	<main class="main">
+		{{header.call({
+			sidebarClassList: 'is-hidden',
+			fullinfoClassList: 'is-hidden',
+			menuBtnClassList: 'is-hidden',
+			helpBtnClassList: 'is-hidden',
+			searchClassList: 'is-hidden',
+			syncBtnClassList: 'is-hidden',
+			searchBtnClassList: 'is-hidden',
+			syncClassList: 'is-hidden',
+			scanBtnClassList: 'is-hidden',
+			containerClassList: 'main-header__container_full',
+			title: 'Terminal'
+		})}}
+		<div class="container container_simple">
+			<div class="container__body step-body">
+				<div class="step-body__section">
+					<div class="form form_sm">
+						<div class="small-tabs form__section">
+							<div class="small-tabs__col small-tabs__col_md">
+								<button class="btn btn_lg btn_block btn_green" data-animation="ripple">
+									<i class="icon icon-cc"></i>
+									Credit Card
+								</button>
+							</div>
+							<div class="small-tabs__col small-tabs__col_md">
+								<button class="btn btn_lg btn_block" data-animation="ripple">
+									<i class="icon icon-cash"></i>
+									Cash
+								</button>
+							</div>
+						</div>
+
+						<div class="form__section">
+							{{mixins.fieldBox({
+								switcher: true,
+								label: 'Enter Card Manually',
+								id: 'enter-card-manually',
+								switcherAttrs: 'checked'
+							})}}
+							<div class="payment-fieldset">
+								<div class="fieldset fieldset_lg fieldset_bordered">
+									<div class="fieldset__container">
+										<div class="fieldset__row">
+											<div class="fieldset__col fieldset__col_lg is-active">
+												<input type="text" class="input input_lg fieldset__input" placeholder="Card Number" readonly value="999,999,999,999,999.99">
+											</div>
+											<div class="fieldset__col fieldset__col_sm">
+												<input type="text" class="input input_lg fieldset__input" placeholder="Expiration" readonly value="999,999,999,999,999.99">
+											</div>
+										</div>
+									</div>
+									{{mixins.field({
+										label: 'Amount <br>Due:',
+										labelClassList: 'field__label_sm',
+										id: 'terminal-card-amount-due',
+										placeholder: '999,999,999,999,999.99',
+										inputClassList: 'input_lg text-right',
+										attrs: 'readonly'
+									})}}
+									{{keyboard.call()}}
+								</div>
+							</div>
+						</div>
+
+						<div class="form__section">
+							{{mixins.fieldBox({
+								radios: true,
+								label: 'Collect Signature',
+								colSize: 'sm',
+								list: [
+									{
+										classList: 'fake-radio_block fake-radio_lg',
+										content: 'On Screen',
+										name: 'terminal-card-and-signature'
+									},
+									{
+										classList: 'fake-radio_block fake-radio_lg',
+										content: 'On Receipt',
+										attrs: 'checked',
+										name: 'terminal-card-and-signature'
+									},
+									{
+										classList: 'fake-radio_block fake-radio_lg',
+										content: 'On Terminal',
+										name: 'terminal-card-and-signature'
+									}
+								]
+							})}}
+						</div>
+					</div>
+				</div>
+				<div class="step-body__footer section">
+					<div class="form form_sm">
+						<button class="btn btn_primary btn_lg btn_block" data-animation="ripple" value="Done">Charge</button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</main>
+
+	{{modal.help()}}
+	{{modal.paymentTerminal()}}
+
+{% endblock %}
