@@ -1,0 +1,227 @@
+---
+title: 'Customer Details &bull; eHopper POS'
+styles: 
+	- 'pos'
+settingsActive: 2
+---
+{% extends "layouts/_layout.html" %}
+
+{% block content %}
+	<main class="main">
+		<div class="inner order">
+			{{header.call({
+				sidebarClassList: 'is-hidden',
+				fullinfoClassList: 'is-hidden',
+				menuBtnClassList: 'is-hidden',
+				helpBtnClassList: 'is-hidden',
+				searchClassList: 'is-hidden',
+				syncBtnClassList: 'is-hidden',
+				searchBtnClassList: 'is-hidden',
+				scanBtnClassList: 'is-hidden',
+				containerClassList: 'main-header__container_full',
+				title: 'Customer Details'
+			})}}
+			<aside class="order__sidebar">
+				<div class="order__info">
+					<div class="infoblock">
+						<div class="infoblock__row">
+							<div class="infoblock__col">
+								<small class="infoblock__label">First Name *:</small>
+								<em class="infoblock__value">Hhhh</em>
+							</div>
+							<div class="infoblock__col">
+								<small class="infoblock__label">Last Name *:</small>
+								<em class="infoblock__value">Hhhh</em>
+							</div>
+							<div class="infoblock__col">
+								<small class="infoblock__label">Address:</small>
+								<em class="infoblock__value">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vel, eligendi? Officiis corporis qui nemo expedita?</em>
+							</div>
+							<div class="infoblock__col">
+								<small class="infoblock__label">Store Name:</small>
+								<em class="infoblock__value">WestGuestCafe</em>
+							</div>
+						</div>
+					</div>
+					<hr>
+					<div class="infoblock">
+						<div class="infoblock__row">
+							<div class="infoblock__col">
+								<small class="infoblock__label">Phone:</small>
+								<em class="infoblock__value">11 11 11 1111</em>
+							</div>
+							<div class="infoblock__col">
+								<small class="infoblock__label">Email:</small>
+								<em class="infoblock__value">vasya@gmail.com</em>
+							</div>
+							<div class="infoblock__col">
+								<small class="infoblock__label">Marketing:</small>
+								<em class="infoblock__value">On</em>
+							</div>
+						</div>
+					</div>
+				</div>
+			</aside>
+			<div class="order__container">
+				<div class="order__body">
+					<div class="order__content">
+						<div class="table-wrapper table-wrapper_customer table-wrapper_no-footer" data-table="customer-details">
+							{% set table = {
+								header: [
+									{ column: 'orders-status', content: 'Status' },
+									{ column: 'orders-id', content: 'Order ID' },
+									{ column: 'orders-name', content: 'Order Name' },
+									{ column: 'orders-store', content: 'Store' },
+									{ column: 'orders-register', content: 'Register' },
+									{ column: 'orders-type', content: 'Type' },
+									{ column: 'orders-fulfillment', content: 'Fulfillment' },
+									{ column: 'orders-total', content: 'Total' },
+									{ column: 'orders-date', content: 'Date' },
+									{ column: 'orders-employee', content: 'Employee' },
+									{ column: 'orders-action', content: 'Action' }
+								],
+								body: [
+									[
+										{ column: 'orders-status', content: '<i class="icon icon-check"></i>' },
+										{ column: 'orders-id', content: '<div class="table-wrapper__value">040660174749</div>' },
+										{ column: 'orders-name', content: '&nbsp;' },
+										{ column: 'orders-store', content: 'Main Store' },
+										{ column: 'orders-register', content: '1' },
+										{ column: 'orders-type', content: 'Quick Sale' },
+										{ column: 'orders-fulfillment', content: 'Done' },
+										{ column: 'orders-total', content: '$999,999,999,999,999.99' },
+										{ column: 'orders-date', date: { day: '03/07/2017', time: '12:59:00' } },
+										{ column: 'orders-employee', content: 'Mr. John Snow' },
+										{ column: 'orders-action', action: true }
+									],
+									[
+										{ column: 'orders-status', content: '<i class="icon icon-checked color-green"></i>' },
+										{ column: 'orders-id', content: '<div class="table-wrapper__value">040660174750</div> <div class="table-wrapper__meta">Saved order name</div>' },
+										{ column: 'orders-name', content: '&nbsp;' },
+										{ column: 'orders-store', content: 'Second Store' },
+										{ column: 'orders-register', content: '4' },
+										{ column: 'orders-type', content: 'Quick Sale' },
+										{ column: 'orders-fulfillment', content: 'Done' },
+										{ column: 'orders-total', content: '$10.00' },
+										{ column: 'orders-date', date: { day: '03/07/2017', time: '12:59:00' } },
+										{ column: 'orders-employee', content: 'Mr. John Snow' },
+										{ column: 'orders-action', action: 'cart' }
+									],
+									[
+										{ column: 'orders-status', content: '<i class="icon icon-close"></i>' },
+										{ column: 'orders-id', content: '<div class="table-wrapper__value">040660174000</div>' },
+										{ column: 'orders-name', content: '&nbsp;' },
+										{ column: 'orders-store', content: 'Main Store' },
+										{ column: 'orders-register', content: '2' },
+										{ column: 'orders-type', content: 'Delivery' },
+										{ column: 'orders-fulfillment', content: 'Done' },
+										{ column: 'orders-total', content: '$10.00' },
+										{ column: 'orders-date', date: { day: '03/07/2017', time: '12:59:00' } },
+										{ column: 'orders-employee', content: 'Mr. John Snow' },
+										{ column: 'orders-action', action: true }
+									],
+									[
+										{ column: 'orders-status', content: '<i class="icon icon-clear color-red"></i>' },
+										{ column: 'orders-id', content: '<div class="table-wrapper__value">040660174001</div>' },
+										{ column: 'orders-name', content: '&nbsp;' },
+										{ column: 'orders-store', content: 'Main Store' },
+										{ column: 'orders-register', content: '1' },
+										{ column: 'orders-type', content: 'Quick Sale' },
+										{ column: 'orders-fulfillment', content: 'Voided' },
+										{ column: 'orders-total', content: '$10.00' },
+										{ column: 'orders-date', date: { day: '12/12/2016', time: '9:00:00' } },
+										{ column: 'orders-employee', content: 'Samantha Fox' },
+										{ column: 'orders-action', action: true }
+									]
+								]
+							} %}
+							<div class="table-wrapper__header" data-table-fake="customer-details">
+								<div class="table-header">
+									<ul class="table-header__tr">
+										{% for th in table.header %}
+											<li class="table-header__th" data-column="{{th.column}}">
+												{% if th.checkbox %}
+													<div class="orders__action">
+														{{mixins.checkbox()}}
+													</div>
+												{% else %}
+													{{th.content | safe}}
+												{% endif %}
+											</li>
+										{% endfor %}
+									</ul>
+								</div>
+							</div>
+							<div class="table-wrapper__body" data-scrollbar="default" data-table-scrollable="customer-details">
+								<div class="table-body table-body_order table-wrapper__table" data-table-main="customer-details">
+									{% for item in range(0,5) %}
+										{% for tr in table.body %}
+											<div class="table-body__tr">
+												{% for td in tr %}
+													<div class="table-body__td" data-column="{{td.column}}">
+														{% if td.date %}
+															<div class="text-date">
+																<span>{{td.date.day}}</span>
+																<small>{{td.date.time}}</small>
+															</div>
+														{% elif td.action %}
+															<div class="orders__action">
+																{% if td.action === 'cart' %}
+																	<button class="btn btn_icon"><i class="icon icon-pos"></i></button>
+																{% endif %}
+																<button class="btn btn_icon"><i class="icon icon-next"></i></button>
+															</div>
+														{% elif td.checkbox %}
+															<div class="orders__action">
+																{{mixins.checkbox()}}
+															</div>
+														{% else %}
+															{{td.content | safe}}
+														{% endif %}
+													</div>
+												{% endfor %}
+											</div>
+										{% endfor %}
+									{% endfor %}
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="order__footer">
+						{# <div class="order-totals">
+							<div class="order-notes">
+								<i class="icon icon-note order-notes__icon"></i>
+								<div class="order-notes__content">Order Note text goes here (if present)</div>
+							</div>
+							{% set orderTotalsTable = [
+								{ label: 'Subtotal:', value: '$11,540.54' },
+								{ label: 'Tax:', value: '$140.00' },
+								{ label: 'Total:', value: '<em>$12,540.54</em>' }
+							] %}
+							<div class="order-totals__table">
+								{% for item in orderTotalsTable %}
+									<div class="order-totals__tr">
+										<div class="order-totals__td order-totals__label">{{item.label | safe}}</div>
+										<div class="order-totals__td order-totals__value">{{item.value | safe}}</div>
+									</div>
+								{% endfor %}
+							</div>
+						</div> #}
+						<div class="order__buttons">
+							<div class="order__showmore">
+								<button class="btn btn_lg btn_default" data-animation="ripple">
+									<i class="icon icon-expand"></i>
+									Show more
+								</button>
+								<button class="btn btn_lg btn_default" data-animation="ripple">Edit</button>
+							</div>
+							<div class="order__done">
+								<button class="btn btn_lg btn_primary btn_block text-uppercase" data-animation="ripple" data-modal-open="print-receipt">Done</button>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</main>
+{% endblock %}
