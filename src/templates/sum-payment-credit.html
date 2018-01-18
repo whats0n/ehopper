@@ -1,0 +1,105 @@
+---
+title: 'Credit Card &bull; eHopper POS'
+styles: 
+	- 'pos'
+---
+{% extends "layouts/_layout.html" %}
+
+{% block content %}
+	<main class="main">
+		<div class="inner">
+			{{header.call({
+				sidebarClassList: 'is-hidden',
+				fullinfoClassList: 'is-hidden',
+				menuBtnClassList: 'is-hidden',
+				helpBtnClassList: 'is-hidden',
+				searchClassList: 'is-hidden',
+				syncBtnClassList: 'is-hidden',
+				searchBtnClassList: 'is-hidden',
+				syncClassList: 'is-hidden',
+				scanBtnClassList: 'is-hidden',
+				containerClassList: 'main-header__container_full',
+				title: 'Credit Card Payment'
+			})}}
+			{% include 'partials/sum/_payments-sidebar.html' %}
+			<div class="container container_right container_payments">
+				<div class="container__body step-body">
+					<div class="step-body__section"> 
+						<div class="form form_sm">
+							<div class="form__section">
+								{{mixins.infoPrice({
+									label: 'Total Due:',
+									price: '999,999,999,999,999.99',
+									currency: '$',
+									classList: 'text-center'
+								})}}
+							</div>
+							<div class="form__section">
+								{{mixins.fieldBox({
+									switcher: true,
+									label: 'Enter Card Manually',
+									id: 'enter-card-manually',
+									switcherAttrs: 'checked'
+								})}}
+								<div class="payment-fieldset">
+									<div class="fieldset fieldset_lg fieldset_bordered">
+										<div class="fieldset__container">
+											<div class="fieldset__row">
+												<div class="fieldset__col fieldset__col_lg is-active">
+													<input type="text" class="input input_lg fieldset__input" placeholder="Card Number" readonly value="999,999,999,999,999.99">
+												</div>
+												<div class="fieldset__col fieldset__col_sm">
+													<input type="text" class="input input_lg fieldset__input" placeholder="Expiration" readonly value="999,999,999,999,999.99">
+												</div>
+											</div>
+										</div>
+										{{keyboard.call({
+											card: [
+												{ placeholder: 'Card Number', classList: 'is-active' },
+												{ placeholder: 'Expiration' }
+											],
+											classList: 'fieldset__keyboard'
+										})}}
+									</div>
+								</div>
+							</div>
+							<div class="form__section">
+								{{mixins.fieldBox({
+									radios: true,
+									label: 'Tips and Signature',
+									colSize: 'sm',
+									list: [
+										{
+											classList: 'fake-radio_block fake-radio_lg',
+											content: 'On Screen',
+											name: 'tips-and-signature'
+										},
+										{
+											classList: 'fake-radio_block fake-radio_lg',
+											content: 'On Receipt',
+											attrs: 'checked',
+											name: 'tips-and-signature'
+										},
+										{
+											classList: 'fake-radio_block fake-radio_lg',
+											content: 'On Terminal',
+											name: 'tips-and-signature'
+										}
+									]
+								})}}
+							</div>
+						</div>
+					</div>
+					<div class="step-body__footer section">
+						<div class="form form_sm">
+							<button class="btn btn_primary btn_lg btn_block" data-animation="ripple" value="Done">Continue</button>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</main>
+
+	{{modal.help()}}
+	{{modal.paymentTerminal()}}
+{% endblock %}
