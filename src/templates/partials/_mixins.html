@@ -123,11 +123,10 @@
 <div class="info-price {{props.classList}}">
 	<div class="info-price__label">{{props.label}}</div>
 	<div class="info-price__value {{props.valueClassList}}">
-		<small>{{props.currency}}</small>
 		{% if props.priceClassList %}
-			<span class="{{props.priceClassList}}">{{props.price}}</span>
+			<span class="{{props.priceClassList}}"><small>{{props.currency}}</small>{{props.price}}</span>
 		{% else %}
-			<span>{{props.price}}</span>
+			<span><small>{{props.currency}}</small>{{props.price}}</span>
 		{% endif %}
 	</div>
 </div>

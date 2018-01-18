@@ -3,7 +3,7 @@
 
   <head>
     <meta charset="utf-8">
-    <title>Save Order &bull; eHopper POS</title>
+    <title>Receipt &bull; eHopper POS</title>
     <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <meta name="theme-color" content="#fff">
@@ -18,11 +18,11 @@
     <!-- begin application -->
     <div class="application" id="application">
       <!-- BEGIN content -->
-      <main class="main" data-toggle-class-container="main-container">
+      <main class="main">
         <div class="inner">
           <!-- begin header -->
           <header class="main-header ">
-            <!-- begin button 'back' --><button class="main-header__back btn-back ">
+            <!-- begin button 'back' --><button class="main-header__back btn-back is-hidden">
 		<i class="icon icon-back btn-back__icon"></i>
 		<span class="btn-back__title">Back</span>
 	</button>
@@ -31,7 +31,7 @@
             <div class="main-header__container main-header__container_full"> <button class="btn-icon main-header__help is-hidden" title="Help" data-modal-open="help">
 			<i class="icon icon-help"></i>
 		</button>
-              <h2 class="title-xlg main-header__title ">Save Order</h2>
+              <h2 class="title-xlg main-header__title ">Receipt #001234</h2>
               <div class="main-header__searchbox is-hidden">
                 <!-- begin search -->
                 <div class="search" data-modal="search">
@@ -210,41 +210,20 @@
                       <div class="order-item__content">
                         <div class="order-item__row">
                           <div class="order-item__info">
-                            <div class="order-item__title">Hot Dog XL</div>
-                          </div>
-                          <div class="order-item__meta"><strong>Note</strong> Click to duplicate in cart</div>
-                        </div>
-                        <div class="order-item__row">
-                          <div class="order-item__col">
-                            <div class="order-item__quantity">1&times;</div>
-                            <div class="order-item__price">3.00</div>
-                          </div>
-                          <div class="order-item__col">
-                            <div class="order-item__total">3.00</div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </li>
-                  <li class="order-item order-item_static">
-                    <div class="order-item__container">
-                      <div class="order-item__content">
-                        <div class="order-item__row">
-                          <div class="order-item__info">
                             <div class="order-item__title">T-Shirt with Print 23</div>
                           </div>
-                          <div class="order-item__meta">Long Sleeves, XL size, Black color</div>
                         </div>
                         <div class="order-item__row">
                           <div class="order-item__col">
                             <div class="order-item__quantity">2&times;</div>
-                            <div class="order-item__price">644.00</div>
+                            <div class="order-item__price">$999,999,999,999,999.99</div>
                           </div>
                           <div class="order-item__col">
-                            <div class="order-item__total">1288.00</div>
-                            <div class="order-item__discount">-0.00</div>
+                            <div class="order-item__total">$999,999,999,999,999.99</div>
+                            <div class="order-item__discount">($5.00)</div>
                           </div>
                         </div>
+                        <div class="order-item__meta">Long Sleeves, XL size, Black color</div>
                       </div>
                     </div>
                   </li>
@@ -255,15 +234,14 @@
                           <div class="order-item__info">
                             <div class="order-item__title">Honey</div>
                           </div>
-                          <div class="order-item__meta"><strong>Note</strong> ...</div>
                         </div>
                         <div class="order-item__row">
                           <div class="order-item__col">
                             <div class="order-item__quantity">1&times;</div>
-                            <div class="order-item__price">8.00</div>
+                            <div class="order-item__price">$8.00</div>
                           </div>
                           <div class="order-item__col">
-                            <div class="order-item__total">8.00</div>
+                            <div class="order-item__total">$8.00</div>
                           </div>
                         </div>
                       </div>
@@ -277,45 +255,46 @@
                 <div class="totals__container">
                   <ul class="totals-list totals-list_main">
                     <li class="totals-list__item">
-                      <div class="totals-list__label">Sub</div>
-                      <div class="totals-list__value">$1299.00</div>
+                      <div class="totals-list__label">Subtotal</div>
+                      <div class="totals-list__value">$999,999,999,999,999.99</div>
                     </li>
                     <li class="totals-list__item">
                       <div class="totals-list__label">Discount</div>
-                      <div class="totals-list__value">$0.00</div>
+                      <div class="totals-list__value">($5.00)</div>
                     </li>
                   </ul>
-                  <ul class="totals-list totals-list_scroll">
+                  <ul class="totals-list totals-list_scroll" data-scrollbar="default">
                     <li class="totals-list__item">
-                      <div class="totals-list__label">Tax</div>
-                      <div class="totals-list__value">$6.75</div>
+                      <div class="totals-list__label">TAX</div>
+                      <div class="totals-list__value">$4.30</div>
                     </li>
+                  </ul>
+                  <ul class="totals-list totals-list_main">
                     <li class="totals-list__item">
                       <div class="totals-list__label">Total</div>
-                      <div class="totals-list__value">$1299.00</div>
+                      <div class="totals-list__value">$999,999,999,999,999.99</div>
                     </li>
                   </ul>
                 </div>
               </div>
             </div>
           </aside>
-          <div class="container container_right container_order">
+          <div class="container container_right container_payments">
             <div class="container__body step-body">
               <div class="step-body__section">
                 <div class="form form_sm">
                   <div class="form__section">
-                    <div class="info-price text-center">
-                      <div class="info-price__label">Total Due:</div>
-                      <div class="info-price__value color-blue"> <span><small>$</small>102.00</span> </div>
-                    </div>
-                  </div>
-                  <div class="form__section">
-                    <div class="form-box">
-                      <div class="form-box__field">
-                        <div class="field ">
-                          <div class="field__inner"> <label class="field__label " for="order-name">Order Name:</label>
-                            <div class="field__box"> <input class="input field__input input_lg" id="order-name" type="text" placeholder="Type here"> </div>
-                          </div>
+                    <div class="form__row">
+                      <div class="form__col form__col_poynt-50">
+                        <div class="info-price text-right">
+                          <div class="info-price__label">Amount Tendered:</div>
+                          <div class="info-price__value "> <span><small>$</small>999,999,999,999,999.99</span> </div>
+                        </div>
+                      </div>
+                      <div class="form__col form__col_poynt-50">
+                        <div class="info-price text-left">
+                          <div class="info-price__label">Change Due:</div>
+                          <div class="info-price__value color-red"> <span><small>$</small>999,999,999,999,999.99</span> </div>
                         </div>
                       </div>
                     </div>
@@ -332,14 +311,14 @@
 		
 			<option value="French"  >French</option>
 		
-			<option value="Russion"  >Russion</option>
+			<option value="Russian"  >Russian</option>
 		
 	</select> </div>
                             </div>
                           </div>
                         </div>
                       </div>
-                      <div class="form-box__field"> <label for="email-bill" class="form-box__label">Email Bill</label> <label class="switcher form-box__switcher">
+                      <div class="form-box__field"> <label for="federal-tax" class="form-box__label">Email Bill</label> <label class="switcher form-box__switcher">
 	<input type="checkbox" id="email-bill" >
 	<i class="switcher__icon"></i>
 </label> </div>
@@ -350,7 +329,15 @@
                           </div>
                         </div>
                       </div>
-                      <div class="form-box__field"> <label for="print-bill" class="form-box__label">Print Bill</label> <label class="switcher form-box__switcher">
+                      <div class="form-box__field"> <label for="state-tax" class="form-box__label">Print Bill</label> <label class="switcher form-box__switcher">
+	<input type="checkbox" id="print-bill" >
+	<i class="switcher__icon"></i>
+</label> </div>
+                    </div>
+                  </div>
+                  <div class="form__section">
+                    <div class="form-box">
+                      <div class="form-box__field"> <label for="state-tax" class="form-box__label">Loyalty Checkin</label> <label class="switcher form-box__switcher switcher_green">
 	<input type="checkbox" id="print-bill" >
 	<i class="switcher__icon"></i>
 </label> </div>
@@ -359,7 +346,7 @@
                 </div>
               </div>
               <div class="step-body__footer section">
-                <div class="wrapper-btn-center"> <button class="btn btn_primary btn_lg btn_block text-uppercase" data-animation="ripple" value="Done">Save Order</button> </div>
+                <div class="form form_sm"> <button class="btn btn_primary btn_lg btn_block text-uppercase" data-animation="ripple" value="Done">SAVE AND CLOSE</button> </div>
               </div>
             </div>
           </div>
@@ -387,6 +374,20 @@
         </div>
       </div>
       <!-- end help -->
+      <!-- begin payment-terminal -->
+      <div class="modal payment-terminal" data-modal="payment-terminal">
+        <div class="modal__container payment-terminal__container" data-modal-container="payment-terminal">
+          <div class="payment-terminal__body">
+            <div class="payment-terminal__vertical">
+              <div class="payment-terminal__center">
+                <div class="loading payment-terminal__icon"></div>
+                <p>Please process Payment on your Terminal</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- end payment-terminal -->
       <!-- END content -->
       <!-- begin snackbar -->
       <div class="snackbar " data-snackbar-container="snackbar" data-state="default">
