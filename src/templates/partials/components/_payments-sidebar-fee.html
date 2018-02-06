@@ -143,7 +143,7 @@
 				<ul class="totals-list totals-list_scroll" data-scrollbar="default">
 					{% for item in totalsListScrollCustom or totalsListScroll %}
 						{% if not loop.last %}
-							<li class="totals-list__item">
+							<li class="totals-list__item {{item.classList}}">
 								<div class="totals-list__label">{{item.label}}</div>
 								<div class="totals-list__value">{% if not item.nodollar %}${% endif %}{{item.value | safe}}</div>
 							</li>
@@ -153,7 +153,7 @@
 				<ul class="totals-list totals-list_main">
 					{% for item in totalsListScrollCustom or totalsListScroll %}
 						{% if loop.last %}
-							<li class="totals-list__item">
+							<li class="totals-list__item {{item.classList}}">
 								<div class="totals-list__label">{{item.label}}</div>
 								<div class="totals-list__value">${{item.value | safe}}</div>
 							</li>

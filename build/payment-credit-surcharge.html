@@ -264,17 +264,17 @@
                     </li>
                   </ul>
                   <ul class="totals-list totals-list_scroll" data-scrollbar="default">
-                    <li class="totals-list__item">
+                    <li class="totals-list__item js-signature-surcharge">
                       <div class="totals-list__label">Surcharge</div>
                       <div class="totals-list__value">$2.09</div>
                     </li>
-                    <li class="totals-list__item">
+                    <li class="totals-list__item ">
                       <div class="totals-list__label">TAX</div>
                       <div class="totals-list__value">$4.30</div>
                     </li>
                   </ul>
                   <ul class="totals-list totals-list_main">
-                    <li class="totals-list__item">
+                    <li class="totals-list__item js-signature-total">
                       <div class="totals-list__label">Total</div>
                       <div class="totals-list__value">$49.39</div>
                     </li>
@@ -288,7 +288,7 @@
               <div class="step-body__section">
                 <div class="form form_sm">
                   <div class="form__section">
-                    <div class="info-price text-center">
+                    <div class="info-price text-center js-signature-due">
                       <div class="info-price__label">Total Due:</div>
                       <div class="info-price__value "> <span><small>$</small>49.39</span> </div>
                     </div>
@@ -335,6 +335,51 @@
                   </div>
                   <div class="form__section">
                     <div class="field-box">
+                      <ul class="field-box__list">
+                        <li class="field-box__col field-box__col_md field-box__radio"> <label class="fake-radio fake-radio_block fake-radio_lg">
+	<input type="radio" name="tips-and-signature-variants" onchange="signatureVariant(event)" data-value="false">
+	<span class="fake-radio__content">Credit Card</span>
+</label> </li>
+                        <li class="field-box__col field-box__col_md field-box__radio"> <label class="fake-radio fake-radio_block fake-radio_lg">
+	<input type="radio" name="tips-and-signature-variants" onchange="signatureVariant(event)" data-value="true">
+	<span class="fake-radio__content">Signature Debit</span>
+</label> </li>
+                      </ul>
+                    </div>
+                    <script>
+                      var due = document.querySelector('.js-signature-due div:nth-child(2)');
+                      var dueValue = due.querySelector('span').textContent;
+                      dueValue = +(dueValue.replace('$', ''));
+                      var surcharge = document.querySelector('.js-signature-surcharge');
+                      var surchargeValue = surcharge.querySelector('div:nth-child(2)').textContent;
+                      surchargeValue = +(surchargeValue.replace('$', ''));
+                      var total = document.querySelector('.js-signature-total div:nth-child(2)');
+
+                      function signatureVariant(e)
+                      {
+                        var submit = document.querySelector('.js-signature-submit');
+                        var state = JSON.parse(e.currentTarget.getAttribute('data-value'));
+                        var value = null;
+                        if (state)
+                        {
+                          value = dueValue - surchargeValue;
+                        }
+                        else
+                        {
+                          value = dueValue + surchargeValue;
+                          value = value > dueValue ? dueValue : value;
+                        }
+                        value = value.toFixed(2);
+                        submit.disabled = false;
+                        surcharge.hidden = state;
+                        due.innerHTML = '<span><small>$</small>' + value + '</span>';
+                        total.innerHTML = '$' + value;
+                      }
+
+                    </script>
+                  </div>
+                  <div class="form__section">
+                    <div class="field-box">
                       <div class="field-box__label">Tips and Signature</div>
                       <ul class="field-box__list">
                         <li class="field-box__col field-box__col_sm field-box__radio"> <label class="fake-radio fake-radio_block fake-radio_lg">
@@ -355,7 +400,7 @@
                 </div>
               </div>
               <div class="step-body__footer section">
-                <div class="form form_sm"> <button class="btn btn_primary btn_lg btn_block" data-animation="ripple" value="Done">Continue</button> </div>
+                <div class="form form_sm"> <button class="btn btn_primary btn_lg btn_block text-uppercase js-signature-submit" data-animation="ripple" value="Done" disabled>Process</button> </div>
               </div>
             </div>
           </div>

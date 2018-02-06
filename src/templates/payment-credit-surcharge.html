@@ -24,7 +24,8 @@ styles:
 			{% set totalsListScrollCustom = [
 				{
 					label: 'Surcharge',
-					value: '2.09'
+					value: '2.09',
+					classList: 'js-signature-surcharge'
 				},
 				{
 					label: 'TAX',
@@ -32,7 +33,8 @@ styles:
 				},
 				{
 					label: 'Total',
-					value: '49.39'
+					value: '49.39',
+					classList: 'js-signature-total'
 				}
 			] %}	
 			{% include 'partials/components/_payments-sidebar-fee.html' %}
@@ -45,7 +47,7 @@ styles:
 									label: 'Total Due:',
 									price: '49.39',
 									currency: '$',
-									classList: 'text-center'
+									classList: 'text-center js-signature-due'
 								})}}
 							</div>
 							<div class="form__section">
@@ -80,6 +82,58 @@ styles:
 							<div class="form__section">
 								{{mixins.fieldBox({
 									radios: true,
+									colSize: 'md',
+									list: [
+										{
+											classList: 'fake-radio_block fake-radio_lg',
+											content: 'Credit Card',
+											attrs: 'onchange="signatureVariant(event)" data-value="false"',
+											name: 'tips-and-signature-variants'
+										},
+										{
+											classList: 'fake-radio_block fake-radio_lg',
+											content: 'Signature Debit',
+											attrs: 'onchange="signatureVariant(event)" data-value="true"',
+											name: 'tips-and-signature-variants'
+										}
+									]
+								})}}
+								<script>
+									var due = document.querySelector('.js-signature-due div:nth-child(2)');
+									var dueValue = due.querySelector('span').textContent;
+									dueValue = +(dueValue.replace('$', ''));
+
+
+									var surcharge = document.querySelector('.js-signature-surcharge');
+									var surchargeValue = surcharge.querySelector('div:nth-child(2)').textContent;
+									surchargeValue = +(surchargeValue.replace('$', ''));
+
+									var total = document.querySelector('.js-signature-total div:nth-child(2)');
+
+									function signatureVariant(e) {
+										var submit = document.querySelector('.js-signature-submit');
+										var state = JSON.parse(e.currentTarget.getAttribute('data-value'));
+										var value = null;
+
+										if (state) {
+											value = dueValue - surchargeValue;
+										} else {
+											value = dueValue + surchargeValue;
+											value = value > dueValue ? dueValue : value;
+										}
+
+										value = value.toFixed(2);
+
+										submit.disabled = false;
+										surcharge.hidden = state;
+										due.innerHTML = '<span><small>$</small>' + value + '</span>';
+										total.innerHTML = '$' + value;
+									}
+								</script>
+							</div>
+							<div class="form__section">
+								{{mixins.fieldBox({
+									radios: true,
 									label: 'Tips and Signature',
 									colSize: 'sm',
 									list: [
@@ -106,7 +160,7 @@ styles:
 					</div>
 					<div class="step-body__footer section">
 						<div class="form form_sm">
-							<button class="btn btn_primary btn_lg btn_block" data-animation="ripple" value="Done">Continue</button>
+							<button class="btn btn_primary btn_lg btn_block text-uppercase js-signature-submit" data-animation="ripple" value="Done" disabled>Process</button>
 						</div>
 					</div>
 				</div>
