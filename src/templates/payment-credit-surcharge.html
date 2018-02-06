@@ -57,11 +57,11 @@ styles:
 									id: 'enter-card-manually',
 									switcherAttrs: ''
 								})}}
-								<div class="payment-fieldset">
+								<div class="payment-fieldset is-hidden">
 									<div class="fieldset fieldset_lg fieldset_bordered">
 										<div class="fieldset__container">
 											<div class="fieldset__row">
-												<div class="fieldset__col fieldset__col_lg {#is-active#}">
+												<div class="fieldset__col fieldset__col_lg is-active">
 													<input type="text" class="input input_lg fieldset__input" placeholder="Card Number" readonly>
 												</div>
 												<div class="fieldset__col fieldset__col_sm">
@@ -74,7 +74,7 @@ styles:
 												{ placeholder: 'Card Number', classList: 'is-active' },
 												{ placeholder: 'Expiration' }
 											],
-											classList: 'fieldset__keyboard is-hidden'
+											classList: 'fieldset__keyboard'
 										})}}
 									</div>
 								</div>
