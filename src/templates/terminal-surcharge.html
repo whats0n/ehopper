@@ -1,0 +1,14 @@
+---
+title: 'Terminal Surcharge &bull; eHopper POS'
+styles: 
+	- 'pos'
+---
+{% extends "layouts/_layout.html" %}
+
+{% block content %}
+
+	{% set terminalSurcharge = true %}
+	
+	{% include 'partials/terminal/_index.html' %}
+
+{% endblock %}

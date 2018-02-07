@@ -137,7 +137,7 @@ settingsActive: 2
 								body: [
 									[
 										{ column: 'icon', checkbox: true },
-										{ column: 'order-item', content: '<div class="table-wrapper__value">3 Stripe Chelsea Shorts Man M/Black</div> <div class="table-wrapper__from" data-exchange-from>Product exchanged from Order&nbsp;#1234566 <a href="#">Details</a></div>' },
+										{ column: 'order-item', content: '<div class="table-wrapper__value">3 Stripe Chelsea Shorts Man M/Black</div> <div class="table-wrapper__from" data-exchange-from>Original Order <a href="#">#1234566</a></div>' },
 										{ column: 'order-transaction-type', content: 'Exchange' },
 										{ column: 'order-quantity', content: '-1' },
 										{ column: 'order-price', content: '$21.60' },
@@ -175,7 +175,7 @@ settingsActive: 2
 							<div class="table-wrapper__body" data-scrollbar="default" data-table-scrollable="order">
 								<div class="table-body table-body_order table-wrapper__table" data-table-main="order">
 									{% for tr in table.body %}
-										<div class="table-body__tr {% if tr[2].content == 'Exchange' %}is-negative{% endif %}">
+										<div class="table-body__tr">
 											{% for td in tr %}
 												<div class="table-body__td" data-column="{{td.column}}">
 													{% if td.checkbox %}

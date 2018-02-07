@@ -1,0 +1,64 @@
+<div class="tabs__content" data-tab-container="terminal-signature-debit">
+	<div class="form__section">
+		{{mixins.fieldBox({
+			switcher: true,
+			label: 'Enter Card Manually',
+			id: 'enter-card-manually',
+			switcherAttrs: ''
+		})}}
+		<div class="payment-fieldset">
+			<div class="fieldset fieldset_lg fieldset_bordered">
+				<div class="fieldset__container is-hidden">
+					<div class="fieldset__row">
+						<div class="fieldset__col fieldset__col_lg is-active">
+							<input type="text" class="input input_lg fieldset__input" placeholder="Card Number" readonly>
+						</div>
+						<div class="fieldset__col fieldset__col_sm">
+							<input type="text" class="input input_lg fieldset__input" placeholder="Expiration" readonly>
+						</div>
+					</div>
+				</div>
+				{{mixins.field({
+					label: 'Amount <br>Due:',
+					labelClassList: 'field__label_sm',
+					id: 'terminal-card-amount-due',
+					placeholder: '0.00',
+					inputClassList: 'input_lg text-right',
+					attrs: 'readonly'
+				})}}
+				{{keyboard.call({
+					card: [
+						{ placeholder: 'Card Number', classList: 'is-active' },
+						{ placeholder: 'Expiration' }
+					],
+					classList: 'fieldset__keyboard'
+				})}}
+			</div>
+		</div>
+	</div>
+	<div class="form__section">
+		{{mixins.fieldBox({
+			radios: true,
+			label: 'Signature',
+			colSize: 'sm',
+			list: [
+				{
+					classList: 'fake-radio_block fake-radio_lg',
+					content: 'On Screen',
+					name: 'tips-and-signature'
+				},
+				{
+					classList: 'fake-radio_block fake-radio_lg',
+					content: 'On Receipt',
+					attrs: 'checked',
+					name: 'tips-and-signature'
+				},
+				{
+					classList: 'fake-radio_block fake-radio_lg',
+					content: 'On Terminal',
+					name: 'tips-and-signature'
+				}
+			]
+		})}}
+	</div>
+</div>

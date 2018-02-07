@@ -1,0 +1,31 @@
+<div class="tabs__content is-open" data-tab-container="terminal-cash">
+	<div class="form__section">
+		<div class="form-box is-focus">
+			{{mixins.field({
+				label: 'Amount <br>Due:',
+				labelClassList: 'field__label_sm',
+				id: 'ternimal-cash-amount-due',
+				placeholder: '0.00',
+				inputClassList: 'input_lg text-right',
+				attrs: 'readonly'
+			})}}
+		</div>
+	</div>
+
+	<div class="form__section">
+		<div class="form-box">
+			{{mixins.field({
+				label: 'Amount Tendered:',
+				labelClassList: 'field__label_sm',
+				id: 'terminal-cash-amount-tendered',
+				placeholder: '0.00',
+				inputClassList: 'input_lg text-right',
+				attrs: 'readonly'
+			})}}
+		</div>
+	</div>
+	
+	<div class="fieldset fieldset_bordered">
+		{{keyboard.call()}}
+	</div>
+</div>
