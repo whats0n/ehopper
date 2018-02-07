@@ -3,12 +3,12 @@
 		{{mixins.fieldBox({
 			switcher: true,
 			label: 'Enter Card Manually',
-			id: 'enter-card-manually',
-			switcherAttrs: ''
+			id: 'signature-enter-card-manually',
+			switcherAttrs: 'checked'
 		})}}
 		<div class="payment-fieldset">
 			<div class="fieldset fieldset_lg fieldset_bordered">
-				<div class="fieldset__container is-hidden">
+				<div class="fieldset__container">
 					<div class="fieldset__row">
 						<div class="fieldset__col fieldset__col_lg is-active">
 							<input type="text" class="input input_lg fieldset__input" placeholder="Card Number" readonly>
@@ -21,18 +21,12 @@
 				{{mixins.field({
 					label: 'Amount <br>Due:',
 					labelClassList: 'field__label_sm',
-					id: 'terminal-card-amount-due',
+					id: 'terminal-card-signature-amount-due',
 					placeholder: '0.00',
 					inputClassList: 'input_lg text-right',
 					attrs: 'readonly'
 				})}}
-				{{keyboard.call({
-					card: [
-						{ placeholder: 'Card Number', classList: 'is-active' },
-						{ placeholder: 'Expiration' }
-					],
-					classList: 'fieldset__keyboard'
-				})}}
+				{{keyboard.call()}}
 			</div>
 		</div>
 	</div>
