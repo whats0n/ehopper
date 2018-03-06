@@ -1,0 +1,39 @@
+.check-card
+	display: block
+	+nosel
+	input
+		display: none
+		&:checked
+			~ .check-card__content
+				background: $yellow
+				.check-card
+					&__icon
+						opacity: 1
+		&:disabled 
+			~ .check-card__content
+				opacity: 0.5
+				background: $lightGray
+				cursor: default
+				pointer-events: none
+	&__content
+		position: relative
+		display: block
+		padding: 10px 40px 10px 15px
+		height: 80px
+		color: $darkGray
+		background: $lightGray
+		box-shadow: 0 0px 1px rgba(0, 0, 0, 0.2), 0 2px 4px rgba(0, 0, 0, 0.1)
+		line-height: 60px
+		cursor: pointer
+		transition: box-shadow 0.15s ease-in-out, background 0.15s ease-in-out
+	&__icon
+		position: absolute
+		top: 0
+		right: 0
+		opacity: 0
+		transition: opacity 0.25s
+	&__title
+		display: inline-block
+		vertical-align: middle
+		font-size: 17px
+		line-height: 1.2
