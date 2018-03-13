@@ -338,13 +338,13 @@ styles:
 						<h2 class="title-lg product-activation__title">Please choose action for Phone Activation</h2>
 						<div class="product-activation__items">
 							{% for item in [
-								{ title: 'Cancel activation', state: false },
-								{ title: 'Exchange for new device', state: false },
-								{ title: "Exchange for custemr's device", state: true }
+								{ title: 'Cancel activation' },
+								{ title: 'Exchange for new device', state: 'newdevice' },
+								{ title: "Exchange for custemr's device", state: 'customersdevice' }
 							] %}
 								<div class="product-activation__item">
 									<label class="check-card">
-										<input type="radio" name="product-activation-item" {{item.inputAttrs | safe}} onchange="toggleForm(event, {{item.state}})">
+										<input type="radio" name="product-activation-item" {{item.inputAttrs | safe}} onchange="toggleForm(event, '{{item.state}}')">
 										<span class="check-card__content" data-animation="ripple">
 											<i class="icon icon-checked check-card__icon"></i>
 											<span class="check-card__title">{{item.title}}</span>
@@ -353,13 +353,24 @@ styles:
 								</div>
 							{% endfor %}
 						</div>
-						<div class="product-activation__form js-activation-form">
+						<div class="product-activation__form js-activation-form" data-activation-container="newdevice">
+							<label for="product-activation-field" class="product-activation__label">Enter or scan device serial number</label>
+							<div class="product-activation__search">
+								<i class="fa fa-search product-activation__icon"></i>
+								<input type="text" class="simple-input" placeholder="Search">
+							</div>
+						</div>
+						<div class="product-activation__form js-activation-form" data-activation-container="customersdevice">
 							<label for="product-activation-field" class="product-activation__label">If using Customer's device, enter its serial number</label>
-							<input type="text" class="simple-input product-activation__input" value="072211009988777">
+							<input type="text" class="simple-input" value="072211009988777">
 						</div>
 						<script>
-							function toggleForm(e, state) {
-								state ? $('.js-activation-form').show() :  $('.js-activation-form').hide();
+							function toggleForm(e, target) {
+								var containers = $('.js-activation-form');
+								var current = containers.filter('[data-activation-container="' + target + '"]');
+
+								containers.hide();
+								current.show();
 							}
 						</script>
 					</div>
