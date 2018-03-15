@@ -627,18 +627,18 @@
 											<span class="check-card__title">Exchange for new device</span>
 										</span>
 									</label> </div>
-                  <div class="product-activation__item"> <label class="check-card">
-										<input type="radio" name="product-activation-item"  onchange="toggleForm(event, 'customersdevice')">
-										<span class="check-card__content" data-animation="ripple">
-											<i class="icon icon-checked check-card__icon"></i>
-											<span class="check-card__title">Exchange for custemr&#39;s device</span>
-										</span>
-									</label> </div>
                 </div>
-                <div class="product-activation__form js-activation-form" data-activation-container="newdevice"> <label for="product-activation-field" class="product-activation__label">Enter or scan device serial number</label>
-                  <div class="product-activation__search"> <i class="fa fa-search product-activation__icon"></i> <input type="text" class="simple-input" placeholder="Search"> </div>
+                <div class="product-activation__form js-activation-form" data-activation-container="newdevice">
+                  <div class="product-activation__field">
+                    <div class="product-activation__label">Enter device Serial number</div> <input type="text" class="simple-input" placeholder=""> </div>
+                  <div class="product-activation__field"> <label class="checkbox checkbox_lg">
+									<input type="checkbox" onchange="toggleField(event, 'SIM-SerialNumber')">
+									<i class="icon icon-check"></i>
+									<span>Add SIM card</span>
+								</label> </div>
+                  <div class="product-activation__field js-activation-field" data-activation-field="SIM-SerialNumber" hidden>
+                    <div class="product-activation__label">Enter SIM Serial number</div> <input type="text" class="simple-input" placeholder=""> </div>
                 </div>
-                <div class="product-activation__form js-activation-form" data-activation-container="customersdevice"> <label for="product-activation-field" class="product-activation__label">If using Customer's device, enter its serial number</label> <input type="text" class="simple-input" value="072211009988777"> </div>
                 <script>
                   function toggleForm(e, target)
                   {
@@ -646,6 +646,11 @@
                     var current = containers.filter('[data-activation-container="' + target + '"]');
                     containers.hide();
                     current.show();
+                  }
+
+                  function toggleField(e, target)
+                  {
+                    $('.js-activation-field[data-activation-field="' + target + '"]').attr('hidden', !$(e.currentTarget).prop('checked'));
                   }
 
                 </script>

@@ -339,8 +339,7 @@ styles:
 						<div class="product-activation__items">
 							{% for item in [
 								{ title: 'Cancel activation' },
-								{ title: 'Exchange for new device', state: 'newdevice' },
-								{ title: "Exchange for custemr's device", state: 'customersdevice' }
+								{ title: 'Exchange for new device', state: 'newdevice' }
 							] %}
 								<div class="product-activation__item">
 									<label class="check-card">
@@ -354,15 +353,21 @@ styles:
 							{% endfor %}
 						</div>
 						<div class="product-activation__form js-activation-form" data-activation-container="newdevice">
-							<label for="product-activation-field" class="product-activation__label">Enter or scan device serial number</label>
-							<div class="product-activation__search">
-								<i class="fa fa-search product-activation__icon"></i>
-								<input type="text" class="simple-input" placeholder="Search">
+							<div class="product-activation__field">
+								<div class="product-activation__label">Enter device Serial number</div>
+								<input type="text" class="simple-input" placeholder="">
 							</div>
-						</div>
-						<div class="product-activation__form js-activation-form" data-activation-container="customersdevice">
-							<label for="product-activation-field" class="product-activation__label">If using Customer's device, enter its serial number</label>
-							<input type="text" class="simple-input" value="072211009988777">
+							<div class="product-activation__field">
+								<label class="checkbox checkbox_lg">
+									<input type="checkbox" onchange="toggleField(event, 'SIM-SerialNumber')">
+									<i class="icon icon-check"></i>
+									<span>Add SIM card</span>
+								</label>
+							</div>
+							<div class="product-activation__field js-activation-field" data-activation-field="SIM-SerialNumber" hidden>
+								<div class="product-activation__label">Enter SIM Serial number</div>
+								<input type="text" class="simple-input" placeholder="">
+							</div>
 						</div>
 						<script>
 							function toggleForm(e, target) {
@@ -371,6 +376,10 @@ styles:
 
 								containers.hide();
 								current.show();
+							}
+
+							function toggleField(e, target) {
+								$('.js-activation-field[data-activation-field="' + target + '"]').attr('hidden', !$(e.currentTarget).prop('checked'));
 							}
 						</script>
 					</div>
