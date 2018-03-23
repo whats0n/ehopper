@@ -1,0 +1,177 @@
+---
+title: 'Open Register &bull; eHopper POS'
+styles: 
+	- 'pos'
+---
+{% extends "layouts/_layout.html" %}
+
+{% block content %}
+	<main class="main">
+		<div class="inner">
+			{{header.call({
+				sidebarClassList: 'is-hidden',
+				fullinfoClassList: 'is-hidden',
+				menuBtnClassList: 'is-hidden',
+				helpBtnClassList: 'is-hidden',
+				searchClassList: 'is-hidden',
+				syncBtnClassList: 'is-hidden',
+				searchBtnClassList: 'is-hidden',
+				scanBtnClassList: 'is-hidden',
+				syncClassList: 'is-hidden',
+				containerClassList: 'main-header__container_full',
+				title: 'Open Register'
+			})}}
+			<aside class="sidebar sidebar_left sidebar_white">
+				<div class="infoblock infoblock_collapsed">
+					<div class="infoblock__row">
+						<div class="infoblock__col infoblock__col_md">
+							<div class="infoblock__box">
+								<small class="infoblock__label">Opened:</small>
+								<em class="infoblock__value">12/21/2016 14:19:28</em>
+							</div>
+							<div class="infoblock__box">
+								<small class="infoblock__label">By Employee:</small>
+								<em class="infoblock__value">Mr. John Snow</em>
+							</div>
+						</div>
+						<div class="infoblock__col infoblock__col_md">
+							<div class="infoblock__box">
+								<small class="infoblock__label">Closed:</small>
+								<em class="infoblock__value">12/21/2016 14:19:28</em>
+							</div>
+							<div class="infoblock__box">
+								<small class="infoblock__label">By Employee:</small>
+								<em class="infoblock__value">Mr. John Snow</em>
+							</div>
+						</div>
+					</div>
+					<button class="btn-open infoblock__open" onclick="(function() { 
+						[].forEach.call(document.querySelectorAll('.sidebar__poynt-hidden'), function(element) {
+							element.classList.toggle('is-open'); 
+						});
+						event.currentTarget.classList.toggle('is-active'); 
+					}());">
+						<i class="icon icon-caret"></i>
+					</button>
+				</div>
+				<hr />
+				<div class="sidebar__body sidebar__poynt-hidden">
+					{% set infoTable = [
+						{
+							label: 'Opening Amount',
+							value: '<small class="infotable__disabled">$0.00</small>'
+						},
+						{
+							label: 'Cash Sale',
+							value: '$12,344.00'
+						},
+						{
+							label: 'Refunds',
+							value: '$44.20'
+						},
+						{
+							label: 'Payins',
+							value: '$10,000.00'
+						},
+						{
+							label: 'Payouts',
+							value: '$20,000.00'
+						},
+						{
+							label: 'Closing Amount',
+							value: '$8,200.00'
+						},
+						{
+							label: '<strong>VARIANCE</strong>',
+							value: '<strong class="infotable__big">$44.20</strong>'
+						}
+					] %}
+					<ul class="infotable">
+						{% for item in infoTable %}
+							<li class="infotable__row">
+								<div class="infotable__label">{{item.label | safe}}</div>
+								<div class="infotable__value">{{item.value | safe}}</div>
+							</li>
+						{% endfor %}
+					</ul>
+				</div>
+				<div class="sidebar__footer sidebar__poynt-hidden">
+					<div class="section wrapper-btn-center">
+						<button class="btn btn_secondary btn_lg btn_block" data-animation="ripple">Print Z-Report</button>
+					</div>
+				</div>
+			</aside>
+			<div class="container container_right container_poynt-register">
+				<div class="container__body step-body">
+					<div class="step-body__section">
+						<div class="denomination">
+							<div class="denomination__container">
+								<div class="denomination__row">
+									{% for item in [
+										{
+											title: 'Cash',
+											items: [
+												{ label: '$100' },
+												{ label: '$50' },
+												{ label: '$20' },
+												{ label: '$10' },
+												{ label: '$5' },
+												{ label: '$1' }
+											]
+										},
+										{
+											title: 'Coins',
+											items: [
+												{ label: '$0.50' },
+												{ label: '$0.25' },
+												{ label: '$0.10' },
+												{ label: '$0.05' },
+												{ label: '$0.01' }
+											]
+										}
+									] %}
+										<div class="denomination__col">
+											<div class="denomination__title">{{item.title}}</div>
+											{% for item in item.items %}
+												<div class="denomination__section">
+													<div class="denomination__label">{{item.label | safe}}</div>
+													<div class="denomination__splitter">*</div>
+													<div class="denomination__field">
+														<input type="text" class="denomination__input" value="0">
+													</div>
+													<div class="denomination__splitter">=</div>
+													<div class="denomination__result">$0.00</div>
+												</div>
+											{% endfor %}
+										</div>
+									{% endfor %}
+								</div>
+							</div>
+							<div class="denomination__total">
+								<div class="denomination__total-in">
+									<div class="denomination__button">
+										<button class="btn btn_block denomination__clear" data-animation="ripple">Clear</button>
+									</div>
+									<div class="denomination__total-label">Total:</div>
+									<div class="denomination__total-sum">$0.00</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="step-body__footer section">
+						<div class="wrapper-btns-center">
+							<div class="wrapper-btns-center__col">
+								<button class="btn btn_primary btn_lg btn_block text-uppercase" data-animation="ripple" value="Done">Done</button>
+							</div>
+							<div class="wrapper-btns-center__col">
+								<button class="btn btn_lg btn_block text-uppercase" data-animation="ripple" value="Done">Cancel</button>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</main>
+
+	{{modal.help()}}
+{% endblock %}

@@ -1,0 +1,79 @@
+.denomination
+	margin: 0 auto 20px
+	border: 2px solid #eee
+	max-width: 600px
+	background: $white
+	// box-shadow: 0 2px 7px 2px rgba($black, 0.1)
+	&__container
+		display: table
+		table-layout: fixed
+		width: 100%
+	&__row
+		display: table-row
+		+clr
+	&__col
+		display: table-cell
+		padding: 20px 20px 15px
+		width: 50%
+		&:nth-child(1)
+			border-right: 1px solid #eee
+		&:nth-child(2)
+			border-left: 1px solid #eee
+	&__title
+		margin-bottom: 10px
+		+rmed
+		font-size: 20px
+		line-height: 1.2
+	&__section
+		padding: 5px 0
+		margin: 0 -5px
+		font-size: 0
+	&__label,
+	&__splitter,
+	&__field,
+	&__result
+		display: inline-block
+		vertical-align: middle
+		padding: 0 5px
+		color: $darkGray
+		font-size: 14px
+	&__label
+		width: 25%
+	&__splitter
+		width: 5%
+	&__result
+		width: 25%
+		text-align: right
+	&__field
+		width: 40%
+	&__input
+		padding: 10px 0
+		border-bottom: 1px solid rgba($darkGray, 0.4)
+		width: 100%
+		color: $darkGray
+		+rlight
+		font-size: 14px
+		text-align: right
+	&__total
+		padding: 15px 20px
+		border-top: 2px solid #eee
+		background: #f8f8f8
+		font-size: 0
+		&-in 
+			margin: 0 -5px
+	&__button,
+	&__total-label,
+	&__total-sum
+		display: inline-block
+		vertical-align: middle
+		padding: 5px
+		+rmed
+		font-size: 18px
+	&__button
+		width: 20%
+	&__total-label
+		width: 50%
+		text-align: right
+	&__total-sum
+		width: 30%
+		text-align: right
