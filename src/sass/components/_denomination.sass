@@ -3,7 +3,6 @@
 	border: 2px solid #eee
 	max-width: 600px
 	background: $white
-	// box-shadow: 0 2px 7px 2px rgba($black, 0.1)
 	&__container
 		display: table
 		table-layout: fixed
@@ -25,7 +24,8 @@
 		font-size: 20px
 		line-height: 1.2
 	&__section
-		padding: 5px 0
+		position: relative
+		padding: 5px 40px 5px 0
 		margin: 0 -5px
 		font-size: 0
 	&__label,
@@ -36,23 +36,26 @@
 		vertical-align: middle
 		padding: 0 5px
 		color: $darkGray
-		font-size: 14px
+		font-size: 15px
 	&__label
-		width: 25%
+		width: 30%
 	&__splitter
-		width: 5%
+		width: 10%
 	&__result
-		width: 25%
+		width: 30%
 		text-align: right
 	&__field
-		width: 40%
+		position: relative
+		width: 20%
 	&__input
 		padding: 10px 0
 		border-bottom: 1px solid rgba($darkGray, 0.4)
 		width: 100%
+		height: 40px
 		color: $darkGray
 		+rlight
-		font-size: 14px
+		font-size: 15px
+		line-height: normal
 		text-align: right
 	&__total
 		padding: 15px 20px
@@ -77,13 +80,17 @@
 	&__total-sum
 		width: 30%
 		text-align: right
-	// &__description
-	// 	padding: 15px 20px
-	// 	border-bottom: 2px solid #eee
-	// 	background: #f8f8f8
-	// 	+rreg
-	// 	font-size: 16px
-	// 	line-height: 1.3
+	&__clear
+		position: absolute
+		top: 0
+		right: 0
+		bottom: 0
+		background: none
+		+vertical
+		.icon
+			display: inline-block
+			vertical-align: middle
+			opacity: 0.5
 
 .sm-description
 	padding-bottom: 20px

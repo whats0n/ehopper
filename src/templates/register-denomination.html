@@ -123,11 +123,11 @@ styles:
 										{
 											title: 'Coins',
 											items: [
-												{ label: '$0.50' },
-												{ label: '$0.25' },
-												{ label: '$0.10' },
-												{ label: '$0.05' },
-												{ label: '$0.01' }
+												{ label: '$0.50', cent: true },
+												{ label: '$0.25', cent: true },
+												{ label: '$0.10', cent: true },
+												{ label: '$0.05', cent: true },
+												{ label: '$0.01', cent: true }
 											]
 										}
 									] %}
@@ -141,7 +141,8 @@ styles:
 														<input type="text" class="denomination__input" value="0">
 													</div>
 													<div class="denomination__splitter">=</div>
-													<div class="denomination__result">$0.00</div>
+													<div class="denomination__result">$0{% if item.cent %}.00{% endif %}</div>
+													<button class="denomination__clear"><i class="icon icon-clear"></i></button>
 												</div>
 											{% endfor %}
 										</div>
@@ -151,7 +152,7 @@ styles:
 							<div class="denomination__total">
 								<div class="denomination__total-in">
 									<div class="denomination__button">
-										<button class="btn btn_block denomination__clear" data-animation="ripple">Clear</button>
+										<button class="btn btn_block denomination__clear-all" data-animation="ripple">Clear All</button>
 									</div>
 									<div class="denomination__total-label">Total:</div>
 									<div class="denomination__total-sum">$0.00</div>
