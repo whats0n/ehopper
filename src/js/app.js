@@ -19,5 +19,6 @@ import simpleSwipe from './components/_simple-swipe';
 import table from './components/_table';
 import field from './components/_field';
 import toggleOnChange from './components/_toggle-onchange';
+import './components/_clear';
 
 import common from './_common';
