@@ -106,6 +106,18 @@ styles:
 					<div class="step-body__section">
 						<div class="sm-description">Enter quantities you are staring with</div>
 						<div class="denomination">
+							<div class="main-display denomination__display">
+								<button class="main-display__clear js-clear-all" data-numpad="numpad-clear"><i class="icon icon-clear"></i></button>
+								{{mixins.field({
+									label: 'Opening Amount:',
+									labelClassList: 'field__label_sm',
+									id: 'item-quantity',
+									value: '0.00',
+									placeholder: '0',
+									attrs: 'required readonly',
+									inputClassList: 'text-right input_xl'
+								})}}
+							</div>
 							<div class="denomination__container">
 								<div class="denomination__row">
 									{% for item in [
@@ -149,7 +161,7 @@ styles:
 									{% endfor %}
 								</div>
 							</div>
-							<div class="denomination__total">
+							{#<div class="denomination__total">
 								<div class="denomination__total-in">
 									<div class="denomination__button">
 										<button class="btn btn_block denomination__clear-all js-clear-all" data-animation="ripple">Clear All</button>
@@ -157,7 +169,10 @@ styles:
 									<div class="denomination__total-label">Total:</div>
 									<div class="denomination__total-sum">$0.00</div>
 								</div>
-							</div>
+							</div>#}
+						</div>
+						<div class="fieldset fieldset_lg fieldset_bordered fieldset_standalone  denomination-notes">
+							<textarea class="textarea textarea_block textarea_little" placeholder="Register Opening Note"></textarea>
 						</div>
 					</div>
 					<div class="step-body__footer section">

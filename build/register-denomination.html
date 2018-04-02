@@ -252,6 +252,13 @@
               <div class="step-body__section">
                 <div class="sm-description">Enter quantities you are staring with</div>
                 <div class="denomination">
+                  <div class="main-display denomination__display"> <button class="main-display__clear js-clear-all" data-numpad="numpad-clear"><i class="icon icon-clear"></i></button>
+                    <div class="field ">
+                      <div class="field__inner"> <label class="field__label field__label_sm" for="item-quantity">Opening Amount:</label>
+                        <div class="field__box"> <input class="input field__input text-right input_xl" value="0.00" id="item-quantity" type="text" placeholder="0" required readonly> </div>
+                      </div>
+                    </div>
+                  </div>
                   <div class="denomination__container">
                     <div class="denomination__row">
                       <div class="denomination__col">
@@ -328,14 +335,8 @@
                       </div>
                     </div>
                   </div>
-                  <div class="denomination__total">
-                    <div class="denomination__total-in">
-                      <div class="denomination__button"> <button class="btn btn_block denomination__clear-all js-clear-all" data-animation="ripple">Clear All</button> </div>
-                      <div class="denomination__total-label">Total:</div>
-                      <div class="denomination__total-sum">$0.00</div>
-                    </div>
-                  </div>
                 </div>
+                <div class="fieldset fieldset_lg fieldset_bordered fieldset_standalone  denomination-notes"> <textarea class="textarea textarea_block textarea_little" placeholder="Register Opening Note"></textarea> </div>
               </div>
               <div class="step-body__footer section">
                 <div class="wrapper-btns-center">
