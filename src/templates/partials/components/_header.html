@@ -347,6 +347,7 @@
 		<h2 class="title-xlg main-header__title {{props.titleClassList}}">{{props.title}}</h2>
 
 		<div class="main-header__searchbox {{props.searchClassList}}">
+			{% set searchPlaceholder = props.searchPlaceholder %}
 			{% include './_search.html' %}
 		</div>
 	</div>
