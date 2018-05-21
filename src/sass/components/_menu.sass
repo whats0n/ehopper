@@ -38,13 +38,16 @@
     padding-top: 70px
     // padding-top: 50px
     height: 100%
-  &__account
-    // padding: 20px 15px
-    padding: 5px 15px 20px 15px
+  &__info
+    padding: 0 15px 15px 15px
     border-bottom: 1px solid #4C5560 
     color: $white
-    // font-size: 18px
     font-size: 16px
+  &__info-in
+    padding: 2px 0
+    +text-overflow
+    &:first-child
+      padding-top: 0
 
 .nav
   &__item
