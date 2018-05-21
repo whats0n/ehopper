@@ -1,0 +1,134 @@
+---
+title: 'Split Payment &bull; eHopper POS'
+styles: 
+	- 'pos'
+---
+{% extends "layouts/_layout.html" %}
+
+{% block content %}
+	<main class="main">
+		<div class="inner">
+			{{header.call({
+				sidebarClassList: 'is-hidden',
+				fullinfoClassList: 'is-hidden',
+				menuBtnClassList: 'is-hidden',
+				helpBtnClassList: 'is-hidden',
+				searchClassList: 'is-hidden',
+				syncBtnClassList: 'is-hidden',
+				searchBtnClassList: 'is-hidden',
+				syncClassList: 'is-hidden',
+				scanBtnClassList: 'is-hidden',
+				containerClassList: 'main-header__container_full',
+				title: 'Split Payment'
+			})}}
+			{% set orderListMode = [
+				{
+					title: 'Pen',
+					notes: 'green',
+					quantity: '1',
+					price: '$4.00',
+					total: '$4.00',
+					state: 'default'
+				},
+				{
+					title: 'Pen2',
+					notes: 'black',
+					quantity: '1',
+					price: '$4.00',
+					total: '$4.00',
+					state: 'default'
+				}
+			] %}
+			{% set totalsListMainCustom = [
+				{
+					label: 'Subtotal',
+					value: '8.00'
+				},
+				{
+					label: 'Discount',
+					value: '0.00'
+				},
+				{
+					label: '6',
+					value: '0.48'
+				},
+				{
+					label: 'Tax',
+					value: '($0.25)',
+					nodollar: true
+				},
+				{
+					label: 'Federal Tax',
+					value: '0.80'
+				}
+			] %}	
+			{% set totalsListScrollCustom = [
+				{
+					label: 'Total',
+					value: '9.03'
+				}
+			] %}
+			{% include 'partials/components/_payments-sidebar.html' %}
+			<div class="container container_right container_payments">
+				<div class="container__body step-body">
+					<div class="step-body__section">
+						<div class="form form_sm">
+							<div class="form__section form__section_sm">
+								{{mixins.fieldBox({
+									counter: true,
+									value: '2',
+									label: 'Payments'
+								})}}
+							</div>
+							{% for dd in [
+								{
+									type: 'Cash',
+									value: '4.58',
+									active: 0
+								},
+								{
+									type: 'Credit Card',
+									value: '4.43',
+									active: 1
+								}
+							] %}
+								{% if loop.index >= 3 %}
+									{% set direction = ' dropdown-menu_up' %}
+								{% else %}
+									{% set direction = '' %}
+								{% endif %}
+								<div class="form__section form__section_sm">
+									{{mixins.fieldBox({
+										select: {
+											dropdownMenuClassList: 'dropdown-menu_no-scroll' + direction,
+											value: dd.type,
+											list: [ { text: 'Cash', value: 'Cash' }, { text: 'Credit Card', value: 'Credit Card' }, { text: 'Debit Card', value: 'Debit Card' }, { text: 'External Payment', value: 'External Payment' } ],
+											listOnly: true,
+											activeItem: dd.active,
+											name: 'split-payment' + loop.index,
+											menuAttrs: 'data-scrollbar="default"'
+										},
+										value: dd.value,
+										button: 'Charge',
+										number: 1,
+										delete: true
+									})}}
+									{% if dd.type == 'Cash' %}
+										<div class="form__rounding">Amount will be rounded up to $4.60</div>
+									{% endif %}
+								</div>
+							{% endfor %}
+						</div>
+					</div>
+					<div class="step-body__footer section">
+						<div class="form form_sm">
+							<button class="btn btn_primary btn_lg btn_block" data-animation="ripple" value="Done">Done</button>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</main>
+
+	{{modal.help()}}
+{% endblock %}
