@@ -1,0 +1,325 @@
+---
+title: 'Orders #0123 &bull; eHopper POS'
+styles: 
+	- 'pos'
+settingsActive: 2
+---
+{% extends "layouts/_layout.html" %}
+
+{% block content %}
+	<main class="main">
+		<div class="inner order">
+			{{header.call({
+				sidebarClassList: 'is-hidden',
+				fullinfoClassList: 'is-hidden',
+				menuBtnClassList: 'is-hidden',
+				helpBtnClassList: 'is-hidden',
+				searchClassList: 'is-hidden',
+				syncBtnClassList: 'is-hidden',
+				searchBtnClassList: 'is-hidden',
+				syncClassList: 'is-hidden',
+				scanBtnClassList: 'is-hidden',
+				containerClassList: 'main-header__container_full',
+				title: 'Order #0123'
+			})}}
+			<aside class="order__sidebar" data-dropdown-parent="sidebar">
+				<div class="order__info" data-scrollbar="default">
+					<div class="infoblock">
+						<div class="infoblock__row">
+							<div class="infoblock__col">
+								<small class="infoblock__label">Store:</small>
+								<em class="infoblock__value">WestGuestCafe</em>
+							</div>
+							<div class="infoblock__col">
+								<small class="infoblock__label">Order ID:</small>
+								<em class="infoblock__value">0000123</em>
+							</div>
+							<div class="infoblock__col">
+								<small class="infoblock__label">Order Name:</small>
+								<em class="infoblock__value"></em>
+							</div>
+							<div class="infoblock__col">
+								<small class="infoblock__label">Customer:</small>
+								<em class="infoblock__value">Walk-In</em>
+							</div>
+							<div class="infoblock__col">
+								<small class="infoblock__label">Customer Phone:</small>
+								<em class="infoblock__value"></em>
+							</div>
+							<div class="infoblock__col">
+								<small class="infoblock__label">Employee:</small>
+								<em class="infoblock__value">Mr. Seller Name</em>
+							</div>
+							<div class="infoblock__col">
+								<small class="infoblock__label">Order Date:</small>
+								<em class="infoblock__value">12/21/2016 14:19:28</em>
+							</div>
+						</div>
+					</div>
+					<hr>
+					<div class="infoblock">
+						<div class="infoblock__row">
+							<div class="infoblock__col">
+								<small class="infoblock__label">Order Source:</small>
+								<em class="infoblock__value">Online</em>
+							</div>
+							<div class="infoblock__col">
+								<small class="infoblock__label">Type:</small>
+								<em class="infoblock__value">Quick Sale</em>
+							</div>
+							<div class="infoblock__col">
+								<i class="icon icon-check infoblock__icon"></i>
+								<small class="infoblock__label">Status:</small>
+								<em class="infoblock__value">Paid / Successfull</em>
+							</div>
+							<div class="infoblock__col">
+								<small class="infoblock__label">Tender Type:</small>
+								<em class="infoblock__value">Credit Card</em>
+							</div>
+							<!-- <div class="infoblock__col">
+								<small class="infoblock__label">Fulfillment:</small>
+								<em class="infoblock__value">Fulfilled</em>
+							</div> -->
+							<div class="infoblock__col">
+								{{dropdown.simple({
+									label: 'Fulfillment:',
+									openAttrs: 'data-dropdown-parent-name="sidebar"',
+									value: 'New',
+									list: [ { text: 'New', value: 'New' }, { text: 'In Preparation', value: 'In Preparation' }, { text: 'Prepared', value: 'Prepared' }, { text: 'In Fulfillment', value: 'In Fulfillment' }, { text: 'Fulfilled', value: 'Fulfilled' } ],
+									listOnly: true,
+									activeItem: 0,
+									name: 'order-fulfillment',
+									dropdownClassList: 'infoblock__dropdown dropdown_md dropdown_time',
+									customIcon: '<i class="icon icon-time dropdown__icon"></i>'
+								})}}
+							</div>
+							<div class="infoblock__col">
+								<small class="infoblock__label">Refnum:</small>
+								<em class="infoblock__value">V469GH9</em>
+							</div>
+						</div>
+					</div>
+					<hr>
+					<div class="poynt-divider"></div>
+					<div class="infoblock infoblock_inline">
+						<div class="infoblock__row">
+							<div class="infoblock__col">
+								<small class="infoblock__label">Sub:</small>
+								<em class="infoblock__value">$50.00</em>
+							</div>
+							<div class="infoblock__col">
+								<small class="infoblock__label">Discount:</small>
+								<em class="infoblock__value">$0.00</em>
+							</div>
+							<div class="infoblock__col">
+								<small class="infoblock__label">Tax:</small>
+								<em class="infoblock__value">$0.00</em>
+							</div>
+							<div class="infoblock__col">
+								<small class="infoblock__label">Tips:</small>
+								<em class="infoblock__value">$0.00</em>
+							</div>
+							<div class="infoblock__col">
+								<small class="infoblock__label">Total:</small>
+								<em class="infoblock__value">$50.00</em>
+							</div>
+						</div>
+					</div>
+					<hr>
+					<div class="infoblock infoblock_inline">
+						<div class="infoblock__row">
+							<div class="infoblock__col">
+								<div class="order-notes">
+									<i class="icon icon-note order-notes__icon"></i>
+									<div class="order-notes__content">Order Note text goes here (if present)</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</aside>
+			<div class="order__container">
+				<div class="order__body">
+					<div class="order__content">
+						<div class="table-wrapper table-wrapper_no-footer table-wrapper_header-lg" data-table="order">
+							{% set table = {
+								header: [
+									{ column: 'icon', checkbox: true },
+									{ column: 'order-item', content: 'Description' },
+									{ column: 'order-quantity', content: 'Quantity' },
+									{ column: 'order-price', content: 'Item Price' },
+									{ column: 'order-discount', content: 'Discount' },
+									{ column: 'order-total', content: 'Total' }
+								],
+								body: [
+									[
+										{ column: 'icon', checkbox: true },
+										{ column: 'order-item', content: '<div class="table-wrapper__value">Hot-Dog</div>' },
+										{ column: 'order-quantity', content: '2' },
+										{ column: 'order-price', content: '$5.00' },
+										{ column: 'order-discount', content: '&nbsp;' },
+										{ column: 'order-total', content: '$10.00' }
+									],
+									[
+										{ column: 'icon', checkbox: true },
+										{ column: 'order-item', content: '<div class="table-wrapper__value">Hot-Dog XL</div> <div class="table-wrapper__meta">+Additional Ketchup</div>' },
+										{ column: 'order-quantity', content: '1' },
+										{ column: 'order-price', content: '$8.00' },
+										{ column: 'order-discount', content: '$1.00' },
+										{ column: 'order-total', content: '$7.00' }
+									],
+									[
+										{ column: 'icon', checkbox: true },
+										{ column: 'order-item', content: '<div class="table-wrapper__value">Whiskey</div>' },
+										{ column: 'order-quantity', content: '200 <span class="muted">ml</span>' },
+										{ column: 'order-price', content: '$8.00' },
+										{ column: 'order-discount', content: '$1.00' },
+										{ column: 'order-total', content: '$7.00' }
+									],
+									[
+										{ column: 'icon', checkbox: true },
+										{ column: 'order-item', content: '<div class="table-wrapper__value">Very Good Wine</div> <div class="table-wrapper__meta">France, Glass Bottle, 700 ml</div>' },
+										{ column: 'order-quantity', content: '11' },
+										{ column: 'order-price', content: '$1,048.90' },
+										{ column: 'order-discount', content: '$48.90' },
+										{ column: 'order-total', content: '$11,480.00' }
+									]
+								]
+							} %}
+							<div class="table-wrapper__header" data-table-fake="order">
+								<div class="table-header">
+									<ul class="table-header__tr">
+										{% for th in table.header %}
+											<li class="table-header__th" data-column="{{th.column}}">
+												{% if th.checkbox %}
+													<div class="order__action">
+														{{mixins.checkbox()}}
+													</div>
+												{% else %}
+													{{th.content | safe}}
+												{% endif %}
+											</li>
+										{% endfor %}
+									</ul>
+								</div>
+							</div>
+							<div class="table-wrapper__body" data-scrollbar="default" data-table-scrollable="order">
+								<div class="table-body table-body_order table-wrapper__table" data-table-main="order">
+									{% for item in range(0,5) %}
+										{% for tr in table.body %}
+											<div class="table-body__tr">
+												{% for td in tr %}
+													<div class="table-body__td" data-column="{{td.column}}">
+														{% if td.checkbox %}
+															<div class="order__action">
+																{{mixins.checkbox()}}
+															</div>
+														{% else %}
+															{{td.content | safe}}
+														{% endif %}
+													</div>
+												{% endfor %}
+											</div>
+										{% endfor %}
+									{% endfor %}
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="order__footer">
+						{# <div class="order-totals">
+							<div class="order-notes">
+								<i class="icon icon-note order-notes__icon"></i>
+								<div class="order-notes__content">Order Note text goes here (if present)</div>
+							</div>
+							{% set orderTotalsTable = [
+								{ label: 'Subtotal:', value: '$11,540.54' },
+								{ label: 'Tax:', value: '$140.00' },
+								{ label: 'Total:', value: '<em>$12,540.54</em>' }
+							] %}
+							<div class="order-totals__table">
+								{% for item in orderTotalsTable %}
+									<div class="order-totals__tr">
+										<div class="order-totals__td order-totals__label">{{item.label | safe}}</div>
+										<div class="order-totals__td order-totals__value">{{item.value | safe}}</div>
+									</div>
+								{% endfor %}
+							</div>
+						</div> #}
+						<div class="order__buttons">
+							<button class="btn btn_lg btn_primary" data-animation="ripple" data-modal-open="print-receipt">Print Receipt</button>
+							<button class="btn btn_lg btn_default" data-animation="ripple" data-modal-open="email-receipt">Email Receipt</button>
+							<button class="btn btn_lg btn_default" data-animation="ripple" data-modal-open="order-void">Void</button>
+							<button class="btn btn_lg btn_default" data-animation="ripple">Refund</button>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</main>
+
+	{{modal.help()}}
+	{{modal.orderReceipt({
+		name: 'email-receipt',
+		title: 'Email Receipt',
+		fields: [
+			{
+				field: true,
+				options: {
+					label: 'Email Address:',
+					id: 'email-receipt-address',
+					placeholder: 'user@domain.com',
+					inputClassList: 'input_lg'
+				}
+			},
+			{
+				field: true,
+				options: {
+					label: 'Receipt Language:',
+					id: 'email-receipt-lang',
+					select: true,
+					selectOptions: {
+						id: 'email-receipt-lang',
+						classList: 'select_lg field__select',
+						options: [ 'English', 'Français', 'Русский', 'Español', 'Custom' ]
+					}
+				}
+			}
+		]
+	})}}
+	{{modal.orderReceipt({
+		name: 'print-receipt',
+		title: 'Email Receipt',
+		fields: [
+			{
+				field: true,
+				options: {
+					label: 'Receipt Language:',
+					id: 'print-receipt-lang',
+					select: true,
+					selectOptions: {
+						id: 'print-receipt-lang',
+						classList: 'select_lg field__select',
+						options: [ 'English', 'Français', 'Русский', 'Español', 'Custom' ]
+					}
+				}
+			},
+			{
+				checkbox: {
+					content: 'Include signature'
+				}
+			}
+		]
+	})}}
+	{{modal.confirm({
+		name: 'order-void',
+		title: 'Void Confirmation',
+		content: '<p>Are you sure you want to void the order?</p>',
+		colSize: 'md',
+		rowClassList: 'confirm__buttons',
+		buttons: [
+			'<button class="btn btn_block btn_success" data-animation="ripple">Yes</button>',
+			'<button class="btn btn_block btn_success" data-animation="ripple">No</button>'
+		]
+	})}}
+{% endblock %}
