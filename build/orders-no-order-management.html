@@ -1,0 +1,1084 @@
+<!doctype html>
+<html>
+
+  <head>
+    <meta charset="utf-8">
+    <title>Orders &bull; eHopper POS</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="theme-color" content="#fff">
+    <meta name="format-detection" content="telephone=no">
+    <link rel="stylesheet" media="all" href="static/css/pos.css">
+    <link rel="icon" href="https://ehopper.com/wp-content/uploads/2016/03/favicon-01.png" type="image/png">
+    <!-- BEGIN scripts -->
+    <!-- END scripts -->
+  </head>
+
+  <body class="">
+    <!-- begin application -->
+    <div class="application" id="application">
+      <!-- BEGIN content -->
+      <main class="main">
+        <div class="inner orders">
+          <!-- begin header -->
+          <header class="main-header main-header_simple-search">
+            <!-- begin button 'back' --><button class="main-header__back btn-back ">
+		<i class="icon icon-back btn-back__icon"></i>
+		<span class="btn-back__title">Back</span>
+	</button>
+            <!-- end button 'back' -->
+            <!-- begin main container -->
+            <div class="main-header__container main-header__container_full"> <button class="btn-icon main-header__help is-hidden" title="Help" data-modal-open="help">
+			<i class="icon icon-help"></i>
+		</button>
+              <h2 class="title-xlg main-header__title ">Orders</h2>
+              <div class="main-header__searchbox main-header__searchbox_right">
+                <!-- begin search -->
+                <div class="search" data-modal="search">
+                  <div class="search__field" data-modal="container"> <input type="text" class="search__input" placeholder="Search for order, serial #">
+                    <div class="search__controls"> <span class="search__button"><i class="icon icon-search"></i></span> </div>
+                  </div>
+                  <div class="search-dropdown"> <i class="search-dropdown__arrow"></i>
+                    <div class="search-dropdown__container">
+                      <div class="search-dropdown__body">
+                        <ul class="search-dropdown__list">
+                          <li class="search-dropdown__item">
+                            <div class="search-dropdown__price"> <span class="search-dropdown__currency">$</span> <span class="search-dropdown__value">99.99</span> </div>
+                            <div class="search-dropdown__text">Lorem ipsum dolor.</div>
+                          </li>
+                          <li class="search-dropdown__item">
+                            <div class="search-dropdown__price"> <span class="search-dropdown__currency">$</span> <span class="search-dropdown__value">99.99</span> </div>
+                            <div class="search-dropdown__text">Lorem ipsum dolor.</div>
+                          </li>
+                          <li class="search-dropdown__item">
+                            <div class="search-dropdown__price"> <span class="search-dropdown__currency">$</span> <span class="search-dropdown__value">99.99</span> </div>
+                            <div class="search-dropdown__text">Lorem ipsum dolor.</div>
+                          </li>
+                          <li class="search-dropdown__item">
+                            <div class="search-dropdown__price"> <span class="search-dropdown__currency">$</span> <span class="search-dropdown__value">99.99</span> </div>
+                            <div class="search-dropdown__text">Lorem ipsum dolor.</div>
+                          </li>
+                          <li class="search-dropdown__item">
+                            <div class="search-dropdown__price"> <span class="search-dropdown__currency">$</span> <span class="search-dropdown__value">99.99</span> </div>
+                            <div class="search-dropdown__text">Lorem ipsum dolor.</div>
+                          </li>
+                          <li class="search-dropdown__item">
+                            <div class="search-dropdown__price"> <span class="search-dropdown__currency">$</span> <span class="search-dropdown__value">99.99</span> </div>
+                            <div class="search-dropdown__text">Lorem ipsum dolor.</div>
+                          </li>
+                          <li class="search-dropdown__item">
+                            <div class="search-dropdown__price"> <span class="search-dropdown__currency">$</span> <span class="search-dropdown__value">99.99</span> </div>
+                            <div class="search-dropdown__text">Lorem ipsum dolor.</div>
+                          </li>
+                          <li class="search-dropdown__item">
+                            <div class="search-dropdown__price"> <span class="search-dropdown__currency">$</span> <span class="search-dropdown__value">99.99</span> </div>
+                            <div class="search-dropdown__text">Lorem ipsum dolor.</div>
+                          </li>
+                          <li class="search-dropdown__item">
+                            <div class="search-dropdown__price"> <span class="search-dropdown__currency">$</span> <span class="search-dropdown__value">99.99</span> </div>
+                            <div class="search-dropdown__text">Lorem ipsum dolor.</div>
+                          </li>
+                          <li class="search-dropdown__item">
+                            <div class="search-dropdown__price"> <span class="search-dropdown__currency">$</span> <span class="search-dropdown__value">99.99</span> </div>
+                            <div class="search-dropdown__text">Lorem ipsum dolor.</div>
+                          </li>
+                          <li class="search-dropdown__item">
+                            <div class="search-dropdown__price"> <span class="search-dropdown__currency">$</span> <span class="search-dropdown__value">99.99</span> </div>
+                            <div class="search-dropdown__text">Lorem ipsum dolor.</div>
+                          </li>
+                          <li class="search-dropdown__item">
+                            <div class="search-dropdown__price"> <span class="search-dropdown__currency">$</span> <span class="search-dropdown__value">99.99</span> </div>
+                            <div class="search-dropdown__text">Lorem ipsum dolor.</div>
+                          </li>
+                        </ul>
+                      </div> <button class="btn btn_block" data-animation="ripple"><i class="icon icon-expand"></i>Show more</button> </div>
+                  </div>
+                </div>
+                <!-- end search -->
+              </div>
+            </div>
+            <!-- end main container -->
+            <!-- begin block sync/search for -->
+            <div class="main-header__sync is-hidden">
+              <div class="main-header__indicator" data-state="active"></div> <button class="btn-sync is-hidden">
+			<span class="btn-sync__title">Sync</span>
+			<i class="icon icon-sync btn-sync__icon"></i>
+		</button> <button class="main-header__search-for is-hidden">
+			<span></span>
+			<i class="icon icon-sync"></i>
+		</button> </div>
+            <!-- end block sync/search for -->
+            <!-- begin sidebar for shopping cart -->
+            <div class="main-header__sidebar is-hidden">
+              <!-- begin button 'menu' --><button class="main-header__menu icon icon-menu is-hidden" title="Menu" data-menu-open="menu"></button>
+              <!-- end button 'menu' --><button class="main-header__delete btn-icon icon icon-delete " type="button" title="Delete"></button>
+              <div class="main-header__toolbar ">
+                <div class="toolbar">
+                  <div class="toolbar__container">
+                    <div class="toolbar__row">
+                      <div class="toolbar__col">
+                        <!-- begin dropdown -->
+                        <div class="dropdown dropdown_header dropdown-menu_no-scroll" data-dropdown="order-type">
+                          <div class="dropdown__header" data-dropdown-open="order-type" data-animation="ripple"> <i class="dropdown__arrow icon icon-expand"></i>
+                            <div class="dropdown__value" data-dropdown-value="order-type">Quick Sale</div>
+                          </div>
+                          <div class="dropdown-menu " data-dropdown-menu="order-type">
+                            <ul class="dropdown-menu__list">
+                              <li class="dropdown-menu__item is-active" data-animation="ripple" data-dropdown-item="order-type" data-value="Quick Sale"> Quick Sale </li>
+                              <li class="dropdown-menu__item" data-animation="ripple" data-dropdown-item="order-type" data-value="Dine In"> Dine In </li>
+                              <li class="dropdown-menu__item" data-animation="ripple" data-dropdown-item="order-type" data-value="Take Out"> Take Out </li>
+                              <li class="dropdown-menu__item" data-animation="ripple" data-dropdown-item="order-type" data-value="Drive Thru"> Drive Thru </li>
+                              <li class="dropdown-menu__item" data-animation="ripple" data-dropdown-item="order-type" data-value="Delivery"> Delivery </li>
+                            </ul>
+                          </div>
+                          <!-- begin overlay --><button type="button" class="overlay " data-color="dark-gray" data-overlay="overlay" data-dropdown-overlay="order-type"></button>
+                          <!-- end overlay -->
+                        </div>
+                        <!-- end dropdown -->
+                      </div>
+                      <div class="toolbar__col">
+                        <!-- begin dropdown -->
+                        <div class="dropdown dropdown_header dropdown_fixed" data-dropdown="customer">
+                          <div class="dropdown__header" data-dropdown-open="customer" data-animation="ripple"> <i class="dropdown__arrow icon icon-expand"></i>
+                            <div class="dropdown__value" data-dropdown-value="customer">Walk In</div>
+                          </div>
+                          <div class="dropdown-menu " data-dropdown-menu="customer">
+                            <div class="dropdown-menu__search sm-search">
+                              <form action="/">
+                                <div class="sm-search__field"> <input type="text" class="sm-search__input" placeholder="Search for customer"> <button class="sm-search__btn" data-animation="ripple"><i class="icon icon-search"></i></button> </div>
+                              </form>
+                            </div>
+                            <ul class="dropdown-menu__list" data-scrollbar="default">
+                              <li class="dropdown-menu__item is-active dropdown-menu__item_special" data-animation="ripple" data-dropdown-item="customer" data-value="Walk In"> Walk In </li>
+                              <li class="dropdown-menu__item" data-animation="ripple" data-dropdown-item="customer" data-value="John Doe"> John Doe <i class="icon icon-next"></i> </li>
+                              <li class="dropdown-menu__item" data-animation="ripple" data-dropdown-item="customer" data-value="Charlie Sheen"> Charlie Sheen <i class="icon icon-next"></i> </li>
+                              <li class="dropdown-menu__item" data-animation="ripple" data-dropdown-item="customer" data-value="Wendy Williams"> Wendy Williams <i class="icon icon-next"></i> </li>
+                            </ul> <button class="btn btn_block btn_md btn_transparent" data-animation="ripple" id="add-new-customer-btn"><i class="icon icon-plus"></i>New Customer</button> </div>
+                          <!-- begin overlay --><button type="button" class="overlay " data-color="dark-gray" data-overlay="overlay" data-dropdown-overlay="customer"></button>
+                          <!-- end overlay -->
+                        </div>
+                        <!-- end dropdown -->
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- end sidebar for shopping cart -->
+            <!-- begin button 'scan' -->
+            <div class="main-header__scan is-hidden"> <button class="btn-scan" data-animation="ripple">
+			<svg viewBox="0 0 26 25" class="btn-scan__icon">
+				<path d="M0,0v6c0.7,0,1.3,0,2,0V2h4c0-1,0-1,0-2H0z"></path>
+				<path d="M20,0c0,0.7,0,1.3,0,2h4v4c0.6,0,1.3,0,2,0V0H20z"></path>
+				<path d="M2,23v-4c-0.7,0-1.3,0-2,0v6h6c0-0.8,0-1.4,0-2H2z"></path>
+				<path d="M26,19c-0.7,0-1.4,0-2,0v4h-4c0,0.6,0,1.4,0,2h6V19z"></path>
+				<path d="M5,5v15h1C6,15.3,6,9.7,6,5H5z"></path>
+				<path d="M7,5c0,4.7,0,10.3,0,15h1C8,15.3,8,9.7,8,5H7z"></path>
+				<path d="M9,5c0,4.7,0,10.3,0,15h2c0-4.7,0-10.3,0-15H9z"></path>
+				<path d="M13,5c0,4.7,0,10.3,0,15h1c0-4.7,0-10.3,0-15H13z"></path>
+				<path d="M15,5c0,4.7,0,10.3,0,15h1c0-4.7,0-10.3,0-15H15z"></path>
+				<path d="M17,5c0,4.7,0,10.3,0,15h2c0-5.2,0-9.7,0-15H17z"></path>
+				<path d="M21,5h-1c0,4.7,0,10.3,0,15h1V5z"></path>
+			</svg>
+			<span class="btn-scan__text">Scan</span>
+		</button> </div>
+            <!-- end button scan -->
+            <!-- begin container for fullinfo on the shopping cart -->
+            <div class="main-header__fullinfo is-hidden" data-fullinfo-container="fullinfo"> <button class="header__back btn-back">
+			<i class="icon icon-back btn-back__icon"></i>
+			<span class="btn-back__title">Back</span>
+		</button> </div>
+            <!-- end container for fullinfo on the shopping cart -->
+          </header>
+          <!-- end header -->
+          <div class="orders__container">
+            <div class="orders__body">
+              <div class="toolbar orders__toolbar">
+                <div class="toolbar__container">
+                  <div class="toolbar__row">
+                    <div class="toolbar__col">
+                      <!-- begin dropdown -->
+                      <div class="dropdown " data-dropdown="orders-stores">
+                        <div class="dropdown__header" data-dropdown-open="orders-stores" data-animation="ripple"> <i class="dropdown__arrow icon icon-expand"></i>
+                          <div class="dropdown__label">Stores:</div>
+                          <div class="dropdown__value" data-dropdown-value="orders-stores">Show all</div>
+                        </div>
+                        <div class="dropdown-menu " data-dropdown-menu="orders-stores">
+                          <ul class="dropdown-menu__list" data-scrollbar="default">
+                            <li class="dropdown-menu__item"> <label class="dropdown-checkbox">
+						<input type="checkbox" value="Store 1">
+						<i class="icon icon-check"></i>
+						<span>Store 1</span>
+					</label> </li>
+                            <li class="dropdown-menu__item"> <label class="dropdown-checkbox">
+						<input type="checkbox" value="Store 2">
+						<i class="icon icon-check"></i>
+						<span>Store 2</span>
+					</label> </li>
+                            <li class="dropdown-menu__item"> <label class="dropdown-checkbox">
+						<input type="checkbox" value="Store 3">
+						<i class="icon icon-check"></i>
+						<span>Store 3</span>
+					</label> </li>
+                            <li class="dropdown-menu__item"> <label class="dropdown-checkbox">
+						<input type="checkbox" value="Store 4">
+						<i class="icon icon-check"></i>
+						<span>Store 4</span>
+					</label> </li>
+                            <li class="dropdown-menu__item"> <label class="dropdown-checkbox">
+						<input type="checkbox" value="Store 5">
+						<i class="icon icon-check"></i>
+						<span>Store 5</span>
+					</label> </li>
+                          </ul>
+                        </div>
+                        <!-- begin overlay --><button type="button" class="overlay " data-color="dark-gray" data-overlay="overlay" data-dropdown-overlay="orders-stores"></button>
+                        <!-- end overlay -->
+                      </div>
+                      <!-- end dropdown -->
+                    </div>
+                    <div class="toolbar__col">
+                      <!-- begin dropdown -->
+                      <div class="dropdown " data-dropdown="orders-register">
+                        <div class="dropdown__header" data-dropdown-open="orders-register" data-animation="ripple"> <i class="dropdown__arrow icon icon-expand"></i>
+                          <div class="dropdown__label">Register:</div>
+                          <div class="dropdown__value" data-dropdown-value="orders-register">All</div>
+                        </div>
+                        <div class="dropdown-menu " data-dropdown-menu="orders-register">
+                          <ul class="dropdown-menu__list" data-scrollbar="default">
+                            <li class="dropdown-menu__item is-active" data-animation="ripple" data-dropdown-item="orders-register" data-value="All"> All </li>
+                            <li class="dropdown-menu__item" data-animation="ripple" data-dropdown-item="orders-register" data-value="Register 1"> Register 1 </li>
+                            <li class="dropdown-menu__item" data-animation="ripple" data-dropdown-item="orders-register" data-value="Register 2"> Register 2 </li>
+                            <li class="dropdown-menu__item" data-animation="ripple" data-dropdown-item="orders-register" data-value="Register 3"> Register 3 </li>
+                            <li class="dropdown-menu__item" data-animation="ripple" data-dropdown-item="orders-register" data-value="Register 4"> Register 4 </li>
+                            <li class="dropdown-menu__item" data-animation="ripple" data-dropdown-item="orders-register" data-value="Register 5"> Register 5 </li>
+                          </ul>
+                        </div>
+                        <!-- begin overlay --><button type="button" class="overlay " data-color="dark-gray" data-overlay="overlay" data-dropdown-overlay="orders-register"></button>
+                        <!-- end overlay -->
+                      </div>
+                      <!-- end dropdown -->
+                    </div>
+                    <div class="toolbar__col">
+                      <!-- begin dropdown -->
+                      <div class="dropdown " data-dropdown="orders-order-source">
+                        <div class="dropdown__header" data-dropdown-open="orders-order-source" data-animation="ripple"> <i class="dropdown__arrow icon icon-expand"></i>
+                          <div class="dropdown__label">Order Source:</div>
+                          <div class="dropdown__value" data-dropdown-value="orders-order-source">All</div>
+                        </div>
+                        <div class="dropdown-menu " data-dropdown-menu="orders-order-source">
+                          <ul class="dropdown-menu__list" data-scrollbar="default">
+                            <li class="dropdown-menu__item is-active" data-animation="ripple" data-dropdown-item="orders-order-source" data-value="All"> All </li>
+                            <li class="dropdown-menu__item" data-animation="ripple" data-dropdown-item="orders-order-source" data-value="POS"> POS </li>
+                            <li class="dropdown-menu__item" data-animation="ripple" data-dropdown-item="orders-order-source" data-value="Online"> Online </li>
+                          </ul>
+                        </div>
+                        <!-- begin overlay --><button type="button" class="overlay " data-color="dark-gray" data-overlay="overlay" data-dropdown-overlay="orders-order-source"></button>
+                        <!-- end overlay -->
+                      </div>
+                      <!-- end dropdown -->
+                    </div>
+                    <div class="toolbar__col">
+                      <!-- begin dropdown -->
+                      <div class="dropdown " data-dropdown="orders-status">
+                        <div class="dropdown__header" data-dropdown-open="orders-status" data-animation="ripple"> <i class="dropdown__arrow icon icon-expand"></i>
+                          <div class="dropdown__label">Status:</div>
+                          <div class="dropdown__value" data-dropdown-value="orders-status">All</div>
+                        </div>
+                        <div class="dropdown-menu " data-dropdown-menu="orders-status">
+                          <ul class="dropdown-menu__list" data-scrollbar="default">
+                            <li class="dropdown-menu__item is-active" data-animation="ripple" data-dropdown-item="orders-status" data-value="All"> All </li>
+                            <li class="dropdown-menu__item" data-animation="ripple" data-dropdown-item="orders-status" data-value="Not Paid"> Not Paid </li>
+                            <li class="dropdown-menu__item" data-animation="ripple" data-dropdown-item="orders-status" data-value="Pending Payment"> Pending Payment </li>
+                            <li class="dropdown-menu__item" data-animation="ripple" data-dropdown-item="orders-status" data-value="Partially Paid"> Partially Paid </li>
+                            <li class="dropdown-menu__item" data-animation="ripple" data-dropdown-item="orders-status" data-value="Paid"> Paid </li>
+                            <li class="dropdown-menu__item" data-animation="ripple" data-dropdown-item="orders-status" data-value="Partially Refunded"> Partially Refunded </li>
+                            <li class="dropdown-menu__item" data-animation="ripple" data-dropdown-item="orders-status" data-value="Refunded"> Refunded </li>
+                            <li class="dropdown-menu__item" data-animation="ripple" data-dropdown-item="orders-status" data-value="Voided"> Voided </li>
+                          </ul>
+                        </div>
+                        <!-- begin overlay --><button type="button" class="overlay " data-color="dark-gray" data-overlay="overlay" data-dropdown-overlay="orders-status"></button>
+                        <!-- end overlay -->
+                      </div>
+                      <!-- end dropdown -->
+                    </div>
+                    <div class="toolbar__col toolbar__col_refresh"> <button class="btn btn_lg btn_white btn_block" data-animation="ripple">
+										<i class="icon icon-undo"></i>
+										Refresh
+									</button> </div>
+                  </div>
+                </div>
+              </div>
+              <div class="orders__content">
+                <div class="table-wrapper table-wrapper_no-footer" data-table="orders">
+                  <div class="table-wrapper__header" data-table-fake="orders">
+                    <div class="table-header">
+                      <ul class="table-header__tr">
+                        <li class="table-header__th" data-column="orders-status">Status</li>
+                        <li class="table-header__th" data-column="orders-id">Order ID</li>
+                        <li class="table-header__th" data-column="orders-store">Store</li>
+                        <li class="table-header__th" data-column="orders-register">Register</li>
+                        <li class="table-header__th" data-column="orders-source">Order Source</li>
+                        <li class="table-header__th" data-column="orders-total">Total Sales</li>
+                        <li class="table-header__th" data-column="orders-date">Date</li>
+                        <li class="table-header__th" data-column="orders-employee">Employee</li>
+                        <li class="table-header__th" data-column="orders-customer">Customer</li>
+                        <li class="table-header__th" data-column="orders-action">Action</li>
+                      </ul>
+                    </div>
+                  </div>
+                  <div class="table-wrapper__body" data-scrollbar="default" data-table-scrollable="orders">
+                    <div class="table-body table-body_orders table-wrapper__table" data-table-main="orders">
+                      <div class="table-body__tr">
+                        <div class="table-body__td" data-column="orders-status"> <i class="fa fa-check fa-lg color-green"></i> </div>
+                        <div class="table-body__td" data-column="orders-id">
+                          <div class="table-wrapper__value">040660174749</div>
+                        </div>
+                        <div class="table-body__td" data-column="orders-store"> Main Store </div>
+                        <div class="table-body__td" data-column="orders-register"> 1 </div>
+                        <div class="table-body__td" data-column="orders-source"> Online </div>
+                        <div class="table-body__td" data-column="orders-total"> $123456789012345.12 </div>
+                        <div class="table-body__td" data-column="orders-date">
+                          <div class="text-date"> <span>03/07/2017</span> <small>12:59:00</small> </div>
+                        </div>
+                        <div class="table-body__td" data-column="orders-employee"> Mr. John Snow </div>
+                        <div class="table-body__td" data-column="orders-customer"> Walk In </div>
+                        <div class="table-body__td" data-column="orders-action">
+                          <div class="orders__action"> <button class="btn btn_icon"><i class="icon icon-next"></i></button> </div>
+                        </div>
+                      </div>
+                      <div class="table-body__tr">
+                        <div class="table-body__td" data-column="orders-status"> <i class="fa fa-check-circle fa-lg color-gray"></i> </div>
+                        <div class="table-body__td" data-column="orders-id">
+                          <div class="table-wrapper__value">040660174750</div>
+                          <div class="table-wrapper__meta">Saved order name</div>
+                        </div>
+                        <div class="table-body__td" data-column="orders-store"> Second Store </div>
+                        <div class="table-body__td" data-column="orders-register"> 4 </div>
+                        <div class="table-body__td" data-column="orders-source"> Online </div>
+                        <div class="table-body__td" data-column="orders-total"> $56.33 </div>
+                        <div class="table-body__td" data-column="orders-date">
+                          <div class="text-date"> <span>03/07/2017</span> <small>12:59:00</small> </div>
+                        </div>
+                        <div class="table-body__td" data-column="orders-employee"> Mr. John Snow </div>
+                        <div class="table-body__td" data-column="orders-customer"> Walk In </div>
+                        <div class="table-body__td" data-column="orders-action">
+                          <div class="orders__action"> <button class="btn btn_icon"><i class="icon icon-pos"></i></button> <button class="btn btn_icon"><i class="icon icon-next"></i></button> </div>
+                        </div>
+                      </div>
+                      <div class="table-body__tr">
+                        <div class="table-body__td" data-column="orders-status"> <i class="fa fa-check-circle fa-lg color-green"></i> </div>
+                        <div class="table-body__td" data-column="orders-id">
+                          <div class="table-wrapper__value">040660174750</div>
+                          <div class="table-wrapper__meta">Saved order name</div>
+                        </div>
+                        <div class="table-body__td" data-column="orders-store"> Second Store </div>
+                        <div class="table-body__td" data-column="orders-register"> 4 </div>
+                        <div class="table-body__td" data-column="orders-source"> POS </div>
+                        <div class="table-body__td" data-column="orders-total"> $56.33 </div>
+                        <div class="table-body__td" data-column="orders-date">
+                          <div class="text-date"> <span>03/07/2017</span> <small>12:59:00</small> </div>
+                        </div>
+                        <div class="table-body__td" data-column="orders-employee"> Mr. John Snow </div>
+                        <div class="table-body__td" data-column="orders-customer"> Walk In </div>
+                        <div class="table-body__td" data-column="orders-action">
+                          <div class="orders__action"> <button class="btn btn_icon"><i class="icon icon-pos"></i></button> <button class="btn btn_icon"><i class="icon icon-next"></i></button> </div>
+                        </div>
+                      </div>
+                      <div class="table-body__tr">
+                        <div class="table-body__td" data-column="orders-status"> <i class="fa fa-arrow-circle-o-left fa-lg color-red"></i> </div>
+                        <div class="table-body__td" data-column="orders-id">
+                          <div class="table-wrapper__value">040660174000</div>
+                        </div>
+                        <div class="table-body__td" data-column="orders-store"> Main Store </div>
+                        <div class="table-body__td" data-column="orders-register"> 2 </div>
+                        <div class="table-body__td" data-column="orders-source"> POS </div>
+                        <div class="table-body__td" data-column="orders-total"> $56.33 </div>
+                        <div class="table-body__td" data-column="orders-date">
+                          <div class="text-date"> <span>03/07/2017</span> <small>12:59:00</small> </div>
+                        </div>
+                        <div class="table-body__td" data-column="orders-employee"> Mr. John Snow </div>
+                        <div class="table-body__td" data-column="orders-customer"> VIP Mr. Donald Trump </div>
+                        <div class="table-body__td" data-column="orders-action">
+                          <div class="orders__action"> <button class="btn btn_icon"><i class="icon icon-next"></i></button> </div>
+                        </div>
+                      </div>
+                      <div class="table-body__tr">
+                        <div class="table-body__td" data-column="orders-status"> <i class="fa fa-arrow-left fa-lg color-red"></i> </div>
+                        <div class="table-body__td" data-column="orders-id">
+                          <div class="table-wrapper__value">040660174001</div>
+                        </div>
+                        <div class="table-body__td" data-column="orders-store"> Main Store </div>
+                        <div class="table-body__td" data-column="orders-register"> 1 </div>
+                        <div class="table-body__td" data-column="orders-source"> POS </div>
+                        <div class="table-body__td" data-column="orders-total"> $56.33 </div>
+                        <div class="table-body__td" data-column="orders-date">
+                          <div class="text-date"> <span>12/12/2016</span> <small>9:00:00</small> </div>
+                        </div>
+                        <div class="table-body__td" data-column="orders-employee"> Samantha Fox </div>
+                        <div class="table-body__td" data-column="orders-customer"> Walk In </div>
+                        <div class="table-body__td" data-column="orders-action">
+                          <div class="orders__action"> <button class="btn btn_icon"><i class="icon icon-next"></i></button> </div>
+                        </div>
+                      </div>
+                      <div class="table-body__tr">
+                        <div class="table-body__td" data-column="orders-status"> <i class="fa fa-ban fa-lg color-lightgray"></i> </div>
+                        <div class="table-body__td" data-column="orders-id">
+                          <div class="table-wrapper__value">040660174001</div>
+                        </div>
+                        <div class="table-body__td" data-column="orders-store"> Main Store </div>
+                        <div class="table-body__td" data-column="orders-register"> 1 </div>
+                        <div class="table-body__td" data-column="orders-source"> POS </div>
+                        <div class="table-body__td" data-column="orders-total"> $56.33 </div>
+                        <div class="table-body__td" data-column="orders-date">
+                          <div class="text-date"> <span>12/12/2016</span> <small>9:00:00</small> </div>
+                        </div>
+                        <div class="table-body__td" data-column="orders-employee"> Samantha Fox </div>
+                        <div class="table-body__td" data-column="orders-customer"> Walk In </div>
+                        <div class="table-body__td" data-column="orders-action">
+                          <div class="orders__action"> <button class="btn btn_icon"><i class="icon icon-next"></i></button> </div>
+                        </div>
+                      </div>
+                      <div class="table-body__tr">
+                        <div class="table-body__td" data-column="orders-status"> <i class="fa fa-check-circle-o fa-lg color-green"></i> </div>
+                        <div class="table-body__td" data-column="orders-id">
+                          <div class="table-wrapper__value">040660174001</div>
+                        </div>
+                        <div class="table-body__td" data-column="orders-store"> Main Store </div>
+                        <div class="table-body__td" data-column="orders-register"> 1 </div>
+                        <div class="table-body__td" data-column="orders-source"> POS </div>
+                        <div class="table-body__td" data-column="orders-total"> $56.33 </div>
+                        <div class="table-body__td" data-column="orders-date">
+                          <div class="text-date"> <span>12/12/2016</span> <small>9:00:00</small> </div>
+                        </div>
+                        <div class="table-body__td" data-column="orders-employee"> Samantha Fox </div>
+                        <div class="table-body__td" data-column="orders-customer"> Walk In </div>
+                        <div class="table-body__td" data-column="orders-action">
+                          <div class="orders__action"> <button class="btn btn_icon"><i class="icon icon-next"></i></button> </div>
+                        </div>
+                      </div>
+                      <div class="table-body__tr">
+                        <div class="table-body__td" data-column="orders-status"> <i class="fa fa-check fa-lg color-green"></i> </div>
+                        <div class="table-body__td" data-column="orders-id">
+                          <div class="table-wrapper__value">040660174749</div>
+                        </div>
+                        <div class="table-body__td" data-column="orders-store"> Main Store </div>
+                        <div class="table-body__td" data-column="orders-register"> 1 </div>
+                        <div class="table-body__td" data-column="orders-source"> Online </div>
+                        <div class="table-body__td" data-column="orders-total"> $123456789012345.12 </div>
+                        <div class="table-body__td" data-column="orders-date">
+                          <div class="text-date"> <span>03/07/2017</span> <small>12:59:00</small> </div>
+                        </div>
+                        <div class="table-body__td" data-column="orders-employee"> Mr. John Snow </div>
+                        <div class="table-body__td" data-column="orders-customer"> Walk In </div>
+                        <div class="table-body__td" data-column="orders-action">
+                          <div class="orders__action"> <button class="btn btn_icon"><i class="icon icon-next"></i></button> </div>
+                        </div>
+                      </div>
+                      <div class="table-body__tr">
+                        <div class="table-body__td" data-column="orders-status"> <i class="fa fa-check-circle fa-lg color-gray"></i> </div>
+                        <div class="table-body__td" data-column="orders-id">
+                          <div class="table-wrapper__value">040660174750</div>
+                          <div class="table-wrapper__meta">Saved order name</div>
+                        </div>
+                        <div class="table-body__td" data-column="orders-store"> Second Store </div>
+                        <div class="table-body__td" data-column="orders-register"> 4 </div>
+                        <div class="table-body__td" data-column="orders-source"> Online </div>
+                        <div class="table-body__td" data-column="orders-total"> $56.33 </div>
+                        <div class="table-body__td" data-column="orders-date">
+                          <div class="text-date"> <span>03/07/2017</span> <small>12:59:00</small> </div>
+                        </div>
+                        <div class="table-body__td" data-column="orders-employee"> Mr. John Snow </div>
+                        <div class="table-body__td" data-column="orders-customer"> Walk In </div>
+                        <div class="table-body__td" data-column="orders-action">
+                          <div class="orders__action"> <button class="btn btn_icon"><i class="icon icon-pos"></i></button> <button class="btn btn_icon"><i class="icon icon-next"></i></button> </div>
+                        </div>
+                      </div>
+                      <div class="table-body__tr">
+                        <div class="table-body__td" data-column="orders-status"> <i class="fa fa-check-circle fa-lg color-green"></i> </div>
+                        <div class="table-body__td" data-column="orders-id">
+                          <div class="table-wrapper__value">040660174750</div>
+                          <div class="table-wrapper__meta">Saved order name</div>
+                        </div>
+                        <div class="table-body__td" data-column="orders-store"> Second Store </div>
+                        <div class="table-body__td" data-column="orders-register"> 4 </div>
+                        <div class="table-body__td" data-column="orders-source"> POS </div>
+                        <div class="table-body__td" data-column="orders-total"> $56.33 </div>
+                        <div class="table-body__td" data-column="orders-date">
+                          <div class="text-date"> <span>03/07/2017</span> <small>12:59:00</small> </div>
+                        </div>
+                        <div class="table-body__td" data-column="orders-employee"> Mr. John Snow </div>
+                        <div class="table-body__td" data-column="orders-customer"> Walk In </div>
+                        <div class="table-body__td" data-column="orders-action">
+                          <div class="orders__action"> <button class="btn btn_icon"><i class="icon icon-pos"></i></button> <button class="btn btn_icon"><i class="icon icon-next"></i></button> </div>
+                        </div>
+                      </div>
+                      <div class="table-body__tr">
+                        <div class="table-body__td" data-column="orders-status"> <i class="fa fa-arrow-circle-o-left fa-lg color-red"></i> </div>
+                        <div class="table-body__td" data-column="orders-id">
+                          <div class="table-wrapper__value">040660174000</div>
+                        </div>
+                        <div class="table-body__td" data-column="orders-store"> Main Store </div>
+                        <div class="table-body__td" data-column="orders-register"> 2 </div>
+                        <div class="table-body__td" data-column="orders-source"> POS </div>
+                        <div class="table-body__td" data-column="orders-total"> $56.33 </div>
+                        <div class="table-body__td" data-column="orders-date">
+                          <div class="text-date"> <span>03/07/2017</span> <small>12:59:00</small> </div>
+                        </div>
+                        <div class="table-body__td" data-column="orders-employee"> Mr. John Snow </div>
+                        <div class="table-body__td" data-column="orders-customer"> VIP Mr. Donald Trump </div>
+                        <div class="table-body__td" data-column="orders-action">
+                          <div class="orders__action"> <button class="btn btn_icon"><i class="icon icon-next"></i></button> </div>
+                        </div>
+                      </div>
+                      <div class="table-body__tr">
+                        <div class="table-body__td" data-column="orders-status"> <i class="fa fa-arrow-left fa-lg color-red"></i> </div>
+                        <div class="table-body__td" data-column="orders-id">
+                          <div class="table-wrapper__value">040660174001</div>
+                        </div>
+                        <div class="table-body__td" data-column="orders-store"> Main Store </div>
+                        <div class="table-body__td" data-column="orders-register"> 1 </div>
+                        <div class="table-body__td" data-column="orders-source"> POS </div>
+                        <div class="table-body__td" data-column="orders-total"> $56.33 </div>
+                        <div class="table-body__td" data-column="orders-date">
+                          <div class="text-date"> <span>12/12/2016</span> <small>9:00:00</small> </div>
+                        </div>
+                        <div class="table-body__td" data-column="orders-employee"> Samantha Fox </div>
+                        <div class="table-body__td" data-column="orders-customer"> Walk In </div>
+                        <div class="table-body__td" data-column="orders-action">
+                          <div class="orders__action"> <button class="btn btn_icon"><i class="icon icon-next"></i></button> </div>
+                        </div>
+                      </div>
+                      <div class="table-body__tr">
+                        <div class="table-body__td" data-column="orders-status"> <i class="fa fa-ban fa-lg color-lightgray"></i> </div>
+                        <div class="table-body__td" data-column="orders-id">
+                          <div class="table-wrapper__value">040660174001</div>
+                        </div>
+                        <div class="table-body__td" data-column="orders-store"> Main Store </div>
+                        <div class="table-body__td" data-column="orders-register"> 1 </div>
+                        <div class="table-body__td" data-column="orders-source"> POS </div>
+                        <div class="table-body__td" data-column="orders-total"> $56.33 </div>
+                        <div class="table-body__td" data-column="orders-date">
+                          <div class="text-date"> <span>12/12/2016</span> <small>9:00:00</small> </div>
+                        </div>
+                        <div class="table-body__td" data-column="orders-employee"> Samantha Fox </div>
+                        <div class="table-body__td" data-column="orders-customer"> Walk In </div>
+                        <div class="table-body__td" data-column="orders-action">
+                          <div class="orders__action"> <button class="btn btn_icon"><i class="icon icon-next"></i></button> </div>
+                        </div>
+                      </div>
+                      <div class="table-body__tr">
+                        <div class="table-body__td" data-column="orders-status"> <i class="fa fa-check-circle-o fa-lg color-green"></i> </div>
+                        <div class="table-body__td" data-column="orders-id">
+                          <div class="table-wrapper__value">040660174001</div>
+                        </div>
+                        <div class="table-body__td" data-column="orders-store"> Main Store </div>
+                        <div class="table-body__td" data-column="orders-register"> 1 </div>
+                        <div class="table-body__td" data-column="orders-source"> POS </div>
+                        <div class="table-body__td" data-column="orders-total"> $56.33 </div>
+                        <div class="table-body__td" data-column="orders-date">
+                          <div class="text-date"> <span>12/12/2016</span> <small>9:00:00</small> </div>
+                        </div>
+                        <div class="table-body__td" data-column="orders-employee"> Samantha Fox </div>
+                        <div class="table-body__td" data-column="orders-customer"> Walk In </div>
+                        <div class="table-body__td" data-column="orders-action">
+                          <div class="orders__action"> <button class="btn btn_icon"><i class="icon icon-next"></i></button> </div>
+                        </div>
+                      </div>
+                      <div class="table-body__tr">
+                        <div class="table-body__td" data-column="orders-status"> <i class="fa fa-check fa-lg color-green"></i> </div>
+                        <div class="table-body__td" data-column="orders-id">
+                          <div class="table-wrapper__value">040660174749</div>
+                        </div>
+                        <div class="table-body__td" data-column="orders-store"> Main Store </div>
+                        <div class="table-body__td" data-column="orders-register"> 1 </div>
+                        <div class="table-body__td" data-column="orders-source"> Online </div>
+                        <div class="table-body__td" data-column="orders-total"> $123456789012345.12 </div>
+                        <div class="table-body__td" data-column="orders-date">
+                          <div class="text-date"> <span>03/07/2017</span> <small>12:59:00</small> </div>
+                        </div>
+                        <div class="table-body__td" data-column="orders-employee"> Mr. John Snow </div>
+                        <div class="table-body__td" data-column="orders-customer"> Walk In </div>
+                        <div class="table-body__td" data-column="orders-action">
+                          <div class="orders__action"> <button class="btn btn_icon"><i class="icon icon-next"></i></button> </div>
+                        </div>
+                      </div>
+                      <div class="table-body__tr">
+                        <div class="table-body__td" data-column="orders-status"> <i class="fa fa-check-circle fa-lg color-gray"></i> </div>
+                        <div class="table-body__td" data-column="orders-id">
+                          <div class="table-wrapper__value">040660174750</div>
+                          <div class="table-wrapper__meta">Saved order name</div>
+                        </div>
+                        <div class="table-body__td" data-column="orders-store"> Second Store </div>
+                        <div class="table-body__td" data-column="orders-register"> 4 </div>
+                        <div class="table-body__td" data-column="orders-source"> Online </div>
+                        <div class="table-body__td" data-column="orders-total"> $56.33 </div>
+                        <div class="table-body__td" data-column="orders-date">
+                          <div class="text-date"> <span>03/07/2017</span> <small>12:59:00</small> </div>
+                        </div>
+                        <div class="table-body__td" data-column="orders-employee"> Mr. John Snow </div>
+                        <div class="table-body__td" data-column="orders-customer"> Walk In </div>
+                        <div class="table-body__td" data-column="orders-action">
+                          <div class="orders__action"> <button class="btn btn_icon"><i class="icon icon-pos"></i></button> <button class="btn btn_icon"><i class="icon icon-next"></i></button> </div>
+                        </div>
+                      </div>
+                      <div class="table-body__tr">
+                        <div class="table-body__td" data-column="orders-status"> <i class="fa fa-check-circle fa-lg color-green"></i> </div>
+                        <div class="table-body__td" data-column="orders-id">
+                          <div class="table-wrapper__value">040660174750</div>
+                          <div class="table-wrapper__meta">Saved order name</div>
+                        </div>
+                        <div class="table-body__td" data-column="orders-store"> Second Store </div>
+                        <div class="table-body__td" data-column="orders-register"> 4 </div>
+                        <div class="table-body__td" data-column="orders-source"> POS </div>
+                        <div class="table-body__td" data-column="orders-total"> $56.33 </div>
+                        <div class="table-body__td" data-column="orders-date">
+                          <div class="text-date"> <span>03/07/2017</span> <small>12:59:00</small> </div>
+                        </div>
+                        <div class="table-body__td" data-column="orders-employee"> Mr. John Snow </div>
+                        <div class="table-body__td" data-column="orders-customer"> Walk In </div>
+                        <div class="table-body__td" data-column="orders-action">
+                          <div class="orders__action"> <button class="btn btn_icon"><i class="icon icon-pos"></i></button> <button class="btn btn_icon"><i class="icon icon-next"></i></button> </div>
+                        </div>
+                      </div>
+                      <div class="table-body__tr">
+                        <div class="table-body__td" data-column="orders-status"> <i class="fa fa-arrow-circle-o-left fa-lg color-red"></i> </div>
+                        <div class="table-body__td" data-column="orders-id">
+                          <div class="table-wrapper__value">040660174000</div>
+                        </div>
+                        <div class="table-body__td" data-column="orders-store"> Main Store </div>
+                        <div class="table-body__td" data-column="orders-register"> 2 </div>
+                        <div class="table-body__td" data-column="orders-source"> POS </div>
+                        <div class="table-body__td" data-column="orders-total"> $56.33 </div>
+                        <div class="table-body__td" data-column="orders-date">
+                          <div class="text-date"> <span>03/07/2017</span> <small>12:59:00</small> </div>
+                        </div>
+                        <div class="table-body__td" data-column="orders-employee"> Mr. John Snow </div>
+                        <div class="table-body__td" data-column="orders-customer"> VIP Mr. Donald Trump </div>
+                        <div class="table-body__td" data-column="orders-action">
+                          <div class="orders__action"> <button class="btn btn_icon"><i class="icon icon-next"></i></button> </div>
+                        </div>
+                      </div>
+                      <div class="table-body__tr">
+                        <div class="table-body__td" data-column="orders-status"> <i class="fa fa-arrow-left fa-lg color-red"></i> </div>
+                        <div class="table-body__td" data-column="orders-id">
+                          <div class="table-wrapper__value">040660174001</div>
+                        </div>
+                        <div class="table-body__td" data-column="orders-store"> Main Store </div>
+                        <div class="table-body__td" data-column="orders-register"> 1 </div>
+                        <div class="table-body__td" data-column="orders-source"> POS </div>
+                        <div class="table-body__td" data-column="orders-total"> $56.33 </div>
+                        <div class="table-body__td" data-column="orders-date">
+                          <div class="text-date"> <span>12/12/2016</span> <small>9:00:00</small> </div>
+                        </div>
+                        <div class="table-body__td" data-column="orders-employee"> Samantha Fox </div>
+                        <div class="table-body__td" data-column="orders-customer"> Walk In </div>
+                        <div class="table-body__td" data-column="orders-action">
+                          <div class="orders__action"> <button class="btn btn_icon"><i class="icon icon-next"></i></button> </div>
+                        </div>
+                      </div>
+                      <div class="table-body__tr">
+                        <div class="table-body__td" data-column="orders-status"> <i class="fa fa-ban fa-lg color-lightgray"></i> </div>
+                        <div class="table-body__td" data-column="orders-id">
+                          <div class="table-wrapper__value">040660174001</div>
+                        </div>
+                        <div class="table-body__td" data-column="orders-store"> Main Store </div>
+                        <div class="table-body__td" data-column="orders-register"> 1 </div>
+                        <div class="table-body__td" data-column="orders-source"> POS </div>
+                        <div class="table-body__td" data-column="orders-total"> $56.33 </div>
+                        <div class="table-body__td" data-column="orders-date">
+                          <div class="text-date"> <span>12/12/2016</span> <small>9:00:00</small> </div>
+                        </div>
+                        <div class="table-body__td" data-column="orders-employee"> Samantha Fox </div>
+                        <div class="table-body__td" data-column="orders-customer"> Walk In </div>
+                        <div class="table-body__td" data-column="orders-action">
+                          <div class="orders__action"> <button class="btn btn_icon"><i class="icon icon-next"></i></button> </div>
+                        </div>
+                      </div>
+                      <div class="table-body__tr">
+                        <div class="table-body__td" data-column="orders-status"> <i class="fa fa-check-circle-o fa-lg color-green"></i> </div>
+                        <div class="table-body__td" data-column="orders-id">
+                          <div class="table-wrapper__value">040660174001</div>
+                        </div>
+                        <div class="table-body__td" data-column="orders-store"> Main Store </div>
+                        <div class="table-body__td" data-column="orders-register"> 1 </div>
+                        <div class="table-body__td" data-column="orders-source"> POS </div>
+                        <div class="table-body__td" data-column="orders-total"> $56.33 </div>
+                        <div class="table-body__td" data-column="orders-date">
+                          <div class="text-date"> <span>12/12/2016</span> <small>9:00:00</small> </div>
+                        </div>
+                        <div class="table-body__td" data-column="orders-employee"> Samantha Fox </div>
+                        <div class="table-body__td" data-column="orders-customer"> Walk In </div>
+                        <div class="table-body__td" data-column="orders-action">
+                          <div class="orders__action"> <button class="btn btn_icon"><i class="icon icon-next"></i></button> </div>
+                        </div>
+                      </div>
+                      <div class="table-body__tr">
+                        <div class="table-body__td" data-column="orders-status"> <i class="fa fa-check fa-lg color-green"></i> </div>
+                        <div class="table-body__td" data-column="orders-id">
+                          <div class="table-wrapper__value">040660174749</div>
+                        </div>
+                        <div class="table-body__td" data-column="orders-store"> Main Store </div>
+                        <div class="table-body__td" data-column="orders-register"> 1 </div>
+                        <div class="table-body__td" data-column="orders-source"> Online </div>
+                        <div class="table-body__td" data-column="orders-total"> $123456789012345.12 </div>
+                        <div class="table-body__td" data-column="orders-date">
+                          <div class="text-date"> <span>03/07/2017</span> <small>12:59:00</small> </div>
+                        </div>
+                        <div class="table-body__td" data-column="orders-employee"> Mr. John Snow </div>
+                        <div class="table-body__td" data-column="orders-customer"> Walk In </div>
+                        <div class="table-body__td" data-column="orders-action">
+                          <div class="orders__action"> <button class="btn btn_icon"><i class="icon icon-next"></i></button> </div>
+                        </div>
+                      </div>
+                      <div class="table-body__tr">
+                        <div class="table-body__td" data-column="orders-status"> <i class="fa fa-check-circle fa-lg color-gray"></i> </div>
+                        <div class="table-body__td" data-column="orders-id">
+                          <div class="table-wrapper__value">040660174750</div>
+                          <div class="table-wrapper__meta">Saved order name</div>
+                        </div>
+                        <div class="table-body__td" data-column="orders-store"> Second Store </div>
+                        <div class="table-body__td" data-column="orders-register"> 4 </div>
+                        <div class="table-body__td" data-column="orders-source"> Online </div>
+                        <div class="table-body__td" data-column="orders-total"> $56.33 </div>
+                        <div class="table-body__td" data-column="orders-date">
+                          <div class="text-date"> <span>03/07/2017</span> <small>12:59:00</small> </div>
+                        </div>
+                        <div class="table-body__td" data-column="orders-employee"> Mr. John Snow </div>
+                        <div class="table-body__td" data-column="orders-customer"> Walk In </div>
+                        <div class="table-body__td" data-column="orders-action">
+                          <div class="orders__action"> <button class="btn btn_icon"><i class="icon icon-pos"></i></button> <button class="btn btn_icon"><i class="icon icon-next"></i></button> </div>
+                        </div>
+                      </div>
+                      <div class="table-body__tr">
+                        <div class="table-body__td" data-column="orders-status"> <i class="fa fa-check-circle fa-lg color-green"></i> </div>
+                        <div class="table-body__td" data-column="orders-id">
+                          <div class="table-wrapper__value">040660174750</div>
+                          <div class="table-wrapper__meta">Saved order name</div>
+                        </div>
+                        <div class="table-body__td" data-column="orders-store"> Second Store </div>
+                        <div class="table-body__td" data-column="orders-register"> 4 </div>
+                        <div class="table-body__td" data-column="orders-source"> POS </div>
+                        <div class="table-body__td" data-column="orders-total"> $56.33 </div>
+                        <div class="table-body__td" data-column="orders-date">
+                          <div class="text-date"> <span>03/07/2017</span> <small>12:59:00</small> </div>
+                        </div>
+                        <div class="table-body__td" data-column="orders-employee"> Mr. John Snow </div>
+                        <div class="table-body__td" data-column="orders-customer"> Walk In </div>
+                        <div class="table-body__td" data-column="orders-action">
+                          <div class="orders__action"> <button class="btn btn_icon"><i class="icon icon-pos"></i></button> <button class="btn btn_icon"><i class="icon icon-next"></i></button> </div>
+                        </div>
+                      </div>
+                      <div class="table-body__tr">
+                        <div class="table-body__td" data-column="orders-status"> <i class="fa fa-arrow-circle-o-left fa-lg color-red"></i> </div>
+                        <div class="table-body__td" data-column="orders-id">
+                          <div class="table-wrapper__value">040660174000</div>
+                        </div>
+                        <div class="table-body__td" data-column="orders-store"> Main Store </div>
+                        <div class="table-body__td" data-column="orders-register"> 2 </div>
+                        <div class="table-body__td" data-column="orders-source"> POS </div>
+                        <div class="table-body__td" data-column="orders-total"> $56.33 </div>
+                        <div class="table-body__td" data-column="orders-date">
+                          <div class="text-date"> <span>03/07/2017</span> <small>12:59:00</small> </div>
+                        </div>
+                        <div class="table-body__td" data-column="orders-employee"> Mr. John Snow </div>
+                        <div class="table-body__td" data-column="orders-customer"> VIP Mr. Donald Trump </div>
+                        <div class="table-body__td" data-column="orders-action">
+                          <div class="orders__action"> <button class="btn btn_icon"><i class="icon icon-next"></i></button> </div>
+                        </div>
+                      </div>
+                      <div class="table-body__tr">
+                        <div class="table-body__td" data-column="orders-status"> <i class="fa fa-arrow-left fa-lg color-red"></i> </div>
+                        <div class="table-body__td" data-column="orders-id">
+                          <div class="table-wrapper__value">040660174001</div>
+                        </div>
+                        <div class="table-body__td" data-column="orders-store"> Main Store </div>
+                        <div class="table-body__td" data-column="orders-register"> 1 </div>
+                        <div class="table-body__td" data-column="orders-source"> POS </div>
+                        <div class="table-body__td" data-column="orders-total"> $56.33 </div>
+                        <div class="table-body__td" data-column="orders-date">
+                          <div class="text-date"> <span>12/12/2016</span> <small>9:00:00</small> </div>
+                        </div>
+                        <div class="table-body__td" data-column="orders-employee"> Samantha Fox </div>
+                        <div class="table-body__td" data-column="orders-customer"> Walk In </div>
+                        <div class="table-body__td" data-column="orders-action">
+                          <div class="orders__action"> <button class="btn btn_icon"><i class="icon icon-next"></i></button> </div>
+                        </div>
+                      </div>
+                      <div class="table-body__tr">
+                        <div class="table-body__td" data-column="orders-status"> <i class="fa fa-ban fa-lg color-lightgray"></i> </div>
+                        <div class="table-body__td" data-column="orders-id">
+                          <div class="table-wrapper__value">040660174001</div>
+                        </div>
+                        <div class="table-body__td" data-column="orders-store"> Main Store </div>
+                        <div class="table-body__td" data-column="orders-register"> 1 </div>
+                        <div class="table-body__td" data-column="orders-source"> POS </div>
+                        <div class="table-body__td" data-column="orders-total"> $56.33 </div>
+                        <div class="table-body__td" data-column="orders-date">
+                          <div class="text-date"> <span>12/12/2016</span> <small>9:00:00</small> </div>
+                        </div>
+                        <div class="table-body__td" data-column="orders-employee"> Samantha Fox </div>
+                        <div class="table-body__td" data-column="orders-customer"> Walk In </div>
+                        <div class="table-body__td" data-column="orders-action">
+                          <div class="orders__action"> <button class="btn btn_icon"><i class="icon icon-next"></i></button> </div>
+                        </div>
+                      </div>
+                      <div class="table-body__tr">
+                        <div class="table-body__td" data-column="orders-status"> <i class="fa fa-check-circle-o fa-lg color-green"></i> </div>
+                        <div class="table-body__td" data-column="orders-id">
+                          <div class="table-wrapper__value">040660174001</div>
+                        </div>
+                        <div class="table-body__td" data-column="orders-store"> Main Store </div>
+                        <div class="table-body__td" data-column="orders-register"> 1 </div>
+                        <div class="table-body__td" data-column="orders-source"> POS </div>
+                        <div class="table-body__td" data-column="orders-total"> $56.33 </div>
+                        <div class="table-body__td" data-column="orders-date">
+                          <div class="text-date"> <span>12/12/2016</span> <small>9:00:00</small> </div>
+                        </div>
+                        <div class="table-body__td" data-column="orders-employee"> Samantha Fox </div>
+                        <div class="table-body__td" data-column="orders-customer"> Walk In </div>
+                        <div class="table-body__td" data-column="orders-action">
+                          <div class="orders__action"> <button class="btn btn_icon"><i class="icon icon-next"></i></button> </div>
+                        </div>
+                      </div>
+                      <div class="table-body__tr">
+                        <div class="table-body__td" data-column="orders-status"> <i class="fa fa-check fa-lg color-green"></i> </div>
+                        <div class="table-body__td" data-column="orders-id">
+                          <div class="table-wrapper__value">040660174749</div>
+                        </div>
+                        <div class="table-body__td" data-column="orders-store"> Main Store </div>
+                        <div class="table-body__td" data-column="orders-register"> 1 </div>
+                        <div class="table-body__td" data-column="orders-source"> Online </div>
+                        <div class="table-body__td" data-column="orders-total"> $123456789012345.12 </div>
+                        <div class="table-body__td" data-column="orders-date">
+                          <div class="text-date"> <span>03/07/2017</span> <small>12:59:00</small> </div>
+                        </div>
+                        <div class="table-body__td" data-column="orders-employee"> Mr. John Snow </div>
+                        <div class="table-body__td" data-column="orders-customer"> Walk In </div>
+                        <div class="table-body__td" data-column="orders-action">
+                          <div class="orders__action"> <button class="btn btn_icon"><i class="icon icon-next"></i></button> </div>
+                        </div>
+                      </div>
+                      <div class="table-body__tr">
+                        <div class="table-body__td" data-column="orders-status"> <i class="fa fa-check-circle fa-lg color-gray"></i> </div>
+                        <div class="table-body__td" data-column="orders-id">
+                          <div class="table-wrapper__value">040660174750</div>
+                          <div class="table-wrapper__meta">Saved order name</div>
+                        </div>
+                        <div class="table-body__td" data-column="orders-store"> Second Store </div>
+                        <div class="table-body__td" data-column="orders-register"> 4 </div>
+                        <div class="table-body__td" data-column="orders-source"> Online </div>
+                        <div class="table-body__td" data-column="orders-total"> $56.33 </div>
+                        <div class="table-body__td" data-column="orders-date">
+                          <div class="text-date"> <span>03/07/2017</span> <small>12:59:00</small> </div>
+                        </div>
+                        <div class="table-body__td" data-column="orders-employee"> Mr. John Snow </div>
+                        <div class="table-body__td" data-column="orders-customer"> Walk In </div>
+                        <div class="table-body__td" data-column="orders-action">
+                          <div class="orders__action"> <button class="btn btn_icon"><i class="icon icon-pos"></i></button> <button class="btn btn_icon"><i class="icon icon-next"></i></button> </div>
+                        </div>
+                      </div>
+                      <div class="table-body__tr">
+                        <div class="table-body__td" data-column="orders-status"> <i class="fa fa-check-circle fa-lg color-green"></i> </div>
+                        <div class="table-body__td" data-column="orders-id">
+                          <div class="table-wrapper__value">040660174750</div>
+                          <div class="table-wrapper__meta">Saved order name</div>
+                        </div>
+                        <div class="table-body__td" data-column="orders-store"> Second Store </div>
+                        <div class="table-body__td" data-column="orders-register"> 4 </div>
+                        <div class="table-body__td" data-column="orders-source"> POS </div>
+                        <div class="table-body__td" data-column="orders-total"> $56.33 </div>
+                        <div class="table-body__td" data-column="orders-date">
+                          <div class="text-date"> <span>03/07/2017</span> <small>12:59:00</small> </div>
+                        </div>
+                        <div class="table-body__td" data-column="orders-employee"> Mr. John Snow </div>
+                        <div class="table-body__td" data-column="orders-customer"> Walk In </div>
+                        <div class="table-body__td" data-column="orders-action">
+                          <div class="orders__action"> <button class="btn btn_icon"><i class="icon icon-pos"></i></button> <button class="btn btn_icon"><i class="icon icon-next"></i></button> </div>
+                        </div>
+                      </div>
+                      <div class="table-body__tr">
+                        <div class="table-body__td" data-column="orders-status"> <i class="fa fa-arrow-circle-o-left fa-lg color-red"></i> </div>
+                        <div class="table-body__td" data-column="orders-id">
+                          <div class="table-wrapper__value">040660174000</div>
+                        </div>
+                        <div class="table-body__td" data-column="orders-store"> Main Store </div>
+                        <div class="table-body__td" data-column="orders-register"> 2 </div>
+                        <div class="table-body__td" data-column="orders-source"> POS </div>
+                        <div class="table-body__td" data-column="orders-total"> $56.33 </div>
+                        <div class="table-body__td" data-column="orders-date">
+                          <div class="text-date"> <span>03/07/2017</span> <small>12:59:00</small> </div>
+                        </div>
+                        <div class="table-body__td" data-column="orders-employee"> Mr. John Snow </div>
+                        <div class="table-body__td" data-column="orders-customer"> VIP Mr. Donald Trump </div>
+                        <div class="table-body__td" data-column="orders-action">
+                          <div class="orders__action"> <button class="btn btn_icon"><i class="icon icon-next"></i></button> </div>
+                        </div>
+                      </div>
+                      <div class="table-body__tr">
+                        <div class="table-body__td" data-column="orders-status"> <i class="fa fa-arrow-left fa-lg color-red"></i> </div>
+                        <div class="table-body__td" data-column="orders-id">
+                          <div class="table-wrapper__value">040660174001</div>
+                        </div>
+                        <div class="table-body__td" data-column="orders-store"> Main Store </div>
+                        <div class="table-body__td" data-column="orders-register"> 1 </div>
+                        <div class="table-body__td" data-column="orders-source"> POS </div>
+                        <div class="table-body__td" data-column="orders-total"> $56.33 </div>
+                        <div class="table-body__td" data-column="orders-date">
+                          <div class="text-date"> <span>12/12/2016</span> <small>9:00:00</small> </div>
+                        </div>
+                        <div class="table-body__td" data-column="orders-employee"> Samantha Fox </div>
+                        <div class="table-body__td" data-column="orders-customer"> Walk In </div>
+                        <div class="table-body__td" data-column="orders-action">
+                          <div class="orders__action"> <button class="btn btn_icon"><i class="icon icon-next"></i></button> </div>
+                        </div>
+                      </div>
+                      <div class="table-body__tr">
+                        <div class="table-body__td" data-column="orders-status"> <i class="fa fa-ban fa-lg color-lightgray"></i> </div>
+                        <div class="table-body__td" data-column="orders-id">
+                          <div class="table-wrapper__value">040660174001</div>
+                        </div>
+                        <div class="table-body__td" data-column="orders-store"> Main Store </div>
+                        <div class="table-body__td" data-column="orders-register"> 1 </div>
+                        <div class="table-body__td" data-column="orders-source"> POS </div>
+                        <div class="table-body__td" data-column="orders-total"> $56.33 </div>
+                        <div class="table-body__td" data-column="orders-date">
+                          <div class="text-date"> <span>12/12/2016</span> <small>9:00:00</small> </div>
+                        </div>
+                        <div class="table-body__td" data-column="orders-employee"> Samantha Fox </div>
+                        <div class="table-body__td" data-column="orders-customer"> Walk In </div>
+                        <div class="table-body__td" data-column="orders-action">
+                          <div class="orders__action"> <button class="btn btn_icon"><i class="icon icon-next"></i></button> </div>
+                        </div>
+                      </div>
+                      <div class="table-body__tr">
+                        <div class="table-body__td" data-column="orders-status"> <i class="fa fa-check-circle-o fa-lg color-green"></i> </div>
+                        <div class="table-body__td" data-column="orders-id">
+                          <div class="table-wrapper__value">040660174001</div>
+                        </div>
+                        <div class="table-body__td" data-column="orders-store"> Main Store </div>
+                        <div class="table-body__td" data-column="orders-register"> 1 </div>
+                        <div class="table-body__td" data-column="orders-source"> POS </div>
+                        <div class="table-body__td" data-column="orders-total"> $56.33 </div>
+                        <div class="table-body__td" data-column="orders-date">
+                          <div class="text-date"> <span>12/12/2016</span> <small>9:00:00</small> </div>
+                        </div>
+                        <div class="table-body__td" data-column="orders-employee"> Samantha Fox </div>
+                        <div class="table-body__td" data-column="orders-customer"> Walk In </div>
+                        <div class="table-body__td" data-column="orders-action">
+                          <div class="orders__action"> <button class="btn btn_icon"><i class="icon icon-next"></i></button> </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="orders__footer"> <button class="btn btn_default" data-animation="ripple">
+							<i class="icon icon-expand"></i>
+							Show more
+						</button> </div>
+            </div>
+          </div>
+        </div>
+      </main>
+      <!-- begin help -->
+      <div class="help" data-modal="help">
+        <div class="help__container" data-modal-container="help"> <button class="help-close help__close" data-animation="ripple" data-modal-close="help">
+			<i class="fa fa-question-circle-o help-close__icon"></i>
+			<i class="icon icon-next help-close__arrow"></i>
+		</button>
+          <div class="help__body" data-scrollbar="default">
+            <div class="definition-list">
+              <dl class="definition-list__item"> <dt class="definition-list__title">Step 1:</dt>
+                <dd class="definition-list__description">Login to Payment Center Application (<a href="https://paymentcenter.qpay123.com">https://paymentcenter.qpay123.com</a>) </dd> <dt class="definition-list__title">Step 2:</dt>
+                <dd class="definition-list__description">Click on ‘Settings’ on top right corner of the application</dd> <dt class="definition-list__title">Step 3:</dt>
+                <dd class="definition-list__description">Under Advanced Settings, type in your password and click ‘Unlock Settings’</dd> <dt class="definition-list__title">Step 4:</dt>
+                <dd class="definition-list__description">Click ‘Manage Devices’ link and a new tab will open</dd> <dt class="definition-list__title">Step 5:</dt>
+                <dd class="definition-list__description">To generate a request for a new certificate, click on ‘Add Branch Device’ button</dd> <dt class="definition-list__title">Step 6:</dt>
+                <dd class="definition-list__description">Enter the email address, select the authentication option and click the ‘Add’ button</dd> <dt class="definition-list__title">Step 7:</dt>
+                <dd class="definition-list__description">Open the email from the device where the certificate needs to be installed and copy/paste into mpos application</dd>
+              </dl>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- end help -->
+      <!-- begin menu -->
+      <nav class="menu  " data-menu-container="menu">
+        <header class="menu__header" data-menu-close="menu" data-animation="ripple"> <i class="icon icon-back menu__icon"></i>
+          <div class="title-xlg menu__title">Acme Inc.</div>
+        </header>
+        <div class="menu__container">
+          <div class="menu__info">
+            <div class="menu__info-in">Account ID: 1234567890</div>
+            <div class="menu__info-in">Register: Flower Shop Register 47</div>
+            <div class="menu__info-in">Employee: John Constantine</div>
+          </div>
+          <ul class="nav">
+            <li class="nav__item"> <a href="pos.html" class="nav__link ">
+									<i class="nav__icon icon icon-pos"></i>POS</a> </li>
+            <li class="nav__item"> <a href="orders.html" class="nav__link is-active">
+									<i class="nav__icon icon icon-orders"></i>Orders</a> </li>
+            <li class="nav__item"> <a href="pos.html" class="nav__link " data-toggle-class-target="main-container" data-toggle-class-add="refund-mode">
+									<i class="nav__icon icon icon-pos"></i>Manual Refund</a> </li>
+            <li class="nav__item"> </li>
+            <li class="nav__item"> <a href="register-close.html" class="nav__link ">
+									<i class="nav__icon icon icon-close"></i>Close Register</a> </li>
+            <li class="nav__item"> <a href="payin.html" class="nav__link ">
+									<i class="nav__icon icon icon-cc"></i>Payins/Payouts</a> </li>
+            <li class="nav__item"> <a href="tips.html" class="nav__link ">
+									<i class="nav__icon icon icon-tips"></i>Tips</a> </li>
+            <li class="nav__item"> <a href="loyalty.html" class="nav__link ">
+									<i class="nav__icon icon icon-loyalty"></i>Loyalty</a> </li>
+            <li class="nav__item"> <a href="#" class="nav__link ">
+									<i class="nav__icon icon icon-cog"></i>Settings</a> </li>
+            <li class="nav__item"> <a href="sync.html" class="nav__link ">
+									<i class="nav__icon icon icon-sync"></i>Synchronize</a> </li>
+            <li class="nav__item"> <a href="ui-kit.html" class="nav__link ">
+									<i class="nav__icon icon icon-bo"></i>Back Office</a> </li>
+            <li class="nav__item"> <a href="pos.html" class="nav__link ">
+									<i class="nav__icon icon icon-help"></i>Help</a> </li>
+            <li class="nav__item"> <a href="index.html" class="nav__link ">
+									<i class="nav__icon icon icon-exit"></i>Logout</a> </li>
+          </ul>
+        </div>
+      </nav>
+      <!-- end menu -->
+      <!-- begin overlay --><button type="button" class="overlay " data-color="dark-gray" data-overlay="overlay" data-menu-overlay="menu"></button>
+      <!-- end overlay -->
+      <!-- END content -->
+      <!-- begin snackbar -->
+      <div class="snackbar " data-snackbar-container="snackbar" data-state="default">
+        <div class="snackbar__message" data-snackbar-content="snackbar"></div>
+      </div>
+      <!-- end snackbar -->
+      <!-- begin help -->
+      <div class="help" data-modal="help">
+        <div class="help__container" data-modal-container="help"> <button class="help-close help__close" data-animation="ripple" data-modal-close="help">
+			<i class="fa fa-question-circle-o help-close__icon"></i>
+			<i class="icon icon-next help-close__arrow"></i>
+		</button>
+          <div class="help__body" data-scrollbar="default">
+            <div class="definition-list">
+              <dl class="definition-list__item"> <dt class="definition-list__title">Step 1:</dt>
+                <dd class="definition-list__description">Login to Payment Center Application (<a href="https://paymentcenter.qpay123.com">https://paymentcenter.qpay123.com</a>) </dd> <dt class="definition-list__title">Step 2:</dt>
+                <dd class="definition-list__description">Click on ‘Settings’ on top right corner of the application</dd> <dt class="definition-list__title">Step 3:</dt>
+                <dd class="definition-list__description">Under Advanced Settings, type in your password and click ‘Unlock Settings’</dd> <dt class="definition-list__title">Step 4:</dt>
+                <dd class="definition-list__description">Click ‘Manage Devices’ link and a new tab will open</dd> <dt class="definition-list__title">Step 5:</dt>
+                <dd class="definition-list__description">To generate a request for a new certificate, click on ‘Add Branch Device’ button</dd> <dt class="definition-list__title">Step 6:</dt>
+                <dd class="definition-list__description">Enter the email address, select the authentication option and click the ‘Add’ button</dd> <dt class="definition-list__title">Step 7:</dt>
+                <dd class="definition-list__description">Open the email from the device where the certificate needs to be installed and copy/paste into mpos application</dd>
+              </dl>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- end help -->
+    </div>
+    <!-- end application -->
+    <!-- BEGIN scripts -->
+    <script type="text/javascript" src="static/js/app.js"></script>
+    <!-- END scripts -->
+  </body>
+
+</html>
