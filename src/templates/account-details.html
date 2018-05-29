@@ -1,0 +1,47 @@
+---
+title: 'Client Details &bull; eHopper POS'
+styles: 
+	- 'pos'
+settingsActive: 3
+---
+{% extends "layouts/_layout.html" %}
+
+{% block content %}
+	<main class="main">
+		<div class="inner settings">
+			{{header.call({
+				sidebarClassList: 'is-hidden',
+				fullinfoClassList: 'is-hidden',
+				menuBtnClassList: 'is-hidden',
+				helpBtnClassList: 'is-hidden',
+				searchClassList: 'is-hidden',
+				syncBtnClassList: 'is-hidden',
+				searchBtnClassList: 'is-hidden',
+				scanBtnClassList: 'is-hidden',
+				syncClassList: 'is-hidden',
+				containerClassList: 'main-header__container_full',
+				title: 'Client Details'
+			})}}
+			
+			{% include 'partials/components/_settings-sidebar.html' %}
+			<div class="settings__container">
+				<div class="settings__body">
+					<div class="settings__content settings__content_simple">
+						<ul class="text-info settings__text-info">
+							{% for item in [
+								{ label: 'Account ID:', value: '1234567890' },
+								{ label: 'Register Name:', value: 'Flower Shop Register 47' },
+								{ label: 'Current Employee:', value: 'John Constantine' }
+							] %}
+								<li class="text-info__item">
+									<div class="text-info__label">{{item.label}}</div>
+									<div class="text-info__value">{{item.value}}</div>
+								</li>
+							{% endfor %}
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+	</main>
+{% endblock %}

@@ -3,7 +3,7 @@
 
   <head>
     <meta charset="utf-8">
-    <title>Terminal Setup &bull; eHopper POS</title>
+    <title>Client Details &bull; eHopper POS</title>
     <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <meta name="theme-color" content="#fff">
@@ -28,10 +28,10 @@
 	</button>
             <!-- end button 'back' -->
             <!-- begin main container -->
-            <div class="main-header__container main-header__container_full"> <button class="btn-icon main-header__help " title="Help" data-modal-open="help">
+            <div class="main-header__container main-header__container_full"> <button class="btn-icon main-header__help is-hidden" title="Help" data-modal-open="help">
 			<i class="icon icon-help"></i>
 		</button>
-              <h2 class="title-xlg main-header__title ">Certificates</h2>
+              <h2 class="title-xlg main-header__title ">Client Details</h2>
               <div class="main-header__searchbox is-hidden">
                 <!-- begin search -->
                 <div class="search" data-modal="search">
@@ -210,13 +210,13 @@
 						
 						Cash Drawer
 					</a> </li>
-                <li class="nav__item is-active "> <a href="#" class="nav__link">
+                <li class="nav__item"> <a href="#" class="nav__link">
 						
 							<i class="nav__icon icon icon-cc"></i>
 						
 						Terminal Setup
 					</a> </li>
-                <li class="nav__item"> <a href="#" class="nav__link">
+                <li class="nav__item is-active "> <a href="#" class="nav__link">
 						
 							<i class="nav__icon fa fa-info-circle" aria-hidden="true"></i>
 						
@@ -239,41 +239,21 @@
           </div>
           <div class="settings__container">
             <div class="settings__body">
-              <div class="explanation settings__explanation is-error"> <i class="icon icon-cc explanation__icon"></i>
-                <div class="explanation__text">
-                  <p>To process credit and debit cards, you need to configure one or multiple terminals.</p>
-                  <p>To make so, you'll need to enter its Serial Number</p>
-                </div>
-                <div class="explanation__error error-message text-center">Lorem ipsum dolor sit amet, consectetur adipisicing.</div>
-              </div>
-              <div class="settings__content">
-                <div class="table-wrapper" data-table="terminal">
-                  <div class="table-wrapper__header" data-table-fake="terminal">
-                    <div class="table-header">
-                      <ul class="table-header__tr">
-                        <li class="table-header__th" data-column="certificate-default">Name</li>
-                        <li class="table-header__th" data-column="certificate-default">Issued by</li>
-                        <li class="table-header__th" data-column="certificate-default">Valid from</li>
-                        <li class="table-header__th" data-column="certificate-default">Valid till</li>
-                        <li class="table-header__th" data-column="icon">&nbsp;</li>
-                      </ul>
-                    </div>
-                  </div>
-                  <div class="table-wrapper__body" data-scrollbar="default" data-table-scrollable="terminal">
-                    <div class="table-body table-wrapper__table" data-table-main="terminal">
-                      <div class="table-body__tr">
-                        <div class="table-body__td" data-column="certificate-default"> Qpay-60764-4089 </div>
-                        <div class="table-body__td" data-column="certificate-default"> Qpay Inc </div>
-                        <div class="table-body__td" data-column="certificate-default"> 05/08/2017 </div>
-                        <div class="table-body__td" data-column="certificate-default"> 02/02/2018 </div>
-                        <div class="table-body__td" data-column="icon"> <button class="btn btn_icon"><i class="icon icon-close"></i></button> </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="table-wrapper__footer">
-                    <div class="table-footer"> <button class="btn btn_success" data-modal-open="add-terminal" data-animation="ripple"><i class="icon icon-plus"></i>Install New Certificate</button> </div>
-                  </div>
-                </div>
+              <div class="settings__content settings__content_simple">
+                <ul class="text-info settings__text-info">
+                  <li class="text-info__item">
+                    <div class="text-info__label">Account ID:</div>
+                    <div class="text-info__value">1234567890</div>
+                  </li>
+                  <li class="text-info__item">
+                    <div class="text-info__label">Register Name:</div>
+                    <div class="text-info__value">Flower Shop Register 47</div>
+                  </li>
+                  <li class="text-info__item">
+                    <div class="text-info__label">Current Employee:</div>
+                    <div class="text-info__value">John Constantine</div>
+                  </li>
+                </ul>
               </div>
             </div>
           </div>
