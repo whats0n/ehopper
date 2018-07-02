@@ -1,0 +1,407 @@
+=col($name)
+	&[data-column="#{$name}"]
+		@content
+
+$text-xs: 16px
+$text-sm: 17px
+$text-md: 18px
+$text-lg: 24px
+
+.lg
+	+whmin(1600, 800)
+		font-size: $text-xs
+		.form
+			max-width: 520px
+			&_block
+				max-width: 100%
+			&_md
+				max-width: 900px
+			&__section
+				margin-bottom: 30px
+			&__link
+				font-size: $text-xs
+				padding-top: 7px
+			&__column
+				padding-bottom: 30px
+			&__error
+				font-size: $text-xs
+			&-label
+				font-size: $text-md
+			&-box
+				&__label
+					font-size: $text-xs
+				&__switcher
+					top: 14px
+		.simple-input
+			height: 70px
+			font-size: 21px
+		.btn
+			height: 50px
+			line-height: 50px
+			min-width: 50px
+			font-size: $text-md
+			.icon
+				margin-top: 5px
+			&_lg
+				height: 70px
+				line-height: 70px
+				min-width: 70px
+				font-size: 21px
+				.icon
+					margin-top: 15px
+		.error
+			&-message
+				font-size: $text-xs
+			&-tooltip
+				width: 235px
+				&__text
+					font-size: $text-xs
+				&__icon
+					top: 3px
+		.footnote
+			font-size: $text-xs
+			&_lg
+				font-size: $text-md
+		.main-header
+			&__menu
+				height: 54px
+			&__title
+				font-size: $text-lg
+			&__search-for
+				font-size: $text-md
+				height: 54px
+			&__sync
+				height: 54px
+			&__delete, 
+			&__help
+				top: 7px
+				right: 7px
+		.menu
+			&__header
+				height: 54px
+			&__icon
+				top: 7px
+			&__account
+				font-size: $text-md
+			&__container
+				padding-top: 74px
+			&__title
+				padding-top: 13px
+				padding-bottom: 13px
+		.nav
+			&__link
+				font-size: $text-md
+				padding-top: 10px
+				padding-bottom: 10px
+			&__arrow,
+			&__icon
+				top: 10px
+		.title-xlg
+			font-size: $text-lg
+		.modal-terms
+			&__body
+				font-size: $text-xs
+				line-height: 20px
+			&__agreement
+				padding: 20px 0
+			&__container
+				padding: 108px 0 90px
+			&__submit
+				padding: 0 40px
+		.figure
+			&__text
+				font-size: $text-xs
+			&__btn
+				font-size: 25px
+				.icon
+					font-size: 26px
+		.header
+			&__logo
+				&_sm
+					max-width: 520px
+			&__logos
+				width: 520px
+				margin-left: -260px
+		.box
+			max-width: 520px
+		.order-item
+			&__discount,
+			&__meta,
+			&__price,
+			&__col,
+			&__title
+				font-size: $text-xs
+		.total-list,
+		.totals-list
+			font-size: $text-sm
+			line-height: 19px
+		.dropdown-menu
+			&__item
+				font-size: $text-xs
+		.tabs
+			padding-top: 70px
+			&_lg
+				.tabs__btn
+					font-size: 18px
+					padding-top: 25px
+					padding-bottom: 25px
+			&-box
+				max-width: 900px
+			&__keyboard, 
+			&__notes
+				max-width: 520px
+		.field
+			&__label, 
+			&__switch
+				font-size: $text-xs
+		.sm
+			&-card
+				&__sticker, 
+				&__title
+					font-size: $text-xs
+			&-grid
+				p
+					font-size: $text-xs
+				&__tabs
+					.btn
+						min-width: 140px
+			&-box
+				height: 100%
+				&__description
+					font-size: 15px
+				&__title
+					font-size: 22px
+		.modal
+			&__footer
+				padding-top: 10px
+				padding-bottom: 10px
+			&__body
+				font-size: $text-xs
+			&__title
+				font-size: 26px
+		.infoblock
+			&__label
+				font-size: 15px
+			&__value
+				font-size: $text-md
+			&__icon
+				top: 11px
+		.infotable
+			&__label,
+			&__value
+				font-size: $text-sm
+		.step-body
+			padding-bottom: 110px
+		.btn-back
+			font-size: $text-md
+			&__icon
+				margin-top: 2px
+			&__title
+				line-height: 54px
+		.simple-field
+			&__error
+				font-size: $text-xs
+			&__label
+				font-size: $text-md
+		.cash-drawer
+			&__center, 
+			&__radio, 
+			&__test
+				font-size: $text-sm
+		.printer-setup
+			&__center, 
+			&__checkbox, 
+			&__test
+				font-size: $text-sm
+		.toolbar
+			&__col
+				font-size: $text-md
+		.table
+			&-body, 
+			&-header
+				font-size: $text-xs
+				&__th,
+				&__td
+					+col("icon")
+						width: 70px
+
+			&-footer
+				.btn .icon
+					margin-top: 5px
+		.table-wrapper
+			padding: 40px 0 81px
+			&_no-footer
+				padding-bottom: 0
+			&_header-lg
+				padding-top: 51px
+			&__footer
+				margin-bottom: -81px
+		.settings
+			&__explanation
+				height: 128px
+			&__body
+				padding-top: 54px
+				&_default
+					padding-top: 84px
+			&__content
+				height: calc(100% - 248px)
+		.search
+			&__input
+				height: 54px
+				font-size: $text-md
+			&__controls
+				padding-top: 7px
+				padding-bottom: 7px
+		.dropdown
+			&_header
+				.dropdown__header
+					height: 54px
+			&__label
+				font-size: 14px
+				padding: 13px 0 6px
+			&__header
+				height: 70px
+		.orders
+			&__body
+				padding: 70px 0 90px
+			&__toolbar
+				.toolbar__col
+					font-size: 20px
+			&__container
+				padding-top: 54px
+		.text-date
+			small
+				font-size: 75%
+		.order
+			&-notes
+				font-size: $text-xs
+			&__container, 
+			&__sidebar
+				padding-top: 54px
+			&__body
+				padding-bottom: 110px
+		.order-receipt
+			&__title
+				font-size: $text-lg
+			&__close
+				top: 7px
+			&__header
+				min-height: 54px
+		.checkbox
+			span
+				font-size: $text-xs
+			&_lg
+				span
+					font-size: 20px
+		.radio
+			min-width: 32px
+			min-height: 32px
+			i
+				width: 32px
+				height: 32px
+			span
+				font-size: $text-xs
+		.confirm
+			&__body 
+				p
+					font-size: $text-xs
+			&__title
+				font-size: $text-lg
+		.sidebar
+			&_left
+				padding-top: 54px
+		.switcher-box
+			&_lg
+				.switcher-box__label
+					font-size: 20px
+					padding-top: 5px
+					padding-bottom: 5px
+			&__label
+				font-size: $text-xs
+				padding-top: 7px
+				padding-bottom: 7px
+		.container
+			&_right
+				&.container_poynt-pos
+						.container__body
+							padding-top: 54px
+			&_order,
+			&_payments,
+			&_simple
+				.container__body
+					padding-top: 54px
+			&_overlay
+				.container__body
+					padding-bottom: 110px
+		.info-price
+			&__label
+				font-size: $text-xs
+			&__value
+				span
+					font-size: 34px
+		.textarea
+			height: 300px
+			max-height: 400px
+			&_little
+				height: 60px
+		.field-box
+			&__label
+				font-size: $text-xs
+			&__switch,
+			&_switch
+				.field-box__label
+					padding-top: 20px
+					padding-bottom: 21px
+		.select
+			&_lg
+				&:before
+					top: 25px
+				&:after
+					bottom: 25px 
+				select
+					height: 70px
+					line-height: 70px
+					font-size: 21px
+			&-box
+				select
+					height: 70px
+					line-height: 66px
+					font-size: 21px
+		.input
+			&_lg
+				height: 70px
+				font-size: 21px
+		.certificates-choice
+			&__text
+				font-size: 18px
+				line-height: 24px
+		.snackbar
+			font-size: $text-md
+		.items
+			&__top
+				height: 26%
+				padding-bottom: 12px
+			&__body
+				height: 74%
+		.item
+			&__price,
+			&__title
+				font-size: 18px
+		.categories
+			height: 100%
+			padding-bottom: 40px
+			&__slider
+				height: 100%
+				.slick
+					&-list,
+					&-track
+						height: 100%
+			&__container
+				height: 100%
+			&__item
+				height: 50%
+		.pretty-field
+			&__placeholder
+				font-size: 21px
+				line-height: 23px
+				transform: translate3d(0,23px,0)
