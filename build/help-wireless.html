@@ -1,0 +1,72 @@
+<!doctype html>
+<html>
+
+  <head>
+    <meta charset="utf-8">
+    <title>Help &bull; eHopper POS</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="theme-color" content="#fff">
+    <meta name="format-detection" content="telephone=no">
+    <link rel="stylesheet" media="all" href="static/css/pos.css">
+    <link rel="icon" href="https://ehopper.com/wp-content/uploads/2016/03/favicon-01.png" type="image/png">
+    <!-- BEGIN scripts -->
+    <script type="text/javascript" src="static/js/demo.js"></script>
+    <!-- END scripts -->
+  </head>
+
+  <body class="animated lg">
+    <!-- begin application -->
+    <div class="application" id="application">
+      <!-- BEGIN content -->
+      <div class="main-help"> <button class="main-help__close"><i class="icon icon-close"></i></button>
+        <div class="main-help__slider js-help-slider">
+          <div class="main-help__slide"> <img src="static/img/help/open-register.jpg" alt="help-1"> </div>
+          <div class="main-help__slide"> <img src="static/img/help/cart.jpg" alt="help-2"> </div>
+          <div class="main-help__slide"> <img src="static/img/help/cash-payment.jpg" alt="help-3"> </div>
+          <div class="main-help__slide"> <img src="static/img/help/close-register.jpg" alt="help-4"> </div>
+        </div>
+        <div class="main-help__text">For more information, please visit our <a href="#">Help Center</a></div>
+        <ul class="main-help__controls">
+          <li class="main-help__control js-help-control is-active" data-slide="0"><span data-animation="ripple">Open Register</span></li>
+          <li class="main-help__control js-help-control" data-slide="1"><span data-animation="ripple">Make Sales</span></li>
+          <li class="main-help__control js-help-control" data-slide="2"><span data-animation="ripple">Process Payment</span></li>
+          <li class="main-help__control js-help-control" data-slide="3"><span data-animation="ripple">Close Register</span></li>
+        </ul>
+      </div>
+      <!-- END content -->
+      <!-- begin snackbar -->
+      <div class="snackbar " data-snackbar-container="snackbar" data-state="default">
+        <div class="snackbar__message" data-snackbar-content="snackbar"></div>
+      </div>
+      <!-- end snackbar -->
+      <!-- begin help -->
+      <div class="help" data-modal="help">
+        <div class="help__container" data-modal-container="help"> <button class="help-close help__close" data-animation="ripple" data-modal-close="help">
+			<i class="fa fa-question-circle-o help-close__icon"></i>
+			<i class="icon icon-next help-close__arrow"></i>
+		</button>
+          <div class="help__body" data-scrollbar="default">
+            <div class="definition-list">
+              <dl class="definition-list__item"> <dt class="definition-list__title">Step 1:</dt>
+                <dd class="definition-list__description">Login to Payment Center Application (<a href="https://paymentcenter.qpay123.com">https://paymentcenter.qpay123.com</a>) </dd> <dt class="definition-list__title">Step 2:</dt>
+                <dd class="definition-list__description">Click on ‘Settings’ on top right corner of the application</dd> <dt class="definition-list__title">Step 3:</dt>
+                <dd class="definition-list__description">Under Advanced Settings, type in your password and click ‘Unlock Settings’</dd> <dt class="definition-list__title">Step 4:</dt>
+                <dd class="definition-list__description">Click ‘Manage Devices’ link and a new tab will open</dd> <dt class="definition-list__title">Step 5:</dt>
+                <dd class="definition-list__description">To generate a request for a new certificate, click on ‘Add Branch Device’ button</dd> <dt class="definition-list__title">Step 6:</dt>
+                <dd class="definition-list__description">Enter the email address, select the authentication option and click the ‘Add’ button</dd> <dt class="definition-list__title">Step 7:</dt>
+                <dd class="definition-list__description">Open the email from the device where the certificate needs to be installed and copy/paste into mpos application</dd>
+              </dl>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- end help -->
+    </div>
+    <!-- end application -->
+    <!-- BEGIN scripts -->
+    <script type="text/javascript" src="static/js/app.js"></script>
+    <!-- END scripts -->
+  </body>
+
+</html>

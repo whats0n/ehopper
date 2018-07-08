@@ -1,0 +1,37 @@
+---
+title: 'Help &bull; eHopper POS'
+styles: 
+	- 'pos'
+scripts:
+	- 'demo'
+bodyClasses: 'animated'
+bodyLg: 'lg'
+---
+{% extends "layouts/_layout.html" %}
+
+{% block content %}
+	<div class="main-help">
+		<button class="main-help__close"><i class="icon icon-close"></i></button>
+		<div class="main-help__slider js-help-slider">
+			<div class="main-help__slide">
+				<img src="static/img/help/open-register.jpg" alt="help-1">
+			</div>
+			<div class="main-help__slide">
+				<img src="static/img/help/cart.jpg" alt="help-2">
+			</div>
+			<div class="main-help__slide">
+				<img src="static/img/help/cash-payment.jpg" alt="help-3">
+			</div>
+			<div class="main-help__slide">
+				<img src="static/img/help/close-register.jpg" alt="help-4">
+			</div>
+		</div>
+		<div class="main-help__text">For more information, please visit our <a href="#">Help Center</a></div>
+		<ul class="main-help__controls">
+			<li class="main-help__control js-help-control is-active" data-slide="0"><span data-animation="ripple">Open Register</span></li>
+			<li class="main-help__control js-help-control" data-slide="1"><span data-animation="ripple">Make Sales</span></li>
+			<li class="main-help__control js-help-control" data-slide="2"><span data-animation="ripple">Process Payment</span></li>
+			<li class="main-help__control js-help-control" data-slide="3"><span data-animation="ripple">Close Register</span></li>
+		</ul>
+	</div>
+{% endblock %}	
