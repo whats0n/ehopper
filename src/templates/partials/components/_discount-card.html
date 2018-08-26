@@ -1,0 +1,11 @@
+{% macro call(props) %}
+<label class="discount-card">
+	<input type="checkbox" class="dicount-card__input">
+	<span class="discount-card__content">
+		<i class="fa fa-ticket discount-card__icon"></i>
+		{#<i class="icon icon-checked discount-card__checked"></i>#}
+		<span class="discount-card__sticker">$90.00</span>
+		<span class="discount-card__title">{{props.title | safe}}</span>
+	</span>
+</label>
+{% endmacro %}

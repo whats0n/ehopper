@@ -1,0 +1,31 @@
+{% import "partials/components/_discount-card.html" as discountCard %}
+<div class="sm-grid sm-grid_full tabs__info">
+	{% set sections = [
+		{
+			items: [
+				{
+					title: 'Discount One'
+				},
+				{
+					title: 'Discount Two'
+				},
+				{
+					title: 'Discount Three'
+				}
+			]
+		}
+	] %}
+	<div class="sm-grid__body">
+		{% for section in sections %}
+			<div class="sm-grid__row {% if section.steps %}sm-grid__row_steps{% endif %}">
+				{% for item in section.items %}
+					<div class="sm-grid__col sm-grid__col_sm">
+						{{discountCard.call({
+							title: item.title
+						})}}
+					</div>
+				{% endfor %}
+			</div>
+		{% endfor %}
+	</div>
+</div>

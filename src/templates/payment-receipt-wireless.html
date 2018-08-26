@@ -2,6 +2,7 @@
 title: 'Receipt Wireless &bull; eHopper POS'
 styles: 
 	- 'pos'
+bodyLg: 'lg'
 ---
 {% extends "layouts/_layout.html" %}
 
@@ -63,7 +64,7 @@ styles:
 										})}}
 									</div>
 									<div class="form-box__field">
-										<label for="federal-tax" class="form-box__label">Email receipt</label>
+										<label for="email-bill" class="form-box__label">Email receipt</label>
 										{{mixins.switcher({ id: 'email-bill', classList: 'form-box__switcher' })}}
 									</div>
 									<div class="form-box__field">
@@ -97,7 +98,7 @@ styles:
 										</div>
 									</div>
 									<div class="form-box__field">
-										<label for="state-tax" class="form-box__label">Print receipt</label>
+										<label for="print-bill" class="form-box__label">Print receipt</label>
 										{{mixins.switcher({ id: 'print-bill', classList: 'form-box__switcher' })}}
 									</div>
 									<div class="form-box__field">

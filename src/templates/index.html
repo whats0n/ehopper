@@ -62,7 +62,6 @@ bodyClasses: 'animated'
 		'create-customer',
 		'customer-details',
 		'refund',
-		'create-customer-alt',
 		'install-certificate',
 		'certificates',
 		'certificate-selection',
@@ -150,13 +149,16 @@ bodyClasses: 'animated'
 		'orders-no-order-source-and-no-order-management',
 		'account-details',
 
-		'help-wireless'
+		'help-wireless',
+
+		'pos-discount'
 	] %}
+	{% set UpdatedLG = 0 %}
+	{#61#}
 	<ul style="padding: 30px; font-size: 16px; max-height: 100%; overflow: auto;">
-		{# <li style="padding-bottom: 30px; font-size: 24px; "><a href="ui-components.html" target="_blank" style="padding: 10px; display: inline-block;">ui-components</a></li> #}
 		<li style="padding-bottom: 30px; font-size: 24px; "><a href="ui-guide.html" target="_blank" style="padding: 10px; display: inline-block;">ui-guide</a></li>
 		{% for page in pages %}
-			<li>{% if loop.index < 10 %}0{% endif %}{{loop.index}}. <a href="{{page}}.html" target="_blank" style="padding: 10px; display: inline-block;">{{page}}</a></li>
+			<li>{% if loop.index < 10 %}0{% endif %}{{loop.index}}. <a href="{{page}}.html" target="_blank" style="padding: 10px; display: inline-block;">{{page}}</a> {% if loop.index <= UpdatedLG %}UpdatedLG{% endif %}</li>
 		{% endfor %}
 	</ul>
 {% endblock %}
