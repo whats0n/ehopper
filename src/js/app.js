@@ -20,5 +20,6 @@ import table from './components/_table';
 import field from './components/_field';
 import toggleOnChange from './components/_toggle-onchange';
 import './components/_clear';
+import './components/_collapsable';
 
 import common from './_common';

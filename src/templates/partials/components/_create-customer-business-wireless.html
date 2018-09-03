@@ -1,0 +1,146 @@
+{% import "partials/form/_build.html" as form %}
+{% import "partials/_mixins.html" as mixins %}
+<div class="form form_block">
+	{% for section in [
+		{
+			title: "Customer's Details",
+			items: [
+				{
+					form: 'prettyField',
+					props: {
+						placeholder: 'Company Name <span>*</span>'
+					}
+				},
+				{
+					form: 'prettyField',
+					props: {
+						placeholder: 'Contact First Name'
+					}
+				},
+				{
+					form: 'prettyField',
+					props: {
+						placeholder: 'Contact M.I.'
+					}
+				},
+				{
+					form: 'prettyField',
+					props: {
+						placeholder: 'Contact Last Name'
+					}
+				},
+				{
+					form: 'prettyField',
+					props: {
+						placeholder: 'Tax ID'
+					}
+				},
+				{
+					form: 'prettyField',
+					props: {
+						placeholder: 'D & B Number'
+					}
+				},
+				{
+					form: 'prettyField',
+					props: {
+						placeholder: 'Tax Exempt'
+					}
+				}
+			]
+		},
+		{
+			title: 'Contact Info',
+			items: [
+				{
+					form: 'prettyField',
+					props: {
+						placeholder: 'Phone'
+					}
+				},
+				{
+					form: 'prettyField',
+					props: {
+						placeholder: 'Mobile Phone'
+					}
+				},
+				{
+					form: 'prettyField',
+					props: {
+						placeholder: 'Work Phone'
+					}
+				},
+				{
+					form: 'prettyField',
+					props: {
+						placeholder: 'Email'
+					}
+				}
+			]
+		},
+		{
+			title: 'Address Info',
+			items: [
+				{
+					form: 'prettyField',
+					props: {
+						placeholder: 'Referral'
+					}
+				},
+				{
+					form: 'prettyField',
+					props: {
+						placeholder: 'Address'
+					}
+				},
+				{
+					form: 'prettyField',
+					props: {
+						placeholder: 'Zip/City/State'
+					}
+				}
+			]
+		},
+		{
+			title: 'Additional Info',
+			items: [
+				{
+					form: 'prettyField',
+					props: {
+						placeholder: 'Notes'
+					}
+				},
+				{
+					form: 'prettyField',
+					props: {
+						placeholder: 'Referral'
+					}
+				},
+				{
+					form: 'prettyField',
+					props: {
+						placeholder: 'Accept Checks'
+					}
+				}
+			]
+		}
+	] %}
+		<div class="form__columns {% if not loop.first %}form__collapsable js-collapsable{% endif %}">
+			<div class="form__header">
+				<div class="title-xlg form__title {% if not loop.first %}js-collapsable-control{% endif %}">{{section.title}}{% if not loop.first %}<i class="fa fa-angle-down form__arrow"></i>{% endif %}</div>
+			</div>
+			<div class="form__items {% if not loop.first %}js-collapsable-container{% endif %}">
+				{% for item in section.items %}
+					<div class="form__column {{item.classList or 'form__column_md'}}">
+						{% if item.form %}
+							{{form[item.form].call(item.props)}}
+						{% endif %}
+						{% if item.mixins %}
+							{{mixins[item.mixins](item.options)}}
+						{% endif %}
+					</div>
+				{% endfor %}
+			</div>
+		</div>
+	{% endfor %}
+</div>
