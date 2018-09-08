@@ -36,9 +36,10 @@
 					}
 				},
 				{
-					form: 'prettyField',
+					mixins: 'checkbox',
 					props: {
-						placeholder: 'Tax Exempt'
+						classList: 'checkbox_lg form__checkbox',
+						content: 'Tax Exempt'
 					}
 				},
 				{
@@ -130,7 +131,7 @@
 							{{form[item.form].call(item.props)}}
 						{% endif %}
 						{% if item.mixins %}
-							{{mixins[item.mixins](item.options)}}
+							{{mixins[item.mixins](item.props)}}
 						{% endif %}
 					</div>
 				{% endfor %}
