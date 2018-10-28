@@ -39,6 +39,7 @@ export default (function() {
     const $target = $(e.target);
     if ($target.closest('[data-dropdown-open]').length) return;
     if ($target.closest('[data-dropdown-menu]').length) return;
+    if ($target.closest('.ui-datepicker-header').length) return;
     const $overlay = $('[data-dropdown-overlay]');
     const $menu = $('[data-dropdown-menu]');
     const $parent = $('[data-dropdown-parent]');

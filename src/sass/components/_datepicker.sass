@@ -1,0 +1,48 @@
+.v-datepicker
+	position: relative
+	&.is-open
+		.v-datepicker
+			&__calendar
+				display: block
+	&__dropdown
+		width: 100%
+		max-width: 320px
+		min-width: auto
+	&__calendar
+		position: relative
+		padding: 0 15px 15px
+	.ui-datepicker-prev,
+	.ui-datepicker-next
+		position: absolute
+		top: 0
+		padding-top: 10px
+		width: 60px
+		height: 60px
+		+vertical
+		span
+			display: inline-block
+			vertical-align: top
+			color: $darkGray
+			font-size: 28px
+	.ui-datepicker-prev
+		left: 0
+	.ui-datepicker-next
+		right: 0
+	.ui-datepicker-title
+		padding: 0 60px
+		line-height: 60px
+		text-align: center
+	.ui-datepicker-calendar
+		table-layout: fixed
+		th 
+			padding-top: 5px
+			padding-bottom: 15px
+		a 
+			display: block
+			border-radius: 3px
+			line-height: 40px
+			text-align: center
+			text-decoration: none
+			&.ui-state-active:not(.ui-state-highlight)
+				color: $white
+				background: $darkGray

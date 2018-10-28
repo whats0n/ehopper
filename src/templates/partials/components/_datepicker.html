@@ -1,0 +1,13 @@
+{% macro call(props) %}
+	<div class="dropdown v-datepicker js-datepicker" data-dropdown="{{props.name}}">
+		<div class="dropdown__header v-datepicker__control js-datepicker-control" data-dropdown-open="{{props.name}}">
+			<i class="dropdown__arrow icon icon-expand"></i>
+			<div class="dropdown__label v-datepicker__label">{{props.label}}</div>
+			<div class="dropdown__value v-datepicker__value js-datepicker-field">Choose value</div>
+		</div>
+		<div class="dropdown-menu v-datepicker__dropdown" data-dropdown-menu="{{props.name}}">
+			<div class="v-datepicker__calendar js-datepicker-calendar"></div>
+		</div>
+		<button type="button" class="overlay" data-color="dark-gray" data-overlay="overlay" data-dropdown-overlay="{{props.name}}"></button>
+	</div>
+{% endmacro %}
