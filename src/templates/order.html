@@ -1,6 +1,6 @@
 ---
 title: 'Orders #0123 &bull; eHopper POS'
-styles: 
+styles:
 	- 'pos'
 settingsActive: 2
 bodyLg: 'lg'
@@ -155,7 +155,7 @@ bodyLg: 'lg'
 								body: [
 									[
 										{ column: 'icon', checkbox: true },
-										{ column: 'order-item', content: '<div class="table-wrapper__value">Hot-Dog</div>' },
+										{ column: 'order-item', content: '<div class="table-wrapper__value">Hot-Dog</div>', addBtn: true },
 										{ column: 'order-quantity', content: '2' },
 										{ column: 'order-price', content: '$5.00' },
 										{ column: 'order-discount', content: '&nbsp;' },
@@ -217,6 +217,11 @@ bodyLg: 'lg'
 															</div>
 														{% else %}
 															{{td.content | safe}}
+														{% endif %}
+														{% if td.addBtn %}
+														<div class="table-wrapper__btn">
+															<button class="btn btn_success btn_xs"><i class="icon icon-plus"></i>Add S/N</button>
+														</div>
 														{% endif %}
 													</div>
 												{% endfor %}

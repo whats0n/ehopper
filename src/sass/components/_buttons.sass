@@ -29,7 +29,7 @@
 		box-shadow: inset 2px 2px 6px rgba($black, 0.2)
 	.icon
 		vertical-align: top
-	
+
 	//mods
 	&_md
 		height: 50px
@@ -53,7 +53,17 @@
 		height: 80px
 		font-size: 30px
 		line-height: 80px
-
+	&_xs
+		height: 20px
+		line-height: 20px
+		padding: 0 5px
+		font-size: 14px
+		padding: 0 10px 0 5px
+		& > .icon
+			font-size: 16px
+			line-height: 20px
+			height: 20px
+			width: 20px
 	&_block
 		display: block
 		width: 100%
@@ -98,7 +108,7 @@
 		background: $white
 		+active
 			background-color: $eb
-	&_transparent 
+	&_transparent
 		color: $blue
 		background: transparent
 		+active
@@ -116,7 +126,7 @@
 		font-size: 16px
 		line-height: 1.2
 		white-space: normal
-		.icon 
+		.icon
 			position: absolute
 			top: 0
 			left: 0

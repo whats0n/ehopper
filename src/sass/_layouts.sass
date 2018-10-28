@@ -14,7 +14,7 @@
   +poynt
     min-width: 600px
 
-.content 
+.content
   position: relative
   z-index: 5
 
@@ -33,9 +33,9 @@
         right: 0
         bottom: 0
         width: auto
-      .container 
+      .container
         &__header
-          +poynt 
+          +poynt
             display: none
         &__body
           +poynt
@@ -93,8 +93,8 @@
         padding-top: 50px
         // height: calc(100% - 50px)
   &_simple
-    .container 
-      &__body 
+    .container
+      &__body
         height: 100%
   &__body
     position: relative
@@ -160,7 +160,7 @@
       +poynt
         z-index: 30
         visibility: visible
-    .sidebar 
+    .sidebar
       &__toolbar
         .toolbar
           &__button
@@ -179,12 +179,12 @@
   //   +poynt
   //     display: none
   &_disabled
-    .order-item 
+    .order-item
       &__close,
       &__discount
         color: $darkGray
         opacity: 0.5
-  &__header 
+  &__header
     border-bottom: 2px solid rgba($black, 0.1)
     .toolbar_static
       .toolbar__col
@@ -238,7 +238,7 @@
         .slick-list,
         .slick-track,
         .categories__container,
-        .sm-box 
+        .sm-box
           height: 100%
       &__body
         height: 63%
@@ -314,7 +314,7 @@
       +poynt
         font-size: 0
       &__item
-        +poynt 
+        +poynt
           display: inline-block
           vertical-align: top
           width: 50%
@@ -331,7 +331,7 @@
     &_default
       display: block
       padding: 80px 20px 30px
-      +poynt 
+      +poynt
         padding-top: 30px
   &__explanation,
   &__footer
@@ -359,7 +359,7 @@
   &_header-lg
     padding-top: 51px
     .table-wrapper
-      &__header 
+      &__header
         height: 51px
     .table-header
       &__th
@@ -405,7 +405,8 @@
     word-break: break-word
   &__meta
     opacity: 0.5
-
+  &__btn
+    margin-top: 5px
   &__status-label
     padding-top: 5px
     // opacity: 0.5
@@ -531,12 +532,12 @@
       width: 100px
       +lg
         width: 80px
-      
+
   &__th
     height: 36px
     +rmed
     vertical-align: middle
-    
+
 
 .table-header
   border-bottom: 1px solid $silverGray
@@ -555,7 +556,7 @@
         +active
           background: $azureActive
       &__td
-        padding-top: 5px 
+        padding-top: 5px
         padding-bottom: 5px
   &_order
     .table-body
