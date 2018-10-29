@@ -1,6 +1,6 @@
 ---
 title: 'Orders &bull; eHopper POS'
-styles: 
+styles:
 	- 'pos'
 bodyLg: 'lg'
 ---
@@ -38,8 +38,20 @@ bodyLg: 'lg'
 								name: 'orders-stores',
 								menuAttrs: 'data-scrollbar="default"'
 							}
+						},
+						{
+							dropdownSimple: {
+								multiple: true,
+								placeholder: 'All',
+								label: 'Register:',
+								value: 'All',
+								list: [ { text: 'Store 1', value: 'Store 1' }, { text: 'Store 2', value: 'Store 2' }, { text: 'Store 3', value: 'Store 3' }, { text: 'Store 4', value: 'Store 4' }, { text: 'Store 5', value: 'Store 5' } ],
+								listOnly: true,
+								name: 'orders-register',
+								menuAttrs: 'data-scrollbar="default"'
+							}
 						}
-					] %}	
+					] %}
 					<div class="toolbar orders__toolbar">
 						<div class="toolbar__container">
 							<div class="toolbar__row">
