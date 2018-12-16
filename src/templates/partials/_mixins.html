@@ -50,6 +50,7 @@
 
 		{% if props.label %}
 			<label class="field__label {{props.labelClassList}}" for="{{props.id}}">{{props.label | safe}}</label>
+			<div class="field__change">{{props.change}}</div>
 		{% endif %}
 		{% if props.switch %}
 			<div class="field__switch">
