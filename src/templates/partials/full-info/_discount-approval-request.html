@@ -1,0 +1,43 @@
+{% import '../_mixins.html' as mixins %}
+{% import "../form/_build.html" as form %}
+<div class="section">
+	<div class="sm-grid__body">
+		<div class="sm-grid__row sm-grid__row_steps">
+			{% for item in [
+				{
+					title: 'Set discount'
+				},
+				{
+					title: 'Select manager'
+				}
+			] %}
+				<div class="sm-grid__col sm-grid__col_auto">
+					<i class="icon icon-next sm-grid__icon"></i>
+					<div class="simple-card simple-card_simplest">
+						<span class="simple-card__content" data-animation="ripple">
+							<span class="simple-card__title">{{item.title}}</span>
+						</span>
+					</div>
+				</div>
+			{% endfor %}
+		</div>
+		<div class="sm-grid__row sm-grid__row_last">
+			<div class="form form_sm">
+				<div class="form__section">
+					{{form.selectSimple.call({
+						label: 'Select manager to approve:',
+						options: [ 'John Doe', 'John Doe1', 'John Doe2', 'John Doe3', 'John Doe4', 'John Doe5', 'John Doe6' ]
+					})}}
+				</div>
+				<div class="form__section">
+					<div class="form-label">15% product discount</div>
+					<div class="fieldset fieldset_bordered">
+						{{mixins.textarea({
+							placeholder: 'Enter comments'
+						})}}
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

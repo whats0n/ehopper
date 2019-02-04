@@ -335,47 +335,47 @@ bodyLg: 'lg'
 			</div>
 			<div class="container container_overlay container_poynt-pos" data-fullinfo-container="fullinfo">
 				<div class="container__body">
-					<div class="section">
-						<div class="sm-grid__body">
-							<div class="sm-grid__row sm-grid__row_steps">
-								{% for item in [
-									{
-										title: 'Discount'
-									},
-									{
-										title: 'Request Approval'
-									}
-								] %}
-									<div class="sm-grid__col sm-grid__col_xs">
-										<i class="icon icon-next sm-grid__icon"></i>
-										<div class="simple-card simple-card_simplest">
-											<span class="simple-card__content" data-animation="ripple">
-												<span class="simple-card__title">{{item.title}}</span>
-											</span>
-										</div>
-									</div>
-								{% endfor %}
-							</div>
-							<div class="sm-grid__row sm-grid__row_last">
-								<div class="form form_sm">
-									<div class="form__section">
-										{{form.selectSimple.call({
-											label: 'Select manager to approve:',
-											options: [ 'John Doe', 'John Doe1', 'John Doe2', 'John Doe3', 'John Doe4', 'John Doe5', 'John Doe6' ]
-										})}}
-									</div>
-									<div class="form__section">
-										<div class="form-label">15% product discount</div>
-										<div class="fieldset fieldset_bordered">
-											{{mixins.textarea({
-												placeholder: 'Enter comments'
-											})}}
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
+					{{tabs.call({
+						classList: 'tabs_lg container__content',
+						name: 'item-info',
+						list: [
+							{
+								name: 'quantity',
+								text: 'Quantity',
+								content: 'partials/full-info/_quantity.html'
+							},
+							{
+								name: 'price',
+								text: 'Price',
+								content: 'partials/full-info/_price.html'
+							},
+							{
+								name: 'discount',
+								text: 'Discount',
+								content: 'partials/full-info/_discount-approval-request.html'
+							},
+							{
+								name: 'modifiers',
+								text: 'Modifiers',
+								content: 'partials/full-info/_modifiers-new.html'
+							},
+							{
+								name: 'matrix',
+								text: 'Matrix',
+								content: 'partials/full-info/_matrix.html'
+							},
+							{
+								name: 'serials',
+								text: 'Serials',
+								content: 'partials/full-info/_serials.html'
+							},
+							{
+								name: 'notes',
+								text: 'Notes',
+								content: 'partials/full-info/_notes.html'
+							}
+						]
+					})}}
 					<div class="container__submit">
 						<div class="form form_sm">
 							<button class="btn btn_lg btn_blue btn_block text-uppercase" data-animation="ripple" value="Done">Send Request</button>
